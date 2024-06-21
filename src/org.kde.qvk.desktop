@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Qt Virtual Keyboard
+Exec=qvk
+Type=Application
+X-KDE-Wayland-VirtualKeyboard=true
+Icon=qtlogo
+NoDisplay=true

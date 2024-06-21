@@ -13,3 +13,4 @@ ecm_finalize_qml_module(qvk)
 target_link_libraries(qvk PRIVATE KF6::CoreAddons KF6::I18n Qt::Gui Qt::GuiPrivate Qt::VirtualKeyboard Qt::WaylandClient Qt::WaylandClientPrivate Wayland::Client)
 
 install(TARGETS qvk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS org.kde.qvk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
