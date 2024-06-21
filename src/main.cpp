@@ -94,7 +94,7 @@ public:
                 qtHints |= Qt::ImhSensitiveData;
             }
             if ((imHints & InputPlugin::content_hint_auto_completion) == 0) {
-                qtHints |= Qt::ImhNoPredictiveText;
+                // qtHints |= Qt::ImhNoPredictiveText;
             }
             if ((imHints & InputPlugin::content_hint_auto_correction) == 0 || (imHints & InputPlugin::content_hint_auto_capitalization) == 0) {
                 qtHints |= Qt::ImhNoAutoUppercase;
