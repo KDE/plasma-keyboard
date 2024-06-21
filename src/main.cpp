@@ -49,11 +49,10 @@ public:
             qDebug() << "surroundingText changed" << m_input.surroundingText();
             QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
         });
-        connect(&m_input, &InputPlugin::receivedCommit, this, [this] {
+        connect(&m_input, &InputPlugin::receivedCommit, this, [] {
             QGuiApplication::inputMethod()->setVisible(true);
         });
         connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
-            qDebug() << "ffffffff" << QGuiApplication::inputMethod()->isVisible();
             window()->setVisible(QGuiApplication::inputMethod()->isVisible());
         });
         QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
@@ -177,12 +176,14 @@ public:
     }
     void inputMethodEvent(QInputMethodEvent *event) override
     {
-        qDebug() << "event" << event << event->commitString();
-        m_input.setPreEditStyle(event->replacementStart(), event->replacementLength(), 0);
-        m_input.setPreEditString(event->preeditString());
+        qDebug() << "event" << event << event->attributes().size() << event->commitString() << event->preeditString();
         for (auto x : event->attributes()) {
-            qDebug() << "mmmmmmmmmmm" << x.type << x.start << x.length << x.value;
+            if (x.type == QInputMethodEvent::TextFormat) {
+                m_input.setPreEditStyle(x.start, x.length, x.value.value<QTextFormat>().type());
+            }
         }
+        m_input.setPreEditString(event->preeditString());
+        m_input.setPreEditCursor(event->preeditString().size() + 1);
         // m_input.setPreEditCursor(event->curso);
         if (const auto commit = event->commitString(); !commit.isEmpty()) {
             m_input.commit(commit);
@@ -191,42 +192,6 @@ public:
 
 private:
     InputPlugin m_input;
-};
-
-class WaylandInputMethod : public QVirtualKeyboardAbstractInputMethod
-{
-    Q_OBJECT
-public:
-    WaylandInputMethod(QObject *parent)
-        : QVirtualKeyboardAbstractInputMethod(parent)
-    {
-    }
-
-    QList<QVirtualKeyboardInputEngine::InputMode> inputModes(const QString &locale) override
-    {
-        qDebug() << "xxxxxxxx woooo" << locale;
-        return {};
-    }
-    bool setInputMode(const QString &locale, QVirtualKeyboardInputEngine::InputMode inputMode) override
-    {
-        qDebug() << "xxxxxxxx wippy" << locale << inputMode;
-        return true;
-    }
-    bool setTextCase(QVirtualKeyboardInputEngine::TextCase textCase) override
-    {
-        qDebug() << "xxxxxxxx text case!" << textCase;
-        return true;
-    }
-
-    bool keyEvent(Qt::Key key, const QString &text, Qt::KeyboardModifiers modifiers) override
-    {
-        qDebug() << "xxxxxxxx key event" << key << text << modifiers;
-        // const Qt::KeyboardModifiers mods = (key == Qt::Key_Return) ? Qt::NoModifier : modifiers;
-        // inputContext()->sendKeyClick(key, text, mods);
-        // QKeyEvent keyEvent();
-        // m_input.gr();
-        return true;
-    }
 };
 
 static bool initPanelIntegration(QWindow *window)
