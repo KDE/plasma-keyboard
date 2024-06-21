@@ -95,6 +95,11 @@ void InputPlugin::commit(const QString &text)
     m_context->commit_string(m_context->m_latestSerial, text);
 }
 
+void InputPlugin::keysym(uint timestamp, uint sym, KeyState state, uint modifiers)
+{
+    m_context->keysym(m_context->m_latestSerial, timestamp, sym, state, modifiers);
+}
+
 InputPlugin::ContentHint InputPlugin::contentHint() const
 {
     if (!m_context) {

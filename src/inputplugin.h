@@ -71,6 +71,9 @@ public:
     void deleteSurroundingText(int cursorPos, int length);
     void commit(const QString &text);
 
+    enum KeyState { Released = 0, Pressed = 1 };
+    void keysym(uint timestamp, uint sym, KeyState state, uint modifiers);
+
     ContentHint contentHint() const;
     ContentPurpose contentPurpose() const;
     uint32_t cursorPos() const;

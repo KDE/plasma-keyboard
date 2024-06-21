@@ -31,6 +31,7 @@ class InputThing : public QQuickItem
 {
     Q_OBJECT
     // QML_ELEMENT
+    Q_PROPERTY(QVirtualKeyboardInputEngine *engine WRITE setEngine)
 public:
     InputThing()
         : m_input(&(*s_im))
@@ -56,6 +57,22 @@ public:
             window()->setVisible(QGuiApplication::inputMethod()->isVisible());
         });
         QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
+    }
+
+    void setEngine(QVirtualKeyboardInputEngine *engine) {
+        QObject::connect(engine, &QVirtualKeyboardInputEngine::virtualKeyClicked, this, [this] (Qt::Key key, const QString &text, Qt::KeyboardModifiers modifiers, bool isAutoRepeat) {
+            static const QHash<Qt::Key, xkb_keysym_t> qtKeyToXkb = {
+                { Qt::Key_Return, XKB_KEY_Return },
+                { Qt::Key_Space, XKB_KEY_space },
+                { Qt::Key_Tab, XKB_KEY_Tab },
+            };
+
+            auto it = qtKeyToXkb.constFind(key);
+            if (it != qtKeyToXkb.constEnd()) {
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), *it, InputPlugin::Pressed, 0);
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), *it, InputPlugin::Released, 0);
+            }
+        });
     }
 
     QVariant inputMethodQuery(Qt::InputMethodQuery query) const override
@@ -269,18 +286,12 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine view;
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
-        auto engine = static_cast<QVirtualKeyboardInputEngine *>(object->property("engine").value<QObject *>());
-        engine->setInputMethod(new WaylandInputMethod(engine));
-
         auto window = qobject_cast<QWindow*>(object);
         if (!initPanelIntegration(window)) {
             qDebug() << "aaaaaaaaaaaa";
             QCoreApplication::instance()->exit(1);
             Q_UNREACHABLE();
         }
-        QObject::connect(engine, &QVirtualKeyboardInputEngine::virtualKeyClicked, object, [] (Qt::Key key, const QString &text, Qt::KeyboardModifiers modifiers, bool isAutoRepeat) {
-            qDebug() << "fffffffff" << key << text << modifiers << isAutoRepeat;
-        });
     });
     view.load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/qvk/main.qml")));
 

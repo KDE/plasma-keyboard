@@ -8,14 +8,13 @@ import QtQuick
 import QtQuick.VirtualKeyboard
 
 Window {
-    readonly property QtObject engine: inputPanel.InputContext.inputEngine
-
     width: Screen.width
     height: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
 
     InputThing {
         id: thing
         focus: true
+        engine: inputPanel.InputContext.inputEngine
     }
 
     InputPanel {
