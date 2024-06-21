@@ -10,6 +10,7 @@ import QtQuick.VirtualKeyboard
 Window {
     width: Screen.width
     height: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
+    color: Qt.transparent
 
     InputThing {
         id: thing
