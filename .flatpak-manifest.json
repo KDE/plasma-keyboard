@@ -1,0 +1,47 @@
+{
+    "id": "org.kde.qvk",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.7",
+    "sdk": "org.kde.Sdk",
+    "command": "qvk",
+    "tags": ["nightly"],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": [
+        "--share=ipc",
+        "--device=dri",
+        "--socket=wayland",
+        "--env=QML2_IMPORT_PATH=/app/qml:/app/lib/qml:/app/lib64/qml",
+        "--env=QT_PLUGIN_PATH=/app/plugins:/app/lib64/plugins:/app/lib/plugins:/usr/share/runtime/lib/plugins"    ],
+
+    "modules": [
+        {
+            "name": "qt6-virtualkeyboard",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DQT_DISABLE_RPATH=OFF" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtvirtualkeyboard-everywhere-src-6.7.2.tar.xz",
+                    "sha256": "320664b55a0960ff79c1b822dcf6e8cebe3e08b791147d41b570996d81ce180f",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 7927,
+                        "stable-only": true,
+                        "versions": {
+                            "<": "6.8.0"
+                        },
+                        "url-template": "https://download.qt.io/official_releases/qt/6.7/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "qvk",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                { "type": "dir", "path": "." }
+            ]
+        }
+    ]
+}
