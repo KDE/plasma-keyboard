@@ -37,7 +37,6 @@ public:
         : m_input(&(*s_im))
     {
         connect(&m_input, &InputPlugin::contextChanged, this, [this] {
-            qDebug() << "input context changed";
             if (m_input.hasContext()) {
                 QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
                 QGuiApplication::inputMethod()->show();
@@ -46,7 +45,6 @@ public:
             }
         });
         connect(&m_input, &InputPlugin::surroundingTextChanged, this, [this] {
-            qDebug() << "surroundingText changed" << m_input.surroundingText();
             QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
         });
         connect(&m_input, &InputPlugin::receivedCommit, this, [] {
@@ -156,7 +154,6 @@ public:
                     qtHints |= Qt::ImhPreferLatin;
                     break;
             }
-            qDebug() << "hintssssssss" << qtHints;
             return QVariant::fromValue<int>(qtHints);
         } break;
         case Qt::ImCurrentSelection:
@@ -169,14 +166,13 @@ public:
             // We don't do that
             break;
         default:
-            qDebug() << "query" << query;
+            qWarning() << "Unhandled query" << query;
             break;
         }
         return {};
     }
     void inputMethodEvent(QInputMethodEvent *event) override
     {
-        qDebug() << "event" << event << event->attributes().size() << event->commitString() << event->preeditString();
         for (auto x : event->attributes()) {
             if (x.type == QInputMethodEvent::TextFormat) {
                 m_input.setPreEditStyle(x.start, x.length, x.value.value<QTextFormat>().type());
@@ -253,7 +249,6 @@ int main(int argc, char **argv)
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
         auto window = qobject_cast<QWindow*>(object);
         if (!initPanelIntegration(window)) {
-            qDebug() << "aaaaaaaaaaaa";
             QCoreApplication::instance()->exit(1);
             Q_UNREACHABLE();
         }
