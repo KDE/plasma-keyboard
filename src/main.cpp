@@ -204,7 +204,7 @@ static bool initPanelIntegration(QWindow *window)
         if (!shellIntegration->initialize(waylandWindow->display())) {
             delete shellIntegration;
             shellIntegration = nullptr;
-            qWarning() << "Failed to initialize input panel-shell integration, possibly because compositor does not support the layer-shell protocol";
+            qWarning() << "Failed to initialize input panel-shell integration, possibly because compositor does not support the panel-shell protocol";
             return false;
         }
     }
