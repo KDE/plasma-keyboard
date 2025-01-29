@@ -11,6 +11,7 @@
         "--share=ipc",
         "--device=dri",
         "--socket=wayland",
+        "--socket=inherit-wayland-socket",
         "--env=QML2_IMPORT_PATH=/app/qml:/app/lib/qml:/app/lib64/qml",
         "--env=QT_PLUGIN_PATH=/app/plugins:/app/lib64/plugins:/app/lib/plugins:/usr/share/runtime/lib/plugins"    ],
 
