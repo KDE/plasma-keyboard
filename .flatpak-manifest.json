@@ -1,10 +1,10 @@
 {
-    "id": "org.kde.qvk",
+    "id": "org.kde.plasma.keyboard",
     "branch": "master",
     "runtime": "org.kde.Platform",
     "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
-    "command": "qvk",
+    "command": "plasma-keyboard",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "name": "qvk",
+            "name": "plasma-keyboard",
             "buildsystem": "cmake-ninja",
             "sources": [
                 { "type": "dir", "path": "." }

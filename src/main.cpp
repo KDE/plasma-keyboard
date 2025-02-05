@@ -221,10 +221,10 @@ int main(int argc, char **argv)
     qputenv("QT_WAYLAND_INPUT_PANEL_TOPLEVEL", QByteArray("1"));
     QGuiApplication application(argc, argv);
 
-    KLocalizedString::setApplicationDomain("qvk");
+    KLocalizedString::setApplicationDomain("plasma-keyboard");
 
-    KAboutData aboutData(QStringLiteral("qvk"),
-                         i18n("qvk"),
+    KAboutData aboutData(QStringLiteral("plasma-keyboard"),
+                         i18n("plasma-keyboard"),
                          QStringLiteral("1.0"),
                          i18n("A Simple Application written with KDE Frameworks"),
                          KAboutLicense::GPL,
@@ -232,7 +232,7 @@ int main(int argc, char **argv)
 
     aboutData.addAuthor(i18n("Aleix Pol Gonzalez"), i18n("Author"), QStringLiteral("aleixpol@kde.org"));
     aboutData.setOrganizationDomain("example.org");
-    aboutData.setDesktopFileName(QStringLiteral("org.example.qvk"));
+    aboutData.setDesktopFileName(QStringLiteral("org.example.plasma-keyboard"));
 
     KAboutData::setApplicationData(aboutData);
 
@@ -243,7 +243,7 @@ int main(int argc, char **argv)
         aboutData.processCommandLine(&parser);
     }
 
-    qmlRegisterType<InputThing>("org.kde.qvk", 1, 0, "InputThing");
+    qmlRegisterType<InputThing>("org.kde.plasma.keyboard", 1, 0, "InputThing");
 
     QQmlApplicationEngine view;
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
@@ -253,7 +253,7 @@ int main(int argc, char **argv)
             Q_UNREACHABLE();
         }
     });
-    view.load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/qvk/main.qml")));
+    view.load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/plasma/keyboard/main.qml")));
 
     return application.exec();
 }

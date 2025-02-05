@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(qvk VERSION "1.0")
+project(plasma-keyboard VERSION "1.0")
 
 set(QT_MIN_VERSION "6.5.0")
 set(KF_MIN_VERSION "6.0.0")
