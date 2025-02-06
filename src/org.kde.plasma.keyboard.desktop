@@ -1,5 +1,17 @@
 [Desktop Entry]
 Name=Qt Virtual Keyboard
+Name[ca]=Teclat virtual Qt
+Name[ca@valencia]=Teclat virtual de les Qt
+Name[es]=Teclado virtual de Qt
+Name[he]=מקלדת וירטואלית ל־Qt
+Name[ia]=Claviero virtual de Qt
+Name[nl]=Qt-virtueel toetsenbord
+Name[pt_BR]=Teclado Virtual do QT
+Name[sl]=Qt virtualna tipkovnica
+Name[sv]=Qt virtuellt tangentbord
+Name[tr]=Qt Sanal Klavye
+Name[uk]=Віртуальна клавіатура Qt
+Name[x-test]=xxQt Virtual Keyboardxx
 Exec=plasma-keyboard
 Type=Application
 X-KDE-Wayland-VirtualKeyboard=true
