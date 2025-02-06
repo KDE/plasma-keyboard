@@ -248,8 +248,8 @@ int main(int argc, char **argv)
                          i18n("Copyright 2024, Aleix Pol Gonzalez"));
 
     aboutData.addAuthor(i18n("Aleix Pol Gonzalez"), i18n("Author"), QStringLiteral("aleixpol@kde.org"));
-    aboutData.setOrganizationDomain("example.org");
-    aboutData.setDesktopFileName(QStringLiteral("org.example.plasma-keyboard"));
+    aboutData.setOrganizationDomain("kde.org");
+    aboutData.setDesktopFileName(QStringLiteral("org.kde.plasma.keyboard"));
 
     KAboutData::setApplicationData(aboutData);
 
