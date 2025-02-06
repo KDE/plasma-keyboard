@@ -171,6 +171,23 @@ public:
         }
         return {};
     }
+
+
+    void keyPressEvent(QKeyEvent *event) override
+    {
+        QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
+        for (auto key : keys) {
+            m_input.keysym(0, event->key(), InputPlugin::Pressed, 0);
+        }
+    }
+
+    void keyReleaseEvent(QKeyEvent *event) override
+    {
+        QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
+        for (auto key : keys) {
+            m_input.keysym(0, event->key(), InputPlugin::Released, 0);
+        }
+    }
     void inputMethodEvent(QInputMethodEvent *event) override
     {
         for (auto x : event->attributes()) {
