@@ -16,6 +16,7 @@ Name[sv]=Qt virtuellt tangentbord
 Name[tr]=Qt Sanal Klavye
 Name[uk]=Віртуальна клавіатура Qt
 Name[x-test]=xxQt Virtual Keyboardxx
+Name[zh_CN]=Qt 虚拟键盘
 Name[zh_TW]=Qt 虛擬鍵盤
 Exec=plasma-keyboard
 Type=Application
