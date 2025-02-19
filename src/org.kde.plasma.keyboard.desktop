@@ -1,7 +1,10 @@
 [Desktop Entry]
 Name=Plasma Keyboard
 Name[ca]=Teclat del Plasma
+Name[ca@valencia]=Teclat de Plasma
 Name[es]=Teclado de Plasma
+Name[he]=מקלדת פלזמה
+Name[ia]=Claviero de Plasma
 Name[ka]=Plasma-ის კლავიატურა
 Name[nl]=Plasma-toetsenbord
 Name[sl]=Plasma tipkovnica
@@ -9,6 +12,8 @@ Name[sv]=Plasma tangentbord
 Name[tr]=Plasma Klavye
 Name[uk]=Клавіатура Плазми
 Name[x-test]=xxPlasma Keyboardxx
+Name[zh_CN]=Plasma 键盘
+Name[zh_TW]=Plasma 鍵盤
 Exec=plasma-keyboard
 Type=Application
 X-KDE-Wayland-VirtualKeyboard=true
