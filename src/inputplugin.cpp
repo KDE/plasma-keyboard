@@ -97,6 +97,9 @@ void InputPlugin::commit(const QString &text)
 
 void InputPlugin::keysym(uint timestamp, uint sym, KeyState state, uint modifiers)
 {
+    if (!m_context) {
+        return;
+    }
     m_context->keysym(m_context->m_latestSerial, timestamp, sym, state, modifiers);
 }
 

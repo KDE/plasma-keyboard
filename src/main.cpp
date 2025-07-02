@@ -20,6 +20,8 @@
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <qpa/qwindowsysteminterface.h>
 
+#include <set>
+
 #include "inputmethod_p.h"
 #include "inputplugin.h"
 #include "qwaylandinputpanelshellintegration_p.h"
@@ -27,11 +29,16 @@
 
 Q_GLOBAL_STATIC(InputMethod, s_im)
 
+static const std::set<int> IGNORED_KEYS = {
+    Qt::Key_Context1 // Triggered by "special keys" button
+};
+
 class InputThing : public QQuickItem
 {
     Q_OBJECT
     // QML_ELEMENT
     Q_PROPERTY(QVirtualKeyboardInputEngine *engine WRITE setEngine)
+
 public:
     InputThing()
         : m_input(&(*s_im))
@@ -57,19 +64,7 @@ public:
     }
 
     void setEngine(QVirtualKeyboardInputEngine *engine) {
-        QObject::connect(engine, &QVirtualKeyboardInputEngine::virtualKeyClicked, this, [this] (Qt::Key key, const QString &text, Qt::KeyboardModifiers modifiers, bool isAutoRepeat) {
-            static const QHash<Qt::Key, xkb_keysym_t> qtKeyToXkb = {
-                { Qt::Key_Return, XKB_KEY_Return },
-                { Qt::Key_Space, XKB_KEY_space },
-                { Qt::Key_Tab, XKB_KEY_Tab },
-            };
-
-            auto it = qtKeyToXkb.constFind(key);
-            if (it != qtKeyToXkb.constEnd()) {
-                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), *it, InputPlugin::Pressed, 0);
-                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), *it, InputPlugin::Released, 0);
-            }
-        });
+        // TODO: hook into engine events if necessary?
     }
 
     QVariant inputMethodQuery(Qt::InputMethodQuery query) const override
@@ -91,7 +86,7 @@ public:
                 qtHints |= Qt::ImhSensitiveData;
             }
             if ((imHints & InputPlugin::content_hint_auto_completion) == 0) {
-                // qtHints |= Qt::ImhNoPredictiveText;
+                qtHints |= Qt::ImhNoPredictiveText;
             }
             if ((imHints & InputPlugin::content_hint_auto_correction) == 0 || (imHints & InputPlugin::content_hint_auto_capitalization) == 0) {
                 qtHints |= Qt::ImhNoAutoUppercase;
@@ -172,32 +167,59 @@ public:
         return {};
     }
 
-
     void keyPressEvent(QKeyEvent *event) override
     {
+        if (IGNORED_KEYS.find(event->key()) != IGNORED_KEYS.end()) {
+            return;
+        }
+
         QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
         for (auto key : keys) {
-            m_input.keysym(0, event->key(), InputPlugin::Pressed, 0);
+            // Simulate key press only if it's not textual
+            if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Pressed, 0);
+            }
         }
     }
 
     void keyReleaseEvent(QKeyEvent *event) override
     {
+        if (IGNORED_KEYS.find(event->key()) != IGNORED_KEYS.end()) {
+            return;
+        }
+
         QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
         for (auto key : keys) {
-            m_input.keysym(0, event->key(), InputPlugin::Released, 0);
+            if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
+                // Simulate the keyboard press for non textual keys
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Released, 0);
+            } else {
+                // If we have text coming as a key event, use it to commit the string
+                m_input.commit(event->text());
+            }
         }
     }
+
     void inputMethodEvent(QInputMethodEvent *event) override
     {
+        // Delete characters that are supposed to be replaced
+        if (event->replacementLength() > 0) {
+            m_input.deleteSurroundingText(event->replacementStart(), event->replacementLength());
+        }
+
         for (auto x : event->attributes()) {
             if (x.type == QInputMethodEvent::TextFormat) {
                 m_input.setPreEditStyle(x.start, x.length, x.value.value<QTextFormat>().type());
             }
         }
+
+        // Send cursor position (must be before predit string)
+        m_input.setPreEditCursor(event->preeditString().size());
+
+        // Send currently being edited string
         m_input.setPreEditString(event->preeditString());
-        m_input.setPreEditCursor(event->preeditString().size() + 1);
-        // m_input.setPreEditCursor(event->curso);
+
+        // Commit string if we have a finished string
         if (const auto commit = event->commitString(); !commit.isEmpty()) {
             m_input.commit(commit);
         }
