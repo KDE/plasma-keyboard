@@ -6,6 +6,7 @@
 
 import QtQuick
 import QtQuick.VirtualKeyboard
+import QtQuick.VirtualKeyboard.Settings
 
 Window {
     width: Screen.width
@@ -22,5 +23,9 @@ Window {
         id: inputPanel
         anchors.fill: parent
         focusPolicy: Qt.NoFocus
+
+        Component.onCompleted: {
+            VirtualKeyboardSettings.styleName = "Breeze";
+        }
     }
 }
