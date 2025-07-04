@@ -2,10 +2,12 @@
     "id": "org.kde.plasma.keyboard",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "command": "plasma-keyboard",
-    "tags": ["nightly"],
+    "tags": [
+        "nightly"
+    ],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
@@ -13,26 +15,28 @@
         "--socket=wayland",
         "--socket=inherit-wayland-socket",
         "--env=QML2_IMPORT_PATH=/app/qml:/app/lib/qml:/app/lib64/qml",
-        "--env=QT_PLUGIN_PATH=/app/plugins:/app/lib64/plugins:/app/lib/plugins:/usr/share/runtime/lib/plugins"    ],
-
+        "--env=QT_PLUGIN_PATH=/app/plugins:/app/lib64/plugins:/app/lib/plugins:/usr/share/runtime/lib/plugins"
+    ],
     "modules": [
         {
             "name": "qt6-virtualkeyboard",
             "buildsystem": "cmake-ninja",
-            "config-opts": [ "-DQT_DISABLE_RPATH=OFF" ],
+            "config-opts": [
+                "-DQT_DISABLE_RPATH=OFF"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtvirtualkeyboard-everywhere-src-6.7.2.tar.xz",
-                    "sha256": "320664b55a0960ff79c1b822dcf6e8cebe3e08b791147d41b570996d81ce180f",
+                    "url": "https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtvirtualkeyboard-everywhere-src-6.9.0.tar.xz",
+                    "sha256": "b85489ffbdd50cc42ea6a74f266215782045668a99cafc73007f6b4b28d69127",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 7927,
                         "stable-only": true,
                         "versions": {
-                            "<": "6.8.0"
+                            "<": "6.10.0"
                         },
-                        "url-template": "https://download.qt.io/official_releases/qt/6.7/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
+                        "url-template": "https://download.qt.io/official_releases/qt/6.9/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
                     }
                 }
             ]
@@ -41,7 +45,10 @@
             "name": "plasma-keyboard",
             "buildsystem": "cmake-ninja",
             "sources": [
-                { "type": "dir", "path": "." }
+                {
+                    "type": "dir",
+                    "path": "."
+                }
             ]
         }
     ]
