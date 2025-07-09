@@ -24,6 +24,7 @@
 
 #include "inputmethod_p.h"
 #include "inputplugin.h"
+#include "inputpanelwindow.h"
 #include "qwaylandinputpanelshellintegration_p.h"
 #include "qwaylandinputpanelsurface_p.h"
 
@@ -283,6 +284,7 @@ int main(int argc, char **argv)
     }
 
     qmlRegisterType<InputThing>("org.kde.plasma.keyboard", 1, 0, "InputThing");
+    qmlRegisterType<InputPanelWindow>("org.kde.plasma.keyboard", 1, 0, "InputPanelWindow");
 
     QQmlApplicationEngine view;
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {

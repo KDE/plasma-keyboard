@@ -8,10 +8,12 @@ import QtQuick
 import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
 
-Window {
+InputPanelWindow {
+    id: root
+    height: Screen.height
     width: Screen.width
-    height: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
-    color: Qt.transparent
+    interactiveHeight: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
+    color: 'transparent'
 
     InputThing {
         id: thing
@@ -21,7 +23,9 @@ Window {
 
     InputPanel {
         id: inputPanel
-        anchors.fill: parent
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
         focusPolicy: Qt.NoFocus
 
         Component.onCompleted: {

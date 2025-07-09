@@ -4,7 +4,14 @@ ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DA
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/text-input/text-input-unstable-v1.xml BASENAME text-input-unstable-v1)
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL "${Wayland_DATADIR}/wayland.xml" BASENAME wayland)
 
-target_sources(plasma-keyboard PRIVATE main.cpp inputmethod.cpp inputplugin.cpp qwaylandinputpanelshellintegration.cpp qwaylandinputpanelsurface.cpp)
+target_sources(plasma-keyboard PRIVATE
+    main.cpp
+    inputpanelwindow.cpp
+    inputmethod.cpp
+    inputplugin.cpp
+    qwaylandinputpanelshellintegration.cpp
+    qwaylandinputpanelsurface.cpp
+)
 
 ecm_add_qml_module(plasma-keyboard URI "org.kde.plasma.keyboard" GENERATE_PLUGIN_SOURCE)
 ecm_target_qml_sources(plasma-keyboard SOURCES
