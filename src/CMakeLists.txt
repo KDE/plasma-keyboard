@@ -10,6 +10,7 @@ qt_add_dbus_interfaces(dbusinterface_SRCS
 
 target_sources(plasma-keyboard PRIVATE
     main.cpp
+    inputlisteneritem.cpp
     inputmethod.cpp
     inputpanelwindow.cpp
     inputplugin.cpp

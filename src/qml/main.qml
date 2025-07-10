@@ -15,7 +15,7 @@ InputPanelWindow {
     interactiveHeight: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
     color: 'transparent'
 
-    InputThing {
+    InputListenerItem {
         id: thing
         focus: true
         engine: inputPanel.InputContext.inputEngine
