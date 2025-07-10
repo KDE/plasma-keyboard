@@ -11,16 +11,26 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
-KCM.SimpleKCM {
+KCM.ScrollViewKCM {
     id: root
 
-    Kirigami.FormLayout {
+    view: LocaleSelectorListView {
+        id: list
+
+        Kirigami.Separator {
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
+    }
+
+    footer: Kirigami.FormLayout {
         id: formLayout
 
         QQC2.CheckBox {
             id: soundsEnabled
-            Kirigami.FormData.label: i18n('General:')
-            text: i18n('Key press sound')
+            Kirigami.FormData.label: i18n('Key press feedback:')
+            text: i18n('Sound')
 
             checked: kcm.soundEnabled
             onCheckedChanged: {
@@ -31,7 +41,7 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: vibrationEnabled
-            text: i18n('Key press vibration')
+            text: i18n('Vibration')
 
             checked: kcm.vibrationEnabled
             onCheckedChanged: {

@@ -16,6 +16,7 @@ PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &met
 
     m_soundEnabled = PlasmaKeyboardSettings::self()->soundEnabled();
     m_vibrationEnabled = PlasmaKeyboardSettings::self()->vibrationEnabled();
+    m_enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
 }
 
 bool PlasmaKeyboardKcm::soundEnabled() const
@@ -52,6 +53,35 @@ void PlasmaKeyboardKcm::setVibrationEnabled(bool vibrationEnabled)
     setNeedsSave(true);
 }
 
+QStringList PlasmaKeyboardKcm::enabledLocales() const
+{
+    return m_enabledLocales;
+}
+
+void PlasmaKeyboardKcm::enableLocale(const QString &locale)
+{
+    if (m_enabledLocales.contains(locale)) {
+        return;
+    }
+
+    m_enabledLocales.append(locale);
+    Q_EMIT enabledLocalesChanged();
+
+    setNeedsSave(true);
+}
+
+void PlasmaKeyboardKcm::disableLocale(const QString &locale)
+{
+    if (!m_enabledLocales.contains(locale)) {
+        return;
+    }
+
+    m_enabledLocales.removeAll(locale);
+    Q_EMIT enabledLocalesChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -60,6 +90,11 @@ bool PlasmaKeyboardKcm::isSaveNeeded() const
 void PlasmaKeyboardKcm::load()
 {
     setSoundEnabled(PlasmaKeyboardSettings::self()->soundEnabled());
+    setVibrationEnabled(PlasmaKeyboardSettings::self()->vibrationEnabled());
+
+    m_enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
+    Q_EMIT enabledLocalesChanged();
+
     setNeedsSave(false);
 }
 
@@ -67,6 +102,7 @@ void PlasmaKeyboardKcm::save()
 {
     PlasmaKeyboardSettings::self()->setSoundEnabled(m_soundEnabled);
     PlasmaKeyboardSettings::self()->setVibrationEnabled(m_vibrationEnabled);
+    PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

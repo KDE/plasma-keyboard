@@ -15,6 +15,7 @@ class PlasmaKeyboardKcm : public KQuickManagedConfigModule
     Q_OBJECT
     Q_PROPERTY(bool soundEnabled READ soundEnabled WRITE setSoundEnabled NOTIFY soundEnabledChanged)
     Q_PROPERTY(bool vibrationEnabled READ vibrationEnabled WRITE setVibrationEnabled NOTIFY vibrationEnabledChanged)
+    Q_PROPERTY(QStringList enabledLocales READ enabledLocales NOTIFY enabledLocalesChanged)
 
 public:
     PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData);
@@ -25,6 +26,11 @@ public:
     bool vibrationEnabled() const;
     void setVibrationEnabled(bool vibrationEnabled);
 
+    QStringList enabledLocales() const;
+
+    Q_INVOKABLE void enableLocale(const QString &locale);
+    Q_INVOKABLE void disableLocale(const QString &locale);
+
     bool isSaveNeeded() const override;
 
 public Q_SLOTS:
@@ -34,11 +40,14 @@ public Q_SLOTS:
 Q_SIGNALS:
     void soundEnabledChanged();
     void vibrationEnabledChanged();
+    void enabledLocalesChanged();
 
 private:
     bool m_soundEnabled = false;
     bool m_vibrationEnabled = true;
     bool m_saveNeeded = false;
+
+    QStringList m_enabledLocales;
 
     PlasmaKeyboardSettings *m_settings = nullptr;
 };
