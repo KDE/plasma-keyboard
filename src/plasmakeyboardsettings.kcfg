@@ -18,5 +18,8 @@
         <entry key="vibrationMs" type="int">
             <default>10</default>
         </entry>
+        <entry key="enabledLocales" type="StringList">
+            <default>en_US</default>
+        </entry>
     </group>
 </kcfg>

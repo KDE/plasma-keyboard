@@ -8,6 +8,8 @@ import QtQuick
 import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
 
+import org.kde.plasma.keyboard
+
 InputPanelWindow {
     id: root
     height: Screen.height
@@ -28,8 +30,16 @@ InputPanelWindow {
         anchors.bottom: parent.bottom
         focusPolicy: Qt.NoFocus
 
+        Connections {
+            target: PlasmaKeyboardSettings
+            function onEnabledLocalesChanged() {
+                VirtualKeyboardSettings.activeLocales = PlasmaKeyboardSettings.enabledLocales;
+            }
+        }
+
         Component.onCompleted: {
             VirtualKeyboardSettings.styleName = "Breeze";
+            VirtualKeyboardSettings.activeLocales = PlasmaKeyboardSettings.enabledLocales;
         }
     }
 }

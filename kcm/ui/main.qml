@@ -11,10 +11,10 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
-KCM.SimpleKCM {
+KCM.ScrollViewKCM {
     id: root
 
-    Kirigami.FormLayout {
+    header: Kirigami.FormLayout {
         id: formLayout
 
         QQC2.CheckBox {
@@ -38,6 +38,21 @@ KCM.SimpleKCM {
                 kcm.vibrationEnabled = checked;
                 checked = Qt.binding(() => kcm.vibrationEnabled)
             }
+        }
+    }
+
+    view: LocaleSelectorListView {
+        id: list
+
+        headerPositioning: ListView.OverlayHeader
+        header: Kirigami.InlineViewHeader {
+            width: list.width
+            text: i18nc("@title:view", "Keyboard Languages")
+
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
+            leftPadding: Kirigami.Units.largeSpacing
+            rightPadding: Kirigami.Units.largeSpacing
         }
     }
 }
