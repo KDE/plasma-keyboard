@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2016 The Qt Company Ltd.
-// SPDX-FileCopyrightText: 2025 Devin Lin
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
 import QtQuick
@@ -10,6 +10,8 @@ import QtQuick.Controls as QQC2
 import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
+
+import org.kde.plasma.keyboard
 
 KeyboardStyle {
     id: currentStyle
@@ -99,8 +101,9 @@ KeyboardStyle {
         color: keyboardBackgroundColor
     }
 
-    keyPanel: KeyPanel {
+    keyPanel: BreezeKeyPanel {
         id: keyPanel
+
         Rectangle {
             id: keyBackground
             radius: buttonRadius
@@ -188,8 +191,9 @@ KeyboardStyle {
         ]
     }
 
-    backspaceKeyPanel: KeyPanel {
+    backspaceKeyPanel: BreezeKeyPanel {
         id: backspaceKeyPanel
+
         Rectangle {
             id: backspaceKeyBackground
             radius: buttonRadius
@@ -232,8 +236,9 @@ KeyboardStyle {
         ]
     }
 
-    languageKeyPanel: KeyPanel {
+    languageKeyPanel: BreezeKeyPanel {
         id: languageKeyPanel
+
         Rectangle {
             id: languageKeyBackground
             radius: buttonRadius
@@ -276,8 +281,9 @@ KeyboardStyle {
         ]
     }
 
-    enterKeyPanel: KeyPanel {
+    enterKeyPanel: BreezeKeyPanel {
         id: enterKeyPanel
+
         Rectangle {
             id: enterKeyBackground
             radius: buttonRadius
@@ -371,8 +377,9 @@ KeyboardStyle {
         ]
     }
 
-    hideKeyPanel: KeyPanel {
+    hideKeyPanel: BreezeKeyPanel {
         id: hideKeyPanel
+
         Rectangle {
             id: hideKeyBackground
             radius: buttonRadius
@@ -414,8 +421,9 @@ KeyboardStyle {
         ]
     }
 
-    shiftKeyPanel: KeyPanel {
+    shiftKeyPanel: BreezeKeyPanel {
         id: shiftKeyPanel
+
         Rectangle {
             id: shiftKeyBackground
             radius: buttonRadius
@@ -479,8 +487,9 @@ KeyboardStyle {
         ]
     }
 
-    spaceKeyPanel: KeyPanel {
+    spaceKeyPanel: BreezeKeyPanel {
         id: spaceKeyPanel
+
         Rectangle {
             id: spaceKeyBackground
             radius: buttonRadius
@@ -521,8 +530,9 @@ KeyboardStyle {
         ]
     }
 
-    symbolKeyPanel: KeyPanel {
+    symbolKeyPanel: BreezeKeyPanel {
         id: symbolKeyPanel
+
         Rectangle {
             id: symbolKeyBackground
             radius: buttonRadius
@@ -573,8 +583,9 @@ KeyboardStyle {
         ]
     }
 
-    modeKeyPanel: KeyPanel {
+    modeKeyPanel: BreezeKeyPanel {
         id: modeKeyPanel
+
         Rectangle {
             id: modeKeyBackground
             radius: buttonRadius
@@ -638,8 +649,9 @@ KeyboardStyle {
         ]
     }
 
-    handwritingKeyPanel: KeyPanel {
+    handwritingKeyPanel: BreezeKeyPanel {
         id: handwritingKeyPanel
+
         Rectangle {
             id: hwrKeyBackground
             radius: buttonRadius

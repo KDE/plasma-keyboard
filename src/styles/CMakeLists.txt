@@ -3,10 +3,9 @@
 
 ecm_add_qml_module(breezestyle URI QtQuick.VirtualKeyboard.Styles.Breeze GENERATE_PLUGIN_SOURCE DEPENDENCIES QtQuick)
 
-# target_sources(breezestyle PRIVATE ...)
-
 ecm_target_qml_sources(breezestyle SOURCES
     breeze/style.qml
+    breeze/BreezeKeyPanel.qml
 )
 
 target_link_libraries(breezestyle
@@ -18,6 +17,3 @@ target_link_libraries(breezestyle
 )
 
 ecm_finalize_qml_module(breezestyle)
-
-# install(FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/bigscreen)
-# install(DIRECTORY plasma/ DESTINATION ${KDE_INSTALL_QMLDIR}/QtQuick/VirtualKeyboard/Styles/plasma)

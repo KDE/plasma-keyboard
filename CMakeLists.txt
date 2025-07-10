@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 
 project(plasma-keyboard VERSION "1.0")
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(QT_MIN_VERSION "6.5.0")
 set(KF_MIN_VERSION "6.0.0")
 
@@ -32,6 +35,8 @@ endif()
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
+    KCMUtils
+    Config
 )
 
 ecm_set_disabled_deprecation_versions(QT 6.9.0
@@ -42,6 +47,7 @@ find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
 
+add_subdirectory(kcm)
 add_subdirectory(src)
 
 ki18n_install(po)
