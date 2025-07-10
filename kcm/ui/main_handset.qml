@@ -24,6 +24,12 @@ KCM.SimpleKCM {
         spacing: 0
         width: parent.width
 
+        FormCard.FormCard {
+            FormCard.FormTextFieldDelegate {
+                label: i18n("Test the virtual keyboard…")
+            }
+        }
+
         FormCard.FormHeader {
             title: i18nc("@title:group", "Feedback")
         }
@@ -52,6 +58,25 @@ KCM.SimpleKCM {
                 onCheckedChanged: {
                     kcm.vibrationEnabled = checked;
                     checked = Qt.binding(() => kcm.vibrationEnabled)
+                }
+            }
+        }
+
+        FormCard.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            FormCard.FormButtonDelegate {
+                id: languageList
+                text: i18n('Languages')
+                icon.name: 'languages'
+                onClicked: kcm.push(localePage)
+
+                Kirigami.ScrollablePage {
+                    id: localePage
+                    visible: false
+                    title: i18n('Keyboard Languages')
+
+                    LocaleSelectorListView {}
                 }
             }
         }
