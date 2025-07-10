@@ -34,13 +34,35 @@ InputListenerItem::InputListenerItem()
     });
     connect(&m_input, &InputPlugin::surroundingTextChanged, this, [this] {
         QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
-    });
-    connect(&m_input, &InputPlugin::receivedCommit, this, [] {
-        QGuiApplication::inputMethod()->setVisible(true);
+
+        if (m_input.hasContext()) {
+            // Re-activate when text input activates, and there is context
+            QGuiApplication::inputMethod()->setVisible(true);
+            window()->setVisible(true);
+        }
     });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
         window()->setVisible(QGuiApplication::inputMethod()->isVisible());
     });
+
+    // Don't hook into the &InputPlugin::receivedCommit signal and call setVisible(true)
+    // -> it can cause a race condition as receivedCommit is emitted when the text field loses focus.
+    //
+    // If the virtual keyboard (vkbd) is manually closed and then the text field loses focus,
+    // setVisible(true/false) calls in quick succession may reopen the vkbd in a broken state.
+    //
+    // Series of events:
+    // - vkbd is manually closed (by user), but text field still focused -> setVisible(false)
+    // - User unfocuses the text field
+    // - receivedCommit() emitted -> setVisible(true)
+    // - contextChanged() (m_input.hasContext() = false) -> setVisible(false)
+    // - keyboard gets reopened by KWin because the input context gets from setVisible(true) finishes initializing!
+    //
+    // This happens because of a delay in InputPanelV1Window initialization, which confuses KWin
+    // into creating a new input context even when no text field is focused.
+    //
+    // TODO: Investigate other places this might happen and how to fix it.
+
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
 }
 
