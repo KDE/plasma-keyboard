@@ -19,7 +19,7 @@
             <default>10</default>
         </entry>
         <entry key="enabledLocales" type="StringList">
-            <default>en_US</default>
+            <default></default>
         </entry>
     </group>
 </kcfg>

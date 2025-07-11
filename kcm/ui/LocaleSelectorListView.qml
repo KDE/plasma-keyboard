@@ -48,10 +48,10 @@ ListView {
 
     headerPositioning: ListView.OverlayHeader
     header: QQC2.ToolBar {
+        width: parent.width
         z: 999 // On top of content
         position: QQC2.ToolBar.header
 
-        width: parent.width
         topPadding: Kirigami.Units.largeSpacing
         bottomPadding: Kirigami.Units.largeSpacing
         leftPadding: Kirigami.Units.largeSpacing
@@ -60,11 +60,24 @@ ListView {
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
-        contentItem: Kirigami.SearchField {
-            id: searchField
-            onTextChanged: {
-                root.searchText = text;
-                searchField.forceActiveFocus();
+        contentItem: ColumnLayout {
+            spacing: 0
+
+            Kirigami.SearchField {
+                id: searchField
+                Layout.fillWidth: true
+                onTextChanged: {
+                    root.searchText = text;
+                    searchField.forceActiveFocus();
+                }
+            }
+
+            Kirigami.InlineMessage {
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.fillWidth: true
+                text: i18n("No languages selected. The default keyboard layout for the system will be used.")
+                type: Kirigami.MessageType.Information
+                visible: kcm.enabledLocales.length === 0
             }
         }
     }
