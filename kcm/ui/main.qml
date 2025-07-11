@@ -14,13 +14,23 @@ import org.kde.kcmutils as KCM
 KCM.ScrollViewKCM {
     id: root
 
-    header: Kirigami.FormLayout {
+    view: LocaleSelectorListView {
+        id: list
+
+        Kirigami.Separator {
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
+    }
+
+    footer: Kirigami.FormLayout {
         id: formLayout
 
         QQC2.CheckBox {
             id: soundsEnabled
-            Kirigami.FormData.label: i18n('General:')
-            text: i18n('Key press sound')
+            Kirigami.FormData.label: i18n('Key press feedback:')
+            text: i18n('Sound')
 
             checked: kcm.soundEnabled
             onCheckedChanged: {
@@ -31,28 +41,13 @@ KCM.ScrollViewKCM {
 
         QQC2.CheckBox {
             id: vibrationEnabled
-            text: i18n('Key press vibration')
+            text: i18n('Vibration')
 
             checked: kcm.vibrationEnabled
             onCheckedChanged: {
                 kcm.vibrationEnabled = checked;
                 checked = Qt.binding(() => kcm.vibrationEnabled)
             }
-        }
-    }
-
-    view: LocaleSelectorListView {
-        id: list
-
-        headerPositioning: ListView.OverlayHeader
-        header: Kirigami.InlineViewHeader {
-            width: list.width
-            text: i18nc("@title:view", "Keyboard Languages")
-
-            topPadding: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.largeSpacing
-            leftPadding: Kirigami.Units.largeSpacing
-            rightPadding: Kirigami.Units.largeSpacing
         }
     }
 }
