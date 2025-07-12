@@ -2,10 +2,12 @@
     "KPlugin": {
         "Authors": [
             {
-                "Name": "Devin Lin"
+                "Name": "Devin Lin",
+                "Name[x-test]": "xxDevin Linxx"
             }
         ],
         "Description": "Configuration for Plasma Keyboard",
+        "Description[x-test]": "xxConfiguration for Plasma Keyboardxx",
         "FormFactors": [
             "desktop",
             "handset",
@@ -14,8 +16,10 @@
         "Icon": "input-keyboard",
         "License": "GPL",
         "Name": "On-Screen Keyboard",
+        "Name[x-test]": "xxOn-Screen Keyboardxx",
         "Website": "https://kde.org"
     },
     "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard",
+    "X-KDE-Keywords[x-test]": "xxonscreenxx,xxoskxx,xxvirtualkeyboardxx,xxkeyboardxx",
     "X-KDE-System-Settings-Parent-Category": "keyboard"
 }
