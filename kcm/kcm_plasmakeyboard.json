@@ -3,10 +3,22 @@
         "Authors": [
             {
                 "Name": "Devin Lin",
+                "Name[ca]": "Devin Lin",
+                "Name[es]": "Devin Lin",
+                "Name[he]": "דווין לין",
+                "Name[nl]": "Devin Lin",
+                "Name[sl]": "Devin Lin",
+                "Name[uk]": "Devin Lin",
                 "Name[x-test]": "xxDevin Linxx"
             }
         ],
         "Description": "Configuration for Plasma Keyboard",
+        "Description[ca]": "Configuració del teclat del Plasma",
+        "Description[es]": "Configuración del teclado de Plasma",
+        "Description[he]": "הגדרות למקלדת פלזמה",
+        "Description[nl]": "Configuratie voor Plasma toetsenbord",
+        "Description[sl]": "Konfiguracija za tipkovnico Plasme",
+        "Description[uk]": "Налаштовування клавіатури Плазми",
         "Description[x-test]": "xxConfiguration for Plasma Keyboardxx",
         "FormFactors": [
             "desktop",
@@ -16,10 +28,22 @@
         "Icon": "input-keyboard",
         "License": "GPL",
         "Name": "On-Screen Keyboard",
+        "Name[ca]": "Teclat en pantalla",
+        "Name[es]": "Teclado en pantalla",
+        "Name[he]": "מקלדת על המסך",
+        "Name[nl]": "Toetsenbord op scherm",
+        "Name[sl]": "Zaslonska tipkovnica",
+        "Name[uk]": "Екранна клавіатура",
         "Name[x-test]": "xxOn-Screen Keyboardxx",
         "Website": "https://kde.org"
     },
     "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard",
+    "X-KDE-Keywords[ca]": "en pantalla,osk,teclat virtual,teclat",
+    "X-KDE-Keywords[es]": "en pantalla,osk,teclado virtual,teclado",
+    "X-KDE-Keywords[he]": "על המסך,מקלדת על המסך,מקלדת וירטואלית,מקלדת",
+    "X-KDE-Keywords[nl]": "onscreen,osk,virtualkeyboard,keyboard",
+    "X-KDE-Keywords[sl]": "na zaslonu,osk,navidezna tipkovnica,tipkovnica",
+    "X-KDE-Keywords[uk]": "onscreen,osk,virtualkeyboard,keyboard,екранна,екран,клавіатура",
     "X-KDE-Keywords[x-test]": "xxonscreenxx,xxoskxx,xxvirtualkeyboardxx,xxkeyboardxx",
     "X-KDE-System-Settings-Parent-Category": "keyboard"
 }
