@@ -66,6 +66,7 @@ ListView {
             Kirigami.SearchField {
                 id: searchField
                 placeholderText: i18n("Filter languages…")
+                Accessible.name: i18n("Filter languages")
 
                 Layout.fillWidth: true
 

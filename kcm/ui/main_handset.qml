@@ -26,7 +26,7 @@ KCM.SimpleKCM {
 
         FormCard.FormCard {
             FormCard.FormTextFieldDelegate {
-                label: i18n("Type anything here…")
+                label: i18n("Test the virtual keyboard…")
             }
         }
 
