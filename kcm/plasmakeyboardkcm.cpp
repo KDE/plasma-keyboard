@@ -58,7 +58,7 @@ QStringList PlasmaKeyboardKcm::enabledLocales() const
     return m_enabledLocales;
 }
 
-void PlasmaKeyboardKcm::enableLocale(QString locale)
+void PlasmaKeyboardKcm::enableLocale(const QString &locale)
 {
     if (m_enabledLocales.contains(locale)) {
         return;
@@ -70,7 +70,7 @@ void PlasmaKeyboardKcm::enableLocale(QString locale)
     setNeedsSave(true);
 }
 
-void PlasmaKeyboardKcm::disableLocale(QString locale)
+void PlasmaKeyboardKcm::disableLocale(const QString &locale)
 {
     if (!m_enabledLocales.contains(locale)) {
         return;

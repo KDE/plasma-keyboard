@@ -65,7 +65,10 @@ ListView {
 
             Kirigami.SearchField {
                 id: searchField
+                placeholderText: i18n("Filter languages…")
+
                 Layout.fillWidth: true
+
                 onTextChanged: {
                     root.searchText = text;
                     searchField.forceActiveFocus();

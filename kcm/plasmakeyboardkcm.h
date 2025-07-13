@@ -28,8 +28,8 @@ public:
 
     QStringList enabledLocales() const;
 
-    Q_INVOKABLE void enableLocale(QString locale);
-    Q_INVOKABLE void disableLocale(QString locale);
+    Q_INVOKABLE void enableLocale(const QString &locale);
+    Q_INVOKABLE void disableLocale(const QString &locale);
 
     bool isSaveNeeded() const override;
 
