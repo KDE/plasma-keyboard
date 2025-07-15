@@ -21,14 +21,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
-msgstr ""
+msgstr "反馈"
 
 #: ui/main_phone.qml:35
 #, kde-format
 msgid "Whether to emit a sound on key press"
-msgstr ""
+msgstr "是否在按键时发声"
 
 #: ui/main_phone.qml:49
 #, kde-format
 msgid "Whether to vibrate on key press"
-msgstr ""
+msgstr "是否在按键时震动"
