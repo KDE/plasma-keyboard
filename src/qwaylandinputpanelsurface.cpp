@@ -19,6 +19,7 @@ QWaylandInputPanelSurface::QWaylandInputPanelSurface(struct ::zwp_input_panel_su
 QWaylandInputPanelSurface::~QWaylandInputPanelSurface()
 {
     qCDebug(qLcQpaShellIntegration) << Q_FUNC_INFO;
+    zwp_input_panel_surface_v1_destroy(object());
 }
 
 void QWaylandInputPanelSurface::applyConfigure()
