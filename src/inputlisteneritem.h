@@ -30,6 +30,10 @@ public:
     void keyReleaseEvent(QKeyEvent *event) override;
     void inputMethodEvent(QInputMethodEvent *event) override;
 
+Q_SIGNALS:
+    void keyNavigationPressed(int key);
+    void keyNavigationReleased(int key);
+
 private:
     InputPlugin m_input;
 };

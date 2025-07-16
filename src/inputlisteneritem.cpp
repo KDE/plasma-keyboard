@@ -21,9 +21,20 @@ static const std::set<int> IGNORED_KEYS = {
     Qt::Key_Context1 // Triggered by "special keys" button
 };
 
+static const auto KEYBOARD_NAVIGATION_KEYS = {
+    Qt::Key_Left,
+    Qt::Key_Right,
+    Qt::Key_Up,
+    Qt::Key_Down,
+    Qt::Key_Return
+};
+
 InputListenerItem::InputListenerItem()
-        : m_input(&(*s_im))
+    : m_input(&(*s_im))
 {
+    // Grab and listen to physical keyboard input
+    m_input.setGrabbing(true);
+
     connect(&m_input, &InputPlugin::contextChanged, this, [this] {
         if (m_input.hasContext()) {
             QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
@@ -43,6 +54,41 @@ InputListenerItem::InputListenerItem()
     });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
         window()->setVisible(QGuiApplication::inputMethod()->isVisible());
+    });
+
+    connect(&m_input, &InputPlugin::keyPressed, this, [this](QKeyEvent *keyEvent) {
+        if (keyEvent->modifiers() != Qt::NoModifier) {
+            return;
+        }
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        // Forward and accept keyboard navigation events
+        for (const auto key : KEYBOARD_NAVIGATION_KEYS) {
+            if (keyEvent->key() == key) {
+                keyEvent->accept();
+                Q_EMIT keyNavigationPressed(key);
+                break;
+            }
+        }
+    });
+    connect(&m_input, &InputPlugin::keyReleased, this, [this](QKeyEvent *keyEvent) {
+        if (keyEvent->modifiers() != Qt::NoModifier) {
+            return;
+        }
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        // Forward and accept keyboard navigation events
+        for (const auto key : KEYBOARD_NAVIGATION_KEYS) {
+            if (keyEvent->key() == key) {
+                keyEvent->accept();
+                Q_EMIT keyNavigationReleased(key);
+                break;
+            }
+        }
     });
 
     // Don't hook into the &InputPlugin::receivedCommit signal and call setVisible(true)
@@ -72,8 +118,9 @@ void InputListenerItem::setEngine(QVirtualKeyboardInputEngine *engine) {
 
 QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
 {
-    if (!m_input.hasContext())
+    if (!m_input.hasContext()) {
         return {};
+    }
 
     switch (query) {
     case Qt::ImEnabled:
