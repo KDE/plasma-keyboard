@@ -11,8 +11,10 @@
                 "Name[ka]": "Devin Lin",
                 "Name[nl]": "Devin Lin",
                 "Name[sl]": "Devin Lin",
+                "Name[tr]": "Devin Lin",
                 "Name[uk]": "Devin Lin",
-                "Name[x-test]": "xxDevin Linxx"
+                "Name[x-test]": "xxDevin Linxx",
+                "Name[zh_CN]": "Devin Lin"
             }
         ],
         "Description": "Configuration for Plasma Keyboard",
@@ -24,8 +26,10 @@
         "Description[ka]": "კონფიგურაცია Plasma Keyboard-სთვის",
         "Description[nl]": "Configuratie voor Plasma toetsenbord",
         "Description[sl]": "Konfiguracija za tipkovnico Plasme",
+        "Description[tr]": "Plasma Klavye Yapılandırması",
         "Description[uk]": "Налаштовування клавіатури Плазми",
         "Description[x-test]": "xxConfiguration for Plasma Keyboardxx",
+        "Description[zh_CN]": "Plasma 键盘配置",
         "FormFactors": [
             "desktop",
             "handset",
@@ -42,8 +46,10 @@
         "Name[ka]": "ეკრანის კლავიატურა",
         "Name[nl]": "Toetsenbord op scherm",
         "Name[sl]": "Zaslonska tipkovnica",
+        "Name[tr]": "Ekran Üzeri Klavye",
         "Name[uk]": "Екранна клавіатура",
         "Name[x-test]": "xxOn-Screen Keyboardxx",
+        "Name[zh_CN]": "屏幕键盘",
         "Website": "https://kde.org"
     },
     "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard",
@@ -55,7 +61,9 @@
     "X-KDE-Keywords[ka]": "onscreen,osk,virtualkeyboard,keyboard,ეკრანზე, კლავიატურა ეკრანზე, კლავიატურა",
     "X-KDE-Keywords[nl]": "onscreen,osk,virtualkeyboard,keyboard",
     "X-KDE-Keywords[sl]": "na zaslonu,osk,navidezna tipkovnica,tipkovnica",
+    "X-KDE-Keywords[tr]": "osk,eük,ekran,ekran klavyesi,sanal klavye,klavye,sanal,osd",
     "X-KDE-Keywords[uk]": "onscreen,osk,virtualkeyboard,keyboard,екранна,екран,клавіатура",
     "X-KDE-Keywords[x-test]": "xxonscreenxx,xxoskxx,xxvirtualkeyboardxx,xxkeyboardxx",
+    "X-KDE-Keywords[zh_CN]": "onscreen,osk,virtualkeyboard,keyboard,pingmujianpan,pingmujianpan,pingshangjianpan,xunijianpan,jianpan,屏幕键盘,屏幕显示,屏上键盘,虚拟键盘,键盘",
     "X-KDE-System-Settings-Parent-Category": "keyboard"
 }
