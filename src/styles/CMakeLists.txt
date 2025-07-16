@@ -6,6 +6,7 @@ ecm_add_qml_module(breezestyle URI QtQuick.VirtualKeyboard.Styles.Breeze GENERAT
 ecm_target_qml_sources(breezestyle SOURCES
     breeze/style.qml
     breeze/BreezeKeyPanel.qml
+    breeze/Theme.qml
 )
 
 target_link_libraries(breezestyle
