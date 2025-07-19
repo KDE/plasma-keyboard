@@ -1,0 +1,35 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2025 Alexander Yavorsky <kekcuha@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-07-11 00:44+0000\n"
+"PO-Revision-Date: 2025-07-18 18:12+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.07.80\n"
+
+#: ui/main_phone.qml:28
+#, kde-format
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Обратная связь"
+
+#: ui/main_phone.qml:35
+#, kde-format
+msgid "Whether to emit a sound on key press"
+msgstr "Сопровождать нажатие клавиш звуком"
+
+#: ui/main_phone.qml:49
+#, kde-format
+msgid "Whether to vibrate on key press"
+msgstr "Сопровождать нажатие клавиш вибрацией"
