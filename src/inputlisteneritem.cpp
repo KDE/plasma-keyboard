@@ -21,9 +21,25 @@ static const std::set<int> IGNORED_KEYS = {
     Qt::Key_Context1 // Triggered by "special keys" button
 };
 
+// Keys to always capture for keyboard navigation
+static const QList<int> KEYBOARD_NAVIGATION_CAPTURE_KEYS = {
+    Qt::Key_Left,
+    Qt::Key_Right,
+    Qt::Key_Up,
+    Qt::Key_Down,
+};
+
+// Keys to capture when keyboard navigation is active
+static const QList<int> KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS = {
+    Qt::Key_Return
+};
+
 InputListenerItem::InputListenerItem()
-        : m_input(&(*s_im))
+    : m_input(&(*s_im))
 {
+    // Grab and listen to physical keyboard input
+    m_input.setGrabbing(true);
+
     connect(&m_input, &InputPlugin::contextChanged, this, [this] {
         if (m_input.hasContext()) {
             QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
@@ -43,6 +59,51 @@ InputListenerItem::InputListenerItem()
     });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
         window()->setVisible(QGuiApplication::inputMethod()->isVisible());
+    });
+
+    connect(&m_input, &InputPlugin::keyPressed, this, [this](QKeyEvent *keyEvent) {
+        if (keyEvent->modifiers() != Qt::NoModifier) {
+            return;
+        }
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
+        if (m_keyboardNavigationActive) {
+            keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
+        }
+
+        // Forward and accept keyboard navigation events
+        for (const auto key : keys) {
+            if (keyEvent->key() == key) {
+                keyEvent->accept();
+                Q_EMIT keyNavigationPressed(key);
+                break;
+            }
+        }
+    });
+    connect(&m_input, &InputPlugin::keyReleased, this, [this](QKeyEvent *keyEvent) {
+        if (keyEvent->modifiers() != Qt::NoModifier) {
+            return;
+        }
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
+        if (m_keyboardNavigationActive) {
+            keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
+        }
+
+        // Forward and accept keyboard navigation events
+        for (const auto key : keys) {
+            if (keyEvent->key() == key) {
+                keyEvent->accept();
+                Q_EMIT keyNavigationReleased(key);
+                break;
+            }
+        }
     });
 
     // Don't hook into the &InputPlugin::receivedCommit signal and call setVisible(true)
@@ -70,10 +131,16 @@ void InputListenerItem::setEngine(QVirtualKeyboardInputEngine *engine) {
     // TODO: hook into engine events if necessary?
 }
 
+void InputListenerItem::setKeyboardNavigationActive(bool keyboardNavigationActive)
+{
+    m_keyboardNavigationActive = keyboardNavigationActive;
+}
+
 QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
 {
-    if (!m_input.hasContext())
+    if (!m_input.hasContext()) {
         return {};
+    }
 
     switch (query) {
     case Qt::ImEnabled:

@@ -38,7 +38,8 @@ QtObject {
     property color selectionListTextColor: textOnPrimaryColor
     property color selectionListSeparatorColor: primaryLightColor
     property color selectionListBackgroundColor: primaryColor
-    property color navigationHighlightColor: "yellow"
+    property color navigationHighlightColor: Qt.rgba(navigationHighlightBorderColor.r, navigationHighlightBorderColor.g, navigationHighlightBorderColor.b, 0.3)
+    property color navigationHighlightBorderColor: Kirigami.Theme.highlightColor
 
     readonly property real buttonRadius: Kirigami.Units.cornerRadius
 }

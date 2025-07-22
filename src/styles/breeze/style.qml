@@ -746,9 +746,10 @@ KeyboardStyle {
     }
 
     navigationHighlight: Rectangle {
-        color: "transparent"
-        border.color: theme.navigationHighlightColor
-        border.width: 5
+        color: theme.navigationHighlightColor
+        border.color: theme.navigationHighlightBorderColor
+        border.width: 3
+        radius: theme.buttonRadius + border.width // Adjust due to border width
     }
 
     traceInputKeyPanelDelegate: TraceInputKeyPanel {
