@@ -46,6 +46,7 @@ ecm_set_disabled_deprecation_versions(QT 6.9.0
 find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
+find_package(PlasmaWaylandProtocols REQUIRED)
 
 add_subdirectory(kcm)
 add_subdirectory(src)

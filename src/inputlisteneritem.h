@@ -12,6 +12,7 @@
 #include <QVirtualKeyboardInputEngine>
 
 #include "inputplugin.h"
+#include "kwinfakeinput.h"
 
 class InputListenerItem : public QQuickItem
 {
@@ -38,5 +39,6 @@ Q_SIGNALS:
 
 private:
     InputPlugin m_input;
+    KWinFakeInput m_fakeInput;
     bool m_keyboardNavigationActive = false;
 };

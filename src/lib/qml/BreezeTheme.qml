@@ -26,6 +26,7 @@ QtObject {
     property color normalKeyBackgroundColor: primaryLightColor
     property color normalKeyPressedBackgroundColor: primaryDarkColor
     property color highlightedKeyBackgroundColor: primaryLightColor
+    property color checkedKeyBackgroundColor: primaryDarkColor
     property color capsLockKeyAccentColor: secondaryColor
     property color modeKeyAccentColor: textOnPrimaryColor
     property color keyTextColor: textOnPrimaryColor

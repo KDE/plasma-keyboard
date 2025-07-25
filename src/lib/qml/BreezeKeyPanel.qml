@@ -6,13 +6,13 @@ import QtQuick.Controls as QQC2
 import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Styles
 
-import org.kde.plasma.keyboard
+import org.kde.plasma.keyboard // This requires being in the plasma-keyboard process
 import org.kde.kirigami as Kirigami
 
 KeyPanel {
     id: root
 
-    property Theme theme
+    property BreezeTheme theme
 
     default property alias contentItem: visualContainer.contentItem
 
@@ -27,6 +27,8 @@ KeyPanel {
             return theme.normalKeyPressedBackgroundColor;
         } else if (control && control.highlighted) {
             return theme.highlightedKeyBackgroundColor;
+        } else if (control && control.checked) {
+            return theme.checkedKeyBackgroundColor;
         }
         return theme.normalKeyBackgroundColor;
     }
