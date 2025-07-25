@@ -22,6 +22,7 @@
 #include "qwaylandinputpanelsurface_p.h"
 #include "plasmakeyboardsettings.h"
 #include "vibration.h"
+#include "plasmakeyboardstate.h"
 
 static bool initPanelIntegration(QWindow *window)
 {
@@ -115,6 +116,7 @@ int main(int argc, char **argv)
         "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
     qmlRegisterSingletonInstance<Vibration>("org.kde.plasma.keyboard", 1, 0,
         "Vibration", &vibration);
+    qmlRegisterSingletonInstance<PlasmaKeyboardState>("org.kde.plasma.keyboard", 1, 0, "PlasmaKeyboardState", PlasmaKeyboardState::self());
 
     QQmlApplicationEngine view;
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {

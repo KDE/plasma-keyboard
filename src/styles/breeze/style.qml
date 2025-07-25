@@ -13,12 +13,13 @@ import QtQuick.Effects
 import org.kde.kirigami as Kirigami
 
 import org.kde.plasma.keyboard
+import org.kde.plasma.keyboard.lib as PlasmaKeyboard
 
 KeyboardStyle {
     id: currentStyle
     readonly property bool compactSelectionList: [InputEngine.InputMode.Pinyin, InputEngine.InputMode.Cangjie, InputEngine.InputMode.Zhuyin].indexOf(InputContext.inputEngine.inputMode) !== -1
 
-    readonly property Theme theme: Theme {
+    readonly property PlasmaKeyboard.BreezeTheme theme: PlasmaKeyboard.BreezeTheme {
         scaleHint: currentStyle.scaleHint
     }
 
@@ -76,7 +77,7 @@ KeyboardStyle {
         color: theme.keyboardBackgroundColor
     }
 
-    keyPanel: BreezeKeyPanel {
+    keyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: keyPanel
         theme: currentStyle.theme
 
@@ -148,7 +149,7 @@ KeyboardStyle {
         ]
     }
 
-    backspaceKeyPanel: BreezeKeyPanel {
+    backspaceKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: backspaceKeyPanel
         theme: currentStyle.theme
 
@@ -178,7 +179,7 @@ KeyboardStyle {
         ]
     }
 
-    languageKeyPanel: BreezeKeyPanel {
+    languageKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: languageKeyPanel
         theme: currentStyle.theme
 
@@ -207,7 +208,7 @@ KeyboardStyle {
         ]
     }
 
-    enterKeyPanel: BreezeKeyPanel {
+    enterKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: enterKeyPanel
         theme: currentStyle.theme
 
@@ -285,7 +286,7 @@ KeyboardStyle {
         ]
     }
 
-    hideKeyPanel: BreezeKeyPanel {
+    hideKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: hideKeyPanel
         theme: currentStyle.theme
 
@@ -314,7 +315,7 @@ KeyboardStyle {
         ]
     }
 
-    shiftKeyPanel: BreezeKeyPanel {
+    shiftKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: shiftKeyPanel
         theme: currentStyle.theme
 
@@ -358,7 +359,7 @@ KeyboardStyle {
         ]
     }
 
-    spaceKeyPanel: BreezeKeyPanel {
+    spaceKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: spaceKeyPanel
         theme: currentStyle.theme
 
@@ -390,7 +391,7 @@ KeyboardStyle {
         ]
     }
 
-    symbolKeyPanel: BreezeKeyPanel {
+    symbolKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: symbolKeyPanel
         theme: currentStyle.theme
 
@@ -427,7 +428,7 @@ KeyboardStyle {
         ]
     }
 
-    modeKeyPanel: BreezeKeyPanel {
+    modeKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: modeKeyPanel
         theme: currentStyle.theme
 
@@ -479,7 +480,7 @@ KeyboardStyle {
         ]
     }
 
-    handwritingKeyPanel: BreezeKeyPanel {
+    handwritingKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: handwritingKeyPanel
         theme: currentStyle.theme
 

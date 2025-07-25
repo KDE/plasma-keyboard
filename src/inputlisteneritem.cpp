@@ -37,6 +37,8 @@ static const QList<int> KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS = {
 InputListenerItem::InputListenerItem()
     : m_input(&(*s_im))
 {
+    m_fakeInput.init();
+
     // Grab and listen to physical keyboard input
     m_input.setGrabbing(true);
 
@@ -62,6 +64,11 @@ InputListenerItem::InputListenerItem()
     });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
         window()->setVisible(QGuiApplication::inputMethod()->isVisible());
+
+        if (!window()->isVisible()) {
+            // Ensure all modifier keys are released
+            m_fakeInput.releaseModifiers();
+        }
     });
 
     connect(&m_input, &InputPlugin::keyPressed, this, [this](QKeyEvent *keyEvent) {
@@ -268,12 +275,23 @@ void InputListenerItem::keyPressEvent(QKeyEvent *event)
         return;
     }
 
-    QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
-    for (auto key : keys) {
-        // Simulate key press only if it's not textual
-        if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
-            m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Pressed, 0);
-        }
+    if (!m_fakeInput.isModifier(event->key())
+        && (m_fakeInput.shouldUseFakeInput(event->key()) || m_fakeInput.isModifierPressed())) {
+        // If this is one of:
+        // - Key to send through fake input, but not a modifier (ex. Escape, Tab)
+        // - Regular key, but a modifier is pressed
+        // Send the press event through fake_input
+        m_fakeInput.pressKey(event->key(), true);
+        return;
+    }
+
+    // We can make the assumption that there is only one key, because the input method never adds modifiers
+    int keysymKey = QXkbCommon::toKeysym(event)[0];
+
+    // Send through input_method_v1
+    // Simulate key press only if it's not textual
+    if (event->text().isEmpty() || keysymKey == XKB_KEY_Return) { // (return is technically "\n")
+        m_input.keysym(QDateTime::currentMSecsSinceEpoch(), keysymKey, InputPlugin::Pressed, 0);
     }
 }
 
@@ -283,11 +301,29 @@ void InputListenerItem::keyReleaseEvent(QKeyEvent *event)
         return;
     }
 
-    QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
-    for (auto key : keys) {
-        if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
+    // TODO: shift on the vkbd has caps lock (double click), this code doesn't account for it yet
+
+    if (m_fakeInput.shouldUseFakeInput(event->key()) || m_fakeInput.isModifierPressed()) {
+        // Send through fake_input
+
+        if (m_fakeInput.isModifier(event->key())) {
+            // Modifier key, set pressed status
+            m_fakeInput.pressModifier(event->key());
+        } else {
+            // One of:
+            // - Key to send through fake input (ex. Escape, Tab)
+            // - Regular key, but with modifier pressed
+            m_fakeInput.pressKey(event->key(), false);
+        }
+
+    } else {
+        // We can make the assumption that there is only one key, because the input method never adds modifiers
+        int keysymKey = QXkbCommon::toKeysym(event)[0];
+
+        // Send through input_method_v1
+        if (event->text().isEmpty() || keysymKey == XKB_KEY_Return) { // (return is technically "\n")
             // Simulate the keyboard press for non textual keys
-            m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Released, 0);
+            m_input.keysym(QDateTime::currentMSecsSinceEpoch(), keysymKey, InputPlugin::Released, 0);
         } else {
             // If we have text coming as a key event, use it to commit the string
             m_input.commit(event->text());

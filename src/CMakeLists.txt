@@ -4,6 +4,8 @@ ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DA
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/text-input/text-input-unstable-v1.xml BASENAME text-input-unstable-v1)
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL "${Wayland_DATADIR}/wayland.xml" BASENAME wayland)
 
+qt6_generate_wayland_protocol_client_sources(plasma-keyboard FILES ${PLASMA_WAYLAND_PROTOCOLS_DIR}/fake-input.xml ${private_code_option})
+
 set_source_files_properties(dbus/org.sigxcpu.Feedback.Haptic.xml PROPERTIES INCLUDE vibrationevent.h)
 qt_add_dbus_interfaces(dbusinterface_SRCS
     dbus/org.sigxcpu.Feedback.Haptic.xml)
@@ -14,6 +16,8 @@ target_sources(plasma-keyboard PRIVATE
     inputmethod.cpp
     inputpanelwindow.cpp
     inputplugin.cpp
+    kwinfakeinput.cpp
+    plasmakeyboardstate.cpp
     qwaylandinputpanelshellintegration.cpp
     qwaylandinputpanelsurface.cpp
     vibration.cpp
@@ -49,5 +53,6 @@ install(TARGETS plasma-keyboard ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.plasma.keyboard.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 add_subdirectory(styles)
+add_subdirectory(lib)
 
 install(DIRECTORY layouts DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
