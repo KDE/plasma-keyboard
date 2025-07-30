@@ -7,6 +7,7 @@
 
 #include "inputlisteneritem.h"
 #include "inputmethod_p.h"
+#include "plasmakeyboardsettings.h"
 
 #include <QTextFormat>
 
@@ -72,17 +73,20 @@ InputListenerItem::InputListenerItem()
             return;
         }
 
-        auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
-        if (m_keyboardNavigationActive) {
-            keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
-        }
+        if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
+            // Keys to capture for keyboard navigation
+            auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
+            if (m_keyboardNavigationActive) {
+                keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
+            }
 
-        // Forward and accept keyboard navigation events
-        for (const auto key : keys) {
-            if (keyEvent->key() == key) {
-                keyEvent->accept();
-                Q_EMIT keyNavigationPressed(key);
-                break;
+            // Forward and accept keyboard navigation events
+            for (const auto key : keys) {
+                if (keyEvent->key() == key) {
+                    keyEvent->accept();
+                    Q_EMIT keyNavigationPressed(key);
+                    break;
+                }
             }
         }
     });
@@ -94,17 +98,20 @@ InputListenerItem::InputListenerItem()
             return;
         }
 
-        auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
-        if (m_keyboardNavigationActive) {
-            keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
-        }
+        if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
+            // Keys to capture for keyboard navigation
+            auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
+            if (m_keyboardNavigationActive) {
+                keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
+            }
 
-        // Forward and accept keyboard navigation events
-        for (const auto key : keys) {
-            if (keyEvent->key() == key) {
-                keyEvent->accept();
-                Q_EMIT keyNavigationReleased(key);
-                break;
+            // Forward and accept keyboard navigation events
+            for (const auto key : keys) {
+                if (keyEvent->key() == key) {
+                    keyEvent->accept();
+                    Q_EMIT keyNavigationReleased(key);
+                    break;
+                }
             }
         }
     });

@@ -49,5 +49,17 @@ KCM.ScrollViewKCM {
                 checked = Qt.binding(() => kcm.vibrationEnabled)
             }
         }
+
+        QQC2.CheckBox {
+            id: keyboardNavigationEnabled
+            Kirigami.FormData.label: i18n('General:')
+            text: i18n('Keyboard navigation')
+
+            checked: kcm.keyboardNavigationEnabled
+            onCheckedChanged: {
+                kcm.keyboardNavigationEnabled = checked;
+                checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
+            }
+        }
     }
 }

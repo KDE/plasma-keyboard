@@ -21,5 +21,8 @@
         <entry key="enabledLocales" type="StringList">
             <default></default>
         </entry>
+        <entry key="keyboardNavigationEnabled" type="bool">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>

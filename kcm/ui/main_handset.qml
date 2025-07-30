@@ -80,5 +80,23 @@ KCM.SimpleKCM {
                 }
             }
         }
+
+        FormCard.FormHeader {
+            title: i18nc("@title:group", "General")
+        }
+
+        FormCard.FormCard {
+            FormCard.FormSwitchDelegate {
+                id: keyboardNavigationEnabled
+                text: i18n('Keyboard navigation')
+                description: i18n("Whether to use the arrow keys to navigate the keyboard")
+
+                checked: kcm.keyboardNavigationEnabled
+                onCheckedChanged: {
+                    kcm.keyboardNavigationEnabled = checked;
+                    checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
+                }
+            }
+        }
     }
 }
