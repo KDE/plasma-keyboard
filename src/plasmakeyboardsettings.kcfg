@@ -18,5 +18,8 @@
         <entry key="vibrationMs" type="int">
             <default>10</default>
         </entry>
+        <entry key="keyboardNavigationEnabled" type="bool">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>

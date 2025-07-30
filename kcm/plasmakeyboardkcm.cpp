@@ -14,8 +14,7 @@ PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &met
     qmlRegisterSingletonInstance<PlasmaKeyboardSettings>("org.kde.plasma.keyboard.settings", 1, 0,
         "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
 
-    m_soundEnabled = PlasmaKeyboardSettings::self()->soundEnabled();
-    m_vibrationEnabled = PlasmaKeyboardSettings::self()->vibrationEnabled();
+    load();
 }
 
 bool PlasmaKeyboardKcm::soundEnabled() const
@@ -52,6 +51,23 @@ void PlasmaKeyboardKcm::setVibrationEnabled(bool vibrationEnabled)
     setNeedsSave(true);
 }
 
+bool PlasmaKeyboardKcm::keyboardNavigationEnabled() const
+{
+    return m_keyboardNavigationEnabled;
+}
+
+void PlasmaKeyboardKcm::setKeyboardNavigationEnabled(bool keyboardNavigationEnabled)
+{
+    if (keyboardNavigationEnabled == m_keyboardNavigationEnabled) {
+        return;
+    }
+
+    m_keyboardNavigationEnabled = keyboardNavigationEnabled;
+    Q_EMIT keyboardNavigationEnabledChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -60,6 +76,9 @@ bool PlasmaKeyboardKcm::isSaveNeeded() const
 void PlasmaKeyboardKcm::load()
 {
     setSoundEnabled(PlasmaKeyboardSettings::self()->soundEnabled());
+    setVibrationEnabled(PlasmaKeyboardSettings::self()->vibrationEnabled());
+    setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
+
     setNeedsSave(false);
 }
 
@@ -67,6 +86,7 @@ void PlasmaKeyboardKcm::save()
 {
     PlasmaKeyboardSettings::self()->setSoundEnabled(m_soundEnabled);
     PlasmaKeyboardSettings::self()->setVibrationEnabled(m_vibrationEnabled);
+    PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

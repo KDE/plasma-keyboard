@@ -15,6 +15,7 @@ class PlasmaKeyboardKcm : public KQuickManagedConfigModule
     Q_OBJECT
     Q_PROPERTY(bool soundEnabled READ soundEnabled WRITE setSoundEnabled NOTIFY soundEnabledChanged)
     Q_PROPERTY(bool vibrationEnabled READ vibrationEnabled WRITE setVibrationEnabled NOTIFY vibrationEnabledChanged)
+    Q_PROPERTY(bool keyboardNavigationEnabled READ keyboardNavigationEnabled WRITE setKeyboardNavigationEnabled NOTIFY keyboardNavigationEnabledChanged)
 
 public:
     PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData);
@@ -25,6 +26,9 @@ public:
     bool vibrationEnabled() const;
     void setVibrationEnabled(bool vibrationEnabled);
 
+    bool keyboardNavigationEnabled() const;
+    void setKeyboardNavigationEnabled(bool keyboardNavigationEnabled);
+
     bool isSaveNeeded() const override;
 
 public Q_SLOTS:
@@ -34,10 +38,13 @@ public Q_SLOTS:
 Q_SIGNALS:
     void soundEnabledChanged();
     void vibrationEnabledChanged();
+    void keyboardNavigationEnabledChanged();
 
 private:
     bool m_soundEnabled = false;
     bool m_vibrationEnabled = true;
+    bool m_keyboardNavigationEnabled = false;
+
     bool m_saveNeeded = false;
 
     PlasmaKeyboardSettings *m_settings = nullptr;

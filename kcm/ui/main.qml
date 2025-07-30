@@ -19,7 +19,7 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: soundsEnabled
-            Kirigami.FormData.label: i18n('General:')
+            Kirigami.FormData.label: i18n('Feedback:')
             text: i18n('Key press sound')
 
             checked: kcm.soundEnabled
@@ -37,6 +37,18 @@ KCM.SimpleKCM {
             onCheckedChanged: {
                 kcm.vibrationEnabled = checked;
                 checked = Qt.binding(() => kcm.vibrationEnabled)
+            }
+        }
+
+        QQC2.CheckBox {
+            id: keyboardNavigationEnabled
+            Kirigami.FormData.label: i18n('General:')
+            text: i18n('Keyboard navigation')
+
+            checked: kcm.keyboardNavigationEnabled
+            onCheckedChanged: {
+                kcm.keyboardNavigationEnabled = checked;
+                checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
             }
         }
     }
