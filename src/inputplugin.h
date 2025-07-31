@@ -87,6 +87,7 @@ Q_SIGNALS:
     void cursorChanged();
     void contentTypeChanged();
     void receivedCommit();
+    void resetRequested();
 
     /**
      * A key has been pressed

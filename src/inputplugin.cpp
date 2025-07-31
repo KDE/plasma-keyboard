@@ -25,6 +25,7 @@ InputPlugin::InputPlugin(InputMethod *inputMethod)
         connect(m_context.get(), &InputMethodContext::receivedCommit, this, &InputPlugin::receivedCommit);
         connect(m_context.get(), &InputMethodContext::surroundingTextChanged, this, &InputPlugin::surroundingTextChanged);
         connect(m_context.get(), &InputMethodContext::contentTypeChanged, this, &InputPlugin::contentTypeChanged);
+        connect(m_context.get(), &InputMethodContext::reset, this, &InputPlugin::resetRequested);
         if (m_grabbing) {
             setGrabbingInternal();
         }

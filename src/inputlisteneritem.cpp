@@ -57,6 +57,9 @@ InputListenerItem::InputListenerItem()
             window()->setVisible(true);
         }
     });
+    connect(&m_input, &InputPlugin::resetRequested, this, [this] {
+        QGuiApplication::inputMethod()->reset();
+    });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
         window()->setVisible(QGuiApplication::inputMethod()->isVisible());
     });
