@@ -14,3 +14,5 @@ make && make install
 ## Troubleshooting
 
 If the Virtual Keyboard does not show up add `KWIN_IM_SHOW_ALWAYS=1` to kwin's environment variables.
+
+To use Qt's builtin keyboard layouts rather than the ones we supply in `plasma-keyboard`, set `PLASMA_KEYBOARD_USE_QT_LAYOUTS=1` to kwin's environment variables.
