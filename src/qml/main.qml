@@ -8,6 +8,8 @@ import QtQuick
 import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
 
+import org.kde.plasma.keyboard
+
 InputPanelWindow {
     id: root
     height: Screen.height
@@ -46,8 +48,8 @@ InputPanelWindow {
 
     InputPanel {
         id: inputPanel
-        anchors.left: parent.left
-        anchors.right: parent.right
+        width: root.width * (WindowMode.isFloating ? 0.5 : 1.0)
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         focusPolicy: Qt.NoFocus
 

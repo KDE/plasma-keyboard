@@ -19,6 +19,7 @@ target_sources(plasma-keyboard PRIVATE
     vibration.cpp
     vibrationevent.h
     resources.qrc
+    windowmode.cpp
     ${dbusinterface_SRCS}
 )
 

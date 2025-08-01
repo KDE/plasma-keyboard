@@ -22,6 +22,7 @@
 #include "qwaylandinputpanelsurface_p.h"
 #include "plasmakeyboardsettings.h"
 #include "vibration.h"
+#include "windowmode.h"
 
 static bool initPanelIntegration(QWindow *window)
 {
@@ -51,7 +52,10 @@ static bool initPanelIntegration(QWindow *window)
 int main(int argc, char **argv)
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
-    qputenv("QT_WAYLAND_INPUT_PANEL_TOPLEVEL", QByteArray("1"));
+    if (!qEnvironmentVariableIsSet("QT_WAYLAND_INPUT_PANEL_TOPLEVEL")) {
+        qputenv("QT_WAYLAND_INPUT_PANEL_TOPLEVEL", QByteArray("1"));
+    }
+
     QGuiApplication application(argc, argv);
 
     KLocalizedString::setApplicationDomain("plasma-keyboard");
@@ -88,12 +92,17 @@ int main(int argc, char **argv)
 
     Vibration vibration;
 
+    const auto isFloating = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL") != 1;
+    WindowMode windowMode(isFloating);
+
     qmlRegisterType<InputListenerItem>("org.kde.plasma.keyboard", 1, 0, "InputListenerItem");
     qmlRegisterType<InputPanelWindow>("org.kde.plasma.keyboard", 1, 0, "InputPanelWindow");
     qmlRegisterSingletonInstance<PlasmaKeyboardSettings>("org.kde.plasma.keyboard", 1, 0,
         "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
     qmlRegisterSingletonInstance<Vibration>("org.kde.plasma.keyboard", 1, 0,
         "Vibration", &vibration);
+    qmlRegisterSingletonInstance<WindowMode>("org.kde.plasma.keyboard", 1, 0,
+        "WindowMode", &windowMode);
 
     QQmlApplicationEngine view;
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
