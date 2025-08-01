@@ -45,17 +45,12 @@ KeyboardStyle {
         }
     }
 
-    keyboardDesignWidth: {
-        if (Screen.width < 500) {
-            // Phone mode
-            return 1300;
-        } else if (Screen.width < 1200) {
-            // Wider
-            return 1600;
-        }
-        // Widest
-        return 2560;
-    }
+    // Always have the keyboard panel be 30% of the screen height
+    readonly property real targetKeyboardHeight: Screen.height * 0.3
+    readonly property real widthPctOfHeight: Screen.width / targetKeyboardHeight
+
+    // Calculate width based on the height so that the keyboard height is always targetKeyboardHeight
+    keyboardDesignWidth: widthPctOfHeight * keyboardDesignHeight;
     keyboardDesignHeight: {
         if (Screen.width < 500) {
             // Phone mode
@@ -67,8 +62,26 @@ KeyboardStyle {
         // Widest
         return 700;
     }
-    keyboardRelativeLeftMargin: 6 / keyboardDesignWidth
-    keyboardRelativeRightMargin: 6 / keyboardDesignWidth
+
+    // The width should never be > 4 times height
+    readonly property real maxWidthToHeightRatio: 4
+
+    keyboardRelativeLeftMargin: {
+        if (keyboardDesignWidth > keyboardDesignHeight * maxWidthToHeightRatio) {
+            // Cap keyboard width if it's too wide
+            const extraWidth = keyboardDesignWidth - (keyboardDesignHeight * maxWidthToHeightRatio);
+            return (extraWidth / 2) / keyboardDesignWidth;
+        }
+        return 6 / keyboardDesignWidth;
+    }
+    keyboardRelativeRightMargin: {
+        if (keyboardDesignWidth > keyboardDesignHeight * maxWidthToHeightRatio) {
+            // Cap keyboard width if it's too wide
+            const extraWidth = keyboardDesignWidth - (keyboardDesignHeight * maxWidthToHeightRatio);
+            return (extraWidth / 2) / keyboardDesignWidth;
+        }
+        return 6 / keyboardDesignWidth;
+    }
     keyboardRelativeTopMargin: 6 / keyboardDesignHeight
     keyboardRelativeBottomMargin: 6 / keyboardDesignHeight
 
