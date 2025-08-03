@@ -224,13 +224,35 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
         }
         return QVariant::fromValue<int>(qtHints);
     } break;
-    case Qt::ImCurrentSelection:
-        return m_input.surroundingText().mid(m_input.cursorPos(), m_input.anchorPos());
+    case Qt::ImCurrentSelection: {
+        // cursorPos and anchorPos are in bytes, we need to convert QString to QByteArray for index operations
+        QByteArray surroundingText = m_input.surroundingText().toUtf8();
+        return QString::fromUtf8(surroundingText.mid(m_input.cursorPos(), m_input.anchorPos()));
+    }
     case Qt::ImAnchorPosition:
-    case Qt::ImAnchorRectangle:
+        return m_input.anchorPos();
     case Qt::ImCursorPosition:
+        return m_input.cursorPos();
+    case Qt::ImTextBeforeCursor: {
+        // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
+        QByteArray surroundingText = m_input.surroundingText().toUtf8();
+        return QString::fromUtf8(surroundingText.first(m_input.cursorPos()));
+    }
+    case Qt::ImTextAfterCursor: {
+        // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
+        QByteArray surroundingText = m_input.surroundingText().toUtf8();
+        return QString::fromUtf8(surroundingText.mid(m_input.cursorPos() + 1));
+    }
     case Qt::ImCursorRectangle:
+    case Qt::ImFont:
+    case Qt::ImMaximumTextLength:
+    case Qt::ImPreferredLanguage:
+    case Qt::ImPlatformData:
+    case Qt::ImAbsolutePosition:
+    case Qt::ImEnterKeyType:
+    case Qt::ImAnchorRectangle:
     case Qt::ImInputItemClipRectangle:
+    case Qt::ImReadOnly:
         // We don't do that
         break;
     default:
