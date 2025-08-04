@@ -15,50 +15,73 @@ KeyboardLayout {
         Key {
             key: Qt.Key_Q
             text: "q"
+            alternativeKeys: "q1"
+            smallText: "1"
+            smallTextVisible: true
         }
         Key {
             id: normalKey
             key: Qt.Key_W
             text: "w"
+            alternativeKeys: "w2"
+            smallText: "2"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_E
             text: "e"
-            alternativeKeys: "êeëèé"
+            alternativeKeys: "êe3ëèé"
+            smallText: "3"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_R
             text: "r"
-            alternativeKeys: "ŕrř"
+            alternativeKeys: "ŕr4ř"
+            smallText: "4"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_T
             text: "t"
-            alternativeKeys: "ţtŧť"
+            alternativeKeys: "ţt5ŧť"
+            smallText: "5"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_Y
             text: "y"
-            alternativeKeys: "ÿyýŷ"
+            alternativeKeys: "ÿy6ýŷ"
+            smallText: "6"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "űūũûüuùú"
+            alternativeKeys: "űūũûüu7ùú"
+            smallText: "7"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_I
             text: "i"
-            alternativeKeys: "îïīĩiìí"
+            alternativeKeys: "îïīĩi8ìí"
+            smallText: "8"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_O
             text: "o"
-            alternativeKeys: "œøõôöòóo"
+            alternativeKeys: "œøõôöòóo9"
+            smallText: "9"
+            smallTextVisible: true
         }
         Key {
             key: Qt.Key_P
             text: "p"
+            alternativeKeys: "p0"
+            smallText: "0"
+            smallTextVisible: true
         }
     }
     KeyboardRow {
