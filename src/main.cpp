@@ -52,6 +52,27 @@ int main(int argc, char **argv)
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
     qputenv("QT_WAYLAND_INPUT_PANEL_TOPLEVEL", QByteArray("1"));
+
+    // PLASMA_KEYBOARD_USE_QT_LAYOUTS - whether to use Qt's builtin keyboard layouts rather than our own.
+    bool useQtLayouts = QByteArrayList{"1", "true"}.contains(qgetenv("PLASMA_KEYBOARD_USE_QT_LAYOUTS").toLower());
+
+    if (!useQtLayouts) {
+        // Set QT_VIRTUALKEYBOARD_LAYOUT_PATH to our own keyboard layouts provided in this repository.
+
+        // Loop over all "/usr/share" paths and check if layouts folder exists
+        QStringList locations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        for (const QString &basePath : locations) {
+            QString layoutsDir = basePath + QStringLiteral("/plasma/keyboard/layouts");
+
+            // Check if path exists
+            if (QDir(layoutsDir).exists()) {
+                // Set path for Qt to search for layouts
+                qputenv("QT_VIRTUALKEYBOARD_LAYOUT_PATH", layoutsDir.toUtf8());
+                break;
+            }
+        }
+    }
+
     QGuiApplication application(argc, argv);
 
     KLocalizedString::setApplicationDomain("plasma-keyboard");
