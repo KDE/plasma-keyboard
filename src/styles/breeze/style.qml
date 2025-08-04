@@ -94,7 +94,7 @@ KeyboardStyle {
                 font {
                     family: theme.fontFamily
                     weight: Font.Light
-                    pixelSize: 40 * scaleHint
+                    pixelSize: 30 * scaleHint
                     capitalization: control.uppercased ? Font.AllUppercase : Font.MixedCase
                 }
             }
