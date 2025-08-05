@@ -9,13 +9,22 @@ import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
 
 import org.kde.plasma.keyboard
+import org.kde.plasma.keyboard.lib as PlasmaKeyboard
+
+import org.kde.kirigami as Kirigami
 
 InputPanelWindow {
     id: root
     height: Screen.height
     width: Screen.width
-    interactiveHeight: inputPanel.implicitHeight > 0 ? inputPanel.implicitHeight : 100
     color: 'transparent'
+
+    interactiveRegion: Qt.rect(
+        panelWrapper.x,
+        panelWrapper.y,
+        panelWrapper.width,
+        panelWrapper.height
+    )
 
     onVisibleChanged: {
         if (!visible) {
@@ -43,47 +52,86 @@ InputPanelWindow {
             // HACK: invoke the Qt VirtualKeyboard keyboard navigation feature ourselves
             inputPanel.InputContext.priv.navigationKeyReleased(key, false);
         }
-
     }
 
-    InputPanel {
-        id: inputPanel
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        focusPolicy: Qt.NoFocus
+    Kirigami.ShadowedRectangle {
+        id: panelWrapper
 
-        function updateLocales() {
-            if (PlasmaKeyboardSettings.enabledLocales.length === 0) {
-                // If there are no enabled locales, set it to the current locale
-                // NOTE: If Qt.locale().name is not valid, then all keyboard layouts will be shown.
-                let locale = Qt.locale().name;
-                if (locale === "C") {
-                    locale = "en_US";
+        // Whether the panel takes the full width of the screen
+        readonly property bool isFullScreenWidth: PlasmaKeyboardSettings.panelFillScreenWidth
+
+        color: PlasmaKeyboard.BreezeConstants.keyboardBackgroundColor
+
+        // Provide shadow and radius when the keyboard is detached from edges
+        corners {
+            // The window isn't floating, so only curve the top
+            bottomLeftRadius: Kirigami.Units.cornerRadius
+            bottomRightRadius: Kirigami.Units.cornerRadius
+            topLeftRadius: isFullScreenWidth ? 0 : Kirigami.Units.cornerRadius
+            topRightRadius: isFullScreenWidth ? 0 : Kirigami.Units.cornerRadius
+        }
+        shadow {
+            size: isFullScreenWidth ? 0 : 16
+            color: Qt.rgba(0, 0, 0, 0.3)
+        }
+
+        // Starting x and y centers the panel on the bottom
+        x: (root.width / 2) - (width / 2)
+        y: root.height - height
+
+        // Padding for background corners and panel drag area
+        readonly property real padding: isFullScreenWidth ? 0 : Kirigami.Units.largeSpacing
+
+        // Never let width & height to be 0, otherwise it can cause problems for setting interactiveRegion
+        width: inputPanel.width > 0 ? (inputPanel.width + padding * 2) : 100
+        height: inputPanel.height > 0 ? (inputPanel.height + padding * 2) : 100
+
+        InputPanel {
+            id: inputPanel
+            anchors {
+                top: parent.top
+                topMargin: parent.padding
+                left: parent.left
+                leftMargin: parent.padding
+            }
+
+            // height is calculated by InputPanel
+            width: inputPanel.keyboard.style.aspectRatio * inputPanel.keyboard.style.targetKeyboardHeight
+
+            focusPolicy: Qt.NoFocus
+
+            function updateLocales() {
+                if (PlasmaKeyboardSettings.enabledLocales.length === 0) {
+                    // If there are no enabled locales, set it to the current locale
+                    // NOTE: If Qt.locale().name is not valid, then all keyboard layouts will be shown.
+                    let locale = Qt.locale().name;
+                    if (locale === "C") {
+                        locale = "en_US";
+                    }
+                    VirtualKeyboardSettings.activeLocales = [locale];
+                } else {
+                    VirtualKeyboardSettings.activeLocales = PlasmaKeyboardSettings.enabledLocales;
                 }
-                VirtualKeyboardSettings.activeLocales = [locale];
-            } else {
-                VirtualKeyboardSettings.activeLocales = PlasmaKeyboardSettings.enabledLocales;
             }
-        }
 
-        Connections {
-            target: VirtualKeyboardSettings
-            function onAvailableLocalesChanged() {
+            Connections {
+                target: VirtualKeyboardSettings
+                function onAvailableLocalesChanged() {
+                    inputPanel.updateLocales();
+                }
+            }
+
+            Connections {
+                target: PlasmaKeyboardSettings
+                function onEnabledLocalesChanged() {
+                    inputPanel.updateLocales();
+                }
+            }
+
+            Component.onCompleted: {
+                VirtualKeyboardSettings.styleName = "Breeze";
                 inputPanel.updateLocales();
             }
-        }
-
-        Connections {
-            target: PlasmaKeyboardSettings
-            function onEnabledLocalesChanged() {
-                inputPanel.updateLocales();
-            }
-        }
-
-        Component.onCompleted: {
-            VirtualKeyboardSettings.styleName = "Breeze";
-            inputPanel.updateLocales();
         }
     }
 }
