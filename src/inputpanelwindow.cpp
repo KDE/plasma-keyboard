@@ -8,21 +8,22 @@
 
 InputPanelWindow::InputPanelWindow(QWindow *parent)
     : QQuickWindow{parent}
-{}
-
-qreal InputPanelWindow::interactiveHeight() const
 {
-    return m_interactiveHeight;
 }
 
-void InputPanelWindow::setInteractiveHeight(qreal interactiveHeight)
+QRect InputPanelWindow::interactiveRegion() const
 {
-    if (interactiveHeight == m_interactiveHeight) {
+    return m_interactiveRegion;
+}
+
+void InputPanelWindow::setInteractiveRegion(QRect interactiveRegion)
+{
+    if (interactiveRegion == m_interactiveRegion) {
         return;
     }
-    m_interactiveHeight = interactiveHeight;
-    Q_EMIT interactiveHeightChanged();
+    m_interactiveRegion = interactiveRegion;
+    Q_EMIT interactiveRegionChanged();
 
     // Set only a part of the window to be interactive
-    setMask(QRegion(0, height() - interactiveHeight, width(), interactiveHeight));
+    setMask(QRegion(m_interactiveRegion));
 }

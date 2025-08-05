@@ -12,19 +12,20 @@
 class InputPanelWindow : public QQuickWindow
 {
     Q_OBJECT
-    Q_PROPERTY(qreal interactiveHeight READ interactiveHeight WRITE setInteractiveHeight NOTIFY interactiveHeightChanged)
+    Q_PROPERTY(QRect interactiveRegion READ interactiveRegion WRITE setInteractiveRegion NOTIFY interactiveRegionChanged)
 
 public:
     InputPanelWindow(QWindow *parent = nullptr);
 
-    // The height of the interactive part of the keyboard that is reserved on the screen for the input panel, from the bottom.
-    // The space above it will be overlaid over the application window by the compositor.
-    qreal interactiveHeight() const;
-    void setInteractiveHeight(qreal interactiveHeight);
+    // The interactive part of the keyboard that is reserved on the screen for the input panel.
+    // The space outside of it will be overlaid will have input passed to underlying windows by the compositor.
+    // This is required for some visual items (ex. popovers) to show outside of the input panel.
+    QRect interactiveRegion() const;
+    void setInteractiveRegion(QRect interactiveRegion);
 
 Q_SIGNALS:
-    void interactiveHeightChanged();
+    void interactiveRegionChanged();
 
 private:
-    qreal m_interactiveHeight;
+    QRect m_interactiveRegion;
 };

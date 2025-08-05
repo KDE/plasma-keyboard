@@ -47,7 +47,18 @@ KeyboardStyle {
 
     // Always have the keyboard panel be 30% of the screen height, or 150px (whichever is larger)
     readonly property real targetKeyboardHeight: Math.max(Screen.height * 0.3, 150)
-    readonly property real widthPctOfHeight: Screen.width / targetKeyboardHeight
+
+    // The value to multiply the height by to get the width
+    readonly property real widthPctOfHeight: {
+        // Ratio to just fill the screen width
+        const fillScreenWidth = Screen.width / targetKeyboardHeight;
+        if (PlasmaKeyboardSettings.panelFillScreenWidth) {
+            return fillScreenWidth;
+        }
+
+        const targetWidthPctOfHeight = 3.0; // Target width = 3 * height
+        return Math.min(fillScreenWidth, targetWidthPctOfHeight);
+    }
 
     // Calculate width based on the height so that the keyboard height is always targetKeyboardHeight
     keyboardDesignWidth: widthPctOfHeight * keyboardDesignHeight;
