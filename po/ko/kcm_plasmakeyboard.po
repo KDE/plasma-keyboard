@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:44+0000\n"
+"POT-Creation-Date: 2025-08-05 00:45+0000\n"
 "PO-Revision-Date: 2025-07-21 01:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,18 +17,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: ui/main_phone.qml:28
+#: ui/LocaleSelectorListView.qml:68
+#, kde-format
+msgid "Filter languages…"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:69
+#, kde-format
+msgid "Filter languages"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:82
+#, kde-format
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+
+#: ui/main_handset.qml:29
+#, kde-format
+msgid "Test the virtual keyboard…"
+msgstr ""
+
+#: ui/main_handset.qml:34
 #, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "피드백"
 
-#: ui/main_phone.qml:35
+#: ui/main_handset.qml:41
 #, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "키를 누를 때 소리 재생 여부"
 
-#: ui/main_phone.qml:49
+#: ui/main_handset.qml:55
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "키를 누를 때 진동 여부"

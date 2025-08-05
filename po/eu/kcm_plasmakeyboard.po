@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:44+0000\n"
+"POT-Creation-Date: 2025-08-05 00:45+0000\n"
 "PO-Revision-Date: 2025-07-12 13:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,18 +20,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.3\n"
 
-#: ui/main_phone.qml:28
+#: ui/LocaleSelectorListView.qml:68
+#, kde-format
+msgid "Filter languages…"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:69
+#, kde-format
+msgid "Filter languages"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:82
+#, kde-format
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+
+#: ui/main_handset.qml:29
+#, kde-format
+msgid "Test the virtual keyboard…"
+msgstr ""
+
+#: ui/main_handset.qml:34
 #, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "Atzeraelikadura"
 
-#: ui/main_phone.qml:35
+#: ui/main_handset.qml:41
 #, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "Tekla sakatzean soinua igorri edo ez"
 
-#: ui/main_phone.qml:49
+#: ui/main_handset.qml:55
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Tekla sakatzean dardaratu ala ez"
