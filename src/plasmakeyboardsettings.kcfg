@@ -18,5 +18,9 @@
         <entry key="vibrationMs" type="int">
             <default>10</default>
         </entry>
+        <entry key="panelScreenWidthPct" type="double">
+            <label>Panel width as a percentage of the screen width.</label>
+            <default>1.0</default>
+        </entry>
     </group>
 </kcfg>
