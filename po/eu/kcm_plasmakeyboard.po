@@ -1,7 +1,7 @@
 # Translation for kcm_plasmakeyboard.po to Euskara/Basque (eu).
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 00:45+0000\n"
-"PO-Revision-Date: 2025-07-12 13:40+0200\n"
+"PO-Revision-Date: 2025-08-05 13:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -23,12 +23,12 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Hizkuntzak iragazi…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Iragazi hizkuntzak"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
@@ -36,11 +36,13 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"Ez da hizkuntzarik hautatu. Sistemaren teklatu-antolaera lehenetsia "
+"erabiliko da."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Alegiazko teklatua probatu…"
 
 #: ui/main_handset.qml:34
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 00:45+0000\n"
-"PO-Revision-Date: 2025-07-29 12:27+0200\n"
+"PO-Revision-Date: 2025-08-05 09:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -20,24 +20,24 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Filtrera språk…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Filtrera språk"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr ""
+msgstr "Inga språk valda. Systemets normala tangentbordslayout används."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Prova det virtuellt tangentbordet…"
 
 #: ui/main_handset.qml:34
 #, kde-format

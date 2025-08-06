@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 00:45+0000\n"
-"PO-Revision-Date: 2025-07-11 09:56+0300\n"
+"PO-Revision-Date: 2025-08-05 10:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,24 +21,24 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "סינון שפות…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "סינון שפות"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr ""
+msgstr "לא נבחרו שפות. פריסת ברירת המחדל של המקלדת תהיה בשימוש."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "בדיקת המקלדת הווירטואלית…"
 
 #: ui/main_handset.qml:34
 #, kde-format

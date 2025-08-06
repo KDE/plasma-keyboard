@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 00:45+0000\n"
-"PO-Revision-Date: 2025-07-12 01:16+0100\n"
+"PO-Revision-Date: 2025-08-06 00:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22,12 +22,12 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Filtrar idiomas…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Filtrar idiomas"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
@@ -35,11 +35,13 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"No se han seleccionado idiomas. Se usará la distribución de teclado "
+"predeterminada del sistema."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Probar el teclado virtual…"
 
 #: ui/main_handset.qml:34
 #, kde-format

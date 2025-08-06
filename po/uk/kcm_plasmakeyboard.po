@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 00:45+0000\n"
-"PO-Revision-Date: 2025-07-11 09:09+0300\n"
+"PO-Revision-Date: 2025-08-05 14:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -21,12 +21,12 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Фільтрувати за мовою…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Фільтрувати за мовою"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
@@ -34,11 +34,13 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"Не вибрано жодної мови. Буде використано типову загальносистемну розкладку "
+"клавіатури."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Перевірити віртуальну клавіатуру…"
 
 #: ui/main_handset.qml:34
 #, kde-format
