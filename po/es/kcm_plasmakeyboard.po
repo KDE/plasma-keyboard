@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-08-06 00:02+0100\n"
+"PO-Revision-Date: 2025-08-07 12:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -63,9 +63,11 @@ msgstr "Controla si se debe vibrar al pulsar las teclas"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr ""
+"Controla si se deben usar las teclas de las flechas para desplazarse por el "
+"teclado"

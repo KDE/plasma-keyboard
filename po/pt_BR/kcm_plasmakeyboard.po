@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-07-27 17:00-0300\n"
+"PO-Revision-Date: 2025-08-07 08:24-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Filtrar por idiomas..."
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Filtrar por idiomas"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
@@ -33,11 +33,12 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"Nenhum idioma selecionado. O layout de teclado padrão do sistema será usado."
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Testar o teclado virtual…"
 
 #: ui/main_handset.qml:34
 #, kde-format
@@ -59,9 +60,9 @@ msgstr "Se deve vibrar ao pressionar a tecla"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Se deve usar as teclas de seta para navegar no teclado"
