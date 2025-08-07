@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 00:45+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -54,3 +54,14 @@ msgstr "是否在按键时发声"
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "是否在按键时震动"
+
+#: ui/main_handset.qml:85
+#, kde-format
+msgctxt "@title:group"
+msgid "General"
+msgstr ""
+
+#: ui/main_handset.qml:92
+#, kde-format
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr ""

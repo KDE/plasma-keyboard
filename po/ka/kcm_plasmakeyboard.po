@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 00:45+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2025-08-05 05:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -56,3 +56,14 @@ msgstr "მოხდება თუ არა ღილაკის დაწ�
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "მოხდება თუ არა ღილაკის დაწოლისას ვიბრაცია"
+
+#: ui/main_handset.qml:85
+#, kde-format
+msgctxt "@title:group"
+msgid "General"
+msgstr ""
+
+#: ui/main_handset.qml:92
+#, kde-format
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr ""
