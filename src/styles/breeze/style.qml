@@ -13,14 +13,19 @@ import QtQuick.Effects
 import org.kde.kirigami as Kirigami
 
 import org.kde.plasma.keyboard
+import org.kde.plasma.keyboard.lib as PlasmaKeyboard
 
 KeyboardStyle {
     id: currentStyle
     readonly property bool compactSelectionList: [InputEngine.InputMode.Pinyin, InputEngine.InputMode.Cangjie, InputEngine.InputMode.Zhuyin].indexOf(InputContext.inputEngine.inputMode) !== -1
 
-    readonly property Theme theme: Theme {
-        scaleHint: currentStyle.scaleHint
+    property Binding scaleHintBinding: Binding {
+        target: PlasmaKeyboard.BreezeConstants
+        property: 'scaleHint'
+        value: currentStyle.scaleHint
     }
+
+    property var theme: PlasmaKeyboard.BreezeConstants
 
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -82,9 +87,8 @@ KeyboardStyle {
         color: theme.keyboardBackgroundColor
     }
 
-    keyPanel: BreezeKeyPanel {
+    keyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: keyPanel
-        theme: currentStyle.theme
 
         Item {
             id: keyContent
@@ -154,9 +158,8 @@ KeyboardStyle {
         ]
     }
 
-    backspaceKeyPanel: BreezeKeyPanel {
+    backspaceKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: backspaceKeyPanel
-        theme: currentStyle.theme
 
         Item {
             Kirigami.Icon {
@@ -184,9 +187,8 @@ KeyboardStyle {
         ]
     }
 
-    languageKeyPanel: BreezeKeyPanel {
+    languageKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: languageKeyPanel
-        theme: currentStyle.theme
 
         Item {
             Kirigami.Icon {
@@ -213,9 +215,8 @@ KeyboardStyle {
         ]
     }
 
-    enterKeyPanel: BreezeKeyPanel {
+    enterKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: enterKeyPanel
-        theme: currentStyle.theme
 
         Item {
             id: enterKeyBackground
@@ -291,9 +292,8 @@ KeyboardStyle {
         ]
     }
 
-    hideKeyPanel: BreezeKeyPanel {
+    hideKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: hideKeyPanel
-        theme: currentStyle.theme
 
         Item {
             Kirigami.Icon {
@@ -320,9 +320,8 @@ KeyboardStyle {
         ]
     }
 
-    shiftKeyPanel: BreezeKeyPanel {
+    shiftKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: shiftKeyPanel
-        theme: currentStyle.theme
 
         Item {
             Kirigami.Icon {
@@ -364,9 +363,8 @@ KeyboardStyle {
         ]
     }
 
-    spaceKeyPanel: BreezeKeyPanel {
+    spaceKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: spaceKeyPanel
-        theme: currentStyle.theme
 
         Item {
             QQC2.Label {
@@ -396,9 +394,8 @@ KeyboardStyle {
         ]
     }
 
-    symbolKeyPanel: BreezeKeyPanel {
+    symbolKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: symbolKeyPanel
-        theme: currentStyle.theme
 
         Item {
             QQC2.Label {
@@ -433,9 +430,8 @@ KeyboardStyle {
         ]
     }
 
-    modeKeyPanel: BreezeKeyPanel {
+    modeKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: modeKeyPanel
-        theme: currentStyle.theme
 
         Item {
             id: modeKeyBackground
@@ -485,9 +481,8 @@ KeyboardStyle {
         ]
     }
 
-    handwritingKeyPanel: BreezeKeyPanel {
+    handwritingKeyPanel: PlasmaKeyboard.BreezeKeyPanel {
         id: handwritingKeyPanel
-        theme: currentStyle.theme
 
         Item {
             Kirigami.Icon {

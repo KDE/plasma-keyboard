@@ -12,23 +12,21 @@ import org.kde.kirigami as Kirigami
 KeyPanel {
     id: root
 
-    property Theme theme
-
     default property alias contentItem: visualContainer.contentItem
 
     property alias background: visualContainer.background
 
-    property real padding: theme.keyBackgroundMargin
+    property real padding: BreezeConstants.keyBackgroundMargin
 
-    property real radius: theme.buttonRadius
+    property real radius: BreezeConstants.buttonRadius
 
     property color color: {
         if (control && control.pressed) {
-            return theme.normalKeyPressedBackgroundColor;
+            return BreezeConstants.normalKeyPressedBackgroundColor;
         } else if (control && control.highlighted) {
-            return theme.highlightedKeyBackgroundColor;
+            return BreezeConstants.highlightedKeyBackgroundColor;
         }
-        return theme.normalKeyBackgroundColor;
+        return BreezeConstants.normalKeyBackgroundColor;
     }
 
     soundEffect: PlasmaKeyboardSettings.soundEnabled ? Qt.resolvedUrl('qrc:///sounds/keyboard_tick2_quiet.wav') : ''

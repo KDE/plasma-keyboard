@@ -5,7 +5,10 @@ import QtQuick
 
 import org.kde.kirigami as Kirigami
 
+pragma Singleton
+
 QtObject {
+    // Filled in by the style
     property real scaleHint
 
     readonly property string fontFamily: Kirigami.Theme.defaultFont.family
