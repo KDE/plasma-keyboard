@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-08-05 13:43+0200\n"
+"PO-Revision-Date: 2025-08-09 18:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -64,9 +64,9 @@ msgstr "Tekla sakatzean dardaratu ala ez"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Orokorra"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-08-05 09:12+0200\n"
+"PO-Revision-Date: 2025-08-09 22:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -59,9 +59,9 @@ msgstr "Om vibration ska ske vid tangentnedtryckning"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Om piltangenterna ska användas för att navigera på tangentbordet"
