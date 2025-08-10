@@ -37,7 +37,7 @@ KCM.SimpleKCM {
         FormCard.FormCard {
             FormCard.FormSwitchDelegate {
                 id: soundsEnabled
-                text: i18n('Sound')
+                text: i18n("Sound")
                 description: i18n("Whether to emit a sound on key press")
 
                 checked: kcm.soundEnabled
@@ -51,7 +51,7 @@ KCM.SimpleKCM {
 
             FormCard.FormSwitchDelegate {
                 id: vibrationEnabled
-                text: i18n('Vibration')
+                text: i18n("Vibration")
                 description: i18n("Whether to vibrate on key press")
 
                 checked: kcm.vibrationEnabled
@@ -67,14 +67,14 @@ KCM.SimpleKCM {
 
             FormCard.FormButtonDelegate {
                 id: languageList
-                text: i18n('Languages')
+                text: i18n("Languages")
                 icon.name: 'languages'
                 onClicked: kcm.push(localePage)
 
                 Kirigami.ScrollablePage {
                     id: localePage
                     visible: false
-                    title: i18n('Keyboard Languages')
+                    title: i18n("Keyboard Languages")
 
                     LocaleSelectorListView {}
                 }
@@ -88,7 +88,7 @@ KCM.SimpleKCM {
         FormCard.FormCard {
             FormCard.FormSwitchDelegate {
                 id: keyboardNavigationEnabled
-                text: i18n('Keyboard navigation')
+                text: i18n("Keyboard navigation")
                 description: i18n("Whether to use the arrow keys to navigate the keyboard")
 
                 checked: kcm.keyboardNavigationEnabled

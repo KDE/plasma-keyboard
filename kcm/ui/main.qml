@@ -29,8 +29,8 @@ KCM.ScrollViewKCM {
 
         QQC2.CheckBox {
             id: soundsEnabled
-            Kirigami.FormData.label: i18n('Key press feedback:')
-            text: i18n('Sound')
+            Kirigami.FormData.label: i18n("Key press feedback:")
+            text: i18n("Sound")
 
             checked: kcm.soundEnabled
             onCheckedChanged: {
@@ -41,7 +41,7 @@ KCM.ScrollViewKCM {
 
         QQC2.CheckBox {
             id: vibrationEnabled
-            text: i18n('Vibration')
+            text: i18n("Vibration")
 
             checked: kcm.vibrationEnabled
             onCheckedChanged: {
@@ -52,8 +52,8 @@ KCM.ScrollViewKCM {
 
         QQC2.CheckBox {
             id: keyboardNavigationEnabled
-            Kirigami.FormData.label: i18n('General:')
-            text: i18n('Keyboard navigation')
+            Kirigami.FormData.label: i18n("General:")
+            text: i18n("Keyboard navigation")
 
             checked: kcm.keyboardNavigationEnabled
             onCheckedChanged: {
