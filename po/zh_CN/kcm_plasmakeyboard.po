@@ -59,9 +59,9 @@ msgstr "是否在按键时震动"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "是否使用方向键导航键盘"
