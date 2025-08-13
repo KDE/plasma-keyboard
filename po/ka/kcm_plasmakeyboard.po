@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 04:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -36,6 +36,33 @@ msgid ""
 msgstr ""
 "ენა არჩეული არაა. გამოყენებული იქნება ნაგულისხმევი კლავიატურის განლაგება."
 
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr ""
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General:"
+msgstr "ზოგადი"
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr ""
+
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
@@ -56,6 +83,18 @@ msgstr "მოხდება თუ არა ღილაკის დაწ�
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "მოხდება თუ არა ღილაკის დაწოლისას ვიბრაცია"
+
+#: ui/main_handset.qml:70
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Languages"
+msgstr "ენების გაფილტვრა"
+
+#: ui/main_handset.qml:77
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Keyboard Languages"
+msgstr "ენების გაფილტვრა"
 
 #: ui/main_handset.qml:85
 #, kde-format

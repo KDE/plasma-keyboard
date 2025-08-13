@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 09:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -38,6 +38,33 @@ msgstr ""
 "No s'ha seleccionat cap idioma. Es farà servir la disposició del teclat "
 "predeterminada del sistema."
 
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr ""
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General:"
+msgstr "General"
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr ""
+
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
@@ -58,6 +85,18 @@ msgstr "Si s'ha d'emetre un so en prémer les tecles"
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Si ha de vibrar en prémer les tecles"
+
+#: ui/main_handset.qml:70
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Languages"
+msgstr "Filtra idiomes"
+
+#: ui/main_handset.qml:77
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Keyboard Languages"
+msgstr "Filtra idiomes"
 
 #: ui/main_handset.qml:85
 #, kde-format

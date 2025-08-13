@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-07-12 17:28+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -32,6 +32,31 @@ msgid ""
 "used."
 msgstr ""
 
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr ""
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:55
+#, kde-format
+msgid "General:"
+msgstr ""
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr ""
+
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
@@ -52,6 +77,16 @@ msgstr "Émettre ou non un son en appuyant sur une touche"
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Vibrer ou non un son en appuyant sur une touche"
+
+#: ui/main_handset.qml:70
+#, kde-format
+msgid "Languages"
+msgstr ""
+
+#: ui/main_handset.qml:77
+#, kde-format
+msgid "Keyboard Languages"
+msgstr ""
 
 #: ui/main_handset.qml:85
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-08-09 22:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -34,6 +34,33 @@ msgid ""
 "used."
 msgstr "Inga språk valda. Systemets normala tangentbordslayout används."
 
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr ""
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General:"
+msgstr "Allmänt"
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr ""
+
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
@@ -54,6 +81,18 @@ msgstr "Om ett ljud ska avges vid tangentnedtryckning"
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Om vibration ska ske vid tangentnedtryckning"
+
+#: ui/main_handset.qml:70
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Languages"
+msgstr "Filtrera språk"
+
+#: ui/main_handset.qml:77
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Keyboard Languages"
+msgstr "Filtrera språk"
 
 #: ui/main_handset.qml:85
 #, kde-format

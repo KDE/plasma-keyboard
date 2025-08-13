@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 09:33+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -35,6 +35,33 @@ msgid ""
 "used."
 msgstr "לא נבחרו שפות. פריסת ברירת המחדל של המקלדת תהיה בשימוש."
 
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr ""
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General:"
+msgstr "כללי"
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr ""
+
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
@@ -55,6 +82,18 @@ msgstr "האם להשמיע צליל בלחיצות על המקשים"
 #, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "האם להפעיל רטט בלחיצות על המקשים"
+
+#: ui/main_handset.qml:70
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Languages"
+msgstr "סינון שפות"
+
+#: ui/main_handset.qml:77
+#, fuzzy, kde-format
+#| msgid "Filter languages"
+msgid "Keyboard Languages"
+msgstr "סינון שפות"
 
 #: ui/main_handset.qml:85
 #, kde-format
