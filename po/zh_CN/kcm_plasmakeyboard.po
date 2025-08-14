@@ -50,11 +50,9 @@ msgid "Vibration"
 msgstr ""
 
 #: ui/main.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General:"
-msgstr "常规"
+msgstr ""
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
@@ -83,16 +81,14 @@ msgid "Whether to vibrate on key press"
 msgstr "是否在按键时震动"
 
 #: ui/main_handset.qml:70
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Languages"
-msgstr "过滤语言"
+msgstr ""
 
 #: ui/main_handset.qml:77
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Keyboard Languages"
-msgstr "过滤语言"
+msgstr ""
 
 #: ui/main_handset.qml:85
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 07:09+0200\n"
+"PO-Revision-Date: 2025-08-13 07:05+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -39,29 +39,27 @@ msgstr ""
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Povratni odziv pritiska tipke:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "Zvok"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "Tresenje"
 
 #: ui/main.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General:"
-msgstr "Splošno"
+msgstr "Splošno:"
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Krmarjenje tipkovnice"
 
 #: ui/main_handset.qml:29
 #, kde-format
@@ -85,16 +83,14 @@ msgid "Whether to vibrate on key press"
 msgstr "Ali naj vibrira ob pritisku tipke"
 
 #: ui/main_handset.qml:70
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Languages"
-msgstr "Filtriraj jezike"
+msgstr "Jeziki"
 
 #: ui/main_handset.qml:77
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Keyboard Languages"
-msgstr "Filtriraj jezike"
+msgstr "Jeziki tipkovnice"
 
 #: ui/main_handset.qml:85
 #, kde-format
