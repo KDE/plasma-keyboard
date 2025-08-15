@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-07-13 08:25+0200\n"
+"PO-Revision-Date: 2025-08-07 14:04+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Filtra lingue…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Filtra lingue"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
@@ -33,6 +33,8 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"Nessuna lingua selezionata, verrà usata la mappatura di tastiera predefinita "
+"di sistema."
 
 #: ui/main.qml:32
 #, kde-format
@@ -62,7 +64,7 @@ msgstr ""
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Prova la tastiera virtuale…"
 
 #: ui/main_handset.qml:34
 #, kde-format
@@ -94,9 +96,9 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Se utilizzare i tasti freccia per navigare sulla tastiera"

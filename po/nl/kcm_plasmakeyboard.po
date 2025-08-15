@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 13:17+0200\n"
+"PO-Revision-Date: 2025-08-14 14:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -39,29 +39,27 @@ msgstr ""
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Terugkoppeling van toets indrukken:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "Geluid"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "Vibratie"
 
 #: ui/main.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General:"
-msgstr "Algemeen"
+msgstr "Algemeen:"
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Navigatie met het toetsenbord"
 
 #: ui/main_handset.qml:29
 #, kde-format
@@ -85,16 +83,14 @@ msgid "Whether to vibrate on key press"
 msgstr "Of er vibratie is bij indrukken van een toets"
 
 #: ui/main_handset.qml:70
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Languages"
-msgstr "Talen filteren"
+msgstr "Talen"
 
 #: ui/main_handset.qml:77
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Keyboard Languages"
-msgstr "Talen filteren"
+msgstr "Talen van toetsenbord"
 
 #: ui/main_handset.qml:85
 #, kde-format

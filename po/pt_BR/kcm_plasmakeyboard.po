@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the plasma-keyboard package.
 #
 # SPDX-FileCopyrightText: 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 08:24-0300\n"
-"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
+"PO-Revision-Date: 2025-08-13 23:38-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -38,29 +39,27 @@ msgstr ""
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Retorno de pressionamento de tecla:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "Som"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "Vibração"
 
 #: ui/main.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General:"
-msgstr "Geral"
+msgstr "Geral:"
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Navegação do teclado"
 
 #: ui/main_handset.qml:29
 #, kde-format
@@ -84,16 +83,14 @@ msgid "Whether to vibrate on key press"
 msgstr "Se deve vibrar ao pressionar a tecla"
 
 #: ui/main_handset.qml:70
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Languages"
-msgstr "Filtrar por idiomas"
+msgstr "Idiomas"
 
 #: ui/main_handset.qml:77
-#, fuzzy, kde-format
-#| msgid "Filter languages"
+#, kde-format
 msgid "Keyboard Languages"
-msgstr "Filtrar por idiomas"
+msgstr "Idiomas do teclado"
 
 #: ui/main_handset.qml:85
 #, kde-format
