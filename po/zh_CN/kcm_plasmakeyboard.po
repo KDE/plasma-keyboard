@@ -37,27 +37,27 @@ msgstr "没有选择语言。系统将使用的默认键盘布局。"
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "按键反馈："
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "声音"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "振动"
 
 #: ui/main.qml:55
 #, kde-format
 msgid "General:"
-msgstr ""
+msgstr "常规："
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "键盘导航"
 
 #: ui/main_handset.qml:29
 #, kde-format
@@ -83,12 +83,12 @@ msgstr "是否在按键时震动"
 #: ui/main_handset.qml:70
 #, kde-format
 msgid "Languages"
-msgstr ""
+msgstr "语言"
 
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "键盘语言"
 
 #: ui/main_handset.qml:85
 #, kde-format
