@@ -1,103 +1,102 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
+# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-07-31 17:58+0400\n"
-"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
-"Language: ar\n"
+"PO-Revision-Date: 2025-08-16 14:45+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "過濾語言…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "過濾語言"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr ""
+msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
 
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "按鍵回饋："
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "音效"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "震動"
 
 #: ui/main.qml:55
 #, kde-format
 msgid "General:"
-msgstr ""
+msgstr "一般："
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "鍵盤導覽"
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "測試虛擬鍵盤…"
 
 #: ui/main_handset.qml:34
 #, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
-msgstr "مؤشر الاستعمال"
+msgstr "回饋"
 
 #: ui/main_handset.qml:41
 #, kde-format
 msgid "Whether to emit a sound on key press"
-msgstr "ما إذا كان سيصدر صوت عند الضغط على المفتاح"
+msgstr "是否要在按下按鍵時發出聲音。"
 
 #: ui/main_handset.qml:55
 #, kde-format
 msgid "Whether to vibrate on key press"
-msgstr "ما إذا كان سيهتز عند الضغط على المفتاح"
+msgstr "是否要在按下按鍵時震動。"
 
 #: ui/main_handset.qml:70
 #, kde-format
 msgid "Languages"
-msgstr ""
+msgstr "語言"
 
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "鍵盤語言"
 
 #: ui/main_handset.qml:85
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: ui/main_handset.qml:92
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "是否要使用方向鍵控制鍵盤"
