@@ -15,6 +15,7 @@
                 "Name[ka]": "Devin Lin",
                 "Name[ko]": "Devin Lin",
                 "Name[nl]": "Devin Lin",
+                "Name[pl]": "Devin Lin",
                 "Name[pt_BR]": "Devin Lin",
                 "Name[ru]": "Devin Lin",
                 "Name[sl]": "Devin Lin",
@@ -22,7 +23,8 @@
                 "Name[tr]": "Devin Lin",
                 "Name[uk]": "Devin Lin",
                 "Name[x-test]": "xxDevin Linxx",
-                "Name[zh_CN]": "Devin Lin"
+                "Name[zh_CN]": "Devin Lin",
+                "Name[zh_TW]": "Devin Lin"
             }
         ],
         "Description": "Configuration for Plasma Keyboard",
@@ -38,6 +40,7 @@
         "Description[ka]": "კონფიგურაცია Plasma Keyboard-სთვის",
         "Description[ko]": "Plasma 키보드 설정",
         "Description[nl]": "Configuratie voor Plasma toetsenbord",
+        "Description[pl]": "Ustawienia dla klawiatury Plazmy",
         "Description[pt_BR]": "Configuração para o teclado virtual do Plasma",
         "Description[ru]": "Настройка клавиатуры Plasma",
         "Description[sl]": "Konfiguracija za tipkovnico Plasme",
@@ -46,6 +49,7 @@
         "Description[uk]": "Налаштовування клавіатури Плазми",
         "Description[x-test]": "xxConfiguration for Plasma Keyboardxx",
         "Description[zh_CN]": "Plasma 键盘配置",
+        "Description[zh_TW]": "Plasma 鍵盤的設定",
         "FormFactors": [
             "desktop",
             "handset",
@@ -66,6 +70,7 @@
         "Name[ka]": "ეკრანის კლავიატურა",
         "Name[ko]": "가상 키보드",
         "Name[nl]": "Toetsenbord op scherm",
+        "Name[pl]": "Klawiatura ekranowa",
         "Name[pt_BR]": "Teclado virtual",
         "Name[ru]": "Экранная клавиатура",
         "Name[sl]": "Zaslonska tipkovnica",
@@ -74,6 +79,7 @@
         "Name[uk]": "Екранна клавіатура",
         "Name[x-test]": "xxOn-Screen Keyboardxx",
         "Name[zh_CN]": "屏幕键盘",
+        "Name[zh_TW]": "螢幕上的虛擬鍵盤",
         "Website": "https://kde.org"
     },
     "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard",
@@ -89,6 +95,7 @@
     "X-KDE-Keywords[ka]": "onscreen,osk,virtualkeyboard,keyboard,ეკრანზე, კლავიატურა ეკრანზე, კლავიატურა",
     "X-KDE-Keywords[ko]": "onscreen,osk,virtualkeyboard,keyboard,키보드,가상 키보드",
     "X-KDE-Keywords[nl]": "onscreen,osk,virtualkeyboard,keyboard",
+    "X-KDE-Keywords[pl]": "klawiatura ekranowa,osk,klawiatura wirtualna,klawiatura",
     "X-KDE-Keywords[pt_BR]": "na tela,osk,teclado virtual,teclado",
     "X-KDE-Keywords[ru]": "onscreen,osk,virtualkeyboard,keyboard,экранный,виртуальная клавиатура,клавиатура",
     "X-KDE-Keywords[sl]": "na zaslonu,osk,navidezna tipkovnica,tipkovnica",
@@ -97,5 +104,6 @@
     "X-KDE-Keywords[uk]": "onscreen,osk,virtualkeyboard,keyboard,екранна,екран,клавіатура",
     "X-KDE-Keywords[x-test]": "xxonscreenxx,xxoskxx,xxvirtualkeyboardxx,xxkeyboardxx",
     "X-KDE-Keywords[zh_CN]": "onscreen,osk,virtualkeyboard,keyboard,pingmujianpan,pingmujianpan,pingshangjianpan,xunijianpan,jianpan,屏幕键盘,屏幕显示,屏上键盘,虚拟键盘,键盘",
+    "X-KDE-Keywords[zh_TW]": "螢幕上,虛擬鍵盤,小鍵盤",
     "X-KDE-System-Settings-Parent-Category": "keyboard"
 }
