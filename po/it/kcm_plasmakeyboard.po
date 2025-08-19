@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 14:04+0200\n"
+"PO-Revision-Date: 2025-08-16 09:34+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -39,27 +39,27 @@ msgstr ""
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Riscontro alla pressione dei tasti:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "Suono"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "Vibrazione"
 
 #: ui/main.qml:55
 #, kde-format
 msgid "General:"
-msgstr ""
+msgstr "Generale:"
 
 #: ui/main.qml:56 ui/main_handset.qml:91
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Navigazione da tastiera"
 
 #: ui/main_handset.qml:29
 #, kde-format
@@ -85,12 +85,12 @@ msgstr "Se vibrare alla pressione di un tasto"
 #: ui/main_handset.qml:70
 #, kde-format
 msgid "Languages"
-msgstr ""
+msgstr "Lingue"
 
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "Lingue della tastiera"
 
 #: ui/main_handset.qml:85
 #, kde-format
