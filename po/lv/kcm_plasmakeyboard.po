@@ -1,0 +1,104 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"PO-Revision-Date: 2025-08-22 15:55+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 25.08.0\n"
+
+#: ui/LocaleSelectorListView.qml:68
+#, kde-format
+msgid "Filter languages…"
+msgstr "Filtrēt valodas…"
+
+#: ui/LocaleSelectorListView.qml:69
+#, kde-format
+msgid "Filter languages"
+msgstr "Filtrēt valodas"
+
+#: ui/LocaleSelectorListView.qml:82
+#, kde-format
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"Nav atlasīta neviena valoda. Tiks izmantots sistēmas noklusējuma izkārtojums."
+
+#: ui/main.qml:32
+#, kde-format
+msgid "Key press feedback:"
+msgstr "Taustiņa nospiešanas reakcija:"
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+#, kde-format
+msgid "Sound"
+msgstr "Skaņa"
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+#, kde-format
+msgid "Vibration"
+msgstr "Vibrācija"
+
+#: ui/main.qml:55
+#, kde-format
+msgid "General:"
+msgstr "Pamata:"
+
+#: ui/main.qml:56 ui/main_handset.qml:91
+#, kde-format
+msgid "Keyboard navigation"
+msgstr "Tastatūras navigācija"
+
+#: ui/main_handset.qml:29
+#, kde-format
+msgid "Test the virtual keyboard…"
+msgstr "Izmēģināt virtuālo tastatūru…"
+
+#: ui/main_handset.qml:34
+#, kde-format
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Reakcija"
+
+#: ui/main_handset.qml:41
+#, kde-format
+msgid "Whether to emit a sound on key press"
+msgstr "Vai, nospiežot taustiņu, atskaņot skaņu"
+
+#: ui/main_handset.qml:55
+#, kde-format
+msgid "Whether to vibrate on key press"
+msgstr "Vai, nospiežot taustiņu, vibrēt"
+
+#: ui/main_handset.qml:70
+#, kde-format
+msgid "Languages"
+msgstr "Valodas"
+
+#: ui/main_handset.qml:77
+#, kde-format
+msgid "Keyboard Languages"
+msgstr "Tastatūras valodas"
+
+#: ui/main_handset.qml:85
+#, kde-format
+msgctxt "@title:group"
+msgid "General"
+msgstr "Pamata"
+
+#: ui/main_handset.qml:92
+#, kde-format
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "Vai pārvietoties pa tastatūru ar bultiņu taustiņiem"
