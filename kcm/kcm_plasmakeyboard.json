@@ -55,7 +55,8 @@
         "FormFactors": [
             "desktop",
             "handset",
-            "tablet"
+            "tablet",
+            "mediacenter"
         ],
         "Icon": "input-keyboard",
         "License": "GPL",
