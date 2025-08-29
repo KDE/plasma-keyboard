@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-16 14:45+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -33,6 +33,12 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
+
+#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:34
+#, kde-format
+msgid "Languages"
+msgstr "語言"
 
 #: ui/main.qml:32
 #, kde-format
@@ -80,11 +86,6 @@ msgstr "是否要在按下按鍵時發出聲音。"
 msgid "Whether to vibrate on key press"
 msgstr "是否要在按下按鍵時震動。"
 
-#: ui/main_handset.qml:70
-#, kde-format
-msgid "Languages"
-msgstr "語言"
-
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
@@ -100,3 +101,9 @@ msgstr "一般"
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否要使用方向鍵控制鍵盤"
+
+#: ui/main_mediacenter.qml:41
+#, fuzzy, kde-format
+#| msgid "Key press feedback:"
+msgid "Key press feedback"
+msgstr "按鍵回饋："

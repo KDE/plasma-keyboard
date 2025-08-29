@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-13 13:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -34,6 +34,12 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr "לא נבחרו שפות. פריסת ברירת המחדל של המקלדת תהיה בשימוש."
+
+#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:34
+#, kde-format
+msgid "Languages"
+msgstr "שפות"
 
 #: ui/main.qml:32
 #, kde-format
@@ -81,11 +87,6 @@ msgstr "האם להשמיע צליל בלחיצות על המקשים"
 msgid "Whether to vibrate on key press"
 msgstr "האם להפעיל רטט בלחיצות על המקשים"
 
-#: ui/main_handset.qml:70
-#, kde-format
-msgid "Languages"
-msgstr "שפות"
-
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
@@ -101,3 +102,9 @@ msgstr "כללי"
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "האם להשתמש במקשי החיצים כדי לנווט במקלדת"
+
+#: ui/main_mediacenter.qml:41
+#, fuzzy, kde-format
+#| msgid "Key press feedback:"
+msgid "Key press feedback"
+msgstr "משוב לחיצת מקש:"

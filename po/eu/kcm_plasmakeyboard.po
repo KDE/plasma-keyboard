@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-14 01:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -38,6 +38,12 @@ msgid ""
 msgstr ""
 "Ez da hizkuntzarik hautatu. Sistemaren teklatu-antolaera lehenetsia "
 "erabiliko da."
+
+#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:34
+#, kde-format
+msgid "Languages"
+msgstr "Hizkuntzak"
 
 #: ui/main.qml:32
 #, kde-format
@@ -85,11 +91,6 @@ msgstr "Tekla sakatzean soinua igorri edo ez"
 msgid "Whether to vibrate on key press"
 msgstr "Tekla sakatzean dardaratu ala ez"
 
-#: ui/main_handset.qml:70
-#, kde-format
-msgid "Languages"
-msgstr "Hizkuntzak"
-
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
@@ -105,3 +106,9 @@ msgstr "Orokorra"
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"
+
+#: ui/main_mediacenter.qml:41
+#, fuzzy, kde-format
+#| msgid "Key press feedback:"
+msgid "Key press feedback"
+msgstr "Tekla-sakatzearen atzeraelikadura:"

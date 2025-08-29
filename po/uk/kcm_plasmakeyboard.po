@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-13 21:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -36,6 +36,12 @@ msgid ""
 msgstr ""
 "Не вибрано жодної мови. Буде використано типову загальносистемну розкладку "
 "клавіатури."
+
+#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:34
+#, kde-format
+msgid "Languages"
+msgstr "Мови"
 
 #: ui/main.qml:32
 #, kde-format
@@ -83,11 +89,6 @@ msgstr "Визначає, чи слід видавати звуковий суп
 msgid "Whether to vibrate on key press"
 msgstr "Визначає, чи слід видавати вібрацію у відповідь на натискання клавіші"
 
-#: ui/main_handset.qml:70
-#, kde-format
-msgid "Languages"
-msgstr "Мови"
-
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
@@ -105,3 +106,9 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr ""
 "Визначає, чи слід використовувати клавіші зі стрілками для навігації з "
 "клавіатури"
+
+#: ui/main_mediacenter.qml:41
+#, fuzzy, kde-format
+#| msgid "Key press feedback:"
+msgid "Key press feedback"
+msgstr "Реакція на натискання клавіші:"

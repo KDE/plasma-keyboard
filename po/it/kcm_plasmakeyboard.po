@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-16 09:34+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -35,6 +35,12 @@ msgid ""
 msgstr ""
 "Nessuna lingua selezionata, verrà usata la mappatura di tastiera predefinita "
 "di sistema."
+
+#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:34
+#, kde-format
+msgid "Languages"
+msgstr "Lingue"
 
 #: ui/main.qml:32
 #, kde-format
@@ -82,11 +88,6 @@ msgstr "Se emettere un suono alla pressione di un tasto"
 msgid "Whether to vibrate on key press"
 msgstr "Se vibrare alla pressione di un tasto"
 
-#: ui/main_handset.qml:70
-#, kde-format
-msgid "Languages"
-msgstr "Lingue"
-
 #: ui/main_handset.qml:77
 #, kde-format
 msgid "Keyboard Languages"
@@ -102,3 +103,9 @@ msgstr "Generale"
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Se utilizzare i tasti freccia per navigare sulla tastiera"
+
+#: ui/main_mediacenter.qml:41
+#, fuzzy, kde-format
+#| msgid "Key press feedback:"
+msgid "Key press feedback"
+msgstr "Riscontro alla pressione dei tasti:"
