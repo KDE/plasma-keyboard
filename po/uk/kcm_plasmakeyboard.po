@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-13 21:51+0300\n"
+"PO-Revision-Date: 2025-08-29 19:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -108,7 +108,6 @@ msgstr ""
 "клавіатури"
 
 #: ui/main_mediacenter.qml:41
-#, fuzzy, kde-format
-#| msgid "Key press feedback:"
+#, kde-format
 msgid "Key press feedback"
-msgstr "Реакція на натискання клавіші:"
+msgstr "Реакція на натискання клавіші"

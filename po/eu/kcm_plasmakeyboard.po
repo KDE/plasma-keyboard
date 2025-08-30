@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-14 01:00+0200\n"
+"PO-Revision-Date: 2025-08-29 19:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
@@ -108,7 +108,6 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"
 
 #: ui/main_mediacenter.qml:41
-#, fuzzy, kde-format
-#| msgid "Key press feedback:"
+#, kde-format
 msgid "Key press feedback"
-msgstr "Tekla-sakatzearen atzeraelikadura:"
+msgstr "Tekla-sakatzearen atzeraelikadura"

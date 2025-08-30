@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-13 07:05+0200\n"
+"PO-Revision-Date: 2025-08-29 10:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -105,7 +105,6 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Ali naj se za navigacijo po tipkovnici uporabljajo puščične tipke"
 
 #: ui/main_mediacenter.qml:41
-#, fuzzy, kde-format
-#| msgid "Key press feedback:"
+#, kde-format
 msgid "Key press feedback"
-msgstr "Povratni odziv pritiska tipke:"
+msgstr "Povratni odziv pritiska tipke"

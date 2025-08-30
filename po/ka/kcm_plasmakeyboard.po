@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-13 06:23+0200\n"
+"PO-Revision-Date: 2025-08-29 05:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
@@ -105,7 +105,6 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "გამოიყენება თუ არა ისრის ღილაკები კლავიატურაზე ნავიგაციისთვის"
 
 #: ui/main_mediacenter.qml:41
-#, fuzzy, kde-format
-#| msgid "Key press feedback:"
+#, kde-format
 msgid "Key press feedback"
-msgstr "ღილაკზე დაჭერის უკუკავშირი:"
+msgstr "ღილაკზე დაჭერის უკუკავშირი"
