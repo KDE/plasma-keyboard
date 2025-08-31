@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-16 07:33+0200\n"
+"PO-Revision-Date: 2025-08-30 08:01+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -106,7 +106,6 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Określa czy używać klawiszy strzałek do sterowania z klawiatury"
 
 #: ui/main_mediacenter.qml:41
-#, fuzzy, kde-format
-#| msgid "Key press feedback:"
+#, kde-format
 msgid "Key press feedback"
-msgstr "Informacja zwrotna po naciśnięciu klawisza:"
+msgstr "Informacja zwrotna po naciśnięciu klawisza"
