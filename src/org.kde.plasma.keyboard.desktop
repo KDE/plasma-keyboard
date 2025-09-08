@@ -27,7 +27,6 @@ Name[sl]=Plasma tipkovnica
 Name[sv]=Plasma tangentbord
 Name[tr]=Plasma Klavye
 Name[uk]=Клавіатура Плазми
-Name[x-test]=xxPlasma Keyboardxx
 Name[zh_CN]=Plasma 键盘
 Name[zh_TW]=Plasma 鍵盤
 Exec=plasma-keyboard
