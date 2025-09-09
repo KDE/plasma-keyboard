@@ -73,7 +73,6 @@ KCM.SimpleKCM {
 
                 Kirigami.ScrollablePage {
                     id: localePage
-                    visible: false
                     title: i18n("Keyboard Languages")
 
                     LocaleSelectorListView {}
