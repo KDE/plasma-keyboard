@@ -50,7 +50,7 @@ ListView {
     header: QQC2.ToolBar {
         width: parent.width
         z: 999 // On top of content
-        position: QQC2.ToolBar.header
+        position: QQC2.ToolBar.Header
 
         topPadding: Kirigami.Units.largeSpacing
         bottomPadding: Kirigami.Units.largeSpacing
