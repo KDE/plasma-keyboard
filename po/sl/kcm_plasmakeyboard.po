@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 10:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -62,7 +62,7 @@ msgstr "Tresenje"
 msgid "General:"
 msgstr "Splošno:"
 
-#: ui/main.qml:56 ui/main_handset.qml:91
+#: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
 msgstr "Krmarjenje tipkovnice"
@@ -88,18 +88,18 @@ msgstr "Ali naj se ob pritisku tipke odda zvok"
 msgid "Whether to vibrate on key press"
 msgstr "Ali naj vibrira ob pritisku tipke"
 
-#: ui/main_handset.qml:77
+#: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
 msgstr "Jeziki tipkovnice"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Splošno"
 
-#: ui/main_handset.qml:92
+#: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Ali naj se za navigacijo po tipkovnici uporabljajo puščične tipke"

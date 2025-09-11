@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 19:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -65,7 +65,7 @@ msgstr "Bibrazioa"
 msgid "General:"
 msgstr "Orokorra:"
 
-#: ui/main.qml:56 ui/main_handset.qml:91
+#: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
 msgstr "Teklatu-nabigazioa"
@@ -91,18 +91,18 @@ msgstr "Tekla sakatzean soinua igorri edo ez"
 msgid "Whether to vibrate on key press"
 msgstr "Tekla sakatzean dardaratu ala ez"
 
-#: ui/main_handset.qml:77
+#: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
 msgstr "Teklatu-hizkuntzak"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Orokorra"
 
-#: ui/main_handset.qml:92
+#: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"

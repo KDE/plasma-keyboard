@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 03:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "Vibración"
 msgid "General:"
 msgstr "General:"
 
-#: ui/main.qml:56 ui/main_handset.qml:91
+#: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
 msgstr "Navegación del teclado"
@@ -90,18 +90,18 @@ msgstr "Controla si se debe emitir un sonido al pulsar las teclas"
 msgid "Whether to vibrate on key press"
 msgstr "Controla si se debe vibrar al pulsar las teclas"
 
-#: ui/main_handset.qml:77
+#: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
 msgstr "Idiomas del teclado"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "General"
 
-#: ui/main_handset.qml:92
+#: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr ""

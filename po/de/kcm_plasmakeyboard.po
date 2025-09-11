@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-08-25 20:40+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "General:"
 msgstr ""
 
-#: ui/main.qml:56 ui/main_handset.qml:91
+#: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
 msgstr ""
@@ -90,18 +90,18 @@ msgstr "Klang abspielen bei Tastendruck"
 msgid "Whether to vibrate on key press"
 msgstr "Vibrieren bei Tastendruck"
 
-#: ui/main_handset.qml:77
+#: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
 msgstr ""
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Allgemein"
 
-#: ui/main_handset.qml:92
+#: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr ""

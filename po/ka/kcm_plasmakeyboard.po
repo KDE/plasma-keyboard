@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 05:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -62,7 +62,7 @@ msgstr "ვიბრაცია"
 msgid "General:"
 msgstr "ზოგადი:"
 
-#: ui/main.qml:56 ui/main_handset.qml:91
+#: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
 msgstr "კლავიატურით ნავიგაცია"
@@ -88,18 +88,18 @@ msgstr "მოხდება თუ არა ღილაკის დაწ�
 msgid "Whether to vibrate on key press"
 msgstr "მოხდება თუ არა ღილაკის დაწოლისას ვიბრაცია"
 
-#: ui/main_handset.qml:77
+#: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
 msgstr "კლავიატურის ენები"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "ზოგადი"
 
-#: ui/main_handset.qml:92
+#: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "გამოიყენება თუ არა ისრის ღილაკები კლავიატურაზე ნავიგაციისთვის"
