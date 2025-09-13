@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-13 17:56+0300\n"
+"PO-Revision-Date: 2025-09-03 18:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,60 +15,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
 #, kde-format
 msgid "Filter languages…"
-msgstr ""
+msgstr "Suodata kieliä…"
 
 #: ui/LocaleSelectorListView.qml:69
 #, kde-format
 msgid "Filter languages"
-msgstr ""
+msgstr "Suodata kieliä"
 
 #: ui/LocaleSelectorListView.qml:82
 #, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr ""
+msgstr "Kieliä ei ole valittu. Käytetään järjestelmän oletusasettelua."
 
 #: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:34
 #, kde-format
 msgid "Languages"
-msgstr ""
+msgstr "Kielet"
 
 #: ui/main.qml:32
 #, kde-format
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Näppäinpainalluspalaute:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 #, kde-format
 msgid "Sound"
-msgstr ""
+msgstr "Ääni"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 #, kde-format
 msgid "Vibration"
-msgstr ""
+msgstr "Värinä"
 
 #: ui/main.qml:55
 #, kde-format
 msgid "General:"
-msgstr ""
+msgstr "Perusasetukset:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
 #, kde-format
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Näppäinnavigointi"
 
 #: ui/main_handset.qml:29
 #, kde-format
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Kokeile näyttönäppäimistöä…"
 
 #: ui/main_handset.qml:34
 #, kde-format
@@ -89,20 +89,20 @@ msgstr "Väristäänkö näppäinpainalluksista"
 #: ui/main_handset.qml:76
 #, kde-format
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "Näppäimistökielet"
 
 #: ui/main_handset.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Perusasetukset"
 
 #: ui/main_handset.qml:91
 #, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Käytetäänkö näppäimistönavigointiin nuolinäppäimiä"
 
 #: ui/main_mediacenter.qml:41
 #, kde-format
 msgid "Key press feedback"
-msgstr ""
+msgstr "Näppäinpainalluspalaute"
