@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Aleix Pol <aleixpol@kde.org>
+# SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+# SPDX-License-Identifier: BSD-2-Clause
+
 add_executable(plasma-keyboard)
 
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/input-method/input-method-unstable-v1.xml BASENAME input-method-unstable-v1)

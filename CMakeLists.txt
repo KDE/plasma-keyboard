@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Aleix Pol <aleixpol@kde.org>
+# SPDX-License-Identifier: BSD-2-Clause
+
 cmake_minimum_required(VERSION 3.16)
 
 project(plasma-keyboard VERSION "1.0")

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2017 Jan Arne Petersen
+ * SPDX-License-Identifier: LGPL-2.1-only
+ */
+
 #include "qwaylandinputpanelshellintegration_p.h"
 #include "qwaylandinputpanelsurface_p.h"
 
