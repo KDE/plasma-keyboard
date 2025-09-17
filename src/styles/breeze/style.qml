@@ -178,7 +178,7 @@ KeyboardStyle {
                 anchors.centerIn: parent
                 implicitHeight: 88 * theme.keyIconScale
                 implicitWidth: implicitHeight
-                source: "edit-clear-symoblic"
+                source: "edit-clear-symbolic"
             }
         }
 
