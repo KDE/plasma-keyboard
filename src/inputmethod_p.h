@@ -42,7 +42,7 @@ public:
 Q_SIGNALS:
     void activate();
     void deactivate();
-    void activeChanged(bool active);
+    void activityChanged(bool active);
 
 private:
     void zwp_input_method_v1_activate(struct ::zwp_input_method_context_v1 *id) override;

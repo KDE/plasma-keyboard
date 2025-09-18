@@ -10,7 +10,7 @@
 
 InputPlugin::InputPlugin(InputMethod *inputMethod)
 {
-    connect(inputMethod, &InputMethod::activeChanged, this, [this, inputMethod]() {
+    connect(inputMethod, &InputMethod::activityChanged, this, [this, inputMethod]() {
         if (m_context) {
             disconnect(m_context.get(), nullptr, this, nullptr);
         }

@@ -40,7 +40,7 @@ void InputMethod::setCurrentContext(InputMethodContext *context)
         return;
     }
     m_current.reset(context);
-    Q_EMIT activeChanged(m_current.use_count());
+    Q_EMIT activityChanged(m_current.use_count());
 
     if (m_current)
         Q_EMIT activate();
