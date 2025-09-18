@@ -18,22 +18,24 @@
 
 Q_GLOBAL_STATIC(InputMethod, s_im)
 
-static const std::set<int> IGNORED_KEYS = {
+Q_GLOBAL_STATIC_WITH_ARGS(const std::set<int>, IGNORED_KEYS, {
     Qt::Key_Context1 // Triggered by "special keys" button
-};
-
+});
 // Keys to always capture for keyboard navigation
-static const QList<int> KEYBOARD_NAVIGATION_CAPTURE_KEYS = {
-    Qt::Key_Left,
-    Qt::Key_Right,
-    Qt::Key_Up,
-    Qt::Key_Down,
-};
+QList<Qt::Key> initCapture() {
+    return {
+        Qt::Key_Left,
+        Qt::Key_Right,
+        Qt::Key_Up,
+        Qt::Key_Down,
+    };
+}
+Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_CAPTURE_KEYS, (initCapture()));
 
 // Keys to capture when keyboard navigation is active
-static const QList<int> KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS = {
+Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS, (initCapture() + QList<Qt::Key>{
     Qt::Key_Return
-};
+}));
 
 InputListenerItem::InputListenerItem()
     : m_input(&(*s_im))
@@ -75,10 +77,7 @@ InputListenerItem::InputListenerItem()
 
         if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
             // Keys to capture for keyboard navigation
-            auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
-            if (m_keyboardNavigationActive) {
-                keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
-            }
+            const auto keys = m_keyboardNavigationActive ? *KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS : *KEYBOARD_NAVIGATION_CAPTURE_KEYS;
 
             // Forward and accept keyboard navigation events
             for (const auto key : keys) {
@@ -100,10 +99,7 @@ InputListenerItem::InputListenerItem()
 
         if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
             // Keys to capture for keyboard navigation
-            auto keys = KEYBOARD_NAVIGATION_CAPTURE_KEYS;
-            if (m_keyboardNavigationActive) {
-                keys.append(KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS);
-            }
+            const auto keys = m_keyboardNavigationActive ? *KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS : *KEYBOARD_NAVIGATION_CAPTURE_KEYS;
 
             // Forward and accept keyboard navigation events
             for (const auto key : keys) {
@@ -271,7 +267,7 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
 
 void InputListenerItem::keyPressEvent(QKeyEvent *event)
 {
-    if (IGNORED_KEYS.find(event->key()) != IGNORED_KEYS.end()) {
+    if (IGNORED_KEYS->find(event->key()) != IGNORED_KEYS->end()) {
         return;
     }
 
@@ -286,7 +282,7 @@ void InputListenerItem::keyPressEvent(QKeyEvent *event)
 
 void InputListenerItem::keyReleaseEvent(QKeyEvent *event)
 {
-    if (IGNORED_KEYS.find(event->key()) != IGNORED_KEYS.end()) {
+    if (IGNORED_KEYS->find(event->key()) != IGNORED_KEYS->end()) {
         return;
     }
 
