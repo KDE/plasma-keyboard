@@ -60,7 +60,7 @@ InputListenerItem::InputListenerItem()
             window()->setVisible(true);
         }
     });
-    connect(&m_input, &InputPlugin::resetRequested, this, [this] {
+    connect(&m_input, &InputPlugin::resetRequested, this, [] {
         QGuiApplication::inputMethod()->reset();
     });
     connect(QGuiApplication::inputMethod(), &QInputMethod::visibleChanged, this, [this] {
@@ -133,13 +133,8 @@ InputListenerItem::InputListenerItem()
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
 }
 
-void InputListenerItem::setEngine(QVirtualKeyboardInputEngine *engine) {
+void InputListenerItem::setEngine(QVirtualKeyboardInputEngine */*engine*/) {
     // TODO: hook into engine events if necessary?
-}
-
-void InputListenerItem::setKeyboardNavigationActive(bool keyboardNavigationActive)
-{
-    m_keyboardNavigationActive = keyboardNavigationActive;
 }
 
 QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
@@ -271,7 +266,7 @@ void InputListenerItem::keyPressEvent(QKeyEvent *event)
         return;
     }
 
-    QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
+    const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
     for (auto key : keys) {
         // Simulate key press only if it's not textual
         if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
@@ -286,7 +281,7 @@ void InputListenerItem::keyReleaseEvent(QKeyEvent *event)
         return;
     }
 
-    QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
+    const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
     for (auto key : keys) {
         if (event->text().isEmpty() || key == XKB_KEY_Return) { // (return is technically "\n")
             // Simulate the keyboard press for non textual keys
@@ -305,7 +300,8 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
         m_input.deleteSurroundingText(event->replacementStart(), event->replacementLength());
     }
 
-    for (auto x : event->attributes()) {
+    const auto attributes = event->attributes();
+    for (const auto &x : attributes) {
         if (x.type == QInputMethodEvent::TextFormat) {
             m_input.setPreEditStyle(x.start, x.length, x.value.value<QTextFormat>().type());
         }

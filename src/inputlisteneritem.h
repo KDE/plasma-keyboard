@@ -18,13 +18,12 @@ class InputListenerItem : public QQuickItem
     Q_OBJECT
     // QML_ELEMENT
     Q_PROPERTY(QVirtualKeyboardInputEngine *engine WRITE setEngine)
-    Q_PROPERTY(bool keyboardNavigationActive WRITE setKeyboardNavigationActive)
+    Q_PROPERTY(bool keyboardNavigationActive MEMBER m_keyboardNavigationActive)
 
 public:
     InputListenerItem();
 
     void setEngine(QVirtualKeyboardInputEngine *engine);
-    void setKeyboardNavigationActive(bool keyboardNavigationActive);
 
     QVariant inputMethodQuery(Qt::InputMethodQuery query) const override;
 

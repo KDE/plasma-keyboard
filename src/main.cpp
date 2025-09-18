@@ -60,7 +60,7 @@ int main(int argc, char **argv)
         // Set QT_VIRTUALKEYBOARD_LAYOUT_PATH to our own keyboard layouts provided in this repository.
 
         // Loop over all "/usr/share" paths and check if layouts folder exists
-        QStringList locations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
         for (const QString &basePath : locations) {
             QString layoutsDir = basePath + QStringLiteral("/plasma/keyboard/layouts");
 
