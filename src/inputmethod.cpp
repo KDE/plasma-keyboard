@@ -179,3 +179,5 @@ void Keyboard::keyboard_modifiers(uint32_t serial, uint32_t mods_depressed, uint
     // currently not filterable
     m_parent->modifiers(serial, mods_depressed, mods_latched, mods_locked, group);
 }
+
+#include "moc_inputmethod_p.cpp"

@@ -24,3 +24,5 @@ void Vibration::vibrate(int durationMs)
 
     m_interface->Vibrate(appId, pattern);
 }
+
+#include "moc_vibration.cpp"

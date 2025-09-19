@@ -27,3 +27,5 @@ void InputPanelWindow::setInteractiveRegion(QRect interactiveRegion)
     // Set only a part of the window to be interactive
     setMask(QRegion(m_interactiveRegion));
 }
+
+#include "moc_inputpanelwindow.cpp"

@@ -151,3 +151,5 @@ void InputPlugin::setGrabbingInternal()
     connect(m_keyboard.get(), &Keyboard::keyPressed, this, &InputPlugin::keyPressed);
     connect(m_keyboard.get(), &Keyboard::keyReleased, this, &InputPlugin::keyReleased);
 }
+
+#include "moc_inputplugin.cpp"

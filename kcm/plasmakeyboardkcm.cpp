@@ -124,3 +124,5 @@ void PlasmaKeyboardKcm::save()
 }
 
 #include "plasmakeyboardkcm.moc"
+
+#include "moc_plasmakeyboardkcm.cpp"

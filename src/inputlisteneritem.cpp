@@ -318,3 +318,5 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
         m_input.commit(commit);
     }
 }
+
+#include "moc_inputlisteneritem.cpp"
