@@ -15,12 +15,19 @@ qt_add_dbus_interfaces(dbusinterface_SRCS
 target_sources(plasma-keyboard PRIVATE
     main.cpp
     inputlisteneritem.cpp
+    inputlisteneritem.h
     inputmethod.cpp
+    inputmethod_p.h
     inputpanelwindow.cpp
+    inputpanelwindow.h
     inputplugin.cpp
+    inputplugin.h
     qwaylandinputpanelshellintegration.cpp
+    qwaylandinputpanelshellintegration_p.h
     qwaylandinputpanelsurface.cpp
+    qwaylandinputpanelsurface_p.h
     vibration.cpp
+    vibration.h
     vibrationevent.h
     resources.qrc
     ${dbusinterface_SRCS}
