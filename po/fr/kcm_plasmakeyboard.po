@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
 "PO-Revision-Date: 2025-08-30 20:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -33,8 +33,8 @@ msgstr ""
 "Aucune langue sélectionnée. La disposition de clavier par défaut au niveau "
 "du système sera utilisée."
 
-#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
-#: ui/main_mediacenter.qml:34
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
 #, kde-format
 msgid "Languages"
 msgstr "Langues"
@@ -101,7 +101,7 @@ msgstr "Général"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Utiliser ou non les touches de flèches pour la navigation au clavier"
 
-#: ui/main_mediacenter.qml:41
+#: ui/main_mediacenter.qml:47
 #, kde-format
 msgid "Key press feedback"
 msgstr "Retour d'appui de touches"

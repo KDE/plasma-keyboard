@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 03:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -38,8 +38,8 @@ msgstr ""
 "No se han seleccionado idiomas. Se usará la distribución de teclado "
 "predeterminada del sistema."
 
-#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
-#: ui/main_mediacenter.qml:34
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
 #, kde-format
 msgid "Languages"
 msgstr "Idiomas"
@@ -108,7 +108,7 @@ msgstr ""
 "Controla si se deben usar las teclas de las flechas para desplazarse por el "
 "teclado"
 
-#: ui/main_mediacenter.qml:41
+#: ui/main_mediacenter.qml:47
 #, kde-format
 msgid "Key press feedback"
 msgstr "Reacción de pulsación de tecla"

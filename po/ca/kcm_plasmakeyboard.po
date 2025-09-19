@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
 "PO-Revision-Date: 2025-08-29 09:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -38,8 +38,8 @@ msgstr ""
 "No s'ha seleccionat cap idioma. Es farà servir la disposició del teclat "
 "predeterminada del sistema."
 
-#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
-#: ui/main_mediacenter.qml:34
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
 #, kde-format
 msgid "Languages"
 msgstr "Idiomes"
@@ -106,7 +106,7 @@ msgstr "General"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Si s'han d'utilitzar les tecles de fletxa per navegar pel teclat"
 
-#: ui/main_mediacenter.qml:41
+#: ui/main_mediacenter.qml:47
 #, kde-format
 msgid "Key press feedback"
 msgstr "Reacció de tecla premuda"

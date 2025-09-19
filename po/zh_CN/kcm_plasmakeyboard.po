@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -34,8 +34,8 @@ msgid ""
 "used."
 msgstr "没有选择语言。系统将使用的默认键盘布局。"
 
-#: ui/LocaleSelectorSidebar.qml:19 ui/main_handset.qml:70
-#: ui/main_mediacenter.qml:34
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
 #, kde-format
 msgid "Languages"
 msgstr "语言"
@@ -102,7 +102,7 @@ msgstr "常规"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否使用方向键导航键盘"
 
-#: ui/main_mediacenter.qml:41
+#: ui/main_mediacenter.qml:47
 #, fuzzy, kde-format
 #| msgid "Key press feedback:"
 msgid "Key press feedback"
