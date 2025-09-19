@@ -56,3 +56,8 @@ add_subdirectory(styles)
 add_subdirectory(qmlplugin)
 
 install(DIRECTORY layouts DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
+
+install(
+  FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.plasma.keyboard.metainfo.xml
+  DESTINATION ${KDE_INSTALL_METAINFODIR}
+)

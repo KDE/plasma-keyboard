@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPDX-License-Identifier: FSFAP
+  SPDX-FileCopyrightText: 2025 Aleix Pol Gonzalez <aleixpol@kde.org>
+ -->
+<component type="inputmethod">
+  <id>org.kde.plasma.keyboard</id>
+  <name>Plasma Keyoard</name>
+  <summary>On-Screen Keyboard for Plasma</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3</project_license>
+  <description>
+    <p>
+
+      Plasma Keyboard provides a virtual, on-screen keyboard for touchscreens, tablets, convertible devices,
+      phones, and traditional computers without a physical keyboard.
+    </p>
+    <ul>
+      <li>Seamless integration with the Plasma workspace and applications</li>
+      <li>Automatic appearance when text input is needed</li>
+      <li>Support for multiple layouts and languages</li>
+      <li>Configurable size and behavior for different form factors</li>
+    </ul>
+  </description>
+  <developer id="kde.org">
+    <name>The KDE Community</name>
+    <url>https://kde.org</url>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <project_group>KDE</project_group>
+  <url type="homepage">https://kde.org/plasma-desktop/</url>
+  <provides>
+    <binary>plasma-keyboard</binary>
+  </provides>
+</component>
+
