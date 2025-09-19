@@ -15,7 +15,7 @@ class InputPanelWindow : public QQuickWindow
     Q_PROPERTY(QRect interactiveRegion READ interactiveRegion WRITE setInteractiveRegion NOTIFY interactiveRegionChanged)
 
 public:
-    InputPanelWindow(QWindow *parent = nullptr);
+    explicit InputPanelWindow(QWindow *parent = nullptr);
 
     // The interactive part of the keyboard that is reserved on the screen for the input panel.
     // The space outside of it will be overlaid will have input passed to underlying windows by the compositor.

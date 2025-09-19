@@ -17,7 +17,7 @@ class Vibration : public QObject
     QML_SINGLETON
 
 public:
-    Vibration(QObject *parent = nullptr);
+    explicit Vibration(QObject *parent = nullptr);
 
     Q_INVOKABLE void vibrate(int durationMs);
 

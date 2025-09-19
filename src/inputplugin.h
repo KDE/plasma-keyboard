@@ -22,7 +22,7 @@ class InputPlugin : public QObject
 {
     Q_OBJECT
 public:
-    InputPlugin(InputMethod *inputMethod);
+    explicit InputPlugin(InputMethod *inputMethod);
     ~InputPlugin();
 
     // move to InputPlugin and Camel case
