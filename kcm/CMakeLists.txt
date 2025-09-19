@@ -9,6 +9,7 @@ kconfig_add_kcfg_files(kcm_plasmakeyboard GENERATE_MOC ../src/plasmakeyboardsett
 
 target_sources(kcm_plasmakeyboard PRIVATE
     plasmakeyboardkcm.cpp
+    plasmakeyboardkcm.h
 )
 
 target_link_libraries(kcm_plasmakeyboard PRIVATE
