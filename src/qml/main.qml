@@ -96,7 +96,7 @@ InputPanelWindow {
             }
 
             // height is calculated by InputPanel
-            width: inputPanel.keyboard.style.aspectRatio * inputPanel.keyboard.style.targetKeyboardHeight
+            width: inputPanel.keyboard.style ? inputPanel.keyboard.style.aspectRatio * inputPanel.keyboard.style.targetKeyboardHeight : 0
 
             focusPolicy: Qt.NoFocus
 
