@@ -5,7 +5,7 @@
  -->
 <component type="inputmethod">
   <id>org.kde.plasma.keyboard</id>
-  <name>Plasma Keyoard</name>
+  <name>Plasma Keyboard</name>
   <summary>On-Screen Keyboard for Plasma</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3</project_license>
