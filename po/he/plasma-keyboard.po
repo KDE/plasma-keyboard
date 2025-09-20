@@ -1,0 +1,53 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
+"PO-Revision-Date: 2025-09-19 08:05+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: main.cpp:81
+#, kde-format
+msgid "plasma-keyboard"
+msgstr "מקלדת פלזמה"
+
+#: main.cpp:83
+#, kde-format
+msgid "An on-screen keyboard for Plasma"
+msgstr "מקלדת על המסך לפלזמה"
+
+#: main.cpp:85
+#, kde-format
+msgid "Copyright 2024, Aleix Pol Gonzalez"
+msgstr "כל הזכויות שמורות 2024, לאלש פול גונזלז"
+
+#: main.cpp:87
+#, kde-format
+msgid "Aleix Pol Gonzalez"
+msgstr "אלש פול גונזלז"
+
+#: main.cpp:87
+#, kde-format
+msgid "Author"
+msgstr "יוצר"
