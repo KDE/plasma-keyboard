@@ -7,6 +7,17 @@
   <id>org.kde.plasma.keyboard</id>
   <name>Plasma Keyboard</name>
   <summary>On-Screen Keyboard for Plasma</summary>
+  <summary xml:lang="ar">لوحة المفاتيح على الشّاشة لبلازما</summary>
+  <summary xml:lang="ca">Teclat en pantalla per al Plasma</summary>
+  <summary xml:lang="es">Teclado en pantalla para Plasma</summary>
+  <summary xml:lang="eu">Plasmarako pantailako teklatu bat</summary>
+  <summary xml:lang="he">מקלדת על המסך לפלזמה</summary>
+  <summary xml:lang="ka">ეკრანის კლავიატურა Plasma-სთვის</summary>
+  <summary xml:lang="nl">Toetsenbord op scherm voor Plasma</summary>
+  <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
+  <summary xml:lang="sl">Zaslonska tipkovnica za Plasmo</summary>
+  <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
+  <summary xml:lang="uk">Екранна клавіатура для Плазми</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3</project_license>
   <description>
@@ -15,11 +26,66 @@
       Plasma Keyboard provides a virtual, on-screen keyboard for touchscreens, tablets, convertible devices,
       phones, and traditional computers without a physical keyboard.
     </p>
+    <p xml:lang="ar">توفر لوحة مفاتيح بلازما لوحة مفاتيح افتراضية على الشاشة لأجهزة اللمس والأجهزة اللوحية والأجهزة القابلة للتحويل والهواتف وأجهزة الكمبيوتر التقليدية التي لا تحتوي على لوحة مفاتيح فعلية.</p>
+    <p xml:lang="ca">El Teclat del Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
+    <p xml:lang="es">El «Teclado de Plasma» proporciona un teclado virtual en pantalla para pantallas táctiles, tabletas, dispositivos convertibles, teléfonos y equipos tradicionales que carecen de teclado físico.</p>
+    <p xml:lang="eu">Plasma Teklatuak pantailan agertzen den alegiazko teklatu bat eskaintzen du, teklaturik gabeko ukimen-pantaila, tableta, gailu bihurgarri, telefono, eta ohiko ordenagailuetarako.</p>
+    <p xml:lang="he">מקלדת פלזמה מספקת מקלדת וירטואלית על גבי המסך למסכי מגע, מחשבי לוח, מכשירים גמישים, טלפונים ומחשבים מסורתיים בלי מקלדת פיזית.</p>
+    <p xml:lang="ka">Plasma-ის კლავიატურა მოგაწვდით ვირტუალურ კლავიატურას ეკრანზე სენსორული ეკრანებისთვის, ტაბლეტებისთვის, კონვერტირებადი მოწყობილობებისთვის, ტელეფონებისთვის და ტრადიციული კომპიუტერებისთვის, რომლებსაც ფიზიკური კლავიატურა არ გააჩნიათ.</p>
+    <p xml:lang="nl">Plasma-toetsenbord levert een virtueel toetsenbord op scherm voor aanraakschermen, tablets, om te schakelen apparaten, telefoons en traditionele computers zonder fysiek toetsenbord.</p>
+    <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
+    <p xml:lang="sl">Plasma Keyboard ponuja navidezno zaslonsko tipkovnico za zaslone na dotik, tablične računalnike, prenosne naprave, telefone in tradicionalne računalnike brez fizične tipkovnice.</p>
+    <p xml:lang="sv">Plasma tangentbord tillhandahåller ett virtuellt tangentbord på skärmen för pekskärmar, surfplattor, konvertibla enheter, telefoner och traditionella datorer utan fysiskt tangentbord.</p>
+    <p xml:lang="uk">Клавіатура Плазми — віртуальна екранна клавіатура для сенсорних екранів, планшетів, гібридних пристроїв, телефонів та традиційних комп'ютерів без фізичної клавіатури.</p>
     <ul>
       <li>Seamless integration with the Plasma workspace and applications</li>
+      <li xml:lang="ar">تكامل سلس مع مساحة عمل بلازما والتطبيقات</li>
+      <li xml:lang="ca">Integració perfecta amb l'espai de treball i les aplicacions del Plasma</li>
+      <li xml:lang="es">Integración perfecta con el espacio de trabajo y las aplicaciones de Plasma</li>
+      <li xml:lang="eu">Plasma langunea eta aplikazioekin bateratze ezin hobea</li>
+      <li xml:lang="he">שילוב חלק בסביבת העבודה והיישומים של פלזמה</li>
+      <li xml:lang="ka">უწყვეტი ინტეგრაცია Plasma-ის სამუშაო სივრცესთან და აპლიკაციებთან</li>
+      <li xml:lang="nl">Naadloze integratie met de Plasma werkruimte en toepassingen</li>
+      <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
+      <li xml:lang="sl">Neopazna integracija z delovnim prostorom in aplikacijami Plasma</li>
+      <li xml:lang="sv">Sömlös integration med Plasmas arbetsyta och program</li>
+      <li xml:lang="uk">Безшовна інтеграція з робочим простором і програмами Плазми</li>
       <li>Automatic appearance when text input is needed</li>
+      <li xml:lang="ar">الظهور الآلي عند الحاجة إلى إدخال نص</li>
+      <li xml:lang="ca">Apareix automàticament quan es necessita l'entrada de text</li>
+      <li xml:lang="es">Aparece automáticamente cuando se necesita entrada de texto</li>
+      <li xml:lang="eu">Testua sartu behar denean automatikoki agertzea</li>
+      <li xml:lang="he">הופעה אוטומטית כשצריך להקליד טקסט</li>
+      <li xml:lang="ka">ავტომატური გამოჩენა, როცა ტექსტის შეყვანაა საჭირო</li>
+      <li xml:lang="nl">Automatische verschijning wanneer tekstinvoer nodig is</li>
+      <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
+      <li xml:lang="sl">Samodejni prikaz, ko je potreben vnos besedila</li>
+      <li xml:lang="sv">Visas automatisk när textinmatning behövs</li>
+      <li xml:lang="uk">Автоматична поява, коли потрібно вводити текст</li>
       <li>Support for multiple layouts and languages</li>
+      <li xml:lang="ar">توفير تخطيطات ولغات متعددة</li>
+      <li xml:lang="ca">Permet múltiples disposicions i llengües</li>
+      <li xml:lang="es">Compatible con muchas distribuciones de teclado e idiomas</li>
+      <li xml:lang="eu">Antolaera eta hizkuntza anitzetarako euskarria</li>
+      <li xml:lang="he">תמיכה במגוון פריסות ושפות</li>
+      <li xml:lang="ka">მრავალი განლაგებისა და ენის მხარდაჭერა</li>
+      <li xml:lang="nl">Ondersteuning voor meerdere indelingen en talen</li>
+      <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
+      <li xml:lang="sl">Podpora za več postavitev in jezikov</li>
+      <li xml:lang="sv">Stöd för flera layouter och språk</li>
+      <li xml:lang="uk">Підтримка декількох розкладок і мов</li>
       <li>Configurable size and behavior for different form factors</li>
+      <li xml:lang="ar">حجم وسلوك قابل للضبط لمختلف عوامل الشكل</li>
+      <li xml:lang="ca">Mida i comportament configurables per a factors de forma diferents</li>
+      <li xml:lang="es">Se puede modificar su tamaño y su comportamiento para distintos factores de forma</li>
+      <li xml:lang="eu">Forma-faktore ezberdinetarako neurri eta jokabide konfiguragarria</li>
+      <li xml:lang="he">גודל והתנהגות מתכוונים למגוון גודלי תצוגה</li>
+      <li xml:lang="ka">მორგებადი ზომა და ქცევა სხვადასხვა ფორმფაქტორებისთვის</li>
+      <li xml:lang="nl">Aanpasbare grootte en gedrag voor verschillende vormfactoren</li>
+      <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
+      <li xml:lang="sl">Nastavljiva velikost in delovanje za različne oblike</li>
+      <li xml:lang="sv">Inställningsbar storlek och beteende för olika formfaktorer</li>
+      <li xml:lang="uk">Придатний до налаштовування розмір і поведінка для різних форм-факторів</li>
     </ul>
   </description>
   <developer id="kde.org">
@@ -33,4 +99,3 @@
     <binary>plasma-keyboard</binary>
   </provides>
 </component>
-
