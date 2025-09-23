@@ -6,6 +6,19 @@
 <component type="inputmethod">
   <id>org.kde.plasma.keyboard</id>
   <name>Plasma Keyboard</name>
+  <name xml:lang="ar">لوحة المفاتيح بلازما</name>
+  <name xml:lang="ca">Teclat del Plasma</name>
+  <name xml:lang="es">Teclado de Plasma</name>
+  <name xml:lang="eu">Plasma Teklatua</name>
+  <name xml:lang="he">מקלדת פלזמה</name>
+  <name xml:lang="ka">Plasma Keyboard</name>
+  <name xml:lang="nl">Plasma-toetsenbord</name>
+  <name xml:lang="pt-BR">Teclado do Plasma</name>
+  <name xml:lang="sl">Plasma Keyboard</name>
+  <name xml:lang="sv">Plasma tangentbord</name>
+  <name xml:lang="tr">Plasma Klavye</name>
+  <name xml:lang="uk">Клавіатура Плазми</name>
+  <name xml:lang="zh-TW">Plasma 鍵盤</name>
   <summary>On-Screen Keyboard for Plasma</summary>
   <summary xml:lang="ar">لوحة المفاتيح على الشّاشة لبلازما</summary>
   <summary xml:lang="ca">Teclat en pantalla per al Plasma</summary>
@@ -17,7 +30,9 @@
   <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
   <summary xml:lang="sl">Zaslonska tipkovnica za Plasmo</summary>
   <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
+  <summary xml:lang="tr">Plasma için ekran üzeri klavye</summary>
   <summary xml:lang="uk">Екранна клавіатура для Плазми</summary>
+  <summary xml:lang="zh-TW">Plasma 的螢幕虛擬鍵盤</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3</project_license>
   <description>
@@ -36,7 +51,9 @@
     <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
     <p xml:lang="sl">Plasma Keyboard ponuja navidezno zaslonsko tipkovnico za zaslone na dotik, tablične računalnike, prenosne naprave, telefone in tradicionalne računalnike brez fizične tipkovnice.</p>
     <p xml:lang="sv">Plasma tangentbord tillhandahåller ett virtuellt tangentbord på skärmen för pekskärmar, surfplattor, konvertibla enheter, telefoner och traditionella datorer utan fysiskt tangentbord.</p>
+    <p xml:lang="tr">Plasma Klavye; dokunmatik ekranlar, tabletler, dönüştürülebilir aygıtlar, telefonlar ve fiziksel bir klavyesi olmayan geleneksel bilgisayarlar için sanal ve ekran üzerinde görüntülenen bir klavye sağlar.</p>
     <p xml:lang="uk">Клавіатура Плазми — віртуальна екранна клавіатура для сенсорних екранів, планшетів, гібридних пристроїв, телефонів та традиційних комп'ютерів без фізичної клавіатури.</p>
+    <p xml:lang="zh-TW">Plasma 鍵盤提供螢幕上的虛擬鍵盤給觸控螢幕、平板電腦、二合一筆電、手機與沒有硬體鍵盤的傳統電腦使用。</p>
     <ul>
       <li>Seamless integration with the Plasma workspace and applications</li>
       <li xml:lang="ar">تكامل سلس مع مساحة عمل بلازما والتطبيقات</li>
@@ -49,7 +66,9 @@
       <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
       <li xml:lang="sl">Neopazna integracija z delovnim prostorom in aplikacijami Plasma</li>
       <li xml:lang="sv">Sömlös integration med Plasmas arbetsyta och program</li>
+      <li xml:lang="tr">Plasma çalışma alanı ve uygulamalarıyla sorunsuz tümleşim</li>
       <li xml:lang="uk">Безшовна інтеграція з робочим простором і програмами Плазми</li>
+      <li xml:lang="zh-TW">與 Plasma 工作空間與應用程式無縫整合</li>
       <li>Automatic appearance when text input is needed</li>
       <li xml:lang="ar">الظهور الآلي عند الحاجة إلى إدخال نص</li>
       <li xml:lang="ca">Apareix automàticament quan es necessita l'entrada de text</li>
@@ -61,7 +80,9 @@
       <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
       <li xml:lang="sl">Samodejni prikaz, ko je potreben vnos besedila</li>
       <li xml:lang="sv">Visas automatisk när textinmatning behövs</li>
+      <li xml:lang="tr">Metin girişine gerek olduğunda kendiliğinden ortaya çıkar</li>
       <li xml:lang="uk">Автоматична поява, коли потрібно вводити текст</li>
+      <li xml:lang="zh-TW">需要能夠輸入文字時自動出現</li>
       <li>Support for multiple layouts and languages</li>
       <li xml:lang="ar">توفير تخطيطات ولغات متعددة</li>
       <li xml:lang="ca">Permet múltiples disposicions i llengües</li>
@@ -73,7 +94,9 @@
       <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
       <li xml:lang="sl">Podpora za več postavitev in jezikov</li>
       <li xml:lang="sv">Stöd för flera layouter och språk</li>
+      <li xml:lang="tr">Birden çok yerleşim ve dil desteği</li>
       <li xml:lang="uk">Підтримка декількох розкладок і мов</li>
+      <li xml:lang="zh-TW">支援多個鍵盤配置與語言</li>
       <li>Configurable size and behavior for different form factors</li>
       <li xml:lang="ar">حجم وسلوك قابل للضبط لمختلف عوامل الشكل</li>
       <li xml:lang="ca">Mida i comportament configurables per a factors de forma diferents</li>
@@ -85,7 +108,9 @@
       <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
       <li xml:lang="sl">Nastavljiva velikost in delovanje za različne oblike</li>
       <li xml:lang="sv">Inställningsbar storlek och beteende för olika formfaktorer</li>
+      <li xml:lang="tr">Değişik aygıt biçimleri için yapılandırılabilir boyut ve davranış</li>
       <li xml:lang="uk">Придатний до налаштовування розмір і поведінка для різних форм-факторів</li>
+      <li xml:lang="zh-TW">可調整大小與行為來符合不同的裝置類型</li>
     </ul>
   </description>
   <developer id="kde.org">
