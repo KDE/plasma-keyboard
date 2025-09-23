@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:44+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2025-08-30 20:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -15,17 +15,14 @@ msgstr ""
 "X-Generator: Lokalize 25.08.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
-#, kde-format
 msgid "Filter languages…"
 msgstr "Filtrer les langues…"
 
 #: ui/LocaleSelectorListView.qml:69
-#, kde-format
 msgid "Filter languages"
 msgstr "Filtrer les langues"
 
 #: ui/LocaleSelectorListView.qml:82
-#, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
@@ -35,73 +32,59 @@ msgstr ""
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
-#, kde-format
 msgid "Languages"
 msgstr "Langues"
 
 #: ui/main.qml:32
-#, kde-format
 msgid "Key press feedback:"
 msgstr "Retour d'appui de touches :"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
-#, kde-format
 msgid "Sound"
 msgstr "Son"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
-#, kde-format
 msgid "Vibration"
 msgstr "Vibration"
 
 #: ui/main.qml:55
-#, kde-format
 msgid "General:"
 msgstr "Général :"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
-#, kde-format
 msgid "Keyboard navigation"
 msgstr "Navigation au clavier"
 
 #: ui/main_handset.qml:29
-#, kde-format
 msgid "Test the virtual keyboard…"
 msgstr "Testez le clavier virtuel…"
 
 #: ui/main_handset.qml:34
-#, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "Retours"
 
 #: ui/main_handset.qml:41
-#, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "Émettre ou non un son en appuyant sur une touche"
 
 #: ui/main_handset.qml:55
-#, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Vibrer ou non un son en appuyant sur une touche"
 
 #: ui/main_handset.qml:76
-#, kde-format
 msgid "Keyboard Languages"
 msgstr "Langues de clavier"
 
 #: ui/main_handset.qml:84
-#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Général"
 
 #: ui/main_handset.qml:91
-#, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Utiliser ou non les touches de flèches pour la navigation au clavier"
 
 #: ui/main_mediacenter.qml:47
-#, kde-format
 msgid "Key press feedback"
 msgstr "Retour d'appui de touches"

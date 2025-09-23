@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:44+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2025-08-29 19:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -18,17 +18,14 @@ msgstr ""
 "X-Generator: Lokalize 25.11.70\n"
 
 #: ui/LocaleSelectorListView.qml:68
-#, kde-format
 msgid "Filter languages…"
 msgstr "過濾語言…"
 
 #: ui/LocaleSelectorListView.qml:69
-#, kde-format
 msgid "Filter languages"
 msgstr "過濾語言"
 
 #: ui/LocaleSelectorListView.qml:82
-#, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
@@ -36,73 +33,59 @@ msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
-#, kde-format
 msgid "Languages"
 msgstr "語言"
 
 #: ui/main.qml:32
-#, kde-format
 msgid "Key press feedback:"
 msgstr "按鍵回饋："
 
 #: ui/main.qml:33 ui/main_handset.qml:40
-#, kde-format
 msgid "Sound"
 msgstr "音效"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
-#, kde-format
 msgid "Vibration"
 msgstr "震動"
 
 #: ui/main.qml:55
-#, kde-format
 msgid "General:"
 msgstr "一般："
 
 #: ui/main.qml:56 ui/main_handset.qml:90
-#, kde-format
 msgid "Keyboard navigation"
 msgstr "鍵盤導覽"
 
 #: ui/main_handset.qml:29
-#, kde-format
 msgid "Test the virtual keyboard…"
 msgstr "測試虛擬鍵盤…"
 
 #: ui/main_handset.qml:34
-#, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "回饋"
 
 #: ui/main_handset.qml:41
-#, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "是否要在按下按鍵時發出聲音。"
 
 #: ui/main_handset.qml:55
-#, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "是否要在按下按鍵時震動。"
 
 #: ui/main_handset.qml:76
-#, kde-format
 msgid "Keyboard Languages"
 msgstr "鍵盤語言"
 
 #: ui/main_handset.qml:84
-#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "一般"
 
 #: ui/main_handset.qml:91
-#, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否要使用方向鍵控制鍵盤"
 
 #: ui/main_mediacenter.qml:47
-#, kde-format
 msgid "Key press feedback"
 msgstr "按鍵回饋"

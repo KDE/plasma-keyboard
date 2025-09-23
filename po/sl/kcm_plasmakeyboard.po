@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:44+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2025-08-29 10:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -19,17 +19,14 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 
 #: ui/LocaleSelectorListView.qml:68
-#, kde-format
 msgid "Filter languages…"
 msgstr "Filtriraj jezike…"
 
 #: ui/LocaleSelectorListView.qml:69
-#, kde-format
 msgid "Filter languages"
 msgstr "Filtriraj jezike"
 
 #: ui/LocaleSelectorListView.qml:82
-#, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
@@ -38,73 +35,59 @@ msgstr ""
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
-#, kde-format
 msgid "Languages"
 msgstr "Jeziki"
 
 #: ui/main.qml:32
-#, kde-format
 msgid "Key press feedback:"
 msgstr "Povratni odziv pritiska tipke:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
-#, kde-format
 msgid "Sound"
 msgstr "Zvok"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
-#, kde-format
 msgid "Vibration"
 msgstr "Tresenje"
 
 #: ui/main.qml:55
-#, kde-format
 msgid "General:"
 msgstr "Splošno:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
-#, kde-format
 msgid "Keyboard navigation"
 msgstr "Krmarjenje tipkovnice"
 
 #: ui/main_handset.qml:29
-#, kde-format
 msgid "Test the virtual keyboard…"
 msgstr "Preizkusi navidezno tipkovnico…"
 
 #: ui/main_handset.qml:34
-#, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "Povratni odziv"
 
 #: ui/main_handset.qml:41
-#, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "Ali naj se ob pritisku tipke odda zvok"
 
 #: ui/main_handset.qml:55
-#, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Ali naj vibrira ob pritisku tipke"
 
 #: ui/main_handset.qml:76
-#, kde-format
 msgid "Keyboard Languages"
 msgstr "Jeziki tipkovnice"
 
 #: ui/main_handset.qml:84
-#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Splošno"
 
 #: ui/main_handset.qml:91
-#, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Ali naj se za navigacijo po tipkovnici uporabljajo puščične tipke"
 
 #: ui/main_mediacenter.qml:47
-#, kde-format
 msgid "Key press feedback"
 msgstr "Povratni odziv pritiska tipke"

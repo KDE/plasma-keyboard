@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:44+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2025-08-29 19:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -21,17 +21,14 @@ msgstr ""
 "X-Generator: Lokalize 25.08.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
-#, kde-format
 msgid "Filter languages…"
 msgstr "Hizkuntzak iragazi…"
 
 #: ui/LocaleSelectorListView.qml:69
-#, kde-format
 msgid "Filter languages"
 msgstr "Iragazi hizkuntzak"
 
 #: ui/LocaleSelectorListView.qml:82
-#, kde-format
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
@@ -41,73 +38,59 @@ msgstr ""
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
-#, kde-format
 msgid "Languages"
 msgstr "Hizkuntzak"
 
 #: ui/main.qml:32
-#, kde-format
 msgid "Key press feedback:"
 msgstr "Tekla-sakatzearen atzeraelikadura:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
-#, kde-format
 msgid "Sound"
 msgstr "Soinua"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
-#, kde-format
 msgid "Vibration"
 msgstr "Bibrazioa"
 
 #: ui/main.qml:55
-#, kde-format
 msgid "General:"
 msgstr "Orokorra:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
-#, kde-format
 msgid "Keyboard navigation"
 msgstr "Teklatu-nabigazioa"
 
 #: ui/main_handset.qml:29
-#, kde-format
 msgid "Test the virtual keyboard…"
 msgstr "Alegiazko teklatua probatu…"
 
 #: ui/main_handset.qml:34
-#, kde-format
 msgctxt "@title:group"
 msgid "Feedback"
 msgstr "Atzeraelikadura"
 
 #: ui/main_handset.qml:41
-#, kde-format
 msgid "Whether to emit a sound on key press"
 msgstr "Tekla sakatzean soinua igorri edo ez"
 
 #: ui/main_handset.qml:55
-#, kde-format
 msgid "Whether to vibrate on key press"
 msgstr "Tekla sakatzean dardaratu ala ez"
 
 #: ui/main_handset.qml:76
-#, kde-format
 msgid "Keyboard Languages"
 msgstr "Teklatu-hizkuntzak"
 
 #: ui/main_handset.qml:84
-#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Orokorra"
 
 #: ui/main_handset.qml:91
-#, kde-format
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"
 
 #: ui/main_mediacenter.qml:47
-#, kde-format
 msgid "Key press feedback"
 msgstr "Tekla-sakatzearen atzeraelikadura"
