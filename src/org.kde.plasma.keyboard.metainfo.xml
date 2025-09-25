@@ -11,6 +11,7 @@
   <name xml:lang="es">Teclado de Plasma</name>
   <name xml:lang="eu">Plasma Teklatua</name>
   <name xml:lang="he">מקלדת פלזמה</name>
+  <name xml:lang="it">Plasma Keyboard</name>
   <name xml:lang="ka">Plasma Keyboard</name>
   <name xml:lang="nl">Plasma-toetsenbord</name>
   <name xml:lang="pt-BR">Teclado do Plasma</name>
@@ -25,6 +26,7 @@
   <summary xml:lang="es">Teclado en pantalla para Plasma</summary>
   <summary xml:lang="eu">Plasmarako pantailako teklatu bat</summary>
   <summary xml:lang="he">מקלדת על המסך לפלזמה</summary>
+  <summary xml:lang="it">Tastiera su schermo per Plasma</summary>
   <summary xml:lang="ka">ეკრანის კლავიატურა Plasma-სთვის</summary>
   <summary xml:lang="nl">Toetsenbord op scherm voor Plasma</summary>
   <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
@@ -46,6 +48,7 @@
     <p xml:lang="es">El «Teclado de Plasma» proporciona un teclado virtual en pantalla para pantallas táctiles, tabletas, dispositivos convertibles, teléfonos y equipos tradicionales que carecen de teclado físico.</p>
     <p xml:lang="eu">Plasma Teklatuak pantailan agertzen den alegiazko teklatu bat eskaintzen du, teklaturik gabeko ukimen-pantaila, tableta, gailu bihurgarri, telefono, eta ohiko ordenagailuetarako.</p>
     <p xml:lang="he">מקלדת פלזמה מספקת מקלדת וירטואלית על גבי המסך למסכי מגע, מחשבי לוח, מכשירים גמישים, טלפונים ומחשבים מסורתיים בלי מקלדת פיזית.</p>
+    <p xml:lang="it">Plasma Keyboard fornisce una tastiera virtuale su schermo per touchscreen, tablet, dispositivi convertibili, telefoni e computer tradizionali privi di tastiera fisica.</p>
     <p xml:lang="ka">Plasma-ის კლავიატურა მოგაწვდით ვირტუალურ კლავიატურას ეკრანზე სენსორული ეკრანებისთვის, ტაბლეტებისთვის, კონვერტირებადი მოწყობილობებისთვის, ტელეფონებისთვის და ტრადიციული კომპიუტერებისთვის, რომლებსაც ფიზიკური კლავიატურა არ გააჩნიათ.</p>
     <p xml:lang="nl">Plasma-toetsenbord levert een virtueel toetsenbord op scherm voor aanraakschermen, tablets, om te schakelen apparaten, telefoons en traditionele computers zonder fysiek toetsenbord.</p>
     <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
@@ -61,6 +64,7 @@
       <li xml:lang="es">Integración perfecta con el espacio de trabajo y las aplicaciones de Plasma</li>
       <li xml:lang="eu">Plasma langunea eta aplikazioekin bateratze ezin hobea</li>
       <li xml:lang="he">שילוב חלק בסביבת העבודה והיישומים של פלזמה</li>
+      <li xml:lang="it">Integrazione perfetta con l'area di lavoro e le applicazioni Plasma</li>
       <li xml:lang="ka">უწყვეტი ინტეგრაცია Plasma-ის სამუშაო სივრცესთან და აპლიკაციებთან</li>
       <li xml:lang="nl">Naadloze integratie met de Plasma werkruimte en toepassingen</li>
       <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
@@ -75,6 +79,7 @@
       <li xml:lang="es">Aparece automáticamente cuando se necesita entrada de texto</li>
       <li xml:lang="eu">Testua sartu behar denean automatikoki agertzea</li>
       <li xml:lang="he">הופעה אוטומטית כשצריך להקליד טקסט</li>
+      <li xml:lang="it">Aspetto automatico quando è necessario l'inserimento di testo</li>
       <li xml:lang="ka">ავტომატური გამოჩენა, როცა ტექსტის შეყვანაა საჭირო</li>
       <li xml:lang="nl">Automatische verschijning wanneer tekstinvoer nodig is</li>
       <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
@@ -89,6 +94,7 @@
       <li xml:lang="es">Compatible con muchas distribuciones de teclado e idiomas</li>
       <li xml:lang="eu">Antolaera eta hizkuntza anitzetarako euskarria</li>
       <li xml:lang="he">תמיכה במגוון פריסות ושפות</li>
+      <li xml:lang="it">Supporto per più mappature e lingue</li>
       <li xml:lang="ka">მრავალი განლაგებისა და ენის მხარდაჭერა</li>
       <li xml:lang="nl">Ondersteuning voor meerdere indelingen en talen</li>
       <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
@@ -103,6 +109,7 @@
       <li xml:lang="es">Se puede modificar su tamaño y su comportamiento para distintos factores de forma</li>
       <li xml:lang="eu">Forma-faktore ezberdinetarako neurri eta jokabide konfiguragarria</li>
       <li xml:lang="he">גודל והתנהגות מתכוונים למגוון גודלי תצוגה</li>
+      <li xml:lang="it">Dimensioni e comportamento configurabili per diversi fattori di forma</li>
       <li xml:lang="ka">მორგებადი ზომა და ქცევა სხვადასხვა ფორმფაქტორებისთვის</li>
       <li xml:lang="nl">Aanpasbare grootte en gedrag voor verschillende vormfactoren</li>
       <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
