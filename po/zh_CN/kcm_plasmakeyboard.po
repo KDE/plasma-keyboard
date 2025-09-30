@@ -87,7 +87,5 @@ msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否使用方向键导航键盘"
 
 #: ui/main_mediacenter.qml:47
-#, fuzzy
-#| msgid "Key press feedback:"
 msgid "Key press feedback"
-msgstr "按键反馈："
+msgstr "按键反馈"
