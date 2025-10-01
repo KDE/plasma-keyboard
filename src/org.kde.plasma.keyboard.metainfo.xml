@@ -23,6 +23,7 @@
   <name xml:lang="sv">Plasma tangentbord</name>
   <name xml:lang="tr">Plasma Klavye</name>
   <name xml:lang="uk">Клавіатура Плазми</name>
+  <name xml:lang="zh-CN">Plasma 键盘</name>
   <name xml:lang="zh-TW">Plasma 鍵盤</name>
   <summary>On-Screen Keyboard for Plasma</summary>
   <summary xml:lang="ar">لوحة المفاتيح على الشّاشة لبلازما</summary>
@@ -42,6 +43,7 @@
   <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
   <summary xml:lang="tr">Plasma için ekran üzeri klavye</summary>
   <summary xml:lang="uk">Екранна клавіатура для Плазми</summary>
+  <summary xml:lang="zh-CN">Plasma 的屏幕键盘</summary>
   <summary xml:lang="zh-TW">Plasma 的螢幕虛擬鍵盤</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3</project_license>
@@ -67,6 +69,7 @@
     <p xml:lang="sv">Plasma tangentbord tillhandahåller ett virtuellt tangentbord på skärmen för pekskärmar, surfplattor, konvertibla enheter, telefoner och traditionella datorer utan fysiskt tangentbord.</p>
     <p xml:lang="tr">Plasma Klavye; dokunmatik ekranlar, tabletler, dönüştürülebilir aygıtlar, telefonlar ve fiziksel bir klavyesi olmayan geleneksel bilgisayarlar için sanal ve ekran üzerinde görüntülenen bir klavye sağlar.</p>
     <p xml:lang="uk">Клавіатура Плазми — віртуальна екранна клавіатура для сенсорних екранів, планшетів, гібридних пристроїв, телефонів та традиційних комп'ютерів без фізичної клавіатури.</p>
+    <p xml:lang="zh-CN">Plasma 键盘为触摸屏、平板电脑、变形本、手机以及没有实体键盘的传统电脑提供了一个虚拟的屏幕键盘。</p>
     <p xml:lang="zh-TW">Plasma 鍵盤提供螢幕上的虛擬鍵盤給觸控螢幕、平板電腦、二合一筆電、手機與沒有硬體鍵盤的傳統電腦使用。</p>
     <ul>
       <li>Seamless integration with the Plasma workspace and applications</li>
@@ -86,6 +89,7 @@
       <li xml:lang="sv">Sömlös integration med Plasmas arbetsyta och program</li>
       <li xml:lang="tr">Plasma çalışma alanı ve uygulamalarıyla sorunsuz tümleşim</li>
       <li xml:lang="uk">Безшовна інтеграція з робочим простором і програмами Плазми</li>
+      <li xml:lang="zh-CN">与 Plasma 工作区和应用程序无缝集成</li>
       <li xml:lang="zh-TW">與 Plasma 工作空間與應用程式無縫整合</li>
       <li>Automatic appearance when text input is needed</li>
       <li xml:lang="ar">الظهور الآلي عند الحاجة إلى إدخال نص</li>
@@ -104,6 +108,7 @@
       <li xml:lang="sv">Visas automatisk när textinmatning behövs</li>
       <li xml:lang="tr">Metin girişine gerek olduğunda kendiliğinden ortaya çıkar</li>
       <li xml:lang="uk">Автоматична поява, коли потрібно вводити текст</li>
+      <li xml:lang="zh-CN">在需要输入文本时自动显示</li>
       <li xml:lang="zh-TW">需要能夠輸入文字時自動出現</li>
       <li>Support for multiple layouts and languages</li>
       <li xml:lang="ar">توفير تخطيطات ولغات متعددة</li>
@@ -122,6 +127,7 @@
       <li xml:lang="sv">Stöd för flera layouter och språk</li>
       <li xml:lang="tr">Birden çok yerleşim ve dil desteği</li>
       <li xml:lang="uk">Підтримка декількох розкладок і мов</li>
+      <li xml:lang="zh-CN">支持多种布局和语言</li>
       <li xml:lang="zh-TW">支援多個鍵盤配置與語言</li>
       <li>Configurable size and behavior for different form factors</li>
       <li xml:lang="ar">حجم وسلوك قابل للضبط لمختلف عوامل الشكل</li>
@@ -140,6 +146,7 @@
       <li xml:lang="sv">Inställningsbar storlek och beteende för olika formfaktorer</li>
       <li xml:lang="tr">Değişik aygıt biçimleri için yapılandırılabilir boyut ve davranış</li>
       <li xml:lang="uk">Придатний до налаштовування розмір і поведінка для різних форм-факторів</li>
+      <li xml:lang="zh-CN">可针对不同外形规格配置不同的尺寸和行为</li>
       <li xml:lang="zh-TW">可調整大小與行為來符合不同的裝置類型</li>
     </ul>
   </description>
