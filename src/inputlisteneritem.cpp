@@ -221,7 +221,7 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
                 break;
         }
         return QVariant::fromValue<int>(qtHints);
-    } break;
+    }
     case Qt::ImCurrentSelection: {
         // cursorPos and anchorPos are in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
