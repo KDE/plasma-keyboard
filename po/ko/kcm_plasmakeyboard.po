@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-23 00:45+0000\n"
-"PO-Revision-Date: 2025-07-21 01:14+0200\n"
+"PO-Revision-Date: 2025-10-09 01:33+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -19,46 +19,46 @@ msgstr ""
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
-msgstr ""
+msgstr "언어 필터…"
 
 #: ui/LocaleSelectorListView.qml:69
 msgid "Filter languages"
-msgstr ""
+msgstr "언어 필터"
 
 #: ui/LocaleSelectorListView.qml:82
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr ""
+msgstr "선택한 언어가 없습니다. 시스템 기본 키보드 레이아웃을 선택합니다."
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
-msgstr ""
+msgstr "언어"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
-msgstr ""
+msgstr "키 입력 피드백:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 msgid "Sound"
-msgstr ""
+msgstr "소리"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 msgid "Vibration"
-msgstr ""
+msgstr "진동"
 
 #: ui/main.qml:55
 msgid "General:"
-msgstr ""
+msgstr "일반:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "키보드 탐색"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "가상 키보드 시험…"
 
 #: ui/main_handset.qml:34
 msgctxt "@title:group"
@@ -75,17 +75,17 @@ msgstr "키를 누를 때 진동 여부"
 
 #: ui/main_handset.qml:76
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "키보드 언어"
 
 #: ui/main_handset.qml:84
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: ui/main_handset.qml:91
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "화살표 키로 키보드 탐색 여부"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
-msgstr ""
+msgstr "키 입력 피드백"
