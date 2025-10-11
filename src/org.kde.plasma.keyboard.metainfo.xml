@@ -51,7 +51,6 @@
   <project_license>GPL-3</project_license>
   <description>
     <p>
-
       Plasma Keyboard provides a virtual, on-screen keyboard for touchscreens, tablets, convertible devices,
       phones, and traditional computers without a physical keyboard.
     </p>
@@ -157,6 +156,11 @@
       <li xml:lang="zh-TW">可調整大小與行為來符合不同的裝置類型</li>
     </ul>
   </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/plasma-keyboard/plasma-keyboard.png</image>
+    </screenshot>
+   </screenshots>
   <developer id="kde.org">
     <name>The KDE Community</name>
     <url>https://kde.org</url>
