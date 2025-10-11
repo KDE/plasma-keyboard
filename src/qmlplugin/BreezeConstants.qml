@@ -33,11 +33,12 @@ QtObject {
     property color modeKeyAccentColor: textOnPrimaryColor
     property color keyTextColor: textOnPrimaryColor
     property color keySmallTextColor: textOnPrimaryColor
-    property color popupBackgroundColor: secondaryLightColor
-    property color popupBorderColor: secondaryDarkColor
+    property color popupBackgroundColor: secondaryColor
+    property color popupBorderColor: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.textColor, secondaryColor, 0.9)
     property color popupTextColor: textOnSecondaryColor
-    property color popupTextSelectedColor: Kirigami.Theme.highlightColor
-    property color popupHighlightColor: secondaryLightColor
+    property color popupTextSelectedColor: textOnSecondaryColor
+    property color popupHighlightBorderColor: Kirigami.Theme.highlightColor
+    property color popupHighlightColor: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
     property color selectionListTextColor: textOnPrimaryColor
     property color selectionListSeparatorColor: primaryLightColor
     property color selectionListBackgroundColor: primaryColor
@@ -45,4 +46,5 @@ QtObject {
     property color navigationHighlightBorderColor: Kirigami.Theme.highlightColor
 
     readonly property real buttonRadius: Kirigami.Units.cornerRadius
+    readonly property real popupRadius: Kirigami.Units.cornerRadius
 }

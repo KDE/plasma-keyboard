@@ -543,19 +543,13 @@ KeyboardStyle {
         readonly property bool flickKeysVisible: text && flickKeysSet &&
                                                  text !== flickLeft && text !== flickTop && text !== flickRight && text !== flickBottom
         id: characterPreview
-        Rectangle {
+        PlasmaKeyboard.BreezePopup {
             id: characterPreviewBackground
+            theme: currentStyle.theme
             anchors.fill: parent
-            color: theme.popupBackgroundColor
-            radius: theme.buttonRadius
             readonly property int largeTextHeight: Math.round(height / 3 * 2)
             readonly property int smallTextHeight: Math.round(height / 3)
             readonly property int smallTextMargin: Math.round(3 * scaleHint)
-
-            border {
-                width: 1
-                color: theme.popupBorderColor
-            }
 
             QQC2.Label {
                 id: characterPreviewText
@@ -686,20 +680,17 @@ KeyboardStyle {
     alternateKeysListHighlight: Rectangle {
         color: theme.popupHighlightColor
         radius: theme.buttonRadius
+        border.color: theme.popupHighlightBorderColor
+        border.width: 1
     }
     alternateKeysListBackground: Item {
-        Rectangle {
+        PlasmaKeyboard.BreezePopup {
+            theme: currentStyle.theme
             readonly property real margin: 20 * scaleHint
             x: -margin
             y: -margin
             width: parent.width + 2 * margin
             height: parent.height + 2 * margin
-            radius: theme.buttonRadius
-            color: theme.popupBackgroundColor
-            border {
-                width: 1
-                color: theme.popupBorderColor
-            }
         }
     }
 
@@ -930,12 +921,8 @@ KeyboardStyle {
         }
     }
 
-    popupListBackground: Rectangle {
-        color: theme.popupBackgroundColor
-        border {
-            width: 1
-            color: theme.popupBorderColor
-        }
+    popupListBackground: PlasmaKeyboard.BreezePopup {
+        theme: currentStyle.theme
     }
 
     popupListAdd: Transition {}
@@ -998,13 +985,18 @@ KeyboardStyle {
     languageListHighlight: Rectangle {
         color: theme.popupHighlightColor
         radius: theme.buttonRadius
+        border.color: theme.popupHighlightBorderColor
+        border.width: 1
     }
 
-    languageListBackground: Rectangle {
-        color: theme.popupBackgroundColor
-        border {
-            width: 1
-            color: theme.popupBorderColor
+    languageListBackground: Item {
+        PlasmaKeyboard.BreezePopup {
+            theme: currentStyle.theme
+            readonly property real backgroundMargin: 20 * scaleHint
+            x: -backgroundMargin
+            y: -backgroundMargin
+            width: parent.width + 2 * backgroundMargin
+            height: parent.height + 2 * backgroundMargin
         }
     }
 
@@ -1066,18 +1058,13 @@ KeyboardStyle {
     }
 
     functionPopupListBackground: Item {
-        Rectangle {
+        PlasmaKeyboard.BreezePopup {
+            theme: currentStyle.theme
             readonly property real backgroundMargin: 20 * scaleHint
             x: -backgroundMargin
             y: -backgroundMargin
             width: parent.width + 2 * backgroundMargin
             height: parent.height + 2 * backgroundMargin
-            radius: theme.buttonRadius
-            color: theme.popupBackgroundColor
-            border {
-                width: 1
-                color: theme.popupBorderColor
-            }
         }
     }
 

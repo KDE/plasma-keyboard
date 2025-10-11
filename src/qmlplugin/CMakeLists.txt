@@ -12,6 +12,7 @@ set_source_files_properties(
 ecm_target_qml_sources(keyboardlib SOURCES
     BreezeKeyPanel.qml
     BreezeConstants.qml
+    BreezePopup.qml
 )
 
 target_link_libraries(keyboardlib
