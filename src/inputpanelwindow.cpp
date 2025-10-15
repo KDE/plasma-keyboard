@@ -5,10 +5,12 @@
 */
 
 #include "inputpanelwindow.h"
+#include <qnamespace.h>
 
 InputPanelWindow::InputPanelWindow(QWindow *parent)
     : QQuickWindow{parent}
 {
+    setFlag(Qt::FramelessWindowHint);
 }
 
 QRect InputPanelWindow::interactiveRegion() const
