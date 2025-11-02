@@ -17,6 +17,12 @@ cmake ..
 make && make install
 ```
 
+## Install using the flatpak nightly repository
+
+https://cdn.kde.org/flatpak/plasma-keyboard-nightly/org.kde.plasma.keyboard.flatpakref
+
+See also: https://userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps
+
 ## Layouts
 
 The keyboard layouts are located in the [src/layouts](/src/layouts) folder.
