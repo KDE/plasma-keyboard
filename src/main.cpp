@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 
     KAboutData aboutData(QStringLiteral("plasma-keyboard"),
                          i18n("plasma-keyboard"),
-                         QStringLiteral("1.0"),
+                         QStringLiteral("0.1.0"),
                          i18n("An on-screen keyboard for Plasma"),
                          KAboutLicense::GPL,
                          i18n("Copyright 2024, Aleix Pol Gonzalez"));
