@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2016 The Qt Company Ltd.
 // SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
-// SPDX-License-Identifier: GPL-3.0-only
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 import QtQuick
 import QtQuick.Layouts
