@@ -36,6 +36,7 @@ target_sources(plasma-keyboard PRIVATE
 ecm_add_qml_module(plasma-keyboard URI "org.kde.plasma.keyboard" GENERATE_PLUGIN_SOURCE)
 ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
+    qml/LanguageDialog.qml
 )
 ecm_finalize_qml_module(plasma-keyboard)
 
@@ -45,6 +46,7 @@ target_link_libraries(plasma-keyboard
     PRIVATE
     KF6::CoreAddons
     KF6::I18n
+    KF6::I18nQml
     KF6::ConfigCore
     KF6::ConfigGui
     Qt::DBus

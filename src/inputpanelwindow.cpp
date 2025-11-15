@@ -6,6 +6,9 @@
 
 #include "inputpanelwindow.h"
 #include <qnamespace.h>
+#include <QDesktopServices>
+#include <QProcess>
+#include <KSandbox>
 
 InputPanelWindow::InputPanelWindow(QWindow *parent)
     : QQuickWindow{parent}
@@ -29,5 +32,15 @@ void InputPanelWindow::setInteractiveRegion(QRect interactiveRegion)
     // Set only a part of the window to be interactive
     setMask(QRegion(m_interactiveRegion));
 }
+
+void InputPanelWindow::showSettings()
+{
+    if (KSandbox::isInside()) {
+        QProcess::startDetached(QStringLiteral("kcmshell6"), {QStringLiteral("kcm_plasmakeyboard")});
+    } else {
+        QDesktopServices::openUrl(QUrl(QStringLiteral("systemsettings:kcm_plasmakeyboard")));
+    }
+}
+
 
 #include "moc_inputpanelwindow.cpp"

@@ -57,6 +57,13 @@ InputPanelWindow {
     Kirigami.ShadowedRectangle {
         id: panelWrapper
 
+        LanguageDialog {
+            id: languageDialog
+            onShowSettings: {
+                root.showSettings();
+            }
+        }
+
         // Whether the panel takes the full width of the screen
         readonly property bool isFullScreenWidth: PlasmaKeyboardSettings.panelFillScreenWidth
 
@@ -99,6 +106,10 @@ InputPanelWindow {
             width: inputPanel.keyboard.style ? inputPanel.keyboard.style.aspectRatio * inputPanel.keyboard.style.targetKeyboardHeight : 0
 
             focusPolicy: Qt.NoFocus
+            externalLanguageSwitchEnabled: true
+            onExternalLanguageSwitch: (localeList, currentIndex) => {
+                languageDialog.show(localeList, currentIndex)
+            }
 
             function updateLocales() {
                 if (PlasmaKeyboardSettings.enabledLocales.length === 0) {
