@@ -52,6 +52,7 @@ int main(int argc, char **argv)
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
     qputenv("QT_WAYLAND_INPUT_PANEL_TOPLEVEL", QByteArray("1"));
+    qputenv("PULSE_PROP_media.role", "event");
 
     // PLASMA_KEYBOARD_USE_QT_LAYOUTS - whether to use Qt's builtin keyboard layouts rather than our own.
     bool useQtLayouts = QByteArrayList{"1", "true"}.contains(qgetenv("PLASMA_KEYBOARD_USE_QT_LAYOUTS").toLower());
