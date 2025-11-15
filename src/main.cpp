@@ -6,6 +6,7 @@
 
 #include <KAboutData>
 #include <KLocalizedString>
+#include <KLocalizedQmlContext>
 #include <KConfigWatcher>
 
 #include <QCommandLineParser>
@@ -78,7 +79,7 @@ int main(int argc, char **argv)
     KLocalizedString::setApplicationDomain("plasma-keyboard");
 
     KAboutData aboutData(QStringLiteral("plasma-keyboard"),
-                         i18n("plasma-keyboard"),
+                         i18n("Plasma Keyboard"),
                          QStringLiteral("0.1.0"),
                          i18n("An on-screen keyboard for Plasma"),
                          KAboutLicense::GPL,
@@ -87,6 +88,8 @@ int main(int argc, char **argv)
     aboutData.addAuthor(i18n("Aleix Pol Gonzalez"), i18n("Author"), QStringLiteral("aleixpol@kde.org"));
     aboutData.setOrganizationDomain("kde.org");
     aboutData.setDesktopFileName(QStringLiteral("org.kde.plasma.keyboard"));
+    application.setWindowIcon(QIcon::fromTheme(QStringLiteral("input-keyboard-virtual")));
+    aboutData.setProgramLogo(application.windowIcon());
 
     KAboutData::setApplicationData(aboutData);
 
@@ -100,7 +103,7 @@ int main(int argc, char **argv)
     // Listen to config updates from kcm, and reparse
     auto watcher = KConfigWatcher::create(PlasmaKeyboardSettings::self()->sharedConfig());
     QObject::connect(watcher.get(),
-        static_cast<void (KConfigWatcher::*)(const KConfigGroup &, const QByteArrayList &)>(&KConfigWatcher::configChanged),
+        &KConfigWatcher::configChanged,
         &application,
         [](const KConfigGroup &, const QByteArrayList &) {
             PlasmaKeyboardSettings::self()->sharedConfig()->reparseConfiguration();
@@ -117,6 +120,7 @@ int main(int argc, char **argv)
         "Vibration", &vibration);
 
     QQmlApplicationEngine view;
+    KLocalization::setupLocalizedContext(&view);
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
         auto window = qobject_cast<QWindow*>(object);
         if (!initPanelIntegration(window)) {

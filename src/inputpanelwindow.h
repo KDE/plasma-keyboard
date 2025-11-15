@@ -23,6 +23,8 @@ public:
     QRect interactiveRegion() const;
     void setInteractiveRegion(QRect interactiveRegion);
 
+    Q_INVOKABLE void showSettings();
+
 Q_SIGNALS:
     void interactiveRegionChanged();
 
