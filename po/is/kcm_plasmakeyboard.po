@@ -1,0 +1,92 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-11-22 13:18+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "Sía tungumál…"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "Sía tungumál"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"Engin tungumál valin. Notuð verður sjálfgefin lyklaborðsuppsetning kerfisins."
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "Tungumál"
+
+#: ui/main.qml:32
+msgid "Key press feedback:"
+msgstr "Svörun við að ýta á lykil:"
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "Hljóð"
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "Titringur"
+
+#: ui/main.qml:55
+msgid "General:"
+msgstr "Almennt:"
+
+#: ui/main.qml:56 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr "Rötun á lyklaborði"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr "Prófa sýndarlyklaborðið…"
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Svörun"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr "Hvort eigi að gefa hljóð þegar ýtt er á lykil"
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr "Hvort eigi að titra þegar ýtt er á lykil"
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr "Tungumál lyklaborðs"
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "Almennt"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "Hvort eigi að nota örvahnappana til að flakka um lyklaborðið"
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr "Svörun við að ýta á lykil"

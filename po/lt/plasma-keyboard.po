@@ -1,0 +1,55 @@
+# Lithuanian translations for plasma-keyboard package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-11-23 01:29+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : n"
+"%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
+"X-Generator: Poedit 3.8\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Moo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "<>"
+
+#: main.cpp:81
+#, kde-format
+msgid "plasma-keyboard"
+msgstr "plasma-keyboard"
+
+#: main.cpp:83
+#, kde-format
+msgid "An on-screen keyboard for Plasma"
+msgstr "Ekraninė klaviatūra, skirta Plasma"
+
+#: main.cpp:85
+#, kde-format
+msgid "Copyright 2024, Aleix Pol Gonzalez"
+msgstr "Autorių teisės 2024, Aleix Pol Gonzalez"
+
+#: main.cpp:87
+#, kde-format
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: main.cpp:87
+#, kde-format
+msgid "Author"
+msgstr "Autorius"
