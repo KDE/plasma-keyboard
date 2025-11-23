@@ -34,6 +34,8 @@ void QWaylandInputPanelSurface::applyConfigure()
         set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
     else
         set_overlay_panel();
+
+    window()->display()->handleWindowActivated(window());
 }
 
 QT_END_NAMESPACE
