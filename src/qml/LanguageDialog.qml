@@ -9,6 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
+import org.kde.layershell as LayerShell
 import org.kde.kirigami as Kirigami
 
 Kirigami.ApplicationWindow {
@@ -18,6 +19,11 @@ Kirigami.ApplicationWindow {
     signal showSettings();
 
     visible: false
+    height: Screen.height / 3
+
+    LayerShell.Window.anchors: LayerShell.Window.AnchorBottom | LayerShell.Window.AnchorLeft | LayerShell.Window.AnchorRight
+    LayerShell.Window.layer: LayerShell.Window.LayerTop
+    LayerShell.Window.keyboardInteractivity: LayerShell.Window.KeyboardInteractivityNone
 
     function show(localeList, currentIndex) {
         languageListModel.clear()

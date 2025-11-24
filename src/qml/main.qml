@@ -62,6 +62,9 @@ InputPanelWindow {
             onShowSettings: {
                 root.showSettings();
             }
+            onVisibleChanged: if (!visible) {
+                root.show()
+            }
         }
 
         // Whether the panel takes the full width of the screen
@@ -109,6 +112,7 @@ InputPanelWindow {
             externalLanguageSwitchEnabled: true
             onExternalLanguageSwitch: (localeList, currentIndex) => {
                 languageDialog.show(localeList, currentIndex)
+                root.hide()
             }
 
             function updateLocales() {
