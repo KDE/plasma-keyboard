@@ -33,6 +33,9 @@ InputPanelWindow {
             if (inputPanel.keyboard.navigationModeActive) {
                 inputPanel.keyboard.navigationModeActive = false;
             }
+
+            // Close language dialog
+            languageDialog.close();
         }
     }
 
@@ -57,14 +60,12 @@ InputPanelWindow {
     Kirigami.ShadowedRectangle {
         id: panelWrapper
 
-        LanguageDialog {
+        LanguagePopup {
             id: languageDialog
-            onShowSettings: {
-                root.showSettings();
-            }
-            onVisibleChanged: if (!visible) {
-                root.show()
-            }
+            style: inputPanel.keyboard.style
+            keyboardPanel: inputPanel
+
+            onShowSettings: root.showSettings()
         }
 
         // Whether the panel takes the full width of the screen
@@ -111,8 +112,7 @@ InputPanelWindow {
             focusPolicy: Qt.NoFocus
             externalLanguageSwitchEnabled: true
             onExternalLanguageSwitch: (localeList, currentIndex) => {
-                languageDialog.show(localeList, currentIndex)
-                root.hide()
+                languageDialog.show(inputPanel.keyboard.activeKey, localeList, currentIndex)
             }
 
             function updateLocales() {

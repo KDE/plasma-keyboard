@@ -36,7 +36,8 @@ target_sources(plasma-keyboard PRIVATE
 ecm_add_qml_module(plasma-keyboard URI "org.kde.plasma.keyboard" GENERATE_PLUGIN_SOURCE)
 ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
-    qml/LanguageDialog.qml
+    qml/LanguagePopup.qml
+    qml/LanguagePopupDelegate.qml
 )
 ecm_finalize_qml_module(plasma-keyboard)
 
