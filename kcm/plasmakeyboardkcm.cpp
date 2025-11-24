@@ -76,6 +76,8 @@ void PlasmaKeyboardKcm::disableLocale(const QString &locale)
 
     m_enabledLocales.removeAll(locale);
     Q_EMIT enabledLocalesChanged();
+
+    setNeedsSave(true);
 }
 
 bool PlasmaKeyboardKcm::keyboardNavigationEnabled() const
