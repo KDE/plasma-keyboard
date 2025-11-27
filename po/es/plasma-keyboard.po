@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-26 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 13:56+0100\n"
+"PO-Revision-Date: 2025-11-27 00:21+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,10 +30,9 @@ msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
-msgstr "plasma-keyboard"
+msgstr "Teclado de Plasma"
 
 #: main.cpp:84
 #, kde-format
@@ -57,4 +56,4 @@ msgstr "Autor"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "Preferencias"

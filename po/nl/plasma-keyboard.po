@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-26 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 11:28+0200\n"
+"PO-Revision-Date: 2025-11-26 15:05+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,10 +28,9 @@ msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
-msgstr "plasma-toetsenbord"
+msgstr "Plasma-toetsenbord"
 
 #: main.cpp:84
 #, kde-format
@@ -55,4 +54,4 @@ msgstr "Auteur"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"

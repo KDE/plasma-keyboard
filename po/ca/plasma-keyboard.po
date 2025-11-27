@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-26 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 12:20+0200\n"
+"PO-Revision-Date: 2025-11-26 10:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -30,10 +30,9 @@ msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
-msgstr "plasma-keyboard"
+msgstr "Teclat del Plasma"
 
 #: main.cpp:84
 #, kde-format
@@ -57,4 +56,4 @@ msgstr "Autor"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"

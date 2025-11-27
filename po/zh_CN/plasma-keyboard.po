@@ -28,10 +28,9 @@ msgid "Your emails"
 msgstr "tds00@qq.com"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
-msgstr "Plasma 键盘"
+msgstr ""
 
 #: main.cpp:84
 #, kde-format
