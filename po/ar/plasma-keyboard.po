@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-26 00:45+0000\n"
-"PO-Revision-Date: 2025-09-20 20:35+0400\n"
+"PO-Revision-Date: 2025-11-27 12:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -29,8 +29,7 @@ msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
 msgstr "لوحة المفاتيح بلازما"
 
@@ -56,4 +55,4 @@ msgstr "المؤلف"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "إعدادات"
