@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-26 00:45+0000\n"
-"PO-Revision-Date: 2025-11-22 12:27+0000\n"
+"PO-Revision-Date: 2025-11-28 13:01+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -28,10 +28,9 @@ msgid "Your emails"
 msgstr "sv1@fellsnet.is"
 
 #: main.cpp:82
-#, fuzzy, kde-format
-#| msgid "plasma-keyboard"
+#, kde-format
 msgid "Plasma Keyboard"
-msgstr "plasma-lyklaborð"
+msgstr "Plasma-lyklaborð"
 
 #: main.cpp:84
 #, kde-format
@@ -55,4 +54,4 @@ msgstr "Höfundur"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "Stillingar"
