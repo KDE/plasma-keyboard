@@ -30,7 +30,7 @@ msgstr "tds00@qq.com"
 #: main.cpp:82
 #, kde-format
 msgid "Plasma Keyboard"
-msgstr ""
+msgstr "Plasma 键盘"
 
 #: main.cpp:84
 #, kde-format
@@ -54,4 +54,4 @@ msgstr "作者"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "设置"
