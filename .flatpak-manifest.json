@@ -42,6 +42,22 @@
             ]
         },
         {
+            "name": "layer-shell-qt",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_QML=ON"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/plasma/layer-shell-qt.git",
+                    "branch": "v6.5.3"
+                }
+            ]
+        },
+        {
             "name": "plasma-keyboard",
             "buildsystem": "cmake-ninja",
             "sources": [
