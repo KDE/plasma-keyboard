@@ -9,6 +9,7 @@
   <name xml:lang="ar">لوحة المفاتيح بلازما</name>
   <name xml:lang="ca">Teclat del Plasma</name>
   <name xml:lang="ca-valencia">Teclat de Plasma</name>
+  <name xml:lang="de">Plasma-Tastatur</name>
   <name xml:lang="es">Teclado de Plasma</name>
   <name xml:lang="eu">Plasma Teklatua</name>
   <name xml:lang="fi">Plasma-näppäimistö</name>
@@ -34,6 +35,7 @@
   <summary xml:lang="ar">لوحة المفاتيح على الشّاشة لبلازما</summary>
   <summary xml:lang="ca">Teclat en pantalla per al Plasma</summary>
   <summary xml:lang="ca-valencia">Teclat en pantalla per a Plasma</summary>
+  <summary xml:lang="de">Bildschirmtastatur für Plasma</summary>
   <summary xml:lang="es">Teclado en pantalla para Plasma</summary>
   <summary xml:lang="eu">Plasmarako pantailako teklatu bat</summary>
   <summary xml:lang="fi">Näyttönäppäimistö Plasmaan</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="ar">توفر لوحة مفاتيح بلازما لوحة مفاتيح افتراضية على الشاشة لأجهزة اللمس والأجهزة اللوحية والأجهزة القابلة للتحويل والهواتف وأجهزة الكمبيوتر التقليدية التي لا تحتوي على لوحة مفاتيح فعلية.</p>
     <p xml:lang="ca">El Teclat del Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
     <p xml:lang="ca-valencia">El Teclat de Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
+    <p xml:lang="de">Plasma-Tastatur bietet eine virtuelle Bildschirmtastatur für Touchscreens, Tablets, 2-in-1-Geräte (Convertibles), Smartphones und herkömmliche Computer ohne physische Tastatur.</p>
     <p xml:lang="es">El «Teclado de Plasma» proporciona un teclado virtual en pantalla para pantallas táctiles, tabletas, dispositivos convertibles, teléfonos y equipos tradicionales que carecen de teclado físico.</p>
     <p xml:lang="eu">Plasma Teklatuak pantailan agertzen den alegiazko teklatu bat eskaintzen du, teklaturik gabeko ukimen-pantaila, tableta, gailu bihurgarri, telefono, eta ohiko ordenagailuetarako.</p>
     <p xml:lang="fi">Plasma-näppäimistö tarjoaa virtuaalisen näyttönäppäimistön kosketusnäytöille, tableteille, muunnettaville laitteille, puhelimille ja näppäimistöttömille perinteisille tietokoneille.</p>
@@ -90,6 +93,7 @@
       <li xml:lang="ar">تكامل سلس مع مساحة عمل بلازما والتطبيقات</li>
       <li xml:lang="ca">Integració perfecta amb l'espai de treball i les aplicacions del Plasma</li>
       <li xml:lang="ca-valencia">Integració perfecta amb l'espai de treball i les aplicacions de Plasma</li>
+      <li xml:lang="de">Nahtlose Integration mit der Plasma-Arbeitsumgebung und Anwendungen</li>
       <li xml:lang="es">Integración perfecta con el espacio de trabajo y las aplicaciones de Plasma</li>
       <li xml:lang="eu">Plasma langunea eta aplikazioekin bateratze ezin hobea</li>
       <li xml:lang="fi">Saumaton eheytys Plasma-työtilan ja -sovellusten kanssa</li>
@@ -114,6 +118,7 @@
       <li xml:lang="ar">الظهور الآلي عند الحاجة إلى إدخال نص</li>
       <li xml:lang="ca">Apareix automàticament quan es necessita l'entrada de text</li>
       <li xml:lang="ca-valencia">Apareix automàticament quan es necessita l'entrada de text</li>
+      <li xml:lang="de">Automatisches Erscheinen, wenn Texteingabe erforderlich ist</li>
       <li xml:lang="es">Aparece automáticamente cuando se necesita entrada de texto</li>
       <li xml:lang="eu">Testua sartu behar denean automatikoki agertzea</li>
       <li xml:lang="fi">Automaattinen näyttäminen tekstisyötettä tarvittaessa</li>
@@ -138,6 +143,7 @@
       <li xml:lang="ar">توفير تخطيطات ولغات متعددة</li>
       <li xml:lang="ca">Permet múltiples disposicions i llengües</li>
       <li xml:lang="ca-valencia">Permet múltiples disposicions i llengües</li>
+      <li xml:lang="de">Unterstützung mehrerer Layouts und Sprachen</li>
       <li xml:lang="es">Compatible con muchas distribuciones de teclado e idiomas</li>
       <li xml:lang="eu">Antolaera eta hizkuntza anitzetarako euskarria</li>
       <li xml:lang="fi">Useiden asettelujen ja kielten tuki</li>
@@ -162,6 +168,7 @@
       <li xml:lang="ar">حجم وسلوك قابل للضبط لمختلف عوامل الشكل</li>
       <li xml:lang="ca">Mida i comportament configurables per a factors de forma diferents</li>
       <li xml:lang="ca-valencia">Mida i comportament configurables per a factors de forma diferents</li>
+      <li xml:lang="de">An verschiedene Einsatzbereiche anpassbare Größe und Verhalten</li>
       <li xml:lang="es">Se puede modificar su tamaño y su comportamiento para distintos factores de forma</li>
       <li xml:lang="eu">Forma-faktore ezberdinetarako neurri eta jokabide konfiguragarria</li>
       <li xml:lang="fi">Mukautettava koko ja toiminta eri alustoilla</li>
