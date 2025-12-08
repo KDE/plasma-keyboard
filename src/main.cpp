@@ -20,7 +20,6 @@
 #include "inputlisteneritem.h"
 #include "inputpanelwindow.h"
 #include "qwaylandinputpanelshellintegration_p.h"
-#include "qwaylandinputpanelsurface_p.h"
 #include "plasmakeyboardsettings.h"
 #include "vibration.h"
 
