@@ -114,11 +114,6 @@ int main(int argc, char **argv)
         });
     // clang-format on
 
-    Vibration vibration;
-
-    qmlRegisterSingletonInstance<Vibration>("org.kde.plasma.keyboard", 1, 0,
-        "Vibration", &vibration);
-
     QQmlApplicationEngine view;
     KLocalization::setupLocalizedContext(&view);
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [](QObject *object) {
