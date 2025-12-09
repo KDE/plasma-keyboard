@@ -1,6 +1,7 @@
 /*
     SPDX-FileCopyrightText: 2024 Aleix Pol i Gonzalez <aleixpol@kde.org>
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -10,13 +11,15 @@
 #include <QQuickItem>
 #include <QQuickWindow>
 #include <QVirtualKeyboardInputEngine>
+#include <qqmlintegration.h>
 
 #include "inputplugin.h"
 
 class InputListenerItem : public QQuickItem
 {
     Q_OBJECT
-    // QML_ELEMENT
+    QML_ELEMENT
+
     Q_PROPERTY(QVirtualKeyboardInputEngine *engine WRITE setEngine)
     Q_PROPERTY(bool keyboardNavigationActive MEMBER m_keyboardNavigationActive)
 
