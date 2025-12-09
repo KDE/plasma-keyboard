@@ -5,6 +5,7 @@ include:
   - project: sysadmin/ci-utilities
     file:
       # Validate
+      - /gitlab-templates/clang-format.yml
       - /gitlab-templates/qml-lint.yml
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/xml-lint.yml
