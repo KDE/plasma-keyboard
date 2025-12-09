@@ -11,8 +11,15 @@ K_PLUGIN_CLASS_WITH_JSON(PlasmaKeyboardKcm, "kcm_plasmakeyboard.json")
 PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData)
     : KQuickManagedConfigModule(parent, metaData)
 {
-    qmlRegisterSingletonInstance<PlasmaKeyboardSettings>("org.kde.plasma.keyboard.settings", 1, 0,
-        "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
+    // clang-format off
+    qmlRegisterSingletonInstance<PlasmaKeyboardSettings>(
+        "org.kde.plasma.keyboard.settings",
+        1,
+        0,
+        "PlasmaKeyboardSettings",
+        PlasmaKeyboardSettings::self()
+    );
+    // clang-format on
 
     load();
 }

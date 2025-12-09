@@ -5,9 +5,9 @@
 */
 
 #include <KAboutData>
-#include <KLocalizedString>
-#include <KLocalizedQmlContext>
 #include <KConfigWatcher>
+#include <KLocalizedQmlContext>
+#include <KLocalizedString>
 
 #include <QCommandLineParser>
 #include <QGuiApplication>
@@ -19,9 +19,9 @@
 
 #include "inputlisteneritem.h"
 #include "inputpanelwindow.h"
+#include "plasmakeyboardsettings.h"
 #include "qwaylandinputpanelshellintegration_p.h"
 #include "qwaylandinputpanelsurface_p.h"
-#include "plasmakeyboardsettings.h"
 #include "vibration.h"
 
 static bool initPanelIntegration(QWindow *window)
@@ -38,7 +38,8 @@ static bool initPanelIntegration(QWindow *window)
         if (!shellIntegration->initialize(waylandWindow->display())) {
             delete shellIntegration;
             shellIntegration = nullptr;
-            qWarning() << "Failed to initialize input panel-shell integration, possibly because compositor does not support the input_method_v1 protocol or because it needs more privileges.";
+            qWarning() << "Failed to initialize input panel-shell integration, possibly because compositor does not support the input_method_v1 protocol or "
+                          "because it needs more privileges.";
             return false;
         }
     }
@@ -102,6 +103,7 @@ int main(int argc, char **argv)
 
     // Listen to config updates from kcm, and reparse
     auto watcher = KConfigWatcher::create(PlasmaKeyboardSettings::self()->sharedConfig());
+    // clang-format off
     QObject::connect(watcher.get(),
         &KConfigWatcher::configChanged,
         &application,
@@ -109,20 +111,19 @@ int main(int argc, char **argv)
             PlasmaKeyboardSettings::self()->sharedConfig()->reparseConfiguration();
             PlasmaKeyboardSettings::self()->load();
         });
+    // clang-format on
 
     Vibration vibration;
 
     qmlRegisterType<InputListenerItem>("org.kde.plasma.keyboard", 1, 0, "InputListenerItem");
     qmlRegisterType<InputPanelWindow>("org.kde.plasma.keyboard", 1, 0, "InputPanelWindow");
-    qmlRegisterSingletonInstance<PlasmaKeyboardSettings>("org.kde.plasma.keyboard", 1, 0,
-        "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
-    qmlRegisterSingletonInstance<Vibration>("org.kde.plasma.keyboard", 1, 0,
-        "Vibration", &vibration);
+    qmlRegisterSingletonInstance<PlasmaKeyboardSettings>("org.kde.plasma.keyboard", 1, 0, "PlasmaKeyboardSettings", PlasmaKeyboardSettings::self());
+    qmlRegisterSingletonInstance<Vibration>("org.kde.plasma.keyboard", 1, 0, "Vibration", &vibration);
 
     QQmlApplicationEngine view;
     KLocalization::setupLocalizedContext(&view);
-    QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [] (QObject *object) {
-        auto window = qobject_cast<QWindow*>(object);
+    QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [](QObject *object) {
+        auto window = qobject_cast<QWindow *>(object);
         if (!initPanelIntegration(window)) {
             QTextStream(stderr) << "Cannot run plasma-keyboard standalone. You can enable it in Plasma’s System Settings app, on the “Virtual Keyboard” page.";
             exit(1);
@@ -132,4 +133,3 @@ int main(int argc, char **argv)
 
     return application.exec();
 }
-

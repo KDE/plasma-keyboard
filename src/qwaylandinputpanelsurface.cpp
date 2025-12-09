@@ -5,15 +5,14 @@
 
 #include "qwaylandinputpanelsurface_p.h"
 
-#include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <QtWaylandClient/private/qwaylandscreen_p.h>
+#include <QtWaylandClient/private/qwaylandwindow_p.h>
 
 QT_BEGIN_NAMESPACE
 
 Q_LOGGING_CATEGORY(qLcQpaShellIntegration, "qt.qpa.wayland.shell")
 
-QWaylandInputPanelSurface::QWaylandInputPanelSurface(struct ::zwp_input_panel_surface_v1 *object,
-                                                     QtWaylandClient::QWaylandWindow *window)
+QWaylandInputPanelSurface::QWaylandInputPanelSurface(struct ::zwp_input_panel_surface_v1 *object, QtWaylandClient::QWaylandWindow *window)
     : QWaylandShellSurface(window)
     , QtWayland::zwp_input_panel_surface_v1(object)
 {

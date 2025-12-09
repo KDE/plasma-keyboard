@@ -18,11 +18,14 @@
 
 Q_GLOBAL_STATIC(InputMethod, s_im)
 
-Q_GLOBAL_STATIC_WITH_ARGS(const std::set<int>, IGNORED_KEYS, {
-    Qt::Key_Context1 // Triggered by "special keys" button
-});
+Q_GLOBAL_STATIC_WITH_ARGS(const std::set<int>,
+                          IGNORED_KEYS,
+                          {
+                              Qt::Key_Context1 // Triggered by "special keys" button
+                          });
 // Keys to always capture for keyboard navigation
-QList<Qt::Key> initCapture() {
+QList<Qt::Key> initCapture()
+{
     return {
         Qt::Key_Left,
         Qt::Key_Right,
@@ -33,9 +36,7 @@ QList<Qt::Key> initCapture() {
 Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_CAPTURE_KEYS, (initCapture()));
 
 // Keys to capture when keyboard navigation is active
-Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS, (initCapture() + QList<Qt::Key>{
-    Qt::Key_Return
-}));
+Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS, (initCapture() + QList<Qt::Key>{Qt::Key_Return}));
 
 InputListenerItem::InputListenerItem()
     : m_input(&(*s_im))
@@ -133,7 +134,8 @@ InputListenerItem::InputListenerItem()
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
 }
 
-void InputListenerItem::setEngine(QVirtualKeyboardInputEngine */*engine*/) {
+void InputListenerItem::setEngine(QVirtualKeyboardInputEngine * /*engine*/)
+{
     // TODO: hook into engine events if necessary?
 }
 
@@ -161,7 +163,6 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
         }
         if ((imHints & InputPlugin::content_hint_auto_correction) == 0 || (imHints & InputPlugin::content_hint_auto_capitalization) == 0) {
             qtHints |= Qt::ImhNoAutoUppercase;
-
         }
         // if (imHints & InputPlugin::content_hint_titlecase) { }
         if (imHints & InputPlugin::content_hint_lowercase) {
@@ -184,41 +185,41 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
         }
         const auto imPurpose = m_input.contentPurpose();
         switch (imPurpose) {
-            case InputPlugin::content_purpose_normal:
-            case InputPlugin::content_purpose_alpha:
-            case InputPlugin::content_purpose_name:
-                break;
-            case InputPlugin::content_purpose_digits:
-                qtHints |= Qt::ImhDigitsOnly;
-                break;
-            case InputPlugin::content_purpose_number:
-                qtHints |= Qt::ImhPreferNumbers;
-                break;
-            case InputPlugin::content_purpose_phone:
-                qtHints |= Qt::ImhDialableCharactersOnly;
-                break;
-            case InputPlugin::content_purpose_url:
-                qtHints |= Qt::ImhUrlCharactersOnly;
-                break;
-            case InputPlugin::content_purpose_email:
-                qtHints |= Qt::ImhEmailCharactersOnly;
-                break;
-            case InputPlugin::content_purpose_password:
-                qtHints |= Qt::ImhSensitiveData;
-                break;
-            case InputPlugin::content_purpose_date:
-                qtHints |= Qt::ImhDate;
-                break;
-            case InputPlugin::content_purpose_time:
-                qtHints |= Qt::ImhTime;
-                break;
-            case InputPlugin::content_purpose_datetime:
-                qtHints |= Qt::ImhDate;
-                qtHints |= Qt::ImhTime;
-                break;
-            case InputPlugin::content_purpose_terminal:
-                qtHints |= Qt::ImhPreferLatin;
-                break;
+        case InputPlugin::content_purpose_normal:
+        case InputPlugin::content_purpose_alpha:
+        case InputPlugin::content_purpose_name:
+            break;
+        case InputPlugin::content_purpose_digits:
+            qtHints |= Qt::ImhDigitsOnly;
+            break;
+        case InputPlugin::content_purpose_number:
+            qtHints |= Qt::ImhPreferNumbers;
+            break;
+        case InputPlugin::content_purpose_phone:
+            qtHints |= Qt::ImhDialableCharactersOnly;
+            break;
+        case InputPlugin::content_purpose_url:
+            qtHints |= Qt::ImhUrlCharactersOnly;
+            break;
+        case InputPlugin::content_purpose_email:
+            qtHints |= Qt::ImhEmailCharactersOnly;
+            break;
+        case InputPlugin::content_purpose_password:
+            qtHints |= Qt::ImhSensitiveData;
+            break;
+        case InputPlugin::content_purpose_date:
+            qtHints |= Qt::ImhDate;
+            break;
+        case InputPlugin::content_purpose_time:
+            qtHints |= Qt::ImhTime;
+            break;
+        case InputPlugin::content_purpose_datetime:
+            qtHints |= Qt::ImhDate;
+            qtHints |= Qt::ImhTime;
+            break;
+        case InputPlugin::content_purpose_terminal:
+            qtHints |= Qt::ImhPreferLatin;
+            break;
         }
         return QVariant::fromValue<int>(qtHints);
     }

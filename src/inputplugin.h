@@ -71,7 +71,10 @@ public:
     void deleteSurroundingText(int cursorPos, int length);
     void commit(const QString &text);
 
-    enum KeyState { Released = 0, Pressed = 1 };
+    enum KeyState {
+        Released = 0,
+        Pressed = 1
+    };
     void keysym(uint timestamp, uint sym, KeyState state, uint modifiers);
 
     ContentHint contentHint() const;
@@ -79,7 +82,10 @@ public:
     uint32_t cursorPos() const;
     uint32_t anchorPos() const;
     QString surroundingText() const;
-    bool hasContext() const { return m_context.get(); }
+    bool hasContext() const
+    {
+        return m_context.get();
+    }
 
 Q_SIGNALS:
     void contextChanged();

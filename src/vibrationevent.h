@@ -35,4 +35,3 @@ inline const QDBusArgument &operator>>(const QDBusArgument &argument, VibrationE
     argument.endStructure();
     return argument;
 }
-

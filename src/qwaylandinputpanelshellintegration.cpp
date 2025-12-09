@@ -8,7 +8,6 @@
 
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
 
-
 QT_BEGIN_NAMESPACE
 
 QWaylandInputPanelShellIntegration::QWaylandInputPanelShellIntegration()
@@ -21,8 +20,7 @@ QWaylandInputPanelShellIntegration::~QWaylandInputPanelShellIntegration()
 {
 }
 
-QtWaylandClient::QWaylandShellSurface *
-QWaylandInputPanelShellIntegration::createShellSurface(QtWaylandClient::QWaylandWindow *window)
+QtWaylandClient::QWaylandShellSurface *QWaylandInputPanelShellIntegration::createShellSurface(QtWaylandClient::QWaylandWindow *window)
 {
     if (!isActive()) {
         return nullptr;

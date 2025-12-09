@@ -5,10 +5,10 @@
 */
 
 #include "inputpanelwindow.h"
-#include <qnamespace.h>
+#include <KSandbox>
 #include <QDesktopServices>
 #include <QProcess>
-#include <KSandbox>
+#include <qnamespace.h>
 
 InputPanelWindow::InputPanelWindow(QWindow *parent)
     : QQuickWindow{parent}
@@ -41,6 +41,5 @@ void InputPanelWindow::showSettings()
         QDesktopServices::openUrl(QUrl(QStringLiteral("systemsettings:kcm_plasmakeyboard")));
     }
 }
-
 
 #include "moc_inputpanelwindow.cpp"

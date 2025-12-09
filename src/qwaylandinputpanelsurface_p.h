@@ -24,7 +24,6 @@ public:
     void applyConfigure() override;
 };
 
-
 QT_END_NAMESPACE
 
-#endif //QWAYLANDINPUTPANELSURFACE_H
+#endif // QWAYLANDINPUTPANELSURFACE_H
