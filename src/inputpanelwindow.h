@@ -8,10 +8,13 @@
 
 #include <QObject>
 #include <QQuickWindow>
+#include <qqmlintegration.h>
 
 class InputPanelWindow : public QQuickWindow
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QRect interactiveRegion READ interactiveRegion WRITE setInteractiveRegion NOTIFY interactiveRegionChanged)
 
 public:

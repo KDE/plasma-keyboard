@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2024 Aleix Pol <aleixpol@kde.org>
 # SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+# SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+#
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_executable(plasma-keyboard)
@@ -33,7 +35,13 @@ target_sources(plasma-keyboard PRIVATE
     ${dbusinterface_SRCS}
 )
 
-ecm_add_qml_module(plasma-keyboard URI "org.kde.plasma.keyboard" GENERATE_PLUGIN_SOURCE)
+ecm_add_qml_module(plasma-keyboard
+    URI "org.kde.plasma.keyboard"
+    GENERATE_PLUGIN_SOURCE
+    DEPENDENCIES
+        QtQuick
+)
+
 ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
     qml/LanguagePopup.qml
