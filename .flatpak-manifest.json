@@ -27,8 +27,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtvirtualkeyboard-everywhere-src-6.9.0.tar.xz",
-                    "sha256": "b85489ffbdd50cc42ea6a74f266215782045668a99cafc73007f6b4b28d69127",
+                    "url": "https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtvirtualkeyboard-everywhere-src-6.9.3.tar.xz",
+                    "sha256": "a1a0d5c91c9e7fe608867718c152272feae8560d920effa59c2c84b6dd415534",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 7927,
