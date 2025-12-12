@@ -1,0 +1,91 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+# SPDX-FileCopyrightText: 2025 Vit Pelcak <vit@pelcak.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-12-02 11:42+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.08.3\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "Filtrovat jazyky…"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "Filtrovat jazyky"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "Jazyky"
+
+#: ui/main.qml:32
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "Zvuk"
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "Vibrace"
+
+#: ui/main.qml:55
+msgid "General:"
+msgstr "Obecné:"
+
+#: ui/main.qml:56 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr ""
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr ""
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr ""
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr ""
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr ""
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr ""
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "Obecné"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr ""
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr ""
