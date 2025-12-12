@@ -23,6 +23,7 @@ include(FeatureSummary)
 include(KDEClangFormat)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDEGitCommitHooks)
 include(KDEInstallDirs)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
@@ -56,6 +57,8 @@ add_subdirectory(kcm)
 add_subdirectory(src)
 
 ki18n_install(po)
+
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
