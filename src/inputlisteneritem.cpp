@@ -44,6 +44,9 @@ InputListenerItem::InputListenerItem()
     // Grab and listen to physical keyboard input
     m_input.setGrabbing(true);
 
+    m_holdTimer.setSingleShot(true);
+    connect(&m_holdTimer, &QTimer::timeout, this, &InputListenerItem::handleHoldTimeout);
+
     connect(&m_input, &InputPlugin::contextChanged, this, [this] {
         if (m_input.hasContext()) {
             QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
@@ -267,6 +270,21 @@ void InputListenerItem::keyPressEvent(QKeyEvent *event)
         return;
     }
 
+    // Handle diacritics detection for textual keys
+    if (shouldHandleDiacritics(event)) {
+        resetPendingDiacriticsState();
+        m_pendingText = event->text();
+        m_pendingKey = event->key();
+        m_selectionMade = false;
+        m_popupShown = false;
+        m_popupDismissed = false;
+
+        const int holdThreshold = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
+        m_holdTimer.start(qMax(holdThreshold, 0));
+        event->accept();
+        return;
+    }
+
     const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(event);
     for (auto key : keys) {
         // Simulate key press only if it's not textual
@@ -279,6 +297,32 @@ void InputListenerItem::keyPressEvent(QKeyEvent *event)
 void InputListenerItem::keyReleaseEvent(QKeyEvent *event)
 {
     if (IGNORED_KEYS->find(event->key()) != IGNORED_KEYS->end()) {
+        return;
+    }
+
+    if (!m_pendingText.isEmpty() && event->key() == m_pendingKey && !event->isAutoRepeat()) {
+        // Stop long-press timer if still counting
+        if (m_holdTimer.isActive()) {
+            m_holdTimer.stop();
+        }
+
+        if (m_popupShown) {
+            // Popup was shown; if user did not pick an alternative, commit the base character
+            if (!m_selectionMade && !m_pendingText.isEmpty()) {
+                m_input.commit(m_pendingText);
+            }
+            if (!m_popupDismissed) {
+                Q_EMIT diacriticsPopupCancelled();
+            }
+            resetPendingDiacriticsState();
+            event->accept();
+            return;
+        }
+
+        // No popup, commit the base character now
+        m_input.commit(m_pendingText);
+        resetPendingDiacriticsState();
+        event->accept();
         return;
     }
 
@@ -318,6 +362,63 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
     if (const auto commit = event->commitString(); !commit.isEmpty()) {
         m_input.commit(commit);
     }
+}
+
+void InputListenerItem::handleHoldTimeout()
+{
+    if (m_pendingText.isEmpty()) {
+        return;
+    }
+
+    m_popupShown = true;
+    m_popupDismissed = false;
+    Q_EMIT diacriticsPopupRequested(m_pendingText);
+}
+
+void InputListenerItem::commitDiacritic(const QString &text)
+{
+    if (text.isEmpty()) {
+        return;
+    }
+
+    m_selectionMade = true;
+    m_input.commit(text);
+    if (m_popupShown && !m_popupDismissed) {
+        Q_EMIT diacriticsPopupCancelled();
+        m_popupDismissed = true;
+    }
+}
+
+bool InputListenerItem::shouldHandleDiacritics(const QKeyEvent *event) const
+{
+    if (!PlasmaKeyboardSettings::self()->diacriticsPopupEnabled()) {
+        return false;
+    }
+
+    if (event->isAutoRepeat()) {
+        return false;
+    }
+
+    // Only handle simple textual keys without control/meta modifiers
+    const Qt::KeyboardModifiers mods = event->modifiers();
+    const bool modifierAllowed = mods == Qt::NoModifier || mods == Qt::ShiftModifier;
+    if (!modifierAllowed) {
+        return false;
+    }
+
+    return !event->text().isEmpty() && event->text().size() == 1;
+}
+
+void InputListenerItem::resetPendingDiacriticsState()
+{
+    if (m_holdTimer.isActive()) {
+        m_holdTimer.stop();
+    }
+    m_pendingText.clear();
+    m_pendingKey = 0;
+    m_popupShown = false;
+    m_popupDismissed = false;
+    m_selectionMade = false;
 }
 
 #include "moc_inputlisteneritem.cpp"

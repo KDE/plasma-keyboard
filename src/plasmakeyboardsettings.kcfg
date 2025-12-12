@@ -28,5 +28,13 @@
             <label>Whether the keyboard panel fills the screen width.</label>
             <default>true</default>
         </entry>
+        <entry key="diacriticsPopupEnabled" type="bool">
+            <label>Whether holding a physical key shows diacritic options.</label>
+            <default>true</default>
+        </entry>
+        <entry key="diacriticsHoldThresholdMs" type="int">
+            <label>Delay (ms) before showing diacritics when holding a physical key.</label>
+            <default>600</default>
+        </entry>
     </group>
 </kcfg>

@@ -46,6 +46,7 @@ ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
     qml/LanguagePopup.qml
     qml/LanguagePopupDelegate.qml
+    qml/DiacriticsPopup.qml
 )
 ecm_finalize_qml_module(plasma-keyboard)
 

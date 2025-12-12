@@ -104,6 +104,40 @@ void PlasmaKeyboardKcm::setKeyboardNavigationEnabled(bool keyboardNavigationEnab
     setNeedsSave(true);
 }
 
+bool PlasmaKeyboardKcm::diacriticsPopupEnabled() const
+{
+    return m_diacriticsPopupEnabled;
+}
+
+void PlasmaKeyboardKcm::setDiacriticsPopupEnabled(bool enabled)
+{
+    if (enabled == m_diacriticsPopupEnabled) {
+        return;
+    }
+
+    m_diacriticsPopupEnabled = enabled;
+    Q_EMIT diacriticsPopupEnabledChanged();
+
+    setNeedsSave(true);
+}
+
+int PlasmaKeyboardKcm::diacriticsHoldThresholdMs() const
+{
+    return m_diacriticsHoldThresholdMs;
+}
+
+void PlasmaKeyboardKcm::setDiacriticsHoldThresholdMs(int thresholdMs)
+{
+    if (thresholdMs == m_diacriticsHoldThresholdMs) {
+        return;
+    }
+
+    m_diacriticsHoldThresholdMs = thresholdMs;
+    Q_EMIT diacriticsHoldThresholdMsChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -117,6 +151,8 @@ void PlasmaKeyboardKcm::load()
     m_enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
     Q_EMIT enabledLocalesChanged();
     setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
+    setDiacriticsPopupEnabled(PlasmaKeyboardSettings::self()->diacriticsPopupEnabled());
+    setDiacriticsHoldThresholdMs(PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs());
 
     setNeedsSave(false);
 }
@@ -127,6 +163,8 @@ void PlasmaKeyboardKcm::save()
     PlasmaKeyboardSettings::self()->setVibrationEnabled(m_vibrationEnabled);
     PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
     PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
+    PlasmaKeyboardSettings::self()->setDiacriticsPopupEnabled(m_diacriticsPopupEnabled);
+    PlasmaKeyboardSettings::self()->setDiacriticsHoldThresholdMs(m_diacriticsHoldThresholdMs);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

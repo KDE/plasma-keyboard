@@ -10,6 +10,7 @@
 
 #include <QQuickItem>
 #include <QQuickWindow>
+#include <QTimer>
 #include <QVirtualKeyboardInputEngine>
 #include <qqmlintegration.h>
 
@@ -37,8 +38,25 @@ public:
 Q_SIGNALS:
     void keyNavigationPressed(int key);
     void keyNavigationReleased(int key);
+    void diacriticsPopupRequested(const QString &baseCharacter);
+    void diacriticsPopupCancelled();
+
+public Q_SLOTS:
+    Q_INVOKABLE void commitDiacritic(const QString &text);
+
+private Q_SLOTS:
+    void handleHoldTimeout();
 
 private:
+    bool shouldHandleDiacritics(const QKeyEvent *event) const;
+    void resetPendingDiacriticsState();
+
     InputPlugin m_input;
     bool m_keyboardNavigationActive = false;
+    QTimer m_holdTimer;
+    QString m_pendingText;
+    int m_pendingKey = 0;
+    bool m_popupShown = false;
+    bool m_popupDismissed = false;
+    bool m_selectionMade = false;
 };
