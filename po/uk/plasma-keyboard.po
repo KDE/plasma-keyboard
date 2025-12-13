@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:45+0000\n"
+"POT-Creation-Date: 2025-12-13 00:46+0000\n"
 "PO-Revision-Date: 2025-11-26 16:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -28,27 +28,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:82
+#: main.cpp:81
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "Клавіатура Плазми"
 
-#: main.cpp:84
+#: main.cpp:83
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "Екранна клавіатура для Плазми"
 
-#: main.cpp:86
+#: main.cpp:85
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "©Aleix Pol Gonzalez, 2024"
 
-#: main.cpp:88
+#: main.cpp:87
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "Aleix Pol Gonzalez"
 
-#: main.cpp:88
+#: main.cpp:87
 #, kde-format
 msgid "Author"
 msgstr "Автор"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:45+0000\n"
+"POT-Creation-Date: 2025-12-13 00:46+0000\n"
 "PO-Revision-Date: 2025-11-26 10:27+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,27 +28,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: main.cpp:82
+#: main.cpp:81
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "מקלדת פלזמה"
 
-#: main.cpp:84
+#: main.cpp:83
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "מקלדת על המסך לפלזמה"
 
-#: main.cpp:86
+#: main.cpp:85
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "כל הזכויות שמורות 2024, לאלש פול גונזלז"
 
-#: main.cpp:88
+#: main.cpp:87
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "אלש פול גונזלז"
 
-#: main.cpp:88
+#: main.cpp:87
 #, kde-format
 msgid "Author"
 msgstr "יוצר"
