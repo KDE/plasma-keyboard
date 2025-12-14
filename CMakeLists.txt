@@ -14,6 +14,8 @@ set(KF_MIN_VERSION "6.0.0")
 find_package(ECM ${KF_MIN_VERSION} REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
+include(KDEInstallDirs) # Should be included first so its variables are available to other modules.
+
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
@@ -24,7 +26,6 @@ include(KDEClangFormat)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEGitCommitHooks)
-include(KDEInstallDirs)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
