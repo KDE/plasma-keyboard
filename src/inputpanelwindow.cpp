@@ -5,6 +5,9 @@
 */
 
 #include "inputpanelwindow.h"
+
+#include "inputpanelintegration.h"
+
 #include <KSandbox>
 #include <QDesktopServices>
 #include <QProcess>
@@ -40,6 +43,11 @@ void InputPanelWindow::showSettings()
     } else {
         QDesktopServices::openUrl(QUrl(QStringLiteral("systemsettings:kcm_plasmakeyboard")));
     }
+}
+
+bool InputPanelWindow::initWaylandInputPanel(bool overlayPanel)
+{
+    return initInputPanelIntegration(this, overlayPanel ? InputPanelRole::OverlayPanel : InputPanelRole::Keyboard);
 }
 
 #include "moc_inputpanelwindow.cpp"

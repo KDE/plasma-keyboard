@@ -19,6 +19,7 @@ include(KDEInstallDirs) # Should be included first so its variables are availabl
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
+include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
 
@@ -34,7 +35,7 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     WaylandClient
 )
 
-if (Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
+if(Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
     find_package(Qt6GuiPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
     find_package(Qt6WaylandClientPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
 endif()

@@ -17,6 +17,8 @@ class PlasmaKeyboardKcm : public KQuickManagedConfigModule
     Q_PROPERTY(bool vibrationEnabled READ vibrationEnabled WRITE setVibrationEnabled NOTIFY vibrationEnabledChanged)
     Q_PROPERTY(QStringList enabledLocales READ enabledLocales NOTIFY enabledLocalesChanged)
     Q_PROPERTY(bool keyboardNavigationEnabled READ keyboardNavigationEnabled WRITE setKeyboardNavigationEnabled NOTIFY keyboardNavigationEnabledChanged)
+    Q_PROPERTY(bool diacriticsPopupEnabled READ diacriticsPopupEnabled WRITE setDiacriticsPopupEnabled NOTIFY diacriticsPopupEnabledChanged)
+    Q_PROPERTY(int diacriticsHoldThresholdMs READ diacriticsHoldThresholdMs WRITE setDiacriticsHoldThresholdMs NOTIFY diacriticsHoldThresholdMsChanged)
 
 public:
     PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData);
@@ -35,6 +37,12 @@ public:
     bool keyboardNavigationEnabled() const;
     void setKeyboardNavigationEnabled(bool keyboardNavigationEnabled);
 
+    bool diacriticsPopupEnabled() const;
+    void setDiacriticsPopupEnabled(bool enabled);
+
+    int diacriticsHoldThresholdMs() const;
+    void setDiacriticsHoldThresholdMs(int thresholdMs);
+
     bool isSaveNeeded() const override;
 
 public Q_SLOTS:
@@ -46,11 +54,15 @@ Q_SIGNALS:
     void vibrationEnabledChanged();
     void enabledLocalesChanged();
     void keyboardNavigationEnabledChanged();
+    void diacriticsPopupEnabledChanged();
+    void diacriticsHoldThresholdMsChanged();
 
 private:
     bool m_soundEnabled = false;
     bool m_vibrationEnabled = true;
     bool m_keyboardNavigationEnabled = false;
+    bool m_diacriticsPopupEnabled = true;
+    int m_diacriticsHoldThresholdMs = 600;
 
     bool m_saveNeeded = false;
 

@@ -28,11 +28,21 @@ QWaylandInputPanelSurface::~QWaylandInputPanelSurface()
 
 void QWaylandInputPanelSurface::applyConfigure()
 {
-    static const bool preferTopLevel = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL");
-    if (preferTopLevel)
-        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
-    else
+    const QVariant role = window()->window()->property("plasmaKeyboardInputPanelRole");
+    const int roleInt = role.isValid() ? role.toInt() : -1;
+
+    if (roleInt == 1) {
         set_overlay_panel();
+    } else if (roleInt == 0) {
+        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
+    } else {
+        static const bool preferTopLevel = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL");
+        if (preferTopLevel) {
+            set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
+        } else {
+            set_overlay_panel();
+        }
+    }
 
     window()->display()->handleWindowActivated(window());
 }

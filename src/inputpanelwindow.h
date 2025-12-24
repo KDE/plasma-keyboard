@@ -28,6 +28,10 @@ public:
 
     Q_INVOKABLE void showSettings();
 
+    // Initialize the window as a Wayland input-panel surface.
+    // If overlayPanel=true, the compositor should position it near the cursor.
+    Q_INVOKABLE bool initWaylandInputPanel(bool overlayPanel);
+
 Q_SIGNALS:
     void interactiveRegionChanged();
 

@@ -61,5 +61,32 @@ KCM.ScrollViewKCM {
                 checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
             }
         }
+
+        QQC2.CheckBox {
+            id: diacriticsPopupEnabled
+            Kirigami.FormData.label: i18n("Diacritics:")
+            text: i18n("Show popup when holding a key")
+
+            checked: kcm.diacriticsPopupEnabled
+            onCheckedChanged: {
+                kcm.diacriticsPopupEnabled = checked;
+                checked = Qt.binding(() => kcm.diacriticsPopupEnabled)
+            }
+        }
+
+        QQC2.SpinBox {
+            id: diacriticsHoldDelay
+            Kirigami.FormData.label: i18n("Hold delay (ms):")
+            from: 200
+            to: 1500
+            stepSize: 50
+
+            enabled: diacriticsPopupEnabled.checked
+            value: kcm.diacriticsHoldThresholdMs
+            onValueChanged: {
+                kcm.diacriticsHoldThresholdMs = value;
+                value = Qt.binding(() => kcm.diacriticsHoldThresholdMs)
+            }
+        }
     }
 }
