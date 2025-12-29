@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -27,6 +28,10 @@ public:
     void setInteractiveRegion(QRect interactiveRegion);
 
     Q_INVOKABLE void showSettings();
+
+    // Initialize the window as a Wayland input-panel surface.
+    // If overlayPanel=true, the compositor should position it near the cursor.
+    Q_INVOKABLE bool initWaylandInputPanel(bool overlayPanel);
 
 Q_SIGNALS:
     void interactiveRegionChanged();

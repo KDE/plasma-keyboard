@@ -1,14 +1,17 @@
 /*
     SPDX-FileCopyrightText: 2024 Aleix Pol i Gonzalez <aleixpol@kde.org>
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #include "inputlisteneritem.h"
 #include "inputmethod_p.h"
+#include "logging.h"
 #include "plasmakeyboardsettings.h"
 
+#include <QLoggingCategory>
 #include <QTextFormat>
 
 #include <set>
@@ -44,6 +47,9 @@ InputListenerItem::InputListenerItem()
     // Grab and listen to physical keyboard input
     m_input.setGrabbing(true);
 
+    m_holdTimer.setSingleShot(true);
+    connect(&m_holdTimer, &QTimer::timeout, this, &InputListenerItem::handleHoldTimeout);
+
     connect(&m_input, &InputPlugin::contextChanged, this, [this] {
         if (m_input.hasContext()) {
             QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
@@ -69,10 +75,41 @@ InputListenerItem::InputListenerItem()
     });
 
     connect(&m_input, &InputPlugin::keyPressed, this, [this](QKeyEvent *keyEvent) {
+        qCDebug(PlasmaKeyboard) << "InputPlugin keyPressed:" << keyEvent->key() << "text:" << keyEvent->text() << "modifiers:" << keyEvent->modifiers();
+
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        // Handle diacritics detection for textual keys from physical keyboard
+        if (shouldHandleDiacritics(keyEvent)) {
+            resetPendingDiacriticsState();
+            m_pendingText = keyEvent->text();
+            m_pendingKey = keyEvent->key();
+            m_selectionMade = false;
+            m_popupShown = false;
+            m_popupDismissed = false;
+
+            const int holdThreshold = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
+            qCDebug(PlasmaKeyboard) << "Start hold timer for" << m_pendingText << "threshold" << holdThreshold << "ms";
+            m_holdTimer.start(holdThreshold);
+            keyEvent->accept();
+            return;
+        }
+
         if (keyEvent->modifiers() != Qt::NoModifier) {
             return;
         }
-        if (!window()->isVisible()) {
+
+        // For control keys, we handle the event ourselves via keysyms.
+        // Mark accepted to prevent the Keyboard fallback path from forwarding the original key
+        // to the client (which would cause a double delete).
+        if (keyEvent->key() == Qt::Key_Backspace || keyEvent->key() == Qt::Key_Delete) {
+            const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(keyEvent);
+            for (auto key : keys) {
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Pressed, 0);
+            }
+            keyEvent->accept();
             return;
         }
 
@@ -89,12 +126,60 @@ InputListenerItem::InputListenerItem()
                 }
             }
         }
+
+        // Forward other keys to the input method
+        const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(keyEvent);
+        for (auto key : keys) {
+            // Simulate key press only if it's not textual
+            if (shouldSimulateKeysym(keyEvent, key)) {
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Pressed, 0);
+            }
+        }
     });
     connect(&m_input, &InputPlugin::keyReleased, this, [this](QKeyEvent *keyEvent) {
+        qCDebug(PlasmaKeyboard) << "InputPlugin keyReleased:" << keyEvent->key() << "text:" << keyEvent->text();
+
+        if (!window()->isVisible()) {
+            return;
+        }
+
+        // Handle diacritics key release from physical keyboard
+        if (!m_pendingText.isEmpty() && keyEvent->key() == m_pendingKey && !keyEvent->isAutoRepeat()) {
+            // Stop long-press timer if still counting
+            if (m_holdTimer.isActive()) {
+                m_holdTimer.stop();
+            }
+
+            if (m_popupShown) {
+                // Popup was shown; if user did not pick an alternative, commit the base character
+                if (!m_selectionMade) {
+                    qCDebug(PlasmaKeyboard) << "No selection made; committing base character" << m_pendingText;
+                    m_input.commit(m_pendingText);
+                }
+                if (!m_popupDismissed) {
+                    qCDebug(PlasmaKeyboard) << "Closing popup after release";
+                    Q_EMIT diacriticsPopupCancelled();
+                }
+                resetPendingDiacriticsState();
+                keyEvent->accept();
+                return;
+            }
+
+            // No popup, commit the base character now
+            qCDebug(PlasmaKeyboard) << "Releasing before popup; committing base character" << m_pendingText;
+            m_input.commit(m_pendingText);
+            resetPendingDiacriticsState();
+            keyEvent->accept();
+            return;
+        }
+
         if (keyEvent->modifiers() != Qt::NoModifier) {
             return;
         }
-        if (!window()->isVisible()) {
+
+        // We already handle Backspace/Delete on press; accept to prevent fallback forwarding.
+        if (keyEvent->key() == Qt::Key_Backspace || keyEvent->key() == Qt::Key_Delete) {
+            keyEvent->accept();
             return;
         }
 
@@ -109,6 +194,18 @@ InputListenerItem::InputListenerItem()
                     Q_EMIT keyNavigationReleased(key);
                     break;
                 }
+            }
+        }
+
+        // Forward other keys to the input method
+        const QList<xkb_keysym_t> keys = QXkbCommon::toKeysym(keyEvent);
+        for (auto key : keys) {
+            if (shouldSimulateKeysym(keyEvent, key)) {
+                // Simulate the keyboard press for non textual/control keys
+                m_input.keysym(QDateTime::currentMSecsSinceEpoch(), key, InputPlugin::Released, 0);
+            } else {
+                // If we have text coming as a key event, use it to commit the string
+                m_input.commit(keyEvent->text());
             }
         }
     });
@@ -132,6 +229,11 @@ InputListenerItem::InputListenerItem()
     // TODO: Investigate other places this might happen and how to fix it.
 
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
+}
+
+bool InputListenerItem::shouldSimulateKeysym(const QKeyEvent *keyEvent, xkb_keysym_t keysym) const
+{
+    return keyEvent->text().isEmpty() || keysym == XKB_KEY_Return;
 }
 
 void InputListenerItem::setEngine(QVirtualKeyboardInputEngine * /*engine*/)
@@ -318,6 +420,78 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
     if (const auto commit = event->commitString(); !commit.isEmpty()) {
         m_input.commit(commit);
     }
+}
+
+void InputListenerItem::handleHoldTimeout()
+{
+    if (m_pendingText.isEmpty()) {
+        return;
+    }
+
+    m_popupShown = true;
+    m_popupDismissed = false;
+    qCDebug(PlasmaKeyboard) << "Hold timeout hit; requesting popup for" << m_pendingText;
+    Q_EMIT diacriticsPopupRequested(m_pendingText);
+}
+
+void InputListenerItem::commitDiacritic(const QString &text)
+{
+    if (text.isEmpty()) {
+        return;
+    }
+
+    m_selectionMade = true;
+    qCDebug(PlasmaKeyboard) << "Committing selected diacritic" << text;
+    m_input.commit(text);
+    if (m_popupShown && !m_popupDismissed) {
+        Q_EMIT diacriticsPopupCancelled();
+        m_popupDismissed = true;
+    }
+}
+
+bool InputListenerItem::shouldHandleDiacritics(const QKeyEvent *event) const
+{
+    if (!PlasmaKeyboardSettings::self()->diacriticsPopupEnabled()) {
+        qCDebug(PlasmaKeyboard) << "Diacritics popup disabled; skipping";
+        return false;
+    }
+
+    // Never treat backspace/delete as diacritics candidates
+    if (event->key() == Qt::Key_Backspace || event->key() == Qt::Key_Delete) {
+        qCDebug(PlasmaKeyboard) << "Backspace/Delete; skipping diacritics";
+        return false;
+    }
+
+    if (event->isAutoRepeat()) {
+        qCDebug(PlasmaKeyboard) << "Auto-repeat key; skipping diacritics";
+        return false;
+    }
+
+    // Only handle simple textual keys without control/meta modifiers
+    const Qt::KeyboardModifiers mods = event->modifiers();
+    const bool modifierAllowed = mods == Qt::NoModifier || mods == Qt::ShiftModifier;
+    if (!modifierAllowed) {
+        qCDebug(PlasmaKeyboard) << "Modifiers present; skipping diacritics" << mods;
+        return false;
+    }
+
+    const bool hasSingleChar = !event->text().isEmpty() && event->text().size() == 1;
+    if (!hasSingleChar) {
+        qCDebug(PlasmaKeyboard) << "Key without single text char; skipping diacritics" << event->text();
+    }
+    return hasSingleChar;
+}
+
+void InputListenerItem::resetPendingDiacriticsState()
+{
+    if (m_holdTimer.isActive()) {
+        m_holdTimer.stop();
+    }
+    m_pendingText.clear();
+    m_pendingKey = 0;
+    m_popupShown = false;
+    m_popupDismissed = false;
+    m_selectionMade = false;
 }
 
 #include "moc_inputlisteneritem.cpp"

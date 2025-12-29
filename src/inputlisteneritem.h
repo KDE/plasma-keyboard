@@ -10,8 +10,11 @@
 
 #include <QQuickItem>
 #include <QQuickWindow>
+#include <QTimer>
 #include <QVirtualKeyboardInputEngine>
 #include <qqmlintegration.h>
+
+#include <xkbcommon/xkbcommon.h>
 
 #include "inputplugin.h"
 
@@ -37,8 +40,40 @@ public:
 Q_SIGNALS:
     void keyNavigationPressed(int key);
     void keyNavigationReleased(int key);
+    void diacriticsPopupRequested(const QString &baseCharacter);
+    void diacriticsPopupCancelled();
+
+public Q_SLOTS:
+    Q_INVOKABLE void commitDiacritic(const QString &text);
+
+private Q_SLOTS:
+    void handleHoldTimeout();
 
 private:
+    /**
+     * Checks whether a physical key event should be forwarded to the input method as a keysym.
+     *
+     * This is used to distinguish non-textual/control keys (which should go through the Wayland
+     * keysym path) from textual keys (which should be committed as text). The `Return` key is special
+     * because it often carries "\n" in @p keyEvent->text() but should still be treated as a
+     * control key.
+     *
+     * @param keyEvent The originating physical key event.
+     * @param keysym The XKB keysym derived from @p keyEvent.
+     * @return True if the event should be forwarded as a keysym, false if it should be committed
+     *         as text.
+     */
+    bool shouldSimulateKeysym(const QKeyEvent *keyEvent, xkb_keysym_t keysym) const;
+
+    bool shouldHandleDiacritics(const QKeyEvent *event) const;
+    void resetPendingDiacriticsState();
+
     InputPlugin m_input;
     bool m_keyboardNavigationActive = false;
+    QTimer m_holdTimer;
+    QString m_pendingText;
+    int m_pendingKey = 0;
+    bool m_popupShown = false;
+    bool m_popupDismissed = false;
+    bool m_selectionMade = false;
 };

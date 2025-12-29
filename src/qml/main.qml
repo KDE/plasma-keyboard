@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2024 Aleix Pol i Gonzalez <aleixpol@kde.org>
+    SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -19,12 +20,42 @@ InputPanelWindow {
     width: Screen.width
     color: 'transparent'
 
-    interactiveRegion: Qt.rect(
-        panelWrapper.x,
-        panelWrapper.y,
-        panelWrapper.width,
-        panelWrapper.height
-    )
+    // Map of base characters to their diacritic variants
+    property var diacriticsMap: ({
+                                     "a": ["á", "à", "â", "ä", "ã", "å", "ā", "ă", "ą"],
+                                     "c": ["ç", "ć", "č"],
+                                     "e": ["é", "è", "ê", "ë", "ē", "ė", "ę"],
+                                     "i": ["í", "ì", "î", "ï", "ī", "į"],
+                                     "n": ["ñ", "ń"],
+                                     "o": ["ó", "ò", "ô", "ö", "õ", "ō", "ø"],
+                                     "s": ["ś", "š", "ß"],
+                                     "u": ["ú", "ù", "û", "ü", "ū", "ů"],
+                                     "y": ["ý", "ÿ"],
+                                     "z": ["ź", "ż", "ž"],
+                                     "l": ["ł"],
+                                     "g": ["ğ"],
+                                     "r": ["ř"],
+                                     "t": ["ť"],
+                                     "d": ["ď"],
+                                     "h": ["ħ"]
+                                 })
+
+    function diacriticChoices(baseCharacter) {
+        if (!PlasmaKeyboardSettings.diacriticsPopupEnabled) {
+            return [];
+        }
+
+        const lower = baseCharacter.toLowerCase();
+        const choices = diacriticsMap[lower] || [];
+        if (choices.length === 0) {
+            return [];
+        }
+
+        if (lower === baseCharacter) {
+            return choices;
+        }
+        return choices.map((c) => c.toUpperCase());
+    }
 
     onVisibleChanged: {
         if (!visible) {
@@ -46,6 +77,20 @@ InputPanelWindow {
 
         keyboardNavigationActive: inputPanel.keyboard.navigationModeActive
 
+        onDiacriticsPopupRequested: (baseCharacter) => {
+                                        const options = root.diacriticChoices(baseCharacter);
+                                        if (options.length === 0) {
+                                            thing.commitDiacritic(baseCharacter);
+                                            return;
+                                        }
+
+                                        diacriticsPopupWindow.show(baseCharacter, options);
+                                    }
+
+        onDiacriticsPopupCancelled: {
+            diacriticsPopupWindow.close();
+        }
+
         onKeyNavigationPressed: (key) => {
             // HACK: invoke the Qt VirtualKeyboard keyboard navigation feature ourselves
             // See https://github.com/qt/qtvirtualkeyboard/blob/6d810ac41df96f1ad984f56e17f16860bec2abbf/src/virtualkeyboard/qvirtualkeyboardinputcontext_p.h#L110
@@ -56,6 +101,13 @@ InputPanelWindow {
             inputPanel.InputContext.priv.navigationKeyReleased(key, false);
         }
     }
+
+    DiacriticsPopupWindow {
+        id: diacriticsPopupWindow
+        onCharacterSelected: (character) => thing.commitDiacritic(character)
+    }
+
+    interactiveRegion: Qt.rect(panelWrapper.x, panelWrapper.y, panelWrapper.width, panelWrapper.height)
 
     Kirigami.ShadowedRectangle {
         id: panelWrapper

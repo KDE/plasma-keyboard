@@ -19,6 +19,7 @@ include(KDEInstallDirs) # Should be included first so its variables are availabl
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
+include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
 
