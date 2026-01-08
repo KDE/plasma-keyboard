@@ -7,3 +7,4 @@
 #pragma once
 
 #cmakedefine01 PLASMA_KEYBOARD_SOUND_ENABLED
+#cmakedefine01 PLASMA_KEYBOARD_VIBRATION_ENABLED
