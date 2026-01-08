@@ -12,10 +12,6 @@ ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DA
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/text-input/text-input-unstable-v1.xml BASENAME text-input-unstable-v1)
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL "${Wayland_DATADIR}/wayland.xml" BASENAME wayland)
 
-set_source_files_properties(dbus/org.sigxcpu.Feedback.Haptic.xml PROPERTIES INCLUDE vibrationevent.h)
-qt_add_dbus_interfaces(dbusinterface_SRCS
-    dbus/org.sigxcpu.Feedback.Haptic.xml)
-
 target_sources(plasma-keyboard PRIVATE
     main.cpp
     inputlisteneritem.cpp
@@ -30,11 +26,20 @@ target_sources(plasma-keyboard PRIVATE
     qwaylandinputpanelshellintegration_p.h
     qwaylandinputpanelsurface.cpp
     qwaylandinputpanelsurface_p.h
-    vibration.cpp
-    vibration.h
-    vibrationevent.h
-    ${dbusinterface_SRCS}
 )
+
+if (PLASMA_KEYBOARD_VIBRATION_ENABLED)
+    set_source_files_properties(dbus/org.sigxcpu.Feedback.Haptic.xml PROPERTIES INCLUDE vibrationevent.h)
+    qt_add_dbus_interfaces(dbusinterface_SRCS
+        dbus/org.sigxcpu.Feedback.Haptic.xml)
+
+    target_sources(plasma-keyboard PRIVATE
+        vibration.cpp
+        vibration.h
+        vibrationevent.h
+        ${dbusinterface_SRCS}
+    )
+endif()
 
 if (PLASMA_KEYBOARD_SOUND_ENABLED)
     target_sources(plasma-keyboard PRIVATE

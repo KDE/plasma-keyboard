@@ -105,6 +105,10 @@ int main(int argc, char **argv)
         PlasmaKeyboardSettings::self()->setSoundEnabled(false);
     }
 
+    if (!PLASMA_KEYBOARD_VIBRATION_ENABLED) {
+        PlasmaKeyboardSettings::self()->setVibrationEnabled(false);
+    }
+
     // Listen to config updates from kcm, and reparse
     auto watcher = KConfigWatcher::create(PlasmaKeyboardSettings::self()->sharedConfig());
     // clang-format off
