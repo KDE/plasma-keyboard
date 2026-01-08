@@ -4,6 +4,8 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
+configure_file(config-plasma-keyboard.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-plasma-keyboard.h)
+
 add_executable(plasma-keyboard)
 
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/input-method/input-method-unstable-v1.xml BASENAME input-method-unstable-v1)
@@ -31,9 +33,14 @@ target_sources(plasma-keyboard PRIVATE
     vibration.cpp
     vibration.h
     vibrationevent.h
-    resources.qrc
     ${dbusinterface_SRCS}
 )
+
+if (PLASMA_KEYBOARD_SOUND_ENABLED)
+    target_sources(plasma-keyboard PRIVATE
+        soundresources.qrc
+    )
+endif()
 
 ecm_add_qml_module(plasma-keyboard
     URI "org.kde.plasma.keyboard"

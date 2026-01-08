@@ -22,6 +22,8 @@
 #include "plasmakeyboardsettings.h"
 #include "qwaylandinputpanelshellintegration_p.h"
 
+#include <config-plasma-keyboard.h>
+
 static bool initPanelIntegration(QWindow *window)
 {
     window->create();
@@ -97,6 +99,10 @@ int main(int argc, char **argv)
         aboutData.setupCommandLine(&parser);
         parser.process(application);
         aboutData.processCommandLine(&parser);
+    }
+
+    if (!PLASMA_KEYBOARD_SOUND_ENABLED) {
+        PlasmaKeyboardSettings::self()->setSoundEnabled(false);
     }
 
     // Listen to config updates from kcm, and reparse
