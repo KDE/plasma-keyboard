@@ -1,7 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: plasma-keyboard
-Source: https://invent.kde.org/plasma/plasma-keyboard!
-
-Files: *.json
-Copyright: KDE contributors
-License: GPL-2.0-or-later

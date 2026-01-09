@@ -1,0 +1,9 @@
+version = 1
+SPDX-PackageName = "plasma-keyboard"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/plasma/plasma-keyboard!"
+
+[[annotations]]
+path = "**.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "KDE contributors"
+SPDX-License-Identifier = "GPL-2.0-or-later"
