@@ -8,7 +8,7 @@ project(plasma-keyboard VERSION "0.1.0")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(QT_MIN_VERSION "6.5.0")
+set(QT_MIN_VERSION "6.10.0")
 set(KF_MIN_VERSION "6.0.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED)
