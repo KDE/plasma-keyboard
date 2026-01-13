@@ -3,15 +3,17 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(plasma-keyboard VERSION "0.1.0")
+set(PROJECT_VERSION "6.5.90")
+
+project(plasma-keyboard VERSION ${PROJECT_VERSION})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QT_MIN_VERSION "6.10.0")
-set(KF_MIN_VERSION "6.0.0")
+set(KF6_MIN_VERSION "6.22.0")
 
-find_package(ECM ${KF_MIN_VERSION} REQUIRED)
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs) # Should be included first so its variables are available to other modules.
@@ -39,7 +41,7 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
     find_package(Qt6WaylandClientPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
 endif()
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
     KCMUtils
