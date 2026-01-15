@@ -63,7 +63,7 @@ msgstr ""
 #: ui/main_handset.qml:34
 msgctxt "@title:group"
 msgid "Feedback"
-msgstr ""
+msgstr "Zpětná vazba"
 
 #: ui/main_handset.qml:41
 msgid "Whether to emit a sound on key press"
