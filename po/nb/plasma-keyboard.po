@@ -1,58 +1,60 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the plasma-keyboard package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of plasma-keyboard to Norwegian Bokmål
+#
+# SPDX-FileCopyrightText: 2026 Martin Hansen <mh306602@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 00:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-01-18 18:32+0100\n"
+"Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.1\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Martin Hansen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mh306602@gmail.com"
 
 #: main.cpp:81
 #, kde-format
 msgid "Plasma Keyboard"
-msgstr ""
+msgstr "Plasma-tastatur"
 
 #: main.cpp:83
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
-msgstr ""
+msgstr "Et skjermtastatur for Plasma"
 
 #: main.cpp:85
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
-msgstr ""
+msgstr "Opphavsrett 2024, Aleix Pol Gonzalez"
 
 #: main.cpp:87
 #, kde-format
 msgid "Aleix Pol Gonzalez"
-msgstr ""
+msgstr "Aleix Pol Gonzalez"
 
 #: main.cpp:87
 #, kde-format
 msgid "Author"
-msgstr ""
+msgstr "Opphavsperson"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"
-msgstr ""
+msgstr "Innstillinger"
