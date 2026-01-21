@@ -21,6 +21,7 @@
   <name xml:lang="ko">Plasma 키보드</name>
   <name xml:lang="lt">Plasma klaviatūra</name>
   <name xml:lang="lv">„Plasma“ tastatūra</name>
+  <name xml:lang="nb">Plasma-tastatur</name>
   <name xml:lang="nl">Plasma-toetsenbord</name>
   <name xml:lang="pl">Klawiatura Plazmy</name>
   <name xml:lang="pt-BR">Teclado do Plasma</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="ko">Plasma용 가상 키보드</summary>
   <summary xml:lang="lt">Ekraninė klaviatūra, skirta Plasma</summary>
   <summary xml:lang="lv">Ekrānā redzama tastatūra „Plasma“ darbvirsmai</summary>
+  <summary xml:lang="nb">Et skjermtastatur for Plasma</summary>
   <summary xml:lang="nl">Toetsenbord op scherm voor Plasma</summary>
   <summary xml:lang="pl">Klawiatura ekranowa dla Plazmy</summary>
   <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
@@ -79,6 +81,7 @@
     <p xml:lang="ko">Plasma 키보드는 터치스크린, 태블릿, 컨버티블 장치, 휴대폰, 물리 키보드가 없는 컴퓨터용 가상 키보드를 제공합니다.</p>
     <p xml:lang="lt">Plasma klaviatūra pateikia virtualią ekraninę klaviatūrą, skirta jutikliniams ekranams, planšetėms, sulankstomiems įrenginiams, telefonams bei tradiciniams kompiuteriams, neturintiems fizinės klaviatūros.</p>
     <p xml:lang="lv">„Plasma“ tastatūra ir virtuāla ekrānā redzama tastatūra skārienjutīgiem ekrāniem, planšetdatoriem, pārveidojamām ierīcēm, tālruņiem un tradicionāliem datoriem bez fiziskas tastatūras.</p>
+    <p xml:lang="nb">Plasma-tastatur gir et virtuelt skjermtastatur for trykkskjermer, diverse plater, konvertible enheter, telefoner og tradisjonelle datamaskiner uten et fysisk tastatur.</p>
     <p xml:lang="nl">Plasma-toetsenbord levert een virtueel toetsenbord op scherm voor aanraakschermen, tablets, om te schakelen apparaten, telefoons en traditionele computers zonder fysiek toetsenbord.</p>
     <p xml:lang="pl">Klawiatura Plazmy dostarcza wirtualnej, ekranowej klawiatury dla ekranów dotykowych, tabletów, urządzeń przekształcalnych, telefonów oraz tradycyjnych komputerów bez klawiatury fizycznej.</p>
     <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
@@ -106,6 +109,7 @@
       <li xml:lang="ko">Plasma 작업 공간 및 앱과의 완벽한 통합</li>
       <li xml:lang="lt">Vientisa integracija su Plasma darbalaukio aplinka ir programomis</li>
       <li xml:lang="lv">Pilnīga integrācija „Plasma“ darbvirsmā un programmās</li>
+      <li xml:lang="nb">Sømløs integrasjon med Plasma-arbeidsområde og programmer</li>
       <li xml:lang="nl">Naadloze integratie met de Plasma werkruimte en toepassingen</li>
       <li xml:lang="pl">Dobrze zgrana z przestrzenią Plazmy oraz jej aplikacjami</li>
       <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
@@ -132,6 +136,7 @@
       <li xml:lang="ko">텍스트 입력이 필요할 때 자동으로 표시</li>
       <li xml:lang="lt">Automatinis atsiradimas, kai prireikia teksto įvesties</li>
       <li xml:lang="lv">Automātiski atveras, kad jāieraksta teksts</li>
+      <li xml:lang="nb">Automatisk visning når det trengs tastetrykk</li>
       <li xml:lang="nl">Automatische verschijning wanneer tekstinvoer nodig is</li>
       <li xml:lang="pl">Pojawia się sama, gdy potrzebne jest wprowadzenie tekstu</li>
       <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
@@ -158,6 +163,7 @@
       <li xml:lang="ko">다중 레이아웃과 언어 지원</li>
       <li xml:lang="lt">Daugelio išdėstymų ir kalbų palaikymas</li>
       <li xml:lang="lv">Daudzu izkārtojumu un valodu atbalsts</li>
+      <li xml:lang="nb">Støtte for flere oppsett og språk</li>
       <li xml:lang="nl">Ondersteuning voor meerdere indelingen en talen</li>
       <li xml:lang="pl">Obsługa wielu układów i języków</li>
       <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
@@ -184,6 +190,7 @@
       <li xml:lang="ko">다양한 폼 팩터용 크기와 행동 설정 가능</li>
       <li xml:lang="lt">Konfigūruojamas dydis ir elgsena skirtingiems formos koeficientams</li>
       <li xml:lang="lv">Konfigurējams izmērs un uzvedība dažāda lieluma ekrāniem</li>
+      <li xml:lang="nb">Sett opp størrelse og atferd for forskjellige utforminger</li>
       <li xml:lang="nl">Aanpasbare grootte en gedrag voor verschillende vormfactoren</li>
       <li xml:lang="pl">Rozmiar i zachowanie jest do ustawienia w zależności od rodzaju urządzenia</li>
       <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
