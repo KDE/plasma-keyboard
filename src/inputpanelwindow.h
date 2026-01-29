@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -27,6 +28,14 @@ public:
     void setInteractiveRegion(QRect interactiveRegion);
 
     Q_INVOKABLE void showSettings();
+
+    /**
+     * Initialize this window as an input panel for the compositor.
+     *
+     * @param overlayPanel Whether to initialize as an overlay panel (true) or keyboard (false).
+     * @return True if integration was initialized successfully, otherwise false.
+     */
+    Q_INVOKABLE bool initWaylandInputPanel(bool overlayPanel);
 
 Q_SIGNALS:
     void interactiveRegionChanged();
