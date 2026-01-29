@@ -5,6 +5,11 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
+#include "config-plasma-keyboard.h"
+#include "inputpanelintegration.h"
+#include "logging.h"
+#include "plasmakeyboardsettings.h"
+
 #include <KAboutData>
 #include <KConfigWatcher>
 #include <KLocalizedQmlContext>
@@ -18,37 +23,6 @@
 #include <QWindow>
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <qpa/qwindowsysteminterface.h>
-
-#include "plasmakeyboardsettings.h"
-#include "qwaylandinputpanelshellintegration_p.h"
-
-#include <config-plasma-keyboard.h>
-
-static bool initPanelIntegration(QWindow *window)
-{
-    window->create();
-    auto waylandWindow = dynamic_cast<QtWaylandClient::QWaylandWindow *>(window->handle());
-    if (!waylandWindow) {
-        qWarning() << window << "is not a wayland window. Not creating panel";
-        return false;
-    }
-    static QWaylandInputPanelShellIntegration *shellIntegration = nullptr;
-    if (!shellIntegration) {
-        shellIntegration = new QWaylandInputPanelShellIntegration();
-        if (!shellIntegration->initialize(waylandWindow->display())) {
-            delete shellIntegration;
-            shellIntegration = nullptr;
-            qWarning() << "Failed to initialize input panel-shell integration, possibly because compositor does not support the input_method_v1 protocol or "
-                          "because it needs more privileges.";
-            return false;
-        }
-    }
-    waylandWindow->setShellIntegration(shellIntegration);
-    window->requestActivate();
-    window->setVisible(true);
-    QWindowSystemInterface::handleFocusWindowChanged(window);
-    return true;
-}
 
 int main(int argc, char **argv)
 {
@@ -123,14 +97,22 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine view;
     KLocalization::setupLocalizedContext(&view);
+
     QObject::connect(&view, &QQmlApplicationEngine::objectCreated, &application, [](QObject *object) {
         auto window = qobject_cast<QWindow *>(object);
-        if (!initPanelIntegration(window)) {
+        const bool initSuccessful = initInputPanelIntegration(window, InputPanelRole::Keyboard);
+
+        if (!initSuccessful) {
             QTextStream(stderr) << "Cannot run plasma-keyboard standalone. You can enable it in Plasma’s System Settings app, on the “Virtual Keyboard” page.";
             exit(1);
         }
+
+        window->requestActivate();
+        window->setVisible(true);
     });
     view.load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/plasma/keyboard/main.qml")));
+
+    qCDebug(PlasmaKeyboard) << "Starting Plasma Keyboard application";
 
     return application.exec();
 }
