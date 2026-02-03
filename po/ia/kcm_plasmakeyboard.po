@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-01-30 12:11+0100\n"
+"PO-Revision-Date: 2026-02-02 12:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -23,13 +23,15 @@ msgstr "Filtra Linguages…"
 
 #: ui/LocaleSelectorListView.qml:69
 msgid "Filter languages"
-msgstr ""
+msgstr "Filtra Linguages"
 
 #: ui/LocaleSelectorListView.qml:82
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"Necun linguages selectionate. Le disposition de claviero predefinite per le "
+"systema essera usate "
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
@@ -38,7 +40,7 @@ msgstr "Linguages"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
-msgstr ""
+msgstr "Retorno de pression de clave:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 msgid "Sound"
@@ -54,11 +56,11 @@ msgstr "General:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Navigation de claviero"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
-msgstr ""
+msgstr "Essaya le claviero virtual..."
 
 #: ui/main_handset.qml:34
 msgctxt "@title:group"
@@ -67,15 +69,15 @@ msgstr "Retorno "
 
 #: ui/main_handset.qml:41
 msgid "Whether to emit a sound on key press"
-msgstr ""
+msgstr "Si emitter un sono sur pression de clave"
 
 #: ui/main_handset.qml:55
 msgid "Whether to vibrate on key press"
-msgstr ""
+msgstr "Si vibrar sur pression de clave"
 
 #: ui/main_handset.qml:76
 msgid "Keyboard Languages"
-msgstr ""
+msgstr "Linguages de Claviero"
 
 #: ui/main_handset.qml:84
 msgctxt "@title:group"
@@ -84,8 +86,8 @@ msgstr "General"
 
 #: ui/main_handset.qml:91
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr ""
+msgstr "Si usar leclaves de flecha per navigar le claviero"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
-msgstr ""
+msgstr "Retorno de pression de clave"
