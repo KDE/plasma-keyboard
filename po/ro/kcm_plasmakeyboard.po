@@ -1,0 +1,94 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+# SPDX-FileCopyrightText: 2026 Sergiu Bivol <sergiu@cip.md>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2026-02-04 16:30+0000\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "Filtrare limbi…"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "Filtrare limbi"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"Nicio limbă aleasă. Se va folosi aranjamentul implicit de tastatură din "
+"sistem."
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "Limbi"
+
+#: ui/main.qml:32
+msgid "Key press feedback:"
+msgstr "Reacție la apăsarea tastei:"
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "Sunet"
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "Vibrație"
+
+#: ui/main.qml:55
+msgid "General:"
+msgstr "Generale:"
+
+#: ui/main.qml:56 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr "Navigare cu tastatura"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr "Testați tastatura virtuală…"
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Reacție"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr "Dacă se emit sunete la apăsarea tastelor"
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr "Dacă se emit vibrații la apăsarea tastelor"
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr "Limbile tastaturii"
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "Generale"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "Dacă se vor folosi tastele-săgeți pentru a naviga tastatura"
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr "Reacție la apăsarea tastei"
