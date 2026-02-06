@@ -1,6 +1,5 @@
 # Translation of kcm_plasmakeyboard to Norwegian Bokmål
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
