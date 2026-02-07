@@ -15,6 +15,7 @@
   <name xml:lang="fi">Plasma-näppäimistö</name>
   <name xml:lang="fr">Plasma Keyboard</name>
   <name xml:lang="he">מקלדת פלזמה</name>
+  <name xml:lang="ia">Claviero de Plasma</name>
   <name xml:lang="is">Plasma-lyklaborð</name>
   <name xml:lang="it">Plasma Keyboard</name>
   <name xml:lang="ka">Plasma Keyboard</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="fi">Näyttönäppäimistö Plasmaan</summary>
   <summary xml:lang="fr">Clavier sur l'écran pour Plasma</summary>
   <summary xml:lang="he">מקלדת על המסך לפלזמה</summary>
+  <summary xml:lang="ia">Un Claviero sur schermo per Plasma</summary>
   <summary xml:lang="is">Skjályklaborð fyrir Plasma</summary>
   <summary xml:lang="it">Tastiera su schermo per Plasma</summary>
   <summary xml:lang="ka">ეკრანის კლავიატურა Plasma-სთვის</summary>
@@ -75,6 +77,7 @@
     <p xml:lang="fi">Plasma-näppäimistö tarjoaa virtuaalisen näyttönäppäimistön kosketusnäytöille, tableteille, muunnettaville laitteille, puhelimille ja näppäimistöttömille perinteisille tietokoneille.</p>
     <p xml:lang="fr">Plasma Keyboard fournit un clavier virtuel à l'écran pour les écrans tactiles, les tablettes, les ordinateurs convertibles, les téléphones et les ordinateurs traditionnels sans clavier physique.</p>
     <p xml:lang="he">מקלדת פלזמה מספקת מקלדת וירטואלית על גבי המסך למסכי מגע, מחשבי לוח, מכשירים גמישים, טלפונים ומחשבים מסורתיים בלי מקלדת פיזית.</p>
+    <p xml:lang="ia">Claviero dePlasma (Plasma Keyboard) forni un claviero virtual, sur schermo, per schermos tactile, tablettas, dispositivos convertibile, telephonos, e computatores traditional sin claviero physic.</p>
     <p xml:lang="is">Plasma-lyklaborðið birtir sýndarlyklaborð á skjanum fyrir snertiskjái, spjaldtölvur, umbreytanleg tæki, snjallsíma og venjulegar tölvur sem ekki eru með alvöru lyklaborð.</p>
     <p xml:lang="it">Plasma Keyboard fornisce una tastiera virtuale su schermo per touchscreen, tablet, dispositivi convertibili, telefoni e computer tradizionali privi di tastiera fisica.</p>
     <p xml:lang="ka">Plasma-ის კლავიატურა მოგაწვდით ვირტუალურ კლავიატურას ეკრანზე სენსორული ეკრანებისთვის, ტაბლეტებისთვის, კონვერტირებადი მოწყობილობებისთვის, ტელეფონებისთვის და ტრადიციული კომპიუტერებისთვის, რომლებსაც ფიზიკური კლავიატურა არ გააჩნიათ.</p>
@@ -103,6 +106,7 @@
       <li xml:lang="fi">Saumaton eheytys Plasma-työtilan ja -sovellusten kanssa</li>
       <li xml:lang="fr">Intégration transparente avec l'espace de travail et les applications de Plasma</li>
       <li xml:lang="he">שילוב חלק בסביבת העבודה והיישומים של פלזמה</li>
+      <li xml:lang="ia">Integration sin solution de continuitate con lespatio de labor e applicationes de Plasma</li>
       <li xml:lang="is">Hnökralaus samþætting við vinnusvæði og forrit í Plasma</li>
       <li xml:lang="it">Integrazione perfetta con l'area di lavoro e le applicazioni Plasma</li>
       <li xml:lang="ka">უწყვეტი ინტეგრაცია Plasma-ის სამუშაო სივრცესთან და აპლიკაციებთან</li>
@@ -130,6 +134,7 @@
       <li xml:lang="fi">Automaattinen näyttäminen tekstisyötettä tarvittaessa</li>
       <li xml:lang="fr">Apparence automatique lorsque la saisie de texte est nécessaire</li>
       <li xml:lang="he">הופעה אוטומטית כשצריך להקליד טקסט</li>
+      <li xml:lang="ia">Apparentia automatic quando le ingresso de testo es necessari</li>
       <li xml:lang="is">Sjálfvirk birting þegar þörf er á að setja inn texta</li>
       <li xml:lang="it">Aspetto automatico quando è necessario l'inserimento di testo</li>
       <li xml:lang="ka">ავტომატური გამოჩენა, როცა ტექსტის შეყვანაა საჭირო</li>
@@ -157,6 +162,7 @@
       <li xml:lang="fi">Useiden asettelujen ja kielten tuki</li>
       <li xml:lang="fr">Prise en charge de plusieurs dispositions et langues</li>
       <li xml:lang="he">תמיכה במגוון פריסות ושפות</li>
+      <li xml:lang="ia">Suppoto per linguages e dispositiones multiple</li>
       <li xml:lang="is">Stuðningur við mörg tungumál og framsetningar</li>
       <li xml:lang="it">Supporto per più mappature e lingue</li>
       <li xml:lang="ka">მრავალი განლაგებისა და ენის მხარდაჭერა</li>
@@ -184,6 +190,7 @@
       <li xml:lang="fi">Mukautettava koko ja toiminta eri alustoilla</li>
       <li xml:lang="fr">Taille et comportement configurables pour différents facteurs de forme</li>
       <li xml:lang="he">גודל והתנהגות מתכוונים למגוון גודלי תצוגה</li>
+      <li xml:lang="ia">Grandor configurabile e comportamento per factores de forma differente</li>
       <li xml:lang="is">Stillanleg stærð og hegðun fyrir mismunandi skjástærðir</li>
       <li xml:lang="it">Dimensioni e comportamento configurabili per diversi fattori di forma</li>
       <li xml:lang="ka">მორგებადი ზომა და ქცევა სხვადასხვა ფორმფაქტორებისთვის</li>
