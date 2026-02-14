@@ -7,6 +7,7 @@
   <id>org.kde.plasma.keyboard</id>
   <name>Plasma Keyboard</name>
   <name xml:lang="ar">لوحة المفاتيح بلازما</name>
+  <name xml:lang="bg">Клавиатура на Plasma</name>
   <name xml:lang="ca">Teclat del Plasma</name>
   <name xml:lang="ca-valencia">Teclat de Plasma</name>
   <name xml:lang="de">Plasma-Tastatur</name>
@@ -35,6 +36,7 @@
   <name xml:lang="zh-TW">Plasma 鍵盤</name>
   <summary>On-Screen Keyboard for Plasma</summary>
   <summary xml:lang="ar">لوحة المفاتيح على الشّاشة لبلازما</summary>
+  <summary xml:lang="bg">Екранна клавиатура за Plasma</summary>
   <summary xml:lang="ca">Teclat en pantalla per al Plasma</summary>
   <summary xml:lang="ca-valencia">Teclat en pantalla per a Plasma</summary>
   <summary xml:lang="de">Bildschirmtastatur für Plasma</summary>
@@ -69,6 +71,7 @@
       phones, and traditional computers without a physical keyboard.
     </p>
     <p xml:lang="ar">توفر لوحة مفاتيح بلازما لوحة مفاتيح افتراضية على الشاشة لأجهزة اللمس والأجهزة اللوحية والأجهزة القابلة للتحويل والهواتف وأجهزة الكمبيوتر التقليدية التي لا تحتوي على لوحة مفاتيح فعلية.</p>
+    <p xml:lang="bg">Клавиатура на Plasma предоставя виртуална екранна клавиатура за сензорни екрани, таблети, конвертируеми устройства, телефони и традиционни компютри без физическа клавиатура.</p>
     <p xml:lang="ca">El Teclat del Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
     <p xml:lang="ca-valencia">El Teclat de Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
     <p xml:lang="de">Plasma-Tastatur bietet eine virtuelle Bildschirmtastatur für Touchscreens, Tablets, 2-in-1-Geräte (Convertibles), Smartphones und herkömmliche Computer ohne physische Tastatur.</p>
@@ -98,6 +101,7 @@
     <ul>
       <li>Seamless integration with the Plasma workspace and applications</li>
       <li xml:lang="ar">تكامل سلس مع مساحة عمل بلازما والتطبيقات</li>
+      <li xml:lang="bg">Гладка интеграция с работното пространство и приложенията на Plasma</li>
       <li xml:lang="ca">Integració perfecta amb l'espai de treball i les aplicacions del Plasma</li>
       <li xml:lang="ca-valencia">Integració perfecta amb l'espai de treball i les aplicacions de Plasma</li>
       <li xml:lang="de">Nahtlose Integration mit der Plasma-Arbeitsumgebung und Anwendungen</li>
@@ -126,6 +130,7 @@
       <li xml:lang="zh-TW">與 Plasma 工作空間與應用程式無縫整合</li>
       <li>Automatic appearance when text input is needed</li>
       <li xml:lang="ar">الظهور الآلي عند الحاجة إلى إدخال نص</li>
+      <li xml:lang="bg">Автоматично появяване, когато е необходимо въвеждане на текст</li>
       <li xml:lang="ca">Apareix automàticament quan es necessita l'entrada de text</li>
       <li xml:lang="ca-valencia">Apareix automàticament quan es necessita l'entrada de text</li>
       <li xml:lang="de">Automatisches Erscheinen, wenn Texteingabe erforderlich ist</li>
@@ -154,6 +159,7 @@
       <li xml:lang="zh-TW">需要能夠輸入文字時自動出現</li>
       <li>Support for multiple layouts and languages</li>
       <li xml:lang="ar">توفير تخطيطات ولغات متعددة</li>
+      <li xml:lang="bg">Поддръжка на множество подредби и езици</li>
       <li xml:lang="ca">Permet múltiples disposicions i llengües</li>
       <li xml:lang="ca-valencia">Permet múltiples disposicions i llengües</li>
       <li xml:lang="de">Unterstützung mehrerer Layouts und Sprachen</li>
@@ -182,6 +188,7 @@
       <li xml:lang="zh-TW">支援多個鍵盤配置與語言</li>
       <li>Configurable size and behavior for different form factors</li>
       <li xml:lang="ar">حجم وسلوك قابل للضبط لمختلف عوامل الشكل</li>
+      <li xml:lang="bg">Адаптиращ се размер и поведение за различни по размери устройства</li>
       <li xml:lang="ca">Mida i comportament configurables per a factors de forma diferents</li>
       <li xml:lang="ca-valencia">Mida i comportament configurables per a factors de forma diferents</li>
       <li xml:lang="de">An verschiedene Einsatzbereiche anpassbare Größe und Verhalten</li>
