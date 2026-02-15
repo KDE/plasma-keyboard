@@ -24,6 +24,10 @@
         <entry key="keyboardNavigationEnabled" type="bool">
             <default>false</default>
         </entry>
+        <entry key="autoCapitalizationEnabled" type="bool">
+            <label>Whether auto capitalization is enabled.</label>
+            <default>true</default>
+        </entry>
         <entry key="panelFillScreenWidth" type="bool">
             <label>Whether the keyboard panel fills the screen width.</label>
             <default>true</default>
