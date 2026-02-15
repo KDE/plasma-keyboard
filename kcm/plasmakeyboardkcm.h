@@ -17,6 +17,7 @@ class PlasmaKeyboardKcm : public KQuickManagedConfigModule
     Q_PROPERTY(bool vibrationEnabled READ vibrationEnabled WRITE setVibrationEnabled NOTIFY vibrationEnabledChanged)
     Q_PROPERTY(QStringList enabledLocales READ enabledLocales NOTIFY enabledLocalesChanged)
     Q_PROPERTY(bool keyboardNavigationEnabled READ keyboardNavigationEnabled WRITE setKeyboardNavigationEnabled NOTIFY keyboardNavigationEnabledChanged)
+    Q_PROPERTY(bool autoCapitalizationEnabled READ autoCapitalizationEnabled WRITE setAutoCapitalizationEnabled NOTIFY autoCapitalizationEnabledChanged)
 
 public:
     PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData);
@@ -35,6 +36,9 @@ public:
     bool keyboardNavigationEnabled() const;
     void setKeyboardNavigationEnabled(bool keyboardNavigationEnabled);
 
+    bool autoCapitalizationEnabled() const;
+    void setAutoCapitalizationEnabled(bool autoCapitalizationEnabled);
+
     bool isSaveNeeded() const override;
 
 public Q_SLOTS:
@@ -46,11 +50,13 @@ Q_SIGNALS:
     void vibrationEnabledChanged();
     void enabledLocalesChanged();
     void keyboardNavigationEnabledChanged();
+    void autoCapitalizationEnabledChanged();
 
 private:
     bool m_soundEnabled = false;
     bool m_vibrationEnabled = true;
     bool m_keyboardNavigationEnabled = false;
+    bool m_autoCapitalizationEnabled = true;
 
     bool m_saveNeeded = false;
 

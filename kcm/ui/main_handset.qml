@@ -96,6 +96,20 @@ KCM.SimpleKCM {
                     checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
                 }
             }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormSwitchDelegate {
+                id: autoCapitalizationEnabled
+                text: i18n("Auto capitalization")
+                description: i18n("Whether to automatically capitalize the first letter of sentences")
+
+                checked: kcm.autoCapitalizationEnabled
+                onCheckedChanged: {
+                    kcm.autoCapitalizationEnabled = checked;
+                    checked = Qt.binding(() => kcm.autoCapitalizationEnabled)
+                }
+            }
         }
     }
 }

@@ -68,11 +68,33 @@ KCM.SimpleKCM {
             id: vibrationOnKeypressButton
             text: "Vibration"
             KeyNavigation.up: soundOnKeypressButton
+            KeyNavigation.down: autoCapitalizationButton
 
             checked: kcm.vibrationEnabled
             onCheckedChanged: {
                 kcm.vibrationEnabled = checked;
                 checked = Qt.binding(() => kcm.vibrationEnabled);
+            }
+        }
+
+        QQC2.Label {
+            id: generalLabel
+            text: i18n("General")
+            font.pixelSize: 22
+            font.weight: Font.Normal
+            Layout.topMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.smallSpacing
+        }
+
+        Bigscreen.SwitchDelegate {
+            id: autoCapitalizationButton
+            text: i18n("Auto capitalization")
+            KeyNavigation.up: vibrationOnKeypressButton
+
+            checked: kcm.autoCapitalizationEnabled
+            onCheckedChanged: {
+                kcm.autoCapitalizationEnabled = checked;
+                checked = Qt.binding(() => kcm.autoCapitalizationEnabled);
             }
         }
 

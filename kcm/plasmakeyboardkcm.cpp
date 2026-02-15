@@ -104,6 +104,23 @@ void PlasmaKeyboardKcm::setKeyboardNavigationEnabled(bool keyboardNavigationEnab
     setNeedsSave(true);
 }
 
+bool PlasmaKeyboardKcm::autoCapitalizationEnabled() const
+{
+    return m_autoCapitalizationEnabled;
+}
+
+void PlasmaKeyboardKcm::setAutoCapitalizationEnabled(bool autoCapitalizationEnabled)
+{
+    if (autoCapitalizationEnabled == m_autoCapitalizationEnabled) {
+        return;
+    }
+
+    m_autoCapitalizationEnabled = autoCapitalizationEnabled;
+    Q_EMIT autoCapitalizationEnabledChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -117,6 +134,7 @@ void PlasmaKeyboardKcm::load()
     m_enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
     Q_EMIT enabledLocalesChanged();
     setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
+    setAutoCapitalizationEnabled(PlasmaKeyboardSettings::self()->autoCapitalizationEnabled());
 
     setNeedsSave(false);
 }
@@ -127,6 +145,7 @@ void PlasmaKeyboardKcm::save()
     PlasmaKeyboardSettings::self()->setVibrationEnabled(m_vibrationEnabled);
     PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
     PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
+    PlasmaKeyboardSettings::self()->setAutoCapitalizationEnabled(m_autoCapitalizationEnabled);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

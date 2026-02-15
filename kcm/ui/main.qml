@@ -61,5 +61,16 @@ KCM.ScrollViewKCM {
                 checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
             }
         }
+
+        QQC2.CheckBox {
+            id: autoCapitalizationEnabled
+            text: i18n("Auto capitalization")
+
+            checked: kcm.autoCapitalizationEnabled
+            onCheckedChanged: {
+                kcm.autoCapitalizationEnabled = checked;
+                checked = Qt.binding(() => kcm.autoCapitalizationEnabled)
+            }
+        }
     }
 }
