@@ -10,6 +10,7 @@ project(plasma-keyboard VERSION ${PROJECT_VERSION})
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(PROJECT_DEP_VERSION "6.5.90")
 set(QT_MIN_VERSION "6.10.0")
 set(KF6_MIN_VERSION "6.22.0")
 
@@ -21,6 +22,7 @@ include(KDEInstallDirs) # Should be included first so its variables are availabl
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
+include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
 
@@ -50,6 +52,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     KCMUtils
     Config
 )
+
+find_package(PlasmaQuick ${PROJECT_DEP_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 6.10.0
     KF 6.18.0

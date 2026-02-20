@@ -1,14 +1,22 @@
 /*
     SPDX-FileCopyrightText: 2024 Aleix Pol i Gonzalez <aleixpol@kde.org>
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2026 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #include "inputlisteneritem.h"
 #include "inputmethod_p.h"
+#include "logging.h"
 #include "plasmakeyboardsettings.h"
 
+#include "overlay/longpresstrigger.h"
+#include "overlay/overlaycontroller.h"
+#include "overlay/prefixquerytrigger.h"
+#include "overlay/textexpansiontrigger.h"
+
+#include <QLoggingCategory>
 #include <QTextFormat>
 
 #include <set>
@@ -40,12 +48,25 @@ Q_GLOBAL_STATIC_WITH_ARGS(const QList<Qt::Key>, KEYBOARD_NAVIGATION_ACTIVE_CAPTU
 
 InputListenerItem::InputListenerItem()
     : m_input(&(*s_im))
+    , m_overlayController(new OverlayController(&m_input, this))
 {
     // Grab and listen to physical keyboard input
     m_input.setGrabbing(true);
 
+    // Register overlay triggers
+    m_overlayController->registerTrigger(new LongPressTrigger(m_overlayController));
+    m_overlayController->registerTrigger(new PrefixQueryTrigger(m_overlayController));
+    m_overlayController->registerTrigger(new TextExpansionTrigger(m_overlayController));
+
     connect(&m_input, &InputPlugin::contextChanged, this, [this] {
-        if (m_input.hasContext()) {
+        const bool hasContext = m_input.hasContext();
+
+        // Cancel any pending overlay state when the input context changes (focus loss or target swap)
+        if (m_overlayController) {
+            m_overlayController->cancelOverlay();
+        }
+
+        if (hasContext) {
             QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
             QGuiApplication::inputMethod()->show();
         } else {
@@ -53,6 +74,15 @@ InputListenerItem::InputListenerItem()
         }
     });
     connect(&m_input, &InputPlugin::surroundingTextChanged, this, [this] {
+        // Notify the overlay controller first so it can cancel the overlay if an
+        // external cursor movement is detected (e.g. user tapped elsewhere in the
+        // text field while the diacritics overlay was open or the hold timer was
+        // still running). The controller uses an internal counter to distinguish
+        // its own commit_string echoes from external cursor moves.
+        if (m_overlayController) {
+            m_overlayController->handleSurroundingTextChanged();
+        }
+
         QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
 
         if (m_input.hasContext()) {
@@ -69,10 +99,16 @@ InputListenerItem::InputListenerItem()
     });
 
     connect(&m_input, &InputPlugin::keyPressed, this, [this](QKeyEvent *keyEvent) {
-        if (keyEvent->modifiers() != Qt::NoModifier) {
+        qCDebug(PlasmaKeyboard) << "keyPressed. keycode:" << keyEvent->key() << "text:" << keyEvent->text() << "modifiers:" << keyEvent->modifiers();
+
+        // Delegate to overlay controller for diacritics/emoji/text expansion
+        if (m_overlayController && m_overlayController->processKeyPress(keyEvent)) {
+            keyEvent->accept();
             return;
         }
+
         if (!window()->isVisible()) {
+            qCDebug(PlasmaKeyboard) << "Window not visible, ignoring key press";
             return;
         }
 
@@ -91,9 +127,14 @@ InputListenerItem::InputListenerItem()
         }
     });
     connect(&m_input, &InputPlugin::keyReleased, this, [this](QKeyEvent *keyEvent) {
-        if (keyEvent->modifiers() != Qt::NoModifier) {
+        qCDebug(PlasmaKeyboard) << "keyReleased. keycode:" << keyEvent->key() << "text:" << keyEvent->text();
+
+        // Let the overlay controller handle release events (e.g. diacritics, emoji)
+        if (m_overlayController && m_overlayController->processKeyRelease(keyEvent)) {
+            keyEvent->accept();
             return;
         }
+
         if (!window()->isVisible()) {
             return;
         }
@@ -132,6 +173,11 @@ InputListenerItem::InputListenerItem()
     // TODO: Investigate other places this might happen and how to fix it.
 
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
+}
+
+OverlayController *InputListenerItem::overlayController() const
+{
+    return m_overlayController;
 }
 
 void InputListenerItem::setEngine(QVirtualKeyboardInputEngine * /*engine*/)

@@ -1,10 +1,14 @@
 /*
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2026 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #include "inputpanelwindow.h"
+
+#include "inputpanelintegration.h"
+
 #include <KSandbox>
 #include <QDesktopServices>
 #include <QProcess>
@@ -40,6 +44,11 @@ void InputPanelWindow::showSettings()
     } else {
         QDesktopServices::openUrl(QUrl(QStringLiteral("systemsettings:kcm_plasmakeyboard")));
     }
+}
+
+bool InputPanelWindow::initInputPanel(InputPanelRole::Role role)
+{
+    return initInputPanelIntegration(this, role);
 }
 
 #include "moc_inputpanelwindow.cpp"

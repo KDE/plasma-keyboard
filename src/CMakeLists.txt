@@ -14,6 +14,9 @@ ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL "${Wayland_DATADIR}/w
 
 target_sources(plasma-keyboard PRIVATE
     main.cpp
+    inputpanelintegration.cpp
+    inputpanelintegration.h
+    inputpanelrole.h
     inputlisteneritem.cpp
     inputlisteneritem.h
     inputmethod.cpp
@@ -26,9 +29,21 @@ target_sources(plasma-keyboard PRIVATE
     qwaylandinputpanelshellintegration_p.h
     qwaylandinputpanelsurface.cpp
     qwaylandinputpanelsurface_p.h
+    overlay/overlaycontroller.cpp
+    overlay/overlaycontroller.h
+    overlay/candidatemodel.cpp
+    overlay/candidatemodel.h
+    overlay/overlaytrigger.cpp
+    overlay/overlaytrigger.h
+    overlay/longpresstrigger.cpp
+    overlay/longpresstrigger.h
+    overlay/prefixquerytrigger.cpp
+    overlay/prefixquerytrigger.h
+    overlay/textexpansiontrigger.cpp
+    overlay/textexpansiontrigger.h
 )
 
-if (PLASMA_KEYBOARD_VIBRATION_ENABLED)
+if(PLASMA_KEYBOARD_VIBRATION_ENABLED)
     set_source_files_properties(dbus/org.sigxcpu.Feedback.Haptic.xml PROPERTIES INCLUDE vibrationevent.h)
     qt_add_dbus_interfaces(dbusinterface_SRCS
         dbus/org.sigxcpu.Feedback.Haptic.xml)
@@ -41,27 +56,44 @@ if (PLASMA_KEYBOARD_VIBRATION_ENABLED)
     )
 endif()
 
-if (PLASMA_KEYBOARD_SOUND_ENABLED)
+if(PLASMA_KEYBOARD_SOUND_ENABLED)
     target_sources(plasma-keyboard PRIVATE
         soundresources.qrc
     )
 endif()
 
+ecm_qt_declare_logging_category(plasma-keyboard
+    HEADER logging.h
+    IDENTIFIER "PlasmaKeyboard"
+    CATEGORY_NAME "org.kde.plasma.keyboard"
+    DESCRIPTION "Plasma Keyboard"
+    DEFAULT_SEVERITY Debug
+)
+
 ecm_add_qml_module(plasma-keyboard
     URI "org.kde.plasma.keyboard"
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
-        QtQuick
+    QtQuick
 )
 
 ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
     qml/LanguagePopup.qml
     qml/LanguagePopupDelegate.qml
+    qml/DiacriticsOverlay.qml
+    qml/OverlayWindow.qml
 )
 ecm_finalize_qml_module(plasma-keyboard)
 
 kconfig_add_kcfg_files(plasma-keyboard GENERATE_MOC plasmakeyboardsettings.kcfgc)
+
+# Add directories to include path for QML type registration
+# TODO: This is the wrong way to do this, right? What's the right way again..?
+target_include_directories(plasma-keyboard PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/overlay
+)
 
 target_link_libraries(plasma-keyboard
     PRIVATE
@@ -70,6 +102,7 @@ target_link_libraries(plasma-keyboard
     KF6::I18nQml
     KF6::ConfigCore
     KF6::ConfigGui
+    Plasma::PlasmaQuick
     Qt::DBus
     Qt::Gui
     Qt::GuiPrivate
@@ -88,6 +121,6 @@ add_subdirectory(qmlplugin)
 install(DIRECTORY layouts DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
 
 install(
-  FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.plasma.keyboard.metainfo.xml
-  DESTINATION ${KDE_INSTALL_METAINFODIR}
+    FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.plasma.keyboard.metainfo.xml
+    DESTINATION ${KDE_INSTALL_METAINFODIR}
 )
