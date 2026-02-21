@@ -82,7 +82,7 @@
     <p xml:lang="fi">Plasma-näppäimistö tarjoaa virtuaalisen näyttönäppäimistön kosketusnäytöille, tableteille, muunnettaville laitteille, puhelimille ja näppäimistöttömille perinteisille tietokoneille.</p>
     <p xml:lang="fr">Plasma Keyboard fournit un clavier virtuel à l'écran pour les écrans tactiles, les tablettes, les ordinateurs convertibles, les téléphones et les ordinateurs traditionnels sans clavier physique.</p>
     <p xml:lang="he">מקלדת פלזמה מספקת מקלדת וירטואלית על גבי המסך למסכי מגע, מחשבי לוח, מכשירים גמישים, טלפונים ומחשבים מסורתיים בלי מקלדת פיזית.</p>
-    <p xml:lang="ia">Claviero dePlasma (Plasma Keyboard) forni un claviero virtual, sur chermo, per schermos tactile, tablettas, dispositivos convertibile, telephonos, e computatores traditionalsin claviero physic.</p>
+    <p xml:lang="ia">Claviero de Plasma (Plasma Keyboard) forni un claviero virtual, sur chermo, per schermos tactile, tablettas, dispositivos convertibile, telephonos, e computatores traditional sin claviero physic.</p>
     <p xml:lang="is">Plasma-lyklaborðið birtir sýndarlyklaborð á skjanum fyrir snertiskjái, spjaldtölvur, umbreytanleg tæki, snjallsíma og venjulegar tölvur sem ekki eru með alvöru lyklaborð.</p>
     <p xml:lang="it">Plasma Keyboard fornisce una tastiera virtuale su schermo per touchscreen, tablet, dispositivi convertibili, telefoni e computer tradizionali privi di tastiera fisica.</p>
     <p xml:lang="ka">Plasma-ის კლავიატურა მოგაწვდით ვირტუალურ კლავიატურას ეკრანზე სენსორული ეკრანებისთვის, ტაბლეტებისთვის, კონვერტირებადი მოწყობილობებისთვის, ტელეფონებისთვის და ტრადიციული კომპიუტერებისთვის, რომლებსაც ფიზიკური კლავიატურა არ გააჩნიათ.</p>
@@ -113,7 +113,7 @@
       <li xml:lang="fi">Saumaton eheytys Plasma-työtilan ja -sovellusten kanssa</li>
       <li xml:lang="fr">Intégration transparente avec l'espace de travail et les applications de Plasma</li>
       <li xml:lang="he">שילוב חלק בסביבת העבודה והיישומים של פלזמה</li>
-      <li xml:lang="ia">Integration sin solution de continuitate con lespatio de labor e applicationes de Plasma</li>
+      <li xml:lang="ia">Integration sin solution de continuitate con le spatio de labor e applicationes de Plasma</li>
       <li xml:lang="is">Hnökralaus samþætting við vinnusvæði og forrit í Plasma</li>
       <li xml:lang="it">Integrazione perfetta con l'area di lavoro e le applicazioni Plasma</li>
       <li xml:lang="ka">უწყვეტი ინტეგრაცია Plasma-ის სამუშაო სივრცესთან და აპლიკაციებთან</li>
@@ -173,7 +173,7 @@
       <li xml:lang="fi">Useiden asettelujen ja kielten tuki</li>
       <li xml:lang="fr">Prise en charge de plusieurs dispositions et langues</li>
       <li xml:lang="he">תמיכה במגוון פריסות ושפות</li>
-      <li xml:lang="ia">Suppoto per linguages e dispositiones multiple</li>
+      <li xml:lang="ia">Supporto per linguages e dispositiones multiple</li>
       <li xml:lang="is">Stuðningur við mörg tungumál og framsetningar</li>
       <li xml:lang="it">Supporto per più mappature e lingue</li>
       <li xml:lang="ka">მრავალი განლაგებისა და ენის მხარდაჭერა</li>
