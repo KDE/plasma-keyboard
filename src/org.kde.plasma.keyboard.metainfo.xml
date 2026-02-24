@@ -233,6 +233,7 @@
     <binary>plasma-keyboard</binary>
   </provides>
   <releases>
+    <release version="6.6.1" date="2026-02-24"/>
     <release version="6.6.0" date="2026-02-17"/>
   </releases>
 </component>
