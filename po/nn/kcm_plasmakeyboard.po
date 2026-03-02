@@ -1,0 +1,94 @@
+# Translation of kcm_plasmakeyboard to Norwegian Nynorsk
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2026-03-01 10:58+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.03.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "Filtrer språk …"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "Filtrer språk"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"Ingen språk er valde. Systemstandard-tastaturoppsettet vert derfor brukt."
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "Språk"
+
+#: ui/main.qml:32
+msgid "Key press feedback:"
+msgstr "Tilbakemelding ved tastetrykk:"
+
+#: ui/main.qml:33 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "Lyd"
+
+#: ui/main.qml:44 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "Vibrering"
+
+#: ui/main.qml:55
+msgid "General:"
+msgstr "Generelt:"
+
+#: ui/main.qml:56 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr "Tastaturnavigering"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr "Test virtuelt tastatur …"
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Tilbakemelding"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr "Om det skal spelast av lyd ved tastetrykk"
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr "Om det skal vibrerast ved tastetrykk"
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr "Tastaturspråk"
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "Generelt"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "Om piltastane skal brukast for navigasjon på tastaturet"
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr "Tilbakemelding ved tastetrykk"
