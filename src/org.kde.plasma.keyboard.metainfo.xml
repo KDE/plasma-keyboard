@@ -25,6 +25,7 @@
   <name xml:lang="lv">„Plasma“ tastatūra</name>
   <name xml:lang="nb">Plasma-tastatur</name>
   <name xml:lang="nl">Plasma-toetsenbord</name>
+  <name xml:lang="nn">Plasma-tastatur</name>
   <name xml:lang="pl">Klawiatura Plazmy</name>
   <name xml:lang="pt-BR">Teclado do Plasma</name>
   <name xml:lang="ro">Tastatură Plasma</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="lv">Ekrānā redzama tastatūra „Plasma“ darbvirsmai</summary>
   <summary xml:lang="nb">Et skjermtastatur for Plasma</summary>
   <summary xml:lang="nl">Toetsenbord op scherm voor Plasma</summary>
+  <summary xml:lang="nn">Skjermtastatur for Plasma</summary>
   <summary xml:lang="pl">Klawiatura ekranowa dla Plazmy</summary>
   <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
   <summary xml:lang="ro">Tastatură pe ecran pentru Plasma</summary>
