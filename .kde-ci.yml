@@ -11,5 +11,6 @@ Dependencies:
       "frameworks/kconfig": "@latest-kf6"
 
 Options:
+  enable-lsan: true
   require-passing-tests-on: ["Linux", "FreeBSD"]
   run-qmllint: true
