@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_VERSION "6.6.1")
+set(PROJECT_VERSION "6.6.2")
 
 project(plasma-keyboard VERSION ${PROJECT_VERSION})
 
