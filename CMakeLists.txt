@@ -51,8 +51,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Config
 )
 
-ecm_set_disabled_deprecation_versions(QT 6.10.0
-    KF 6.18.0
+ecm_set_disabled_deprecation_versions(QT 6.11.0
+    KF 6.23.0
 )
 
 find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
