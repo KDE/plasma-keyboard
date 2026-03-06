@@ -13,7 +13,11 @@
 #include <QVirtualKeyboardInputEngine>
 #include <qqmlintegration.h>
 
+#include <xkbcommon/xkbcommon.h>
+
 #include "inputplugin.h"
+
+class OverlayController;
 
 class InputListenerItem : public QQuickItem
 {
@@ -22,6 +26,13 @@ class InputListenerItem : public QQuickItem
 
     Q_PROPERTY(QVirtualKeyboardInputEngine *engine WRITE setEngine)
     Q_PROPERTY(bool keyboardNavigationActive MEMBER m_keyboardNavigationActive)
+
+    /**
+     * Controller for overlay popups (diacritics, emoji, text expansion).
+     *
+     * Exposed to QML for connecting overlay windows.
+     */
+    Q_PROPERTY(OverlayController *overlayController READ overlayController CONSTANT)
 
 public:
     InputListenerItem();
@@ -34,11 +45,17 @@ public:
     void keyReleaseEvent(QKeyEvent *event) override;
     void inputMethodEvent(QInputMethodEvent *event) override;
 
+    /**
+     * Get the overlay controller.
+     */
+    OverlayController *overlayController() const;
+
 Q_SIGNALS:
     void keyNavigationPressed(int key);
     void keyNavigationReleased(int key);
 
 private:
     InputPlugin m_input;
+    OverlayController *m_overlayController = nullptr;
     bool m_keyboardNavigationActive = false;
 };

@@ -27,8 +27,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtvirtualkeyboard-everywhere-src-6.10.1.tar.xz",
-                    "sha256": "5b9cde3188afbc01b602b9016cee95ccd536aea43a6e6cfd297b44f328b9b6df",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtvirtualkeyboard-everywhere-src-6.10.2.tar.xz",
+                    "sha256": "6273256091a83f3f283d1a91498964fd6a91256b667d7b9e98005d731fdb986b",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 7927,
@@ -51,6 +51,21 @@
                     "type": "git",
                     "url": "https://invent.kde.org/plasma/layer-shell-qt.git",
                     "branch": "v6.5.3"
+                }
+            ]
+        },
+        {
+            "name": "libplasma",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/plasma/libplasma.git",
+                    "branch": "master"
                 }
             ]
         },

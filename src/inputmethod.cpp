@@ -151,9 +151,12 @@ void Keyboard::keyboard_key(uint32_t serial, uint32_t time, uint32_t key, uint32
     int qtkey = QXkbCommon::keysymToQtKey(sym, modifiers, mXkbState.get(), code);
     QString text = QXkbCommon::lookupString(mXkbState.get(), code);
 
-    QEvent::Type type = state == 1 ? QEvent::KeyPress : QEvent::KeyRelease;
+    // wl_keyboard::key_state: 0 = released, 1 = pressed, 2 = repeated (since v10).
+    // Repeated is semantically a press with auto-repeat.
+    const bool isRepeat = (state == 2);
+    QEvent::Type type = (state == 0) ? QEvent::KeyRelease : QEvent::KeyPress;
 
-    QKeyEvent keyEvent(type, qtkey, modifiers, text, false);
+    QKeyEvent keyEvent(type, qtkey, modifiers, key, sym, 0, text, isRepeat);
     keyEvent.setAccepted(false);
 
     if (type == QEvent::KeyPress) {
