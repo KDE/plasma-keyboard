@@ -63,6 +63,8 @@ ecm_finalize_qml_module(plasma-keyboard)
 
 kconfig_add_kcfg_files(plasma-keyboard GENERATE_MOC plasmakeyboardsettings.kcfgc)
 
+target_include_directories(plasma-keyboard PRIVATE ${CMAKE_BINARY_DIR})
+
 target_link_libraries(plasma-keyboard
     PRIVATE
     KF6::CoreAddons

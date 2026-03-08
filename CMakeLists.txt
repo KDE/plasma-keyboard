@@ -21,6 +21,7 @@ include(KDEInstallDirs) # Should be included first so its variables are availabl
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
+include(ECMSetupVersion)
 
 include(FeatureSummary)
 
@@ -55,6 +56,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
 ecm_set_disabled_deprecation_versions(QT 6.11.0
     KF 6.23.0
 )
+
+ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX PLASMA_KEYBOARD VERSION_HEADER plasma_keyboard_version.h)
 
 find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
