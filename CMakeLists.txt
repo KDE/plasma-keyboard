@@ -49,6 +49,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     KCMUtils
     Config
+    Crash
 )
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0
