@@ -23,6 +23,8 @@
 #include "plasmakeyboardsettings.h"
 #include "qwaylandinputpanelshellintegration_p.h"
 
+#include <plasma_keyboard_version.h>
+
 static bool initPanelIntegration(QWindow *window)
 {
     window->create();
@@ -80,7 +82,7 @@ int main(int argc, char **argv)
 
     KAboutData aboutData(QStringLiteral("plasma-keyboard"),
                          i18n("Plasma Keyboard"),
-                         QStringLiteral("0.1.0"),
+                         QStringLiteral(PLASMA_KEYBOARD_VERSION_STRING),
                          i18n("An on-screen keyboard for Plasma"),
                          KAboutLicense::GPL,
                          i18n("Copyright 2024, Aleix Pol Gonzalez"));
