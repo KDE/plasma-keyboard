@@ -7,6 +7,7 @@
 
 #include <KAboutData>
 #include <KConfigWatcher>
+#include <KCrash>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
@@ -91,6 +92,8 @@ int main(int argc, char **argv)
     aboutData.setProgramLogo(application.windowIcon());
 
     KAboutData::setApplicationData(aboutData);
+
+    KCrash::initialize();
 
     {
         QCommandLineParser parser;

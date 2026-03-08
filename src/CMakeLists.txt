@@ -58,6 +58,7 @@ target_link_libraries(plasma-keyboard
     KF6::I18nQml
     KF6::ConfigCore
     KF6::ConfigGui
+    KF6::Crash
     Qt::DBus
     Qt::Gui
     Qt::GuiPrivate
