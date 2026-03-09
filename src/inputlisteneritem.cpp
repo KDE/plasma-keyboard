@@ -72,7 +72,8 @@ InputListenerItem::InputListenerItem()
         if (keyEvent->modifiers() != Qt::NoModifier) {
             return;
         }
-        if (!window()->isVisible()) {
+        // The window can have isVisible() = true, but not be shown by the compositor if the input panel is suppressed
+        if (!window()->isExposed()) {
             return;
         }
 
@@ -94,7 +95,8 @@ InputListenerItem::InputListenerItem()
         if (keyEvent->modifiers() != Qt::NoModifier) {
             return;
         }
-        if (!window()->isVisible()) {
+        // The window can have isVisible() = true, but not be shown by the compositor if the input panel is suppressed
+        if (!window()->isExposed()) {
             return;
         }
 
