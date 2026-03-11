@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-03-11 00:49+0000\n"
 "PO-Revision-Date: 2025-09-03 00:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -60,6 +60,10 @@ msgstr "Bendra:"
 msgid "Keyboard navigation"
 msgstr "Naršymas klaviatūroje"
 
+#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr ""
+
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
 msgstr "Išbandykite virtualią klaviatūrą…"
@@ -90,6 +94,17 @@ msgstr "Bendra"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Ar naudoti rodyklių klavišus naršymui klaviatūroje"
 
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr ""
+
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Klavišų paspaudimo atsakas"
+
+#: ui/main_mediacenter.qml:82
+#, fuzzy
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General"
+msgstr "Bendra"

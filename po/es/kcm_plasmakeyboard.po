@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-03-11 00:49+0000\n"
 "PO-Revision-Date: 2025-08-29 03:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -60,6 +60,10 @@ msgstr "General:"
 msgid "Keyboard navigation"
 msgstr "Navegación del teclado"
 
+#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr ""
+
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
 msgstr "Probar el teclado virtual…"
@@ -92,6 +96,17 @@ msgstr ""
 "Controla si se deben usar las teclas de las flechas para desplazarse por el "
 "teclado"
 
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr ""
+
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Reacción de pulsación de tecla"
+
+#: ui/main_mediacenter.qml:82
+#, fuzzy
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General"
+msgstr "General"

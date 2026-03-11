@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-03-11 00:49+0000\n"
 "PO-Revision-Date: 2025-08-29 19:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -56,6 +56,10 @@ msgstr "一般："
 msgid "Keyboard navigation"
 msgstr "鍵盤導覽"
 
+#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr ""
+
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
 msgstr "測試虛擬鍵盤…"
@@ -86,6 +90,17 @@ msgstr "一般"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否要使用方向鍵控制鍵盤"
 
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr ""
+
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "按鍵回饋"
+
+#: ui/main_mediacenter.qml:82
+#, fuzzy
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General"
+msgstr "一般"

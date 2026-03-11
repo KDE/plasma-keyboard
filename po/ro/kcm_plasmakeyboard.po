@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-03-11 00:49+0000\n"
 "PO-Revision-Date: 2026-02-04 16:30+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -59,6 +59,10 @@ msgstr "Generale:"
 msgid "Keyboard navigation"
 msgstr "Navigare cu tastatura"
 
+#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr ""
+
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
 msgstr "Testați tastatura virtuală…"
@@ -89,6 +93,17 @@ msgstr "Generale"
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Dacă se vor folosi tastele-săgeți pentru a naviga tastatura"
 
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr ""
+
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Reacție la apăsarea tastei"
+
+#: ui/main_mediacenter.qml:82
+#, fuzzy
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General"
+msgstr "Generale"
