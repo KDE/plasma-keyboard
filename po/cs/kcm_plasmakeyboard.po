@@ -102,8 +102,5 @@ msgid "Key press feedback"
 msgstr "Odezva na stisk kláves"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Obecné"

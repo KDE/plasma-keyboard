@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-11 00:49+0000\n"
-"PO-Revision-Date: 2025-08-29 05:38+0200\n"
+"PO-Revision-Date: 2026-03-11 05:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -60,7 +60,7 @@ msgstr "კლავიატურით ნავიგაცია"
 
 #: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "ასოების ავტომატური გადიდება"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -94,15 +94,12 @@ msgstr "გამოიყენება თუ არა ისრის ღ�
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "წინადადების პირველი ასოს ავტომატური გადიდება"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "ღილაკზე დაჭერის უკუკავშირი"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "ზოგადი"

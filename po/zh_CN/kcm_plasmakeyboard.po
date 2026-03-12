@@ -99,8 +99,5 @@ msgid "Key press feedback"
 msgstr "按键反馈"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
-msgstr "常规"
+msgstr ""
