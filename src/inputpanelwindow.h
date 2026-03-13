@@ -1,10 +1,13 @@
 /*
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2026 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #pragma once
+
+#include "inputpanelrole.h"
 
 #include <QObject>
 #include <QQuickWindow>
@@ -27,6 +30,14 @@ public:
     void setInteractiveRegion(QRect interactiveRegion);
 
     Q_INVOKABLE void showSettings();
+
+    /**
+     * Initialize this window as an input panel for the compositor.
+     *
+     * @param role The intended compositor role for the window.
+     * @return True if integration was initialized successfully, otherwise false.
+     */
+    Q_INVOKABLE bool initInputPanel(InputPanelRole::Role role);
 
 Q_SIGNALS:
     void interactiveRegionChanged();

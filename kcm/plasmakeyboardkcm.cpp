@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+    SPDX-FileCopyrightText: 2026 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -121,6 +122,40 @@ void PlasmaKeyboardKcm::setAutoCapitalizationEnabled(bool autoCapitalizationEnab
     setNeedsSave(true);
 }
 
+bool PlasmaKeyboardKcm::diacriticsPopupEnabled() const
+{
+    return m_diacriticsPopupEnabled;
+}
+
+void PlasmaKeyboardKcm::setDiacriticsPopupEnabled(bool enabled)
+{
+    if (enabled == m_diacriticsPopupEnabled) {
+        return;
+    }
+
+    m_diacriticsPopupEnabled = enabled;
+    Q_EMIT diacriticsPopupEnabledChanged();
+
+    setNeedsSave(true);
+}
+
+int PlasmaKeyboardKcm::diacriticsHoldThresholdMs() const
+{
+    return m_diacriticsHoldThresholdMs;
+}
+
+void PlasmaKeyboardKcm::setDiacriticsHoldThresholdMs(int thresholdMs)
+{
+    if (thresholdMs == m_diacriticsHoldThresholdMs) {
+        return;
+    }
+
+    m_diacriticsHoldThresholdMs = thresholdMs;
+    Q_EMIT diacriticsHoldThresholdMsChanged();
+
+    setNeedsSave(true);
+}
+
 bool PlasmaKeyboardKcm::isSaveNeeded() const
 {
     return m_saveNeeded;
@@ -135,6 +170,8 @@ void PlasmaKeyboardKcm::load()
     Q_EMIT enabledLocalesChanged();
     setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
     setAutoCapitalizationEnabled(PlasmaKeyboardSettings::self()->autoCapitalizationEnabled());
+    setDiacriticsPopupEnabled(PlasmaKeyboardSettings::self()->diacriticsPopupEnabled());
+    setDiacriticsHoldThresholdMs(PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs());
 
     setNeedsSave(false);
 }
@@ -146,6 +183,8 @@ void PlasmaKeyboardKcm::save()
     PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
     PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
     PlasmaKeyboardSettings::self()->setAutoCapitalizationEnabled(m_autoCapitalizationEnabled);
+    PlasmaKeyboardSettings::self()->setDiacriticsPopupEnabled(m_diacriticsPopupEnabled);
+    PlasmaKeyboardSettings::self()->setDiacriticsHoldThresholdMs(m_diacriticsHoldThresholdMs);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);

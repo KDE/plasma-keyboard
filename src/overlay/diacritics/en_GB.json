@@ -1,0 +1,8 @@
+{
+    "version": 1,
+    "locale": "en_GB",
+    "description": "British English — prioritizes £ over other currencies",
+    "map": {
+        "$": ["£", "€", "¥", "¢", "₹"]
+    }
+}

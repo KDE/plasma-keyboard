@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2024 Aleix Pol i Gonzalez <aleixpol@kde.org>
+    SPDX-FileCopyrightText: 2026 Kristen McWilliam <kristen@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -18,13 +19,6 @@ InputPanelWindow {
     height: Screen.height
     width: Screen.width
     color: 'transparent'
-
-    interactiveRegion: Qt.rect(
-        panelWrapper.x,
-        panelWrapper.y,
-        panelWrapper.width,
-        panelWrapper.height
-    )
 
     onVisibleChanged: {
         if (!visible) {
@@ -56,6 +50,15 @@ InputPanelWindow {
             inputPanel.InputContext.priv.navigationKeyReleased(key, false);
         }
     }
+
+    // Unified overlay system for diacritics, emoji, text expansion, etc.
+    OverlayWindow {
+        id: overlayWindow
+        controller: thing.overlayController
+        onCandidateSelected: (index) => thing.overlayController.commitCandidate(index)
+    }
+
+    interactiveRegion: Qt.rect(panelWrapper.x, panelWrapper.y, panelWrapper.width, panelWrapper.height)
 
     Kirigami.ShadowedRectangle {
         id: panelWrapper
