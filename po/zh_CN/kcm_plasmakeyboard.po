@@ -58,7 +58,7 @@ msgstr "键盘导航"
 
 #: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "自动首字母大写"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -92,7 +92,7 @@ msgstr "是否使用方向键导航键盘"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "自动将句子的首字母大写"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
@@ -100,4 +100,4 @@ msgstr "按键反馈"
 
 #: ui/main_mediacenter.qml:82
 msgid "General"
-msgstr ""
+msgstr "常规"

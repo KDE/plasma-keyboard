@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-11 00:49+0000\n"
-"PO-Revision-Date: 2025-09-03 00:10+0300\n"
+"PO-Revision-Date: 2026-03-13 01:14+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -62,7 +62,7 @@ msgstr "Naršymas klaviatūroje"
 
 #: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Automatinis rašymas iš didžiųjų raidžių"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -96,15 +96,12 @@ msgstr "Ar naudoti rodyklių klavišus naršymui klaviatūroje"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Automatiškai rašyti pirmąją sakinio raidę didžiąja raide"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Klavišų paspaudimo atsakas"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Bendra"
