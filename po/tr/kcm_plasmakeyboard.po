@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-11 00:49+0000\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
 "PO-Revision-Date: 2026-03-11 13:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -37,29 +37,45 @@ msgstr ""
 msgid "Languages"
 msgstr "Diller"
 
-#: ui/main.qml:32
+#: ui/main.qml:33
 msgid "Key press feedback:"
 msgstr "Düğme basımı tepkisi:"
 
-#: ui/main.qml:33 ui/main_handset.qml:40
+#: ui/main.qml:34 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "Ses"
 
-#: ui/main.qml:44 ui/main_handset.qml:54
+#: ui/main.qml:45 ui/main_handset.qml:54
 msgid "Vibration"
 msgstr "Titreşim"
 
-#: ui/main.qml:55
+#: ui/main.qml:56
 msgid "General:"
 msgstr "Genel:"
 
-#: ui/main.qml:56 ui/main_handset.qml:90
+#: ui/main.qml:57 ui/main_handset.qml:90
 msgid "Keyboard navigation"
 msgstr "Klavye dolaşımı"
 
-#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
 msgstr "Kendiliğinden BÜYÜK harf"
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr ""
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr ""
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr ""
+
+#: ui/main.qml:101
+msgid "milliseconds"
+msgstr ""
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

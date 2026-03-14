@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
 "PO-Revision-Date: 2025-11-28 13:01+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -27,30 +27,48 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sv1@fellsnet.is"
 
-#: main.cpp:83
+#: main.cpp:59
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "Plasma-lyklaborð"
 
-#: main.cpp:85
+#: main.cpp:61
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "Skjályklaborð fyrir Plasma"
 
-#: main.cpp:87
+#: main.cpp:63
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "Höfundarréttur 2024, Aleix Pol Gonzalez"
 
-#: main.cpp:89
+#: main.cpp:65
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "Aleix Pol Gonzalez"
 
-#: main.cpp:89
+#: main.cpp:65
 #, kde-format
 msgid "Author"
 msgstr "Höfundur"
+
+#: overlay/longpresstrigger.cpp:37
+#, kde-format
+msgctxt "@label Name of the diacritics overlay trigger"
+msgid "Diacritics (Long Press)"
+msgstr ""
+
+#: overlay/prefixquerytrigger.cpp:25
+#, kde-format
+msgctxt "@label Name of the emoji overlay trigger"
+msgid "Emoji (Prefix Search)"
+msgstr ""
+
+#: overlay/textexpansiontrigger.cpp:27
+#, kde-format
+msgctxt "@label Name of the text expansion overlay trigger"
+msgid "Text Expansion"
+msgstr ""
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"

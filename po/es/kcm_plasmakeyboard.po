@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-11 00:49+0000\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
 "PO-Revision-Date: 2026-03-12 00:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -40,29 +40,45 @@ msgstr ""
 msgid "Languages"
 msgstr "Idiomas"
 
-#: ui/main.qml:32
+#: ui/main.qml:33
 msgid "Key press feedback:"
 msgstr "Reacción de pulsación de tecla:"
 
-#: ui/main.qml:33 ui/main_handset.qml:40
+#: ui/main.qml:34 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "Sonido"
 
-#: ui/main.qml:44 ui/main_handset.qml:54
+#: ui/main.qml:45 ui/main_handset.qml:54
 msgid "Vibration"
 msgstr "Vibración"
 
-#: ui/main.qml:55
+#: ui/main.qml:56
 msgid "General:"
 msgstr "General:"
 
-#: ui/main.qml:56 ui/main_handset.qml:90
+#: ui/main.qml:57 ui/main_handset.qml:90
 msgid "Keyboard navigation"
 msgstr "Navegación del teclado"
 
-#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
 msgstr "Capitalización automática"
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr ""
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr ""
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr ""
+
+#: ui/main.qml:101
+msgid "milliseconds"
+msgstr ""
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

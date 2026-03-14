@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-11 00:49+0000\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
 "PO-Revision-Date: 2025-08-29 08:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -36,28 +36,44 @@ msgstr "Inga språk valda. Systemets normala tangentbordslayout används."
 msgid "Languages"
 msgstr "Språk"
 
-#: ui/main.qml:32
+#: ui/main.qml:33
 msgid "Key press feedback:"
 msgstr "Återkoppling av knapptryckningar:"
 
-#: ui/main.qml:33 ui/main_handset.qml:40
+#: ui/main.qml:34 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "Ljud"
 
-#: ui/main.qml:44 ui/main_handset.qml:54
+#: ui/main.qml:45 ui/main_handset.qml:54
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ui/main.qml:55
+#: ui/main.qml:56
 msgid "General:"
 msgstr "Allmänt:"
 
-#: ui/main.qml:56 ui/main_handset.qml:90
+#: ui/main.qml:57 ui/main_handset.qml:90
 msgid "Keyboard navigation"
 msgstr "Tangentbordsnavigering"
 
-#: ui/main.qml:67 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
+msgstr ""
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr ""
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr ""
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr ""
+
+#: ui/main.qml:101
+msgid "milliseconds"
 msgstr ""
 
 #: ui/main_handset.qml:29
