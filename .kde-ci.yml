@@ -11,6 +11,7 @@ Dependencies:
       "frameworks/kconfig": "@latest-kf6"
       "frameworks/kcrash": "@latest-kf6"
       "plasma/libplasma": "@same"
+      "plasma/layer-shell-qt": "@same"
 
 Options:
   enable-lsan: true
