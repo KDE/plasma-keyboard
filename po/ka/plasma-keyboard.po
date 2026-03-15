@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-11-26 03:14+0100\n"
+"PO-Revision-Date: 2026-03-14 06:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -57,19 +57,19 @@ msgstr "ავტორი"
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
-msgstr ""
+msgstr "დიაკრიტიკები (დიდი ხნით დაჭერა)"
 
 #: overlay/prefixquerytrigger.cpp:25
 #, kde-format
 msgctxt "@label Name of the emoji overlay trigger"
 msgid "Emoji (Prefix Search)"
-msgstr ""
+msgstr "ემოჯი (პრეფიქსის ძებნა)"
 
 #: overlay/textexpansiontrigger.cpp:27
 #, kde-format
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
-msgstr ""
+msgstr "ტექსტის გაფართოება"
 
 #: qml/LanguagePopup.qml:118
 msgid "Settings"

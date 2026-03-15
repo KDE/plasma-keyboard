@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-11 11:50+0100\n"
+"PO-Revision-Date: 2026-03-14 12:03+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -64,19 +64,19 @@ msgstr "Automatisch van hoofdletters voorzien"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Alternatieve tekens:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Pop-up tonen bij ingedrukt houden van een toets"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Vertraging van ingedrukt houden:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milliseconden"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

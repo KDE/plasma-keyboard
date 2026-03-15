@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-08-30 08:01+0200\n"
+"PO-Revision-Date: 2026-03-14 06:56+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -61,7 +61,7 @@ msgstr "Sterowanie z klawiatury"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Pierwsza litera wielka"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
@@ -111,15 +111,12 @@ msgstr "Określa czy używać klawiszy strzałek do sterowania z klawiatury"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Sam zmienia pierwszą literę każdego zdania na wielką"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Informacja zwrotna po naciśnięciu klawisza"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Ogólne"

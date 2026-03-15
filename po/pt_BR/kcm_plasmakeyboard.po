@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-11 08:48-0300\n"
+"PO-Revision-Date: 2026-03-14 09:59-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -65,19 +65,19 @@ msgstr "Capitalização automática"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Caracteres alternativos:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Exibir janela pop-up ao manter uma tecla pressionada"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Atraso na espera:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milissegundos"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

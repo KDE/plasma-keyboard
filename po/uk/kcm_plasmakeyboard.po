@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-11 11:04+0200\n"
+"PO-Revision-Date: 2026-03-14 13:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -65,19 +65,19 @@ msgstr "Автоматична перша велика літера"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Альтернативні символи:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Показувати контекстну панель при утримання клавіші"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Затримка утримання:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "мілісекунд"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-11 20:46+0200\n"
+"PO-Revision-Date: 2026-03-14 13:06+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -63,19 +63,19 @@ msgstr "הגדלת אותיות ראשונות אוטומטית"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "תווים חלופיים:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "הצגת חלונית צצה בעת החזקת מקש"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "השהיית לחיצה:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "מילישניות"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"

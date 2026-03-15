@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-12 00:12+0100\n"
+"PO-Revision-Date: 2026-03-14 12:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -66,19 +66,19 @@ msgstr "Capitalización automática"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Caracteres alternativos:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Mostrar ventana emergente al mantener pulsada una tecla"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Demora de pulsación:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milisegundos"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
