@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:46+0000\n"
-"PO-Revision-Date: 2025-11-26 15:05+0100\n"
+"POT-Creation-Date: 2026-03-15 02:43+0000\n"
+"PO-Revision-Date: 2026-03-14 12:04+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,39 +15,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2025"
+msgstr "Freek de Kruijf - 2025 t/m 2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: main.cpp:81
+#: main.cpp:84
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "Plasma-toetsenbord"
 
-#: main.cpp:83
+#: main.cpp:86
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "Een toetsenbord op scherm voor Plasma"
 
-#: main.cpp:85
+#: main.cpp:88
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "Copyright 2025, Aleix Pol Gonzalez"
 
-#: main.cpp:87
+#: main.cpp:90
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "Aleix Pol Gonzalez"
 
-#: main.cpp:87
+#: main.cpp:90
 #, kde-format
 msgid "Author"
 msgstr "Auteur"
