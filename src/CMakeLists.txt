@@ -70,7 +70,7 @@ ecm_qt_declare_logging_category(plasma-keyboard
     IDENTIFIER "PlasmaKeyboard"
     CATEGORY_NAME "org.kde.plasma.keyboard"
     DESCRIPTION "Plasma Keyboard"
-    DEFAULT_SEVERITY Debug
+    DEFAULT_SEVERITY Warning
 )
 
 ecm_add_qml_module(plasma-keyboard
