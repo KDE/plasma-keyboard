@@ -34,12 +34,14 @@ void QWaylandInputPanelSurface::applyConfigure()
     const QVariant roleVariant = window()->window()->property("plasmaKeyboardInputPanelRole");
     const int role = roleVariant.isValid() ? roleVariant.toInt() : -1;
 
-    if (role == InputPanelRole::OverlayPanel) {
+    switch (role) {
+    case InputPanelRole::OverlayPanel:
         set_overlay_panel();
-    } else if (role == InputPanelRole::Keyboard) {
+        break;
+    case InputPanelRole::Keyboard:
+    default:
         set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
-    } else {
-        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
+        break;
     }
 
     window()->display()->handleWindowActivated(window());
