@@ -62,19 +62,19 @@ msgstr "自动首字母大写"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "备选字符："
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "按住按键时弹出"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "按住延迟："
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "毫秒"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
