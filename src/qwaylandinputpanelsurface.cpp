@@ -39,12 +39,7 @@ void QWaylandInputPanelSurface::applyConfigure()
     } else if (role == InputPanelRole::Keyboard) {
         set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
     } else {
-        static const bool preferTopLevel = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL");
-        if (preferTopLevel) {
-            set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
-        } else {
-            set_overlay_panel();
-        }
+        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
     }
 
     window()->display()->handleWindowActivated(window());
