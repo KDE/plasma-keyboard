@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: LGPL-2.1-only
  */
 
+#include "inputpanelrole.h"
 #include "qwaylandinputpanelsurface_p.h"
 
 #include <QtWaylandClient/private/qwaylandscreen_p.h>
@@ -30,12 +31,12 @@ QWaylandInputPanelSurface::~QWaylandInputPanelSurface()
 
 void QWaylandInputPanelSurface::applyConfigure()
 {
-    const QVariant role = window()->window()->property("plasmaKeyboardInputPanelRole");
-    const int roleInt = role.isValid() ? role.toInt() : -1;
+    const QVariant roleVariant = window()->window()->property("plasmaKeyboardInputPanelRole");
+    const int role = roleVariant.isValid() ? roleVariant.toInt() : -1;
 
-    if (roleInt == 1) {
+    if (role == InputPanelRole::OverlayPanel) {
         set_overlay_panel();
-    } else if (roleInt == 0) {
+    } else if (role == InputPanelRole::Keyboard) {
         set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
     } else {
         static const bool preferTopLevel = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL");
