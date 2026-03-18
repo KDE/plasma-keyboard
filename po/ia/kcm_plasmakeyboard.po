@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-11 18:08+0100\n"
+"PO-Revision-Date: 2026-03-17 11:42+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -64,19 +64,19 @@ msgstr "Passar automaticamente a litteras majusculas"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Characteres alternate:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Monstra popup quando mentenente un clave "
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Retardo de mantener:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "millisecundas"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
