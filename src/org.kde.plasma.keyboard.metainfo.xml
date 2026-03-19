@@ -10,6 +10,7 @@
   <name xml:lang="bg">Клавиатура на Plasma</name>
   <name xml:lang="ca">Teclat del Plasma</name>
   <name xml:lang="ca-valencia">Teclat de Plasma</name>
+  <name xml:lang="cs">Klávesnice Plasma</name>
   <name xml:lang="de">Plasma-Tastatur</name>
   <name xml:lang="es">Teclado de Plasma</name>
   <name xml:lang="eu">Plasma Teklatua</name>
@@ -41,6 +42,7 @@
   <summary xml:lang="bg">Екранна клавиатура за Plasma</summary>
   <summary xml:lang="ca">Teclat en pantalla per al Plasma</summary>
   <summary xml:lang="ca-valencia">Teclat en pantalla per a Plasma</summary>
+  <summary xml:lang="cs">Klávesnice na obrazovku pro Plasma</summary>
   <summary xml:lang="de">Bildschirmtastatur für Plasma</summary>
   <summary xml:lang="es">Teclado en pantalla para Plasma</summary>
   <summary xml:lang="eu">Plasmarako pantailako teklatu bat</summary>
