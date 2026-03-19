@@ -39,9 +39,16 @@ void QWaylandInputPanelSurface::applyConfigure()
         set_overlay_panel();
         break;
     case InputPanelRole::Keyboard:
-    default:
-        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
+    default: {
+        QtWaylandClient::QWaylandScreen *screen = window()->waylandScreen();
+        if (!screen) {
+            qCWarning(qLcQpaShellIntegration) << "No Wayland screen available, cannot configure input panel surface";
+            return;
+        }
+
+        set_toplevel(screen->output(), position_center_bottom);
         break;
+    }
     }
 
     window()->display()->handleWindowActivated(window());
