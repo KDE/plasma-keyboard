@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-02-04 16:30+0000\n"
+"PO-Revision-Date: 2026-03-18 21:13+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -61,23 +61,23 @@ msgstr "Navigare cu tastatura"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Majuscule automate"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Caractere alternative:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Arată indiciu la ținerea unei taste"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Întârzierea la ținere:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milisecunde"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -111,15 +111,12 @@ msgstr "Dacă se vor folosi tastele-săgeți pentru a naviga tastatura"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Fă prima literă majusculă automat în fiecare propoziție"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Reacție la apăsarea tastei"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Generale"
