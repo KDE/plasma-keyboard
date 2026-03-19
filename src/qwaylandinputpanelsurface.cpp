@@ -29,10 +29,17 @@ QWaylandInputPanelSurface::~QWaylandInputPanelSurface()
 void QWaylandInputPanelSurface::applyConfigure()
 {
     static const bool preferTopLevel = qEnvironmentVariableIntValue("QT_WAYLAND_INPUT_PANEL_TOPLEVEL");
-    if (preferTopLevel)
-        set_toplevel(window()->waylandScreen()->output(), position_center_bottom);
-    else
+    if (preferTopLevel) {
+        QtWaylandClient::QWaylandScreen *screen = window()->waylandScreen();
+        if (!screen) {
+            qCWarning(qLcQpaShellIntegration) << "No Wayland screen available, cannot configure input panel surface";
+            return;
+        }
+
+        set_toplevel(screen->output(), position_center_bottom);
+    } else {
         set_overlay_panel();
+    }
 
     window()->display()->handleWindowActivated(window());
 }
