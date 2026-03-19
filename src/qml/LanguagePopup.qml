@@ -7,11 +7,9 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import QtQuick.VirtualKeyboard
 import QtQuick.VirtualKeyboard.Settings
 import QtQuick.Templates as T
 
-import org.kde.layershell as LayerShell
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard.lib as PlasmaKeyboard
 
