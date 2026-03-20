@@ -223,6 +223,18 @@ private:
      */
     bool m_composeActive = false;
 
+    /**
+     * Set to true when a dead key press (Qt::Key_Dead_Grave … Qt::Key_Dead_Longsolidusoverlay)
+     * is detected.
+     *
+     * While true, the next non-dead-key press bypasses all overlay triggers and is
+     * forwarded directly to the compositor so the XKB compose state can combine the
+     * dead key with the follow-up key (e.g. dead_acute + e → é).  The flag is cleared
+     * after forwarding that one follow-up key, or when the context is reset (e.g. an
+     * external surrounding-text change).
+     */
+    bool m_deadKeyActive = false;
+
     /** The trigger that is currently timing (for long-press). */
     OverlayTrigger *m_pendingTrigger = nullptr;
 

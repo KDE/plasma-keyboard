@@ -10,6 +10,18 @@
 #include "logging.h"
 #include "overlaytrigger.h"
 
+/**
+ * Returns true if @p key is in the XKB dead-key range
+ * (Qt::Key_Dead_Grave through Qt::Key_Dead_Longsolidusoverlay).
+ *
+ * Dead keys do not produce text themselves; they modify the next key press
+ * to produce a combined character (e.g. dead_acute + e → é).
+ */
+static bool isDeadKey(int key)
+{
+    return key >= Qt::Key_Dead_Grave && key <= Qt::Key_Dead_Longsolidusoverlay;
+}
+
 OverlayController::OverlayController(InputPlugin *inputPlugin, QObject *parent)
     : QObject(parent)
     , m_inputPlugin(inputPlugin)
@@ -112,6 +124,41 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
 
     if (m_composeActive) {
         qCDebug(PlasmaKeyboard) << "Compose sequence in progress; passing key through:" << event->key();
+        return false;
+    }
+
+    // Detect dead key press and enter dead key bypass mode.
+    if (isDeadKey(event->key())) {
+        // Cancel any pending overlay state — the user is starting a dead key
+        // compose sequence, not continuing a long-press.
+        if (m_holdTimer.isActive() || !m_pendingText.isEmpty()) {
+            qCDebug(PlasmaKeyboard) << "Cancelling pending overlay state for dead key sequence";
+            m_holdTimer.stop();
+            m_ignoreReleaseNativeScanCode = m_pendingNativeScanCode;
+            m_swallowNextRelease = true;
+            if (m_pendingTrigger) {
+                m_pendingTrigger->reset();
+                m_pendingTrigger = nullptr;
+            }
+            m_pendingText.clear();
+            m_pendingNativeScanCode = 0;
+        }
+        qCDebug(PlasmaKeyboard) << "Dead key detected; entering dead key bypass mode (key =" << event->key() << ")";
+        m_deadKeyActive = true;
+        return false; // Forward dead key to compositor
+    }
+
+    // Bypass triggers for the follow-up key after a dead key.
+    if (m_deadKeyActive) {
+        if (!isDeadKey(event->key())) {
+            // Non-dead follow-up: forward to compositor for composition and end
+            // dead key mode.
+            qCDebug(PlasmaKeyboard) << "Dead key follow-up forwarded to compositor (key =" << event->key() << ")";
+            m_deadKeyActive = false;
+        } else {
+            // Another dead key in the sequence; stay in dead key mode.
+            qCDebug(PlasmaKeyboard) << "Another dead key in sequence; staying in dead key mode (key =" << event->key() << ")";
+        }
         return false;
     }
 
@@ -354,6 +401,14 @@ void OverlayController::handleSurroundingTextChanged()
         qCDebug(PlasmaKeyboard) << "Compose sequence ended (external surrounding-text change); clearing compose state";
         m_composeActive = false;
     }
+
+    // If a dead key sequence was in progress, the surrounding-text update means the
+    // compositor has committed the composed result (or the original dead key character).
+    // Either way, dead key mode is over.
+    if (m_deadKeyActive) {
+        qCDebug(PlasmaKeyboard) << "Dead key sequence ended (surrounding-text change)";
+        m_deadKeyActive = false;
+    }
 }
 
 void OverlayController::openOverlay(const QString &triggerId, const QString &baseText, const QStringList &candidates)
@@ -495,6 +550,7 @@ void OverlayController::resetState()
     m_pendingSurroundingTextUpdates = 0;
     m_surroundingTextSettleTimer.stop();
     m_composeActive = false;
+    m_deadKeyActive = false;
 
     if (wasVisible) {
         Q_EMIT overlayVisibleChanged();

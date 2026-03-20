@@ -168,11 +168,6 @@ void Keyboard::keyboard_key(uint32_t serial, uint32_t time, uint32_t key, uint32
     if (!keyEvent.isAccepted()) {
         m_parent->key(serial, time, key, state);
     }
-    // see diactrics, and then pretend you haven't seen this
-    // TODO don't ship to users like this
-    if (keyEvent.timestamp() == -1) {
-        m_parent->key(serial, time, key, 0);
-    }
 }
 
 void Keyboard::keyboard_modifiers(uint32_t serial, uint32_t mods_depressed, uint32_t mods_latched, uint32_t mods_locked, uint32_t group)
