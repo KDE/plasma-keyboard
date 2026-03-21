@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:48+0000\n"
+"POT-Creation-Date: 2026-03-21 00:46+0000\n"
 "PO-Revision-Date: 2026-03-16 16:14+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -71,6 +71,6 @@ msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "Desfășurarea textului"
 
-#: qml/LanguagePopup.qml:118
+#: qml/LanguagePopup.qml:116
 msgid "Settings"
 msgstr "Configurări"

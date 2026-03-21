@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-13 01:14+0200\n"
+"PO-Revision-Date: 2026-03-21 01:41+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -66,19 +66,19 @@ msgstr "Automatinis rašymas iš didžiųjų raidžių"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Alternatyvūs simboliai:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Rodyti iškylantįjį langą, kai klavišas laikomas nuspaustas"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Laikymo delsa:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milisek."
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
