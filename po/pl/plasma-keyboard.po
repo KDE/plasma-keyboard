@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:46+0000\n"
-"PO-Revision-Date: 2025-12-06 15:13+0100\n"
+"PO-Revision-Date: 2026-03-21 06:04+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -57,19 +57,19 @@ msgstr "Autor"
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
-msgstr ""
+msgstr "Znaki diakrytyczne (długie przytrzymanie)"
 
 #: overlay/prefixquerytrigger.cpp:25
 #, kde-format
 msgctxt "@label Name of the emoji overlay trigger"
 msgid "Emoji (Prefix Search)"
-msgstr ""
+msgstr "Emoji (szukanie z przedrostkiem)"
 
 #: overlay/textexpansiontrigger.cpp:27
 #, kde-format
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
-msgstr ""
+msgstr "Podstawianie tekstu"
 
 #: qml/LanguagePopup.qml:116
 msgid "Settings"

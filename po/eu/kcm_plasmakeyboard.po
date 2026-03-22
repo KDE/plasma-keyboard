@@ -120,7 +120,5 @@ msgid "Key press feedback"
 msgstr "Tekla-sakatzearen atzeraelikadura"
 
 #: ui/main_mediacenter.qml:82
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Orokorra"
