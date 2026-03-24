@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
+# SPDX-FileCopyrightText: 2025, 2026 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-11-22 13:18+0000\n"
+"PO-Revision-Date: 2026-03-23 11:10+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -59,23 +59,23 @@ msgstr "Rötun á lyklaborði"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Sjálfvirk hástafaritun"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Aðrir stafir:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Birta sprettglugga þegar lykli er haldið niðri"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Töf þegar haldið er niðri:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "millisekúndur"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -109,15 +109,12 @@ msgstr "Hvort eigi að nota örvahnappana til að flakka um lyklaborðið"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Setja sjálfkrafa hástaf á fyrsta staf í hverri setningu"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Svörun við að ýta á lykil"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Almennt"
