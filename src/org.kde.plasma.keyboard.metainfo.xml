@@ -76,7 +76,7 @@
       Plasma Keyboard provides a virtual, on-screen keyboard for touchscreens, tablets, convertible devices,
       phones, and traditional computers without a physical keyboard.
     </p>
-    <p xml:lang="ar">توفر لوحة مفاتيح بلازما لوحة مفاتيح افتراضية على الشاشة لأجهزة اللمس والأجهزة اللوحية والأجهزة القابلة للتحويل والهواتف وأجهزة الكمبيوتر التقليدية التي لا تحتوي على لوحة مفاتيح فعلية.</p>
+    <p xml:lang="ar">توفر لوحة مفاتيح بلازما لوحة مفاتيح افتراضية على الشاشة لأجهزة اللمس والأجهزة اللوحية والأجهزة القابلة للتحويل والهواتف وأجهزة الحاسوب التقليدية التي لا تحتوي على لوحة مفاتيح فعلية.</p>
     <p xml:lang="bg">Клавиатура на Plasma предоставя виртуална екранна клавиатура за сензорни екрани, таблети, конвертируеми устройства, телефони и традиционни компютри без физическа клавиатура.</p>
     <p xml:lang="ca">El Teclat del Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
     <p xml:lang="ca-valencia">El Teclat de Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
@@ -111,7 +111,7 @@
       <li xml:lang="bg">Гладка интеграция с работното пространство и приложенията на Plasma</li>
       <li xml:lang="ca">Integració perfecta amb l'espai de treball i les aplicacions del Plasma</li>
       <li xml:lang="ca-valencia">Integració perfecta amb l'espai de treball i les aplicacions de Plasma</li>
-      <li xml:lang="de">Nahtlose Integration mit der Plasma-Arbeitsumgebung und Anwendungen</li>
+      <li xml:lang="de">Nahtlose Integration mit der Plasma-Arbeitsumgebung und deren Anwendungen</li>
       <li xml:lang="es">Integración perfecta con el espacio de trabajo y las aplicaciones de Plasma</li>
       <li xml:lang="eu">Plasma langunea eta aplikazioekin bateratze ezin hobea</li>
       <li xml:lang="fi">Saumaton eheytys Plasma-työtilan ja -sovellusten kanssa</li>
