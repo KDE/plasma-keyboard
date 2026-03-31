@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-16 15:43+0100\n"
+"PO-Revision-Date: 2026-03-30 11:49+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -65,15 +65,15 @@ msgstr "Nepřevádět na velká písmena:"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Alternativní znaky:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Zobrazit vyskakovací okno při stisku klávesy"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Délka stisku:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
