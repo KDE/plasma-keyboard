@@ -80,6 +80,7 @@
     <p xml:lang="bg">Клавиатура на Plasma предоставя виртуална екранна клавиатура за сензорни екрани, таблети, конвертируеми устройства, телефони и традиционни компютри без физическа клавиатура.</p>
     <p xml:lang="ca">El Teclat del Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
     <p xml:lang="ca-valencia">El Teclat de Plasma proporciona un teclat virtual en pantalla per a pantalles tàctils, tauletes, dispositius convertibles, telèfons i ordinadors tradicionals sense teclat físic.</p>
+    <p xml:lang="cs">Aplikace Klávesnice Plasma poskytuje virtuální klávesnici na obrazovce pro dotykové displeje, tablety, konvertibilní zařízení, telefony a klasické počítače bez fyzické klávesnice.</p>
     <p xml:lang="de">Plasma-Tastatur bietet eine virtuelle Bildschirmtastatur für Touchscreens, Tablets, 2-in-1-Geräte (Convertibles), Smartphones und herkömmliche Computer ohne physische Tastatur.</p>
     <p xml:lang="es">El «Teclado de Plasma» proporciona un teclado virtual en pantalla para pantallas táctiles, tabletas, dispositivos convertibles, teléfonos y equipos tradicionales que carecen de teclado físico.</p>
     <p xml:lang="eu">Plasma Teklatuak pantailan agertzen den alegiazko teklatu bat eskaintzen du, teklaturik gabeko ukimen-pantaila, tableta, gailu bihurgarri, telefono, eta ohiko ordenagailuetarako.</p>
@@ -111,6 +112,7 @@
       <li xml:lang="bg">Гладка интеграция с работното пространство и приложенията на Plasma</li>
       <li xml:lang="ca">Integració perfecta amb l'espai de treball i les aplicacions del Plasma</li>
       <li xml:lang="ca-valencia">Integració perfecta amb l'espai de treball i les aplicacions de Plasma</li>
+      <li xml:lang="cs">Hladká integrace s pracovním prostředím Plasma a aplikacemi</li>
       <li xml:lang="de">Nahtlose Integration mit der Plasma-Arbeitsumgebung und deren Anwendungen</li>
       <li xml:lang="es">Integración perfecta con el espacio de trabajo y las aplicaciones de Plasma</li>
       <li xml:lang="eu">Plasma langunea eta aplikazioekin bateratze ezin hobea</li>
@@ -141,6 +143,7 @@
       <li xml:lang="bg">Автоматично появяване, когато е необходимо въвеждане на текст</li>
       <li xml:lang="ca">Apareix automàticament quan es necessita l'entrada de text</li>
       <li xml:lang="ca-valencia">Apareix automàticament quan es necessita l'entrada de text</li>
+      <li xml:lang="cs">Automatické zobrazení při potřebě zadání textu</li>
       <li xml:lang="de">Automatisches Erscheinen, wenn Texteingabe erforderlich ist</li>
       <li xml:lang="es">Aparece automáticamente cuando se necesita entrada de texto</li>
       <li xml:lang="eu">Testua sartu behar denean automatikoki agertzea</li>
@@ -171,6 +174,7 @@
       <li xml:lang="bg">Поддръжка на множество подредби и езици</li>
       <li xml:lang="ca">Permet múltiples disposicions i llengües</li>
       <li xml:lang="ca-valencia">Permet múltiples disposicions i llengües</li>
+      <li xml:lang="cs">Podpora mnoha rozvržení a jazyků</li>
       <li xml:lang="de">Unterstützung mehrerer Layouts und Sprachen</li>
       <li xml:lang="es">Compatible con muchas distribuciones de teclado e idiomas</li>
       <li xml:lang="eu">Antolaera eta hizkuntza anitzetarako euskarria</li>
@@ -201,6 +205,7 @@
       <li xml:lang="bg">Адаптиращ се размер и поведение за различни по размери устройства</li>
       <li xml:lang="ca">Mida i comportament configurables per a factors de forma diferents</li>
       <li xml:lang="ca-valencia">Mida i comportament configurables per a factors de forma diferents</li>
+      <li xml:lang="cs">Nastavitelná velikost a chování pro různé formáty</li>
       <li xml:lang="de">An verschiedene Einsatzbereiche anpassbare Größe und Verhalten</li>
       <li xml:lang="es">Se puede modificar su tamaño y su comportamiento para distintos factores de forma</li>
       <li xml:lang="eu">Forma-faktore ezberdinetarako neurri eta jokabide konfiguragarria</li>
