@@ -231,12 +231,20 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
     case Qt::ImCurrentSelection: {
         // cursorPos and anchorPos are in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
-        return QString::fromUtf8(surroundingText.mid(m_input.cursorPos(), m_input.anchorPos()));
+        int start = qMin(m_input.cursorPos(), m_input.anchorPos());
+        int end = qMax(m_input.cursorPos(), m_input.anchorPos());
+        return QString::fromUtf8(surroundingText.mid(start, end - start));
     }
-    case Qt::ImAnchorPosition:
-        return m_input.anchorPos();
-    case Qt::ImCursorPosition:
-        return m_input.cursorPos();
+    case Qt::ImAnchorPosition: {
+        // anchorPos is in bytes, we need to convert QString to QByteArray for index operations
+        QByteArray surroundingText = m_input.surroundingText().toUtf8();
+        return QString::fromUtf8(surroundingText.first(m_input.anchorPos())).length();
+    }
+    case Qt::ImCursorPosition: {
+        // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
+        QByteArray surroundingText = m_input.surroundingText().toUtf8();
+        return QString::fromUtf8(surroundingText.first(m_input.cursorPos())).length();
+    }
     case Qt::ImTextBeforeCursor: {
         // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
@@ -245,7 +253,7 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
     case Qt::ImTextAfterCursor: {
         // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
-        return QString::fromUtf8(surroundingText.mid(m_input.cursorPos() + 1));
+        return QString::fromUtf8(surroundingText.mid(m_input.cursorPos()));
     }
     case Qt::ImCursorRectangle:
     case Qt::ImFont:
@@ -308,28 +316,61 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
         return;
     }
 
-    // Delete characters that are supposed to be replaced
-    if (event->replacementLength() > 0) {
-        m_input.deleteSurroundingText(event->replacementStart(), event->replacementLength());
-    }
+    QString commit = event->commitString();
+    QString preedit = event->preeditString();
+    bool needsReplacement = event->replacementStart() != 0 || event->replacementLength() != 0;
 
-    const auto attributes = event->attributes();
-    for (const auto &x : attributes) {
-        if (x.type == QInputMethodEvent::TextFormat) {
-            m_input.setPreEditStyle(x.start, x.length, x.value.value<QTextFormat>().type());
+    // Delete characters that are supposed to be replaced
+    if (needsReplacement) {
+        // The positions we send to need to be in bytes (to support UTF8)
+        QString surroundingText = m_input.surroundingText();
+        QByteArray surroundingUtf8 = surroundingText.toUtf8();
+        int boundedCursorBytes = qBound(0, int(m_input.cursorPos()), surroundingUtf8.size());
+        int cursorChars = QString::fromUtf8(surroundingUtf8.first(boundedCursorBytes)).size();
+        int startChars = qBound(0, cursorChars + event->replacementStart(), surroundingText.size());
+        int endChars = qBound(startChars, startChars + event->replacementLength(), surroundingText.size());
+
+        int startBytes = surroundingText.first(startChars).toUtf8().size();
+        int endBytes = surroundingText.first(endChars).toUtf8().size();
+
+        if (endBytes > startBytes) {
+            m_input.deleteSurroundingText(startBytes - boundedCursorBytes, endBytes - startBytes);
         }
     }
 
-    // Send cursor position (must be before predit string)
-    m_input.setPreEditCursor(event->preeditString().size());
-
-    // Send currently being edited string
-    m_input.setPreEditString(event->preeditString());
-
-    // Commit string if we have a finished string
-    if (const auto commit = event->commitString(); !commit.isEmpty()) {
+    // Commit string if there is something to commit, or we did a replacement
+    if (needsReplacement || !commit.isEmpty()) {
         m_input.commit(commit);
     }
+
+    // Set attributes for style (ex. needed for CJK)
+    for (const auto &x : event->attributes()) {
+        if (x.type == QInputMethodEvent::TextFormat) {
+            int startBytes = preedit.first(qBound(0, x.start, preedit.size())).toUtf8().size();
+            int endBytes = preedit.first(qBound(0, x.start + x.length, preedit.size())).toUtf8().size();
+            m_input.setPreEditStyle(startBytes, endBytes - startBytes, x.value.value<QTextFormat>().type());
+        }
+    }
+
+    // Send cursor position (must be before preedit string)
+    int preEditCursorPos = preedit.toUtf8().size();
+    for (const auto &attribute : event->attributes()) {
+        if (attribute.type != QInputMethodEvent::Cursor) {
+            continue;
+        }
+
+        // Set special attribute preedit cursor position (ex. needed for CJK)
+        if (!attribute.value.isValid() || !attribute.value.toBool()) {
+            preEditCursorPos = -1;
+        } else {
+            preEditCursorPos = preedit.first(qBound(0, attribute.start, preedit.size())).toUtf8().size();
+        }
+        break;
+    }
+    m_input.setPreEditCursor(preEditCursorPos);
+
+    // Send currently being edited string
+    m_input.setPreEditString(preedit);
 }
 
 #include "moc_inputlisteneritem.cpp"
