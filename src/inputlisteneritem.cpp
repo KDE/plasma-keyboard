@@ -83,12 +83,15 @@ InputListenerItem::InputListenerItem()
             m_overlayController->handleSurroundingTextChanged();
         }
 
-        QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
-
         if (m_input.hasContext()) {
             // Re-activate when text input activates, and there is context
             QGuiApplication::inputMethod()->setVisible(true);
             window()->setVisible(true);
+        }
+
+        // Update vkbd input method only if the virtual keyboard panel is shown
+        if (window()->isExposed()) {
+            QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
         }
     });
     connect(&m_input, &InputPlugin::resetRequested, this, [] {
@@ -341,6 +344,13 @@ void InputListenerItem::keyReleaseEvent(QKeyEvent *event)
 
 void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
 {
+    // Don't forward events from Qt VKBD to KWin if the keyboard window isn't open
+    // This avoids the possibility of Qt VKBD causing text changes from receiving
+    // events (ex. cursor movement) done by its input engine (for features like text prediction).
+    if (!window()->isExposed()) {
+        return;
+    }
+
     // Delete characters that are supposed to be replaced
     if (event->replacementLength() > 0) {
         m_input.deleteSurroundingText(event->replacementStart(), event->replacementLength());
