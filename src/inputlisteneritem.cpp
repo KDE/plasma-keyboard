@@ -203,11 +203,10 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
         if (imHints & InputPlugin::content_hint_password) {
             qtHints |= Qt::ImhSensitiveData;
         }
-        if ((imHints & InputPlugin::content_hint_auto_completion) == 0) {
+        if ((imHints & InputPlugin::content_hint_auto_completion) == 0 || (imHints & InputPlugin::content_hint_auto_correction) == 0) {
             qtHints |= Qt::ImhNoPredictiveText;
         }
-        if ((imHints & InputPlugin::content_hint_auto_correction) == 0 || (imHints & InputPlugin::content_hint_auto_capitalization) == 0
-            || !PlasmaKeyboardSettings::self()->autoCapitalizationEnabled()) {
+        if ((imHints & InputPlugin::content_hint_auto_capitalization) == 0 || !PlasmaKeyboardSettings::self()->autoCapitalizationEnabled()) {
             qtHints |= Qt::ImhNoAutoUppercase;
         }
         // if (imHints & InputPlugin::content_hint_titlecase) { }
