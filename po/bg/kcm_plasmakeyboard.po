@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-02-12 23:02+0100\n"
+"PO-Revision-Date: 2026-04-03 01:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -60,23 +60,23 @@ msgstr "Навигация с клавиатура"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Автоматични главни букви"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Алтернативни символи:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Показване на изскачащ символ при натискане на клавиш"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Изчакване:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "милисекунди"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -110,15 +110,12 @@ msgstr "Използване на клавишите със стрелки за 
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Автоматично изписване на първата буква от изреченията с главна буква"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Обратна връзка при натискане на клавиш"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Общи"
