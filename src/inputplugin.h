@@ -94,6 +94,8 @@ Q_SIGNALS:
     void contentTypeChanged();
     void receivedCommit();
     void resetRequested();
+    void deactivate();
+    void preferredLanguageChanged(const QString &language);
 
     /**
      * A key has been pressed

@@ -85,14 +85,19 @@ InputListenerItem::InputListenerItem()
 
         if (m_input.hasContext()) {
             // Re-activate when text input activates, and there is context
-            QGuiApplication::inputMethod()->setVisible(true);
-            window()->setVisible(true);
-        }
+            if (!window()->isVisible()) {
+                QGuiApplication::inputMethod()->setVisible(true);
+            }
 
-        // Update vkbd input method only if the virtual keyboard panel is shown
-        if (window()->isExposed()) {
-            QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
+            // Update vkbd input method only if the virtual keyboard panel is shown
+            if (window()->isExposed()) {
+                QGuiApplication::inputMethod()->update(Qt::ImSurroundingText);
+            }
         }
+    });
+    connect(&m_input, &InputPlugin::deactivate, this, [this] {
+        QGuiApplication::inputMethod()->setVisible(false);
+        QGuiApplication::inputMethod()->reset();
     });
     connect(&m_input, &InputPlugin::resetRequested, this, [] {
         QGuiApplication::inputMethod()->reset();
@@ -190,6 +195,9 @@ void InputListenerItem::setEngine(QVirtualKeyboardInputEngine * /*engine*/)
 QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
 {
     if (!m_input.hasContext()) {
+        if (query == Qt::ImEnabled) {
+            return false;
+        }
         return {};
     }
 
@@ -281,17 +289,20 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
     case Qt::ImAnchorPosition: {
         // anchorPos is in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
-        return QString::fromUtf8(surroundingText.first(m_input.anchorPos())).length();
+        int anchorBytes = qBound(0, int(m_input.anchorPos()), surroundingText.size());
+        return QString::fromUtf8(surroundingText.first(anchorBytes)).length();
     }
     case Qt::ImCursorPosition: {
         // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
-        return QString::fromUtf8(surroundingText.first(m_input.cursorPos())).length();
+        int cursorBytes = qBound(0, int(m_input.cursorPos()), surroundingText.size());
+        return QString::fromUtf8(surroundingText.first(cursorBytes)).length();
     }
     case Qt::ImTextBeforeCursor: {
         // cursorPos is in bytes, we need to convert QString to QByteArray for index operations
         QByteArray surroundingText = m_input.surroundingText().toUtf8();
-        return QString::fromUtf8(surroundingText.first(m_input.cursorPos()));
+        int cursorBytes = qBound(0, int(m_input.cursorPos()), surroundingText.size());
+        return QString::fromUtf8(surroundingText.first(cursorBytes));
     }
     case Qt::ImTextAfterCursor: {
         // cursorPos is in bytes, we need to convert QString to QByteArray for index operations

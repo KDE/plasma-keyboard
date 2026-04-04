@@ -10,6 +10,7 @@
 
 InputPlugin::InputPlugin(InputMethod *inputMethod)
 {
+    connect(inputMethod, &InputMethod::deactivate, this, &InputPlugin::deactivate);
     connect(inputMethod, &InputMethod::activityChanged, this, [this, inputMethod]() {
         if (m_context) {
             disconnect(m_context.get(), nullptr, this, nullptr);
@@ -26,6 +27,7 @@ InputPlugin::InputPlugin(InputMethod *inputMethod)
         connect(m_context.get(), &InputMethodContext::surroundingTextChanged, this, &InputPlugin::surroundingTextChanged);
         connect(m_context.get(), &InputMethodContext::contentTypeChanged, this, &InputPlugin::contentTypeChanged);
         connect(m_context.get(), &InputMethodContext::reset, this, &InputPlugin::resetRequested);
+        connect(m_context.get(), &InputMethodContext::preferredLanguageChanged, this, &InputPlugin::preferredLanguageChanged);
         if (m_grabbing) {
             setGrabbingInternal();
         }
