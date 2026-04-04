@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-10-27 11:43+0200\n"
+"PO-Revision-Date: 2026-04-03 20:00+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -61,23 +61,23 @@ msgstr "Управление с клавиатуры"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Автоматическое использование прописных букв"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Альтернативные символы:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Показывать всплывающее окно при удержании клавиши"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Задержка удержания:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "мс"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -111,15 +111,12 @@ msgstr "Использование клавиш со стрелками для �
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Автоматически писать первую букву предложений с заглавной буквы"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Проверка нажатий"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Общие"
