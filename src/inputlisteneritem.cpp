@@ -210,12 +210,14 @@ QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const
         const auto imHints = m_input.contentHint();
         Qt::InputMethodHints qtHints;
 
+        // Disable Qt VirtualKeyboard's hunspell plugin
+        // It deals poorly with current external cursor position change
+        // logic, and causes problems when selecting text with a mouse.
+        qtHints |= Qt::ImhNoPredictiveText;
+
         // if (imHints & InputPlugin::content_hint_default) { }
         if (imHints & InputPlugin::content_hint_password) {
             qtHints |= Qt::ImhSensitiveData;
-        }
-        if ((imHints & InputPlugin::content_hint_auto_completion) == 0 || (imHints & InputPlugin::content_hint_auto_correction) == 0) {
-            qtHints |= Qt::ImhNoPredictiveText;
         }
         if ((imHints & InputPlugin::content_hint_auto_capitalization) == 0 || !PlasmaKeyboardSettings::self()->autoCapitalizationEnabled()) {
             qtHints |= Qt::ImhNoAutoUppercase;
