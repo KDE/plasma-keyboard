@@ -69,6 +69,9 @@ find_package(WaylandProtocols 1.19 REQUIRED)
 
 add_subdirectory(kcm)
 add_subdirectory(src)
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
 
 ki18n_install(po)
 

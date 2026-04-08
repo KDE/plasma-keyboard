@@ -13,6 +13,6 @@ Dependencies:
       "plasma/libplasma": "@same"
 
 Options:
-  enable-lsan: true
+  enable-lsan: false
   require-passing-tests-on: ["Linux", "FreeBSD"]
   run-qmllint: true

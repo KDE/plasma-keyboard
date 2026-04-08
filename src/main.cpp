@@ -23,7 +23,6 @@
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
 #include <QWindow>
-#include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <qpa/qwindowsysteminterface.h>
 
 int main(int argc, char **argv)
