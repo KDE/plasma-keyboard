@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:46+0000\n"
-"PO-Revision-Date: 2026-02-03 22:03+0100\n"
+"PO-Revision-Date: 2026-04-08 19:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -35,7 +35,7 @@ msgstr "Plasma 키보드"
 #: main.cpp:60
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
-msgstr "Plasma용 가상 키보드"
+msgstr "Plasma용 온스크린 키보드"
 
 #: main.cpp:62
 #, kde-format
@@ -56,19 +56,19 @@ msgstr "작성자"
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
-msgstr ""
+msgstr "분음 기호(길게 누르기)"
 
 #: overlay/prefixquerytrigger.cpp:25
 #, kde-format
 msgctxt "@label Name of the emoji overlay trigger"
 msgid "Emoji (Prefix Search)"
-msgstr ""
+msgstr "이모지(접두어 검색)"
 
 #: overlay/textexpansiontrigger.cpp:27
 #, kde-format
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
-msgstr ""
+msgstr "텍스트 확장"
 
 #: qml/LanguagePopup.qml:116
 msgid "Settings"
