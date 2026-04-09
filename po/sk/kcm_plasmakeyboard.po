@@ -1,91 +1,93 @@
-# Copyright (C) 2025 This file is copyright:
+# Slovak translations for plasma-keyboard package.
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025, 2026 Shinjo Park <kde@peremen.name>
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-10-09 01:33+0200\n"
-"Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-kr@kde.org>\n"
-"Language: ko\n"
+"PO-Revision-Date: 2025-11-17 11:54+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
-msgstr "언어 필터…"
+msgstr "Filtrovať jazyky…"
 
 #: ui/LocaleSelectorListView.qml:69
 msgid "Filter languages"
-msgstr "언어 필터"
+msgstr "Filtrovať jazyky"
 
 #: ui/LocaleSelectorListView.qml:82
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
-msgstr "선택한 언어가 없습니다. 시스템 기본 키보드 레이아웃을 선택합니다."
+msgstr ""
+"Nie sú vybrané žiadne jazyky. Bude sa používať predvolené rozloženie "
+"klávesnice systému."
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
-msgstr "언어"
+msgstr "Jazyky"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
-msgstr "키 입력 피드백:"
+msgstr "Odozva stlačenia klávesy:"
 
 #: ui/main.qml:33 ui/main_handset.qml:40
 msgid "Sound"
-msgstr "소리"
+msgstr "Zvuk"
 
 #: ui/main.qml:44 ui/main_handset.qml:54
 msgid "Vibration"
-msgstr "진동"
+msgstr "Vibrácia"
 
 #: ui/main.qml:55
 msgid "General:"
-msgstr "일반:"
+msgstr "Všeobecné:"
 
 #: ui/main.qml:56 ui/main_handset.qml:90
 msgid "Keyboard navigation"
-msgstr "키보드 탐색"
+msgstr "Navigácia klávesnicou"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
-msgstr "가상 키보드 시험…"
+msgstr "Otestovať virtuálnu klávesnicu…"
 
 #: ui/main_handset.qml:34
 msgctxt "@title:group"
 msgid "Feedback"
-msgstr "피드백"
+msgstr "Odozva"
 
 #: ui/main_handset.qml:41
 msgid "Whether to emit a sound on key press"
-msgstr "키를 누를 때 소리 재생 여부"
+msgstr "Či sa má vydať zvuk pri stlačení klávesy"
 
 #: ui/main_handset.qml:55
 msgid "Whether to vibrate on key press"
-msgstr "키를 누를 때 진동 여부"
+msgstr "Či sa má vibrovať pri stlačení klávesy"
 
 #: ui/main_handset.qml:76
 msgid "Keyboard Languages"
-msgstr "키보드 언어"
+msgstr "Jazyky klávesnice"
 
 #: ui/main_handset.qml:84
 msgctxt "@title:group"
 msgid "General"
-msgstr "일반"
+msgstr "Všeobecné"
 
 #: ui/main_handset.qml:91
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr "화살표 키로 키보드 탐색 여부"
+msgstr "Či sa majú použiť klávesy so šípkami na navigáciu po klávesnici"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
-msgstr "키 입력 피드백"
+msgstr "Odozva stlačenia klávesy"
