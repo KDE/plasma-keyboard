@@ -53,7 +53,7 @@
   <summary xml:lang="is">Skjályklaborð fyrir Plasma</summary>
   <summary xml:lang="it">Tastiera su schermo per Plasma</summary>
   <summary xml:lang="ka">ეკრანის კლავიატურა Plasma-სთვის</summary>
-  <summary xml:lang="ko">Plasma용 가상 키보드</summary>
+  <summary xml:lang="ko">Plasma용 온스크린 키보드</summary>
   <summary xml:lang="lt">Ekraninė klaviatūra, skirta Plasma</summary>
   <summary xml:lang="lv">Ekrānā redzama tastatūra „Plasma“ darbvirsmai</summary>
   <summary xml:lang="nb">Et skjermtastatur for Plasma</summary>
@@ -91,7 +91,7 @@
     <p xml:lang="is">Plasma-lyklaborðið birtir sýndarlyklaborð á skjanum fyrir snertiskjái, spjaldtölvur, umbreytanleg tæki, snjallsíma og venjulegar tölvur sem ekki eru með alvöru lyklaborð.</p>
     <p xml:lang="it">Plasma Keyboard fornisce una tastiera virtuale su schermo per touchscreen, tablet, dispositivi convertibili, telefoni e computer tradizionali privi di tastiera fisica.</p>
     <p xml:lang="ka">Plasma-ის კლავიატურა მოგაწვდით ვირტუალურ კლავიატურას ეკრანზე სენსორული ეკრანებისთვის, ტაბლეტებისთვის, კონვერტირებადი მოწყობილობებისთვის, ტელეფონებისთვის და ტრადიციული კომპიუტერებისთვის, რომლებსაც ფიზიკური კლავიატურა არ გააჩნიათ.</p>
-    <p xml:lang="ko">Plasma 키보드는 터치스크린, 태블릿, 컨버티블 장치, 휴대폰, 물리 키보드가 없는 컴퓨터용 가상 키보드를 제공합니다.</p>
+    <p xml:lang="ko">Plasma 키보드는 터치스크린, 태블릿, 컨버터블 장치, 휴대폰, 물리 키보드가 없는 컴퓨터용 온스크린 키보드를 제공합니다.</p>
     <p xml:lang="lt">Plasma klaviatūra pateikia virtualią ekraninę klaviatūrą, skirta jutikliniams ekranams, planšetėms, sulankstomiems įrenginiams, telefonams bei tradiciniams kompiuteriams, neturintiems fizinės klaviatūros.</p>
     <p xml:lang="lv">„Plasma“ tastatūra ir virtuāla ekrānā redzama tastatūra skārienjutīgiem ekrāniem, planšetdatoriem, pārveidojamām ierīcēm, tālruņiem un tradicionāliem datoriem bez fiziskas tastatūras.</p>
     <p xml:lang="nb">Plasma-tastatur gir et virtuelt skjermtastatur for trykkskjermer, diverse plater, konvertible enheter, telefoner og tradisjonelle datamaskiner uten et fysisk tastatur.</p>
