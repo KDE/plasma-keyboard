@@ -61,6 +61,7 @@ void PlasmaKeyboardKcm::setVibrationEnabled(bool vibrationEnabled)
 
 QStringList PlasmaKeyboardKcm::enabledLocales() const
 {
+    qDebug() << "DAVE" << m_enabledLocales;
     return m_enabledLocales;
 }
 

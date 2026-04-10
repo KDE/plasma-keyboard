@@ -119,6 +119,8 @@ InputListenerItem::InputListenerItem()
             return;
         }
 
+
+
         if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
             // Keys to capture for keyboard navigation
             const auto keys = m_keyboardNavigationActive ? *KEYBOARD_NAVIGATION_ACTIVE_CAPTURE_KEYS : *KEYBOARD_NAVIGATION_CAPTURE_KEYS;
@@ -144,6 +146,14 @@ InputListenerItem::InputListenerItem()
         // The window can have isVisible() = true, but not be shown by the compositor if the input panel is suppressed
         if (!window()->isExposed()) {
             return;
+        }
+
+        if (m_engine) {
+            bool handledByIMEngine = m_engine->virtualKeyPress(Qt::Key(keyEvent->key()), keyEvent->text(), keyEvent->modifiers(), keyEvent->isAutoRepeat());
+            if (handledByIMEngine) {
+                keyEvent->accept();
+                return;
+            }
         }
 
         if (PlasmaKeyboardSettings::self()->keyboardNavigationEnabled()) {
@@ -187,9 +197,9 @@ OverlayController *InputListenerItem::overlayController() const
     return m_overlayController;
 }
 
-void InputListenerItem::setEngine(QVirtualKeyboardInputEngine * /*engine*/)
+void InputListenerItem::setEngine(QVirtualKeyboardInputEngine *engine)
 {
-    // TODO: hook into engine events if necessary?
+    m_engine = engine;
 }
 
 QVariant InputListenerItem::inputMethodQuery(Qt::InputMethodQuery query) const

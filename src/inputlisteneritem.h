@@ -55,6 +55,7 @@ Q_SIGNALS:
     void keyNavigationReleased(int key);
 
 private:
+    QPointer<QVirtualKeyboardInputEngine> m_engine;
     InputPlugin m_input;
     OverlayController *m_overlayController = nullptr;
     bool m_keyboardNavigationActive = false;

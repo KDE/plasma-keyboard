@@ -7,6 +7,8 @@ import QtQuick.VirtualKeyboard.Components
 import QtQuick.Layouts
 
 KeyboardLayoutLoader {
+    Component.onCompleted: console.log("AAAAAA");
+
     function createInputMethod() {
         return Qt.createQmlObject('import QtQuick; import QtQuick.VirtualKeyboard.Plugins; HangulInputMethod {}', parent, "inputMethod.qml")
     }
