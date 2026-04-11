@@ -31,6 +31,7 @@
   <name xml:lang="pt-BR">Teclado do Plasma</name>
   <name xml:lang="ro">Tastatură Plasma</name>
   <name xml:lang="ru">Клавиатура Plasma</name>
+  <name xml:lang="sk">Klávesnica Plasma</name>
   <name xml:lang="sl">Plasma Keyboard</name>
   <name xml:lang="sv">Plasma tangentbord</name>
   <name xml:lang="tr">Plasma Klavye</name>
@@ -63,6 +64,7 @@
   <summary xml:lang="pt-BR">Um teclado na tela para o Plasma</summary>
   <summary xml:lang="ro">Tastatură pe ecran pentru Plasma</summary>
   <summary xml:lang="ru">Экранная клавиатура для Plasma</summary>
+  <summary xml:lang="sk">Klávesnica na obrazovke pre Plasma</summary>
   <summary xml:lang="sl">Zaslonska tipkovnica za Plasmo</summary>
   <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
   <summary xml:lang="tr">Plasma için ekran üzeri klavye</summary>
@@ -100,6 +102,7 @@
     <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
     <p xml:lang="ro">Tastatura Plasma oferă o tastatură virtuală pe ecran, utilă pentru ecrane tactile, tablete, dispozitive convertibile, telefoane și calculatoare tradiționale fără tastatură fizică.</p>
     <p xml:lang="ru">Клавиатура для Plasma — виртуальная экранная клавиатура для сенсорных экранов, планшетов, трансформируемых устройств, телефонов и обычных компьютеров без физической клавиатуры.</p>
+    <p xml:lang="sk">Klávesnica Plasma poskytuje virtuálnu klávesnicu na obrazovke pre dotykové obrazovky, tablety, konvertibilné zariadenia, telefóny a tradičné počítače bez fyzickej klávesnice.</p>
     <p xml:lang="sl">Plasma Keyboard ponuja navidezno zaslonsko tipkovnico za zaslone na dotik, tablične računalnike, prenosne naprave, telefone in tradicionalne računalnike brez fizične tipkovnice.</p>
     <p xml:lang="sv">Plasma tangentbord tillhandahåller ett virtuellt tangentbord på skärmen för pekskärmar, surfplattor, konvertibla enheter, telefoner och traditionella datorer utan fysiskt tangentbord.</p>
     <p xml:lang="tr">Plasma Klavye; dokunmatik ekranlar, tabletler, dönüştürülebilir aygıtlar, telefonlar ve fiziksel bir klavyesi olmayan geleneksel bilgisayarlar için sanal ve ekran üzerinde görüntülenen bir klavye sağlar.</p>
@@ -132,6 +135,7 @@
       <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
       <li xml:lang="ro">Integrare perfectă cu spațiul de lucru și aplicațiile Plasma</li>
       <li xml:lang="ru">Бесшовная интеграция с рабочей средой Plasma и приложениями</li>
+      <li xml:lang="sk">Bezproblémová integrácia s pracovným priestorom a aplikáciami Plasma</li>
       <li xml:lang="sl">Neopazna integracija z delovnim prostorom in aplikacijami Plasma</li>
       <li xml:lang="sv">Sömlös integration med Plasmas arbetsyta och program</li>
       <li xml:lang="tr">Plasma çalışma alanı ve uygulamalarıyla sorunsuz tümleşim</li>
@@ -163,6 +167,7 @@
       <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
       <li xml:lang="ro">Apariție automată când se cere introducerea textului</li>
       <li xml:lang="ru">Автоматически появляется на экране при необходимости ввести текст</li>
+      <li xml:lang="sk">Automatické zobrazenie, keď je potrebný textový vstup</li>
       <li xml:lang="sl">Samodejni prikaz, ko je potreben vnos besedila</li>
       <li xml:lang="sv">Visas automatisk när textinmatning behövs</li>
       <li xml:lang="tr">Metin girişine gerek olduğunda kendiliğinden ortaya çıkar</li>
@@ -194,6 +199,7 @@
       <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
       <li xml:lang="ro">Suport pentru aranjamente și limbi multiple</li>
       <li xml:lang="ru">Поддержка множества раскладок и языков</li>
+      <li xml:lang="sk">Podpora viacerých rozložení a jazykov</li>
       <li xml:lang="sl">Podpora za več postavitev in jezikov</li>
       <li xml:lang="sv">Stöd för flera layouter och språk</li>
       <li xml:lang="tr">Birden çok yerleşim ve dil desteği</li>
@@ -225,6 +231,7 @@
       <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
       <li xml:lang="ro">Dimensiune și comportament configurabile pentru diferite tipuri de dispozitive</li>
       <li xml:lang="ru">Настраиваемый размер и поведение для разных типов устройств</li>
+      <li xml:lang="sk">Konfigurovateľná veľkosť a správanie pre rôzne formáty zariadení</li>
       <li xml:lang="sl">Nastavljiva velikost in delovanje za različne oblike</li>
       <li xml:lang="sv">Inställningsbar storlek och beteende för olika formfaktorer</li>
       <li xml:lang="tr">Değişik aygıt biçimleri için yapılandırılabilir boyut ve davranış</li>
