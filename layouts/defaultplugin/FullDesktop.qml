@@ -18,6 +18,7 @@ KeyboardLayout {
     readonly property bool inputModeKeyVisible: inputModeKeyModes.length > 0
     property var keyTextMap: ({})
     property var shiftedKeyTextMap: ({})
+    property bool sendShiftDirectKeyEvents: true
     function keyText(text) {
         const shifted = inputEngine && inputEngine.uppercase;
         const map = shifted ? shiftedKeyTextMap : keyTextMap;
@@ -169,7 +170,7 @@ KeyboardLayout {
     }
 
     KeyboardRow {
-        ShiftKey { weight: root.defaultKeyWeight * 2.5; sendDirectKeyEvents: true }
+        ShiftKey { weight: root.defaultKeyWeight * 2.5; sendDirectKeyEvents: root.sendShiftDirectKeyEvents }
         Key { key: Qt.Key_Z; text: root.keyText("z") }
         Key { key: Qt.Key_X; text: root.keyText("x") }
         Key { key: Qt.Key_C; text: root.keyText("c") }
@@ -181,7 +182,7 @@ KeyboardLayout {
         Key { key: Qt.Key_Period; text: root.keyText("."); alternativeKeys: ".>"; smallText: ">" }
         Key { key: Qt.Key_Slash; text: root.keyText("/"); alternativeKeys: "/?"; smallText: "?" }
         KeysymKey { key: Qt.Key_Up; iconName: "go-up-symbolic"; displayText: ""; repeat: true }
-        ShiftKey { weight: root.defaultKeyWeight * 2; sendDirectKeyEvents: true }
+        ShiftKey { weight: root.defaultKeyWeight * 2; sendDirectKeyEvents: root.sendShiftDirectKeyEvents }
     }
 
     KeyboardRow {
