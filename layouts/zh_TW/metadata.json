@@ -1,0 +1,39 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.zh_TW",
+        "Name": "繁體中文（台灣）"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "zh_TW"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "zhuyin",
+                "Name": "注音",
+                "File": "Zhuyin.qml",
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-zhuyin",
+                "Name": "注音（電腦）",
+                "File": "DesktopZhuyin.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-full-zhuyin",
+                "Name": "注音（全尺寸）",
+                "File": "FullZhuyin.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

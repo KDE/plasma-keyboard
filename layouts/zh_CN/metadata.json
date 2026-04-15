@@ -1,0 +1,39 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.zh_CN",
+        "Name": "简体中文"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "zh_CN"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "pinyin",
+                "Name": "拼音",
+                "File": "Pinyin.qml",
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-pinyin",
+                "Name": "拼音（电脑）",
+                "File": "DesktopPinyin.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-full-pinyin",
+                "Name": "拼音（全尺寸）",
+                "File": "FullPinyin.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

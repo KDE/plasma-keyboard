@@ -45,6 +45,16 @@ Text composers are located in [virtualkeyboard/textcomposers](/virtualkeyboard/t
 
 KWin by default only shows the keyboard when a text field is interacted with by touch. Set `KWIN_IM_SHOW_ALWAYS=1` when starting KWin (or the login session) in order to force the keyboard to always pop up.
 
+### Dependencies
+
+* Qt 6
+* KF6
+* Wayland + KWin (fake input protocol)
+* anthy - Japanese support (anthy-unicode is preferred over anthy)
+* libhangul - Korean support
+* libpinyin - Pinyin support
+* libchewing - Zhuyin support
+
 # Development
 
 Recommended methods for development are to either use
