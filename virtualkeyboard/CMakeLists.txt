@@ -8,8 +8,8 @@ add_library(plasma-keyboard-virtualkeyboard STATIC
     inputengine.h
     textcomposers/abstracttextcomposer.cpp
     textcomposers/abstracttextcomposer.h
-    textcomposers/amharictextcomposer.cpp
-    textcomposers/amharictextcomposer.h
+    textcomposers/amharic/amharictextcomposer.cpp
+    textcomposers/amharic/amharictextcomposer.h
     textcomposers/basictextcomposer.cpp
     textcomposers/basictextcomposer.h
     textcomposers/directtextcomposer.cpp
@@ -32,6 +32,11 @@ target_include_directories(plasma-keyboard-virtualkeyboard
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers
     PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers/anthy
+        ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers/pinyin
+        ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers/hangul
+        ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers/zhuyin
+        ${CMAKE_CURRENT_SOURCE_DIR}/textcomposers/amharic
         ${CMAKE_BINARY_DIR}
         ${CMAKE_BINARY_DIR}/src
 )
@@ -47,6 +52,44 @@ target_link_libraries(plasma-keyboard-virtualkeyboard
         Qt::Qml
         Qt::Quick
 )
+
+if(PLASMA_KEYBOARD_LIBPINYIN_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/pinyin/libpinyinadapter.cpp
+        textcomposers/pinyin/libpinyinadapter.h
+        textcomposers/pinyin/pinyintextcomposer.cpp
+        textcomposers/pinyin/pinyintextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBPINYIN)
+endif()
+
+if(PLASMA_KEYBOARD_LIBCHEWING_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/zhuyin/libchewingadapter.cpp
+        textcomposers/zhuyin/libchewingadapter.h
+        textcomposers/zhuyin/zhuyintextcomposer.cpp
+        textcomposers/zhuyin/zhuyintextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBCHEWING)
+endif()
+
+if(PLASMA_KEYBOARD_LIBHANGUL_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/hangul/hangultextcomposer.cpp
+        textcomposers/hangul/hangultextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBHANGUL)
+endif()
+
+if(PLASMA_KEYBOARD_ANTHY_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/anthy/anthyadapter.cpp
+        textcomposers/anthy/anthyadapter.h
+        textcomposers/anthy/anthytextcomposer.cpp
+        textcomposers/anthy/anthytextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBANTHY ${LIBANTHYINPUT_LIBRARY})
+endif()
 
 ecm_add_qml_module(plasma-keyboard-virtualkeyboard
     URI org.kde.plasma.keyboard.virtualkeyboard

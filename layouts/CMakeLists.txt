@@ -41,3 +41,19 @@ plasma_install_package(sr_RS org.kde.plasma.keyboard.sr_RS keyboard/keyboardpack
 plasma_install_package(sv_SE org.kde.plasma.keyboard.sv_SE keyboard/keyboardpackages)
 plasma_install_package(tr_TR org.kde.plasma.keyboard.tr_TR keyboard/keyboardpackages)
 plasma_install_package(uk_UA org.kde.plasma.keyboard.uk_UA keyboard/keyboardpackages)
+
+if(PLASMA_KEYBOARD_ANTHY_ENABLED)
+    plasma_install_package(ja_JP org.kde.plasma.keyboard.ja_JP keyboard/keyboardpackages)
+endif()
+
+if(PLASMA_KEYBOARD_LIBHANGUL_ENABLED)
+    plasma_install_package(ko_KR org.kde.plasma.keyboard.ko_KR keyboard/keyboardpackages)
+endif()
+
+if(PLASMA_KEYBOARD_LIBPINYIN_ENABLED)
+    plasma_install_package(zh_CN org.kde.plasma.keyboard.zh_CN keyboard/keyboardpackages)
+endif()
+
+if(PLASMA_KEYBOARD_LIBCHEWING_ENABLED)
+    plasma_install_package(zh_TW org.kde.plasma.keyboard.zh_TW keyboard/keyboardpackages)
+endif()

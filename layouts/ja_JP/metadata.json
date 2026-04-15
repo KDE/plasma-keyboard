@@ -1,0 +1,49 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.ja",
+        "Name": "日本語"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "ja_JP"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "romaji",
+                "Name": "ローマ字",
+                "File": "Romaji.qml",
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "twelvekey",
+                "Name": "12キー",
+                "File": "TwelveKey.qml",
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-qwerty",
+                "Name": "ローマ字（PC）",
+                "File": "DesktopRomaji.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-full-qwerty",
+                "Name": "ローマ字（フルサイズ）",
+                "File": "FullRomaji.qml",
+                "FormFactors": [
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}
