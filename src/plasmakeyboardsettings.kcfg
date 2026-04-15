@@ -19,6 +19,9 @@
         <entry key="vibrationMs" type="Int">
             <default>10</default>
         </entry>
+        <entry key="enabledKeyboardLayoutIds" type="StringList">
+            <default></default>
+        </entry>
         <entry key="enabledLocales" type="StringList">
             <default></default>
         </entry>
@@ -27,7 +30,7 @@
         </entry>
         <entry key="autoCapitalizationEnabled" type="Bool">
             <label>Whether auto capitalization is enabled.</label>
-            <default>true</default>
+            <default>false</default>
         </entry>
         <entry key="panelFillScreenWidth" type="Bool">
             <label>Whether the keyboard panel fills the screen width.</label>

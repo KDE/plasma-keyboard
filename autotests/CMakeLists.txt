@@ -4,6 +4,15 @@
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test WaylandCompositor)
 include(ECMAddTests)
 
+ecm_add_test(inputenginetest.cpp
+    TEST_NAME inputenginetest
+    LINK_LIBRARIES
+        plasma-keyboard-virtualkeyboard
+        Qt::Gui
+        Qt::Qml
+        Qt::Test
+)
+
 file(GENERATE
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mockinputmethodcompositor_config.h
     CONTENT "#pragma once\n#define PLASMA_KEYBOARD_BINARY_PATH \"$<TARGET_FILE:plasma-keyboard>\"\n"

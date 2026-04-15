@@ -60,16 +60,16 @@ KCM.SimpleKCM {
             Layout.topMargin: Kirigami.Units.largeSpacing
 
             FormCard.FormButtonDelegate {
-                id: languageList
-                text: i18n("Languages")
+                id: layoutList
+                text: i18n("Keyboard Layouts")
                 icon.name: 'languages'
-                onClicked: kcm.push(localePage)
+                onClicked: kcm.push(layoutPage)
 
                 Kirigami.ScrollablePage {
-                    id: localePage
-                    title: i18n("Keyboard Languages")
+                    id: layoutPage
+                    title: i18n("Keyboard Layouts")
 
-                    LocaleSelectorListView {}
+                    KeyboardLayoutSelectorListView {}
                 }
             }
         }

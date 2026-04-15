@@ -39,9 +39,14 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
     Qml
+    Quick
     VirtualKeyboard
     WaylandClient
 )
+
+if(PLASMA_KEYBOARD_SOUNDS_ENABLED)
+    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
+endif()
 
 find_package(Qt6GuiPrivate ${QT_MIN_VERSION} REQUIRED NO_MODULE)
 find_package(Qt6WaylandClientPrivate ${QT_MIN_VERSION} REQUIRED NO_MODULE)
@@ -50,6 +55,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
     KCMUtils
+    Package
     Config
     Crash
 )
@@ -68,7 +74,10 @@ pkg_check_modules(XKBCommon REQUIRED IMPORTED_TARGET xkbcommon)
 find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
+find_package(PlasmaWaylandProtocols REQUIRED)
 
+add_subdirectory(virtualkeyboard)
+add_subdirectory(layouts)
 add_subdirectory(kcm)
 add_subdirectory(src)
 if(BUILD_TESTING)
