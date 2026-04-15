@@ -38,6 +38,8 @@ option(PLASMA_KEYBOARD_VIBRATION_ENABLED "Whether to enable haptic feedback via 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
+    Qml
+    Quick
     VirtualKeyboard
     WaylandClient
 )
@@ -49,6 +51,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
     KCMUtils
+    Package
     Config
     Crash
 )
@@ -68,6 +71,7 @@ find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
 
+add_subdirectory(virtualkeyboard)
 add_subdirectory(kcm)
 add_subdirectory(src)
 if(BUILD_TESTING)
