@@ -20,6 +20,13 @@ ecm_add_test(mockinputmethodcompositor.cpp LINK_LIBRARIES
     Wayland::Server
 )
 
+ecm_add_test(virtualkeyboardtest.cpp LINK_LIBRARIES
+    plasma-keyboard-virtualkeyboard
+    Qt::Gui
+    Qt::Qml
+    Qt::Test
+)
+
 qt6_generate_wayland_protocol_server_sources(mockinputmethodcompositor
     FILES
         ${WaylandProtocols_DATADIR}/unstable/input-method/input-method-unstable-v1.xml
