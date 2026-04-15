@@ -28,4 +28,5 @@ compile_commands.json
 .cache
 Testing/
 /.vscode/
+/flatpak/flatpak-builder-tools/
 .qtcreator/
