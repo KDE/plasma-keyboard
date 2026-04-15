@@ -15,6 +15,7 @@ set(QT_MIN_VERSION "6.11.0")
 set(KF6_MIN_VERSION "6.30.0")
 
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED)
+find_package(PkgConfig REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs) # Should be included first so its variables are available to other modules.
@@ -34,6 +35,10 @@ include(KDEGitCommitHooks)
 
 option(PLASMA_KEYBOARD_SOUNDS_ENABLED "Whether to enable sound effect support, requires GPLv3 compliance" ON)
 option(PLASMA_KEYBOARD_VIBRATION_ENABLED "Whether to enable haptic feedback via vibrations, requires GPLv3 compliance" ON)
+option(PLASMA_KEYBOARD_LIBPINYIN_ENABLED "Whether to enable Chinese pinyin input with libpinyin" ON)
+option(PLASMA_KEYBOARD_LIBCHEWING_ENABLED "Whether to enable Chinese zhuyin input with libchewing" ON)
+option(PLASMA_KEYBOARD_LIBHANGUL_ENABLED "Whether to enable Korean input with libhangul" ON)
+option(PLASMA_KEYBOARD_ANTHY_ENABLED "Whether to enable Japanese input with anthy" ON)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
@@ -74,6 +79,44 @@ find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
 find_package(PlasmaWaylandProtocols REQUIRED)
+
+if(PLASMA_KEYBOARD_LIBPINYIN_ENABLED)
+    pkg_check_modules(LIBPINYIN REQUIRED IMPORTED_TARGET libpinyin)
+    pkg_get_variable(LIBPINYIN_PKGDATADIR libpinyin pkgdatadir)
+    set(PLASMA_KEYBOARD_LIBPINYIN_SYSTEM_DIR "${LIBPINYIN_PKGDATADIR}/data")
+    if(NOT EXISTS "${PLASMA_KEYBOARD_LIBPINYIN_SYSTEM_DIR}")
+        set(PLASMA_KEYBOARD_LIBPINYIN_SYSTEM_DIR "${LIBPINYIN_PKGDATADIR}")
+    endif()
+endif()
+
+if(PLASMA_KEYBOARD_LIBCHEWING_ENABLED)
+    pkg_check_modules(LIBCHEWING REQUIRED IMPORTED_TARGET chewing)
+    pkg_get_variable(PLASMA_KEYBOARD_LIBCHEWING_DATADIR chewing datadir)
+endif()
+
+if(PLASMA_KEYBOARD_LIBHANGUL_ENABLED)
+    pkg_check_modules(LIBHANGUL REQUIRED IMPORTED_TARGET libhangul)
+endif()
+
+if(PLASMA_KEYBOARD_ANTHY_ENABLED)
+    # Prefer anthy-unicode and fallback to anthy
+    pkg_check_modules(LIBANTHY QUIET IMPORTED_TARGET anthy-unicode)
+    if(LIBANTHY_FOUND)
+        set(PLASMA_KEYBOARD_ANTHY_UNICODE ON)
+        find_library(LIBANTHYINPUT_UNICODE_LIBRARY NAMES anthyinput-unicode HINTS ${LIBANTHY_LIBRARY_DIRS})
+        set(LIBANTHYINPUT_LIBRARY_FOUND ${LIBANTHYINPUT_UNICODE_LIBRARY})
+        set(LIBANTHYINPUT_NAME libanthyinput-unicode)
+    else()
+        pkg_check_modules(LIBANTHY REQUIRED IMPORTED_TARGET anthy)
+        set(PLASMA_KEYBOARD_ANTHY_UNICODE OFF)
+        find_library(LIBANTHYINPUT_LIBRARY NAMES anthyinput HINTS ${LIBANTHY_LIBRARY_DIRS})
+        set(LIBANTHYINPUT_LIBRARY_FOUND ${LIBANTHYINPUT_LIBRARY})
+        set(LIBANTHYINPUT_NAME libanthyinput)
+    endif()
+    if(NOT LIBANTHYINPUT_LIBRARY_FOUND)
+        message(FATAL_ERROR "${LIBANTHYINPUT_NAME} development files were not found")
+    endif()
+endif()
 
 add_subdirectory(virtualkeyboard)
 add_subdirectory(layouts)
