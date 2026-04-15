@@ -26,7 +26,7 @@ KCM.SimpleKCM {
 
     onActiveFocusChanged: {
         if (activeFocus) {
-            changeLanguagesButton.forceActiveFocus()
+            changeLayoutsButton.forceActiveFocus()
         }
     }
 
@@ -36,16 +36,17 @@ KCM.SimpleKCM {
         spacing: 0
 
         Bigscreen.ButtonDelegate {
-            id: changeLanguagesButton
-            text: i18n("Languages")
+            id: changeLayoutsButton
+            text: i18n("Keyboard Layouts")
             description: {
-                if (kcm.enabledLocales.length == 0) {
-                    return i18n("No languages selected, the default keyboard layout for the system will be used")
+                const layoutCount = kcm.plasmaKeyboardSettings.enabledKeyboardLayoutIds.length;
+                if (layoutCount === 0) {
+                    return i18n("No keyboard layouts selected, the default keyboard layout for the system will be used");
                 }
-                return i18ncp("%1 is the number of enabled locales", "%1 language selected", "%1 languages selected", kcm.enabledLocales.length)
+                return i18ncp("%1 is the number of enabled keyboard layouts", "%1 keyboard layout selected", "%1 keyboard layouts selected", layoutCount);
             }
             font.pixelSize: Bigscreen.Units.headingFontPixelSize
-            onClicked: localeSelectorSidebar.open()
+            onClicked: layoutSelectorSidebar.open()
             KeyNavigation.down: soundOnKeypressButton
         }
 
@@ -62,6 +63,7 @@ KCM.SimpleKCM {
             id: soundOnKeypressButton
             text: i18nc("This is a noun", "Sound")
             description: i18n("A sound will play when a key is pressed")
+            KeyNavigation.up: changeLayoutsButton
             KeyNavigation.down: vibrationOnKeypressButton
 
             checked: kcm.plasmaKeyboardSettings.soundEnabled
@@ -72,6 +74,7 @@ KCM.SimpleKCM {
             id: vibrationOnKeypressButton
             text: i18n("Vibration")
             description: i18n("If supported, the device will vibrate when a key is pressed")
+            KeyNavigation.up: soundOnKeypressButton
             KeyNavigation.down: autoCapitalizationButton
 
             checked: kcm.plasmaKeyboardSettings.vibrationEnabled
@@ -90,7 +93,8 @@ KCM.SimpleKCM {
         Bigscreen.SwitchDelegate {
             id: autoCapitalizationButton
             text: i18n("Auto-capitalization")
-            description: i18n("Automatically capitalize the beginning of sentences and proper nouns")
+            description: i18n("Automatically capitalize the first letter of sentences")
+            KeyNavigation.up: vibrationOnKeypressButton
             KeyNavigation.down: altCharsPopupButton
 
             checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
@@ -110,13 +114,11 @@ KCM.SimpleKCM {
             id: altCharsPopupButton
             text: i18n("Show overlay when holding a key")
             description: i18n("Long-pressing a key on a physical keyboard will show an overlay with alternate versions of the selected character, if available")
+            KeyNavigation.up: autoCapitalizationButton
             KeyNavigation.down: altCharsHoldDelayButton
 
-            checked: kcm.diacriticsPopupEnabled
-            onCheckedChanged: {
-                kcm.diacriticsPopupEnabled = checked;
-                checked = Qt.binding(() => kcm.diacriticsPopupEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled = checked
         }
 
         Bigscreen.ButtonDelegate {
@@ -124,8 +126,9 @@ KCM.SimpleKCM {
             text: i18nc("How long a key must be held before triggering an action", "Hold delay")
             description: i18n("How long a key must be held before the overlay shows")
             enabled: altCharsPopupButton.checked
+            KeyNavigation.up: altCharsPopupButton
             trailing: QQC2.Label {
-                text: i18np("%1 millisecond", "%1 milliseconds", kcm.diacriticsHoldThresholdMs)
+                text: i18np("%1 millisecond", "%1 milliseconds", kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs)
                 font.pixelSize: Bigscreen.Units.defaultFontPixelSize
                 bottomPadding: Kirigami.Units.largeSpacing
                 rightPadding: Kirigami.Units.largeSpacing
@@ -137,35 +140,30 @@ KCM.SimpleKCM {
                 title: i18nc("How long a key must be held before triggering an action", "Hold delay")
                 standardButtons: Bigscreen.Dialog.Save | Bigscreen.Dialog.Cancel
 
-                onOpened: altCharsHoldDelayField.forceActiveFocus()
+                onOpened: scaleSlider.forceActiveFocus()
                 onClosed: altCharsHoldDelayButton.forceActiveFocus()
-                onAccepted: kcm.diacriticsHoldThresholdMs = newValue
+                onAccepted: kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs = newValue
 
                 property real newValue
 
                 contentItem: Bigscreen.ButtonDelegate {
-                    Keys.onRightPressed: {
-                        scaleSlider.increase();
-                    }
-
-                    Keys.onLeftPressed: {
-                        scaleSlider.decrease()
-                    }
+                    Keys.onRightPressed: scaleSlider.increase()
+                    Keys.onLeftPressed: scaleSlider.decrease()
                     KeyNavigation.down: altCharsHoldDelayDialog.footer
 
                     contentItem: RowLayout {
                         spacing: Kirigami.Units.smallSpacing
 
                         QQC2.Slider {
-                            Layout.fillWidth: true
                             id: scaleSlider
+                            Layout.fillWidth: true
                             from: 100
                             to: 1500
                             stepSize: 100
-                            value: kcm.diacriticsHoldThresholdMs
+                            value: kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs
                             snapMode: QQC2.Slider.SnapAlways
 
-                            onValueChanged: altCharsHoldDelayDialog.newValue = value;
+                            onValueChanged: altCharsHoldDelayDialog.newValue = value
                         }
 
                         QQC2.Label {
@@ -176,12 +174,11 @@ KCM.SimpleKCM {
                     }
                 }
             }
-
         }
 
-        LocaleSelectorSidebar {
-            id: localeSelectorSidebar
-            onClosed: changeLanguagesButton.forceActiveFocus()
+        KeyboardLayoutSelectorSidebar {
+            id: layoutSelectorSidebar
+            onClosed: changeLayoutsButton.forceActiveFocus()
         }
     }
 }

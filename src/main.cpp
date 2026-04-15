@@ -7,7 +7,6 @@
 
 #include "config-plasma-keyboard.h"
 #include "inputpanelintegration.h"
-#include "layoutpathhelper.h"
 #include "logging.h"
 #include "plasmakeyboardsettings.h"
 #include <plasma_keyboard_version.h>
@@ -19,7 +18,6 @@
 #include <KLocalizedString>
 
 #include <QCommandLineParser>
-#include <QDir>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
@@ -35,10 +33,6 @@
 
 int main(int argc, char **argv)
 {
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
-
-    initLayoutsPath();
-
     QGuiApplication application(argc, argv);
 
     KLocalizedString::setApplicationDomain("plasma-keyboard");
@@ -67,7 +61,7 @@ int main(int argc, char **argv)
         aboutData.processCommandLine(&parser);
     }
 
-    if (!PLASMA_KEYBOARD_SOUND_ENABLED) {
+    if (!PLASMA_KEYBOARD_SOUNDS_ENABLED) {
         PlasmaKeyboardSettings::self()->setSoundEnabled(false);
     }
 

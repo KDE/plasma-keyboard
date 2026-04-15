@@ -54,22 +54,33 @@ KCM.SimpleKCM {
                 checked: kcm.plasmaKeyboardSettings.vibrationEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
             }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormSwitchDelegate {
+                id: characterPopupEnabled
+                text: i18n("Character popup")
+                description: i18n("Show a character popup when pressing text keys")
+
+                checked: kcm.plasmaKeyboardSettings.characterPopupEnabled
+                onCheckedChanged: kcm.plasmaKeyboardSettings.characterPopupEnabled = checked
+            }
         }
 
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
 
             FormCard.FormButtonDelegate {
-                id: languageList
-                text: i18n("Languages")
+                id: layoutList
+                text: i18n("Keyboard Layouts")
                 icon.name: 'languages'
-                onClicked: kcm.push(localePage)
+                onClicked: kcm.push(layoutPage)
 
                 Kirigami.ScrollablePage {
-                    id: localePage
-                    title: i18n("Keyboard Languages")
+                    id: layoutPage
+                    title: i18n("Keyboard Layouts")
 
-                    LocaleSelectorListView {}
+                    KeyboardLayoutSelectorListView {}
                 }
             }
         }

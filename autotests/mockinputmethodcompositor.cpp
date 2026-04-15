@@ -538,7 +538,7 @@ private Q_SLOTS:
         {
             KConfig cfg(QStringLiteral("plasmakeyboardrc"));
             KConfigGroup grp(&cfg, QStringLiteral("General"));
-            grp.writeEntry(QStringLiteral("enabledLocales"), QStringLiteral("it_IT"));
+            grp.writeEntry(QStringLiteral("enabledKeyboardLayoutIds"), QStringLiteral("org.kde.plasma.keyboard.en/mobile-qwerty"));
             grp.writeEntry(QStringLiteral("keyboardNavigationEnabled"), true);
             // Set the long press threshold to max to avoid potential flakiness in CI where timing can be unpredictable.
             grp.writeEntry(QStringLiteral("diacriticsHoldThresholdMs"), 1500);
@@ -746,6 +746,7 @@ private Q_SLOTS:
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("q"));
     }
 
+    // Verify navigation consumes its keys and Escape restores forwarding
     void testKeyboardNavigationCommitsCharacter()
     {
         if (!m_inputPanel->surface()) {
@@ -759,20 +760,102 @@ private Q_SLOTS:
 
         QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         QSignalSpy keysymSpy(m_inputMethod->context(), &InputMethodContext::keysymReceived);
+        QSignalSpy keySpy(m_inputMethod->context(), &InputMethodContext::keyReceived);
 
-        sendKey(KEY_RIGHT, 100);
         sendKey(KEY_RIGHT, 100);
         sendKey(KEY_RIGHT, 100);
         sendKey(KEY_ENTER, 100);
 
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
-        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("x"));
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("w"));
 
         for (const QList<QVariant> &args : keysymSpy) {
             const uint32_t sym = args.at(0).toUInt();
             QVERIFY2(sym != XKB_KEY_Right && sym != XKB_KEY_Return, "Keyboard navigation keys were incorrectly forwarded via keysym");
         }
+
+        sendKey(KEY_ESC, 100);
+        sendKey(KEY_ENTER, 100);
+
+        QTRY_COMPARE(commitStringSpy.count(), 2);
+        QCOMPARE(commitStringSpy.at(1).first().toString(), QStringLiteral("\r"));
+
+        bool enterForwarded = false;
+        for (const QList<QVariant> &args : keySpy) {
+            const uint32_t key = args.at(0).toUInt();
+            QVERIFY2(key != KEY_RIGHT && key != KEY_ESC, "A keyboard navigation key was incorrectly forwarded via key");
+            enterForwarded = enterForwarded || key == KEY_ENTER;
+        }
+        QVERIFY(enterForwarded);
+    }
+
+    // Verify Right continues at the start of the next row
+    void testKeyboardNavigationMovesRightToNextRow()
+    {
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+
+        for (int i = 0; i < 11; ++i) {
+            sendKey(KEY_RIGHT, 20);
+        }
+        sendKey(KEY_ENTER, 100);
+
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("a"));
+
+        sendKey(KEY_ESC, 100);
+    }
+
+    // Verify reopening the keyboard resets navigation
+    void testKeyboardNavigationResetsAfterReopen()
+    {
+        sendKey(KEY_RIGHT, 20);
+        sendKey(KEY_RIGHT, 20);
+
+        m_inputMethod->sendDeactivate();
+        wl_display_flush_clients(m_compositor->display());
+        QTest::qWait(100);
+
+        m_inputMethod->sendActivate();
+        wl_display_flush_clients(m_compositor->display());
+        QVERIFY(m_inputMethod->context());
+        if (!m_inputMethod->context()->keyboard()) {
+            QSignalSpy grabSpy(m_inputMethod->context(), &InputMethodContext::keyboardGrabbed);
+            QVERIFY(grabSpy.wait());
+        }
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        sendKey(KEY_RIGHT, 20);
+        sendKey(KEY_ENTER, 100);
+
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("q"));
+
+        sendKey(KEY_ESC, 100);
+    }
+
+    // Verify long press keeps alternate selection open
+    void testKeyboardNavigationLongPressOpensAlternativeKeys()
+    {
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+
+        sendKey(KEY_RIGHT, 20);
+        sendKey(KEY_RIGHT, 20);
+        sendKey(KEY_RIGHT, 20);
+        sendKey(KEY_ENTER, 600);
+        QTest::qWait(100);
+        QVERIFY(commitStringSpy.isEmpty());
+
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_ENTER, 100);
+
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("ë"));
+
+        sendKey(KEY_ESC, 100);
     }
 
     void testLongPressShowsOverlayPanel()
@@ -786,7 +869,7 @@ private Q_SLOTS:
         sendKey(KEY_1, 10);
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
-        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("à"));
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("á"));
     }
 
     /** Test that a short press of a key does not trigger the overlay panel and commits the expected character. */
