@@ -105,7 +105,8 @@ int main(int argc, char **argv)
         const bool initSuccessful = initInputPanelIntegration(window, InputPanelRole::Keyboard);
 
         if (!initSuccessful) {
-            QTextStream(stderr) << "Cannot run plasma-keyboard standalone. You can enable it in Plasma’s System Settings app, on the “Virtual Keyboard” page.";
+            qCCritical(PlasmaKeyboard)
+                << "Cannot run plasma-keyboard standalone. You can enable it in Plasma's System Settings app, on the “Virtual Keyboard” page.";
             exit(1);
         }
 
