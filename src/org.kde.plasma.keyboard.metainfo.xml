@@ -96,6 +96,7 @@
     <p xml:lang="lv">„Plasma“ tastatūra ir virtuāla ekrānā redzama tastatūra skārienjutīgiem ekrāniem, planšetdatoriem, pārveidojamām ierīcēm, tālruņiem un tradicionāliem datoriem bez fiziskas tastatūras.</p>
     <p xml:lang="nb">Plasma-tastatur gir et virtuelt skjermtastatur for trykkskjermer, diverse plater, konvertible enheter, telefoner og tradisjonelle datamaskiner uten et fysisk tastatur.</p>
     <p xml:lang="nl">Plasma-toetsenbord levert een virtueel toetsenbord op scherm voor aanraakschermen, tablets, om te schakelen apparaten, telefoons en traditionele computers zonder fysiek toetsenbord.</p>
+    <p xml:lang="nn">Plasma-tastaturet gjev deg eit skjerm­tastatur for bruk på trykk­skjermar, nettbrett, 2-i-1-maskiner, telefonar og tradisjonelle datamaskiner utan fysisk tastatur.</p>
     <p xml:lang="pl">Klawiatura Plazmy dostarcza wirtualnej, ekranowej klawiatury dla ekranów dotykowych, tabletów, urządzeń przekształcalnych, telefonów oraz tradycyjnych komputerów bez klawiatury fizycznej.</p>
     <p xml:lang="pt-BR">O Teclado do Plasma fornece um teclado virtual na tela para telas sensíveis ao toque, tablets, dispositivos conversíveis, telefones e computadores tradicionais sem teclado físico.</p>
     <p xml:lang="ro">Tastatura Plasma oferă o tastatură virtuală pe ecran, utilă pentru ecrane tactile, tablete, dispozitive convertibile, telefoane și calculatoare tradiționale fără tastatură fizică.</p>
@@ -128,6 +129,7 @@
       <li xml:lang="lv">Pilnīga integrācija „Plasma“ darbvirsmā un programmās</li>
       <li xml:lang="nb">Sømløs integrasjon med Plasma-arbeidsområde og programmer</li>
       <li xml:lang="nl">Naadloze integratie met de Plasma werkruimte en toepassingen</li>
+      <li xml:lang="nn">Saumlaus integrering med Plasma-arbeidsområdet og ulike program</li>
       <li xml:lang="pl">Dobrze zgrana z przestrzenią Plazmy oraz jej aplikacjami</li>
       <li xml:lang="pt-BR">Integração perfeita com o espaço de trabalho e aplicativos do Plasma</li>
       <li xml:lang="ro">Integrare perfectă cu spațiul de lucru și aplicațiile Plasma</li>
@@ -159,6 +161,7 @@
       <li xml:lang="lv">Automātiski atveras, kad jāieraksta teksts</li>
       <li xml:lang="nb">Automatisk visning når det trengs tastetrykk</li>
       <li xml:lang="nl">Automatische verschijning wanneer tekstinvoer nodig is</li>
+      <li xml:lang="nn">Dukkar automatisk opp når du kan skriva inn tekst</li>
       <li xml:lang="pl">Pojawia się sama, gdy potrzebne jest wprowadzenie tekstu</li>
       <li xml:lang="pt-BR">Aparecimento automático quando a entrada de texto é necessária</li>
       <li xml:lang="ro">Apariție automată când se cere introducerea textului</li>
@@ -190,6 +193,7 @@
       <li xml:lang="lv">Daudzu izkārtojumu un valodu atbalsts</li>
       <li xml:lang="nb">Støtte for flere oppsett og språk</li>
       <li xml:lang="nl">Ondersteuning voor meerdere indelingen en talen</li>
+      <li xml:lang="nn">Støtte for fleire tastaturoppsett og språk</li>
       <li xml:lang="pl">Obsługa wielu układów i języków</li>
       <li xml:lang="pt-BR">Suporte para vários layouts e idiomas</li>
       <li xml:lang="ro">Suport pentru aranjamente și limbi multiple</li>
@@ -221,6 +225,7 @@
       <li xml:lang="lv">Konfigurējams izmērs un uzvedība dažāda lieluma ekrāniem</li>
       <li xml:lang="nb">Sett opp størrelse og atferd for forskjellige utforminger</li>
       <li xml:lang="nl">Aanpasbare grootte en gedrag voor verschillende vormfactoren</li>
+      <li xml:lang="nn">Storleik og funksjonalitet kan tilpassast ulike utformingar</li>
       <li xml:lang="pl">Rozmiar i zachowanie jest do ustawienia w zależności od rodzaju urządzenia</li>
       <li xml:lang="pt-BR">Tamanho e comportamento configuráveis ​​para diferentes formatos</li>
       <li xml:lang="ro">Dimensiune și comportament configurabile pentru diferite tipuri de dispozitive</li>
