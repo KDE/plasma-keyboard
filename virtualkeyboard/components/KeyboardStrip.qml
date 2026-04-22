@@ -16,12 +16,59 @@ Rectangle {
     id: root
 
     property var inputEngine: VirtualKeyboard.inputEngine
+    property bool navigationModeActive: false
     readonly property real candidateHorizontalPadding: Math.round(28 * BreezeConstants.scaleHint)
+    readonly property int candidateCount: candidateView.count
+    readonly property bool hasNavigationSelection: candidateView.currentIndex >= 0
     readonly property bool hasCandidates: inputEngine && inputEngine.wordCandidateListVisibleHint
 
     visible: hasCandidates
     implicitHeight: Math.round(100 * BreezeConstants.scaleHint)
     color: BreezeConstants.selectionListBackgroundColor
+
+    function resetNavigation() {
+        candidateView.currentIndex = -1;
+    }
+
+    function ensureNavigationSelection(fromRight) {
+        if (candidateCount <= 0) {
+            candidateView.currentIndex = -1;
+            return false;
+        }
+        if (candidateView.currentIndex === -1) {
+            candidateView.currentIndex = fromRight ? candidateCount - 1 : 0;
+        }
+        candidateView.positionViewAtIndex(candidateView.currentIndex, ListView.Contain);
+        return true;
+    }
+
+    function moveSelection(delta) {
+        if (!ensureNavigationSelection(delta < 0)) {
+            return false;
+        }
+
+        const nextIndex = candidateView.currentIndex + delta;
+        if (nextIndex < 0) {
+            return false;
+        }
+        if (nextIndex >= candidateCount) {
+            return false;
+        }
+
+        candidateView.currentIndex = nextIndex;
+        candidateView.positionViewAtIndex(candidateView.currentIndex, ListView.Contain);
+        return true;
+    }
+
+    function activateCurrent() {
+        if (!ensureNavigationSelection(false)) {
+            return false;
+        }
+
+        Feedback.play(Feedback.SelectionCommit);
+        candidateView.model.selectItem(candidateView.currentIndex);
+        return true;
+    }
 
     ListView {
         id: candidateView
@@ -38,6 +85,7 @@ Rectangle {
 
             width: Math.round(candidateLabel.implicitWidth + root.candidateHorizontalPadding * 2)
             height: candidateView.height
+            readonly property bool navigationActive: root.navigationModeActive && candidateView.currentIndex === index
             readonly property bool pressed: candidateTapHandler.pressed
 
             Rectangle {
@@ -46,7 +94,7 @@ Rectangle {
                     // Avoid separator
                     leftMargin: index > 0 ? Math.round(4 * BreezeConstants.scaleHint) : 0
                 }
-                color: pressed ? BreezeConstants.popupHighlightColor : "transparent"
+                color: (navigationActive || pressed) ? BreezeConstants.popupHighlightColor : "transparent"
             }
 
             QQC2.Label {
@@ -56,9 +104,9 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 text: display
                 color: BreezeConstants.selectionListTextColor
-                opacity: pressed ? 1 : 0.9
+                opacity: navigationActive || pressed ? 1 : 0.9
                 font.family: BreezeConstants.fontFamily
-                font.weight: pressed ? Font.Medium : Font.Light
+                font.weight: navigationActive || pressed ? Font.Medium : Font.Light
                 font.pixelSize: Math.round(44 * BreezeConstants.scaleHint)
             }
 

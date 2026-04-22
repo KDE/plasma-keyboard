@@ -44,6 +44,10 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     WaylandClient
 )
 
+if(PLASMA_KEYBOARD_SOUNDS_ENABLED)
+    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
+endif()
+
 if(Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
     find_package(Qt6GuiPrivate ${QT_MIN_VERSION} REQUIRED NO_MODULE)
     find_package(Qt6WaylandClientPrivate ${QT_MIN_VERSION} REQUIRED NO_MODULE)
@@ -69,8 +73,10 @@ ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX PLASMA_KEYBOARD VERSION_HEA
 find_package(Wayland 1.2 REQUIRED COMPONENTS Client)
 find_package(QtWaylandScanner REQUIRED ${QT_MIN_VERSION})
 find_package(WaylandProtocols 1.19 REQUIRED)
+find_package(PlasmaWaylandProtocols REQUIRED)
 
 add_subdirectory(virtualkeyboard)
+add_subdirectory(layouts)
 add_subdirectory(kcm)
 add_subdirectory(src)
 if(BUILD_TESTING)

@@ -26,7 +26,7 @@ KCM.SimpleKCM {
 
     onActiveFocusChanged: {
         if (activeFocus) {
-            changeLanguagesButton.forceActiveFocus()
+            changeLayoutsButton.forceActiveFocus()
         }
     }
 
@@ -36,9 +36,9 @@ KCM.SimpleKCM {
         spacing: 0
 
         Bigscreen.ButtonDelegate {
-            id: changeLanguagesButton
-            text: i18n("Languages")
-            onClicked: localeSelectorSidebar.open()
+            id: changeLayoutsButton
+            text: i18n("Keyboard Layouts")
+            onClicked: layoutSelectorSidebar.open()
             KeyNavigation.down: soundOnKeypressButton
         }
 
@@ -54,7 +54,7 @@ KCM.SimpleKCM {
         Bigscreen.SwitchDelegate {
             id: soundOnKeypressButton
             text: "Sound"
-            KeyNavigation.up: changeLanguagesButton
+            KeyNavigation.up: changeLayoutsButton
             KeyNavigation.down: vibrationOnKeypressButton
 
             checked: kcm.soundEnabled
@@ -68,7 +68,6 @@ KCM.SimpleKCM {
             id: vibrationOnKeypressButton
             text: "Vibration"
             KeyNavigation.up: soundOnKeypressButton
-            KeyNavigation.down: autoCapitalizationButton
 
             checked: kcm.vibrationEnabled
             onCheckedChanged: {
@@ -86,21 +85,9 @@ KCM.SimpleKCM {
             Layout.bottomMargin: Kirigami.Units.smallSpacing
         }
 
-        Bigscreen.SwitchDelegate {
-            id: autoCapitalizationButton
-            text: i18n("Auto-capitalization")
-            KeyNavigation.up: vibrationOnKeypressButton
-
-            checked: kcm.autoCapitalizationEnabled
-            onCheckedChanged: {
-                kcm.autoCapitalizationEnabled = checked;
-                checked = Qt.binding(() => kcm.autoCapitalizationEnabled);
-            }
-        }
-
-        LocaleSelectorSidebar {
-            id: localeSelectorSidebar
-            onClosed: changeLanguagesButton.forceActiveFocus()
+        KeyboardLayoutSelectorSidebar {
+            id: layoutSelectorSidebar
+            onClosed: changeLayoutsButton.forceActiveFocus()
         }
     }
 }

@@ -8,8 +8,18 @@ kcmutils_add_qml_kcm(kcm_plasmakeyboard)
 kconfig_add_kcfg_files(kcm_plasmakeyboard GENERATE_MOC ../src/plasmakeyboardsettings.kcfgc)
 
 target_sources(kcm_plasmakeyboard PRIVATE
+    ../virtualkeyboard/keyboardlayoutmetadata.cpp
+    ../virtualkeyboard/keyboardlayoutmetadata.h
+    keyboardlayoutgroupmodel.cpp
+    keyboardlayoutgroupmodel.h
+    keyboardlayoutmodel.cpp
+    keyboardlayoutmodel.h
     plasmakeyboardkcm.cpp
     plasmakeyboardkcm.h
+)
+
+target_include_directories(kcm_plasmakeyboard PRIVATE
+    ${CMAKE_SOURCE_DIR}/virtualkeyboard
 )
 
 target_link_libraries(kcm_plasmakeyboard PRIVATE

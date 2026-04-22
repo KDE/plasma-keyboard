@@ -10,7 +10,10 @@
 #include "overlaytrigger.h"
 
 #include <QHash>
+#include <QStringList>
 #include <QTimer>
+
+class InputEngine;
 
 /**
  * Trigger that activates an overlay after a long-press on a key.
@@ -23,7 +26,7 @@ class LongPressTrigger : public OverlayTrigger
     Q_OBJECT
 
 public:
-    explicit LongPressTrigger(QObject *parent = nullptr);
+    explicit LongPressTrigger(InputEngine *inputEngine, QObject *parent = nullptr);
     ~LongPressTrigger() override = default;
 
     QString triggerId() const override;
@@ -66,6 +69,9 @@ private:
      * Checks if the key event should be considered for long-press diacritics.
      */
     bool shouldHandleKey(const QKeyEvent *event) const;
+    QStringList currentLocales() const;
+
+    InputEngine *m_inputEngine = nullptr;
 
     /** Map of base characters to their diacritic variants. */
     QHash<QChar, QStringList> m_diacriticsMap;

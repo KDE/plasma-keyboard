@@ -12,15 +12,16 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard.virtualkeyboard
 
-// Popup for language selection.
-
 QQC2.Popup {
     id: root
 
     property Item keyboardPanel
     property var keyboardController: VirtualKeyboard.keyboardController
     readonly property bool popupVisible: visible
+    readonly property int itemCount: languageListView.count
     property int currentIndex: languageListView.currentIndex
+    readonly property string currentLayoutId: (currentIndex >= 0 && keyboardController && currentIndex < keyboardController.activeLayoutIds.length)
+        ? keyboardController.activeLayoutIds[currentIndex] : ""
 
     signal showSettings()
 
@@ -57,6 +58,31 @@ QQC2.Popup {
         open();
     }
 
+    function moveSelection(delta) {
+        if (itemCount <= 0) {
+            return false;
+        }
+
+        const nextIndex = Math.max(0, Math.min(itemCount - 1, currentIndex + delta));
+        if (nextIndex === currentIndex) {
+            return false;
+        }
+
+        currentIndex = nextIndex;
+        languageListView.positionViewAtIndex(currentIndex, ListView.Contain);
+        return true;
+    }
+
+    function activateCurrent() {
+        if (!keyboardController || currentIndex < 0 || currentIndex >= keyboardController.activeLayoutIds.length) {
+            return false;
+        }
+
+        keyboardController.setCurrentLayout(keyboardController.activeLayoutIds[currentIndex]);
+        close();
+        return true;
+    }
+
     contentItem: ListView {
         id: languageListView
         footerPositioning: ListView.OverlayFooter
@@ -71,9 +97,10 @@ QQC2.Popup {
 
         delegate: QQC2.ItemDelegate {
             required property string modelData
+            property bool navigationActive: root.currentLayoutId === modelData
 
             width: languageListView.width
-            highlighted: root.keyboardController && root.keyboardController.layoutId === modelData
+            highlighted: root.keyboardController && (root.keyboardController.layoutId === modelData || navigationActive)
             leftPadding: languageListView.rowPadding
             rightPadding: languageListView.rowPadding
             topPadding: languageListView.rowPadding

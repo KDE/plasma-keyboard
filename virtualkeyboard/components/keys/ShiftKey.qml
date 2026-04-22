@@ -42,6 +42,30 @@ ActionKey {
         }
     }
 
+    Connections {
+        target: VirtualKeyboard.inputEngine
+
+        function onPressedKeysChanged() {
+            if (!sendDirectKeyEvents || !VirtualKeyboard.inputEngine) {
+                return;
+            }
+            if (VirtualKeyboard.inputEngine.capsLockActive || !VirtualKeyboard.inputEngine.shiftActive) {
+                return;
+            }
+
+            const pressedKeys = VirtualKeyboard.inputEngine.pressedKeys;
+            const shiftPressed = pressedKeys.indexOf(Qt.Key_Shift) !== -1;
+            if (!shiftPressed) {
+                VirtualKeyboard.inputEngine.shiftActive = false;
+                return;
+            }
+
+            if (pressedKeys.length === 1 && pressedKeys[0] === Qt.Key_Shift) {
+                return;
+            }
+        }
+    }
+
     onClicked: {
         if (!VirtualKeyboard.inputEngine) {
             return;

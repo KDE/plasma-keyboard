@@ -8,23 +8,35 @@ configure_file(config-plasma-keyboard.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config
 
 add_executable(plasma-keyboard)
 
+if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
+    set(private_code_option PRIVATE_CODE)
+endif()
+
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/input-method/input-method-unstable-v1.xml BASENAME input-method-unstable-v1)
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL ${WaylandProtocols_DATADIR}/unstable/text-input/text-input-unstable-v1.xml BASENAME text-input-unstable-v1)
 ecm_add_qtwayland_client_protocol(plasma-keyboard PROTOCOL "${Wayland_DATADIR}/wayland.xml" BASENAME wayland)
+qt6_generate_wayland_protocol_client_sources(plasma-keyboard FILES ${PLASMA_WAYLAND_PROTOCOLS_DIR}/fake-input.xml ${private_code_option})
 
 target_sources(plasma-keyboard PRIVATE
+    feedback.cpp
+    feedback.h
+    keycodes.h
+    kwinfakeinput.cpp
+    kwinfakeinput.h
     main.cpp
     inputpanelintegration.cpp
     inputpanelintegration.h
     inputpanelrole.h
-    inputlisteneritem.cpp
-    inputlisteneritem.h
+    inputmethodconnection.cpp
+    inputmethodconnection.h
     inputmethod.cpp
     inputmethod_p.h
     inputpanelwindow.cpp
     inputpanelwindow.h
     inputplugin.cpp
     inputplugin.h
+    vkbdwaylandinputbackend.cpp
+    vkbdwaylandinputbackend.h
     qwaylandinputpanelshellintegration.cpp
     qwaylandinputpanelshellintegration_p.h
     qwaylandinputpanelsurface.cpp
@@ -52,14 +64,12 @@ if(PLASMA_KEYBOARD_VIBRATION_ENABLED)
         dbus/org.sigxcpu.Feedback.Haptic.xml)
 
     target_sources(plasma-keyboard PRIVATE
-        vibration.cpp
-        vibration.h
         vibrationevent.h
         ${dbusinterface_SRCS}
     )
 endif()
 
-if(PLASMA_KEYBOARD_SOUND_ENABLED)
+if(PLASMA_KEYBOARD_SOUNDS_ENABLED)
     target_sources(plasma-keyboard PRIVATE
         soundresources.qrc
     )
@@ -82,8 +92,7 @@ ecm_add_qml_module(plasma-keyboard
 
 ecm_target_qml_sources(plasma-keyboard SOURCES
     qml/main.qml
-    qml/LanguagePopup.qml
-    qml/LanguagePopupDelegate.qml
+    qml/KeyboardPanel.qml
     qml/DiacriticsOverlay.qml
     qml/OverlayWindow.qml
 )
@@ -110,19 +119,22 @@ target_link_libraries(plasma-keyboard
     Qt::DBus
     Qt::Gui
     Qt::GuiPrivate
-    Qt::VirtualKeyboard
     Qt::WaylandClient
     Qt::WaylandClientPrivate
     Wayland::Client
+    plasma-keyboard-virtualkeyboard
+    plasma-keyboard-virtualkeyboardplugin
 )
+
+qt6_import_qml_plugins(plasma-keyboard)
+
+if(PLASMA_KEYBOARD_SOUNDS_ENABLED)
+    target_link_libraries(plasma-keyboard PRIVATE Qt::Multimedia)
+endif()
 
 install(TARGETS plasma-keyboard ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.plasma.keyboard.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
-add_subdirectory(styles)
-add_subdirectory(qmlplugin)
-
-install(DIRECTORY layouts DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
 install(DIRECTORY overlay/diacritics DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
 
 install(

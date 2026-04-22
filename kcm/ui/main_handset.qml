@@ -66,16 +66,16 @@ KCM.SimpleKCM {
             Layout.topMargin: Kirigami.Units.largeSpacing
 
             FormCard.FormButtonDelegate {
-                id: languageList
-                text: i18n("Languages")
+                id: layoutList
+                text: i18n("Keyboard Layouts")
                 icon.name: 'languages'
-                onClicked: kcm.push(localePage)
+                onClicked: kcm.push(layoutPage)
 
                 Kirigami.ScrollablePage {
-                    id: localePage
-                    title: i18n("Keyboard Languages")
+                    id: layoutPage
+                    title: i18n("Keyboard Layouts")
 
-                    LocaleSelectorListView {}
+                    KeyboardLayoutSelectorListView {}
                 }
             }
         }
@@ -94,20 +94,6 @@ KCM.SimpleKCM {
                 onCheckedChanged: {
                     kcm.keyboardNavigationEnabled = checked;
                     checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
-                }
-            }
-
-            FormCard.FormDelegateSeparator {}
-
-            FormCard.FormSwitchDelegate {
-                id: autoCapitalizationEnabled
-                text: i18n("Auto-capitalization")
-                description: i18n("Automatically capitalize the first letter of sentences")
-
-                checked: kcm.autoCapitalizationEnabled
-                onCheckedChanged: {
-                    kcm.autoCapitalizationEnabled = checked;
-                    checked = Qt.binding(() => kcm.autoCapitalizationEnabled)
                 }
             }
         }

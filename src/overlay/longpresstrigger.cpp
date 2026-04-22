@@ -7,6 +7,7 @@
 #include "longpresstrigger.h"
 
 #include "diacriticsdataloader.h"
+#include "inputengine.h"
 #include "logging.h"
 #include "plasmakeyboardsettings.h"
 
@@ -14,15 +15,15 @@
 
 using namespace Qt::StringLiterals;
 
-LongPressTrigger::LongPressTrigger(QObject *parent)
+LongPressTrigger::LongPressTrigger(InputEngine *inputEngine, QObject *parent)
     : OverlayTrigger(parent)
+    , m_inputEngine(inputEngine)
 {
-    m_diacriticsMap = DiacriticsDataLoader::loadMap(PlasmaKeyboardSettings::self()->enabledLocales());
+    m_diacriticsMap = DiacriticsDataLoader::loadMap(currentLocales());
 
-    // Reload the diacritics map whenever the user changes the enabled locales
-    // in the KCM, so the keyboard reflects the new locale ordering without
-    // requiring a restart.
-    connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::enabledLocalesChanged, this, &LongPressTrigger::reloadMap);
+    if (m_inputEngine) {
+        connect(m_inputEngine, &InputEngine::localeChanged, this, &LongPressTrigger::reloadMap);
+    }
 
     m_holdThresholdMs = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
 }
@@ -39,8 +40,8 @@ QString LongPressTrigger::displayName() const
 
 void LongPressTrigger::reloadMap()
 {
-    m_diacriticsMap = DiacriticsDataLoader::loadMap(PlasmaKeyboardSettings::self()->enabledLocales());
-    qCDebug(PlasmaKeyboard) << "LongPressTrigger: Diacritics map reloaded for locales" << PlasmaKeyboardSettings::self()->enabledLocales();
+    m_diacriticsMap = DiacriticsDataLoader::loadMap(currentLocales());
+    qCDebug(PlasmaKeyboard) << "LongPressTrigger: Diacritics map reloaded for locales" << currentLocales();
 }
 
 // clang-format off
@@ -174,6 +175,15 @@ bool LongPressTrigger::shouldHandleKey(const QKeyEvent *event) const
     // Check if we have diacritics for this character
     const QChar baseChar = event->text().at(0).toLower();
     return m_diacriticsMap.contains(baseChar);
+}
+
+QStringList LongPressTrigger::currentLocales() const
+{
+    if (!m_inputEngine || m_inputEngine->locale().isEmpty()) {
+        return {};
+    }
+
+    return {m_inputEngine->locale()};
 }
 
 #include "moc_longpresstrigger.cpp"

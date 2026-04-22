@@ -29,7 +29,13 @@ ActionKey {
     readonly property string __currentInputMode: textComposer ? textComposer.inputMode : ""
     readonly property var __modes: (modes || [])
         .map(function(mode) {
-            return { value: mode, label: mode };
+            if (typeof mode === "string") {
+                return { value: mode, label: mode };
+            }
+            return {
+                value: mode.value ?? "",
+                label: mode.label ?? mode.value ?? ""
+            };
         })
         .filter(function(mode) {
             return mode.value.length > 0;
@@ -41,7 +47,7 @@ ActionKey {
     readonly property var __nextMode: __modes.length === 0 ? null : __modes[(__currentIndex + 1) % __modes.length]
     readonly property var __displayedMode: showNextMode ? __nextMode : __currentMode
 
-    displayText: __displayedMode ? __displayedMode.label : ""
+    displayText: __displayedMode ? __displayedMode.label : "Mode"
     functionKey: true
     secondaryStyle: true
 

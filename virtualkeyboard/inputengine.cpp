@@ -11,6 +11,19 @@
 
 #include <QLocale>
 
+static bool isNonShiftModifierKey(int key)
+{
+    switch (key) {
+    case Qt::Key_Control:
+    case Qt::Key_Alt:
+    case Qt::Key_Meta:
+    case Qt::Key_AltGr:
+        return true;
+    default:
+        return false;
+    }
+}
+
 InputEngine::InputEngine(InputBackend *backend, QObject *parent)
     : QObject(parent)
     , m_backend(backend)
@@ -94,7 +107,20 @@ void InputEngine::setCapsLockActive(bool active)
 
 bool InputEngine::uppercase() const
 {
-    return m_shiftActive || m_capsLockActive;
+    if (m_capsLockActive) {
+        return true;
+    }
+    if (!m_shiftActive) {
+        return false;
+    }
+
+    for (const int key : m_backend->pressedKeys()) {
+        if (isNonShiftModifierKey(key)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 QString InputEngine::preeditText() const
@@ -225,11 +251,7 @@ bool InputEngine::sendTextComposerKey(int key, const QString &text)
 
 bool InputEngine::sendDirectKey(int key, bool pressed)
 {
-    if (!m_backend->sendKeyPressed(key, pressed)) {
-        return false;
-    }
-
-    return true;
+    return m_backend->sendKeyPressed(key, pressed);
 }
 
 bool InputEngine::isKeyPressed(int key) const
@@ -321,6 +343,7 @@ void InputEngine::connectBackend()
     });
     connect(m_backend, &InputBackend::pressedKeysChanged, this, [this] {
         Q_EMIT pressedKeysChanged();
+        Q_EMIT uppercaseChanged();
     });
     connect(m_backend, &InputBackend::activeChanged, this, [this] {
         Q_EMIT surroundingTextChanged();

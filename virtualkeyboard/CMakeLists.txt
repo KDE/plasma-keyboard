@@ -73,6 +73,7 @@ ecm_target_qml_sources(keyboardvirtualkeyboardcomponents SOURCES
     components/AlternativeKeysPopup.qml
     components/FlickPreviewPopup.qml
     components/Keyboard.qml
+    components/KeyboardNavigation.qml
     components/KeyboardStrip.qml
     components/KeyboardColumn.qml
     components/KeyboardLayoutLoader.qml

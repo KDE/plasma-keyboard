@@ -7,10 +7,13 @@
 
 #include "plasmakeyboardkcm.h"
 
+#include <KRuntimePlatform>
+
 K_PLUGIN_CLASS_WITH_JSON(PlasmaKeyboardKcm, "kcm_plasmakeyboard.json")
 
 PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData)
     : KQuickManagedConfigModule(parent, metaData)
+    , m_availableKeyboardLayoutGroups(new KeyboardLayoutGroupModel(this))
 {
     // clang-format off
     qmlRegisterSingletonInstance<PlasmaKeyboardSettings>(
@@ -22,6 +25,7 @@ PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &met
     );
     // clang-format on
 
+    refreshAvailableKeyboardLayoutFilter();
     load();
 }
 
@@ -59,31 +63,59 @@ void PlasmaKeyboardKcm::setVibrationEnabled(bool vibrationEnabled)
     setNeedsSave(true);
 }
 
-QStringList PlasmaKeyboardKcm::enabledLocales() const
+QStringList PlasmaKeyboardKcm::enabledKeyboardLayoutIds() const
 {
-    return m_enabledLocales;
+    return m_enabledKeyboardLayoutIds;
 }
 
-void PlasmaKeyboardKcm::enableLocale(const QString &locale)
+QAbstractItemModel *PlasmaKeyboardKcm::availableKeyboardLayouts() const
 {
-    if (m_enabledLocales.contains(locale)) {
+    return m_availableKeyboardLayoutGroups->layouts();
+}
+
+QAbstractItemModel *PlasmaKeyboardKcm::availableKeyboardLayoutGroups() const
+{
+    return m_availableKeyboardLayoutGroups;
+}
+
+bool PlasmaKeyboardKcm::keyboardLayoutFormFactorFilterEnabled() const
+{
+    return m_keyboardLayoutFormFactorFilterEnabled;
+}
+
+void PlasmaKeyboardKcm::setKeyboardLayoutFormFactorFilterEnabled(bool enabled)
+{
+    if (enabled == m_keyboardLayoutFormFactorFilterEnabled) {
         return;
     }
 
-    m_enabledLocales.append(locale);
-    Q_EMIT enabledLocalesChanged();
+    m_keyboardLayoutFormFactorFilterEnabled = enabled;
+    Q_EMIT keyboardLayoutFormFactorFilterEnabledChanged();
+    refreshAvailableKeyboardLayoutFilter();
+}
+
+void PlasmaKeyboardKcm::enableKeyboardLayout(const QString &layoutId)
+{
+    if (m_enabledKeyboardLayoutIds.contains(layoutId)) {
+        return;
+    }
+
+    m_enabledKeyboardLayoutIds.append(layoutId);
+    m_availableKeyboardLayoutGroups->setEnabledLayoutIds(m_enabledKeyboardLayoutIds);
+    Q_EMIT enabledKeyboardLayoutIdsChanged();
 
     setNeedsSave(true);
 }
 
-void PlasmaKeyboardKcm::disableLocale(const QString &locale)
+void PlasmaKeyboardKcm::disableKeyboardLayout(const QString &layoutId)
 {
-    if (!m_enabledLocales.contains(locale)) {
+    if (!m_enabledKeyboardLayoutIds.contains(layoutId)) {
         return;
     }
 
-    m_enabledLocales.removeAll(locale);
-    Q_EMIT enabledLocalesChanged();
+    m_enabledKeyboardLayoutIds.removeAll(layoutId);
+    m_availableKeyboardLayoutGroups->setEnabledLayoutIds(m_enabledKeyboardLayoutIds);
+    Q_EMIT enabledKeyboardLayoutIdsChanged();
 
     setNeedsSave(true);
 }
@@ -101,23 +133,6 @@ void PlasmaKeyboardKcm::setKeyboardNavigationEnabled(bool keyboardNavigationEnab
 
     m_keyboardNavigationEnabled = keyboardNavigationEnabled;
     Q_EMIT keyboardNavigationEnabledChanged();
-
-    setNeedsSave(true);
-}
-
-bool PlasmaKeyboardKcm::autoCapitalizationEnabled() const
-{
-    return m_autoCapitalizationEnabled;
-}
-
-void PlasmaKeyboardKcm::setAutoCapitalizationEnabled(bool autoCapitalizationEnabled)
-{
-    if (autoCapitalizationEnabled == m_autoCapitalizationEnabled) {
-        return;
-    }
-
-    m_autoCapitalizationEnabled = autoCapitalizationEnabled;
-    Q_EMIT autoCapitalizationEnabledChanged();
 
     setNeedsSave(true);
 }
@@ -156,20 +171,26 @@ void PlasmaKeyboardKcm::setDiacriticsHoldThresholdMs(int thresholdMs)
     setNeedsSave(true);
 }
 
-bool PlasmaKeyboardKcm::isSaveNeeded() const
-{
-    return m_saveNeeded;
-}
-
 void PlasmaKeyboardKcm::load()
 {
     setSoundEnabled(PlasmaKeyboardSettings::self()->soundEnabled());
     setVibrationEnabled(PlasmaKeyboardSettings::self()->vibrationEnabled());
 
-    m_enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
-    Q_EMIT enabledLocalesChanged();
+    m_enabledKeyboardLayoutIds = PlasmaKeyboardSettings::self()->enabledKeyboardLayoutIds();
+    if (m_enabledKeyboardLayoutIds.isEmpty()) {
+        KeyboardLayoutGroupModel availableKeyboardLayouts;
+        availableKeyboardLayouts.loadInstalledGroups();
+        const QStringList enabledLocales = PlasmaKeyboardSettings::self()->enabledLocales();
+        for (const auto &locale : enabledLocales) {
+            const QString layoutId = availableKeyboardLayouts.layoutForLocale(locale);
+            if (!layoutId.isEmpty() && !m_enabledKeyboardLayoutIds.contains(layoutId)) {
+                m_enabledKeyboardLayoutIds.append(layoutId);
+            }
+        }
+    }
+    m_availableKeyboardLayoutGroups->setEnabledLayoutIds(m_enabledKeyboardLayoutIds);
+    Q_EMIT enabledKeyboardLayoutIdsChanged();
     setKeyboardNavigationEnabled(PlasmaKeyboardSettings::self()->keyboardNavigationEnabled());
-    setAutoCapitalizationEnabled(PlasmaKeyboardSettings::self()->autoCapitalizationEnabled());
     setDiacriticsPopupEnabled(PlasmaKeyboardSettings::self()->diacriticsPopupEnabled());
     setDiacriticsHoldThresholdMs(PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs());
 
@@ -180,14 +201,27 @@ void PlasmaKeyboardKcm::save()
 {
     PlasmaKeyboardSettings::self()->setSoundEnabled(m_soundEnabled);
     PlasmaKeyboardSettings::self()->setVibrationEnabled(m_vibrationEnabled);
-    PlasmaKeyboardSettings::self()->setEnabledLocales(m_enabledLocales);
+    PlasmaKeyboardSettings::self()->setEnabledKeyboardLayoutIds(m_enabledKeyboardLayoutIds);
+    PlasmaKeyboardSettings::self()->setEnabledLocales({});
     PlasmaKeyboardSettings::self()->setKeyboardNavigationEnabled(m_keyboardNavigationEnabled);
-    PlasmaKeyboardSettings::self()->setAutoCapitalizationEnabled(m_autoCapitalizationEnabled);
     PlasmaKeyboardSettings::self()->setDiacriticsPopupEnabled(m_diacriticsPopupEnabled);
     PlasmaKeyboardSettings::self()->setDiacriticsHoldThresholdMs(m_diacriticsHoldThresholdMs);
     PlasmaKeyboardSettings::self()->save();
 
     setNeedsSave(false);
+}
+
+void PlasmaKeyboardKcm::refreshAvailableKeyboardLayoutFilter()
+{
+    QStringList formFactorFilter;
+    if (keyboardLayoutFormFactorFilterEnabled()) {
+        formFactorFilter = KRuntimePlatform::runtimePlatform();
+        formFactorFilter.removeAll(QString());
+        if (formFactorFilter.isEmpty()) {
+            formFactorFilter = {QStringLiteral("desktop")};
+        }
+    }
+    m_availableKeyboardLayoutGroups->setFormFactorFilter(formFactorFilter);
 }
 
 #include "plasmakeyboardkcm.moc"

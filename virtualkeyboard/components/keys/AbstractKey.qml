@@ -1,4 +1,5 @@
-// SPDX-FileCopyrightText: 2025-2026 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2026 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
@@ -9,7 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard
 import org.kde.plasma.keyboard.virtualkeyboard
 
-// Base key on the keyboard.
+// Base visual component shared by all keyboard keys.
 
 Item {
     id: root
@@ -27,18 +28,20 @@ Item {
     property string iconName: ""
 
     /**
-     * Relative width hint used by the layout row for horizontal space.
+     * Relative width hint used by the layout row when distributing space.
      */
     property real weight: parent && parent.defaultKeyWeight !== undefined ? parent.defaultKeyWeight : 100
 
     /**
      * Text shown on the key face.
-     * This can differ from what text is actually committed (see `text`).
+     * This can differ from text when a key should display a label that is
+     * different from the committed text.
      */
     property string displayText: text
 
     /**
      * Small label shown in the corner of the key.
+     * If empty, no small corner label is shown.
      */
     property string smallText: ""
 
@@ -75,7 +78,7 @@ Item {
     property bool pressedVisual: false
 
     /**
-     * Whether to ignore modifiers (ex. shift and capslock).
+     * Prevents shift and caps state from changing the displayed text.
      */
     property bool noModifier: false
 
@@ -93,6 +96,11 @@ Item {
      * Requests the selected key visual treatment.
      */
     property bool highlighted: false
+
+    /**
+     * Whether the key shows a keyboard navigation highlight.
+     */
+    property bool navigationActive: false
 
     /**
      * Marks this key as a function key for styling and preview behavior.
@@ -140,6 +148,10 @@ Item {
         clicked();
     }
 
+    function triggerByNavigation() {
+        trigger();
+    }
+
     function playPressFeedback() {
         Feedback.play(Feedback.Press);
     }
@@ -167,6 +179,15 @@ Item {
                 shadow.color: Qt.rgba(0, 0, 0, 0.2)
                 shadow.size: 3
                 shadow.yOffset: 1
+            }
+
+            Rectangle {
+                anchors.fill: parent
+                visible: root.navigationActive
+                color: BreezeConstants.navigationHighlightColor
+                border.width: 3
+                border.color: BreezeConstants.navigationHighlightBorderColor
+                radius: BreezeConstants.buttonRadius + border.width
             }
 
             QQC2.Label {

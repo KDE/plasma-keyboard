@@ -7,18 +7,25 @@
 
 #pragma once
 
+#include <KPluginMetaData>
 #include <KQuickManagedConfigModule>
 
+#include "keyboardlayoutgroupmodel.h"
 #include "plasmakeyboardsettings.h"
+
+class QAbstractItemModel;
 
 class PlasmaKeyboardKcm : public KQuickManagedConfigModule
 {
     Q_OBJECT
     Q_PROPERTY(bool soundEnabled READ soundEnabled WRITE setSoundEnabled NOTIFY soundEnabledChanged)
     Q_PROPERTY(bool vibrationEnabled READ vibrationEnabled WRITE setVibrationEnabled NOTIFY vibrationEnabledChanged)
-    Q_PROPERTY(QStringList enabledLocales READ enabledLocales NOTIFY enabledLocalesChanged)
+    Q_PROPERTY(QStringList enabledKeyboardLayoutIds READ enabledKeyboardLayoutIds NOTIFY enabledKeyboardLayoutIdsChanged)
+    Q_PROPERTY(QAbstractItemModel *availableKeyboardLayouts READ availableKeyboardLayouts CONSTANT)
+    Q_PROPERTY(QAbstractItemModel *availableKeyboardLayoutGroups READ availableKeyboardLayoutGroups CONSTANT)
+    Q_PROPERTY(bool keyboardLayoutFormFactorFilterEnabled READ keyboardLayoutFormFactorFilterEnabled WRITE setKeyboardLayoutFormFactorFilterEnabled NOTIFY
+                   keyboardLayoutFormFactorFilterEnabledChanged)
     Q_PROPERTY(bool keyboardNavigationEnabled READ keyboardNavigationEnabled WRITE setKeyboardNavigationEnabled NOTIFY keyboardNavigationEnabledChanged)
-    Q_PROPERTY(bool autoCapitalizationEnabled READ autoCapitalizationEnabled WRITE setAutoCapitalizationEnabled NOTIFY autoCapitalizationEnabledChanged)
     Q_PROPERTY(bool diacriticsPopupEnabled READ diacriticsPopupEnabled WRITE setDiacriticsPopupEnabled NOTIFY diacriticsPopupEnabledChanged)
     Q_PROPERTY(int diacriticsHoldThresholdMs READ diacriticsHoldThresholdMs WRITE setDiacriticsHoldThresholdMs NOTIFY diacriticsHoldThresholdMsChanged)
 
@@ -31,24 +38,23 @@ public:
     bool vibrationEnabled() const;
     void setVibrationEnabled(bool vibrationEnabled);
 
-    QStringList enabledLocales() const;
+    QStringList enabledKeyboardLayoutIds() const;
+    QAbstractItemModel *availableKeyboardLayouts() const;
+    QAbstractItemModel *availableKeyboardLayoutGroups() const;
+    bool keyboardLayoutFormFactorFilterEnabled() const;
+    void setKeyboardLayoutFormFactorFilterEnabled(bool enabled);
 
-    Q_INVOKABLE void enableLocale(const QString &locale);
-    Q_INVOKABLE void disableLocale(const QString &locale);
+    Q_INVOKABLE void enableKeyboardLayout(const QString &layoutId);
+    Q_INVOKABLE void disableKeyboardLayout(const QString &layoutId);
 
     bool keyboardNavigationEnabled() const;
     void setKeyboardNavigationEnabled(bool keyboardNavigationEnabled);
-
-    bool autoCapitalizationEnabled() const;
-    void setAutoCapitalizationEnabled(bool autoCapitalizationEnabled);
 
     bool diacriticsPopupEnabled() const;
     void setDiacriticsPopupEnabled(bool enabled);
 
     int diacriticsHoldThresholdMs() const;
     void setDiacriticsHoldThresholdMs(int thresholdMs);
-
-    bool isSaveNeeded() const override;
 
 public Q_SLOTS:
     void load() override;
@@ -57,23 +63,22 @@ public Q_SLOTS:
 Q_SIGNALS:
     void soundEnabledChanged();
     void vibrationEnabledChanged();
-    void enabledLocalesChanged();
+    void enabledKeyboardLayoutIdsChanged();
+    void keyboardLayoutFormFactorFilterEnabledChanged();
     void keyboardNavigationEnabledChanged();
-    void autoCapitalizationEnabledChanged();
     void diacriticsPopupEnabledChanged();
     void diacriticsHoldThresholdMsChanged();
 
 private:
+    void refreshAvailableKeyboardLayoutFilter();
+
     bool m_soundEnabled = false;
     bool m_vibrationEnabled = true;
+    bool m_keyboardLayoutFormFactorFilterEnabled = true;
     bool m_keyboardNavigationEnabled = false;
-    bool m_autoCapitalizationEnabled = true;
     bool m_diacriticsPopupEnabled = true;
     int m_diacriticsHoldThresholdMs = 100;
 
-    bool m_saveNeeded = false;
-
-    QStringList m_enabledLocales;
-
-    PlasmaKeyboardSettings *m_settings = nullptr;
+    QStringList m_enabledKeyboardLayoutIds;
+    KeyboardLayoutGroupModel *m_availableKeyboardLayoutGroups = nullptr;
 };

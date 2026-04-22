@@ -5,9 +5,9 @@
 
 # Plasma Keyboard
 
-The plasma-keyboard is a virtual keyboard based on [Qt Virtual Keyboard](https://doc.qt.io/qt-6/qtvirtualkeyboard-overview.html) designed to integrate in Plasma.
+The plasma-keyboard is a virtual keyboard and input engine designed to integrate in Plasma.
 
-It wraps Qt Virtual Keyboard in a window, and uses the input-method-v1 Wayland protocol to communicate with the compositor to function as an input method.
+It uses the input-method-v1 Wayland protocol to communicate with the compositor to function as an input method. It also can leverage KWin's fake-input protocol in order to emulate keyboard keys (ex. Meta, Ctrl).
 
 ## Build and install
 
@@ -25,13 +25,20 @@ See also: https://userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps
 
 ## Layouts
 
-The keyboard layouts are located in the [src/layouts](/src/layouts) folder.
+The keyboard layouts are located in the [layouts](/layouts) folder.
 
-They are forked from Qt's [layouts](https://github.com/qt/qtvirtualkeyboard/tree/dev/src/layouts), with modifications that we want for Plasma. Please view the official [Qt documentation](https://doc.qt.io/qt-6/qtvirtualkeyboard-overview.html#adding-new-keyboard-layouts) for a guide on how to create and modify keyboard layouts.
+See the existing layouts there for examples on creating layout packages. They are installed (roughly) to `/usr/share/plasma/keyboard/keyboardpackages`.
 
-To use Qt's built-in keyboard layouts rather than the ones we supply in `plasma-keyboard`, set `PLASMA_KEYBOARD_USE_QT_LAYOUTS=1` when starting KWin (or the login session).
+See the component library for making layouts for documentation at [virtualkeyboard/components](/virtualkeyboard/components).
+
+### Text composers
+
+A default text composer is provided that emits keys directly to the input engine (see [directtextcomposer](virtualkeyboard/textcomposers/directtextcomposer.h)) which works for most languages.
+
+Some languages require some extra processing in preedit to form words, and so have their own text composers:
+
+Text composers are located in [virtualkeyboard/textcomposers](/virtualkeyboard/textcomposers).
 
 ## Troubleshooting
 
 KWin by default only shows the keyboard when a text field is interacted with by touch. Set `KWIN_IM_SHOW_ALWAYS=1` when starting KWin (or the login session) in order to force the keyboard to always pop up.
-

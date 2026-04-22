@@ -142,7 +142,7 @@ public Q_SLOTS:
      * Notify the controller that the surrounding text (and therefore cursor position) has
      * changed.
      *
-     * Called from InputListenerItem whenever the compositor reports a surrounding-text
+     * Called from InputMethodConnection whenever the compositor reports a surrounding-text
      * update. The controller distinguishes changes caused by its own commit_string
      * operations from external cursor movements (e.g. the user tapping elsewhere in the
      * text field). If an external cursor movement is detected while an overlay or hold

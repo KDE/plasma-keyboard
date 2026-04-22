@@ -12,21 +12,27 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
-KCM.ScrollViewKCM {
+KCM.SimpleKCM {
     id: root
 
-    view: LocaleSelectorListView {
-        id: list
-
-        Kirigami.Separator {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-        }
-    }
-
-    footer: Kirigami.FormLayout {
+    Kirigami.FormLayout {
         id: formLayout
+
+        width: flickable.width
+
+        QQC2.Button {
+            Kirigami.FormData.label: i18n("Keyboard layouts:")
+            text: i18n("Configure…")
+            icon.name: "languages"
+            onClicked: kcm.push(layoutPage);
+
+            Kirigami.ScrollablePage {
+                id: layoutPage
+                title: i18n("Keyboard Layouts")
+
+                KeyboardLayoutSelectorListView {}
+            }
+        }
 
         QQC2.CheckBox {
             id: soundsEnabled
@@ -60,17 +66,6 @@ KCM.ScrollViewKCM {
             onCheckedChanged: {
                 kcm.keyboardNavigationEnabled = checked;
                 checked = Qt.binding(() => kcm.keyboardNavigationEnabled);
-            }
-        }
-
-        QQC2.CheckBox {
-            id: autoCapitalizationEnabled
-            text: i18n("Auto-capitalization")
-
-            checked: kcm.autoCapitalizationEnabled
-            onCheckedChanged: {
-                kcm.autoCapitalizationEnabled = checked;
-                checked = Qt.binding(() => kcm.autoCapitalizationEnabled);
             }
         }
 

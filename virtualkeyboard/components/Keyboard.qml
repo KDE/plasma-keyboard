@@ -25,6 +25,7 @@ Item {
     readonly property var inputEngine: virtualKeyboardContext ? virtualKeyboardContext.inputEngine : VirtualKeyboard.inputEngine
     readonly property var keyboardController: virtualKeyboardContext ? virtualKeyboardContext.keyboardController : VirtualKeyboard.keyboardController
     readonly property var keyboardPackageResolver: virtualKeyboardContext ? virtualKeyboardContext.keyboardPackageResolver : VirtualKeyboard.keyboardPackageResolver
+    property alias navigationModeActive: keyboardNavigation.navigationModeActive
 
     readonly property string layoutId: keyboardController ? keyboardController.layoutId : ""
     readonly property string packageId: keyboardPackageResolver ? keyboardPackageResolver.packageId(layoutId) : ""
@@ -70,6 +71,18 @@ Item {
     }
     readonly property real panelScaleHint: Math.max(0.3, __keyboardInputAreaHeight / __keyboardDesignHeight)
 
+    function resetNavigation() {
+        keyboardNavigation.resetNavigation();
+    }
+
+    function handleNavigationPressed(key) {
+        keyboardNavigation.handleNavigationPressed(key);
+    }
+
+    function handleNavigationReleased(key) {
+        keyboardNavigation.handleNavigationReleased(key);
+    }
+
     function updateScaleHint() {
         if (width <= 0) {
             return;
@@ -79,6 +92,13 @@ Item {
 
     onPanelScaleHintChanged: updateScaleHint()
     Component.onCompleted: updateScaleHint()
+
+    KeyboardNavigation {
+        id: keyboardNavigation
+        layoutLoader: layoutLoader
+        keyboardStrip: candidateStrip
+        languagePopup: root.languagePopup
+    }
 
     ColumnLayout {
         anchors {
@@ -107,6 +127,7 @@ Item {
             source: root.keyboardPackageResolver ? root.keyboardPackageResolver.layoutUrl(root.layoutId, root.layoutType) : ""
 
             onLoaded: {
+                resetNavigation();
                 if (item && item.virtualKeyboardContext !== undefined) {
                     item.virtualKeyboardContext = root.virtualKeyboardContext;
                 }
