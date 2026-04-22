@@ -43,6 +43,38 @@ target_link_libraries(plasma-keyboard-virtualkeyboard
         Qt::Quick
 )
 
+if(PLASMA_KEYBOARD_LIBPINYIN_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/pinyintextcomposer.cpp
+        textcomposers/pinyintextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBPINYIN)
+endif()
+
+if(PLASMA_KEYBOARD_LIBCHEWING_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/zhuyintextcomposer.cpp
+        textcomposers/zhuyintextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBCHEWING)
+endif()
+
+if(PLASMA_KEYBOARD_LIBHANGUL_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/hangultextcomposer.cpp
+        textcomposers/hangultextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBHANGUL)
+endif()
+
+if(PLASMA_KEYBOARD_ANTHY_ENABLED)
+    target_sources(plasma-keyboard-virtualkeyboard PRIVATE
+        textcomposers/anthytextcomposer.cpp
+        textcomposers/anthytextcomposer.h
+    )
+    target_link_libraries(plasma-keyboard-virtualkeyboard PRIVATE PkgConfig::LIBANTHY ${LIBANTHYINPUT_LIBRARY})
+endif()
+
 ecm_add_qml_module(plasma-keyboard-virtualkeyboard
     URI org.kde.plasma.keyboard.virtualkeyboard
     GENERATE_PLUGIN_SOURCE

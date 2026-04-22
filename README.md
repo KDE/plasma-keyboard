@@ -36,6 +36,10 @@ See the component library for making layouts for documentation at [virtualkeyboa
 A default text composer is provided that emits keys directly to the input engine (see [directtextcomposer](virtualkeyboard/textcomposers/directtextcomposer.h)) which works for most languages.
 
 Some languages require some extra processing in preedit to form words, and so have their own text composers:
+- Chinese/Pinyin (via libpinyin)
+- Chinese/Zhuyin (via libchewing)
+- Japanese (via anthy)
+- Korean (via libhangul)
 
 Text composers are located in [virtualkeyboard/textcomposers](/virtualkeyboard/textcomposers).
 

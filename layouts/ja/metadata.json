@@ -1,0 +1,67 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.ja",
+        "Name": "日本語"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "ja_JP"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-romaji",
+                "Name": "ローマ字",
+                "Files": {
+                    "main": "MobileRomaji.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "mobile-twelvekey",
+                "Name": "12キー",
+                "Files": {
+                    "main": "MobileTwelveKey.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-qwerty",
+                "Name": "ローマ字（PC）",
+                "Files": {
+                    "main": "DesktopRomaji.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-full-qwerty",
+                "Name": "ローマ字（フルサイズ）",
+                "Files": {
+                    "main": "FullRomaji.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

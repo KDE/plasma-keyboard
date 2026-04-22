@@ -4,7 +4,13 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command": "plasma-keyboard",
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin"
+    },
     "tags": [
         "nightly"
     ],
@@ -19,22 +25,106 @@
     ],
     "modules": [
         {
-            "name": "qt6-virtualkeyboard",
+            "name": "anthy",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://salsa.debian.org/debian/anthy.git",
+                    "tag": "upstream/9100h",
+                    "commit": "32a181fd7a97e87a50eadbdcecdec4a8c4945239"
+                }
+            ]
+        },
+        {
+            "name": "libhangul",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--disable-static"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libhangul/libhangul.git",
+                    "tag": "libhangul-0.2.0",
+                    "commit": "41c702f5d3581325b646ef6249f1f641b0427ae0"
+                }
+            ]
+        },
+        {
+            "name": "corrosion",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/corrosion-rs/corrosion.git",
+                    "tag": "v0.5.1",
+                    "commit": "b1fab721655c5c4b1b08a083d3cd29f163af75d0"
+                }
+            ]
+        },
+        {
+            "name": "libchewing",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DQT_DISABLE_RPATH=OFF"
+                "-DBUILD_TESTING=OFF"
+            ],
+            "build-options": {
+                "env": {
+                    "CARGO_HOME": "/run/build/libchewing/cargo"
+                }
+            },
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/chewing/libchewing.git",
+                    "tag": "v0.10.3",
+                    "commit": "93a9a24bae6173f23c620df314b55c596c7622dd"
+                },
+                "flatpak/libchewing-cargo-sources.json"
+            ]
+        },
+        {
+            "name": "kyotocabinet",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./configure --prefix=/app",
+                "make",
+                "make install"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtvirtualkeyboard-everywhere-src-6.10.2.tar.xz",
-                    "sha256": "6273256091a83f3f283d1a91498964fd6a91256b667d7b9e98005d731fdb986b",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 7927,
-                        "stable-only": true,
-                        "url-template": "https://download.qt.io/official_releases/qt/${major}.${minor}/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
-                    }
+                    "url": "https://dbmx.net/kyotocabinet/pkg/kyotocabinet-1.2.80.tar.gz",
+                    "sha256": "4c85d736668d82920bfdbdb92ac3d66b7db1108f09581a769dd9160a02def349"
+                }
+            ]
+        },
+        {
+            "name": "libpinyin",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--with-dbm=KyotoCabinet"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libpinyin/libpinyin.git",
+                    "tag": "2.10.2",
+                    "commit": "8f65efdc6d5b5f7a398fc68838c1ff2f92f8af8c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://downloads.sourceforge.net/libpinyin/models/model20.text.tar.gz",
+                    "sha256": "59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155",
+                    "dest": "data",
+                    "dest-filename": "model20.text.tar.gz"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "tar -xzf data/model20.text.tar.gz -C data"
+                    ]
                 }
             ]
         },
