@@ -13,6 +13,8 @@ ecm_add_test(inputenginetest.cpp
         Qt::Test
 )
 
+add_subdirectory(textcomposers)
+
 file(GENERATE
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mockinputmethodcompositor_config.h
     CONTENT "#pragma once\n#define PLASMA_KEYBOARD_BINARY_PATH \"$<TARGET_FILE:plasma-keyboard>\"\n"

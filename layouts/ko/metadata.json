@@ -1,0 +1,51 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.ko",
+        "Name": "한국어"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "ko_KR"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-dubeolsik",
+                "Name": "두벌식",
+                "Files": {
+                    "main": "MobileDubeolsik.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-dubeolsik",
+                "Name": "두벌식 (PC)",
+                "Files": {
+                    "main": "DesktopDubeolsik.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "desktop-full-dubeolsik",
+                "Name": "두벌식 (풀사이즈)",
+                "Files": {
+                    "main": "FullDubeolsik.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}
