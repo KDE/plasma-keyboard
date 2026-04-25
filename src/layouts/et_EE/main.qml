@@ -98,8 +98,8 @@ KeyboardLayout {
             text: "l"
         }
         Key {
-            key: Qt.Key_Otilde
-            text: "õ"
+            key: Qt.Key_Odiaeresis
+            text: "ö"
         }
         Key {
             key: Qt.Key_Adiaeresis
@@ -107,15 +107,8 @@ KeyboardLayout {
         }
     }
     KeyboardRow {
-        KeyboardRow {
-            Layout.preferredWidth: functionKeyWidth
-            Layout.fillWidth: false
-            ShiftKey {
-                weight: 240
-            }
-            FillerKey {
-                weight: 80
-            }
+        ShiftKey {
+            weight: 240
         }
         Key {
             key: Qt.Key_Z
@@ -146,15 +139,12 @@ KeyboardLayout {
             key: Qt.Key_M
             text: "m"
         }
-        KeyboardRow {
-            Layout.preferredWidth: functionKeyWidth
-            Layout.fillWidth: false
-            FillerKey {
-                weight: 80
-            }
-            BackspaceKey {
-                weight: 240
-            }
+        Key {
+            key: Qt.Key_Otilde
+            text: "õ"
+        }
+        BackspaceKey {
+            weight: 240
         }
     }
     KeyboardRow {
