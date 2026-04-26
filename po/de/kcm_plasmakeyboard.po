@@ -2,13 +2,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-11-24 20:22+0100\n"
+"PO-Revision-Date: 2026-04-22 19:59+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -60,23 +60,23 @@ msgstr "Tastaturnavigation"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Automatische Großschreibung"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Alternative Zeichen:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Aufklappfenster anzeigen, wenn eine Taste gedrückt gehalten wird"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Halteverzögerung:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "Millisekunden"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -110,15 +110,12 @@ msgstr "Pfeiltasten zur Navigation auf der Tastatur verwenden"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Den ersten Buchstaben eines Satzes automatisch großschreiben"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Rückmeldung bei Tastendruck"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Allgemein"

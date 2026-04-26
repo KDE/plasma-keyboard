@@ -1,13 +1,13 @@
 # German translation for plasma-keyboard.
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 00:45+0000\n"
-"PO-Revision-Date: 2026-01-26 17:31+0100\n"
+"PO-Revision-Date: 2026-04-21 22:41+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,19 +56,19 @@ msgstr "Autor"
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
-msgstr ""
+msgstr "Diakritika (langer Tastendruck)"
 
 #: overlay/prefixquerytrigger.cpp:25
 #, kde-format
 msgctxt "@label Name of the emoji overlay trigger"
 msgid "Emoji (Prefix Search)"
-msgstr ""
+msgstr "Emoji (Präfix-Suche)"
 
 #: overlay/textexpansiontrigger.cpp:27
 #, kde-format
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
-msgstr ""
+msgstr "Texterweiterung"
 
 #: qml/LanguagePopup.qml:116
 msgid "Settings"
