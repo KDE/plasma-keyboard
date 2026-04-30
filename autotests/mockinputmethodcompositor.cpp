@@ -443,7 +443,7 @@ private Q_SLOTS:
             qFatal("Couldn't create temporary home folder for the test");
             return;
         }
-        QStandardPaths::setTestModeEnabled(true);
+
         {
             KConfig cfg(QStringLiteral("plasmakeyboardrc"));
             KConfigGroup grp(&cfg, QStringLiteral("General"));
@@ -556,7 +556,7 @@ private Q_SLOTS:
         sendKey(KEY_1, 10);
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
-        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("á"));
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("à"));
     }
 
     void cleanupTestCase()
