@@ -58,7 +58,7 @@ KeyboardLayout {
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "űūũûüu7ùú"
+            alternativeKeys: "űūũûüu7ùúů"
             smallText: "7"
             smallTextVisible: true
         }
