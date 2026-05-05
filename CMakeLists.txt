@@ -58,7 +58,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
 find_package(PlasmaQuick ${PROJECT_DEP_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0
-    KF 6.23.0
+    KF 6.26.0
 )
 
 ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX PLASMA_KEYBOARD VERSION_HEADER plasma_keyboard_version.h)
