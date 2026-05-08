@@ -574,6 +574,23 @@ private Q_SLOTS:
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("1"));
     }
 
+    /** Test that navigating the diacritics menu with arrow keys and pressing enter commits the correct character. */
+    void testDiacriticsKeyNavigation()
+    {
+        QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
+
+        sendKey(KEY_1, 1200);
+        QVERIFY(overlaySpy.count() || overlaySpy.wait());
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_ENTER, 100);
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("½"));
+    }
+
     void cleanupTestCase()
     {
         if (m_child) {
