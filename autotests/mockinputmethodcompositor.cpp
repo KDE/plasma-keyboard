@@ -166,6 +166,12 @@ public:
         : QObject(parent)
         , m_focusSurface(focusSurface)
     {
+        m_xkbContext.reset(xkb_context_new(XKB_CONTEXT_NO_FLAGS));
+        xkb_rule_names names = {};
+        names.rules = "evdev";
+        names.layout = "us";
+        m_xkbKeymap.reset(xkb_keymap_new_from_names(m_xkbContext.get(), &names, XKB_KEYMAP_COMPILE_NO_FLAGS));
+        m_xkbState.reset(xkb_state_new(m_xkbKeymap.get()));
     }
 
     InputMethodKeyboard *keyboard() const
@@ -216,9 +222,43 @@ protected:
         qInfo() << "input_method_context grab_keyboard";
     }
 
+    void zwp_input_method_context_v1_key(Resource *resource, uint32_t serial, uint32_t time, uint32_t key, uint32_t state) override
+    {
+        Q_UNUSED(resource);
+        Q_UNUSED(serial);
+        Q_UNUSED(time);
+        // Only emit on press (state == WL_KEYBOARD_KEY_STATE_PRESSED)
+        if (state != WL_KEYBOARD_KEY_STATE_PRESSED) {
+            return;
+        }
+        const uint32_t code = key + 8; // XKB keycode = Linux scancode + 8
+        char buf[8] = {};
+        xkb_state_key_get_utf8(m_xkbState.get(), code, buf, sizeof(buf));
+        const QString text = QString::fromUtf8(buf);
+        if (!text.isEmpty()) {
+            qInfo().noquote() << "raw key commit_string" << text;
+            Q_EMIT commitStringChanged(text);
+        }
+    }
+
+    void zwp_input_method_context_v1_modifiers(Resource *resource,
+                                               uint32_t serial,
+                                               uint32_t mods_depressed,
+                                               uint32_t mods_latched,
+                                               uint32_t mods_locked,
+                                               uint32_t group) override
+    {
+        Q_UNUSED(resource);
+        Q_UNUSED(serial);
+        xkb_state_update_mask(m_xkbState.get(), mods_depressed, mods_latched, mods_locked, 0, 0, group);
+    }
+
 private:
     std::unique_ptr<InputMethodKeyboard> m_keyboard;
     wl_resource *m_focusSurface = nullptr;
+    QXkbCommon::ScopedXKBContext m_xkbContext;
+    QXkbCommon::ScopedXKBKeymap m_xkbKeymap;
+    QXkbCommon::ScopedXKBState m_xkbState;
 };
 
 class InputPanelSurface : public QObject, public QtWaylandServer::zwp_input_panel_surface_v1
@@ -575,6 +615,40 @@ private Q_SLOTS:
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("1"));
+    }
+
+    /** Test that multiple short key presses (e.g. typing quickly) does not trigger the overlay panel. */
+    void testMultipleShortPressesDoesNotShowOverlayPanel()
+    {
+        QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+
+        const int interval = 50;
+
+        // swim days
+        sendKey(KEY_S, interval);
+        sendKey(KEY_W, interval);
+        sendKey(KEY_I, interval);
+        sendKey(KEY_M, interval);
+        sendKey(KEY_SPACE, interval);
+        sendKey(KEY_D, interval);
+        sendKey(KEY_A, interval);
+        sendKey(KEY_Y, interval);
+        sendKey(KEY_S, interval);
+
+        QTest::qWait(300); // give plasma-keyboard time to react
+        QVERIFY(overlaySpy.isEmpty()); // now we're more confident
+
+        QTRY_COMPARE(commitStringSpy.count(), 9);
+        QCOMPARE(commitStringSpy.at(0).first().toString(), QStringLiteral("s"));
+        QCOMPARE(commitStringSpy.at(1).first().toString(), QStringLiteral("w"));
+        QCOMPARE(commitStringSpy.at(2).first().toString(), QStringLiteral("i"));
+        QCOMPARE(commitStringSpy.at(3).first().toString(), QStringLiteral("m"));
+        QCOMPARE(commitStringSpy.at(4).first().toString(), QStringLiteral(" "));
+        QCOMPARE(commitStringSpy.at(5).first().toString(), QStringLiteral("d"));
+        QCOMPARE(commitStringSpy.at(6).first().toString(), QStringLiteral("a"));
+        QCOMPARE(commitStringSpy.at(7).first().toString(), QStringLiteral("y"));
+        QCOMPARE(commitStringSpy.at(8).first().toString(), QStringLiteral("s"));
     }
 
     /** Test that navigating the diacritics menu with arrow keys and pressing enter commits the correct character. */
