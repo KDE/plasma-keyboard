@@ -448,6 +448,8 @@ private Q_SLOTS:
             KConfig cfg(QStringLiteral("plasmakeyboardrc"));
             KConfigGroup grp(&cfg, QStringLiteral("General"));
             grp.writeEntry(QStringLiteral("enabledLocales"), QStringLiteral("it_IT"));
+            // Set the long press threshold to max to avoid potential flakiness in CI where timing can be unpredictable.
+            grp.writeEntry(QStringLiteral("diacriticsHoldThresholdMs"), 1500);
         }
 
         m_compositor = std::make_unique<QWaylandCompositor>();
@@ -549,7 +551,7 @@ private Q_SLOTS:
     {
         QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
 
-        sendKey(KEY_A, 1200);
+        sendKey(KEY_A, 2000);
         QVERIFY(overlaySpy.count() || overlaySpy.wait());
 
         QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
@@ -565,7 +567,8 @@ private Q_SLOTS:
         QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
 
         sendKey(KEY_A, 100);
-        QTRY_VERIFY(overlaySpy.isEmpty());
+        QTest::qWait(300); // give plasma-keyboard time to react
+        QVERIFY(overlaySpy.isEmpty()); // now we're more confident
 
         QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         sendKey(KEY_1, 10);
@@ -579,7 +582,7 @@ private Q_SLOTS:
     {
         QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
 
-        sendKey(KEY_1, 1200);
+        sendKey(KEY_1, 2000);
         QVERIFY(overlaySpy.count() || overlaySpy.wait());
 
         QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
