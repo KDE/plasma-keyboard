@@ -559,6 +559,21 @@ private Q_SLOTS:
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("à"));
     }
 
+    /** Test that a short press of a key does not trigger the overlay panel and commits the expected character. */
+    void testShortPressDoesNotShowOverlayPanel()
+    {
+        QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
+
+        sendKey(KEY_A, 100);
+        QTRY_VERIFY(overlaySpy.isEmpty());
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        sendKey(KEY_1, 10);
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("1"));
+    }
+
     void cleanupTestCase()
     {
         if (m_child) {
