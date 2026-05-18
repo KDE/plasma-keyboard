@@ -490,6 +490,7 @@ private Q_SLOTS:
             grp.writeEntry(QStringLiteral("enabledLocales"), QStringLiteral("it_IT"));
             // Set the long press threshold to max to avoid potential flakiness in CI where timing can be unpredictable.
             grp.writeEntry(QStringLiteral("diacriticsHoldThresholdMs"), 1500);
+            grp.writeEntry(QStringLiteral("keyboardNavigationEnabled"), true);
         }
 
         m_compositor = std::make_unique<QWaylandCompositor>();
@@ -666,6 +667,30 @@ private Q_SLOTS:
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("½"));
+    }
+
+    /**
+     * Test that OSK keyboard navigation works: enabling keyboard navigation, activating
+     * the input method (simulating a text field receiving focus), then navigating to a
+     * key with arrow keys and pressing Enter to commit it.
+     *
+     * With the it_IT locale and auto-capitalization enabled (default), the 'z' key is the
+     * first letter key that should be focused by pressing the right arrow key twice.
+     * Pressing Enter should then commit 'Z' (capitalized).
+     */
+    void testOSKKeyboardNavigation()
+    {
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+
+        // Navigate: first RIGHT activates navigation mode and selects the initial key (SHIFT);
+        // subsequent RIGHT press select the next key (Z); ENTER commits the selected key.
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_ENTER, 100);
+
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("Z"));
     }
 
     void cleanupTestCase()
