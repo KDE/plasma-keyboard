@@ -14,5 +14,5 @@ Dependencies:
 
 Options:
   enable-lsan: false
-  require-passing-tests-on: ["Linux", "FreeBSD"]
+  require-passing-tests-on: ['@all']
   run-qmllint: true
