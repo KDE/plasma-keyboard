@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/flatpak/flatpak-builder/main/data/flatpak-manifest.schema.json",
     "id": "org.kde.plasma.keyboard",
     "branch": "master",
     "runtime": "org.kde.Platform",
