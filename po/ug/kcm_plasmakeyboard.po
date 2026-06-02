@@ -1,0 +1,119 @@
+# Uyghur translation for kcm_plasmakeyboard.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"PO-Revision-Date: 2026-06-01 17:58-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr ""
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "تىل"
+
+#: ui/main.qml:33
+msgid "Key press feedback:"
+msgstr ""
+
+#: ui/main.qml:34 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "ئاۋاز"
+
+#: ui/main.qml:45 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr ""
+
+#: ui/main.qml:56
+msgid "General:"
+msgstr "ئادەتتىكى:"
+
+#: ui/main.qml:57 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr ""
+
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr ""
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr ""
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr ""
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr ""
+
+#: ui/main.qml:101
+msgid "milliseconds"
+msgstr "مىللىسېكۇنت"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr ""
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "قايتۇرما ئىنكاس"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr ""
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr ""
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr ""
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "ئادەتتىكى"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr ""
+
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr ""
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr ""
+
+#: ui/main_mediacenter.qml:82
+msgid "General"
+msgstr "ئادەتتىكى"
