@@ -35,6 +35,7 @@
   <name xml:lang="sl">Plasma Keyboard</name>
   <name xml:lang="sv">Plasma tangentbord</name>
   <name xml:lang="tr">Plasma Klavye</name>
+  <name xml:lang="ug">Plasma ھەرپتاختا</name>
   <name xml:lang="uk">Клавіатура Плазми</name>
   <name xml:lang="zh-CN">Plasma 键盘</name>
   <name xml:lang="zh-TW">Plasma 鍵盤</name>
@@ -68,6 +69,7 @@
   <summary xml:lang="sl">Zaslonska tipkovnica za Plasmo</summary>
   <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
   <summary xml:lang="tr">Plasma için ekran üzeri klavye</summary>
+  <summary xml:lang="ug">Plasma نىڭ ئېكران ھەرپتاختىسى</summary>
   <summary xml:lang="uk">Екранна клавіатура для Плазми</summary>
   <summary xml:lang="zh-CN">Plasma 的屏幕键盘</summary>
   <summary xml:lang="zh-TW">Plasma 的螢幕虛擬鍵盤</summary>
