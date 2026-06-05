@@ -9,7 +9,16 @@ file(GENERATE
     CONTENT "#pragma once\n#define PLASMA_KEYBOARD_BINARY_PATH \"$<TARGET_FILE:plasma-keyboard>\"\n"
 )
 
-ecm_add_test(mockinputmethodcompositor.cpp LINK_LIBRARIES KF6::ConfigCore Qt::Core Qt::Gui Qt::GuiPrivate Qt::Test Qt::WaylandCompositor Wayland::Server)
+ecm_add_test(mockinputmethodcompositor.cpp LINK_LIBRARIES
+    KF6::ConfigCore
+    PkgConfig::XKBCommon
+    Qt::Core
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Test
+    Qt::WaylandCompositor
+    Wayland::Server
+)
 
 qt6_generate_wayland_protocol_server_sources(mockinputmethodcompositor
     FILES

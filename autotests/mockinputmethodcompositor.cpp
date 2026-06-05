@@ -34,7 +34,7 @@
 #include <linux/input-event-codes.h>
 #include <sys/mman.h>
 #include <unistd.h>
-#include <xkbcommon/xkbcommon.h>
+#include <xkbcommon/xkbcommon-compose.h>
 
 #define PLASMA_KEYBOARD_UNDER_GDB 0
 
@@ -73,7 +73,7 @@ public:
     InputMethodKeyboard(wl_client *client, uint32_t id, int version)
         : QtWaylandServer::wl_keyboard(client, id, version)
     {
-        sendKeymap();
+        initializeKeymap();
         m_timer.start();
     }
 
@@ -96,11 +96,15 @@ public:
         return m_keymapped;
     }
 
-Q_SIGNALS:
-    void keymapDone();
-
-private:
-    void sendKeymap()
+    /**
+     * Sets an updated XKB keymap built from the given layout and variant.
+     * Use this to simulate a compositor keymap change (e.g. switching to us/intl
+     * so that dead keys produce the correct keysyms in the child process).
+     *
+     * @param layout XKB layout name (e.g. "us")
+     * @param variant XKB variant name (e.g. "intl"), or nullptr for none
+     */
+    void setKeymap(const char *layout, const char *variant = nullptr)
     {
         QXkbCommon::ScopedXKBContext context(xkb_context_new(XKB_CONTEXT_NO_FLAGS));
         if (!context) {
@@ -110,11 +114,13 @@ private:
 
         xkb_rule_names names = {};
         names.rules = "evdev";
-        names.layout = "us";
+        names.layout = layout;
+        names.variant = variant ? variant : "";
+        names.options = "compose:menu";
 
         QXkbCommon::ScopedXKBKeymap keymap(xkb_keymap_new_from_names(context.get(), &names, XKB_KEYMAP_COMPILE_NO_FLAGS));
         if (!keymap) {
-            qWarning() << "Failed to create xkb keymap";
+            qWarning() << "Failed to create xkb keymap for layout" << layout << variant;
             return;
         }
 
@@ -143,10 +149,23 @@ private:
             qWarning() << "Failed to write keymap terminator";
             return;
         }
-        lseek(fd, 0, SEEK_SET);
+        if (lseek(fd, 0, SEEK_SET) < 0) {
+            close(fd);
+            qWarning() << "Failed to seek keymap file";
+            return;
+        }
 
         send_keymap(WL_KEYBOARD_KEYMAP_FORMAT_XKB_V1, fd, mapData.size() + 1);
         close(fd);
+    }
+
+Q_SIGNALS:
+    void keymapDone();
+
+private:
+    void initializeKeymap()
+    {
+        setKeymap("us");
         m_keymapped = true;
         Q_EMIT keymapDone();
     }
@@ -182,6 +201,7 @@ public:
 Q_SIGNALS:
     void keyboardGrabbed();
     void commitStringChanged(const QString &commitString);
+    void keysymReceived(uint32_t sym, uint32_t state);
 
 protected:
     void zwp_input_method_context_v1_destroy(Resource *resource) override
@@ -212,6 +232,7 @@ protected:
     {
         Q_UNUSED(resource);
         qInfo() << "keysym" << serial << time << sym << state << modifiers;
+        Q_EMIT keysymReceived(sym, state);
     }
 
     void zwp_input_method_context_v1_grab_keyboard(Resource *resource, uint32_t keyboard) override
@@ -587,6 +608,21 @@ private Q_SLOTS:
         wl_display_flush_clients(m_compositor->display());
     }
 
+    /**
+     * Sets an updated keymap and waits for it to be processed.
+     *
+     * @param layout XKB layout name (e.g. "us")
+     * @param variant XKB variant name (e.g. "intl"), or nullptr for none
+     */
+    void setKeymap(const char *layout, const char *variant = nullptr)
+    {
+        auto *keyboard = m_inputMethod->context()->keyboard();
+        Q_ASSERT(keyboard);
+        keyboard->setKeymap(layout, variant);
+        wl_display_flush_clients(m_compositor->display());
+        QTest::qWait(200);
+    }
+
     void testLongPressShowsOverlayPanel()
     {
         QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
@@ -666,6 +702,91 @@ private Q_SLOTS:
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("½"));
+    }
+
+    /**
+     * Test that a Multi_key compose sequence (Multi_key + t + m → ™) is handled
+     * locally by the XKB compose state machine in OverlayController. The
+     * intermediate keys must be consumed and not forwarded to the compositor;
+     * only the composed result should arrive via commit_string.
+     */
+    void testComposeSequence()
+    {
+        // Skip if no XKB compose table is available for the current locale.
+        // Without one, OverlayController::m_xkbComposeState is null and the
+        // compose sequence would not be processed locally.
+        {
+            QXkbCommon::ScopedXKBContext xkbContext(xkb_context_new(XKB_CONTEXT_NO_FLAGS));
+            if (!xkbContext) {
+                QSKIP("Could not create XKB context");
+            }
+            const char *locale = setlocale(LC_CTYPE, nullptr);
+            if (!locale || locale[0] == '\0') {
+                locale = "C";
+            }
+            xkb_compose_table *composeTable = xkb_compose_table_new_from_locale(xkbContext.get(), locale, XKB_COMPOSE_COMPILE_NO_FLAGS);
+            if (!composeTable) {
+                QSKIP("No XKB compose table available for the current locale");
+            }
+            xkb_compose_table_unref(composeTable);
+        }
+
+        QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        QSignalSpy keysymSpy(m_inputMethod->context(), &InputMethodContext::keysymReceived);
+
+        // Send the compose sequence: Multi_key → t → m → ™
+        // KEY_COMPOSE (127) maps to Multi_key via the compose:menu keymap option.
+        sendKey(KEY_COMPOSE, 10);
+        sendKey(KEY_T, 10);
+        sendKey(KEY_M, 10);
+
+        // Exactly one commit_string with the composed character should arrive.
+        QTRY_COMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("™"));
+
+        // The intermediate keys (t, m) must not have been forwarded via keysym.
+        // XKB_KEY_t = 0x74, XKB_KEY_m = 0x6d
+        for (const QList<QVariant> &args : keysymSpy) {
+            const uint32_t sym = args.at(0).toUInt();
+            QVERIFY2(sym != 0x74 && sym != 0x6d, "A compose sequence key (t or m) was incorrectly forwarded via keysym");
+        }
+
+        // No overlay should have appeared during the compose sequence.
+        QTest::qWait(200);
+        QVERIFY(overlaySpy.isEmpty());
+    }
+
+    /**
+     * Test that pressing a dead key (e.g. the grave key `) followed by a character key (e.g. a) results
+     * in the correct composed character (e.g. à) being committed, without the dead key
+     * being forwarded as a separate keysym or commit_string.
+     */
+    void testDeadKeySequence()
+    {
+        // Switch to the US intl with dead keys layout for the test.
+        setKeymap("us", "intl");
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        QSignalSpy keysymSpy(m_inputMethod->context(), &InputMethodContext::keysymReceived);
+
+        // Send the dead key sequence: ` → a = à
+        sendKey(KEY_GRAVE, 10);
+        sendKey(KEY_A, 10);
+
+        // Exactly one commit_string with the composed character should arrive.
+        QTRY_COMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("à"));
+
+        // The dead key (`) must not have been forwarded via keysym.
+        // XKB_KEY_grave = 0x60
+        for (const QList<QVariant> &args : keysymSpy) {
+            const uint32_t sym = args.at(0).toUInt();
+            QVERIFY2(sym != 0x60, "The dead key (`) was incorrectly forwarded via keysym");
+        }
+
+        // Set the keymap back to the default to avoid affecting other tests.
+        setKeymap("us", nullptr);
     }
 
     void cleanupTestCase()

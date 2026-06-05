@@ -14,6 +14,8 @@
 #include <QTimer>
 #include <qqmlintegration.h>
 
+#include <xkbcommon/xkbcommon-compose.h>
+
 class InputPlugin;
 
 /**
@@ -212,29 +214,6 @@ private:
      */
     bool m_pendingKeyReleased = false;
 
-    /**
-     * Set to true when a Compose (Multi_key) key press is detected.
-     *
-     * While true, all key events bypass the overlay trigger pipeline and are forwarded
-     * directly to the compositor so it can complete the compose sequence
-     * (e.g. Multi_key + t + m → ™). The flag is cleared once an external surrounding-text
-     * change arrives (indicating the composed character was committed) or when the context
-     * is reset.
-     */
-    bool m_composeActive = false;
-
-    /**
-     * Set to true when a dead key press (Qt::Key_Dead_Grave … Qt::Key_Dead_Longsolidusoverlay)
-     * is detected.
-     *
-     * While true, the next non-dead-key press bypasses all overlay triggers and is
-     * forwarded directly to the compositor so the XKB compose state can combine the
-     * dead key with the follow-up key (e.g. dead_acute + e → é).  The flag is cleared
-     * after forwarding that one follow-up key, or when the context is reset (e.g. an
-     * external surrounding-text change).
-     */
-    bool m_deadKeyActive = false;
-
     /** The trigger that is currently timing (for long-press). */
     OverlayTrigger *m_pendingTrigger = nullptr;
 
@@ -275,4 +254,23 @@ private:
      *     the 200 ms long-press threshold)
      */
     QTimer m_surroundingTextSettleTimer;
+
+    /**
+     * XKB compose state machine for handling client-side compose sequences (e.g.
+     * Multi_key + t + m → ™). The controller processes compose sequences locally so that
+     * the intermediate keys (e.g. Multi_key, t) can be consumed and not forwarded to the
+     * client, while only the final composed result (e.g. ™) is sent via commit_string.
+     */
+    xkb_context *m_xkbContext = nullptr;
+
+    /**
+     * XKB compose table compiled from the system locale, used to initialize the compose state.
+     */
+    xkb_compose_table *m_xkbComposeTable = nullptr;
+
+    /**
+     * XKB compose state initialized from the compose table, used to track the current
+     * compose sequence and produce the final composed result.
+     */
+    xkb_compose_state *m_xkbComposeState = nullptr;
 };
