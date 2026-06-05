@@ -10,18 +10,6 @@
 #include "logging.h"
 #include "overlaytrigger.h"
 
-/**
- * Returns true if @p key is in the XKB dead-key range
- * (Qt::Key_Dead_Grave through Qt::Key_Dead_Longsolidusoverlay).
- *
- * Dead keys do not produce text themselves; they modify the next key press
- * to produce a combined character (e.g. dead_acute + e → é).
- */
-static bool isDeadKey(int key)
-{
-    return key >= Qt::Key_Dead_Grave && key <= Qt::Key_Dead_Longsolidusoverlay;
-}
-
 OverlayController::OverlayController(InputPlugin *inputPlugin, QObject *parent)
     : QObject(parent)
     , m_inputPlugin(inputPlugin)
@@ -37,10 +25,29 @@ OverlayController::OverlayController(InputPlugin *inputPlugin, QObject *parent)
     static constexpr int SURROUNDING_TEXT_SETTLE_DELAY_MS = 100;
     m_surroundingTextSettleTimer.setSingleShot(true);
     m_surroundingTextSettleTimer.setInterval(SURROUNDING_TEXT_SETTLE_DELAY_MS);
+
+    // Initialize XKB compose state machine using the system locale.
+    m_xkbContext = xkb_context_new(XKB_CONTEXT_NO_FLAGS);
+    if (m_xkbContext) {
+        const char *locale = setlocale(LC_CTYPE, nullptr);
+        if (!locale || locale[0] == '\0') {
+            locale = "C";
+        }
+        m_xkbComposeTable = xkb_compose_table_new_from_locale(m_xkbContext, locale, XKB_COMPOSE_COMPILE_NO_FLAGS);
+        if (m_xkbComposeTable) {
+            m_xkbComposeState = xkb_compose_state_new(m_xkbComposeTable, XKB_COMPOSE_STATE_NO_FLAGS);
+        }
+    }
 }
 
 OverlayController::~OverlayController()
 {
+    if (m_xkbComposeState)
+        xkb_compose_state_unref(m_xkbComposeState);
+    if (m_xkbComposeTable)
+        xkb_compose_table_unref(m_xkbComposeTable);
+    if (m_xkbContext)
+        xkb_context_unref(m_xkbContext);
 }
 
 void OverlayController::registerTrigger(OverlayTrigger *trigger)
@@ -115,28 +122,47 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
         // Fall through to process the new key
     }
 
-    // Handle Compose (Multi_key) to enter compose mode.
-    if (event->key() == Qt::Key_Multi_key) {
-        qCDebug(PlasmaKeyboard) << "Compose key pressed; entering compose mode";
-        m_composeActive = true;
-        return false;
-    }
-
-    if (m_composeActive) {
-        qCDebug(PlasmaKeyboard) << "Compose sequence in progress; passing key through:" << event->key();
-        return false;
-    }
-
-    // Detect dead key press and enter dead key bypass mode.
-    if (isDeadKey(event->key())) {
-        qCDebug(PlasmaKeyboard) << "Dead key detected; entering dead key bypass mode (key =" << event->key() << ")";
-        m_deadKeyActive = true;
-        return false;
-    }
-
-    if (m_deadKeyActive) {
-        qCDebug(PlasmaKeyboard) << "Dead key sequence in progress; passing key through. (key =" << event->key() << ")";
-        return false;
+    // XKB compose state machine — handles Multi_key sequences and dead keys.
+    // Keys that are part of a sequence are consumed here; the composed result
+    // is committed via commit_string so it never reaches the trigger pipeline.
+    if (m_xkbComposeState) {
+        const xkb_keysym_t keysym = static_cast<xkb_keysym_t>(event->nativeVirtualKey());
+        if (keysym != XKB_KEY_NoSymbol) {
+            const xkb_compose_feed_result feedResult = xkb_compose_state_feed(m_xkbComposeState, keysym);
+            if (feedResult == XKB_COMPOSE_FEED_ACCEPTED) {
+                const xkb_compose_status status = xkb_compose_state_get_status(m_xkbComposeState);
+                switch (status) {
+                case XKB_COMPOSE_COMPOSING:
+                    // Sequence started or continuing — cancel any pending overlay
+                    // (it belongs to a key typed before the sequence began).
+                    if (m_holdTimer.isActive() || m_overlayVisible) {
+                        cancelOverlay();
+                    }
+                    return true; // Consume; do not forward to compositor.
+                case XKB_COMPOSE_COMPOSED: {
+                    if (m_holdTimer.isActive() || m_overlayVisible) {
+                        cancelOverlay();
+                    }
+                    char buf[64] = {};
+                    if (xkb_compose_state_get_utf8(m_xkbComposeState, buf, sizeof(buf)) > 0 && m_inputPlugin) {
+                        ++m_pendingSurroundingTextUpdates;
+                        m_surroundingTextSettleTimer.start();
+                        m_inputPlugin->commit(QString::fromUtf8(buf));
+                    }
+                    xkb_compose_state_reset(m_xkbComposeState);
+                    return true; // Consume the completing key.
+                }
+                case XKB_COMPOSE_CANCELLED:
+                    xkb_compose_state_reset(m_xkbComposeState);
+                    break; // Fall through — process cancelling key normally.
+                case XKB_COMPOSE_NOTHING:
+                    break; // Not in a sequence; fall through.
+                }
+            } else {
+                // qCDebug(PlasmaKeyboard) << "XKB compose feed result:" << feedResult << "(keysym" << keysym << "not part of a compose sequence)";
+            }
+            // XKB_COMPOSE_FEED_IGNORED or post-cancel: fall through to triggers.
+        }
     }
 
     // Dispatch to triggers in order
@@ -369,23 +395,6 @@ void OverlayController::handleSurroundingTextChanged()
         qCDebug(PlasmaKeyboard) << "External cursor move detected while overlay active; cancelling overlay";
         cancelOverlay();
     }
-
-    // If a Compose (Multi_key) sequence was in progress, an external surrounding-text
-    // update signals that the compositor has processed and committed the result of a
-    // compose sequence (or that the user typed normally while compose mode was stale).
-    // Either way the compose state is done.
-    if (m_composeActive) {
-        qCDebug(PlasmaKeyboard) << "Compose sequence ended (external surrounding-text change); clearing compose state";
-        m_composeActive = false;
-    }
-
-    // If a dead key sequence was in progress, the surrounding-text update means the
-    // compositor has committed the composed result (or the original dead key character).
-    // Either way, dead key mode is over.
-    if (m_deadKeyActive) {
-        qCDebug(PlasmaKeyboard) << "Dead key sequence ended (surrounding-text change)";
-        m_deadKeyActive = false;
-    }
 }
 
 void OverlayController::openOverlay(const QString &triggerId, const QString &baseText, const QStringList &candidates)
@@ -526,8 +535,9 @@ void OverlayController::resetState()
     m_candidateModel->clear();
     m_pendingSurroundingTextUpdates = 0;
     m_surroundingTextSettleTimer.stop();
-    m_composeActive = false;
-    m_deadKeyActive = false;
+    if (m_xkbComposeState) {
+        xkb_compose_state_reset(m_xkbComposeState);
+    }
 
     if (wasVisible) {
         Q_EMIT overlayVisibleChanged();
