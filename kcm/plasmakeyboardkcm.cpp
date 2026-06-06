@@ -6,6 +6,8 @@
 
 #include "plasmakeyboardkcm.h"
 
+#include <qqml.h>
+
 K_PLUGIN_CLASS_WITH_JSON(PlasmaKeyboardKcm, "kcm_plasmakeyboard.json")
 
 PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData)
