@@ -40,6 +40,21 @@
             ]
         },
         {
+            "name": "plasma-activities",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/plasma/plasma-activities.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
             "name": "libplasma",
             "buildsystem": "cmake-ninja",
             "config-opts": [
