@@ -173,7 +173,7 @@ bool LongPressTrigger::shouldHandleKey(const QKeyEvent *event) const
 
     // Check if we have diacritics for this character
     const QChar baseChar = event->text().at(0).toLower();
-    return m_diacriticsMap.contains(baseChar);
+    return baseChar.isPrint();
 }
 
 #include "moc_longpresstrigger.cpp"
