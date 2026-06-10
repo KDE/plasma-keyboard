@@ -17,6 +17,7 @@
   <name xml:lang="fi">Plasma-näppäimistö</name>
   <name xml:lang="fr">Plasma Keyboard</name>
   <name xml:lang="he">מקלדת פלזמה</name>
+  <name xml:lang="hu">Plasma Billentyűzet</name>
   <name xml:lang="ia">Claviero de Plasma</name>
   <name xml:lang="is">Plasma-lyklaborð</name>
   <name xml:lang="it">Plasma Keyboard</name>
@@ -50,6 +51,7 @@
   <summary xml:lang="fi">Näyttönäppäimistö Plasmaan</summary>
   <summary xml:lang="fr">Clavier sur l'écran pour Plasma</summary>
   <summary xml:lang="he">מקלדת על המסך לפלזמה</summary>
+  <summary xml:lang="hu">Képernyő-billentyűzet a Plasmához</summary>
   <summary xml:lang="ia">Un Claviero sur schermo per Plasma</summary>
   <summary xml:lang="is">Skjályklaborð fyrir Plasma</summary>
   <summary xml:lang="it">Tastiera su schermo per Plasma</summary>
