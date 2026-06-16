@@ -22,6 +22,7 @@
 #include <QtWaylandCompositor/QWaylandCompositorExtensionTemplate>
 #include <QtWaylandCompositor/QWaylandOutput>
 #include <QtWaylandCompositor/QWaylandOutputMode>
+#include <QtWaylandCompositor/QWaylandSeat>
 #include <QtWaylandCompositor/QWaylandSurface>
 #include <QtWaylandCompositor/QWaylandXdgShell>
 #include <private/qxkbcommon_p.h>
@@ -356,9 +357,14 @@ public:
         return m_toplevelPanelCount;
     }
 
-    wl_resource *lastSurfaceResource() const
+    wl_resource *surfaceResource() const
     {
-        return m_lastSurfaceResource;
+        return m_surfaceResource;
+    }
+
+    QWaylandSurface *surface() const
+    {
+        return m_surface;
     }
 
 Q_SIGNALS:
@@ -375,7 +381,15 @@ protected:
             return;
         }
 
-        m_lastSurfaceResource = surface;
+        m_surfaceResource = surface;
+        m_surface = wlSurface;
+        connect(wlSurface, &QWaylandSurface::surfaceDestroyed, this, [this, wlSurface] {
+            if (m_surface == wlSurface) {
+                m_surface = nullptr;
+                m_surfaceResource = nullptr;
+            }
+        });
+
         auto *panelSurface = new InputPanelSurface(wlSurface, resource->client(), id, resource->version(), this);
         connect(panelSurface, &InputPanelSurface::toplevelRequested, this, [this] {
             ++m_toplevelPanelCount;
@@ -392,7 +406,8 @@ protected:
 private:
     int m_overlayPanelCount = 0;
     int m_toplevelPanelCount = 0;
-    wl_resource *m_lastSurfaceResource = nullptr;
+    wl_resource *m_surfaceResource = nullptr;
+    QWaylandSurface *m_surface = nullptr;
 };
 
 class InputMethodV1 : public QWaylandCompositorExtensionTemplate<InputMethodV1>, public QtWaylandServer::zwp_input_method_v1
@@ -426,7 +441,7 @@ public:
             return;
         }
 
-        const wl_resource *focusSurface = m_inputPanel ? m_inputPanel->lastSurfaceResource() : nullptr;
+        const wl_resource *focusSurface = m_inputPanel ? m_inputPanel->surfaceResource() : nullptr;
         m_context = std::make_unique<InputMethodContext>(const_cast<wl_resource *>(focusSurface), this);
         for (auto *resource : resourceMap()) {
             auto *contextResource = m_context->add(resource->client(), resource->version());
@@ -519,6 +534,9 @@ private Q_SLOTS:
         m_compositor->setUseHardwareIntegrationExtension(false);
         m_compositor->create();
         QTRY_VERIFY_WITH_TIMEOUT(m_compositor->isCreated(), 2000);
+
+        m_seat = m_compositor->defaultSeat();
+        QVERIFY(m_seat);
 
         m_outputWindow = std::make_unique<QWindow>();
         m_outputWindow->setGeometry(0, 0, 1280, 720);
@@ -621,6 +639,64 @@ private Q_SLOTS:
         keyboard->setKeymap(layout, variant);
         wl_display_flush_clients(m_compositor->display());
         QTest::qWait(200);
+    }
+
+    void tapInputPanel(const QPointF &position)
+    {
+        if (!m_inputPanel->surface()) {
+            QSignalSpy surfaceSpy(m_inputPanel.get(), &InputPanelV1::inputPanelSurfaceCreated);
+            QVERIFY(surfaceSpy.wait());
+        }
+
+        auto *surface = m_inputPanel->surface();
+        QVERIFY(surface);
+        QTRY_VERIFY_WITH_TIMEOUT(surface->hasContent(), 5000);
+
+        constexpr int touchId = 0;
+        m_seat->sendTouchPointPressed(surface, touchId, position);
+        m_seat->sendTouchFrameEvent(surface->client());
+        wl_display_flush_clients(m_compositor->display());
+
+        QTest::qWait(50);
+
+        m_seat->sendTouchPointReleased(surface, touchId, position);
+        m_seat->sendTouchFrameEvent(surface->client());
+        wl_display_flush_clients(m_compositor->display());
+    }
+
+    QSize inputPanelSurfaceSize() const
+    {
+        auto *surface = m_inputPanel->surface();
+        if (!surface) {
+            return {};
+        }
+
+        const QSize destinationSize = surface->destinationSize();
+        return destinationSize.isEmpty() ? surface->bufferSize() : destinationSize;
+    }
+
+    void testOnScreenKeyboardCommitsCharacter()
+    {
+        if (!m_inputPanel->surface()) {
+            QSignalSpy surfaceSpy(m_inputPanel.get(), &InputPanelV1::inputPanelSurfaceCreated);
+            QVERIFY(surfaceSpy.wait());
+        }
+
+        auto *surface = m_inputPanel->surface();
+        QVERIFY(surface);
+        QTRY_VERIFY_WITH_TIMEOUT(surface->hasContent(), 5000);
+        QTRY_VERIFY_WITH_TIMEOUT(!inputPanelSurfaceSize().isEmpty(), 5000);
+
+        const QSize surfaceSize = inputPanelSurfaceSize();
+        const qreal keyboardHeight = std::max(surfaceSize.height() * 0.3, 150.0);
+        constexpr int keysPerRow = 10, numberOfRows = 4;
+        const QPointF qKeyCenter((surfaceSize.width() / keysPerRow) / 2, surfaceSize.height() - keyboardHeight + keyboardHeight / (numberOfRows * 2));
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        tapInputPanel(qKeyCenter);
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("q"));
     }
 
     void testLongPressShowsOverlayPanel()
@@ -808,6 +884,7 @@ private:
     std::unique_ptr<QWaylandCompositor> m_compositor;
     std::unique_ptr<QWindow> m_outputWindow;
     std::unique_ptr<QWaylandOutput> m_output;
+    QWaylandSeat *m_seat = nullptr;
     std::unique_ptr<QWaylandXdgShell> m_xdgShell;
     std::unique_ptr<InputMethodV1> m_inputMethod;
     std::unique_ptr<InputPanelV1> m_inputPanel;
