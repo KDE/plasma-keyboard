@@ -389,6 +389,10 @@ protected:
                 m_surfaceResource = nullptr;
             }
         });
+        connect(wlSurface, &QWaylandSurface::damaged, this, [this, wlSurface] {
+            wlSurface->frameStarted();
+            wlSurface->sendFrameCallbacks();
+        });
 
         auto *panelSurface = new InputPanelSurface(wlSurface, resource->client(), id, resource->version(), this);
         connect(panelSurface, &InputPanelSurface::toplevelRequested, this, [this] {
@@ -524,6 +528,7 @@ private Q_SLOTS:
             KConfig cfg(QStringLiteral("plasmakeyboardrc"));
             KConfigGroup grp(&cfg, QStringLiteral("General"));
             grp.writeEntry(QStringLiteral("enabledLocales"), QStringLiteral("it_IT"));
+            grp.writeEntry(QStringLiteral("keyboardNavigationEnabled"), true);
             // Set the long press threshold to max to avoid potential flakiness in CI where timing can be unpredictable.
             grp.writeEntry(QStringLiteral("diacriticsHoldThresholdMs"), 1500);
         }
@@ -697,6 +702,35 @@ private Q_SLOTS:
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("q"));
+    }
+
+    void testKeyboardNavigationCommitsCharacter()
+    {
+        if (!m_inputPanel->surface()) {
+            QSignalSpy surfaceSpy(m_inputPanel.get(), &InputPanelV1::inputPanelSurfaceCreated);
+            QVERIFY(surfaceSpy.wait());
+        }
+
+        auto *surface = m_inputPanel->surface();
+        QVERIFY(surface);
+        QTRY_VERIFY_WITH_TIMEOUT(surface->hasContent(), 5000);
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        QSignalSpy keysymSpy(m_inputMethod->context(), &InputMethodContext::keysymReceived);
+
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_RIGHT, 100);
+        sendKey(KEY_ENTER, 100);
+
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("x"));
+
+        for (const QList<QVariant> &args : keysymSpy) {
+            const uint32_t sym = args.at(0).toUInt();
+            QVERIFY2(sym != XKB_KEY_Right && sym != XKB_KEY_Return, "Keyboard navigation keys were incorrectly forwarded via keysym");
+        }
     }
 
     void testLongPressShowsOverlayPanel()
