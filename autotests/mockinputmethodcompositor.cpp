@@ -646,6 +646,14 @@ private Q_SLOTS:
         QTest::qWait(200);
     }
 
+    /**
+     * Helper that simulates a tap on the on-screen keyboard at the given position.
+     *
+     * Waits for the surface to have content before sending the tap, and waits briefly
+     * after to allow the event to be processed.
+     *
+     * @param position The position to tap on the on-screen keyboard.
+     */
     void tapInputPanel(const QPointF &position)
     {
         if (!m_inputPanel->surface()) {
@@ -669,6 +677,9 @@ private Q_SLOTS:
         wl_display_flush_clients(m_compositor->display());
     }
 
+    /**
+     * Helper that returns the size of the input panel surface, or an empty size if not available.
+     */
     QSize inputPanelSurfaceSize() const
     {
         auto *surface = m_inputPanel->surface();
@@ -680,6 +691,9 @@ private Q_SLOTS:
         return destinationSize.isEmpty() ? surface->bufferSize() : destinationSize;
     }
 
+    /**
+     *  Test that tapping a key on the on-screen keyboard commits the expected character.
+     */
     void testOnScreenKeyboardCommitsCharacter()
     {
         if (!m_inputPanel->surface()) {
