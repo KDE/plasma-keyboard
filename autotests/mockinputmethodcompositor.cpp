@@ -709,7 +709,8 @@ private Q_SLOTS:
         const QSize surfaceSize = inputPanelSurfaceSize();
         const qreal keyboardHeight = std::max(surfaceSize.height() * 0.3, 150.0);
         constexpr int keysPerRow = 10, numberOfRows = 4;
-        const QPointF qKeyCenter((surfaceSize.width() / keysPerRow) / 2, surfaceSize.height() - keyboardHeight + keyboardHeight / (numberOfRows * 2));
+        const qreal keyWidth = static_cast<qreal>(surfaceSize.width()) / keysPerRow;
+        const QPointF qKeyCenter(keyWidth / 2, surfaceSize.height() - keyboardHeight + keyboardHeight / (numberOfRows * 2));
 
         QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         tapInputPanel(qKeyCenter);
