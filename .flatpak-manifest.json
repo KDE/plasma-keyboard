@@ -28,7 +28,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qtvirtualkeyboard-everywhere-src-6.10.3.tar.xz",
+                    "url": "https://files.kde.org/qt/official_releases/qt/6.10/6.10.3/submodules/qtvirtualkeyboard-everywhere-src-6.10.3.tar.xz",
                     "sha256": "3298e26dfa4fad2363e3dfb2b55079c54fc8115a4a040d9616e5619f095d8fb5",
                     "x-checker-data": {
                         "type": "anitya",
@@ -37,7 +37,7 @@
                         "versions": {
                             "<": "6.11"
                         },
-                        "url-template": "https://download.qt.io/official_releases/qt/${major}.${minor}/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
+                        "url-template": "https://files.kde.org/qt/official_releases/qt/${major}.${minor}/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
                     }
                 }
             ]
