@@ -18,6 +18,12 @@ OverlayController::OverlayController(InputPlugin *inputPlugin, QObject *parent)
     m_holdTimer.setSingleShot(true);
     connect(&m_holdTimer, &QTimer::timeout, this, &OverlayController::handleTimerExpired);
 
+    m_repeatTimer.setSingleShot(true);
+    connect(&m_repeatTimer, &QTimer::timeout, this, &OverlayController::handleRepeatTimer);
+
+    m_overlayGraceTimer.setSingleShot(true);
+    connect(&m_overlayGraceTimer, &QTimer::timeout, this, &OverlayController::handleOverlayGraceTimer);
+
     // The settle timer is a single-shot guard that absorbs extra surrounding_text
     // echoes from clients that send more than one event per commit_string.
     // 100 ms is well above any realistic Wayland roundtrip but well below the
@@ -81,7 +87,10 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
     // Compare by native scan code (physical key) rather than Qt key code, because
     // the Qt key code can change if the modifier is released before the repeat fires
     // (e.g. Shift+/ produces Key_Question on press but Key_Slash on repeat).
-    if (event->isAutoRepeat() && event->nativeScanCode() == m_pendingNativeScanCode) {
+    //
+    // Suppress auto-repeat key events for the pending key (diacritic long-press)
+    // or for a key being repeated by our internal timer (non-diacritic ConsumeEvent).
+    if (event->isAutoRepeat() && (event->nativeScanCode() == m_pendingNativeScanCode || event->nativeScanCode() == m_repeatNativeScanCode)) {
         // qCDebug(PlasmaKeyboard) << "Suppressing repeat press of pending overlay key" << m_pendingText;
         return true;
     }
@@ -185,6 +194,22 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
 {
     if (!event) {
         return false;
+    }
+
+    // If the overlay grace timer is running and the held key is released,
+    // stop the grace timer — the overlay stays visible waiting for selection
+    // or cancellation via the normal pathways.
+    if (m_overlayGraceTimer.isActive() && event->nativeScanCode() == m_pendingNativeScanCode) {
+        m_overlayGraceTimer.stop();
+    }
+
+    // Check for key release that should stop the internal repeat timer.
+    // This must run before the swallow-release and pending-key checks since
+    // it may share the same scan code.
+    if (m_repeatNativeScanCode != 0 && event->nativeScanCode() == m_repeatNativeScanCode) {
+        m_repeatTimer.stop();
+        m_repeatText.clear();
+        m_repeatNativeScanCode = 0;
     }
 
     // Swallow release of a discarded/committed pending key.
@@ -418,6 +443,16 @@ void OverlayController::openOverlay(const QString &triggerId, const QString &bas
     Q_EMIT activeTriggerIdChanged();
     Q_EMIT pendingTextChanged();
     Q_EMIT overlayRequested(triggerId, baseText);
+
+    // Start grace timer for diacritics long-press overlays: if the user keeps
+    // holding the key after the overlay opens, after a grace period the overlay
+    // closes and the base character starts auto-repeating.
+    //
+    // Only start if there is a physically held pending key (not for emoji/text-
+    // expansion overlays which don't use the hold timer pathway).
+    if (!m_pendingText.isEmpty() && m_pendingTrigger && !m_pendingKeyReleased) {
+        m_overlayGraceTimer.start(1000); // 1000 ms grace period after overlay opens
+    }
 }
 
 void OverlayController::handleTimerExpired()
@@ -509,11 +544,74 @@ void OverlayController::executeAction(const OverlayTriggerResult &result, Overla
         }
         break;
     case OverlayAction::ConsumeEvent:
-        // Event consumed but no visible action
+        // Commit the base character via commit_string for ordering consistency, even
+        // if the key is not a diacritic candidate.
+        if (!result.commitText.isEmpty() && m_inputPlugin) {
+            ++m_pendingSurroundingTextUpdates;
+            m_surroundingTextSettleTimer.start();
+            m_inputPlugin->commit(result.commitText);
+        }
+        // If the trigger requested a pending scan code, mark it for swallowing on release.
+        if (result.consumeEvent && result.pendingNativeScanCode != 0) {
+            m_ignoreReleaseNativeScanCode = result.pendingNativeScanCode;
+            m_swallowNextRelease = true;
+        }
+        // Start internal repeat timer for consumed non-diacritic keys so they
+        // retain auto-repeat even though the raw key events are consumed and don't reach the client.
+        if (result.enableRepeat && result.repeatScanCode != 0) {
+            m_repeatText = result.commitText;
+            m_repeatNativeScanCode = result.repeatScanCode;
+            // Initial delay before first repeat (matches typical XKB repeat delay)
+            m_repeatTimer.start(500);
+        }
         break;
     case OverlayAction::None:
         break;
     }
+}
+
+void OverlayController::handleRepeatTimer()
+{
+    if (m_repeatText.isEmpty() || !m_inputPlugin) {
+        return;
+    }
+
+    // First tick is the initial repeat delay; switch to the shorter rate.
+    if (m_repeatTimer.interval() > 100) {
+        m_repeatTimer.setInterval(33); // ~30 Hz
+    }
+
+    ++m_pendingSurroundingTextUpdates;
+    m_surroundingTextSettleTimer.start();
+    m_inputPlugin->commit(m_repeatText);
+
+    // The timer is single-shot; restart it for the next tick.
+    m_repeatTimer.start();
+}
+
+void OverlayController::handleOverlayGraceTimer()
+{
+    // If the key was already released while the overlay was visible, don't
+    // start repeating — the overlay is still up waiting for selection.
+    if (m_pendingKeyReleased || m_pendingText.isEmpty()) {
+        return;
+    }
+
+    // Close the overlay.
+    if (m_overlayVisible) {
+        m_overlayVisible = false;
+        Q_EMIT overlayVisibleChanged();
+        Q_EMIT overlayClosed();
+    }
+
+    // Start the internal repeat timer with the base character.
+    m_repeatText = m_pendingText;
+    m_repeatNativeScanCode = m_pendingNativeScanCode;
+    m_repeatTimer.start(500);
+
+    // The raw key press was consumed, so the eventual release must be swallowed.
+    m_ignoreReleaseNativeScanCode = m_pendingNativeScanCode;
+    m_swallowNextRelease = true;
 }
 
 void OverlayController::resetState()
@@ -521,6 +619,11 @@ void OverlayController::resetState()
     if (m_holdTimer.isActive()) {
         m_holdTimer.stop();
     }
+    m_repeatTimer.stop();
+    m_repeatText.clear();
+    m_repeatNativeScanCode = 0;
+    m_overlayGraceTimer.stop();
+    m_overlayGraceTimer.stop();
 
     const bool wasVisible = m_overlayVisible;
     const bool hadPending = !m_pendingText.isEmpty();

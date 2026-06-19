@@ -78,6 +78,25 @@ struct OverlayTriggerResult {
 
     /** For StartTimer: the pending text to be committed or shown in overlay. */
     QString pendingText;
+
+    /**
+     * For ConsumeEvent: whether to enable an internal repeat timer for this key.
+     *
+     * The compositor does not send auto-repeat events (state=2) to the input
+     * method grab when the initial press is consumed, so keys that go through
+     * the commit_string path lose native repeat. Set this to true for printable
+     * characters that should auto-repeat when held.
+     */
+    bool enableRepeat = false;
+
+    /**
+     * For ConsumeEvent: native scan code used to match the key release that
+     * should stop the repeat timer.
+     *
+     * Same as pendingNativeScanCode but for the controller's internal repeat
+     * timer rather than the long-press hold timer.
+     */
+    quint32 repeatScanCode = 0;
 };
 
 /**

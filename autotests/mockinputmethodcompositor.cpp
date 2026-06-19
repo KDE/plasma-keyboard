@@ -249,8 +249,10 @@ protected:
         Q_UNUSED(resource);
         Q_UNUSED(serial);
         Q_UNUSED(time);
-        // Only emit on press (state == WL_KEYBOARD_KEY_STATE_PRESSED)
-        if (state != WL_KEYBOARD_KEY_STATE_PRESSED) {
+        // Treat both PRESSED and REPEATED as press events (real compositors process
+        // auto-repeat keys the same way, using REPEATED to inform clients that this is an
+        // auto-repeat event).
+        if (state != WL_KEYBOARD_KEY_STATE_PRESSED && state != WL_KEYBOARD_KEY_STATE_REPEATED) {
             return;
         }
         const uint32_t code = key + 8; // XKB keycode = Linux scancode + 8
@@ -914,6 +916,24 @@ private Q_SLOTS:
         setKeymap("us", nullptr);
     }
 
+    /**
+     * Verify holding down spacebar triggers auto-repeat, and results in multiple
+     * commit_string signals with " ".
+     */
+    void testSpacebarRepeatWorks()
+    {
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+
+        // Press and hold spacebar to trigger auto-repeat
+        sendKeyWithRepeat(KEY_SPACE);
+
+        // We should have received multiple commit_string signals with " "
+        QTRY_VERIFY(commitStringSpy.count() > 1);
+        for (const QList<QVariant> &args : commitStringSpy) {
+            QCOMPARE(args.first().toString(), QStringLiteral(" "));
+        }
+    }
+
     void cleanupTestCase()
     {
         if (m_child) {
@@ -926,6 +946,47 @@ private Q_SLOTS:
     }
 
 private:
+    /**
+     * Helper that simulates compositor-side auto-repeat when a key is held.
+     *
+     * Sends a press event, waits for the initial repeat delay, then sends multiple
+     * additional press events at the repeat interval to simulate compositor-side
+     * key repeat, and finally sends the release event.
+     *
+     * Unlike sendKey() which produces a single press/release tap, this helper
+     * generates the sequence of events that a real compositor sends during
+     * auto-repeat, testing the repeat pipeline end-to-end.
+     *
+     * @param key The Linux scancode of the key (KEY_* from input-event-codes.h)
+     * @param repeatDelayMs Initial delay before repeat begins
+     * @param repeatIntervalMs Interval between repeat events
+     * @param repeatCount Number of repeat events to send
+     */
+    void sendKeyWithRepeat(int key, int repeatDelayMs = 300, int repeatIntervalMs = 50, int repeatCount = 5)
+    {
+        auto keyboard = m_inputMethod->context()->keyboard();
+        Q_ASSERT(keyboard);
+
+        // First press
+        keyboard->sendKey(key, WL_KEYBOARD_KEY_STATE_PRESSED);
+        wl_display_flush_clients(m_compositor->display());
+
+        // Wait for the initial repeat delay
+        QTest::qWait(repeatDelayMs);
+
+        // Send repeat events at the repeat interval using the dedicated
+        // WL_KEYBOARD_KEY_STATE_REPEATED state, which informs the client that these are
+        // auto-repeat presses rather than independent key-down events.
+        for (int i = 0; i < repeatCount; ++i) {
+            keyboard->sendKey(key, WL_KEYBOARD_KEY_STATE_REPEATED);
+            wl_display_flush_clients(m_compositor->display());
+            QTest::qWait(repeatIntervalMs);
+        }
+
+        keyboard->sendKey(key, WL_KEYBOARD_KEY_STATE_RELEASED);
+        wl_display_flush_clients(m_compositor->display());
+    }
+
     QTemporaryDir m_runtimeDir;
     QTemporaryDir m_home;
     QString m_socketPath;
