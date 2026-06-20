@@ -1,6 +1,5 @@
 {
     "KPlugin": {
-        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_plasmakeyboard",
         "Authors": [
             {
                 "Name": "Devin Lin",
@@ -41,6 +40,7 @@
                 "Name[zh_TW]": "Devin Lin"
             }
         ],
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_plasmakeyboard",
         "Description": "Configuration for Plasma Keyboard",
         "Description[ar]": "اضبط لوحة مفاتيح بلازما",
         "Description[bg]": "Настройване на екранна клавиатура на Plasma",
