@@ -1,0 +1,120 @@
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"PO-Revision-Date: 2026-06-14 15:44+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 26.04.2\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "言語を検索…"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "言語の検索"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"言語が選択されていません。このシステム標準のキーボードレイアウトが使用されま"
+"す。"
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "言語"
+
+#: ui/main.qml:33
+msgid "Key press feedback:"
+msgstr "キー押下時の反応:"
+
+#: ui/main.qml:34 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "サウンド"
+
+#: ui/main.qml:45 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "バイブレーション"
+
+#: ui/main.qml:56
+msgid "General:"
+msgstr "全般:"
+
+#: ui/main.qml:57 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr "物理キーボードで操作"
+
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr "自動大文字変換"
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr "代替文字:"
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr "長押しでポップアップ表示"
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr "長押しに必要な時間:"
+
+#: ui/main.qml:101
+msgid "milliseconds"
+msgstr "ミリ秒"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr "仮想キーボードのテスト…"
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "フィードバック"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr "キー押下時にサウンドを再生するかどうか"
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr "キー押下時にバイブレーションするかどうか"
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr "キーボードの言語"
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "全般"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "キーボード内の操作に矢印キーを使用するかどうか"
+
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr "文章の最初の文字を自動で大文字にします"
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr "キー押下時の反応"
+
+#: ui/main_mediacenter.qml:82
+msgid "General"
+msgstr "全般"
