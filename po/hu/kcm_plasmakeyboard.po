@@ -1,0 +1,121 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2026 Kristof Kiszel <ulysses@fsf.hu>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"PO-Revision-Date: 2026-06-19 22:06+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.04.2\n"
+
+#: ui/LocaleSelectorListView.qml:68
+msgid "Filter languages…"
+msgstr "Nyelvek szűrése…"
+
+#: ui/LocaleSelectorListView.qml:69
+msgid "Filter languages"
+msgstr "Nyelvek szűrése"
+
+#: ui/LocaleSelectorListView.qml:82
+msgid ""
+"No languages selected. The default keyboard layout for the system will be "
+"used."
+msgstr ""
+"Nincs kiválasztva nyelv. A rendszer alapértelmezett billentyűzetkiosztása "
+"lesz használva."
+
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/main_mediacenter.qml:40
+msgid "Languages"
+msgstr "Nyelvek"
+
+#: ui/main.qml:33
+msgid "Key press feedback:"
+msgstr "Gomblenyomás visszajelzése:"
+
+#: ui/main.qml:34 ui/main_handset.qml:40
+msgid "Sound"
+msgstr "Hang"
+
+#: ui/main.qml:45 ui/main_handset.qml:54
+msgid "Vibration"
+msgstr "Rezgés"
+
+#: ui/main.qml:56
+msgid "General:"
+msgstr "Általános:"
+
+#: ui/main.qml:57 ui/main_handset.qml:90
+msgid "Keyboard navigation"
+msgstr "Billentyűzetnavigáció"
+
+#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+msgid "Auto-capitalization"
+msgstr "Automatikus nagybetű"
+
+#: ui/main.qml:79
+msgid "Alternate characters:"
+msgstr "Alternatív karakterek:"
+
+#: ui/main.qml:80
+msgid "Show popup when holding a key"
+msgstr "Felugró megjelenítése gomb nyomva tartásakor"
+
+#: ui/main.qml:91
+msgid "Hold delay:"
+msgstr "Késleltetés:"
+
+#: ui/main.qml:101
+msgid "milliseconds"
+msgstr "ezredmásodperc"
+
+#: ui/main_handset.qml:29
+msgid "Test the virtual keyboard…"
+msgstr "Virtuális billentyűzet kipróbálása…"
+
+#: ui/main_handset.qml:34
+msgctxt "@title:group"
+msgid "Feedback"
+msgstr "Visszajelzés"
+
+#: ui/main_handset.qml:41
+msgid "Whether to emit a sound on key press"
+msgstr "Adjon-e ki hangot billentyűlenyomáskor"
+
+#: ui/main_handset.qml:55
+msgid "Whether to vibrate on key press"
+msgstr "Rezegjen-e billentyűlenyomáskor"
+
+#: ui/main_handset.qml:76
+msgid "Keyboard Languages"
+msgstr "Billentyűzet nyelvei"
+
+#: ui/main_handset.qml:84
+msgctxt "@title:group"
+msgid "General"
+msgstr "Általános"
+
+#: ui/main_handset.qml:91
+msgid "Whether to use the arrow keys to navigate the keyboard"
+msgstr "Használja-e a nyílgombokat a billentyűzeten navigáláshoz"
+
+#: ui/main_handset.qml:105
+msgid "Automatically capitalize the first letter of sentences"
+msgstr "A mondatok első betűjét automatikusan nagybetűvé alakítja"
+
+#: ui/main_mediacenter.qml:47
+msgid "Key press feedback"
+msgstr "Gomblenyomás visszajelzése"
+
+#: ui/main_mediacenter.qml:82
+msgid "General"
+msgstr "Általános"
