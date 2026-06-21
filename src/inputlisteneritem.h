@@ -13,11 +13,14 @@
 #include <QVirtualKeyboardInputEngine>
 #include <qqmlintegration.h>
 
+#include <memory>
+
 #include <xkbcommon/xkbcommon.h>
 
 #include "inputplugin.h"
 
 class OverlayController;
+class DBusInterface;
 
 class InputListenerItem : public QQuickItem
 {
@@ -58,4 +61,21 @@ private:
     InputPlugin m_input;
     OverlayController *m_overlayController = nullptr;
     bool m_keyboardNavigationActive = false;
+    std::unique_ptr<DBusInterface> m_dbus;
+};
+
+class DBusInterface : public QObject
+{
+    Q_OBJECT
+public:
+    DBusInterface(InputPlugin *im)
+        : m_im(im)
+    {
+    }
+
+public Q_SLOTS:
+    bool enterText(const QString &text);
+
+private:
+    InputPlugin *const m_im;
 };

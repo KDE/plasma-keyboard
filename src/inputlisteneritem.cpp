@@ -16,6 +16,8 @@
 #include "overlay/prefixquerytrigger.h"
 #include "overlay/textexpansiontrigger.h"
 
+#include <QDBusConnection>
+#include <QDBusError>
 #include <QLoggingCategory>
 #include <QTextFormat>
 
@@ -180,6 +182,20 @@ InputListenerItem::InputListenerItem()
     // TODO: Investigate other places this might happen and how to fix it.
 
     QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
+
+    m_dbus = std::make_unique<DBusInterface>(&m_input);
+
+    auto bus = QDBusConnection::sessionBus();
+    const bool objectRegistered =
+        bus.registerObject(QStringLiteral("/Input"), QStringLiteral("org.kde.Plasma.Keyboard"), m_dbus.get(), QDBusConnection::ExportAllSlots);
+    if (!objectRegistered) {
+        qCWarning(PlasmaKeyboard) << "Failed to register input DBus object:" << bus.lastError().message();
+    }
+
+    const bool serviceRegistered = bus.registerService(QStringLiteral("org.kde.Plasma.Keyboard"));
+    if (!serviceRegistered) {
+        qCWarning(PlasmaKeyboard) << "Failed to register input DBus service:" << bus.lastError().message();
+    }
 }
 
 OverlayController *InputListenerItem::overlayController() const
@@ -427,6 +443,15 @@ void InputListenerItem::inputMethodEvent(QInputMethodEvent *event)
 
     // Send currently being edited string
     m_input.setPreEditString(preedit);
+}
+
+bool DBusInterface::enterText(const QString &text)
+{
+    if (!m_im->hasContext()) {
+        return false;
+    }
+    m_im->commit(text);
+    return true;
 }
 
 #include "moc_inputlisteneritem.cpp"
