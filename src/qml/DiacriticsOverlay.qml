@@ -71,7 +71,6 @@ Item {
         case Qt.Key_Return:
             if (root.selectedIndex >= 0 && root.selectedIndex < root.options.length) {
                 root.characterSelected(root.options[root.selectedIndex]);
-                root.close();
             } else {
                 // If no option is selected, close the overlay without selecting a character
                 root.close();
@@ -120,7 +119,6 @@ Item {
 
                     onClicked: {
                         root.characterSelected(delegate.modelData)
-                        root.close()
                     }
 
                     contentItem: Column {
