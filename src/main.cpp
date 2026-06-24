@@ -26,6 +26,13 @@
 #include <QWindow>
 #include <qpa/qwindowsysteminterface.h>
 
+// signal handler for SIGINT & SIGTERM
+#ifdef Q_OS_UNIX
+#include <KSignalHandler>
+#include <signal.h>
+#include <unistd.h>
+#endif
+
 int main(int argc, char **argv)
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
@@ -97,6 +104,20 @@ int main(int argc, char **argv)
         window->setVisible(true);
     });
     view.load(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/plasma/keyboard/main.qml")));
+
+#ifdef Q_OS_UNIX
+    /**
+     * Set up signal handler for SIGINT and SIGTERM
+     */
+    KSignalHandler::self()->watchSignal(SIGINT);
+    KSignalHandler::self()->watchSignal(SIGTERM);
+    QObject::connect(KSignalHandler::self(), &KSignalHandler::signalReceived, &application, [](int signal) {
+        if (signal == SIGINT || signal == SIGTERM) {
+            qCDebug(PlasmaKeyboard) << "Received signal" << signal << ", exiting now.";
+            QCoreApplication::quit();
+        }
+    });
+#endif
 
     qCDebug(PlasmaKeyboard) << "Starting Plasma Keyboard application";
 
