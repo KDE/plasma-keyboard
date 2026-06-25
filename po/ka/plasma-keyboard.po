@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:45+0000\n"
+"POT-Creation-Date: 2026-06-25 00:46+0000\n"
 "PO-Revision-Date: 2026-03-14 06:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,27 +28,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "temuri.doghonadze@gmail.com"
 
-#: main.cpp:40
+#: main.cpp:47
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "Plasma-ის კლავიატურა"
 
-#: main.cpp:42
+#: main.cpp:49
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "ეკრანის კლავიატურა Plasma-ისთვის"
 
-#: main.cpp:44
+#: main.cpp:51
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "ყველა უფლება დაცულია, 2024, ალეიქს პოლ გონსალესი"
 
-#: main.cpp:46
+#: main.cpp:53
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "ალეიქს პოლ გონსალესი"
 
-#: main.cpp:46
+#: main.cpp:53
 #, kde-format
 msgid "Author"
 msgstr "ავტორი"
