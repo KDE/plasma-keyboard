@@ -189,7 +189,6 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void handleTimerExpired();
-    void handleRepeatTimer();
     void handleOverlayGraceTimer();
 
 private:
@@ -201,7 +200,6 @@ private:
     CandidateModel *m_candidateModel = nullptr;
 
     QTimer m_holdTimer;
-    QTimer m_repeatTimer;
     QTimer m_overlayGraceTimer;
     bool m_overlayVisible = false;
     QString m_activeTriggerId;
@@ -220,12 +218,6 @@ private:
 
     /** The trigger that is currently timing (for long-press). */
     OverlayTrigger *m_pendingTrigger = nullptr;
-
-    /**
-     * Text being repeated by the internal timer for a consumed key. Empty when no repeat
-     * is active.
-     */
-    QString m_repeatText;
 
     /**
      * Native scan code of the key currently being repeated. 0 when idle.

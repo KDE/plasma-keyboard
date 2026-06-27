@@ -106,6 +106,14 @@ void InputPlugin::keysym(uint timestamp, uint sym, KeyState state, uint modifier
     m_context->keysym(m_context->m_latestSerial, timestamp, sym, state, modifiers);
 }
 
+void InputPlugin::key(KeyState state, quint32 scancode)
+{
+    if (!m_context) {
+        return;
+    }
+    m_context->key(m_context->m_lastKeyboardSerial, m_context->m_lastKeyboardTime, scancode, static_cast<uint32_t>(state));
+}
+
 InputPlugin::ContentHint InputPlugin::contentHint() const
 {
     if (!m_context) {
