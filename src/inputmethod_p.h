@@ -64,6 +64,8 @@ public:
     uint32_t m_cursor = 0;
     uint32_t m_anchor = 0;
     uint32_t m_latestSerial = 0;
+    uint32_t m_lastKeyboardSerial = 0;
+    uint32_t m_lastKeyboardTime = 0;
     InputPlugin::ContentHint m_contentHint = InputPlugin::content_hint_none;
     InputPlugin::ContentPurpose m_contentPurpose = InputPlugin::content_purpose_normal;
 

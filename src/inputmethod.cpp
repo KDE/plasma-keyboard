@@ -143,6 +143,11 @@ void Keyboard::keyboard_keymap(uint32_t format, int32_t fd, uint32_t size)
 
 void Keyboard::keyboard_key(uint32_t serial, uint32_t time, uint32_t key, uint32_t state)
 {
+    // Store the serial and time from the compositor so they can be used later
+    // by InputPlugin::key() for synthetic key event forwarding.
+    m_parent->m_lastKeyboardSerial = serial;
+    m_parent->m_lastKeyboardTime = time;
+
     auto code = key + 8; // map to wl_keyboard::keymap_format::keymap_format_xkb_v1
 
     xkb_keysym_t sym = xkb_state_key_get_one_sym(mXkbState.get(), code);

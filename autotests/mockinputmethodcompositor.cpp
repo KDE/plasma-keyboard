@@ -203,6 +203,7 @@ Q_SIGNALS:
     void keyboardGrabbed();
     void commitStringChanged(const QString &commitString);
     void keysymReceived(uint32_t sym, uint32_t state);
+    void keyReceived(uint32_t key, uint32_t state);
 
 protected:
     void zwp_input_method_context_v1_destroy(Resource *resource) override
@@ -249,6 +250,7 @@ protected:
         Q_UNUSED(resource);
         Q_UNUSED(serial);
         Q_UNUSED(time);
+        Q_EMIT keyReceived(key, state);
         // Treat both PRESSED and REPEATED as press events (real compositors process
         // auto-repeat keys the same way, using REPEATED to inform clients that this is an
         // auto-repeat event).
@@ -932,6 +934,43 @@ private Q_SLOTS:
         for (const QList<QVariant> &args : commitStringSpy) {
             QCOMPARE(args.first().toString(), QStringLiteral(" "));
         }
+    }
+
+    /**
+     * Test that normal key press/releases of printable keys forwards the key events via
+     * key() and not via commit_string. Non-diacritic keys should fall through to normal
+     * forwarding in Keyboard::keyboard_key(), preserving compositor-side auto-repeat.
+     */
+    void testKeysForwardedViaKey()
+    {
+        QSignalSpy keySpy(m_inputMethod->context(), &InputMethodContext::keyReceived);
+
+        // A key without diacritics options.
+        sendKey(KEY_Z, 10);
+
+        // The key should be forwarded via key() for both press and release.
+        // Use the LAST two events to avoid capturing any stale events from a
+        // previous test.
+        QTRY_VERIFY(keySpy.count() >= 2);
+        int last = keySpy.count() - 1;
+        int secondLast = last - 1;
+
+        QCOMPARE(keySpy.at(secondLast).at(0).toUInt(), static_cast<uint32_t>(KEY_Z));
+        QCOMPARE(keySpy.at(secondLast).at(1).toUInt(), static_cast<uint32_t>(WL_KEYBOARD_KEY_STATE_PRESSED));
+        QCOMPARE(keySpy.at(last).at(0).toUInt(), static_cast<uint32_t>(KEY_Z));
+        QCOMPARE(keySpy.at(last).at(1).toUInt(), static_cast<uint32_t>(WL_KEYBOARD_KEY_STATE_RELEASED));
+
+        // A key with diacritics options.
+        sendKey(KEY_A, 10);
+
+        QTRY_VERIFY(keySpy.count() >= 4);
+        last = keySpy.count() - 1;
+        secondLast = last - 1;
+
+        QCOMPARE(keySpy.at(secondLast).at(0).toUInt(), static_cast<uint32_t>(KEY_A));
+        QCOMPARE(keySpy.at(secondLast).at(1).toUInt(), static_cast<uint32_t>(WL_KEYBOARD_KEY_STATE_PRESSED));
+        QCOMPARE(keySpy.at(last).at(0).toUInt(), static_cast<uint32_t>(KEY_A));
+        QCOMPARE(keySpy.at(last).at(1).toUInt(), static_cast<uint32_t>(WL_KEYBOARD_KEY_STATE_RELEASED));
     }
 
     void cleanupTestCase()
