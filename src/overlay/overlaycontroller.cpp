@@ -353,9 +353,7 @@ void OverlayController::commitText(const QString &text)
         m_inputPlugin->commit(text);
     }
 
-    if (m_overlayVisible) {
-        Q_EMIT overlayClosed();
-    }
+    setOverlayVisible(false);
 
     // Only swallow the next release if the key is still physically held
     if (!m_pendingKeyReleased) {
@@ -373,9 +371,7 @@ void OverlayController::cancelOverlay()
     // regardless of whether the overlay was visible or only the hold timer was
     // running. Simply close the overlay and reset state.
 
-    if (m_overlayVisible) {
-        Q_EMIT overlayClosed();
-    }
+    setOverlayVisible(false);
 
     if (!m_pendingText.isEmpty() && !m_pendingKeyReleased) {
         m_ignoreReleaseNativeScanCode = m_pendingNativeScanCode;
@@ -430,14 +426,14 @@ void OverlayController::openOverlay(const QString &triggerId, const QString &bas
         return;
     }
 
-    m_overlayVisible = true;
     m_activeTriggerId = triggerId;
     m_pendingText = baseText;
 
     m_candidateModel->setTriggerId(triggerId);
     m_candidateModel->setCandidates(candidates);
 
-    Q_EMIT overlayVisibleChanged();
+    setOverlayVisible(true);
+
     Q_EMIT activeTriggerIdChanged();
     Q_EMIT pendingTextChanged();
     Q_EMIT overlayRequested(triggerId, baseText);
@@ -562,12 +558,7 @@ void OverlayController::handleOverlayGraceTimer()
 
     // qCDebug(PlasmaKeyboard) << "Overlay grace timer expired; starting repeat for" << m_pendingText;
 
-    // Close the overlay.
-    if (m_overlayVisible) {
-        m_overlayVisible = false;
-        Q_EMIT overlayVisibleChanged();
-        Q_EMIT overlayClosed();
-    }
+    setOverlayVisible(false);
 
     // Send a synthetic key press so the client will begin key repeat.
     m_repeatNativeScanCode = m_pendingNativeScanCode;
@@ -610,6 +601,15 @@ void OverlayController::resetState()
     if (hadTrigger) {
         Q_EMIT activeTriggerIdChanged();
     }
+}
+
+void OverlayController::setOverlayVisible(bool visible)
+{
+    if (m_overlayVisible == visible) {
+        return;
+    }
+    m_overlayVisible = visible;
+    Q_EMIT overlayVisibleChanged();
 }
 
 #include "moc_overlaycontroller.cpp"

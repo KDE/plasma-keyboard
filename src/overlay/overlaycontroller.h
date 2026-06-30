@@ -27,7 +27,7 @@ class InputPlugin;
  * Usage:
  * 1. Register triggers with registerTrigger()
  * 2. Feed input events via processKeyPress/Release/PreeditChanged/TextCommitted
- * 3. Connect to overlayRequested/overlayClosed signals in QML
+ * 3. Connect to overlayVisibleChanged signal in QML
  * 4. Call commitCandidate() when user selects an option
  */
 class OverlayController : public QObject
@@ -171,11 +171,6 @@ Q_SIGNALS:
      */
     void overlayRequested(const QString &triggerId, const QString &baseText);
 
-    /**
-     * Emitted when the overlay should be hidden.
-     */
-    void overlayClosed();
-
     void overlayVisibleChanged();
     void activeTriggerIdChanged();
     void pendingTextChanged();
@@ -194,6 +189,7 @@ private Q_SLOTS:
 private:
     void executeAction(const OverlayTriggerResult &result, OverlayTrigger *trigger);
     void resetState();
+    void setOverlayVisible(bool visible);
 
     InputPlugin *m_inputPlugin = nullptr;
     QList<OverlayTrigger *> m_triggers;
