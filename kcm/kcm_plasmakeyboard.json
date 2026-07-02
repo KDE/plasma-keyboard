@@ -119,7 +119,7 @@
         "Name[zh_TW]": "螢幕上的虛擬鍵盤",
         "Website": "https://kde.org"
     },
-    "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard",
+    "X-KDE-Keywords": "onscreen,osk,virtualkeyboard,keyboard,popup,characters,diacritics,symbols,alternate,long,press,overlay",
     "X-KDE-Keywords[ar]": "على الشاشة,لوحة المفاتيح الافتراضية,لوحة المفاتيح",
     "X-KDE-Keywords[bg]": "екранна клавиатура,виртуална клавиатура,клавиатура",
     "X-KDE-Keywords[ca@valencia]": "en pantalla,osk,teclat virtual,teclat",
