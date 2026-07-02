@@ -41,18 +41,6 @@ public:
     QStringList candidates(const QString &baseText) const override;
 
     /**
-     * Set the hold threshold in milliseconds.
-     *
-     * @param ms Threshold before popup appears.
-     */
-    void setHoldThreshold(int ms);
-
-    /**
-     * Get the current hold threshold.
-     */
-    int holdThreshold() const;
-
-    /**
      * Reload the diacritics map from data files using the currently enabled
      * locales from PlasmaKeyboardSettings.
      *

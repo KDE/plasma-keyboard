@@ -25,6 +25,9 @@ LongPressTrigger::LongPressTrigger(QObject *parent)
     connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::enabledLocalesChanged, this, &LongPressTrigger::reloadMap);
 
     m_holdThresholdMs = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
+    connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::diacriticsHoldThresholdMsChanged, this, [this]() {
+        m_holdThresholdMs = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
+    });
 }
 
 QString LongPressTrigger::triggerId() const
@@ -133,16 +136,6 @@ QStringList LongPressTrigger::candidates(const QString &baseText) const
     }
 
     return result;
-}
-
-void LongPressTrigger::setHoldThreshold(int ms)
-{
-    m_holdThresholdMs = ms;
-}
-
-int LongPressTrigger::holdThreshold() const
-{
-    return m_holdThresholdMs;
 }
 
 bool LongPressTrigger::shouldHandleKey(const QKeyEvent *event) const
