@@ -41,7 +41,7 @@
             <label>Delay (ms) before showing diacritics when holding a physical key.</label>
             <min>100</min>
             <max>1500</max>
-            <default>200</default>
+            <default>600</default>
         </entry>
     </group>
 </kcfg>
