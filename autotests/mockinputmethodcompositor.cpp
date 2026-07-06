@@ -41,6 +41,13 @@
 
 using namespace Qt::StringLiterals;
 
+/**
+ * Whether we are running in a CI environment or not.
+ *
+ * This is used to adjust timing and wait durations in tests, as CI environments can have unpredictable timing.
+ */
+static const bool RUNNING_IN_CI = qEnvironmentVariableIsSet("CI");
+
 static int createAnonymousKeymapFile(off_t size)
 {
     int fd = -1;
@@ -622,6 +629,22 @@ private Q_SLOTS:
             QSignalSpy grabSpy(keyboard, &InputMethodKeyboard::keymapDone);
             QVERIFY(grabSpy.wait());
         }
+    }
+
+    /**
+     * Clean up after each test function.
+     *
+     * Drains any pending Wayland events from the preceding test so that
+     * stale events/responses do not bleed into the next test.
+     *
+     * Uses longer waits in CI environments (where timing is less predictable)
+     * and shorter waits locally to keep iteration fast.
+     */
+    void cleanup()
+    {
+        QTest::qWait(RUNNING_IN_CI ? 200 : 20);
+        wl_display_flush_clients(m_compositor->display());
+        QTest::qWait(RUNNING_IN_CI ? 100 : 20);
     }
 
     void sendKey(int key, int interval)
