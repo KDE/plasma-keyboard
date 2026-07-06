@@ -254,7 +254,7 @@ private:
      *   - long enough for all compositor echoes to arrive (Wayland roundtrips
      *     on a local session are typically < 5 ms)
      *   - short enough not to mask genuine user interactions (well under
-     *     the 200 ms long-press threshold)
+     *     the long-press threshold)
      */
     QTimer m_surroundingTextSettleTimer;
 

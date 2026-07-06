@@ -69,7 +69,7 @@ private:
     bool m_keyboardNavigationEnabled = false;
     bool m_autoCapitalizationEnabled = true;
     bool m_diacriticsPopupEnabled = true;
-    int m_diacriticsHoldThresholdMs = 100;
+    int m_diacriticsHoldThresholdMs = 600;
 
     bool m_saveNeeded = false;
 
