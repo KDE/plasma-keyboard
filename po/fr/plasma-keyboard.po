@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:45+0000\n"
+"POT-Creation-Date: 2026-07-07 02:39+0000\n"
 "PO-Revision-Date: 2026-03-15 17:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -49,7 +49,7 @@ msgstr "Aleix Pol Gonzalez"
 msgid "Author"
 msgstr "Auteur"
 
-#: overlay/longpresstrigger.cpp:37
+#: overlay/longpresstrigger.cpp:40
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
