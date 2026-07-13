@@ -209,8 +209,8 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
         //
         // Now that the physical key is released, we will simply not handle the release
         // event, so it gets forwarded and the client sees the release and stops repeating.
-        m_repeatNativeScanCode = 0;
         // qCDebug(PlasmaKeyboard) << "Stopping repeat for" << m_repeatNativeScanCode;
+        resetState();
         return false;
     }
 
