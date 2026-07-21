@@ -69,12 +69,18 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
     }
 
     const InputPlugin::ContentPurpose contentPurpose = m_inputPlugin ? m_inputPlugin->contentPurpose() : InputPlugin::content_purpose_normal;
+
     // qCDebug(PlasmaKeyboard) << "Content purpose:" << contentPurpose;
     if (contentPurpose == InputPlugin::content_purpose_terminal) {
         // Don't trigger overlays in terminal input fields, since they don't usually offer
         // us surrounding_text information. This can be revisited with text-input v3.2,
         // which will support styling preedits again, and switching to preedit-based flow
         // will work for terminals.
+        return false;
+    }
+    const InputPlugin::ContentHint contentHints = m_inputPlugin ? m_inputPlugin->contentHint() : InputPlugin::content_hint_none;
+
+    if (contentHints & InputPlugin::content_hint_hidden_text) {
         return false;
     }
 
