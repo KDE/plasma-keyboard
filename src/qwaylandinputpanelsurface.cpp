@@ -47,11 +47,10 @@ void QWaylandInputPanelSurface::applyConfigure()
         }
 
         set_toplevel(screen->output(), position_center_bottom);
+        window()->display()->handleWindowActivated(window());
         break;
     }
     }
-
-    window()->display()->handleWindowActivated(window());
 }
 
 QT_END_NAMESPACE
