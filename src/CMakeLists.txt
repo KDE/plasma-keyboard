@@ -126,6 +126,8 @@ add_subdirectory(qmlplugin)
 install(DIRECTORY layouts DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
 install(DIRECTORY overlay/diacritics DESTINATION ${CMAKE_INSTALL_PREFIX}/share/plasma/keyboard)
 
+install(FILES plasmakeyboardsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+
 install(
     FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.plasma.keyboard.metainfo.xml
     DESTINATION ${KDE_INSTALL_METAINFODIR}
