@@ -10,34 +10,34 @@
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="plasmakeyboardrc" />
     <group name="General">
-        <entry key="soundEnabled" type="bool">
+        <entry key="soundEnabled" type="Bool">
             <default>false</default>
         </entry>
-        <entry key="vibrationEnabled" type="bool">
+        <entry key="vibrationEnabled" type="Bool">
             <default>true</default>
         </entry>
-        <entry key="vibrationMs" type="int">
+        <entry key="vibrationMs" type="Int">
             <default>10</default>
         </entry>
         <entry key="enabledLocales" type="StringList">
             <default></default>
         </entry>
-        <entry key="keyboardNavigationEnabled" type="bool">
+        <entry key="keyboardNavigationEnabled" type="Bool">
             <default>false</default>
         </entry>
-        <entry key="autoCapitalizationEnabled" type="bool">
+        <entry key="autoCapitalizationEnabled" type="Bool">
             <label>Whether auto capitalization is enabled.</label>
             <default>true</default>
         </entry>
-        <entry key="panelFillScreenWidth" type="bool">
+        <entry key="panelFillScreenWidth" type="Bool">
             <label>Whether the keyboard panel fills the screen width.</label>
             <default>true</default>
         </entry>
-        <entry key="diacriticsPopupEnabled" type="bool">
+        <entry key="diacriticsPopupEnabled" type="Bool">
             <label>Whether holding a physical key shows diacritic options.</label>
             <default>true</default>
         </entry>
-        <entry key="diacriticsHoldThresholdMs" type="int">
+        <entry key="diacriticsHoldThresholdMs" type="Int">
             <label>Delay (ms) before showing diacritics when holding a physical key.</label>
             <min>100</min>
             <max>1500</max>
