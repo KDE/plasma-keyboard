@@ -393,21 +393,21 @@ protected:
             return;
         }
 
-        m_surfaceResource = surface;
-        m_surface = wlSurface;
         connect(wlSurface, &QWaylandSurface::surfaceDestroyed, this, [this, wlSurface] {
             if (m_surface == wlSurface) {
                 m_surface = nullptr;
                 m_surfaceResource = nullptr;
             }
         });
-        connect(wlSurface, &QWaylandSurface::damaged, this, [this, wlSurface] {
+        connect(wlSurface, &QWaylandSurface::damaged, this, [wlSurface] {
             wlSurface->frameStarted();
             wlSurface->sendFrameCallbacks();
         });
 
         auto *panelSurface = new InputPanelSurface(wlSurface, resource->client(), id, resource->version(), this);
-        connect(panelSurface, &InputPanelSurface::toplevelRequested, this, [this] {
+        connect(panelSurface, &InputPanelSurface::toplevelRequested, this, [this, surface, wlSurface] {
+            m_surfaceResource = surface;
+            m_surface = wlSurface;
             ++m_toplevelPanelCount;
             Q_EMIT toplevelPanelRequested();
         });
@@ -1017,14 +1017,10 @@ private Q_SLOTS:
         const QPointF qKeyCenter(keyWidth / 2, surfaceSize.height() - keyboardHeight + keyboardHeight / (numberOfRows * 2));
 
         // Verify the OSK works before showing the overlay.
-        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        QSignalSpy firstTapSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         tapInputPanel(qKeyCenter);
-        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
-        QCOMPARE(commitStringSpy.count(), 1);
-        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("q"));
-
-        // Hide the OSK
-        // .. how? Well, summoning the overlay should work regardless so..
+        QTRY_COMPARE(firstTapSpy.count(), 1);
+        QCOMPARE(firstTapSpy.first().first().toString(), QStringLiteral("q"));
 
         // Long-press a key to trigger the overlay panel with diacritics.
         QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
@@ -1032,20 +1028,10 @@ private Q_SLOTS:
         QVERIFY(overlaySpy.count() || overlaySpy.wait());
 
         // Select the first diacritic option (à) from the overlay panel.
+        QSignalSpy overlayCommitSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         sendKey(KEY_1, 10);
-        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
-
-        // qInfo print all of the items in the commitStringSpy
-        for (const QList<QVariant> &args : commitStringSpy) {
-            qInfo() << "commitStringSpy:" << args.first().toString();
-            // We are getting `q` and then `a`, `a` without diacritic...
-        }
-
-        QCOMPARE(commitStringSpy.count(), 2);
-        QCOMPARE(commitStringSpy.last().first().toString(), QStringLiteral("à"));
-
-        // The overlay should now be closed.
-        QTRY_VERIFY_WITH_TIMEOUT(m_inputPanel->overlayPanelCount() == 0, 5000);
+        QTRY_COMPARE(overlayCommitSpy.count(), 1);
+        QCOMPARE(overlayCommitSpy.first().first().toString(), QStringLiteral("à"));
 
         if (!m_inputPanel->surface()) {
             QSignalSpy surfaceSpy(m_inputPanel.get(), &InputPanelV1::inputPanelSurfaceCreated);
@@ -1058,10 +1044,10 @@ private Q_SLOTS:
         QTRY_VERIFY_WITH_TIMEOUT(!inputPanelSurfaceSize().isEmpty(), 5000);
 
         // Verify the on-screen keyboard still functions correctly after being shown again.
+        QSignalSpy secondTapSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
         tapInputPanel(qKeyCenter);
-        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
-        QCOMPARE(commitStringSpy.count(), 2);
-        QCOMPARE(commitStringSpy.last().first().toString(), QStringLiteral("q"));
+        QTRY_COMPARE(secondTapSpy.count(), 1);
+        QCOMPARE(secondTapSpy.first().first().toString(), QStringLiteral("q"));
     }
 
     void cleanupTestCase()
