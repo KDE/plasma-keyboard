@@ -30,19 +30,19 @@ void InputMethod::zwp_input_method_v1_activate(struct ::zwp_input_method_context
 
 void InputMethod::zwp_input_method_v1_deactivate(struct ::zwp_input_method_context_v1 *context)
 {
-    Q_ASSERT(m_current->object() == context);
+    Q_ASSERT(m_activeContext->object() == context);
     setCurrentContext(nullptr);
 }
 
 void InputMethod::setCurrentContext(InputMethodContext *context)
 {
-    if (m_current.get() == context) {
+    if (m_activeContext.get() == context) {
         return;
     }
-    m_current.reset(context);
-    Q_EMIT activityChanged(m_current.use_count());
+    m_activeContext.reset(context);
+    Q_EMIT activityChanged(m_activeContext.use_count());
 
-    if (m_current)
+    if (m_activeContext)
         Q_EMIT activate();
     else
         Q_EMIT deactivate();

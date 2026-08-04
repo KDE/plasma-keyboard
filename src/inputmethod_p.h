@@ -29,14 +29,14 @@ public:
     explicit InputMethod();
     ~InputMethod() override;
 
-    std::shared_ptr<InputMethodContext> current() const
+    std::shared_ptr<InputMethodContext> activeContext() const
     {
-        return m_current;
+        return m_activeContext;
     }
 
-    bool isActive() const
+    bool hasContext() const
     {
-        return bool(m_current);
+        return bool(m_activeContext);
     }
 
 Q_SIGNALS:
@@ -49,7 +49,7 @@ private:
     void zwp_input_method_v1_deactivate(struct ::zwp_input_method_context_v1 *context) override;
 
     void setCurrentContext(InputMethodContext *context);
-    std::shared_ptr<InputMethodContext> m_current;
+    std::shared_ptr<InputMethodContext> m_activeContext;
 };
 
 class InputMethodContext : public QObject, public QtWayland::zwp_input_method_context_v1

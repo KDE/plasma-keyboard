@@ -16,7 +16,7 @@ InputPlugin::InputPlugin(InputMethod *inputMethod)
             disconnect(m_context.get(), nullptr, this, nullptr);
         }
         m_keyboard.reset();
-        m_context = inputMethod->current();
+        m_context = inputMethod->activeContext();
         Q_EMIT contextChanged();
         Q_EMIT surroundingTextChanged();
         if (!m_context) {
