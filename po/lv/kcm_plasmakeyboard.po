@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2025-2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2025-09-24 16:23+0300\n"
+"PO-Revision-Date: 2026-08-16 22:05+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -60,23 +60,23 @@ msgstr "Tastatūras navigācija"
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Automātiski lielie burti"
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Alternatīvās rakstzīmes:"
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Turot nospiestu taustiņu, rādīt uznirstošo lodziņu"
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr ""
+msgstr "Turēšanas aizture:"
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr ""
+msgstr "milisekundes"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -110,15 +110,12 @@ msgstr "Vai pārvietoties pa tastatūru ar bultiņu taustiņiem"
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Automātiski sākt teikumus ar lielo burtu"
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
 msgstr "Taustiņa nospiešanas reakcija"
 
 #: ui/main_mediacenter.qml:82
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Pamata"
