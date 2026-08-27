@@ -13,4 +13,3 @@ include:
       # Build and Test
       - /gitlab-templates/linux-qt6-lts.yml
       # Package
-      - /gitlab-templates/flatpak.yml
