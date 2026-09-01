@@ -81,7 +81,7 @@ ListView {
                 Layout.fillWidth: true
                 text: i18n("No languages selected. The default keyboard layout for the system will be used.")
                 type: Kirigami.MessageType.Information
-                visible: kcm.enabledLocales.length === 0
+                visible: kcm.plasmaKeyboardSettings.enabledLocales.length === 0
             }
         }
     }
@@ -89,7 +89,7 @@ ListView {
     delegate: QQC2.CheckDelegate {
         width: root.width
         text: Qt.locale(modelData).nativeLanguageName
-        checked: kcm.enabledLocales.includes(modelData)
+        checked: kcm.plasmaKeyboardSettings.enabledLocales.includes(modelData)
         onCheckedChanged: {
             if (checked) {
                 kcm.enableLocale(modelData);

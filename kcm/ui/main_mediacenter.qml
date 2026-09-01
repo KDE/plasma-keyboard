@@ -64,11 +64,8 @@ KCM.SimpleKCM {
             description: i18n("A sound will play when a key is pressed")
             KeyNavigation.down: vibrationOnKeypressButton
 
-            checked: kcm.soundEnabled
-            onCheckedChanged: {
-                kcm.soundEnabled = checked;
-                checked = Qt.binding(() => kcm.soundEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.soundEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.soundEnabled = checked
         }
 
         Bigscreen.SwitchDelegate {
@@ -77,11 +74,8 @@ KCM.SimpleKCM {
             description: i18n("If supported, the device will vibrate when a key is pressed")
             KeyNavigation.down: autoCapitalizationButton
 
-            checked: kcm.vibrationEnabled
-            onCheckedChanged: {
-                kcm.vibrationEnabled = checked;
-                checked = Qt.binding(() => kcm.vibrationEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.vibrationEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
         }
 
         QQC2.Label {
@@ -99,11 +93,8 @@ KCM.SimpleKCM {
             description: i18n("Automatically capitalize the beginning of sentences and proper nouns")
             KeyNavigation.down: altCharsPopupButton
 
-            checked: kcm.autoCapitalizationEnabled
-            onCheckedChanged: {
-                kcm.autoCapitalizationEnabled = checked;
-                checked = Qt.binding(() => kcm.autoCapitalizationEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled = checked
         }
 
         QQC2.Label {

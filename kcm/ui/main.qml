@@ -33,22 +33,16 @@ KCM.ScrollViewKCM {
             Kirigami.FormData.label: i18n("Key press feedback:")
             text: i18n("Sound")
 
-            checked: kcm.soundEnabled
-            onCheckedChanged: {
-                kcm.soundEnabled = checked;
-                checked = Qt.binding(() => kcm.soundEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.soundEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.soundEnabled = checked
         }
 
         QQC2.CheckBox {
             id: vibrationEnabled
             text: i18n("Vibration")
 
-            checked: kcm.vibrationEnabled
-            onCheckedChanged: {
-                kcm.vibrationEnabled = checked;
-                checked = Qt.binding(() => kcm.vibrationEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.vibrationEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
         }
 
         QQC2.CheckBox {
@@ -56,22 +50,16 @@ KCM.ScrollViewKCM {
             Kirigami.FormData.label: i18n("General:")
             text: i18n("Keyboard navigation")
 
-            checked: kcm.keyboardNavigationEnabled
-            onCheckedChanged: {
-                kcm.keyboardNavigationEnabled = checked;
-                checked = Qt.binding(() => kcm.keyboardNavigationEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled = checked
         }
 
         QQC2.CheckBox {
             id: autoCapitalizationEnabled
             text: i18n("Auto-capitalization")
 
-            checked: kcm.autoCapitalizationEnabled
-            onCheckedChanged: {
-                kcm.autoCapitalizationEnabled = checked;
-                checked = Qt.binding(() => kcm.autoCapitalizationEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled = checked
         }
 
         QQC2.CheckBox {
@@ -79,11 +67,8 @@ KCM.ScrollViewKCM {
             Kirigami.FormData.label: i18n("Alternate characters:")
             text: i18n("Show popup when holding a key")
 
-            checked: kcm.diacriticsPopupEnabled
-            onCheckedChanged: {
-                kcm.diacriticsPopupEnabled = checked;
-                checked = Qt.binding(() => kcm.diacriticsPopupEnabled);
-            }
+            checked: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled
+            onCheckedChanged: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled = checked
         }
 
         QQC2.SpinBox {
@@ -94,7 +79,7 @@ KCM.ScrollViewKCM {
             stepSize: 50
 
             enabled: diacriticsCheckbox.checked
-            value: kcm.diacriticsHoldThresholdMs
+            value: kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs
 
             // Include the `milliseconds` suffix in the spinbox instead of the label
             textFromValue: function (value) {
@@ -105,15 +90,12 @@ KCM.ScrollViewKCM {
             valueFromText: function (text) {
                 let number = parseInt(text);
                 if (isNaN(number)) {
-                    return kcm.diacriticsHoldThresholdMs; // Fallback to current value if parsing fails
+                    return kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs; // Fallback to current value if parsing fails
                 }
                 return number;
             }
 
-            onValueChanged: {
-                kcm.diacriticsHoldThresholdMs = value;
-                value = Qt.binding(() => kcm.diacriticsHoldThresholdMs);
-            }
+            onValueChanged: kcm.plasmaKeyboardSettings.diacriticsHoldThresholdMs = value
         }
     }
 }

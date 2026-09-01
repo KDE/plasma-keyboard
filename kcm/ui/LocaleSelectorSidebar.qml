@@ -63,7 +63,7 @@ Bigscreen.SidebarOverlay {
                 text: Qt.locale(modelData).nativeLanguageName
                 onClicked: checked = !checked
                 Keys.onReturnPressed: checked = !checked
-                checked: kcm.enabledLocales.includes(modelData)
+                checked: kcm.plasmaKeyboardSettings.enabledLocales.includes(modelData)
                 onCheckedChanged: {
                     if (checked) {
                         kcm.enableLocale(modelData);

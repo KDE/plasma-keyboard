@@ -40,11 +40,8 @@ KCM.SimpleKCM {
                 text: i18n("Sound")
                 description: i18n("Whether to emit a sound on key press")
 
-                checked: kcm.soundEnabled
-                onCheckedChanged: {
-                    kcm.soundEnabled = checked;
-                    checked = Qt.binding(() => kcm.soundEnabled)
-                }
+                checked: kcm.plasmaKeyboardSettings.soundEnabled
+                onCheckedChanged: kcm.plasmaKeyboardSettings.soundEnabled = checked
             }
 
             FormCard.FormDelegateSeparator {}
@@ -54,11 +51,8 @@ KCM.SimpleKCM {
                 text: i18n("Vibration")
                 description: i18n("Whether to vibrate on key press")
 
-                checked: kcm.vibrationEnabled
-                onCheckedChanged: {
-                    kcm.vibrationEnabled = checked;
-                    checked = Qt.binding(() => kcm.vibrationEnabled)
-                }
+                checked: kcm.plasmaKeyboardSettings.vibrationEnabled
+                onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
             }
         }
 
@@ -90,11 +84,8 @@ KCM.SimpleKCM {
                 text: i18n("Keyboard navigation")
                 description: i18n("Whether to use the arrow keys to navigate the keyboard")
 
-                checked: kcm.keyboardNavigationEnabled
-                onCheckedChanged: {
-                    kcm.keyboardNavigationEnabled = checked;
-                    checked = Qt.binding(() => kcm.keyboardNavigationEnabled)
-                }
+                checked: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled
+                onCheckedChanged: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled = checked
             }
 
             FormCard.FormDelegateSeparator {}
@@ -104,11 +95,8 @@ KCM.SimpleKCM {
                 text: i18n("Auto-capitalization")
                 description: i18n("Automatically capitalize the first letter of sentences")
 
-                checked: kcm.autoCapitalizationEnabled
-                onCheckedChanged: {
-                    kcm.autoCapitalizationEnabled = checked;
-                    checked = Qt.binding(() => kcm.autoCapitalizationEnabled)
-                }
+                checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
+                onCheckedChanged: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled = checked
             }
         }
     }

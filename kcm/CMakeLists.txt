@@ -5,7 +5,7 @@ add_definitions(-DQT_NO_KEYWORDS)
 
 kcmutils_add_qml_kcm(kcm_plasmakeyboard)
 
-kconfig_add_kcfg_files(kcm_plasmakeyboard GENERATE_MOC ../src/plasmakeyboardsettings.kcfgc)
+kconfig_add_kcfg_files(kcm_plasmakeyboard GENERATE_MOC plasmakeyboardsettings.kcfgc)
 
 target_sources(kcm_plasmakeyboard PRIVATE
     plasmakeyboardkcm.cpp
