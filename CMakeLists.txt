@@ -38,6 +38,7 @@ option(PLASMA_KEYBOARD_VIBRATION_ENABLED "Whether to enable haptic feedback via 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
+    Qml
     VirtualKeyboard
     WaylandClient
 )
