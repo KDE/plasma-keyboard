@@ -14,6 +14,7 @@ target_sources(kcm_plasmakeyboard PRIVATE
 
 target_link_libraries(kcm_plasmakeyboard PRIVATE
     Qt::Core
+    Qt::Qml
     KF6::CoreAddons
     KF6::I18n
     KF6::KCMUtilsQuick
