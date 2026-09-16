@@ -23,6 +23,7 @@ Bigscreen.SidebarOverlay {
     openFocusItem: langs
     header: Bigscreen.SidebarOverlayHeader {
         title: i18n("Languages")
+        iconSource: "language-chooser"
     }
 
     function updateModel() {
