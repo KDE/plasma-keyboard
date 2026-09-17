@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-17 00:46+0000\n"
 "PO-Revision-Date: 2026-04-03 01:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Няма избрани езици. Ще се използва подредбата на клавиатурата по "
 "подразбиране за системата."
 
-#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
 msgstr "Езици"
@@ -46,35 +46,35 @@ msgstr "Обратна връзка при натискане на клавиш:
 msgid "Sound"
 msgstr "Звук"
 
-#: ui/main.qml:45 ui/main_handset.qml:54
+#: ui/main.qml:42 ui/main_handset.qml:51 ui/main_mediacenter.qml:73
 msgid "Vibration"
 msgstr "Вибрация"
 
-#: ui/main.qml:56
+#: ui/main.qml:50
 msgid "General:"
 msgstr "Общи:"
 
-#: ui/main.qml:57 ui/main_handset.qml:90
+#: ui/main.qml:51 ui/main_handset.qml:84
 msgid "Keyboard navigation"
 msgstr "Навигация с клавиатура"
 
-#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
 msgid "Auto-capitalization"
 msgstr "Автоматични главни букви"
 
-#: ui/main.qml:79
+#: ui/main.qml:67
 msgid "Alternate characters:"
 msgstr "Алтернативни символи:"
 
-#: ui/main.qml:80
+#: ui/main.qml:68
 msgid "Show popup when holding a key"
 msgstr "Показване на изскачащ символ при натискане на клавиш"
 
-#: ui/main.qml:91
+#: ui/main.qml:76
 msgid "Hold delay:"
 msgstr "Изчакване:"
 
-#: ui/main.qml:101
+#: ui/main.qml:86
 msgid "milliseconds"
 msgstr "милисекунди"
 
@@ -91,31 +91,119 @@ msgstr "Обратна връзка"
 msgid "Whether to emit a sound on key press"
 msgstr "Издаване на звук при натискане на клавиш"
 
-#: ui/main_handset.qml:55
+#: ui/main_handset.qml:52
 msgid "Whether to vibrate on key press"
 msgstr "Вибриране при натискане на клавиш"
 
-#: ui/main_handset.qml:76
+#: ui/main_handset.qml:70
 msgid "Keyboard Languages"
 msgstr "Езици на клавиатурата"
 
-#: ui/main_handset.qml:84
+#: ui/main_handset.qml:78
 msgctxt "@title:group"
 msgid "General"
 msgstr "Общи"
 
-#: ui/main_handset.qml:91
+#: ui/main_handset.qml:85
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Използване на клавишите със стрелки за навигация в клавиатурата"
 
-#: ui/main_handset.qml:105
+#: ui/main_handset.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "Автоматично изписване на първата буква от изреченията с главна буква"
 
-#: ui/main_mediacenter.qml:47
+#: ui/main_mediacenter.qml:19
+msgid "On-Screen Keyboard"
+msgstr ""
+
+#: ui/main_mediacenter.qml:43
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
+msgid ""
+"No languages selected, the default keyboard layout for the system will be "
+"used"
+msgstr ""
+"Няма избрани езици. Ще се използва подредбата на клавиатурата по "
+"подразбиране за системата."
+
+#: ui/main_mediacenter.qml:45
+msgctxt "%1 is the number of enabled locales"
+msgid "%1 language selected"
+msgid_plural "%1 languages selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Обратна връзка при натискане на клавиш"
 
-#: ui/main_mediacenter.qml:82
+#: ui/main_mediacenter.qml:63
+#, fuzzy
+#| msgid "Sound"
+msgctxt "This is a noun"
+msgid "Sound"
+msgstr "Звук"
+
+#: ui/main_mediacenter.qml:64
+msgid "A sound will play when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:74
+msgid "If supported, the device will vibrate when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Общи"
+
+#: ui/main_mediacenter.qml:93
+#, fuzzy
+#| msgid "Automatically capitalize the first letter of sentences"
+msgid "Automatically capitalize the beginning of sentences and proper nouns"
+msgstr "Автоматично изписване на първата буква от изреченията с главна буква"
+
+#: ui/main_mediacenter.qml:102
+#, fuzzy
+#| msgid "Alternate characters:"
+msgctxt "'Alternate' is an adjective here"
+msgid "Alternate characters"
+msgstr "Алтернативни символи:"
+
+#: ui/main_mediacenter.qml:111
+#, fuzzy
+#| msgid "Show popup when holding a key"
+msgid "Show overlay when holding a key"
+msgstr "Показване на изскачащ символ при натискане на клавиш"
+
+#: ui/main_mediacenter.qml:112
+msgid ""
+"Long-pressing a key on a physical keyboard will show an overlay with "
+"alternate versions of the selected character, if available"
+msgstr ""
+
+#: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
+#, fuzzy
+#| msgid "Hold delay:"
+msgctxt "How long a key must be held before triggering an action"
+msgid "Hold delay"
+msgstr "Изчакване:"
+
+#: ui/main_mediacenter.qml:125
+msgid "How long a key must be held before the overlay shows"
+msgstr ""
+
+#: ui/main_mediacenter.qml:128
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 millisecond"
+msgid_plural "%1 milliseconds"
+msgstr[0] "милисекунди"
+msgstr[1] "милисекунди"
+
+#: ui/main_mediacenter.qml:173
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 milliseconds"
+msgstr "милисекунди"

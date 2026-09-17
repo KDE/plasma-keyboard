@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-17 00:46+0000\n"
 "PO-Revision-Date: 2026-03-15 17:52+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -30,7 +30,7 @@ msgstr ""
 "Aucune langue sélectionnée. La disposition de clavier par défaut au niveau "
 "du système sera utilisée."
 
-#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
 msgstr "Langues"
@@ -43,35 +43,35 @@ msgstr "Retour d'appui de touches :"
 msgid "Sound"
 msgstr "Son"
 
-#: ui/main.qml:45 ui/main_handset.qml:54
+#: ui/main.qml:42 ui/main_handset.qml:51 ui/main_mediacenter.qml:73
 msgid "Vibration"
 msgstr "Vibration"
 
-#: ui/main.qml:56
+#: ui/main.qml:50
 msgid "General:"
 msgstr "Général :"
 
-#: ui/main.qml:57 ui/main_handset.qml:90
+#: ui/main.qml:51 ui/main_handset.qml:84
 msgid "Keyboard navigation"
 msgstr "Navigation au clavier"
 
-#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
 msgid "Auto-capitalization"
 msgstr "Mise à jour automatique en majuscules"
 
-#: ui/main.qml:79
+#: ui/main.qml:67
 msgid "Alternate characters:"
 msgstr "Caractères alternatifs :"
 
-#: ui/main.qml:80
+#: ui/main.qml:68
 msgid "Show popup when holding a key"
 msgstr "Afficher une fenêtre contextuelle lors d'un maintien de touche"
 
-#: ui/main.qml:91
+#: ui/main.qml:76
 msgid "Hold delay:"
 msgstr "Délai de maintien :"
 
-#: ui/main.qml:101
+#: ui/main.qml:86
 msgid "milliseconds"
 msgstr "millisecondes"
 
@@ -88,31 +88,119 @@ msgstr "Retours"
 msgid "Whether to emit a sound on key press"
 msgstr "Émettre ou non un son en appuyant sur une touche"
 
-#: ui/main_handset.qml:55
+#: ui/main_handset.qml:52
 msgid "Whether to vibrate on key press"
 msgstr "Vibrer ou non un son en appuyant sur une touche"
 
-#: ui/main_handset.qml:76
+#: ui/main_handset.qml:70
 msgid "Keyboard Languages"
 msgstr "Langues de clavier"
 
-#: ui/main_handset.qml:84
+#: ui/main_handset.qml:78
 msgctxt "@title:group"
 msgid "General"
 msgstr "Général"
 
-#: ui/main_handset.qml:91
+#: ui/main_handset.qml:85
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Utiliser ou non les touches de flèches pour la navigation au clavier"
 
-#: ui/main_handset.qml:105
+#: ui/main_handset.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "Mettre automatiquement en majuscule la première lettre des phrases"
 
-#: ui/main_mediacenter.qml:47
+#: ui/main_mediacenter.qml:19
+msgid "On-Screen Keyboard"
+msgstr ""
+
+#: ui/main_mediacenter.qml:43
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
+msgid ""
+"No languages selected, the default keyboard layout for the system will be "
+"used"
+msgstr ""
+"Aucune langue sélectionnée. La disposition de clavier par défaut au niveau "
+"du système sera utilisée."
+
+#: ui/main_mediacenter.qml:45
+msgctxt "%1 is the number of enabled locales"
+msgid "%1 language selected"
+msgid_plural "%1 languages selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Retour d'appui de touches"
 
-#: ui/main_mediacenter.qml:82
+#: ui/main_mediacenter.qml:63
+#, fuzzy
+#| msgid "Sound"
+msgctxt "This is a noun"
+msgid "Sound"
+msgstr "Son"
+
+#: ui/main_mediacenter.qml:64
+msgid "A sound will play when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:74
+msgid "If supported, the device will vibrate when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Général"
+
+#: ui/main_mediacenter.qml:93
+#, fuzzy
+#| msgid "Automatically capitalize the first letter of sentences"
+msgid "Automatically capitalize the beginning of sentences and proper nouns"
+msgstr "Mettre automatiquement en majuscule la première lettre des phrases"
+
+#: ui/main_mediacenter.qml:102
+#, fuzzy
+#| msgid "Alternate characters:"
+msgctxt "'Alternate' is an adjective here"
+msgid "Alternate characters"
+msgstr "Caractères alternatifs :"
+
+#: ui/main_mediacenter.qml:111
+#, fuzzy
+#| msgid "Show popup when holding a key"
+msgid "Show overlay when holding a key"
+msgstr "Afficher une fenêtre contextuelle lors d'un maintien de touche"
+
+#: ui/main_mediacenter.qml:112
+msgid ""
+"Long-pressing a key on a physical keyboard will show an overlay with "
+"alternate versions of the selected character, if available"
+msgstr ""
+
+#: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
+#, fuzzy
+#| msgid "Hold delay:"
+msgctxt "How long a key must be held before triggering an action"
+msgid "Hold delay"
+msgstr "Délai de maintien :"
+
+#: ui/main_mediacenter.qml:125
+msgid "How long a key must be held before the overlay shows"
+msgstr ""
+
+#: ui/main_mediacenter.qml:128
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 millisecond"
+msgid_plural "%1 milliseconds"
+msgstr[0] "millisecondes"
+msgstr[1] "millisecondes"
+
+#: ui/main_mediacenter.qml:173
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 milliseconds"
+msgstr "millisecondes"

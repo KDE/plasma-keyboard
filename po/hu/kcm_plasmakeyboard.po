@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-17 00:46+0000\n"
 "PO-Revision-Date: 2026-06-19 22:06+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Nincs kiválasztva nyelv. A rendszer alapértelmezett billentyűzetkiosztása "
 "lesz használva."
 
-#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
+#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
 msgstr "Nyelvek"
@@ -46,35 +46,35 @@ msgstr "Gomblenyomás visszajelzése:"
 msgid "Sound"
 msgstr "Hang"
 
-#: ui/main.qml:45 ui/main_handset.qml:54
+#: ui/main.qml:42 ui/main_handset.qml:51 ui/main_mediacenter.qml:73
 msgid "Vibration"
 msgstr "Rezgés"
 
-#: ui/main.qml:56
+#: ui/main.qml:50
 msgid "General:"
 msgstr "Általános:"
 
-#: ui/main.qml:57 ui/main_handset.qml:90
+#: ui/main.qml:51 ui/main_handset.qml:84
 msgid "Keyboard navigation"
 msgstr "Billentyűzetnavigáció"
 
-#: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
+#: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
 msgid "Auto-capitalization"
 msgstr "Automatikus nagybetű"
 
-#: ui/main.qml:79
+#: ui/main.qml:67
 msgid "Alternate characters:"
 msgstr "Alternatív karakterek:"
 
-#: ui/main.qml:80
+#: ui/main.qml:68
 msgid "Show popup when holding a key"
 msgstr "Felugró megjelenítése gomb nyomva tartásakor"
 
-#: ui/main.qml:91
+#: ui/main.qml:76
 msgid "Hold delay:"
 msgstr "Késleltetés:"
 
-#: ui/main.qml:101
+#: ui/main.qml:86
 msgid "milliseconds"
 msgstr "ezredmásodperc"
 
@@ -91,31 +91,119 @@ msgstr "Visszajelzés"
 msgid "Whether to emit a sound on key press"
 msgstr "Adjon-e ki hangot billentyűlenyomáskor"
 
-#: ui/main_handset.qml:55
+#: ui/main_handset.qml:52
 msgid "Whether to vibrate on key press"
 msgstr "Rezegjen-e billentyűlenyomáskor"
 
-#: ui/main_handset.qml:76
+#: ui/main_handset.qml:70
 msgid "Keyboard Languages"
 msgstr "Billentyűzet nyelvei"
 
-#: ui/main_handset.qml:84
+#: ui/main_handset.qml:78
 msgctxt "@title:group"
 msgid "General"
 msgstr "Általános"
 
-#: ui/main_handset.qml:91
+#: ui/main_handset.qml:85
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Használja-e a nyílgombokat a billentyűzeten navigáláshoz"
 
-#: ui/main_handset.qml:105
+#: ui/main_handset.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "A mondatok első betűjét automatikusan nagybetűvé alakítja"
 
-#: ui/main_mediacenter.qml:47
+#: ui/main_mediacenter.qml:19
+msgid "On-Screen Keyboard"
+msgstr ""
+
+#: ui/main_mediacenter.qml:43
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
+msgid ""
+"No languages selected, the default keyboard layout for the system will be "
+"used"
+msgstr ""
+"Nincs kiválasztva nyelv. A rendszer alapértelmezett billentyűzetkiosztása "
+"lesz használva."
+
+#: ui/main_mediacenter.qml:45
+msgctxt "%1 is the number of enabled locales"
+msgid "%1 language selected"
+msgid_plural "%1 languages selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Gomblenyomás visszajelzése"
 
-#: ui/main_mediacenter.qml:82
+#: ui/main_mediacenter.qml:63
+#, fuzzy
+#| msgid "Sound"
+msgctxt "This is a noun"
+msgid "Sound"
+msgstr "Hang"
+
+#: ui/main_mediacenter.qml:64
+msgid "A sound will play when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:74
+msgid "If supported, the device will vibrate when a key is pressed"
+msgstr ""
+
+#: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Általános"
+
+#: ui/main_mediacenter.qml:93
+#, fuzzy
+#| msgid "Automatically capitalize the first letter of sentences"
+msgid "Automatically capitalize the beginning of sentences and proper nouns"
+msgstr "A mondatok első betűjét automatikusan nagybetűvé alakítja"
+
+#: ui/main_mediacenter.qml:102
+#, fuzzy
+#| msgid "Alternate characters:"
+msgctxt "'Alternate' is an adjective here"
+msgid "Alternate characters"
+msgstr "Alternatív karakterek:"
+
+#: ui/main_mediacenter.qml:111
+#, fuzzy
+#| msgid "Show popup when holding a key"
+msgid "Show overlay when holding a key"
+msgstr "Felugró megjelenítése gomb nyomva tartásakor"
+
+#: ui/main_mediacenter.qml:112
+msgid ""
+"Long-pressing a key on a physical keyboard will show an overlay with "
+"alternate versions of the selected character, if available"
+msgstr ""
+
+#: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
+#, fuzzy
+#| msgid "Hold delay:"
+msgctxt "How long a key must be held before triggering an action"
+msgid "Hold delay"
+msgstr "Késleltetés:"
+
+#: ui/main_mediacenter.qml:125
+msgid "How long a key must be held before the overlay shows"
+msgstr ""
+
+#: ui/main_mediacenter.qml:128
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 millisecond"
+msgid_plural "%1 milliseconds"
+msgstr[0] "ezredmásodperc"
+msgstr[1] "ezredmásodperc"
+
+#: ui/main_mediacenter.qml:173
+#, fuzzy
+#| msgid "milliseconds"
+msgid "%1 milliseconds"
+msgstr "ezredmásodperc"
