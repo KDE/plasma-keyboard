@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-03-14 07:36+0100\n"
+"PO-Revision-Date: 2026-09-17 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -114,99 +114,83 @@ msgstr "Samodejne velike prve črke stavkov"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Zaslonska tipkovnica"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"Ni izbranega jezika. Uporabljena bo privzeta razporeditev tipkovnice sistema."
+"Ni izbranega jezika, uporabljena bo privzeta razporeditev tipkovnice sistema"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Izbranih je %1 jezikov"
+msgstr[1] "Izbran je %1 jezik"
+msgstr[2] "Izbrana sta %1 jezika"
+msgstr[3] "Izbrani so %1 jeziki"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Povratni odziv pritiska tipke"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Zvok"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Ko pritisnete tipko, se predvaja zvok"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Če je to podprto, bo naprava ob pritisku na tipko zavibrirala."
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Splošno"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Samodejne velike prve črke stavkov"
+msgstr "Samodejno zapiši z veliko začetnico začetek stavkov in lastna imena."
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Alternativni znaki:"
+msgstr "Alternativni znaki"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Prikaži pojavno okno, ko držite tipko"
+msgstr "Prikaži prekrivni sloj, ko držite tipko"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Z dolgim ​​pritiskom tipke na fizični tipkovnici se prikaže prekrivni meni z "
+"različicami izbranega znaka, če so te na voljo."
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Zakasnitev pritiska:"
+msgstr "Zakasnitev pritiska"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Kako dolgo je treba držati tipko, preden se prikaže prekrivni sloj"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "milisekund"
-msgstr[1] "milisekund"
-msgstr[2] "milisekund"
-msgstr[3] "milisekund"
+msgstr[0] "%1 milisekund"
+msgstr[1] "%1 milisekunda"
+msgstr[2] "%1 milisekundi"
+msgstr[3] "%1 milisekunde"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "milisekund"
+msgstr "%1 milisekund"

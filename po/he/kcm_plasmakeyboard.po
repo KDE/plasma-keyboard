@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-03-14 13:06+0200\n"
+"PO-Revision-Date: 2026-09-17 08:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -113,98 +113,82 @@ msgstr "הגדלה אוטומטית של האות הראשונה במשפטים"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "מקלדת על המסך"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
-msgstr "לא נבחרו שפות. פריסת ברירת המחדל של המקלדת תהיה בשימוש."
+msgstr "לא נבחרו שפות, פריסת ברירת המחדל של המקלדת תהיה בשימוש"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "נבחרה שפה"
+msgstr[1] "נבחרו שתי שפות"
+msgstr[2] "נבחרו %1 שפות"
+msgstr[3] "נבחרו %1 שפות"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "משוב לחיצת מקש"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "צליל"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "יושמע צליל כשמקש נלחץ"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "אם יש תמיכה, ההתקן ירטוט בלחיצת מקש"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "כללי"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "הגדלה אוטומטית של האות הראשונה במשפטים"
+msgstr "הגדלה אוטומטית של האות הראשונה במשפטים ושמות עצם פרטיים"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "תווים חלופיים:"
+msgstr "תווים חלופיים"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "הצגת חלונית צצה בעת החזקת מקש"
+msgstr "הצגת חלונית על בעת החזקת מקש"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"לחיצה ארוכה על מקש במקלדת פיזית יציג חלונית על עם גרסאות חלופיות לתו הנבחר, "
+"אם יש"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "השהיית לחיצה:"
+msgstr "השהיית החזקה"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "כמה זמן צריך להחזיק מקש עד שחלונית העל תופיע"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "מילישניות"
-msgstr[1] "מילישניות"
-msgstr[2] "מילישניות"
-msgstr[3] "מילישניות"
+msgstr[0] "מילישנייה"
+msgstr[1] "שתי מילישניות"
+msgstr[2] "%1 מילישניות"
+msgstr[3] "%1 מילישניות"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "מילישניות"
+msgstr "%1 מילישניות"

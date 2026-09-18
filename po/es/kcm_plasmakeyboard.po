@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the plasma-keyboard package.
 # Automatically generated, 2025.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2025-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-03-14 12:01+0100\n"
+"PO-Revision-Date: 2026-09-17 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -118,96 +118,83 @@ msgstr "Poner en mayúsculas automáticamente la primera letra de las frases"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Teclado en pantalla"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"No se han seleccionado idiomas. Se usará la distribución de teclado "
-"predeterminada del sistema."
+"No se han seleccionado idiomas; se usará la distribución de teclado "
+"predeterminada del sistema"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 idioma seleccionado"
+msgstr[1] "%1 idiomas seleccionados"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Reacción de pulsación de tecla"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Sonido"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Se reproducirá un sonido al pulsar una tecla"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Si está implementado, el dispositivo vibrará al pulsar una tecla"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "General"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Poner en mayúsculas automáticamente la primera letra de las frases"
+msgstr ""
+"Poner en mayúsculas automáticamente la primera letra de las frases y de los "
+"nombres propios"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Caracteres alternativos:"
+msgstr "Caracteres alternativos"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Mostrar ventana emergente al mantener pulsada una tecla"
+msgstr "Mostrar una capa superpuesta al mantener pulsada una tecla"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Una pulsación larga de una tecla en un teclado físico mostrará una capa "
+"superpuesta con versiones alternativas del carácter seleccionado, si tiene "
+"alguna."
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Demora de pulsación:"
+msgstr "Demora de pulsación"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Tiempo que se debe pulsar una tecla para mostrar la capa superpuesta"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "milisegundos"
-msgstr[1] "milisegundos"
+msgstr[0] "%1 milisegundo"
+msgstr[1] "%1 milisegundos"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "milisegundos"
+msgstr "%1 milisegundos"

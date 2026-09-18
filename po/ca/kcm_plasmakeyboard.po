@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-03-14 10:05+0100\n"
+"PO-Revision-Date: 2026-09-17 12:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -116,96 +116,85 @@ msgstr "Posa en majúscula la primera lletra de les frases"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Teclat en pantalla"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"No s'ha seleccionat cap idioma. Es farà servir la disposició del teclat "
-"predeterminada del sistema."
+"No s'ha seleccionat cap idioma, es farà servir la disposició del teclat "
+"predeterminada del sistema"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "S'ha seleccionat %1 idioma"
+msgstr[1] "S'han seleccionat %1 idiomes"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Reacció de tecla premuda"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "So"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Es reproduirà un so quan es premi una tecla"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Si ho admet, el dispositiu vibrarà quan es premi una tecla"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "General"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Posa en majúscula la primera lletra de les frases"
+msgstr ""
+"Posa en majúscula automàticament la primera lletra de les frases i dels noms "
+"propis"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Caràcters alternatius:"
+msgstr "Caràcters alternatius"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Mostra una finestra emergent en mantenir premuda una tecla"
+msgstr "Mostra una superposició en mantenir premuda una tecla"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Una pressió llarga sobre una tecla en un teclat físic es mostrarà una "
+"superposició amb versions alternatives del caràcter seleccionat, si està "
+"disponible"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Retard en mantenir premuda:"
+msgstr "Retard en mantenir premuda"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
+"Quant temps s'ha de mantenir premuda una tecla abans que es mostri la "
+"superposició"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "mil·lisegons"
-msgstr[1] "mil·lisegons"
+msgstr[0] "%1 mil·lisegon"
+msgstr[1] "%1 mil·lisegons"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "mil·lisegons"
+msgstr "%1 mil·lisegons"

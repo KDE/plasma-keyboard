@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2025-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-03-14 12:03+0100\n"
+"PO-Revision-Date: 2026-09-17 15:17+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -114,96 +114,85 @@ msgstr "Automatisch de eerste letter van elke zin naar een hoofdletter zetten"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Toetsenbord op scherm"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"Geen talen geselecteerd. De standaard toetsenbordindeling voor het systeem "
+"Geen talen geselecteerd, de standaard toetsenbordindeling voor het systeem "
 "zal gebruikt worden."
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 taal geselecteerd"
+msgstr[1] "%1 talen geselecteerd"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Terugkoppeling van toets indrukken:"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Geluid"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Er zal een geluid worden afgespeeld wanneer een toets wordt ingedrukt"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
 msgstr ""
+"Indien ondersteund, trilt het apparaat wanneer er op een toets wordt gedrukt."
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Algemeen"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Automatisch de eerste letter van elke zin naar een hoofdletter zetten"
+msgstr ""
+"Schrijf het begin van zinnen en eigennamen automatisch met een hoofdletter"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Alternatieve tekens:"
+msgstr "Alternatieve tekens"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Pop-up tonen bij ingedrukt houden van een toets"
+msgstr "Overlay tonen bij ingedrukt houden van een toets"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Als u een toets op een fysiek toetsenbord lang ingedrukt houdt, verschijnt "
+"er een overlay met alternatieve versies van het geselecteerde teken, indien "
+"beschikbaar."
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Vertraging van ingedrukt houden:"
+msgstr "Vertraging van ingedrukt houden"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
+"Hoe lang een toets ingedrukt moet worden gehouden voordat de overlay "
+"verschijnt"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "milliseconden"
+msgstr[0] "%1 milliseconde"
 msgstr[1] "milliseconden"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "milliseconden"
+msgstr "%1 milliseconden"
