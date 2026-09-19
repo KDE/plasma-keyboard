@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-07-05 17:25+0200\n"
+"PO-Revision-Date: 2026-09-18 20:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -112,94 +112,78 @@ msgstr "Skriv automatiskt första bokstaven i meningar med stor bokstav"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Skärmtangentbord"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
-msgstr "Inga språk valda. Systemets normala tangentbordslayout används."
+msgstr "Inga språk valda. Systemets normala tangentbordslayout används"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 språk valt"
+msgstr[1] "%1 språk valda"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Återkoppling av knapptryckning"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Ljud"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Ett ljud spelas när en tangent trycks ner"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Om det stöds, vibrerar apparaten när en tangent trycks ner"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Allmänt"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Skriv automatiskt första bokstaven i meningar med stor bokstav"
+msgstr "Skriv automatiskt början av meningar och egennamn med stor bokstav"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Alternativa tecken:"
+msgstr "Alternativa tecken"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Visa bara meddelanderutor när en tangent hålls nere"
+msgstr "Visa bara överlagring när en tangent hålls nere"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Att hålla nere en tangent länge på ett fysiskt tangentbord visar en "
+"överlagring med alternativa versioner av det valda tecknet, om tillgänglig"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Hållfördröjning:"
+msgstr "Hållfördröjning"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Hur länge en tangent måste hållas nere innan överlagringen visas"
 
 #: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "millisekunder"
-msgstr[1] "millisekunder"
+msgstr[0] "%1 millisekund"
+msgstr[1] "%1 millisekunder"
 
 #: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 milliseconds"
-msgstr "millisekunder"
+msgstr "%1 millisekunder"
