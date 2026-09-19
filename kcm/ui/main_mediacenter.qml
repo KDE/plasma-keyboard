@@ -170,7 +170,7 @@ KCM.SimpleKCM {
 
                         QQC2.Label {
                             id: altCharsHoldDelaySlider
-                            text: i18n("%1 milliseconds", altCharsHoldDelayDialog.newValue)
+                            text: i18np("%1 millisecond", "%1 milliseconds", altCharsHoldDelayDialog.newValue)
                             font.pixelSize: Bigscreen.Units.defaultFontPixelSize
                         }
                     }
