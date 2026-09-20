@@ -185,6 +185,3 @@ msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 millisekund"
 msgstr[1] "%1 millisekund"
-
-#~ msgid "%1 milliseconds"
-#~ msgstr "%1 millisekund"
