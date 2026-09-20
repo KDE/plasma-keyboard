@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-18 15:34+0200\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"PO-Revision-Date: 2026-09-19 17:47+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -115,13 +115,9 @@ msgstr "Gjer automatisk første bokstav i kvart setning om til stor bokstav"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Skjermtastatur"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
@@ -132,48 +128,40 @@ msgstr ""
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 språk valt"
+msgstr[1] "%1 språk valde"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Tilbakemelding ved tastetrykk"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Lyd"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Ein lyd vert spelt av når ein tast vert trykt"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Viss det er støtta, vil eininga vibrera når ein tast vert trykt"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Generelt"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Gjer automatisk første bokstav i kvart setning om til stor bokstav"
+msgstr "Bruk automatisk stor forbokstav i starten av setningar og på særnamn"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Alternative teikn:"
+msgstr "Alternative teikn"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
 msgstr "Viss sprettopp når ein tast vert halden inne"
 
@@ -184,26 +172,19 @@ msgid ""
 msgstr ""
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Innhaldingsforseinking:"
+msgstr "Innhaldingsforseinking"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
 
-#: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "millisekund"
-msgstr[1] "millisekund"
+msgstr[0] "%1 millisekund"
+msgstr[1] "%1 millisekund"
 
-#: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
-msgid "%1 milliseconds"
-msgstr "millisekund"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 millisekund"

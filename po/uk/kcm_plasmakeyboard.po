@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-17 12:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -192,7 +192,7 @@ msgstr ""
 "Наскільки довго слід утримувати клавішу натиснутою, щоб було показано панель-"
 "накладку"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 мілісекунда"
@@ -200,6 +200,5 @@ msgstr[1] "мілісекунд"
 msgstr[2] "мілісекунд"
 msgstr[3] "мілісекунд"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 мілісекунд"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 мілісекунд"

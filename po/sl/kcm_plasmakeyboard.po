@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-17 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -183,7 +183,7 @@ msgstr "Zakasnitev pritiska"
 msgid "How long a key must be held before the overlay shows"
 msgstr "Kako dolgo je treba držati tipko, preden se prikaže prekrivni sloj"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 milisekund"
@@ -191,6 +191,5 @@ msgstr[1] "%1 milisekunda"
 msgstr[2] "%1 milisekundi"
 msgstr[3] "%1 milisekunde"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 milisekund"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 milisekund"

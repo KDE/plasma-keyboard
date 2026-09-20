@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-18 09:04+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -186,12 +186,11 @@ msgstr ""
 "Combien de temps une touche doit être maintenue avant que la superposition "
 "ne s'affiche"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 milliseconde"
 msgstr[1] "%1 millisecondes"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 millisecondes"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 millisecondes"

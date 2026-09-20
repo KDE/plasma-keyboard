@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-17 09:16-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -186,12 +186,11 @@ msgstr ""
 "Por quanto tempo uma tecla deve ser mantida pressionada antes que a "
 "sobreposição apareça"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 milissegundo"
 msgstr[1] "%1 milissegundos"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 milissegundos"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 milissegundos"

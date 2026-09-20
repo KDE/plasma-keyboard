@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_plasmakeyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-17 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -189,12 +189,11 @@ msgstr "Demora de pulsación"
 msgid "How long a key must be held before the overlay shows"
 msgstr "Tiempo que se debe pulsar una tecla para mostrar la capa superpuesta"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 milisegundo"
 msgstr[1] "%1 milisegundos"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 milisegundos"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 milisegundos"

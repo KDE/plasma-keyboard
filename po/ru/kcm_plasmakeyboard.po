@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-03 20:00+0200\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"PO-Revision-Date: 2026-09-19 21:56+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -115,13 +115,9 @@ msgstr "Автоматически писать первую букву пред
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Экранная клавиатура"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
@@ -133,50 +129,44 @@ msgstr ""
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Выбран %1 язык"
+msgstr[1] "Выбрано %1 языка"
+msgstr[2] "Выбрано %1 языков"
+msgstr[3] "Выбран %1 язык"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Проверка нажатий"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Звук"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Воспроизведение звука при нажатии клавиши."
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "При поддержке вибрации нажатие клавиши сопровождается вибрацией."
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Общие"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Автоматически писать первую букву предложений с заглавной буквы"
+msgstr ""
+"Автоматически писать первую букву предложений и имён собственных с заглавной "
+"буквы"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Альтернативные символы:"
+msgstr "Альтернативные символы"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
 msgstr "Показывать всплывающее окно при удержании клавиши"
 
@@ -185,30 +175,27 @@ msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"При длительном нажатии клавиши на физической клавиатуре будет показано "
+"всплывающее окно с альтернативными вариантами выбранного символа (при "
+"наличии таких вариантов)."
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Задержка удержания:"
+msgstr "Задержка удержания"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Время удержания клавиши до появления всплывающего окна"
 
-#: ui/main_mediacenter.qml:128
-#, fuzzy
-#| msgid "milliseconds"
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "мс"
-msgstr[1] "мс"
-msgstr[2] "мс"
-msgstr[3] "мс"
+msgstr[0] "%1 миллисекунда"
+msgstr[1] "%1 миллисекунды"
+msgstr[2] "%1 миллисекунд"
+msgstr[3] "%1 миллисекунда"
 
-#: ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
-msgid "%1 milliseconds"
-msgstr "мс"
+#~| msgid "milliseconds"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 миллисекунд"

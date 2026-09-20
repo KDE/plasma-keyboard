@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-03-18 21:13+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -196,7 +196,7 @@ msgstr "Întârzierea la ținere:"
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 #, fuzzy
 #| msgid "milliseconds"
 msgid "%1 millisecond"
@@ -205,8 +205,7 @@ msgstr[0] "milisecunde"
 msgstr[1] "milisecunde"
 msgstr[2] "milisecunde"
 
-#: ui/main_mediacenter.qml:173
 #, fuzzy
-#| msgid "milliseconds"
-msgid "%1 milliseconds"
-msgstr "milisecunde"
+#~| msgid "milliseconds"
+#~ msgid "%1 milliseconds"
+#~ msgstr "milisecunde"

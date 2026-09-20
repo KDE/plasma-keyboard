@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
 "PO-Revision-Date: 2026-09-17 08:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -181,7 +181,7 @@ msgstr "השהיית החזקה"
 msgid "How long a key must be held before the overlay shows"
 msgstr "כמה זמן צריך להחזיק מקש עד שחלונית העל תופיע"
 
-#: ui/main_mediacenter.qml:128
+#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "מילישנייה"
@@ -189,6 +189,5 @@ msgstr[1] "שתי מילישניות"
 msgstr[2] "%1 מילישניות"
 msgstr[3] "%1 מילישניות"
 
-#: ui/main_mediacenter.qml:173
-msgid "%1 milliseconds"
-msgstr "%1 מילישניות"
+#~ msgid "%1 milliseconds"
+#~ msgstr "%1 מילישניות"
