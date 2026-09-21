@@ -28,14 +28,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://files.kde.org/qt/official_releases/qt/6.10/6.10.3/submodules/qtvirtualkeyboard-everywhere-src-6.10.3.tar.xz",
-                    "sha256": "3298e26dfa4fad2363e3dfb2b55079c54fc8115a4a040d9616e5619f095d8fb5",
+                    "url": "https://files.kde.org/qt/official_releases/qt/6.11/6.11.2/submodules/qtvirtualkeyboard-everywhere-src-6.11.2.tar.xz",
+                    "sha256": "4c6a26734a5c4e4acd5ff9ae5f192a5b883bc4514118f9df2fcf12064e647c2f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 7927,
                         "stable-only": true,
                         "versions": {
-                            "<": "6.11"
+                            "<": "6.12"
                         },
                         "url-template": "https://files.kde.org/qt/official_releases/qt/${major}.${minor}/$version/submodules/qtvirtualkeyboard-everywhere-src-$version.tar.xz"
                     }
