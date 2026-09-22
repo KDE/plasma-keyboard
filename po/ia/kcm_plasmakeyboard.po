@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-17 11:42+0100\n"
+"PO-Revision-Date: 2026-09-21 12:36+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -140,8 +140,6 @@ msgid "Key press feedback"
 msgstr "Retorno de pression de clave"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Sono"
@@ -195,11 +193,9 @@ msgid "How long a key must be held before the overlay shows"
 msgstr ""
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "millisecundas"
+msgstr[0] "%1 millisecunda"
 msgstr[1] "millisecundas"
 
 #, fuzzy

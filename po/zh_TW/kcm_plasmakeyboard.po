@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-16 17:04+0900\n"
+"PO-Revision-Date: 2026-09-22 00:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -112,63 +112,51 @@ msgstr "自動讓句子開頭第一個字母轉為大寫"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "螢幕上的虛擬鍵盤"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
-msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
+msgstr "未選擇任何語言，將使用系統的預設鍵盤佈局"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
+msgstr[0] "已選取 %1 個語言"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "按鍵回饋"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "音效"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "按鍵按下時播放音效回饋"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "裝置支援時，在按下按鍵時使裝置振動"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "一般"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "自動讓句子開頭第一個字母轉為大寫"
+msgstr "自動將句子開頭與專有名詞第一個字母轉為大寫"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "替代字元："
+msgstr "替代字元"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
 msgstr "按住按鍵時彈出顯示"
 
@@ -176,25 +164,21 @@ msgstr "按住按鍵時彈出顯示"
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
-msgstr ""
+msgstr "長按物理鍵盤按鍵時，如有替代字元可用則彈出顯示所選字元的替代字元"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "長按延遲："
+msgstr "長按延遲"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "長按多久才會觸發彈出顯示"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "毫秒"
+msgstr[0] "%1 毫秒"
 
 #, fuzzy
 #~| msgid "milliseconds"
