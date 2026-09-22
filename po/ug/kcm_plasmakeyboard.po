@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-07-22 17:26-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -31,8 +31,6 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
-"ھېچقانداق تىل تاللانمىدى. سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
-"ئىشلىتىدۇ."
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
 #: ui/main_mediacenter.qml:40
@@ -115,19 +113,13 @@ msgstr "جۈملە بېشى بىرىنچى ھەرپنى چوڭ ھەرپتە يا
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "ئېكران ھەرپتاختىسى"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"ھېچقانداق تىل تاللانمىدى. سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
-"ئىشلىتىدۇ."
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
@@ -140,8 +132,6 @@ msgid "Key press feedback"
 msgstr "كۇنۇپكا بېسىش قايتۇرما ئىنكاسى"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "ئاۋاز"
@@ -159,23 +149,17 @@ msgid "General"
 msgstr "ئادەتتىكى"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "جۈملە بېشى بىرىنچى ھەرپنى چوڭ ھەرپتە يازىدۇ"
+msgstr ""
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "زاپاس ھەرپ:"
+msgstr ""
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "كۇنۇپكا بېسىپ تۇرۇلسا قاڭقىش كۆزنىكىنى كۆرسەت"
+msgstr ""
 
 #: ui/main_mediacenter.qml:112
 msgid ""
@@ -184,24 +168,19 @@ msgid ""
 msgstr ""
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "كېچىكتۈرۈش:"
+msgstr ""
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "مىللىسېكۇنت"
+msgstr[0] "%1 مىللىسېكۇنت"
 
-#, fuzzy
 #~| msgid "milliseconds"
 #~ msgid "%1 milliseconds"
 #~ msgstr "مىللىسېكۇنت"
