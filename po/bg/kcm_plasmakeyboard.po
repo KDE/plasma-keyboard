@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-04-03 01:33+0200\n"
+"PO-Revision-Date: 2026-09-22 23:05+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -114,95 +114,78 @@ msgstr "Автоматично изписване на първата буква
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Виртуална клавиатура"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"Няма избрани езици. Ще се използва подредбата на клавиатурата по "
-"подразбиране за системата."
+"Няма избрани езици, ще се използва стандартното разпределение на "
+"клавиатурата за системата"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Избран е %1 език"
+msgstr[1] "Избрани са %1 езика"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Обратна връзка при натискане на клавиш"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Звук"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Възпроизвеждане на звук при натискане на клавиш"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Ако се поддържа, устройството ще вибрира при натискане на клавиш"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Общи"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Автоматично изписване на първата буква от изреченията с главна буква"
+msgstr ""
+"Автоматично изписване с главна буква на началото на изреченията и "
+"собствените имена"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Алтернативни символи:"
+msgstr "Алтернативни символи"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Показване на изскачащ символ при натискане на клавиш"
+msgstr "Показване на символа при задържане на клавиш"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Дълго натискане на клавиш от физическа клавиатура ще покаже панел с "
+"алтернативни варианти на избрания символ, ако са налични"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Изчакване:"
+msgstr "Закъснение при задържане"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Време за задържане на клавиш преди показване на панела"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "милисекунди"
-msgstr[1] "милисекунди"
-
-#, fuzzy
-#~| msgid "milliseconds"
-#~ msgid "%1 milliseconds"
-#~ msgstr "милисекунди"
+msgstr[0] "%1 милисекунда"
+msgstr[1] "%1 милисекунди"
