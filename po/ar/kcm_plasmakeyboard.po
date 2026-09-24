@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-15 09:37+0400\n"
+"PO-Revision-Date: 2026-09-23 19:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -101,7 +101,7 @@ msgstr "لغات لوحة المفاتيح"
 #: ui/main_handset.qml:84
 msgctxt "@title:group"
 msgid "General"
-msgstr "عامّ"
+msgstr "عام"
 
 #: ui/main_handset.qml:91
 msgid "Whether to use the arrow keys to navigate the keyboard"
@@ -117,4 +117,4 @@ msgstr "مؤشر ضغط المفاتيح"
 
 #: ui/main_mediacenter.qml:82
 msgid "General"
-msgstr "عامّ"
+msgstr "عام"
