@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-21 01:41+0200\n"
+"PO-Revision-Date: 2026-09-23 16:44+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -116,97 +116,85 @@ msgstr "Automatiškai rašyti pirmąją sakinio raidę didžiąja raide"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Ekraninė klaviatūra"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"Nepasirinkta jokia kalba. Bus naudojamas sistemos numatytasis klaviatūros "
-"išdėstymas."
+"Nepasirinkta jokia kalba, bus naudojamas sistemos numatytasis klaviatūros "
+"išdėstymas"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Pasirinkta %1 kalba"
+msgstr[1] "Pasirinktos %1 kalbos"
+msgstr[2] "Pasirinkta %1 kalbų"
+msgstr[3] "Pasirinkta %1 kalba"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Klavišų paspaudimo atsakas"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Garsas"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Paspaudus klavišą bus atkuriamas garsas"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Jei palaikoma, paspaudus klavišą įrenginys vibruos"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Bendra"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Automatiškai rašyti pirmąją sakinio raidę didžiąja raide"
+msgstr ""
+"Automatiškai rašyti pirmąją sakinio raidę ir tikrinius daiktavardžius iš "
+"didžiosios raidės"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Alternatyvūs simboliai:"
+msgstr "Alternatyvūs simboliai"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Rodyti iškylantįjį langą, kai klavišas laikomas nuspaustas"
+msgstr "Rodyti perdangą, kai klavišas laikomas nuspaustas"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Ilgai laikant nuspaustą klavišą fizinėje klaviatūroje bus rodoma perdanga su "
+"alternatyviomis pasirinkto simbolio versijomis, jei prieinama"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Laikymo delsa:"
+msgstr "Laikymo delsa"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Kaip ilgai reikia laikyti klavišą, prieš parodant perdangą"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "milisek."
-msgstr[1] "milisek."
-msgstr[2] "milisek."
-msgstr[3] "milisek."
+msgstr[0] "%1 milisekundė"
+msgstr[1] "%1 milisekundės"
+msgstr[2] "%1 milisekundžių"
+msgstr[3] "%1 milisekundė"
 
 #, fuzzy
 #~| msgid "milliseconds"
