@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.hr_HR",
+        "Name": "Hrvatski"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["hr_HR"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ",
+                "Files": {
+                    "main": "Qwertz.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.el_GR",
+        "Name": "Ελληνικά"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["el_GR"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-greek",
+                "Name": "Ελληνικά",
+                "Files": {
+                    "main": "Greek.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            },
+            {
+                "Id": "mobile-latin",
+                "Name": "QWERTY (Λατινικά)",
+                "Files": {
+                    "main": "Latin.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.tr_TR",
+        "Name": "Türkçe"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["tr_TR"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY",
+                "Files": {
+                    "main": "Qwerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

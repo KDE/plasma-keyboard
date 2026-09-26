@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.sq_AL",
+        "Name": "Shqip"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["sq_AL"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ",
+                "Files": {
+                    "main": "Qwertz.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

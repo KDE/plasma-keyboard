@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.ro_RO",
+        "Name": "Română"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["ro_RO"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY",
+                "Files": {
+                    "main": "Qwerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

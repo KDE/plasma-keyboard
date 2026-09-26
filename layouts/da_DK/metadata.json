@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.da_DK",
+        "Name": "Dansk"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["da_DK"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY",
+                "Files": {
+                    "main": "Qwerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

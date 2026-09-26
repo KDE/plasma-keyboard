@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.am_ET",
+        "Name": "አማርኛ"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "am_ET"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-ethiopic",
+                "Name": "ፊደል",
+                "Files": {
+                    "main": "Ethiopic.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.uk_UA",
+        "Name": "Українська"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["uk_UA"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-jcuken",
+                "Name": "ЙЦУКЕН",
+                "Files": {
+                    "main": "Jcuken.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

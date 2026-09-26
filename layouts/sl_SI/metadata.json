@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.sl_SI",
+        "Name": "Slovenščina"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["sl_SI"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ",
+                "Files": {
+                    "main": "Qwertz.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}
