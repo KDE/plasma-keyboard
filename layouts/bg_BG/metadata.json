@@ -1,0 +1,35 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.bg_BG",
+        "Name": "Български"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["bg_BG"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-bulgarian",
+                "Name": "Фонетична",
+                "Files": {
+                    "main": "Phonetic.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            },
+            {
+                "Id": "mobile-latin",
+                "Name": "QWERTY (латиница)",
+                "Files": {
+                    "main": "Latin.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

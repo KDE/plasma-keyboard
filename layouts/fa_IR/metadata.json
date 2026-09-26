@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.fa_IR",
+        "Name": "فارسی"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "fa_IR"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-persian",
+                "Name": "فارسی",
+                "Files": {
+                    "main": "Persian.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

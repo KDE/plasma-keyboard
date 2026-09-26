@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.eo",
+        "Name": "Esperanto"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["eo"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-esperanto",
+                "Name": "Esperanto",
+                "Files": {
+                    "main": "Esperanto.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

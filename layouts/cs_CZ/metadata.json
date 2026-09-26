@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.cs_CZ",
+        "Name": "Čeština"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["cs_CZ"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ",
+                "Files": {
+                    "main": "Qwertz.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

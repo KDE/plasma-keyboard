@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.id_ID",
+        "Name": "Bahasa Indonesia"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "id_ID"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY",
+                "Files": {
+                    "main": "Qwerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

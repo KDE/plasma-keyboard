@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.hu_HU",
+        "Name": "Magyar"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": ["hu_HU"],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ",
+                "Files": {
+                    "main": "Qwertz.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": ["phone", "mediacenter", "desktop"]
+            }
+        ]
+    }
+}

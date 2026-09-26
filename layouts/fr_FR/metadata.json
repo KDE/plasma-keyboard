@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.fr_FR",
+        "Name": "Français (France)"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "fr_FR"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-azerty",
+                "Name": "AZERTY",
+                "Files": {
+                    "main": "Azerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

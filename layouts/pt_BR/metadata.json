@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.pt_BR",
+        "Name": "Português (Brasil)"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "pt_BR"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY",
+                "Files": {
+                    "main": "Qwerty.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.hi_IN",
+        "Name": "हिन्दी"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "hi_IN"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-devanagari",
+                "Name": "देवनागरी",
+                "Files": {
+                    "main": "Devanagari.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

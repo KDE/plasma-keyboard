@@ -8,6 +8,8 @@ add_library(plasma-keyboard-virtualkeyboard STATIC
     inputengine.h
     textcomposers/abstracttextcomposer.cpp
     textcomposers/abstracttextcomposer.h
+    textcomposers/amharictextcomposer.cpp
+    textcomposers/amharictextcomposer.h
     textcomposers/basictextcomposer.cpp
     textcomposers/basictextcomposer.h
     textcomposers/directtextcomposer.cpp

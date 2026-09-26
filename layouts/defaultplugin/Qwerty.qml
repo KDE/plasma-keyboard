@@ -15,7 +15,7 @@ KeyboardLayout {
         Key { key: Qt.Key_R; text: "r"; alternativeKeys: "ŕr4ř"; smallText: "4"}
         Key { key: Qt.Key_T; text: "t"; alternativeKeys: "ţt5ŧť"; smallText: "5"}
         Key { key: Qt.Key_Y; text: "y"; alternativeKeys: "ÿy6ýŷ"; smallText: "6"}
-        Key { key: Qt.Key_U; text: "u"; alternativeKeys: "űūũûüu7ùú"; smallText: "7"}
+        Key { key: Qt.Key_U; text: "u"; alternativeKeys: "űūũûüu7ùúů"; smallText: "7"}
         Key { key: Qt.Key_I; text: "i"; alternativeKeys: "îïīĩi8ìí"; smallText: "8"}
         Key { key: Qt.Key_O; text: "o"; alternativeKeys: "œøõôöòóo9"; smallText: "9"}
         Key { key: Qt.Key_P; text: "p"; alternativeKeys: "p0"; smallText: "0"}

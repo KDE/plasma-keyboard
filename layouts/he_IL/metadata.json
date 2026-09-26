@@ -1,0 +1,45 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.he_IL",
+        "Name": "עברית"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "he_IL"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-hebrew",
+                "Name": "עברית",
+                "Files": {
+                    "main": "Hebrew.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            },
+            {
+                "Id": "mobile-latin",
+                "Name": "QWERTY (לטינית)",
+                "Files": {
+                    "main": "Latin.qml",
+                    "symbols": "shared/LatinSymbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}

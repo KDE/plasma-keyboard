@@ -8,7 +8,10 @@ import org.kde.plasma.keyboard.virtualkeyboard
 import org.kde.plasma.keyboard.virtualkeyboard.components
 
 KeyboardLayoutLoader {
+    id: root
+
     property bool secondPage
+    property bool invertedPunctuation: false
     onVisibleChanged: if (!visible) secondPage = false
     sourceComponent: secondPage ? page2 : page1
 
@@ -49,8 +52,16 @@ KeyboardLayoutLoader {
                 Key { key: Qt.Key_Apostrophe; text: "'" }
                 Key { key: Qt.Key_Colon; text: ":" }
                 Key { key: Qt.Key_Slash; text: "/" }
-                Key { key: Qt.Key_Exclam; text: "!" }
-                Key { key: Qt.Key_Question; text: "?" }
+                Key {
+                    key: root.invertedPunctuation ? Qt.Key_exclamdown : Qt.Key_Exclam
+                    text: root.invertedPunctuation ? "¡" : "!"
+                    alternativeKeys: root.invertedPunctuation ? "¡!" : []
+                }
+                Key {
+                    key: root.invertedPunctuation ? Qt.Key_questiondown : Qt.Key_Question
+                    text: root.invertedPunctuation ? "¿" : "?"
+                    alternativeKeys: root.invertedPunctuation ? "¿?" : []
+                }
                 BackspaceKey {}
             }
             KeyboardRow {

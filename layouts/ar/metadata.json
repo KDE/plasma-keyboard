@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Id": "org.kde.plasma.keyboard.ar",
+        "Name": "العربية"
+    },
+    "X-Plasma-Keyboard": {
+        "Locales": [
+            "ar_SA"
+        ],
+        "KeyboardLayouts": [
+            {
+                "Id": "mobile-arabic",
+                "Name": "العربية",
+                "Files": {
+                    "main": "Arabic.qml",
+                    "symbols": "shared/Symbols.qml",
+                    "digits": "shared/Digits.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "dialpad": "shared/Dialpad.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ]
+            }
+        ]
+    }
+}
