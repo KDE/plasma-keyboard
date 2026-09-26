@@ -1,22 +1,22 @@
 # Uyghur translation for kcm_plasmakeyboard.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-09-24 20:14-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -31,6 +31,8 @@ msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
+"ھېچقانداق تىل تاللانمىدى. سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
+"ئىشلىتىدۇ."
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
 #: ui/main_mediacenter.qml:40
@@ -120,12 +122,14 @@ msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
+"ھېچقانداق تىل تاللانمىدى, سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
+"ئىشلىتىدۇ"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
+msgstr[0] "%1 تىل تاللاندى"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
@@ -138,11 +142,11 @@ msgstr "ئاۋاز"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "بىر كۇنۇپكا بېسىلسا ئاۋاز ياڭرايدۇ"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "ئەگەر قوللىسا، بىر كۇنۇپكا بېسىلسا ئۈسكۈنە تىترەيدۇ"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
@@ -151,30 +155,34 @@ msgstr "ئادەتتىكى"
 #: ui/main_mediacenter.qml:93
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
 msgstr ""
+"جۈملىنىڭ بېشىدىكى ۋە خاس ئىسىمنىڭ بىرىنچى ھەرپىنى ئۆزلۈكىدىن چوڭ ھەرپكە "
+"ئۆزگەرتىدۇ"
 
 #: ui/main_mediacenter.qml:102
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr ""
+msgstr "زاپاس ھەرپ"
 
 #: ui/main_mediacenter.qml:111
 msgid "Show overlay when holding a key"
-msgstr ""
+msgstr "كۇنۇپكا بېسىپ تۇرۇلسا قاپلاشنى كۆرسەت"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"فىزىكىلىق ھەرپتاختىدىكى بىر ھەرپ ئۇزۇن بېسىلسا تاللانغان ھەرپنىڭ ئالماشتۇرۇپ "
+"قاپلىنىدىغان زاپاسلىرىنى كۆرسىتىدۇ"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr ""
+msgstr "كېچىكتۈرۈش"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "قاپلاشنى كۆرسىتىشتىن ئىلگىرى كۇنۇپكا قانچىلىك ۋاقىت بېسىپ تۇرۇلىدۇ"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
