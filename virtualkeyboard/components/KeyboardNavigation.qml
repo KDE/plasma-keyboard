@@ -171,7 +171,8 @@ QtObject {
         }
 
         __activationKeyItem.pressedVisual = true;
-        if (__activationKeyItem.effectiveAlternativeKeys && __activationKeyItem.effectiveAlternativeKeys.length > 0) {
+        if (__activationKeyItem.customPressAndHold
+                || (__activationKeyItem.effectiveAlternativeKeys && __activationKeyItem.effectiveAlternativeKeys.length > 0)) {
             __activationHoldTimer.restart();
         }
     }
@@ -180,8 +181,15 @@ QtObject {
         const popup = VirtualKeyboard.alternativeKeysPopup;
         if (__activationState !== KeyboardNavigation.ActivationState.KeyPressed
                 || !__activationKeyItem
-                || __activationKeyItem !== navigationKeyItem
-                || !popup) {
+                || __activationKeyItem !== navigationKeyItem) {
+            return;
+        }
+        if (__activationKeyItem.customPressAndHold) {
+            __activationState = KeyboardNavigation.ActivationState.PopupWaitingForRelease;
+            __activationKeyItem.pressAndHold();
+            return;
+        }
+        if (!popup) {
             return;
         }
         if (popup.openForKey(__activationKeyItem)) {

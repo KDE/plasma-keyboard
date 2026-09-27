@@ -53,6 +53,9 @@ class InputEngine : public QObject
 public:
     explicit InputEngine(InputBackend *backend, QObject *parent = nullptr);
 
+    InputBackend *backend() const;
+    void setBackend(InputBackend *backend);
+
     AbstractTextComposer *textComposer() const;
     void setTextComposer(AbstractTextComposer *textComposer);
     bool shiftActive() const;
@@ -107,9 +110,11 @@ Q_SIGNALS:
     void inputMethodHintsChanged();
     void pressedKeysChanged();
     void wordCandidateListVisibleHintChanged();
+    void backendChanged();
 
 private:
     void connectBackend();
+    void emitBackendStateChanged();
     void clearCompositionState(bool updateBackend);
     void resetShiftState();
     void updateAutomaticShift();

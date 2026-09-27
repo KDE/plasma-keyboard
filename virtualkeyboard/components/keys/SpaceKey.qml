@@ -5,13 +5,18 @@ import QtQuick
 
 import org.kde.plasma.keyboard.virtualkeyboard
 
-// Space key that labels itself with the current input language.
+// Space key that labels itself with the current input language, and opens the keyboard layout/language selector when held.
 
 Key {
+    id: root
+
     key: Qt.Key_Space
     text: " "
     displayText: VirtualKeyboard.inputEngine ? Qt.locale(VirtualKeyboard.inputEngine.locale).nativeLanguageName : ""
     noModifier: true
     showPreview: false
     textPixelSize: 24 * scaleHint
+
+    customPressAndHold: !!VirtualKeyboard.languagePopup
+    onPressAndHold: VirtualKeyboard.languagePopup?.showForItem(root)
 }

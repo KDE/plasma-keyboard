@@ -16,6 +16,16 @@ AbstractKey {
      */
     property int key: Qt.Key_unknown
 
+    /**
+     * Whether the key provides its own press-and-hold action via pressAndHold().
+     */
+    property bool customPressAndHold: false
+
+    /**
+     * Emitted when the key is pressed and held.
+     */
+    signal pressAndHold()
+
     property string commitText: root.text
     property bool noKeyEvent: key === Qt.Key_unknown && commitText.length === 0
     readonly property bool alternativeKeysActive: {
@@ -45,6 +55,8 @@ AbstractKey {
     }
 
     KeyMouseArea {
+        property bool held: false
+
         keyItem: root
         repeatEnabled: root.repeat && !root.noKeyEvent
         pressAndHoldInterval: 500
@@ -52,6 +64,8 @@ AbstractKey {
         onRepeatTriggered: root.commitKeyText(root.commitText)
 
         onPressStarted: (mouse) => {
+            held = false;
+
             const popup = VirtualKeyboard.alternativeKeysPopup;
             if (popup && popup.active && popup.ownerKey !== root) {
                 popup.close();
@@ -64,6 +78,17 @@ AbstractKey {
         }
 
         onPressAndHold: (mouse) => {
+            root.pressAndHold();
+            if (root.customPressAndHold) {
+                held = true;
+                stopRepeat();
+                const characterPopup = VirtualKeyboard.characterPopup;
+                if (characterPopup) {
+                    characterPopup.closeForKey(root);
+                }
+                return;
+            }
+
             const popup = VirtualKeyboard.alternativeKeysPopup;
             if (!popup || root.effectiveAlternativeKeys.length === 0) {
                 return;
@@ -89,6 +114,10 @@ AbstractKey {
             const characterPopup = VirtualKeyboard.characterPopup;
             if (characterPopup) {
                 characterPopup.closeForKey(root);
+            }
+
+            if (held) {
+                return;
             }
 
             const popup = VirtualKeyboard.alternativeKeysPopup;

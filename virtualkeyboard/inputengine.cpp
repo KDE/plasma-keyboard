@@ -46,6 +46,35 @@ InputEngine::InputEngine(InputBackend *backend, QObject *parent)
     connect(this, &InputEngine::preeditTextChanged, this, &InputEngine::updateAutomaticShift);
 }
 
+InputBackend *InputEngine::backend() const
+{
+    return m_backend;
+}
+
+void InputEngine::setBackend(InputBackend *backend)
+{
+    Q_ASSERT(backend);
+    if (m_backend == backend) {
+        return;
+    }
+
+    // Finish with the previous backend before switching, so no preedit or held keys are left behind
+    if (m_textComposer) {
+        m_textComposer->reset();
+    }
+    clear();
+    m_backend->clearPressedKeys();
+    disconnect(m_backend, nullptr, this, nullptr);
+
+    m_backend = backend;
+    connectBackend();
+
+    Q_EMIT backendChanged();
+    Q_EMIT pressedKeysChanged();
+    Q_EMIT uppercaseChanged();
+    emitBackendStateChanged();
+}
+
 AbstractTextComposer *InputEngine::textComposer() const
 {
     return m_textComposer;
@@ -363,14 +392,7 @@ void InputEngine::connectBackend()
         Q_EMIT pressedKeysChanged();
         Q_EMIT uppercaseChanged();
     });
-    connect(m_backend, &InputBackend::activeChanged, this, [this] {
-        Q_EMIT surroundingTextChanged();
-        Q_EMIT selectedTextChanged();
-        Q_EMIT anchorPositionChanged();
-        Q_EMIT cursorPositionChanged();
-        Q_EMIT inputMethodHintsChanged();
-        resetShiftState();
-    });
+    connect(m_backend, &InputBackend::activeChanged, this, &InputEngine::emitBackendStateChanged);
     connect(m_backend, &InputBackend::resetRequested, this, [this] {
         if (m_textComposer) {
             m_textComposer->reset();
@@ -379,6 +401,16 @@ void InputEngine::connectBackend()
         }
         resetShiftState();
     });
+}
+
+void InputEngine::emitBackendStateChanged()
+{
+    Q_EMIT surroundingTextChanged();
+    Q_EMIT selectedTextChanged();
+    Q_EMIT anchorPositionChanged();
+    Q_EMIT cursorPositionChanged();
+    Q_EMIT inputMethodHintsChanged();
+    resetShiftState();
 }
 
 void InputEngine::resetShiftState()
