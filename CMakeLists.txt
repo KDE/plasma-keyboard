@@ -23,6 +23,7 @@ include(KDEInstallDirs) # Should be included first so its variables are availabl
 include(ECMDeprecationSettings)
 include(ECMInstallIcons)
 include(ECMQmlModule)
+include(ECMFindQmlModule)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
 
@@ -66,6 +67,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
 )
 
 find_package(PlasmaQuick ${PROJECT_DEP_VERSION} REQUIRED)
+find_package(KEmoji 0.1 REQUIRED)
+ecm_find_qmlmodule(org.kde.kemoji REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0
     KF 6.29.0

@@ -149,7 +149,9 @@ void InputEngine::setPreeditText(const QString &text)
     }
 
     m_preeditText = text;
-    m_backend->setPreeditText(text);
+    if (!m_textCaptureActive) {
+        m_backend->setPreeditText(text);
+    }
     Q_EMIT preeditTextChanged();
 }
 
@@ -250,6 +252,32 @@ bool InputEngine::wordCandidateListVisibleHint() const
     return !m_candidates.isEmpty();
 }
 
+bool InputEngine::textCaptureActive() const
+{
+    return m_textCaptureActive;
+}
+
+void InputEngine::beginTextCapture()
+{
+    if (m_textCaptureActive) {
+        return;
+    }
+
+    m_textCaptureActive = true;
+    setCapsLockActive(false);
+    setShiftActive(false);
+}
+
+void InputEngine::endTextCapture()
+{
+    if (!m_textCaptureActive) {
+        return;
+    }
+
+    m_textCaptureActive = false;
+    updateAutomaticShift();
+}
+
 bool InputEngine::sendTextComposerKey(int key, const QString &text)
 {
     if (!m_textComposer) {
@@ -285,12 +313,29 @@ bool InputEngine::selectCandidate(int index)
 void InputEngine::commit()
 {
     if (!m_preeditText.isEmpty()) {
-        m_backend->commitText(m_preeditText);
+        if (m_textCaptureActive) {
+            Q_EMIT textCaptured(m_preeditText, 0, 0);
+        } else {
+            m_backend->commitText(m_preeditText);
+        }
         clearCompositionState(true);
     }
 }
 
 void InputEngine::commit(const QString &text, int replaceFrom, int replaceLength)
+{
+    if (m_textCaptureActive) {
+        if (!text.isEmpty() || replaceLength != 0) {
+            Q_EMIT textCaptured(text, replaceFrom, replaceLength);
+        }
+        clearCompositionState(true);
+        return;
+    }
+
+    commitDirect(text, replaceFrom, replaceLength);
+}
+
+void InputEngine::commitDirect(const QString &text, int replaceFrom, int replaceLength)
 {
     if (replaceLength != 0) {
         m_backend->deleteSurroundingText(replaceFrom, replaceLength);
@@ -310,6 +355,40 @@ void InputEngine::clear()
 
 bool InputEngine::handleKeyCommit(int key, const QString &text)
 {
+    if (m_textCaptureActive) {
+        switch (key) {
+        case Qt::Key_Backspace:
+        case Qt::Key_Delete:
+            Q_EMIT capturedBackspaceRequested();
+            return true;
+        case Qt::Key_Return:
+        case Qt::Key_Enter:
+        case Qt::Key_Tab:
+        case Qt::Key_Left:
+        case Qt::Key_Right:
+        case Qt::Key_Up:
+        case Qt::Key_Down:
+        case Qt::Key_Home:
+        case Qt::Key_End:
+            return true;
+        case Qt::Key_Space:
+            Q_EMIT textCaptured(QStringLiteral(" "), 0, 0);
+            return true;
+        default:
+            break;
+        }
+
+        if (text.isEmpty()) {
+            return false;
+        }
+
+        Q_EMIT textCaptured(text, 0, 0);
+        if (m_shiftActive && !m_capsLockActive) {
+            setShiftActive(false);
+        }
+        return true;
+    }
+
     switch (key) {
     case Qt::Key_Backspace:
     case Qt::Key_Delete:
@@ -381,6 +460,12 @@ void InputEngine::connectBackend()
 
 void InputEngine::resetShiftState()
 {
+    if (m_textCaptureActive) {
+        setCapsLockActive(false);
+        setShiftActive(false);
+        return;
+    }
+
     if (!m_backend->isActive()) {
         setCapsLockActive(false);
         setShiftActive(false);
@@ -400,6 +485,11 @@ void InputEngine::resetShiftState()
 
 void InputEngine::updateAutomaticShift()
 {
+    if (m_textCaptureActive) {
+        setShiftActive(false);
+        return;
+    }
+
     if (m_capsLockActive) {
         return;
     }
@@ -426,7 +516,7 @@ void InputEngine::clearCompositionState(bool updateBackend)
     const bool hadPreedit = !m_preeditText.isEmpty();
     const bool hadCandidates = !m_candidates.isEmpty();
 
-    if (updateBackend && hadPreedit) {
+    if (updateBackend && hadPreedit && !m_textCaptureActive) {
         m_backend->setPreeditText(QString());
     }
 

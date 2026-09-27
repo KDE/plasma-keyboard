@@ -32,6 +32,9 @@ InputPanelWindow {
 
     onVisibleChanged: {
         keyboardPanel.inputPanel.resetNavigation();
+        if (keyboardPanel.emojiController) {
+            keyboardPanel.emojiController.close();
+        }
         if (visible) {
             keyboardPanel.keyboardController.symbolMode = false;
         } else {

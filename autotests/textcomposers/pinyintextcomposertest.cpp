@@ -5,6 +5,7 @@
 */
 
 #include "pinyintextcomposer.h"
+#include "emojicontroller.h"
 #include "textcomposertestutils.h"
 
 #include <QStandardPaths>
@@ -72,6 +73,37 @@ private Q_SLOTS:
         QCOMPARE(backend->commitRequests, QStringList{QStringLiteral("a")});
         QVERIFY(engine.preeditText().isEmpty());
         QVERIFY(engine.candidates().isEmpty());
+    }
+
+    void emojiSearchUsesPinyinCandidates()
+    {
+        auto *backend = new TextComposerTestBackend;
+        InputEngine engine(backend);
+        auto *composer = new PinyinTextComposer;
+        engine.setTextComposer(composer);
+        EmojiController controller(&engine);
+
+        controller.open();
+        controller.startSearch();
+        QCOMPARE(engine.textComposer(), composer);
+
+        QVERIFY(sendText(engine, u"nihao"));
+        QCOMPARE(controller.query(), QStringLiteral("nihao"));
+        QVERIFY(backend->preeditRequests.isEmpty());
+        int candidateIndex = engine.candidates().indexOf(QStringLiteral("你好"));
+        QVERIFY(candidateIndex >= 0);
+
+        QVERIFY(engine.selectCandidate(candidateIndex));
+        QCOMPARE(controller.query(), QStringLiteral("你好"));
+        QVERIFY(engine.preeditText().isEmpty());
+        QVERIFY(engine.candidates().isEmpty());
+        QVERIFY(backend->commitRequests.isEmpty());
+
+        controller.commitEmoji(QStringLiteral("😀"));
+        QCOMPARE(backend->commitRequests, QStringList{QStringLiteral("😀")});
+
+        controller.stopSearch();
+        QCOMPARE(engine.textComposer(), composer);
     }
 };
 

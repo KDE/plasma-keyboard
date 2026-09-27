@@ -12,11 +12,14 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard.virtualkeyboard
 
+pragma ComponentBehavior: Bound
+
 QQC2.Popup {
     id: root
 
     property Item keyboardPanel
     property var keyboardController: VirtualKeyboard.keyboardController
+    property var emojiController: VirtualKeyboard.emojiController
     readonly property bool popupVisible: visible
     readonly property int itemCount: languageListView.count
     property int currentIndex: languageListView.currentIndex
@@ -79,6 +82,9 @@ QQC2.Popup {
         }
 
         keyboardController.setCurrentLayout(keyboardController.activeLayoutIds[currentIndex]);
+        if (emojiController) {
+            emojiController.close();
+        }
         close();
         return true;
     }
@@ -160,6 +166,9 @@ QQC2.Popup {
 
                 root.currentIndex = root.keyboardController.activeLayoutIds.indexOf(modelData);
                 root.keyboardController.setCurrentLayout(modelData);
+                if (root.emojiController) {
+                    root.emojiController.close();
+                }
                 root.close();
             }
         }
@@ -174,6 +183,65 @@ QQC2.Popup {
                 id: footerColumn
                 anchors.fill: parent
                 spacing: Kirigami.Units.smallSpacing
+
+                QQC2.ItemDelegate {
+                    id: emojiButton
+
+                    Layout.fillWidth: true
+                    visible: root.emojiController && root.emojiController.available
+                    leftPadding: languageListView.rowPadding
+                    rightPadding: languageListView.rowPadding
+                    topPadding: languageListView.rowPadding
+                    bottomPadding: languageListView.rowPadding
+                    topInset: 0; bottomInset: 0; rightInset: 0; leftInset: 0
+
+                    background: Rectangle {
+                        color: {
+                            if (emojiButton.down) {
+                                return BreezeConstants.popupHighlightBorderColor
+                            }
+                            if (emojiButton.hovered && !Kirigami.Settings.tabletMode) {
+                                return BreezeConstants.popupHighlightColor
+                            }
+                            return "transparent"
+                        }
+                        radius: BreezeConstants.buttonRadius
+                        border.width: 1
+                        border.color: {
+                            if (emojiButton.down || (emojiButton.hovered && !Kirigami.Settings.tabletMode)) {
+                                return BreezeConstants.popupHighlightBorderColor
+                            }
+                            return "transparent"
+                        }
+                    }
+
+                    contentItem: RowLayout {
+                        spacing: Kirigami.Units.largeSpacing
+
+                        Kirigami.Icon {
+                            source: "smiley"
+                            implicitWidth: Kirigami.Units.iconSizes.small
+                            implicitHeight: implicitWidth
+                        }
+
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: i18nc("@item:inmenu", "Emoji")
+                            color: BreezeConstants.popupTextColor
+                            elide: Text.ElideRight
+                            font.family: BreezeConstants.fontFamily
+                            font.weight: Font.Light
+                        }
+                    }
+
+                    onClicked: {
+                        if (root.keyboardController) {
+                            root.keyboardController.symbolMode = false
+                        }
+                        root.emojiController.open()
+                        root.close()
+                    }
+                }
 
                 Kirigami.Separator {
                     Layout.fillWidth: true

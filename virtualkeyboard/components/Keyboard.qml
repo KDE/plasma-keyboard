@@ -23,9 +23,10 @@ Item {
     property real bottomPadding: padding
 
     readonly property var inputEngine: virtualKeyboardContext ? virtualKeyboardContext.inputEngine : VirtualKeyboard.inputEngine
+    readonly property var emojiController: virtualKeyboardContext ? virtualKeyboardContext.emojiController : VirtualKeyboard.emojiController
     readonly property var keyboardController: virtualKeyboardContext ? virtualKeyboardContext.keyboardController : VirtualKeyboard.keyboardController
     readonly property var keyboardPackageResolver: virtualKeyboardContext ? virtualKeyboardContext.keyboardPackageResolver : VirtualKeyboard.keyboardPackageResolver
-    readonly property bool navigationAvailable: keyboardNavigation.navigationAvailable
+    readonly property bool navigationAvailable: (!emojiController || !emojiController.active || emojiController.searchActive) && keyboardNavigation.navigationAvailable
     property alias navigationModeActive: keyboardNavigation.navigationModeActive
 
     readonly property string layoutId: keyboardController ? keyboardController.layoutId : ""
@@ -38,7 +39,9 @@ Item {
     // Always have the keyboard panel be 30% of the screen height, or 150px, whichever is larger
     readonly property real __baseKeyboardInputAreaHeight: Math.max(Screen.height * 0.3, 150)
     readonly property real __keyboardInputAreaHeight: __baseKeyboardInputAreaHeight * ((layoutLoader.item && layoutLoader.item.panelHeightFactor !== undefined) ? layoutLoader.item.panelHeightFactor : 1)
-    readonly property real __contentHeight: __keyboardInputAreaHeight + (candidateStrip.visible ? candidateStrip.implicitHeight : 0)
+    readonly property real __contentHeight: __keyboardInputAreaHeight
+        + (candidateStrip.visible ? candidateStrip.implicitHeight : 0)
+        + (emojiSearchStrip.visible ? emojiSearchStrip.implicitHeight : 0)
     readonly property real __horizontalPadding: leftPadding + rightPadding
     readonly property real __verticalPadding: topPadding + bottomPadding
     readonly property real __keyboardHeight: __contentHeight + __verticalPadding
@@ -115,35 +118,58 @@ Item {
             id: candidateStrip
             Layout.fillWidth: true
             inputEngine: root.inputEngine
+            suppressed: root.emojiController && root.emojiController.active && !root.emojiController.searchActive
         }
 
-        Loader {
-            id: layoutLoader
+        EmojiSearchStrip {
+            id: emojiSearchStrip
+            Layout.fillWidth: true
+            visible: root.emojiController && root.emojiController.active && root.emojiController.searchActive
+            emojiController: root.emojiController
+        }
 
+        Item {
+            id: keyboardArea
             Layout.preferredWidth: parent.width
-            Layout.maximumWidth: (item && item.maxWidthToHeightRatio !== -1) ? (item.maxWidthToHeightRatio * height) : parent.width
+            Layout.maximumWidth: (layoutLoader.item && layoutLoader.item.maxWidthToHeightRatio !== -1) ? (layoutLoader.item.maxWidthToHeightRatio * height) : parent.width
+            Layout.minimumHeight: root.__keyboardInputAreaHeight
             Layout.preferredHeight: root.__keyboardInputAreaHeight
+            Layout.maximumHeight: root.__keyboardInputAreaHeight
             Layout.alignment: Qt.AlignHCenter
 
-            source: root.keyboardPackageResolver ? root.keyboardPackageResolver.layoutUrl(root.layoutId, root.layoutType) : ""
+            Loader {
+                id: layoutLoader
 
-            onLoaded: {
-                resetNavigation();
-                if (item && item.virtualKeyboardContext !== undefined) {
-                    item.virtualKeyboardContext = root.virtualKeyboardContext;
+                anchors.fill: parent
+                enabled: !root.emojiController || !root.emojiController.active || root.emojiController.searchActive
+                opacity: enabled ? 1 : 0
+                source: root.keyboardPackageResolver ? root.keyboardPackageResolver.layoutUrl(root.layoutId, root.layoutType) : ""
+
+                onLoaded: {
+                    resetNavigation();
+                    if (item && item.virtualKeyboardContext !== undefined) {
+                        item.virtualKeyboardContext = root.virtualKeyboardContext;
+                    }
+                    if (item && item.keyboardLayoutId !== undefined) {
+                        item.keyboardLayoutId = root.layoutId;
+                    }
+                    if (item && item.packageId !== undefined) {
+                        item.packageId = root.packageId;
+                    }
                 }
-                if (item && item.keyboardLayoutId !== undefined) {
-                    item.keyboardLayoutId = root.layoutId;
-                }
-                if (item && item.packageId !== undefined) {
-                    item.packageId = root.packageId;
+
+                onStatusChanged: {
+                    if (status === Loader.Error) {
+                        console.warn("Failed to load keyboard layout", root.layoutId, root.layoutType, source);
+                    }
                 }
             }
 
-            onStatusChanged: {
-                if (status === Loader.Error) {
-                    console.warn("Failed to load keyboard layout", root.layoutId, root.layoutType, source);
-                }
+            EmojiPicker {
+                anchors.fill: parent
+                visible: root.emojiController && root.emojiController.active && !root.emojiController.searchActive
+                emojiController: root.emojiController
+                inputEngine: root.inputEngine
             }
         }
     }
