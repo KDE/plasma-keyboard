@@ -10,6 +10,7 @@
 #include <qqmlintegration.h>
 
 class InputEngine;
+class EmojiController;
 class KeyboardController;
 class KeyboardPackageResolver;
 class VirtualKeyboardContext;
@@ -23,6 +24,7 @@ class VirtualKeyboardAttached : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(InputEngine *inputEngine READ inputEngine NOTIFY contextChanged)
+    Q_PROPERTY(EmojiController *emojiController READ emojiController NOTIFY contextChanged)
     Q_PROPERTY(KeyboardController *keyboardController READ keyboardController NOTIFY contextChanged)
     Q_PROPERTY(KeyboardPackageResolver *keyboardPackageResolver READ keyboardPackageResolver NOTIFY contextChanged)
     Q_PROPERTY(QObject *alternativeKeysPopup READ alternativeKeysPopup NOTIFY contextChanged)
@@ -35,6 +37,7 @@ public:
     explicit VirtualKeyboardAttached(QObject *attachedObject);
 
     InputEngine *inputEngine() const;
+    EmojiController *emojiController() const;
     KeyboardController *keyboardController() const;
     KeyboardPackageResolver *keyboardPackageResolver() const;
     QObject *alternativeKeysPopup() const;

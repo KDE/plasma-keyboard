@@ -6,6 +6,7 @@
 
 #include "virtualkeyboardattached.h"
 
+#include "emojicontroller.h"
 #include "inputengine.h"
 #include "keyboardcontroller.h"
 #include "keyboardpackageresolver.h"
@@ -58,6 +59,12 @@ InputEngine *VirtualKeyboardAttached::inputEngine() const
 {
     auto *keyboardContext = context();
     return keyboardContext ? keyboardContext->inputEngine() : nullptr;
+}
+
+EmojiController *VirtualKeyboardAttached::emojiController() const
+{
+    auto *keyboardContext = context();
+    return keyboardContext ? keyboardContext->emojiController() : nullptr;
 }
 
 KeyboardController *VirtualKeyboardAttached::keyboardController() const
