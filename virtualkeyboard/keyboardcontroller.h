@@ -21,7 +21,8 @@ class KeyboardPackageResolver;
 class KeyboardController : public QObject
 {
     Q_OBJECT
-    QML_ANONYMOUS
+    QML_ELEMENT
+    QML_UNCREATABLE("")
     Q_PROPERTY(QString layoutId READ layoutId WRITE setLayoutId NOTIFY layoutIdChanged)
     Q_PROPERTY(QStringList activeLayoutIds READ activeLayoutIds WRITE setActiveLayoutIds NOTIFY activeLayoutIdsChanged)
     Q_PROPERTY(int currentLayoutIndex READ currentLayoutIndex NOTIFY layoutIdChanged)

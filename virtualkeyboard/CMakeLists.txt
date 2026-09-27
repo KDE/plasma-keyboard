@@ -2,6 +2,10 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_library(plasma-keyboard-virtualkeyboard STATIC
+    emojicontroller.cpp
+    emojicontroller.h
+    emojimodel.cpp
+    emojimodel.h
     inputbackend.cpp
     inputbackend.h
     inputengine.cpp
@@ -19,6 +23,8 @@ add_library(plasma-keyboard-virtualkeyboard STATIC
     keyboardlayoutmetadata.cpp
     keyboardpackageresolver.cpp
     keyboardpackageresolver.h
+    inmemoryinputbackend.cpp
+    inmemoryinputbackend.h
     virtualkeyboardattached.cpp
     virtualkeyboardattached.h
     virtualkeyboardcontext.cpp
@@ -44,6 +50,7 @@ target_include_directories(plasma-keyboard-virtualkeyboard
 target_link_libraries(plasma-keyboard-virtualkeyboard
     PUBLIC
         Qt::Core
+        KEmoji::KEmoji
     PRIVATE
         KF6::CoreAddons
         KF6::Package
@@ -99,6 +106,7 @@ ecm_add_qml_module(plasma-keyboard-virtualkeyboard
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
         QtQuick
+        org.kde.kemoji
 )
 
 ecm_add_qml_module(keyboardvirtualkeyboardcomponents
@@ -108,6 +116,7 @@ ecm_add_qml_module(keyboardvirtualkeyboardcomponents
         QtQuick
         QtQuick.Controls
         org.kde.kirigami
+        org.kde.kemoji
         org.kde.plasma.keyboard.virtualkeyboard
 )
 
@@ -124,6 +133,10 @@ ecm_target_qml_sources(keyboardvirtualkeyboardcomponents SOURCES
     components/AlternativeKeysPopup.qml
     components/CharacterPopup.qml
     components/FlickPreviewPopup.qml
+    components/emoji/EmojiPicker.qml
+    components/emoji/EmojiPickerDelegate.qml
+    components/emoji/EmojiSearchFieldContent.qml
+    components/emoji/EmojiSearchStrip.qml
     components/Keyboard.qml
     components/KeyboardNavigation.qml
     components/KeyboardStrip.qml
@@ -147,6 +160,7 @@ ecm_target_qml_sources(keyboardvirtualkeyboardcomponents SOURCES
     components/keys/Key.qml
     components/keys/KeyMouseArea.qml
     components/keys/KeysymKey.qml
+    components/keys/NavigationHighlight.qml
     components/keys/ShiftKey.qml
     components/keys/SpaceKey.qml
     components/keys/SymbolModeKey.qml

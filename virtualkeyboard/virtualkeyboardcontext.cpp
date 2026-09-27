@@ -6,6 +6,7 @@
 
 #include "virtualkeyboardcontext.h"
 
+#include "emojicontroller.h"
 #include "inputbackend.h"
 #include "inputengine.h"
 #include "keyboardcontroller.h"
@@ -14,6 +15,7 @@
 VirtualKeyboardContext::VirtualKeyboardContext(InputBackend *inputBackend, QObject *parent)
     : QObject(parent)
     , m_inputEngine(new InputEngine(inputBackend, this))
+    , m_emojiController(new EmojiController(m_inputEngine, this))
     , m_keyboardPackageResolver(new KeyboardPackageResolver(this))
     , m_keyboardController(new KeyboardController(m_inputEngine, m_keyboardPackageResolver, this))
 {
@@ -22,6 +24,11 @@ VirtualKeyboardContext::VirtualKeyboardContext(InputBackend *inputBackend, QObje
 InputEngine *VirtualKeyboardContext::inputEngine() const
 {
     return m_inputEngine;
+}
+
+EmojiController *VirtualKeyboardContext::emojiController() const
+{
+    return m_emojiController;
 }
 
 KeyboardController *VirtualKeyboardContext::keyboardController() const

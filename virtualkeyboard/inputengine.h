@@ -32,6 +32,8 @@ class InputBackend;
 class InputEngine : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("")
     Q_PROPERTY(AbstractTextComposer *textComposer READ textComposer WRITE setTextComposer NOTIFY textComposerChanged)
     Q_PROPERTY(bool shiftActive READ shiftActive WRITE setShiftActive NOTIFY shiftActiveChanged)
     Q_PROPERTY(bool capsLockActive READ capsLockActive WRITE setCapsLockActive NOTIFY capsLockActiveChanged)
@@ -52,6 +54,9 @@ class InputEngine : public QObject
 
 public:
     explicit InputEngine(InputBackend *backend, QObject *parent = nullptr);
+
+    InputBackend *backend() const;
+    void setBackend(InputBackend *backend);
 
     AbstractTextComposer *textComposer() const;
     void setTextComposer(AbstractTextComposer *textComposer);
@@ -107,9 +112,11 @@ Q_SIGNALS:
     void inputMethodHintsChanged();
     void pressedKeysChanged();
     void wordCandidateListVisibleHintChanged();
+    void backendChanged();
 
 private:
     void connectBackend();
+    void emitBackendStateChanged();
     void clearCompositionState(bool updateBackend);
     void resetShiftState();
     void updateAutomaticShift();
