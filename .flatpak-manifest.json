@@ -168,6 +168,22 @@
             ]
         },
         {
+            "name": "kemoji",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTING=OFF",
+                "-DKEMOJI_BUILD_EMOJIER=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kemoji.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
             "name": "libplasma",
             "buildsystem": "cmake-ninja",
             "config-opts": [

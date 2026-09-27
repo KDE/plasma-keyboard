@@ -7,6 +7,7 @@
 #include "inputengine.h"
 #include "basictextcomposer.h"
 #include "directtextcomposer.h"
+#include "emojicontroller.h"
 #include "inputbackend.h"
 
 #include <QLoggingCategory>
@@ -206,6 +207,81 @@ private Q_SLOTS:
         QCOMPARE(backend->keyClickRequests, QList<int>{Qt::Key_Q});
         QVERIFY(backend->commitRequests.isEmpty());
         QCOMPARE(engine.pressedKeys(), QList<int>{Qt::Key_Control});
+    }
+
+    // Emoji search
+
+    void emojiSearchCapturesQuery()
+    {
+        auto *backend = new TestInputBackend;
+        InputEngine engine(backend);
+        auto *composer = new DirectTextComposer;
+        engine.setTextComposer(composer);
+        EmojiController controller(&engine);
+
+        controller.open();
+        controller.startSearch();
+        QVERIFY(controller.searchActive());
+        QVERIFY(engine.backend() != backend);
+
+        // Typing edits the query instead of the text field
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_S, QStringLiteral("s")));
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_M, QStringLiteral("m")));
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_I, QStringLiteral("i")));
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_L, QStringLiteral("l")));
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_E, QStringLiteral("e")));
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_Backspace, QString()));
+        QCOMPARE(controller.query(), QStringLiteral("smil"));
+        QVERIFY(backend->commitRequests.isEmpty());
+
+        // Committing an emoji keeps the search open
+        controller.commitEmoji(QStringLiteral("😀"));
+        QCOMPARE(controller.query(), QStringLiteral("smil"));
+
+        // Stopping the search goes back to typing into the text field
+        controller.stopSearch();
+        QVERIFY(!controller.searchActive());
+        QCOMPARE(engine.backend(), backend);
+        QVERIFY(controller.query().isEmpty());
+        QCOMPARE(engine.textComposer(), composer);
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_A, QStringLiteral("a")));
+        QCOMPARE(backend->commitRequests, QStringList({QStringLiteral("😀"), QStringLiteral("a")}));
+    }
+
+    void emojiOpenDuringSearchReturnsToPicker()
+    {
+        InputEngine engine(new TestInputBackend);
+        engine.setTextComposer(new DirectTextComposer);
+        EmojiController controller(&engine);
+
+        controller.open();
+        controller.startSearch();
+        QVERIFY(engine.sendTextComposerKey(Qt::Key_A, QStringLiteral("a")));
+
+        controller.open();
+        QVERIFY(controller.active());
+        QVERIFY(!controller.searchActive());
+        QVERIFY(controller.query().isEmpty());
+    }
+
+    void emojiModeClosesForSensitiveAndExclusiveInput()
+    {
+        auto *backend = new TestInputBackend;
+        InputEngine engine(backend);
+        engine.setTextComposer(new DirectTextComposer);
+        EmojiController controller(&engine);
+
+        controller.open();
+        controller.startSearch();
+
+        backend->setInputMethodHintsState(Qt::ImhSensitiveData);
+        QVERIFY(!controller.active());
+        QVERIFY(!controller.searchActive());
+        QCOMPARE(engine.backend(), backend);
+
+        backend->setInputMethodHintsState(Qt::ImhEmailCharactersOnly);
+        controller.open();
+        QVERIFY(!controller.active());
     }
 
     // Surrounding text
