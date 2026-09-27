@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_library(plasma-keyboard-virtualkeyboard STATIC
+    emojicontroller.cpp
+    emojicontroller.h
     inputbackend.cpp
     inputbackend.h
     inputengine.cpp
@@ -91,6 +93,7 @@ ecm_add_qml_module(keyboardvirtualkeyboardcomponents
         QtQuick
         QtQuick.Controls
         org.kde.kirigami
+        org.kde.kemoji
         org.kde.plasma.keyboard.virtualkeyboard
 )
 
@@ -107,6 +110,8 @@ ecm_target_qml_sources(keyboardvirtualkeyboardcomponents SOURCES
     components/AlternativeKeysPopup.qml
     components/CharacterPopup.qml
     components/FlickPreviewPopup.qml
+    components/EmojiPicker.qml
+    components/EmojiSearchStrip.qml
     components/Keyboard.qml
     components/KeyboardNavigation.qml
     components/KeyboardStrip.qml

@@ -16,13 +16,14 @@ Rectangle {
     id: root
 
     property var inputEngine: VirtualKeyboard.inputEngine
+    property bool suppressed: false
     property bool navigationModeActive: false
     readonly property real candidateHorizontalPadding: Math.round(28 * BreezeConstants.scaleHint)
     readonly property int candidateCount: candidateView.count
     readonly property bool hasNavigationSelection: candidateView.currentIndex >= 0
     readonly property bool hasCandidates: inputEngine && inputEngine.wordCandidateListVisibleHint
 
-    visible: hasCandidates
+    visible: hasCandidates && !suppressed
     implicitHeight: Math.round(100 * BreezeConstants.scaleHint)
     color: BreezeConstants.selectionListBackgroundColor
 

@@ -78,6 +78,11 @@ public:
     WordCandidateListModel *wordCandidateListModel() const;
     bool wordCandidateListVisibleHint() const;
 
+    // Capture input through a proxy - used for emoji search
+    bool textCaptureActive() const;
+    void beginTextCapture();
+    void endTextCapture();
+
     /** Sends a text key through the active text composer. */
     Q_INVOKABLE bool sendTextComposerKey(int key, const QString &text);
 
@@ -88,6 +93,9 @@ public:
     Q_INVOKABLE void commit();
     Q_INVOKABLE void commit(const QString &text, int replaceFrom = 0, int replaceLength = 0);
     Q_INVOKABLE void clear();
+
+    // Commit to the client even while text capture is active - for proxies (i.e. emojis)
+    void commitDirect(const QString &text, int replaceFrom = 0, int replaceLength = 0);
 
     bool handleKeyCommit(int key, const QString &text);
 
@@ -108,6 +116,10 @@ Q_SIGNALS:
     void pressedKeysChanged();
     void wordCandidateListVisibleHintChanged();
 
+    // Capture input through a proxy - used for emoji search
+    void textCaptured(const QString &text, int replaceFrom, int replaceLength);
+    void capturedBackspaceRequested();
+
 private:
     void connectBackend();
     void clearCompositionState(bool updateBackend);
@@ -125,4 +137,5 @@ private:
     QString m_preeditText;
     QString m_preeditPrefix;
     QStringList m_candidates;
+    bool m_textCaptureActive = false;
 };

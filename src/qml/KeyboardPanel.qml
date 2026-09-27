@@ -22,6 +22,7 @@ Kirigami.ShadowedRectangle {
     property alias characterPopup: characterPopup
     property alias flickPreviewPopup: flickPreviewPopup
     readonly property var keyboardController: virtualKeyboardContext ? virtualKeyboardContext.keyboardController : null
+    readonly property var emojiController: virtualKeyboardContext ? virtualKeyboardContext.emojiController : null
 
     readonly property bool isFloating: false
     readonly property bool isFullScreenWidth: !isFloating && PlasmaKeyboardSettings.panelFillScreenWidth
@@ -51,6 +52,7 @@ Kirigami.ShadowedRectangle {
         id: languagePopup
         keyboardPanel: inputPanel
         keyboardController: root.keyboardController
+        emojiController: root.emojiController
         onShowSettings: root.showSettingsRequested()
     }
 

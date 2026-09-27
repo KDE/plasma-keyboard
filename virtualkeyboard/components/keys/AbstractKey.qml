@@ -46,6 +46,12 @@ Item {
     property string smallText: ""
 
     /**
+     * Small icon shown in the corner of the key.
+     * If empty, no small corner icon is shown.
+     */
+    property string smallIconName: ""
+
+    /**
      * Alternate characters offered from the long-press popup.
      * Layouts can provide this either as a string or as an explicit list.
      */
@@ -232,6 +238,16 @@ Item {
                 }
 
                 visible: text.length > 0
+            }
+
+            Kirigami.Icon {
+                source: root.smallIconName
+                anchors.top: parent.top
+                anchors.right: parent.right
+                anchors.margins: BreezeConstants.keyContentMargin / 3
+                implicitWidth: Math.round(32 * root.scaleHint)
+                implicitHeight: implicitWidth
+                visible: root.smallIconName.length > 0
             }
         }
     }

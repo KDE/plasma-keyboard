@@ -12,11 +12,14 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard.virtualkeyboard
 
+pragma ComponentBehavior: Bound
+
 QQC2.Popup {
     id: root
 
     property Item keyboardPanel
     property var keyboardController: VirtualKeyboard.keyboardController
+    property var emojiController: VirtualKeyboard.emojiController
     readonly property bool popupVisible: visible
     readonly property int itemCount: languageListView.count
     property int currentIndex: languageListView.currentIndex
@@ -79,6 +82,9 @@ QQC2.Popup {
         }
 
         keyboardController.setCurrentLayout(keyboardController.activeLayoutIds[currentIndex]);
+        if (emojiController) {
+            emojiController.close();
+        }
         close();
         return true;
     }
@@ -160,6 +166,9 @@ QQC2.Popup {
 
                 root.currentIndex = root.keyboardController.activeLayoutIds.indexOf(modelData);
                 root.keyboardController.setCurrentLayout(modelData);
+                if (root.emojiController) {
+                    root.emojiController.close();
+                }
                 root.close();
             }
         }

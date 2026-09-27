@@ -6,19 +6,48 @@ import QtQuick
 import org.kde.plasma.keyboard
 import org.kde.plasma.keyboard.virtualkeyboard
 
-// Action key that opens the keyboard layout/language selector.
+// Emoji key that opens the keyboard layout/language selector when held.
 
-ActionKey {
+AbstractKey {
     id: root
 
-    iconName: "globe-symbolic"
+    property bool __held: false
+
+    iconName: "smiley"
+    smallIconName: "translate"
     displayText: ""
     functionKey: true
     secondaryStyle: true
 
     onClicked: {
-        if (VirtualKeyboard.languagePopup) {
-            VirtualKeyboard.languagePopup.showForItem(root)
+        if (VirtualKeyboard.keyboardController) {
+            VirtualKeyboard.keyboardController.symbolMode = false
         }
+        if (VirtualKeyboard.emojiController) {
+            VirtualKeyboard.emojiController.open()
+        }
+    }
+
+    KeyMouseArea {
+        keyItem: root
+        pressAndHoldInterval: 500
+
+        onPressStarted: root.__held = false
+
+        onPressAndHold: {
+            if (VirtualKeyboard.languagePopup) {
+                root.__held = true
+                VirtualKeyboard.languagePopup.showForItem(root)
+            }
+        }
+
+        onReleaseFinished: {
+            if (!root.__held) {
+                root.trigger()
+            }
+            root.__held = false
+        }
+
+        onCancelFinished: root.__held = false
     }
 }
