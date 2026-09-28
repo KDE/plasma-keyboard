@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-09-19 17:47+0200\n"
+"PO-Revision-Date: 2026-09-27 21:41+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -170,6 +170,8 @@ msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Held du inne ein tast på eit fysisk tastatur, vert det vist ei oversikt over "
+"alternative versjonar av den aktuelle bokstaven (dersom det finst slike)."
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
 msgctxt "How long a key must be held before triggering an action"
@@ -178,7 +180,7 @@ msgstr "Innhaldingsforseinking"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Kor lenge tasten må haldast inn for at teiknoversikta skal visast"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
 msgid "%1 millisecond"
