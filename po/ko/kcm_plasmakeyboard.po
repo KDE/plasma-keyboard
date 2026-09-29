@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-04-26 20:55+0200\n"
+"PO-Revision-Date: 2026-09-28 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -112,13 +112,9 @@ msgstr "문장 첫 글자를 자동으로 대문자화"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "온스크린 키보드"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
@@ -128,73 +124,63 @@ msgstr "선택한 언어가 없습니다. 시스템 기본 키보드 레이아�
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
+msgstr[0] "언어 %1개 선택됨"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "키 입력 피드백"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "소리"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "키를 눌렀을 때 소리를 재생함"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "지원하는 경우 키를 눌렀을 때 장치를 진동시킴"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "일반"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "문장 첫 글자를 자동으로 대문자화"
+msgstr "문장 시작과 고유 명사 첫 글자를 자동으로 대문자화"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "대체 문자:"
+msgstr "대체 문자"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "키를 누르고 있을 때 팝업 표시"
+msgstr "키를 누르고 있을 때 오버레이 표시"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"물리적 키보드에서 키를 길게 누르고 있으면 사용 가능한 경우 선택한 글자의 대"
+"체 형태 표시"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "고정 지연 시간:"
+msgstr "고정 지연 시간"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "오버레이를 표시할 때까지 키를 누르고 있을 시간"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "밀리초"
+msgstr[0] "%1밀리초"
 
 #, fuzzy
 #~| msgid "milliseconds"
