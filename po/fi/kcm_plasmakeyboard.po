@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2025-09-03 18:35+0300\n"
+"PO-Revision-Date: 2026-08-24 19:59+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -58,23 +58,23 @@ msgstr "Näppäinnavigointi"
 
 #: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
 msgid "Auto-capitalization"
-msgstr ""
+msgstr "Automaattinen iso kirjain"
 
 #: ui/main.qml:67
 msgid "Alternate characters:"
-msgstr ""
+msgstr "Vaihtoehtoiset merkit:"
 
 #: ui/main.qml:68
 msgid "Show popup when holding a key"
-msgstr ""
+msgstr "Näytä ponnahdusikkuna pidettäessä näppäintä alhaalla"
 
 #: ui/main.qml:76
 msgid "Hold delay:"
-msgstr ""
+msgstr "Pitoviive:"
 
 #: ui/main.qml:86
 msgid "milliseconds"
-msgstr ""
+msgstr "millisekuntia"
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
@@ -108,7 +108,7 @@ msgstr "Käytetäänkö näppäimistönavigointiin nuolinäppäimiä"
 
 #: ui/main_handset.qml:96
 msgid "Automatically capitalize the first letter of sentences"
-msgstr ""
+msgstr "Kirjoita virkkeenalkuiset kirjaimet automaattisesti isolla"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
@@ -151,9 +151,6 @@ msgid "If supported, the device will vibrate when a key is pressed"
 msgstr ""
 
 #: ui/main_mediacenter.qml:83
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "General"
 msgid "General"
 msgstr "Perusasetukset"
 
