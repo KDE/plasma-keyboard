@@ -1,122 +1,119 @@
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025-2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
+# SPDX-FileCopyrightText: 2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2026-03-21 06:03+0100\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: pl\n"
-"Language: pl\n"
+"PO-Revision-Date: 2026-10-04 12:43+0200\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
-msgstr "Odfiltruj języki…"
+msgstr ""
 
 #: ui/LocaleSelectorListView.qml:69
 msgid "Filter languages"
-msgstr "Odfiltruj języki"
+msgstr ""
 
 #: ui/LocaleSelectorListView.qml:82
 msgid ""
 "No languages selected. The default keyboard layout for the system will be "
 "used."
 msgstr ""
-"Nie wybrano żadnego języka. Zostanie użyty domyślny układ klawiatury dla "
-"systemu."
 
 #: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:70
 #: ui/main_mediacenter.qml:40
 msgid "Languages"
-msgstr "Języki"
+msgstr "மொழிகள்"
 
 #: ui/main.qml:33
 msgid "Key press feedback:"
-msgstr "Informacja zwrotna po naciśnięciu klawisza:"
+msgstr ""
 
 #: ui/main.qml:34 ui/main_handset.qml:40
 msgid "Sound"
-msgstr "Dźwięk"
+msgstr ""
 
 #: ui/main.qml:45 ui/main_handset.qml:54
 msgid "Vibration"
-msgstr "Drganie"
+msgstr ""
 
 #: ui/main.qml:56
 msgid "General:"
-msgstr "Ogólne:"
+msgstr ""
 
 #: ui/main.qml:57 ui/main_handset.qml:90
 msgid "Keyboard navigation"
-msgstr "Sterowanie z klawiatury"
+msgstr ""
 
 #: ui/main.qml:68 ui/main_handset.qml:104 ui/main_mediacenter.qml:91
 msgid "Auto-capitalization"
-msgstr "Pierwsza litera wielka"
+msgstr ""
 
 #: ui/main.qml:79
 msgid "Alternate characters:"
-msgstr "Zamienne znaki:"
+msgstr ""
 
 #: ui/main.qml:80
 msgid "Show popup when holding a key"
-msgstr "Pokaż okno wysuwne po przytrzymaniu klawisza"
+msgstr ""
 
 #: ui/main.qml:91
 msgid "Hold delay:"
-msgstr "Opóźnienie przytrzymania:"
+msgstr ""
 
 #: ui/main.qml:101
 msgid "milliseconds"
-msgstr "milisekundy"
+msgstr ""
 
 #: ui/main_handset.qml:29
 msgid "Test the virtual keyboard…"
-msgstr "Wypróbuj klawiaturę ekranową…"
+msgstr ""
 
 #: ui/main_handset.qml:34
 msgctxt "@title:group"
 msgid "Feedback"
-msgstr "Informacja zwrotna"
+msgstr ""
 
 #: ui/main_handset.qml:41
 msgid "Whether to emit a sound on key press"
-msgstr "Określa czy dawać głos po naciśnięciu klawisza"
+msgstr ""
 
 #: ui/main_handset.qml:55
 msgid "Whether to vibrate on key press"
-msgstr "Określa czy zadrżeć po naciśnięciu klawisza"
+msgstr ""
 
 #: ui/main_handset.qml:76
 msgid "Keyboard Languages"
-msgstr "Języki klawiatury"
+msgstr ""
 
 #: ui/main_handset.qml:84
 msgctxt "@title:group"
 msgid "General"
-msgstr "Ogólne"
+msgstr ""
 
 #: ui/main_handset.qml:91
 msgid "Whether to use the arrow keys to navigate the keyboard"
-msgstr "Określa czy używać klawiszy strzałek do sterowania z klawiatury"
+msgstr ""
 
 #: ui/main_handset.qml:105
 msgid "Automatically capitalize the first letter of sentences"
-msgstr "Sam zmienia pierwszą literę każdego zdania na wielką"
+msgstr ""
 
 #: ui/main_mediacenter.qml:47
 msgid "Key press feedback"
-msgstr "Informacja zwrotna po naciśnięciu klawisza"
+msgstr ""
 
 #: ui/main_mediacenter.qml:82
 msgid "General"
-msgstr "Ogólne"
+msgstr ""
