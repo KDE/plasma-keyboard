@@ -34,6 +34,10 @@
   <name xml:lang="ru">Клавиатура Plasma</name>
   <name xml:lang="sk">Klávesnica Plasma</name>
   <name xml:lang="sl">Plasma Keyboard</name>
+  <name xml:lang="sr">плазма тастатура</name>
+  <name xml:lang="sr-Latn">plasma tastatura</name>
+  <name xml:lang="sr-ijekavian">плазма тастатура</name>
+  <name xml:lang="sr-ijekavianlatin">plasma tastatura</name>
   <name xml:lang="sv">Plasma tangentbord</name>
   <name xml:lang="ta">பிளாஸ்மா விசைப்பலகை</name>
   <name xml:lang="tr">Plasma Klavye</name>
@@ -70,6 +74,10 @@
   <summary xml:lang="ru">Экранная клавиатура для Plasma</summary>
   <summary xml:lang="sk">Klávesnica na obrazovke pre Plasma</summary>
   <summary xml:lang="sl">Zaslonska tipkovnica za Plasmo</summary>
+  <summary xml:lang="sr">Тастатура на екрану за Плазму</summary>
+  <summary xml:lang="sr-Latn">Tastatura na ekranu za Plasmu</summary>
+  <summary xml:lang="sr-ijekavian">Тастатура на екрану за Плазму</summary>
+  <summary xml:lang="sr-ijekavianlatin">Tastatura na ekranu za Plasmu</summary>
   <summary xml:lang="sv">Skärmtangentbord för Plasma</summary>
   <summary xml:lang="tr">Plasma için ekran üzeri klavye</summary>
   <summary xml:lang="ug">Plasma نىڭ ئېكران ھەرپتاختىسى</summary>
@@ -111,6 +119,10 @@
     <p xml:lang="ru">Клавиатура для Plasma — виртуальная экранная клавиатура для сенсорных экранов, планшетов, трансформируемых устройств, телефонов и обычных компьютеров без физической клавиатуры.</p>
     <p xml:lang="sk">Klávesnica Plasma poskytuje virtuálnu klávesnicu na obrazovke pre dotykové obrazovky, tablety, konvertibilné zariadenia, telefóny a tradičné počítače bez fyzickej klávesnice.</p>
     <p xml:lang="sl">Plasma Keyboard ponuja navidezno zaslonsko tipkovnico za zaslone na dotik, tablične računalnike, prenosne naprave, telefone in tradicionalne računalnike brez fizične tipkovnice.</p>
+    <p xml:lang="sr">Плазма тастатура пружа виртуелну тастатуру на екрану за екране осетљиве на додир, таблете, конвертибилне уређаје, телефоне и класичне рачунаре без физичке тастатуре.</p>
+    <p xml:lang="sr-Latn">Plasma tastatura pruža virtuelnu tastaturu na ekranu za ekrane osetljive na dodir, tablete, konvertibilne uređaje, telefone i klasične računare bez fizičke tastature.</p>
+    <p xml:lang="sr-ijekavian">Плазма тастатура пружа виртуелну тастатуру на екрану за екране осјетљиве на додир, таблете, конвертибилне уређаје, телефоне и класичне рачунаре без физичке тастатуре.</p>
+    <p xml:lang="sr-ijekavianlatin">Plasma tastatura pruža virtuelnu tastaturu na ekranu za ekrane osjetljive na dodir, tablete, konvertibilne uređaje, telefone i klasične računare bez fizičke tastature.</p>
     <p xml:lang="sv">Plasma tangentbord tillhandahåller ett virtuellt tangentbord på skärmen för pekskärmar, surfplattor, konvertibla enheter, telefoner och traditionella datorer utan fysiskt tangentbord.</p>
     <p xml:lang="tr">Plasma Klavye; dokunmatik ekranlar, tabletler, dönüştürülebilir aygıtlar, telefonlar ve fiziksel bir klavyesi olmayan geleneksel bilgisayarlar için sanal ve ekran üzerinde görüntülenen bir klavye sağlar.</p>
     <p xml:lang="ug">Plasma ھەرپتاختا سەزگۈر ئېكران، تاختا كومپيۇتېر، ئۆزگىرىشچان ئۈسكۈنە، تېلېفون ۋە ئەنئەنىۋى كومپيۇتېرغا مەۋھۇم ئېكران ھەرپتاختا تەمىنلەيدۇ.</p>
@@ -147,6 +159,10 @@
       <li xml:lang="ru">Бесшовная интеграция с рабочей средой Plasma и приложениями</li>
       <li xml:lang="sk">Bezproblémová integrácia s pracovným priestorom a aplikáciami Plasma</li>
       <li xml:lang="sl">Neopazna integracija z delovnim prostorom in aplikacijami Plasma</li>
+      <li xml:lang="sr">Беспрекорно уклапање у радни простор Плазме и програме</li>
+      <li xml:lang="sr-Latn">Besprekorno uklapanje u radni prostor Plasme i programe</li>
+      <li xml:lang="sr-ijekavian">Беспрекорно уклапање у радни простор Плазме и програме</li>
+      <li xml:lang="sr-ijekavianlatin">Besprekorno uklapanje u radni prostor Plasme i programe</li>
       <li xml:lang="sv">Sömlös integration med Plasmas arbetsyta och program</li>
       <li xml:lang="tr">Plasma çalışma alanı ve uygulamalarıyla sorunsuz tümleşim</li>
       <li xml:lang="ug">Plasma خىزمەت بوشلۇقى ۋە پىروگرامما بىلەن يوچۇقسىز توپلاشتۇرۇلغان</li>
@@ -182,6 +198,10 @@
       <li xml:lang="ru">Автоматически появляется на экране при необходимости ввести текст</li>
       <li xml:lang="sk">Automatické zobrazenie, keď je potrebný textový vstup</li>
       <li xml:lang="sl">Samodejni prikaz, ko je potreben vnos besedila</li>
+      <li xml:lang="sr">Аутоматско појављивање када је потребан унос текста</li>
+      <li xml:lang="sr-Latn">Automatsko pojavljivanje kada je potreban unos teksta</li>
+      <li xml:lang="sr-ijekavian">Аутоматско појављивање када је потребан унос текста</li>
+      <li xml:lang="sr-ijekavianlatin">Automatsko pojavljivanje kada je potreban unos teksta</li>
       <li xml:lang="sv">Visas automatisk när textinmatning behövs</li>
       <li xml:lang="tr">Metin girişine gerek olduğunda kendiliğinden ortaya çıkar</li>
       <li xml:lang="ug">تېكىست كىرگۈزۈش كېرەك بولغاندا ئۆزلۈكىدىن كۆرۈنىدۇ</li>
@@ -217,6 +237,10 @@
       <li xml:lang="ru">Поддержка множества раскладок и языков</li>
       <li xml:lang="sk">Podpora viacerých rozložení a jazykov</li>
       <li xml:lang="sl">Podpora za več postavitev in jezikov</li>
+      <li xml:lang="sr">Подршка за више распореда и језика</li>
+      <li xml:lang="sr-Latn">Podrška za više rasporeda i jezika</li>
+      <li xml:lang="sr-ijekavian">Подршка за више распореда и језика</li>
+      <li xml:lang="sr-ijekavianlatin">Podrška za više rasporeda i jezika</li>
       <li xml:lang="sv">Stöd för flera layouter och språk</li>
       <li xml:lang="tr">Birden çok yerleşim ve dil desteği</li>
       <li xml:lang="ug">كۆپ خىل جايلاشتۇرۇش ۋە تىلنى قوللايدۇ</li>
@@ -252,6 +276,10 @@
       <li xml:lang="ru">Настраиваемый размер и поведение для разных типов устройств</li>
       <li xml:lang="sk">Konfigurovateľná veľkosť a správanie pre rôzne formáty zariadení</li>
       <li xml:lang="sl">Nastavljiva velikost in delovanje za različne oblike</li>
+      <li xml:lang="sr">Подесива величина и понашање за различите облике уређаја</li>
+      <li xml:lang="sr-Latn">Podesiva veličina i ponašanje za različite oblike uređaja</li>
+      <li xml:lang="sr-ijekavian">Подесива величина и понашање за различите облике уређаја</li>
+      <li xml:lang="sr-ijekavianlatin">Podesiva veličina i ponašanje za različite oblike uređaja</li>
       <li xml:lang="sv">Inställningsbar storlek och beteende för olika formfaktorer</li>
       <li xml:lang="tr">Değişik aygıt biçimleri için yapılandırılabilir boyut ve davranış</li>
       <li xml:lang="ug">ئوخشاش بولمىغان كۆزنەك ئۆلچىمىدە پەرقلىق چوڭلۇق ۋە قىلمىشنى سەپلىگىلى بولىدۇ</li>
