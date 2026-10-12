@@ -1,7 +1,7 @@
 # Translation for kcm_plasmakeyboard.po to Euskara/Basque (eu).
 # Copyright (C) 2025-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2025-2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2025, 2026.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-20 23:56+0100\n"
+"PO-Revision-Date: 2026-10-11 15:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/LocaleSelectorListView.qml:68
 msgid "Filter languages…"
@@ -117,93 +117,80 @@ msgstr "Perpausen aurreneko letra automatikoki maiuskula ipini"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Pantailako teklatua"
 
 #: ui/main_mediacenter.qml:43
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No languages selected, the default keyboard layout for the system will be "
 "used"
 msgstr ""
-"Ez da hizkuntzarik hautatu. Sistemaren teklatu-antolaera lehenetsia "
-"erabiliko da."
+"Ez da hizkuntzarik hautatu, sistemaren teklatu-antolaera lehenetsia "
+"erabiliko da"
 
 #: ui/main_mediacenter.qml:45
 msgctxt "%1 is the number of enabled locales"
 msgid "%1 language selected"
 msgid_plural "%1 languages selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hizkuntza %1 hautatu da"
+msgstr[1] "%1 hizkuntza hautatu dira"
 
 #: ui/main_mediacenter.qml:54
 msgid "Key press feedback"
 msgstr "Tekla-sakatzearen atzeraelikadura"
 
 #: ui/main_mediacenter.qml:63
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Soinua"
 
 #: ui/main_mediacenter.qml:64
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Tekla bat sakatzen denean soinu bat joko da"
 
 #: ui/main_mediacenter.qml:74
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Onartzen bada, tekla bat sakatzean gailuak dar-dar egingo du"
 
 #: ui/main_mediacenter.qml:83
 msgid "General"
 msgstr "Orokorra"
 
 #: ui/main_mediacenter.qml:93
-#, fuzzy
-#| msgid "Automatically capitalize the first letter of sentences"
 msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Perpausen aurreneko letra automatikoki maiuskula ipini"
+msgstr "Perpausen hasiera eta izen bereziak automatikoki letra larriz ipini"
 
 #: ui/main_mediacenter.qml:102
-#, fuzzy
-#| msgid "Alternate characters:"
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr "Karaktere alternatiboak:"
+msgstr "Ordezko karaktereak"
 
 #: ui/main_mediacenter.qml:111
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show overlay when holding a key"
-msgstr "Erakutsi leiho-gainerakorra tekla sakatuta mantentzean"
+msgstr "Tekla sakatuta mantentzean estalgarria erakutsi"
 
 #: ui/main_mediacenter.qml:112
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Teklatu fisikoko tekla bat luze sakatzean, erabilgarri badago, hautatutako "
+"karakterearen ordezko bertsioak dituen estalgarri bat erakutsiko da"
 
 #: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
-#, fuzzy
-#| msgid "Hold delay:"
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr "Euste-atzerapena:"
+msgstr "Euste-atzerapena"
 
 #: ui/main_mediacenter.qml:125
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
+"Estalgarria agertzeko, tekla zenbat denboraz sakatuta mantendu behar den"
 
 #: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
-#, fuzzy
-#| msgid "milliseconds"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] "milisegundo"
-msgstr[1] "milisegundo"
+msgstr[0] "%1 milisegundo"
+msgstr[1] "%1 milisegundo"
 
 #, fuzzy
 #~| msgid "milliseconds"
