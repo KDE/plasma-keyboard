@@ -29,7 +29,7 @@ Locations in the repo:
 
 The keyboard layouts are located in the [layouts](/layouts) folder.
 
-See the existing layouts there for examples on creating layout packages. They are installed (roughly) to `/usr/share/plasma/keyboard/keyboardpackages`.
+See the existing layouts there for examples on creating layout packages. They are installed (roughly) to `/usr/share/plasma/keyboard/keyboardpackages` or `~/.local/share/plasma/keyboard/keyboardpackages/`.
 
 See the component library for making layouts for documentation at [virtualkeyboard/components](/virtualkeyboard/components).
 
