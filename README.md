@@ -9,19 +9,49 @@ The plasma-keyboard is a virtual keyboard and input engine designed to integrate
 
 It uses the input-method-v1 Wayland protocol to communicate with the compositor to function as an input method. It also can leverage KWin's fake-input protocol in order to emulate keyboard keys (ex. Meta, Ctrl).
 
-## Install using the flatpak nightly repository
+#### Install using the flatpak nightly repository
 
-https://cdn.kde.org/flatpak/plasma-keyboard-nightly/org.kde.plasma.keyboard.flatpakref
+Flatpak manifest: [org.kde.plasma.keyboard.flatpakref](https://cdn.kde.org/flatpak/plasma-keyboard-nightly/org.kde.plasma.keyboard.flatpakref)
 
-See also: https://userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps
+See also: [userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps](https://userbase.kde.org/Tutorials/Flatpak#Nightly_KDE_apps)
 
-## Development
+#### Repository structure
+
+Locations in the repo:
+
+* [layouts](layouts) - Keyboard layouts
+* [kcm](kcm) - Settings module
+* [src](src) - Wayland input method (application), virtual keyboard, diacritics, etc.
+* [src/overlay](/src/overlay) - Overlay components for physical keyboard (diacritics)
+* [virtualkeyboard](virtualkeyboard) - Input engine and keyboard framework
+
+#### Layouts
+
+The keyboard layouts are located in the [layouts](/layouts) folder.
+
+See the existing layouts there for examples on creating layout packages. They are installed (roughly) to `/usr/share/plasma/keyboard/keyboardpackages`.
+
+See the component library for making layouts for documentation at [virtualkeyboard/components](/virtualkeyboard/components).
+
+#### Text composers
+
+A default text composer is provided that emits keys directly to the input engine (see [directtextcomposer](virtualkeyboard/textcomposers/directtextcomposer.h)) which works for most languages.
+
+Some languages require some extra processing in preedit to form words, and so have their own text composers:
+
+Text composers are located in [virtualkeyboard/textcomposers](/virtualkeyboard/textcomposers).
+
+#### Troubleshooting
+
+KWin by default only shows the keyboard when a text field is interacted with by touch. Set `KWIN_IM_SHOW_ALWAYS=1` when starting KWin (or the login session) in order to force the keyboard to always pop up.
+
+# Development
 
 Recommended methods for development are to either use
 [KDE Linux](https://linux.kde.org/) (as your OS or in a VM), or to build the
 Flatpak version of plasma-keyboard.
 
-### KDE Linux (recommended)
+#### KDE Linux (recommended)
 
 Follow the
 [instructions](https://linux.kde.org/docs/kde-dev/#build-kde-software-thats-shipped-on-the-base-image)
@@ -51,7 +81,39 @@ kwriteconfig6 --notify --file kwinrc --group Wayland --key InputMethod ''
 kwriteconfig6 --notify --file kwinrc --group Wayland --key InputMethod '/usr/share/applications/org.kde.plasma.keyboard.desktop'
 ```
 
-### Flatpak
+#### kde-builder (for most distributions)
+
+For most distributions where you have kde-builder setup, you can test plasma-keyboard in a nested Plasma session.
+
+Build plasma-keyboard:
+
+```bash
+$ kde-builder plasma-keyboard # For first run
+$ kde-builder plasma-keyboard -DS # To build without dependencies
+```
+
+Ensure KWin uses your development version of plasma-keyboard by editing `~/.config/kwinrc`:
+
+```
+~/.config/kwinrc
+
+[Wayland]
+InputMethod=~/kde/usr/share/applications/org.kde.plasma.keyboard.desktop
+```
+
+Run Plasma in a nested window:
+
+```bash
+$ KWIN_IM_SHOW_ALWAYS=1 dbus-run-session kwin_wayland "plasmashell"
+```
+
+In order to test keyboard navigation, pass an extra flag to KWin so that it would forward keyboard events:
+
+```bash
+$ KWIN_DEVICE_SKIPS_INPUT_METHOD="_none_" dbus-run-session kwin_wayland "plasmashell"
+```
+
+#### Flatpak
 
 It is also possible to build plasma-keyboard as a Flatpak. This is the
 recommended method for development on distributions other than KDE Linux, as we
@@ -76,7 +138,7 @@ kwriteconfig6 --notify --file kwinrc --group Wayland --key InputMethod '$HOME/.l
 
 ```
 
-### Building from source manually
+#### Building from source manually
 
 ```sh
 mkdir build && cd build
@@ -84,28 +146,9 @@ cmake ..
 make && make install
 ```
 
-### Troubleshooting
+#### Troubleshooting
 
 Join the [KDE Matrix chat](https://community.kde.org/Matrix) so we can help you
 get started with development! We have a room specifically for input handling:
 [#kde-input:kde.org](https://matrix.to/#/#kde-input:kde.org)
 
-## Layouts
-
-The keyboard layouts are located in the [layouts](/layouts) folder.
-
-See the existing layouts there for examples on creating layout packages. They are installed (roughly) to `/usr/share/plasma/keyboard/keyboardpackages`.
-
-See the component library for making layouts for documentation at [virtualkeyboard/components](/virtualkeyboard/components).
-
-### Text composers
-
-A default text composer is provided that emits keys directly to the input engine (see [directtextcomposer](virtualkeyboard/textcomposers/directtextcomposer.h)) which works for most languages.
-
-Some languages require some extra processing in preedit to form words, and so have their own text composers:
-
-Text composers are located in [virtualkeyboard/textcomposers](/virtualkeyboard/textcomposers).
-
-## Troubleshooting
-
-KWin by default only shows the keyboard when a text field is interacted with by touch. Set `KWIN_IM_SHOW_ALWAYS=1` when starting KWin (or the login session) in order to force the keyboard to always pop up.
