@@ -10,6 +10,10 @@
 #include "keyboardlayoutmetadata.h"
 #include "keyboardpackageresolver.h"
 
+#include <KRuntimePlatform>
+
+#include <QLocale>
+
 KeyboardController::KeyboardController(InputEngine *inputEngine, KeyboardPackageResolver *packageResolver, QObject *parent)
     : QObject(parent)
     , m_inputEngine(inputEngine)
@@ -23,7 +27,8 @@ KeyboardController::KeyboardController(InputEngine *inputEngine, KeyboardPackage
         refreshLayoutId();
     });
 
-    refreshLayoutId();
+    // Start with no active layouts
+    setActiveLayoutIds({});
 }
 
 QString KeyboardController::layoutId() const
@@ -59,6 +64,14 @@ void KeyboardController::setActiveLayoutIds(const QStringList &activeLayoutIds)
         const QString resolvedId = m_packageResolver->resolveLayoutId(layoutId);
         if (availableIds.contains(resolvedId) && !resolvedIds.contains(resolvedId)) {
             resolvedIds.append(resolvedId);
+        }
+    }
+
+    // Set fallback keyboard layout if we can't resolve any layouts
+    if (resolvedIds.isEmpty()) {
+        QString fallbackId = fallbackLayoutId();
+        if (!fallbackId.isEmpty()) {
+            resolvedIds.append(fallbackId);
         }
     }
 
@@ -169,6 +182,16 @@ QString KeyboardController::layoutName(const QString &layoutId) const
 {
     const QString name = m_packageResolver->layoutName(layoutId);
     return name.isEmpty() ? layoutDisplayName(layoutId) : name;
+}
+
+QString KeyboardController::fallbackLayoutId() const
+{
+    QStringList platforms = KRuntimePlatform::runtimePlatform();
+    if (platforms.contains(QStringLiteral("phone")) || platforms.contains(QStringLiteral("handset")) || platforms.contains(QStringLiteral("mediacenter"))) {
+        return QStringLiteral("org.kde.plasma.keyboard.en/mobile-qwerty");
+    }
+
+    return QStringLiteral("org.kde.plasma.keyboard.en/desktop-qwerty");
 }
 
 QString KeyboardController::layoutPrimaryLocale(const QString &layoutId) const

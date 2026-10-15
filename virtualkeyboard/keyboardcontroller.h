@@ -59,6 +59,7 @@ Q_SIGNALS:
 private:
     void refreshLayoutId();
     void refreshLocale();
+    QString fallbackLayoutId() const;
     QString layoutPrimaryLocale(const QString &layoutId) const;
 
     InputEngine *m_inputEngine = nullptr;
