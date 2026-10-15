@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-15 00:48+0000\n"
 "PO-Revision-Date: 2026-09-22 00:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,62 +17,100 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 26.11.70\n"
 
-#: ui/LocaleSelectorListView.qml:68
+#: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
 msgstr "過濾語言…"
 
-#: ui/LocaleSelectorListView.qml:69
+#: ui/KeyboardLayoutSelectorListView.qml:38
 msgid "Filter languages"
 msgstr "過濾語言"
 
-#: ui/LocaleSelectorListView.qml:82
+#: ui/KeyboardLayoutSelectorListView.qml:51
+msgctxt "@option:check"
+msgid "Show all layouts"
+msgstr ""
+
+#: ui/KeyboardLayoutSelectorListView.qml:66
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
 msgid ""
-"No languages selected. The default keyboard layout for the system will be "
-"used."
+"No keyboard layouts selected. The default keyboard layout for the system "
+"will be used."
 msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
 
-#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
-#: ui/main_mediacenter.qml:40
-msgid "Languages"
-msgstr "語言"
+#: ui/KeyboardLayoutSelectorListView.qml:118
+msgid "%1 layout"
+msgid_plural "%1 layouts"
+msgstr[0] ""
 
-#: ui/main.qml:33
+#: ui/KeyboardLayoutSelectorListView.qml:119
+#, fuzzy
+#| msgctxt "%1 is the number of enabled locales"
+#| msgid "%1 language selected"
+#| msgid_plural "%1 languages selected"
+msgid "%1 of %2 selected"
+msgstr "已選取 %1 個語言"
+
+#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
+#: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
+#, fuzzy
+#| msgid "Keyboard Languages"
+msgid "Keyboard Layouts"
+msgstr "鍵盤語言"
+
+#: ui/main.qml:24
+#, fuzzy
+#| msgid "Keyboard Languages"
+msgid "Keyboard layouts:"
+msgstr "鍵盤語言"
+
+#: ui/main.qml:25
+msgid "Configure…"
+msgstr ""
+
+#: ui/main.qml:39
 msgid "Key press feedback:"
 msgstr "按鍵回饋："
 
-#: ui/main.qml:34 ui/main_handset.qml:40
+#: ui/main.qml:40 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "音效"
 
-#: ui/main.qml:42 ui/main_handset.qml:51 ui/main_mediacenter.qml:73
+#: ui/main.qml:48 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
 msgid "Vibration"
 msgstr "震動"
 
-#: ui/main.qml:50
+#: ui/main.qml:56 ui/main_handset.qml:62
+msgid "Character popup"
+msgstr ""
+
+#: ui/main.qml:64
 msgid "General:"
 msgstr "一般："
 
-#: ui/main.qml:51 ui/main_handset.qml:84
+#: ui/main.qml:65 ui/main_handset.qml:95
 msgid "Keyboard navigation"
 msgstr "鍵盤導覽"
 
-#: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
+#: ui/main.qml:73 ui/main_handset.qml:106 ui/main_mediacenter.qml:95
 msgid "Auto-capitalization"
 msgstr "自動大寫"
 
-#: ui/main.qml:67
+#: ui/main.qml:81
 msgid "Alternate characters:"
 msgstr "替代字元："
 
-#: ui/main.qml:68
+#: ui/main.qml:82
 msgid "Show popup when holding a key"
 msgstr "按住按鍵時彈出顯示"
 
-#: ui/main.qml:76
+#: ui/main.qml:90
 msgid "Hold delay:"
 msgstr "長按延遲："
 
-#: ui/main.qml:86
+#: ui/main.qml:100
 msgid "milliseconds"
 msgstr "毫秒"
 
@@ -93,20 +131,22 @@ msgstr "是否要在按下按鍵時發出聲音。"
 msgid "Whether to vibrate on key press"
 msgstr "是否要在按下按鍵時震動。"
 
-#: ui/main_handset.qml:70
-msgid "Keyboard Languages"
-msgstr "鍵盤語言"
+#: ui/main_handset.qml:63
+#, fuzzy
+#| msgid "Show popup when holding a key"
+msgid "Show a character popup when pressing text keys"
+msgstr "按住按鍵時彈出顯示"
 
-#: ui/main_handset.qml:78
+#: ui/main_handset.qml:89
 msgctxt "@title:group"
 msgid "General"
 msgstr "一般"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:96
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "是否要使用方向鍵控制鍵盤"
 
-#: ui/main_handset.qml:96
+#: ui/main_handset.qml:107 ui/main_mediacenter.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "自動讓句子開頭第一個字母轉為大寫"
 
@@ -114,71 +154,81 @@ msgstr "自動讓句子開頭第一個字母轉為大寫"
 msgid "On-Screen Keyboard"
 msgstr "螢幕上的虛擬鍵盤"
 
-#: ui/main_mediacenter.qml:43
+#: ui/main_mediacenter.qml:44
+#, fuzzy
+#| msgid ""
+#| "No languages selected, the default keyboard layout for the system will be "
+#| "used"
 msgid ""
-"No languages selected, the default keyboard layout for the system will be "
-"used"
+"No keyboard layouts selected, the default keyboard layout for the system "
+"will be used"
 msgstr "未選擇任何語言，將使用系統的預設鍵盤佈局"
 
-#: ui/main_mediacenter.qml:45
-msgctxt "%1 is the number of enabled locales"
-msgid "%1 language selected"
-msgid_plural "%1 languages selected"
+#: ui/main_mediacenter.qml:46
+#, fuzzy
+#| msgctxt "%1 is the number of enabled locales"
+#| msgid "%1 language selected"
+#| msgid_plural "%1 languages selected"
+msgctxt "%1 is the number of enabled keyboard layouts"
+msgid "%1 keyboard layout selected"
+msgid_plural "%1 keyboard layouts selected"
 msgstr[0] "已選取 %1 個語言"
 
-#: ui/main_mediacenter.qml:54
+#: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
 msgstr "按鍵回饋"
 
-#: ui/main_mediacenter.qml:63
+#: ui/main_mediacenter.qml:64
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "音效"
 
-#: ui/main_mediacenter.qml:64
+#: ui/main_mediacenter.qml:65
 msgid "A sound will play when a key is pressed"
 msgstr "按鍵按下時播放音效回饋"
 
-#: ui/main_mediacenter.qml:74
+#: ui/main_mediacenter.qml:76
 msgid "If supported, the device will vibrate when a key is pressed"
 msgstr "裝置支援時，在按下按鍵時使裝置振動"
 
-#: ui/main_mediacenter.qml:83
+#: ui/main_mediacenter.qml:86
 msgid "General"
 msgstr "一般"
 
-#: ui/main_mediacenter.qml:93
-msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "自動將句子開頭與專有名詞第一個字母轉為大寫"
-
-#: ui/main_mediacenter.qml:102
+#: ui/main_mediacenter.qml:106
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
 msgstr "替代字元"
 
-#: ui/main_mediacenter.qml:111
+#: ui/main_mediacenter.qml:115
 msgid "Show overlay when holding a key"
 msgstr "按住按鍵時彈出顯示"
 
-#: ui/main_mediacenter.qml:112
+#: ui/main_mediacenter.qml:116
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr "長按物理鍵盤按鍵時，如有替代字元可用則彈出顯示所選字元的替代字元"
 
-#: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
+#: ui/main_mediacenter.qml:126 ui/main_mediacenter.qml:140
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
 msgstr "長按延遲"
 
-#: ui/main_mediacenter.qml:125
+#: ui/main_mediacenter.qml:127
 msgid "How long a key must be held before the overlay shows"
 msgstr "長按多久才會觸發彈出顯示"
 
-#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
+#: ui/main_mediacenter.qml:131 ui/main_mediacenter.qml:171
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 毫秒"
+
+#~ msgid "Languages"
+#~ msgstr "語言"
+
+#~ msgid "Automatically capitalize the beginning of sentences and proper nouns"
+#~ msgstr "自動將句子開頭與專有名詞第一個字母轉為大寫"
 
 #, fuzzy
 #~| msgid "milliseconds"

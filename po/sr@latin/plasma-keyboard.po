@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:45+0000\n"
+"POT-Creation-Date: 2026-10-15 00:48+0000\n"
 "PO-Revision-Date: 2026-10-06 10:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -27,32 +27,32 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "nemhirsl@gmail.com"
 
-#: main.cpp:47
+#: main.cpp:41
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "plasma tastatura"
 
-#: main.cpp:49
+#: main.cpp:43
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "Tastatura na ekranu za Plasmu"
 
-#: main.cpp:51
+#: main.cpp:45
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "© 2024, Aleks Pol Gonzalez"
 
-#: main.cpp:53
+#: main.cpp:47
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "Aleks Pol Gonzalez"
 
-#: main.cpp:53
+#: main.cpp:47
 #, kde-format
 msgid "Author"
 msgstr "Autor"
 
-#: overlay/longpresstrigger.cpp:40
+#: overlay/longpresstrigger.cpp:44
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
@@ -70,6 +70,5 @@ msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "Proširenje teksta"
 
-#: qml/LanguagePopup.qml:116
-msgid "Settings"
-msgstr "Postavke"
+#~ msgid "Settings"
+#~ msgstr "Postavke"

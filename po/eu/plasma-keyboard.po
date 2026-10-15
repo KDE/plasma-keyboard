@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:45+0000\n"
+"POT-Creation-Date: 2026-10-15 00:48+0000\n"
 "PO-Revision-Date: 2026-03-20 23:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,32 +30,32 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:47
+#: main.cpp:41
 #, kde-format
 msgid "Plasma Keyboard"
 msgstr "Plasma Teklatua"
 
-#: main.cpp:49
+#: main.cpp:43
 #, kde-format
 msgid "An on-screen keyboard for Plasma"
 msgstr "Plasmarako pantailako teklatu bat"
 
-#: main.cpp:51
+#: main.cpp:45
 #, kde-format
 msgid "Copyright 2024, Aleix Pol Gonzalez"
 msgstr "Copyright 2024, Aleix Pol Gonzalez"
 
-#: main.cpp:53
+#: main.cpp:47
 #, kde-format
 msgid "Aleix Pol Gonzalez"
 msgstr "Aleix Pol Gonzalez"
 
-#: main.cpp:53
+#: main.cpp:47
 #, kde-format
 msgid "Author"
 msgstr "Egilea"
 
-#: overlay/longpresstrigger.cpp:40
+#: overlay/longpresstrigger.cpp:44
 #, kde-format
 msgctxt "@label Name of the diacritics overlay trigger"
 msgid "Diacritics (Long Press)"
@@ -73,6 +73,5 @@ msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "Testu-hedapena"
 
-#: qml/LanguagePopup.qml:116
-msgid "Settings"
-msgstr "Ezarpenak"
+#~ msgid "Settings"
+#~ msgstr "Ezarpenak"

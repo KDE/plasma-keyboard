@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-15 00:48+0000\n"
 "PO-Revision-Date: 2026-10-11 15:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,64 +20,103 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: ui/LocaleSelectorListView.qml:68
+#: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
 msgstr "Hizkuntzak iragazi…"
 
-#: ui/LocaleSelectorListView.qml:69
+#: ui/KeyboardLayoutSelectorListView.qml:38
 msgid "Filter languages"
 msgstr "Iragazi hizkuntzak"
 
-#: ui/LocaleSelectorListView.qml:82
+#: ui/KeyboardLayoutSelectorListView.qml:51
+msgctxt "@option:check"
+msgid "Show all layouts"
+msgstr ""
+
+#: ui/KeyboardLayoutSelectorListView.qml:66
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
 msgid ""
-"No languages selected. The default keyboard layout for the system will be "
-"used."
+"No keyboard layouts selected. The default keyboard layout for the system "
+"will be used."
 msgstr ""
 "Ez da hizkuntzarik hautatu. Sistemaren teklatu-antolaera lehenetsia "
 "erabiliko da."
 
-#: ui/LocaleSelectorSidebar.qml:25 ui/main_handset.qml:64
-#: ui/main_mediacenter.qml:40
-msgid "Languages"
-msgstr "Hizkuntzak"
+#: ui/KeyboardLayoutSelectorListView.qml:118
+msgid "%1 layout"
+msgid_plural "%1 layouts"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ui/main.qml:33
+#: ui/KeyboardLayoutSelectorListView.qml:119
+#, fuzzy
+#| msgctxt "%1 is the number of enabled locales"
+#| msgid "%1 language selected"
+#| msgid_plural "%1 languages selected"
+msgid "%1 of %2 selected"
+msgstr "Hizkuntza %1 hautatu da"
+
+#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
+#: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
+#, fuzzy
+#| msgid "Keyboard Languages"
+msgid "Keyboard Layouts"
+msgstr "Teklatu-hizkuntzak"
+
+#: ui/main.qml:24
+#, fuzzy
+#| msgid "Keyboard Languages"
+msgid "Keyboard layouts:"
+msgstr "Teklatu-hizkuntzak"
+
+#: ui/main.qml:25
+msgid "Configure…"
+msgstr ""
+
+#: ui/main.qml:39
 msgid "Key press feedback:"
 msgstr "Tekla-sakatzearen atzeraelikadura:"
 
-#: ui/main.qml:34 ui/main_handset.qml:40
+#: ui/main.qml:40 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "Soinua"
 
-#: ui/main.qml:42 ui/main_handset.qml:51 ui/main_mediacenter.qml:73
+#: ui/main.qml:48 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
 msgid "Vibration"
 msgstr "Bibrazioa"
 
-#: ui/main.qml:50
+#: ui/main.qml:56 ui/main_handset.qml:62
+msgid "Character popup"
+msgstr ""
+
+#: ui/main.qml:64
 msgid "General:"
 msgstr "Orokorra:"
 
-#: ui/main.qml:51 ui/main_handset.qml:84
+#: ui/main.qml:65 ui/main_handset.qml:95
 msgid "Keyboard navigation"
 msgstr "Teklatu-nabigazioa"
 
-#: ui/main.qml:59 ui/main_handset.qml:95 ui/main_mediacenter.qml:92
+#: ui/main.qml:73 ui/main_handset.qml:106 ui/main_mediacenter.qml:95
 msgid "Auto-capitalization"
 msgstr "Maiuskulaz ipintze automatikoa"
 
-#: ui/main.qml:67
+#: ui/main.qml:81
 msgid "Alternate characters:"
 msgstr "Karaktere alternatiboak:"
 
-#: ui/main.qml:68
+#: ui/main.qml:82
 msgid "Show popup when holding a key"
 msgstr "Erakutsi leiho-gainerakorra tekla sakatuta mantentzean"
 
-#: ui/main.qml:76
+#: ui/main.qml:90
 msgid "Hold delay:"
 msgstr "Euste-atzerapena:"
 
-#: ui/main.qml:86
+#: ui/main.qml:100
 msgid "milliseconds"
 msgstr "milisegundo"
 
@@ -98,20 +137,22 @@ msgstr "Tekla sakatzean soinua igorri edo ez"
 msgid "Whether to vibrate on key press"
 msgstr "Tekla sakatzean dardaratu ala ez"
 
-#: ui/main_handset.qml:70
-msgid "Keyboard Languages"
-msgstr "Teklatu-hizkuntzak"
+#: ui/main_handset.qml:63
+#, fuzzy
+#| msgid "Show popup when holding a key"
+msgid "Show a character popup when pressing text keys"
+msgstr "Erakutsi leiho-gainerakorra tekla sakatuta mantentzean"
 
-#: ui/main_handset.qml:78
+#: ui/main_handset.qml:89
 msgctxt "@title:group"
 msgid "General"
 msgstr "Orokorra"
 
-#: ui/main_handset.qml:85
+#: ui/main_handset.qml:96
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Teklatuan nabigatzeko gezi-teklak erabili behar diren edo ez"
 
-#: ui/main_handset.qml:96
+#: ui/main_handset.qml:107 ui/main_mediacenter.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "Perpausen aurreneko letra automatikoki maiuskula ipini"
 
@@ -119,56 +160,60 @@ msgstr "Perpausen aurreneko letra automatikoki maiuskula ipini"
 msgid "On-Screen Keyboard"
 msgstr "Pantailako teklatua"
 
-#: ui/main_mediacenter.qml:43
+#: ui/main_mediacenter.qml:44
+#, fuzzy
+#| msgid ""
+#| "No languages selected, the default keyboard layout for the system will be "
+#| "used"
 msgid ""
-"No languages selected, the default keyboard layout for the system will be "
-"used"
+"No keyboard layouts selected, the default keyboard layout for the system "
+"will be used"
 msgstr ""
 "Ez da hizkuntzarik hautatu, sistemaren teklatu-antolaera lehenetsia "
 "erabiliko da"
 
-#: ui/main_mediacenter.qml:45
-msgctxt "%1 is the number of enabled locales"
-msgid "%1 language selected"
-msgid_plural "%1 languages selected"
+#: ui/main_mediacenter.qml:46
+#, fuzzy
+#| msgctxt "%1 is the number of enabled locales"
+#| msgid "%1 language selected"
+#| msgid_plural "%1 languages selected"
+msgctxt "%1 is the number of enabled keyboard layouts"
+msgid "%1 keyboard layout selected"
+msgid_plural "%1 keyboard layouts selected"
 msgstr[0] "Hizkuntza %1 hautatu da"
 msgstr[1] "%1 hizkuntza hautatu dira"
 
-#: ui/main_mediacenter.qml:54
+#: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
 msgstr "Tekla-sakatzearen atzeraelikadura"
 
-#: ui/main_mediacenter.qml:63
+#: ui/main_mediacenter.qml:64
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Soinua"
 
-#: ui/main_mediacenter.qml:64
+#: ui/main_mediacenter.qml:65
 msgid "A sound will play when a key is pressed"
 msgstr "Tekla bat sakatzen denean soinu bat joko da"
 
-#: ui/main_mediacenter.qml:74
+#: ui/main_mediacenter.qml:76
 msgid "If supported, the device will vibrate when a key is pressed"
 msgstr "Onartzen bada, tekla bat sakatzean gailuak dar-dar egingo du"
 
-#: ui/main_mediacenter.qml:83
+#: ui/main_mediacenter.qml:86
 msgid "General"
 msgstr "Orokorra"
 
-#: ui/main_mediacenter.qml:93
-msgid "Automatically capitalize the beginning of sentences and proper nouns"
-msgstr "Perpausen hasiera eta izen bereziak automatikoki letra larriz ipini"
-
-#: ui/main_mediacenter.qml:102
+#: ui/main_mediacenter.qml:106
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
 msgstr "Ordezko karaktereak"
 
-#: ui/main_mediacenter.qml:111
+#: ui/main_mediacenter.qml:115
 msgid "Show overlay when holding a key"
 msgstr "Tekla sakatuta mantentzean estalgarria erakutsi"
 
-#: ui/main_mediacenter.qml:112
+#: ui/main_mediacenter.qml:116
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
@@ -176,21 +221,27 @@ msgstr ""
 "Teklatu fisikoko tekla bat luze sakatzean, erabilgarri badago, hautatutako "
 "karakterearen ordezko bertsioak dituen estalgarri bat erakutsiko da"
 
-#: ui/main_mediacenter.qml:124 ui/main_mediacenter.qml:137
+#: ui/main_mediacenter.qml:126 ui/main_mediacenter.qml:140
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
 msgstr "Euste-atzerapena"
 
-#: ui/main_mediacenter.qml:125
+#: ui/main_mediacenter.qml:127
 msgid "How long a key must be held before the overlay shows"
 msgstr ""
 "Estalgarria agertzeko, tekla zenbat denboraz sakatuta mantendu behar den"
 
-#: ui/main_mediacenter.qml:128 ui/main_mediacenter.qml:173
+#: ui/main_mediacenter.qml:131 ui/main_mediacenter.qml:171
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 milisegundo"
 msgstr[1] "%1 milisegundo"
+
+#~ msgid "Languages"
+#~ msgstr "Hizkuntzak"
+
+#~ msgid "Automatically capitalize the beginning of sentences and proper nouns"
+#~ msgstr "Perpausen hasiera eta izen bereziak automatikoki letra larriz ipini"
 
 #, fuzzy
 #~| msgid "milliseconds"
