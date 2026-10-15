@@ -4,71 +4,71 @@
         "Name": "English"
     },
     "X-Plasma-Keyboard": {
+        "KeyboardLayouts": [
+            {
+                "Files": {
+                    "dialpad": "shared/Dialpad.qml",
+                    "digits": "shared/Digits.qml",
+                    "main": "MobileQwerty.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY"
+            },
+            {
+                "Files": {
+                    "dialpad": "shared/Dialpad.qml",
+                    "digits": "shared/Digits.qml",
+                    "main": "DesktopQwerty.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ],
+                "Id": "desktop-qwerty",
+                "Name": "QWERTY (Desktop)"
+            },
+            {
+                "Files": {
+                    "dialpad": "shared/Dialpad.qml",
+                    "digits": "shared/Digits.qml",
+                    "main": "FullQwerty.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "desktop"
+                ],
+                "Id": "desktop-full-qwerty",
+                "Name": "QWERTY (Full Desktop)"
+            },
+            {
+                "Files": {
+                    "dialpad": "shared/Dialpad.qml",
+                    "digits": "shared/Digits.qml",
+                    "main": "MobileDvorak.qml",
+                    "numbers": "shared/Numbers.qml",
+                    "symbols": "shared/Symbols.qml"
+                },
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-dvorak",
+                "Name": "Dvorak"
+            }
+        ],
         "Locales": [
             "en_US",
             "en_GB"
-        ],
-        "KeyboardLayouts": [
-            {
-                "Id": "mobile-qwerty",
-                "Name": "QWERTY",
-                "Files": {
-                    "main": "MobileQwerty.qml",
-                    "symbols": "shared/Symbols.qml",
-                    "digits": "shared/Digits.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
-                },
-                "FormFactors": [
-                    "phone",
-                    "mediacenter",
-                    "desktop"
-                ]
-            },
-            {
-                "Id": "desktop-qwerty",
-                "Name": "QWERTY (Desktop)",
-                "Files": {
-                    "main": "DesktopQwerty.qml",
-                    "symbols": "shared/Symbols.qml",
-                    "digits": "shared/Digits.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
-                },
-                "FormFactors": [
-                    "desktop"
-                ]
-            },
-            {
-                "Id": "desktop-full-qwerty",
-                "Name": "QWERTY (Full Desktop)",
-                "Files": {
-                    "main": "FullQwerty.qml",
-                    "symbols": "shared/Symbols.qml",
-                    "digits": "shared/Digits.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
-                },
-                "FormFactors": [
-                    "desktop"
-                ]
-            },
-            {
-                "Id": "mobile-dvorak",
-                "Name": "Dvorak",
-                "Files": {
-                    "main": "MobileDvorak.qml",
-                    "symbols": "shared/Symbols.qml",
-                    "digits": "shared/Digits.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
-                },
-                "FormFactors": [
-                    "phone",
-                    "mediacenter",
-                    "desktop"
-                ]
-            }
         ]
     }
 }
