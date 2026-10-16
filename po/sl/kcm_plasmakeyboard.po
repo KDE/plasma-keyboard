@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:48+0000\n"
-"PO-Revision-Date: 2026-09-17 06:21+0200\n"
+"PO-Revision-Date: 2026-10-15 10:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -29,51 +29,40 @@ msgstr "Filtriraj jezike"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Prikaži vse razporeditve"
 
 #: ui/KeyboardLayoutSelectorListView.qml:66
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No keyboard layouts selected. The default keyboard layout for the system "
 "will be used."
 msgstr ""
-"Ni izbranega jezika. Uporabljena bo privzeta razporeditev tipkovnice sistema."
+"Izbrana ni nobena razporeditev tipkovnice. Uporabljena bo privzeta sistemska "
+"razporeditev tipkovnice."
 
 #: ui/KeyboardLayoutSelectorListView.qml:118
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 razporeditev"
+msgstr[1] "%1 razporeditev"
+msgstr[2] "%1 razporeditvi"
+msgstr[3] "%1 razporeditve"
 
 #: ui/KeyboardLayoutSelectorListView.qml:119
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "Izbranih je %1 jezikov"
+msgstr "%1 od %2 izbrano"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
 #: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Jeziki tipkovnice"
+msgstr "Razporeditve tipkovnice"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Jeziki tipkovnice"
+msgstr "Razporeditve tipkovnice:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Konfiguriraj…"
 
 #: ui/main.qml:39
 msgid "Key press feedback:"
@@ -89,7 +78,7 @@ msgstr "Tresenje"
 
 #: ui/main.qml:56 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Pojavno okno z znakom"
 
 #: ui/main.qml:64
 msgid "General:"
@@ -137,10 +126,8 @@ msgid "Whether to vibrate on key press"
 msgstr "Ali naj vibrira ob pritisku tipke"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Prikaži pojavno okno, ko držite tipko"
+msgstr "Prikaži pojavno okno, ko držite besedilno tipko"
 
 #: ui/main_handset.qml:89
 msgctxt "@title:group"
@@ -160,28 +147,21 @@ msgid "On-Screen Keyboard"
 msgstr "Zaslonska tipkovnica"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Ni izbranega jezika, uporabljena bo privzeta razporeditev tipkovnice sistema"
+"Izbrane ni nobene razporeditve tipkovnice; uporabljena bo privzeta sistemska "
+"razporeditev tipkovnice."
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "Izbranih je %1 jezikov"
-msgstr[1] "Izbran je %1 jezik"
-msgstr[2] "Izbrana sta %1 jezika"
-msgstr[3] "Izbrani so %1 jeziki"
+msgstr[0] "Izbrano %1 razporeditev tipkovnice"
+msgstr[1] "Izbrana %1 razporeditev tipkovnice"
+msgstr[2] "Izbrani %1 razporeditvi tipkovnice"
+msgstr[3] "Izbrane %1 razporeditve tipkovnice"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:48+0000\n"
-"PO-Revision-Date: 2026-09-17 09:16-0300\n"
+"PO-Revision-Date: 2026-10-15 09:57-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -30,49 +30,38 @@ msgstr "Filtrar por idiomas"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Mostrar todos os layouts"
 
 #: ui/KeyboardLayoutSelectorListView.qml:66
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No keyboard layouts selected. The default keyboard layout for the system "
 "will be used."
 msgstr ""
-"Nenhum idioma selecionado. O layout de teclado padrão do sistema será usado."
+"Nenhum layout de teclado selecionado. O layout de teclado padrão do sistema "
+"será usado."
 
 #: ui/KeyboardLayoutSelectorListView.qml:118
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 layout"
+msgstr[1] "%1 layouts"
 
 #: ui/KeyboardLayoutSelectorListView.qml:119
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "%1 idioma selecionado"
+msgstr "%1 de %2 selecionado"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
 #: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Idiomas do teclado"
+msgstr "Layouts de teclado"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Idiomas do teclado"
+msgstr "Layouts de teclado:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Configurar…"
 
 #: ui/main.qml:39
 msgid "Key press feedback:"
@@ -88,7 +77,7 @@ msgstr "Vibração"
 
 #: ui/main.qml:56 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Pop-pup de caractere"
 
 #: ui/main.qml:64
 msgid "General:"
@@ -136,10 +125,8 @@ msgid "Whether to vibrate on key press"
 msgstr "Se deve vibrar ao pressionar a tecla"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Exibir janela pop-up ao manter uma tecla pressionada"
+msgstr "Exibir um pop-up de caractere ao pressionar teclas de texto"
 
 #: ui/main_handset.qml:89
 msgctxt "@title:group"
@@ -159,26 +146,19 @@ msgid "On-Screen Keyboard"
 msgstr "Teclado na tela"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Nenhum idioma selecionado; o layout de teclado padrão do sistema será usado"
+"Nenhum layout de teclado selecionado; o layout de teclado padrão do sistema "
+"será usado"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "%1 idioma selecionado"
-msgstr[1] "%1 idiomas selecionados"
+msgstr[0] "%1 layout de teclado selecionado"
+msgstr[1] "%1 layouts de teclado selecionados"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
