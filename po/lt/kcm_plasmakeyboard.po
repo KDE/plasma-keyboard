@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:48+0000\n"
-"PO-Revision-Date: 2026-09-23 16:44+0300\n"
+"PO-Revision-Date: 2026-10-16 15:09+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -30,52 +30,40 @@ msgstr "Filtruoti kalbas"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Rodyti visus išdėstymus"
 
 #: ui/KeyboardLayoutSelectorListView.qml:66
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No keyboard layouts selected. The default keyboard layout for the system "
 "will be used."
 msgstr ""
-"Nepasirinkta jokia kalba. Bus naudojamas sistemos numatytasis klaviatūros "
-"išdėstymas."
+"Nepasirinkti jokie klaviatūros išdėstymai. Bus naudojamas sistemos "
+"numatytasis klaviatūros išdėstymas."
 
 #: ui/KeyboardLayoutSelectorListView.qml:118
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 išdėstymas"
+msgstr[1] "%1 išdėstymai"
+msgstr[2] "%1 išdėstymų"
+msgstr[3] "%1 išdėstymas"
 
 #: ui/KeyboardLayoutSelectorListView.qml:119
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "Pasirinkta %1 kalba"
+msgstr "Pasirinkta %1 iš %2"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
 #: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Klaviatūros kalbos"
+msgstr "Klaviatūros išdėstymai"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Klaviatūros kalbos"
+msgstr "Klaviatūros išdėstymai:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Konfigūruoti…"
 
 #: ui/main.qml:39
 msgid "Key press feedback:"
@@ -91,7 +79,7 @@ msgstr "Vibracija"
 
 #: ui/main.qml:56 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Simbolių iškylantysis langas"
 
 #: ui/main.qml:64
 msgid "General:"
@@ -139,10 +127,9 @@ msgid "Whether to vibrate on key press"
 msgstr "Ar vibruoti, kai paspaudžiami klavišai"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Rodyti iškylantįjį langą, kai klavišas laikomas nuspaustas"
+msgstr ""
+"Rodyti simbolių iškylantįjį langą, kai paspaudžiami tekstiniai klavišai"
 
 #: ui/main_handset.qml:89
 msgctxt "@title:group"
@@ -162,29 +149,21 @@ msgid "On-Screen Keyboard"
 msgstr "Ekraninė klaviatūra"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Nepasirinkta jokia kalba, bus naudojamas sistemos numatytasis klaviatūros "
-"išdėstymas"
+"Nepasirinkti jokie klaviatūros išdėstymai, bus naudojamas sistemos "
+"numatytasis klaviatūros išdėstymas"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "Pasirinkta %1 kalba"
-msgstr[1] "Pasirinktos %1 kalbos"
-msgstr[2] "Pasirinkta %1 kalbų"
-msgstr[3] "Pasirinkta %1 kalba"
+msgstr[0] "Pasirinktas %1 klaviatūros išdėstymas"
+msgstr[1] "Pasirinkti %1 klaviatūros išdėstymai"
+msgstr[2] "Pasirinkta %1 klaviatūros išdėstymų"
+msgstr[3] "Pasirinktas %1 klaviatūros išdėstymas"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
