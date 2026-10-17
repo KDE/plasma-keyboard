@@ -1,7 +1,18 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.en",
-        "Name": "English"
+        "Name": "English",
+        "Name[ca@valencia]": "Anglés",
+        "Name[ca]": "Anglès",
+        "Name[cs]": "Anglický",
+        "Name[es]": "Inglés",
+        "Name[ka]": "ინგლისური",
+        "Name[nl]": "Engels",
+        "Name[pt_BR]": "Inglês",
+        "Name[ru]": "Английская",
+        "Name[sl]": "Angleška",
+        "Name[tr]": "İngilizce",
+        "Name[uk]": "Англійська"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
