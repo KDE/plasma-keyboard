@@ -69,6 +69,3 @@ msgstr "Емоджи (Търсене по префикс)"
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "Разширение на текст"
-
-#~ msgid "Settings"
-#~ msgstr "Настройки"

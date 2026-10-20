@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-15 00:48+0000\n"
-"PO-Revision-Date: 2026-09-22 23:05+0200\n"
+"PO-Revision-Date: 2026-10-19 16:04+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -28,50 +28,38 @@ msgstr "Филтриране на езици"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Показване на всички подредби"
 
 #: ui/KeyboardLayoutSelectorListView.qml:66
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid ""
 "No keyboard layouts selected. The default keyboard layout for the system "
 "will be used."
 msgstr ""
-"Няма избрани езици. Ще се използва подредбата на клавиатурата по "
-"подразбиране за системата."
+"Няма избрани подредби на клавиатурата. Ще бъде използвана системната "
+"подредба."
 
 #: ui/KeyboardLayoutSelectorListView.qml:118
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 подредба"
+msgstr[1] "%1 подредби"
 
 #: ui/KeyboardLayoutSelectorListView.qml:119
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "Избран е %1 език"
+msgstr "Избрани %1 от %2"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
 #: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Езици на клавиатурата"
+msgstr "Клавиатурни подредби"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Езици на клавиатурата"
+msgstr "Клавиатурни подредби:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Конфигуриране…"
 
 #: ui/main.qml:39
 msgid "Key press feedback:"
@@ -87,7 +75,7 @@ msgstr "Вибрация"
 
 #: ui/main.qml:56 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Изскачащ прозорец със символи"
 
 #: ui/main.qml:64
 msgid "General:"
@@ -135,10 +123,9 @@ msgid "Whether to vibrate on key press"
 msgstr "Вибриране при натискане на клавиш"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Показване на изскачащ символ при натискане на клавиш"
+msgstr ""
+"Показване на изскачащ прозорец с символи при натискане на текстови клавиши"
 
 #: ui/main_handset.qml:89
 msgctxt "@title:group"
@@ -155,30 +142,22 @@ msgstr "Автоматично изписване на първата буква
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr "Виртуална клавиатура"
+msgstr "Екранна клавиатура"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Няма избрани езици, ще се използва стандартното разпределение на "
-"клавиатурата за системата"
+"Няма избрани клавиатурни подредби, ще бъде използвана системната подредба по "
+"подразбиране"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "Избран е %1 език"
-msgstr[1] "Избрани са %1 езика"
+msgstr[0] "Избрана е %1 клавиатурна подредба"
+msgstr[1] "Избрани са %1 клавиатурни подредби"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
@@ -232,11 +211,3 @@ msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 милисекунда"
 msgstr[1] "%1 милисекунди"
-
-#~ msgid "Languages"
-#~ msgstr "Езици"
-
-#~ msgid "Automatically capitalize the beginning of sentences and proper nouns"
-#~ msgstr ""
-#~ "Автоматично изписване с главна буква на началото на изреченията и "
-#~ "собствените имена"
