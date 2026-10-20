@@ -4,20 +4,26 @@
         "Name": "Hrvatski"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["hr_HR"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-qwertz",
-                "Name": "QWERTZ",
                 "Files": {
-                    "main": "Qwertz.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Qwertz.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-qwertz",
+                "Name": "QWERTZ"
             }
+        ],
+        "Locales": [
+            "hr_HR"
         ]
     }
 }

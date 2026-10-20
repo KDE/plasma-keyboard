@@ -4,26 +4,26 @@
         "Name": "العربية"
     },
     "X-Plasma-Keyboard": {
-        "Locales": [
-            "ar_SA"
-        ],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-arabic",
-                "Name": "العربية",
                 "Files": {
-                    "main": "Arabic.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Arabic.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
                 "FormFactors": [
                     "phone",
                     "mediacenter",
                     "desktop"
-                ]
+                ],
+                "Id": "mobile-arabic",
+                "Name": "العربية"
             }
+        ],
+        "Locales": [
+            "ar_SA"
         ]
     }
 }

@@ -4,26 +4,26 @@
         "Name": "Français (France)"
     },
     "X-Plasma-Keyboard": {
-        "Locales": [
-            "fr_FR"
-        ],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-azerty",
-                "Name": "AZERTY",
                 "Files": {
-                    "main": "Azerty.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Azerty.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
                 "FormFactors": [
                     "phone",
                     "mediacenter",
                     "desktop"
-                ]
+                ],
+                "Id": "mobile-azerty",
+                "Name": "AZERTY"
             }
+        ],
+        "Locales": [
+            "fr_FR"
         ]
     }
 }

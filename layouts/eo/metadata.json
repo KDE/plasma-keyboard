@@ -4,20 +4,26 @@
         "Name": "Esperanto"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["eo"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-esperanto",
-                "Name": "Esperanto",
                 "Files": {
-                    "main": "Esperanto.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Esperanto.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-esperanto",
+                "Name": "Esperanto"
             }
+        ],
+        "Locales": [
+            "eo"
         ]
     }
 }

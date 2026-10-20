@@ -4,32 +4,42 @@
         "Name": "Ελληνικά"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["el_GR"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-greek",
-                "Name": "Ελληνικά",
                 "Files": {
-                    "main": "Greek.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Greek.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-greek",
+                "Name": "Ελληνικά"
             },
             {
-                "Id": "mobile-latin",
-                "Name": "QWERTY (Λατινικά)",
                 "Files": {
-                    "main": "Latin.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Latin.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-latin",
+                "Name": "QWERTY (Λατινικά)"
             }
+        ],
+        "Locales": [
+            "el_GR"
         ]
     }
 }

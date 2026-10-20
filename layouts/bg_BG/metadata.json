@@ -4,32 +4,42 @@
         "Name": "Български"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["bg_BG"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-bulgarian",
-                "Name": "Фонетична",
                 "Files": {
-                    "main": "Phonetic.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Phonetic.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-bulgarian",
+                "Name": "Фонетична"
             },
             {
-                "Id": "mobile-latin",
-                "Name": "QWERTY (латиница)",
                 "Files": {
-                    "main": "Latin.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Latin.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-latin",
+                "Name": "QWERTY (латиница)"
             }
+        ],
+        "Locales": [
+            "bg_BG"
         ]
     }
 }

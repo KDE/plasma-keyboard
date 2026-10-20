@@ -4,26 +4,26 @@
         "Name": "فارسی"
     },
     "X-Plasma-Keyboard": {
-        "Locales": [
-            "fa_IR"
-        ],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-persian",
-                "Name": "فارسی",
                 "Files": {
-                    "main": "Persian.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Persian.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
                 "FormFactors": [
                     "phone",
                     "mediacenter",
                     "desktop"
-                ]
+                ],
+                "Id": "mobile-persian",
+                "Name": "فارسی"
             }
+        ],
+        "Locales": [
+            "fa_IR"
         ]
     }
 }

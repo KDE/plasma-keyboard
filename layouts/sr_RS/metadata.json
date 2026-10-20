@@ -4,32 +4,42 @@
         "Name": "Српски"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["sr_RS"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-cyrillic",
-                "Name": "Ћирилица",
                 "Files": {
-                    "main": "Cyrillic.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Cyrillic.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-cyrillic",
+                "Name": "Ћирилица"
             },
             {
-                "Id": "mobile-latin",
-                "Name": "Latinica",
                 "Files": {
-                    "main": "Latin.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Latin.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-latin",
+                "Name": "Latinica"
             }
+        ],
+        "Locales": [
+            "sr_RS"
         ]
     }
 }

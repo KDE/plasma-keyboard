@@ -4,20 +4,26 @@
         "Name": "Türkçe"
     },
     "X-Plasma-Keyboard": {
-        "Locales": ["tr_TR"],
         "KeyboardLayouts": [
             {
-                "Id": "mobile-qwerty",
-                "Name": "QWERTY",
                 "Files": {
-                    "main": "Qwerty.qml",
-                    "symbols": "shared/Symbols.qml",
+                    "dialpad": "shared/Dialpad.qml",
                     "digits": "shared/Digits.qml",
+                    "main": "Qwerty.qml",
                     "numbers": "shared/Numbers.qml",
-                    "dialpad": "shared/Dialpad.qml"
+                    "symbols": "shared/Symbols.qml"
                 },
-                "FormFactors": ["phone", "mediacenter", "desktop"]
+                "FormFactors": [
+                    "phone",
+                    "mediacenter",
+                    "desktop"
+                ],
+                "Id": "mobile-qwerty",
+                "Name": "QWERTY"
             }
+        ],
+        "Locales": [
+            "tr_TR"
         ]
     }
 }
