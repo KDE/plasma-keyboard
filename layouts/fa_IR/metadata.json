@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.fa_IR",
-        "Name": "فارسی"
+        "Name": "فارسی",
+        "Name[ca@valencia]": "فارسی",
+        "Name[ca]": "فارسی",
+        "Name[cs]": "Perština",
+        "Name[ka]": "სპარსული",
+        "Name[nl]": "فارسی",
+        "Name[pt_BR]": "Persa",
+        "Name[ru]": "Персидская",
+        "Name[sl]": "فارسی",
+        "Name[tr]": "فارسی",
+        "Name[uk]": "فارسی"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

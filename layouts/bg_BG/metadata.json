@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.bg_BG",
-        "Name": "Български"
+        "Name": "Български",
+        "Name[ca@valencia]": "Български",
+        "Name[ca]": "Български",
+        "Name[cs]": "Bulharština",
+        "Name[ka]": "ბულგარული",
+        "Name[nl]": "Български",
+        "Name[pt_BR]": "Búlgaro",
+        "Name[ru]": "Болгарская",
+        "Name[sl]": "bolgarsko",
+        "Name[tr]": "Български",
+        "Name[uk]": "Български"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

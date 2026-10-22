@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.fi_FI",
-        "Name": "Suomi"
+        "Name": "Suomi",
+        "Name[ca@valencia]": "Suomi",
+        "Name[ca]": "Suomi",
+        "Name[cs]": "Finština",
+        "Name[ka]": "ფინური",
+        "Name[nl]": "Fins",
+        "Name[pt_BR]": "Finlandês",
+        "Name[ru]": "Финская",
+        "Name[sl]": "finsko",
+        "Name[tr]": "Suomi",
+        "Name[uk]": "Suomi"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

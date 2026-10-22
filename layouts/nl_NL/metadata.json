@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.nl_NL",
-        "Name": "Nederlands"
+        "Name": "Nederlands",
+        "Name[ca@valencia]": "Nederlands",
+        "Name[ca]": "Nederlands",
+        "Name[cs]": "Nizozemština",
+        "Name[ka]": "ჰოლანდიური",
+        "Name[nl]": "Nederlands",
+        "Name[pt_BR]": "Holandês",
+        "Name[ru]": "Нидерландская",
+        "Name[sl]": "Nizozemsko",
+        "Name[tr]": "Nederlands",
+        "Name[uk]": "Nederlands"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

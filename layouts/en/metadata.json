@@ -3,9 +3,9 @@
         "Id": "org.kde.plasma.keyboard.en",
         "Name": "English",
         "Name[bg]": "Английски",
-        "Name[ca@valencia]": "Anglés",
-        "Name[ca]": "Anglès",
-        "Name[cs]": "Anglický",
+        "Name[ca@valencia]": "English",
+        "Name[ca]": "English",
+        "Name[cs]": "Angličtina",
         "Name[es]": "Inglés",
         "Name[eu]": "Ingelesa",
         "Name[fr]": "Anglais",
@@ -16,7 +16,7 @@
         "Name[ru]": "Английская",
         "Name[sl]": "Angleška",
         "Name[tr]": "İngilizce",
-        "Name[uk]": "Англійська"
+        "Name[uk]": "English"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

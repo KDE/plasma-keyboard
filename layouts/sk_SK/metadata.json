@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.sk_SK",
-        "Name": "Slovenčina"
+        "Name": "Slovenčina",
+        "Name[ca@valencia]": "Slovenčina",
+        "Name[ca]": "Slovenčina",
+        "Name[cs]": "Slovenština",
+        "Name[ka]": "სლოვაკური",
+        "Name[nl]": "Slovenčina",
+        "Name[pt_BR]": "Eslovaco",
+        "Name[ru]": "Словацкая",
+        "Name[sl]": "Slovaško",
+        "Name[tr]": "Slovenčina",
+        "Name[uk]": "Slovenčina"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.id_ID",
-        "Name": "Bahasa Indonesia"
+        "Name": "Bahasa Indonesia",
+        "Name[ca@valencia]": "Bahasa Indonesia",
+        "Name[ca]": "Bahasa Indonesia",
+        "Name[cs]": "Indonéština",
+        "Name[ka]": "ინდონეზიური",
+        "Name[nl]": "Indonesisch (Bahasa Indonesia)",
+        "Name[pt_BR]": "Indonésio",
+        "Name[ru]": "Индонезийская",
+        "Name[sl]": "Bahasa Indonesia",
+        "Name[tr]": "Bahasa Indonesia",
+        "Name[uk]": "Bahasa Indonesia"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

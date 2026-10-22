@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.uk_UA",
-        "Name": "Українська"
+        "Name": "Українська",
+        "Name[ca@valencia]": "Українська",
+        "Name[ca]": "Українська",
+        "Name[cs]": "Ukrajinština",
+        "Name[ka]": "უკრაინული",
+        "Name[nl]": "Oekraïens",
+        "Name[pt_BR]": "Ucraniano",
+        "Name[ru]": "Украинская",
+        "Name[sl]": "Ukrajinsko",
+        "Name[tr]": "Українська",
+        "Name[uk]": "Українська"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

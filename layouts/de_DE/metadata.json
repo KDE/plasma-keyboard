@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.de_DE",
-        "Name": "Deutsch"
+        "Name": "Deutsch",
+        "Name[ca@valencia]": "Deutsch",
+        "Name[ca]": "Deutsch",
+        "Name[cs]": "Němčina",
+        "Name[ka]": "გერმანული",
+        "Name[nl]": "Duits",
+        "Name[pt_BR]": "Alemão",
+        "Name[ru]": "Немецкая",
+        "Name[sl]": "Nemško",
+        "Name[tr]": "Deutsch",
+        "Name[uk]": "Deutsch"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.tr_TR",
-        "Name": "Türkçe"
+        "Name": "Türkçe",
+        "Name[ca@valencia]": "Türkçe",
+        "Name[ca]": "Türkçe",
+        "Name[cs]": "Turečtina",
+        "Name[ka]": "თურქული",
+        "Name[nl]": "Turks",
+        "Name[pt_BR]": "Turco",
+        "Name[ru]": "Турецкая",
+        "Name[sl]": "Turško",
+        "Name[tr]": "Türkçe",
+        "Name[uk]": "Türkçe"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

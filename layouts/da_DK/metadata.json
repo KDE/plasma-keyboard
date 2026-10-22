@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.da_DK",
-        "Name": "Dansk"
+        "Name": "Dansk",
+        "Name[ca@valencia]": "Dansk",
+        "Name[ca]": "Dansk",
+        "Name[cs]": "Dánština",
+        "Name[ka]": "დანიური",
+        "Name[nl]": "Deens",
+        "Name[pt_BR]": "Dinamarquês",
+        "Name[ru]": "Датская",
+        "Name[sl]": "Dansko",
+        "Name[tr]": "Dansk",
+        "Name[uk]": "Dansk"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

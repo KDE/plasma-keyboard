@@ -1,7 +1,17 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.es_ES",
-        "Name": "Español (España)"
+        "Name": "Español (España)",
+        "Name[ca@valencia]": "Español (España)",
+        "Name[ca]": "Español (España)",
+        "Name[cs]": "Španělština (Španělsko)",
+        "Name[ka]": "ესპანური (ესპანეთი)",
+        "Name[nl]": "Spaans (Spanje)",
+        "Name[pt_BR]": "Espanhol (Espanha)",
+        "Name[ru]": "Испанская (Испания)",
+        "Name[sl]": "Špansko (Španija)",
+        "Name[tr]": "Español (España)",
+        "Name[uk]": "Español (España)"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
