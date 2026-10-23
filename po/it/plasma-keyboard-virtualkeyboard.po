@@ -1,0 +1,22 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+# SPDX-FileCopyrightText: 2026 Valter Mura <valtermura@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-10-15 00:48+0000\n"
+"PO-Revision-Date: 2026-10-15 12:04+0200\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.08.1\n"
+
+#: components/LanguagePopup.qml:223
+msgid "Settings"
+msgstr "Impostazioni"
