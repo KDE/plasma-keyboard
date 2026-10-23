@@ -18,7 +18,7 @@ ActionKey {
     /**
      * Text composer to set the mode of.
      */
-    property var textComposer
+    property var textComposer: VirtualKeyboard.inputEngine ? VirtualKeyboard.inputEngine.textComposer : null
 
     /**
      * Whether to show the next mode as the current text on the key, instead of

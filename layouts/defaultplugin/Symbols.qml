@@ -18,7 +18,6 @@ KeyboardLayoutLoader {
     Component {
         id: page1
         KeyboardLayout {
-            textComposer: DirectTextComposer {}
             readonly property real functionKeyWeight: defaultKeyWeight * 1.5
             KeyboardRow {
                 Key { key: Qt.Key_1; text: "1" }
@@ -79,7 +78,6 @@ KeyboardLayoutLoader {
     Component {
         id: page2
         KeyboardLayout {
-            textComposer: DirectTextComposer {}
             readonly property real functionKeyWeight: defaultKeyWeight * 1.5
             KeyboardRow {
                 Key { key: Qt.Key_AsciiTilde; text: "~" }

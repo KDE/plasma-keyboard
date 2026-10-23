@@ -19,8 +19,6 @@ KeyboardLayoutLoader {
     Component {
         id: page1
         KeyboardLayout {
-            textComposer: DirectTextComposer {}
-
             KeyboardRow {
                 Key { key: 0x0661; text: "١"; alternativeKeys: "\u06611" }
                 Key { key: 0x0662; text: "٢"; alternativeKeys: "\u06622" }
@@ -75,8 +73,6 @@ KeyboardLayoutLoader {
     Component {
         id: page2
         KeyboardLayout {
-            textComposer: DirectTextComposer {}
-
             KeyboardRow {
                 Key { key: Qt.Key_AsciiTilde; text: "~" }
                 Key { key: Qt.Key_QuoteLeft; text: "`" }

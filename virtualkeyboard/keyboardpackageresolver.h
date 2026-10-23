@@ -70,9 +70,9 @@ public:
     Q_INVOKABLE QStringList keyboardLocales(const QString &layoutId) const;
 
     /**
-     * Returns the local QML file URL for @p layoutId and @p layoutType.
+     * Returns the local QML file URL for @p layoutId.
      */
-    Q_INVOKABLE QUrl layoutUrl(const QString &layoutId, const QString &layoutType) const;
+    Q_INVOKABLE QUrl layoutUrl(const QString &layoutId) const;
 
 Q_SIGNALS:
     /**
@@ -82,7 +82,6 @@ Q_SIGNALS:
 
 private:
     void rebuildIndex();
-    QString layoutPath(const QString &layoutId, const QString &layoutType) const;
     const KeyboardLayoutMetadata::Layout *findLayout(const QString &id) const;
 
     QStringList m_layoutIds;

@@ -31,6 +31,8 @@ Item {
     readonly property string layoutId: keyboardController ? keyboardController.layoutId : ""
     readonly property string packageId: keyboardPackageResolver ? keyboardPackageResolver.packageId(layoutId) : ""
     readonly property string layoutType: keyboardController ? keyboardController.layoutType : "main"
+    readonly property var layoutDefinition: layoutDefinitionLoader.item
+    readonly property var textComposer: (layoutLoader.item && layoutLoader.item.textComposer) || (layoutDefinition ? layoutDefinition.textComposer : null)
 
     implicitHeight: __keyboardHeight
     implicitWidth: __keyboardWidth
@@ -91,8 +93,26 @@ Item {
         BreezeConstants.scaleHint = panelScaleHint;
     }
 
+    Binding {
+        target: root.inputEngine
+        property: "textComposer"
+        value: root.textComposer
+        when: root.inputEngine !== null && root.textComposer !== null
+    }
+
     onPanelScaleHintChanged: updateScaleHint()
     Component.onCompleted: updateScaleHint()
+
+    Loader {
+        id: layoutDefinitionLoader
+        source: root.keyboardPackageResolver ? root.keyboardPackageResolver.layoutUrl(root.layoutId) : ""
+
+        onStatusChanged: {
+            if (status === Loader.Error) {
+                console.warn("Failed to load keyboard layout definition", root.layoutId, source);
+            }
+        }
+    }
 
     KeyboardNavigation {
         id: keyboardNavigation
@@ -125,7 +145,7 @@ Item {
             Layout.preferredHeight: root.__keyboardInputAreaHeight
             Layout.alignment: Qt.AlignHCenter
 
-            source: root.keyboardPackageResolver ? root.keyboardPackageResolver.layoutUrl(root.layoutId, root.layoutType) : ""
+            sourceComponent: root.layoutDefinition ? (root.layoutDefinition[root.layoutType] ?? root.layoutDefinition.main) : null
 
             onLoaded: {
                 resetNavigation();
@@ -142,7 +162,7 @@ Item {
 
             onStatusChanged: {
                 if (status === Loader.Error) {
-                    console.warn("Failed to load keyboard layout", root.layoutId, root.layoutType, source);
+                    console.warn("Failed to load keyboard layout", root.layoutId, root.layoutType);
                 }
             }
         }

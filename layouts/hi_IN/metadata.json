@@ -22,13 +22,7 @@
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "Devanagari.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "Devanagari.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",

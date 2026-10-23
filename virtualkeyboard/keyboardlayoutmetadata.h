@@ -27,7 +27,7 @@ public:
 
     static QString localeDisplayName(const QString &locale);
     static QString keyboardLayoutName(const QVariantMap &layout);
-    static QString keyboardLayoutFile(const QVariantMap &layout, const QString &layoutType);
+    static QString keyboardLayoutFile(const QVariantMap &layout);
     static QStringList keyboardLayoutFormFactors(const QVariantMap &layout);
     static QString keyboardDisplayName(const Layout &layout);
     static QList<Layout> keyboardLayouts();

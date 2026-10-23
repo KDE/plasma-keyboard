@@ -36,41 +36,17 @@ ColumnLayout {
     property string layoutId: ""
     property var virtualKeyboardContext: null
     readonly property var inputEngine: virtualKeyboardContext ? virtualKeyboardContext.inputEngine : VirtualKeyboard.inputEngine
-    property var textComposer
-    property var sharedLayouts: []
+
+    /**
+     * Text composer to use while this layout is shown, instead of the one from the KeyboardLayoutDefinition (which is shared by all of its layout types).
+     *
+     * The active text composer is inputEngine.textComposer.
+     */
+    property QtObject textComposer: null
 
     Layout.fillWidth: true
     Layout.fillHeight: true
     width: parent ? parent.width : implicitWidth
     height: parent ? parent.height : implicitHeight
     spacing: 0
-
-    function applyEngineBindings() {
-        let effectiveTextComposer = textComposer;
-        if (!effectiveTextComposer) {
-            effectiveTextComposer = createTextComposer();
-            if (effectiveTextComposer) {
-                textComposer = effectiveTextComposer;
-            }
-        }
-        if (effectiveTextComposer && inputEngine) {
-            inputEngine.textComposer = effectiveTextComposer;
-        }
-    }
-
-    Component.onCompleted: applyEngineBindings();
-    onVirtualKeyboardContextChanged: if (visible) applyEngineBindings();
-    onVisibleChanged: if (visible) applyEngineBindings();
-    onPackageIdChanged: if (visible) applyEngineBindings();
-    onLayoutIdChanged: if (visible) applyEngineBindings();
-    onTextComposerChanged: if (visible) applyEngineBindings();
-    function createTextComposer() {
-        return defaultTextComposerComponent.createObject(root);
-    }
-
-    Component {
-        id: defaultTextComposerComponent
-
-        BasicTextComposer {}
-    }
 }

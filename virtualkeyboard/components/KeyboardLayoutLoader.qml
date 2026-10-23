@@ -15,6 +15,7 @@ Loader {
     property string layoutId: ""
     property var virtualKeyboardContext: null
     readonly property var inputEngine: virtualKeyboardContext ? virtualKeyboardContext.inputEngine : VirtualKeyboard.inputEngine
+    readonly property var textComposer: item && item.textComposer !== undefined ? item.textComposer : null
 
     function applyLayoutProperties() {
         if (!item) {
