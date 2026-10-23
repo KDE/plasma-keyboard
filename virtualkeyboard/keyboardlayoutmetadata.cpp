@@ -63,14 +63,9 @@ QString KeyboardLayoutMetadata::keyboardLayoutName(const QVariantMap &layout)
     return layout.value(u"Name"_s).toString();
 }
 
-QString KeyboardLayoutMetadata::keyboardLayoutFile(const QVariantMap &layout, const QString &layoutType)
+QString KeyboardLayoutMetadata::keyboardLayoutFile(const QVariantMap &layout)
 {
-    const QVariantMap files = layout.value(u"Files"_s).toMap();
-    const QString fileName = files.value(layoutType).toString();
-    if (!fileName.isEmpty()) {
-        return fileName;
-    }
-    return layoutType + u".qml"_s;
+    return layout.value(u"File"_s).toString();
 }
 
 QStringList KeyboardLayoutMetadata::keyboardLayoutFormFactors(const QVariantMap &layout)

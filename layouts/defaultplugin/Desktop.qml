@@ -87,7 +87,6 @@ KeyboardLayout {
             visible: root.inputModeKeyVisible
             height: visible ? implicitHeight : 0
             weight: visible ? root.defaultKeyWeight : 0
-            textComposer: root.textComposer
             modes: root.inputModeKeyModes
         }
         SpaceKey { weight: root.defaultKeyWeight * (root.inputModeKeyVisible ? 4 : 5) }

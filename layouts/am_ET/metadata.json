@@ -16,13 +16,7 @@
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "Ethiopic.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "Ethiopic.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",

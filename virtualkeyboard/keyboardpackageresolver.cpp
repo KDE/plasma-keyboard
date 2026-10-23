@@ -63,26 +63,22 @@ QStringList KeyboardPackageResolver::keyboardLocales(const QString &layoutId) co
     return layout ? layout->locales : QStringList();
 }
 
-QString KeyboardPackageResolver::layoutPath(const QString &layoutId, const QString &layoutType) const
+QUrl KeyboardPackageResolver::layoutUrl(const QString &layoutId) const
 {
     const auto *layout = findLayout(layoutId);
-    if (!layout || layoutType.isEmpty()) {
+    if (!layout) {
         return {};
     }
 
-    const QString fileName = KeyboardLayoutMetadata::keyboardLayoutFile(layout->layoutDefinition, layoutType);
-    const QString layoutPath = layout->packagePath + u"/contents/layouts/"_s + fileName;
-    if (QFileInfo::exists(layoutPath)) {
-        return layoutPath;
+    const QString fileName = KeyboardLayoutMetadata::keyboardLayoutFile(layout->layoutDefinition);
+    const QString path = layout->packagePath + u"/contents/layouts/"_s + fileName;
+    if (fileName.isEmpty() || !QFileInfo::exists(path)) {
+        qCWarning(PlasmaKeyboard) << "KeyboardPackageResolver: no keyboard layout definition found for" << layoutId << path;
+        return {};
     }
-    return {};
-}
 
-QUrl KeyboardPackageResolver::layoutUrl(const QString &layoutId, const QString &layoutType) const
-{
-    const QString path = layoutPath(layoutId, layoutType);
-    qCDebug(PlasmaKeyboard) << "KeyboardPackageResolver: loading keyboard layout" << layoutId << layoutType << path;
-    return path.isEmpty() ? QUrl() : QUrl::fromLocalFile(path);
+    qCDebug(PlasmaKeyboard) << "KeyboardPackageResolver: loading keyboard layout definition" << layoutId << path;
+    return QUrl::fromLocalFile(path);
 }
 
 void KeyboardPackageResolver::rebuildIndex()

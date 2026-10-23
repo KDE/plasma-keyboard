@@ -82,6 +82,7 @@ ecm_target_qml_sources(keyboardvirtualkeyboardcomponents SOURCES
     components/KeyboardNavigation.qml
     components/KeyboardStrip.qml
     components/KeyboardColumn.qml
+    components/KeyboardLayoutDefinition.qml
     components/KeyboardLayoutLoader.qml
     components/KeyboardLayout.qml
     components/LanguagePopup.qml

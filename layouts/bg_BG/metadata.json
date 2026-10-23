@@ -16,13 +16,7 @@
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "Phonetic.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "Phonetic.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",
@@ -32,13 +26,7 @@
                 "Name": "Фонетична"
             },
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "Latin.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "Latin.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",

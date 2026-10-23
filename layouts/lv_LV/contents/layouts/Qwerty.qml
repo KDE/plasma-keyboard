@@ -5,56 +5,64 @@
 import QtQuick
 
 import org.kde.plasma.keyboard.virtualkeyboard.components
+import "shared" as Shared
 
-KeyboardLayout {
-    id: root
+KeyboardLayoutDefinition {
+    symbols: Shared.Symbols {}
+    numbers: Shared.Numbers {}
+    digits: Shared.Digits {}
+    dialpad: Shared.Dialpad {}
 
-    KeyboardRow {
-        Key { text: "q"; alternativeKeys: "q1"; smallText: "1" }
-        Key { text: "w"; alternativeKeys: "w2"; smallText: "2" }
-        Key { text: "e"; alternativeKeys: "e3ē"; smallText: "3" }
-        Key { text: "r"; alternativeKeys: "r4ŗ"; smallText: "4" }
-        Key { text: "t"; alternativeKeys: "t5"; smallText: "5" }
-        Key { text: "y"; alternativeKeys: "y6"; smallText: "6" }
-        Key { text: "u"; alternativeKeys: "u7ū"; smallText: "7" }
-        Key { text: "i"; alternativeKeys: "i8ī"; smallText: "8" }
-        Key { text: "o"; alternativeKeys: "o9ō"; smallText: "9" }
-        Key { text: "p"; alternativeKeys: "p0"; smallText: "0" }
-    }
+    KeyboardLayout {
+        id: root
 
-    KeyboardRow {
-        FillerKey { weight: root.defaultKeyWeight * 0.5 }
-        Key { text: "a"; alternativeKeys: "aā" }
-        Key { text: "s"; alternativeKeys: "sš" }
-        Key { text: "d" }
-        Key { text: "f" }
-        Key { text: "g"; alternativeKeys: "gģ" }
-        Key { text: "h" }
-        Key { text: "j" }
-        Key { text: "k"; alternativeKeys: "kķ" }
-        Key { text: "l"; alternativeKeys: "lļ" }
-        FillerKey { weight: root.defaultKeyWeight * 0.5 }
-    }
+        KeyboardRow {
+            Key { text: "q"; alternativeKeys: "q1"; smallText: "1" }
+            Key { text: "w"; alternativeKeys: "w2"; smallText: "2" }
+            Key { text: "e"; alternativeKeys: "e3ē"; smallText: "3" }
+            Key { text: "r"; alternativeKeys: "r4ŗ"; smallText: "4" }
+            Key { text: "t"; alternativeKeys: "t5"; smallText: "5" }
+            Key { text: "y"; alternativeKeys: "y6"; smallText: "6" }
+            Key { text: "u"; alternativeKeys: "u7ū"; smallText: "7" }
+            Key { text: "i"; alternativeKeys: "i8ī"; smallText: "8" }
+            Key { text: "o"; alternativeKeys: "o9ō"; smallText: "9" }
+            Key { text: "p"; alternativeKeys: "p0"; smallText: "0" }
+        }
 
-    KeyboardRow {
-        ShiftKey { weight: root.defaultKeyWeight * 1.5 }
-        Key { text: "z"; alternativeKeys: "zž" }
-        Key { text: "x" }
-        Key { text: "c"; alternativeKeys: "cč" }
-        Key { text: "v" }
-        Key { text: "b" }
-        Key { text: "n"; alternativeKeys: "nņ" }
-        Key { text: "m" }
-        BackspaceKey { weight: root.defaultKeyWeight * 1.5 }
-    }
+        KeyboardRow {
+            FillerKey { weight: root.defaultKeyWeight * 0.5 }
+            Key { text: "a"; alternativeKeys: "aā" }
+            Key { text: "s"; alternativeKeys: "sš" }
+            Key { text: "d" }
+            Key { text: "f" }
+            Key { text: "g"; alternativeKeys: "gģ" }
+            Key { text: "h" }
+            Key { text: "j" }
+            Key { text: "k"; alternativeKeys: "kķ" }
+            Key { text: "l"; alternativeKeys: "lļ" }
+            FillerKey { weight: root.defaultKeyWeight * 0.5 }
+        }
 
-    KeyboardRow {
-        SymbolModeKey { weight: root.defaultKeyWeight * 1.5 }
-        ChangeLanguageKey {}
-        Key { key: Qt.Key_Comma; text: ","; secondaryStyle: true }
-        SpaceKey { weight: root.defaultKeyWeight * 3 }
-        Key { key: Qt.Key_Period; text: "."; alternativeKeys: "!.?"; smallText: "!?"; secondaryStyle: true }
-        HideKeyboardKey {}
-        EnterKey { weight: root.defaultKeyWeight * 1.5 }
+        KeyboardRow {
+            ShiftKey { weight: root.defaultKeyWeight * 1.5 }
+            Key { text: "z"; alternativeKeys: "zž" }
+            Key { text: "x" }
+            Key { text: "c"; alternativeKeys: "cč" }
+            Key { text: "v" }
+            Key { text: "b" }
+            Key { text: "n"; alternativeKeys: "nņ" }
+            Key { text: "m" }
+            BackspaceKey { weight: root.defaultKeyWeight * 1.5 }
+        }
+
+        KeyboardRow {
+            SymbolModeKey { weight: root.defaultKeyWeight * 1.5 }
+            ChangeLanguageKey {}
+            Key { key: Qt.Key_Comma; text: ","; secondaryStyle: true }
+            SpaceKey { weight: root.defaultKeyWeight * 3 }
+            Key { key: Qt.Key_Period; text: "."; alternativeKeys: "!.?"; smallText: "!?"; secondaryStyle: true }
+            HideKeyboardKey {}
+            EnterKey { weight: root.defaultKeyWeight * 1.5 }
+        }
     }
 }

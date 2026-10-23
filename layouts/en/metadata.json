@@ -21,13 +21,7 @@
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "MobileQwerty.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "MobileQwerty.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",
@@ -37,13 +31,7 @@
                 "Name": "QWERTY"
             },
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "DesktopQwerty.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "DesktopQwerty.qml",
                 "FormFactors": [
                     "desktop"
                 ],
@@ -51,13 +39,7 @@
                 "Name": "QWERTY (Desktop)"
             },
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "FullQwerty.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "FullQwerty.qml",
                 "FormFactors": [
                     "desktop"
                 ],
@@ -65,13 +47,7 @@
                 "Name": "QWERTY (Full Desktop)"
             },
             {
-                "Files": {
-                    "dialpad": "shared/Dialpad.qml",
-                    "digits": "shared/Digits.qml",
-                    "main": "MobileDvorak.qml",
-                    "numbers": "shared/Numbers.qml",
-                    "symbols": "shared/Symbols.qml"
-                },
+                "File": "MobileDvorak.qml",
                 "FormFactors": [
                     "phone",
                     "mediacenter",

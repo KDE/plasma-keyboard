@@ -58,19 +58,21 @@ void InputEngine::setTextComposer(AbstractTextComposer *textComposer)
     }
 
     if (m_textComposer) {
-        disconnect(m_textComposer, &AbstractTextComposer::autoCapitalizationSupportedChanged, this, &InputEngine::resetShiftState);
-        disconnect(m_textComposer, &AbstractTextComposer::autoCapitalizationPolicyChanged, this, &InputEngine::updateAutomaticShift);
+        disconnect(m_textComposer, nullptr, this, nullptr);
         m_textComposer->reset();
-        m_textComposer->setParent(this);
     }
 
     m_textComposer = textComposer;
     if (m_textComposer) {
-        m_textComposer->setParent(this);
         m_textComposer->setInputEngine(this);
         m_textComposer->setTextCase(uppercase() ? AbstractTextComposer::TextCase::Upper : AbstractTextComposer::TextCase::Lower);
         connect(m_textComposer, &AbstractTextComposer::autoCapitalizationSupportedChanged, this, &InputEngine::resetShiftState);
         connect(m_textComposer, &AbstractTextComposer::autoCapitalizationPolicyChanged, this, &InputEngine::updateAutomaticShift);
+
+        connect(m_textComposer, &QObject::destroyed, this, [this] {
+            clear();
+            Q_EMIT textComposerChanged();
+        });
     }
     Q_EMIT textComposerChanged();
 
