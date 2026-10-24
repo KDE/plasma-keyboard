@@ -74,14 +74,7 @@ KCM.SimpleKCM {
                 id: layoutList
                 text: i18n("Keyboard Layouts")
                 icon.name: 'languages'
-                onClicked: kcm.push(layoutPage)
-
-                Kirigami.ScrollablePage {
-                    id: layoutPage
-                    title: i18n("Keyboard Layouts")
-
-                    KeyboardLayoutSelectorListView {}
-                }
+                onClicked: kcm.push("KeyboardLayoutsPage.qml")
             }
         }
 

@@ -143,8 +143,7 @@ void KeyboardLayoutGroupModel::loadInstalledGroups()
         }
 
         const QString layoutName = KeyboardLayoutMetadata::keyboardLayoutName(entry.layoutDefinition);
-        const QString keyboardName = KeyboardLayoutMetadata::keyboardDisplayName(entry);
-        const QString displayName = layoutName.isEmpty() ? keyboardName : keyboardName + QStringLiteral(" - ") + layoutName;
+        const QString displayName = KeyboardLayoutModel::displayName(entry);
 
         flatLayouts.append({
             .layoutId = entry.layoutId,

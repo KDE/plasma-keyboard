@@ -24,14 +24,7 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18n("Keyboard layouts:")
             text: i18n("Configure…")
             icon.name: "languages"
-            onClicked: kcm.push(layoutPage);
-
-            Kirigami.ScrollablePage {
-                id: layoutPage
-                title: i18n("Keyboard Layouts")
-
-                KeyboardLayoutSelectorListView {}
-            }
+            onClicked: kcm.push("KeyboardLayoutsPage.qml")
         }
 
         QQC2.CheckBox {

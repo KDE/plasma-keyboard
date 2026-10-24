@@ -9,6 +9,7 @@
 
 #include <KQuickManagedConfigModule>
 
+#include "enabledkeyboardlayoutmodel.h"
 #include "keyboardlayoutgroupmodel.h"
 #include "plasmakeyboardsettings.h"
 
@@ -18,6 +19,7 @@ class PlasmaKeyboardKcm : public KQuickManagedConfigModule
 {
     Q_OBJECT
     Q_PROPERTY(PlasmaKeyboardSettings *plasmaKeyboardSettings READ plasmaKeyboardSettings CONSTANT)
+    Q_PROPERTY(QAbstractItemModel *enabledKeyboardLayouts READ enabledKeyboardLayouts CONSTANT)
     Q_PROPERTY(QAbstractItemModel *availableKeyboardLayouts READ availableKeyboardLayouts CONSTANT)
     Q_PROPERTY(QAbstractItemModel *availableKeyboardLayoutGroups READ availableKeyboardLayoutGroups CONSTANT)
     Q_PROPERTY(bool hasHiddenKeyboardLayouts READ hasHiddenKeyboardLayouts CONSTANT)
@@ -28,6 +30,7 @@ public:
     PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData);
 
     PlasmaKeyboardSettings *plasmaKeyboardSettings() const;
+    QAbstractItemModel *enabledKeyboardLayouts() const;
     QAbstractItemModel *availableKeyboardLayouts() const;
     QAbstractItemModel *availableKeyboardLayoutGroups() const;
     bool hasHiddenKeyboardLayouts() const;
@@ -37,6 +40,7 @@ public:
 
     Q_INVOKABLE void enableKeyboardLayout(const QString &layoutId);
     Q_INVOKABLE void disableKeyboardLayout(const QString &layoutId);
+    Q_INVOKABLE void moveKeyboardLayout(int from, int to);
 
 Q_SIGNALS:
     void keyboardLayoutFormFactorFilterEnabledChanged();
@@ -45,6 +49,7 @@ private:
     void refreshAvailableKeyboardLayoutFilter();
 
     PlasmaKeyboardSettings *m_settings = nullptr;
+    EnabledKeyboardLayoutModel *m_enabledKeyboardLayouts = nullptr;
     KeyboardLayoutGroupModel *m_availableKeyboardLayoutGroups = nullptr;
     QStringList m_keyboardLayoutFormFactorFilter;
     bool m_hasHiddenKeyboardLayouts = false;
