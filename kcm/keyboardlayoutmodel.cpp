@@ -140,6 +140,13 @@ bool KeyboardLayoutModel::matchesFilter(const Layout &layout, const QString &fil
     return filterText.isEmpty() || layout.name.toLower().contains(filterText) || layout.description.toLower().contains(filterText);
 }
 
+QString KeyboardLayoutModel::displayName(const KeyboardLayoutMetadata::Layout &entry)
+{
+    const QString layoutName = KeyboardLayoutMetadata::keyboardLayoutName(entry.layoutDefinition);
+    const QString keyboardName = KeyboardLayoutMetadata::keyboardDisplayName(entry);
+    return layoutName.isEmpty() ? keyboardName : keyboardName + QStringLiteral(" - ") + layoutName;
+}
+
 QString KeyboardLayoutModel::descriptionForLocales(const QStringList &locales)
 {
     QStringList names;

@@ -10,6 +10,8 @@ kconfig_add_kcfg_files(kcm_plasmakeyboard GENERATE_MOC plasmakeyboardsettings.kc
 target_sources(kcm_plasmakeyboard PRIVATE
     ../virtualkeyboard/keyboardlayoutmetadata.cpp
     ../virtualkeyboard/keyboardlayoutmetadata.h
+    enabledkeyboardlayoutmodel.cpp
+    enabledkeyboardlayoutmodel.h
     keyboardlayoutgroupmodel.cpp
     keyboardlayoutgroupmodel.h
     keyboardlayoutmodel.cpp

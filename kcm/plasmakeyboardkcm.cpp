@@ -18,6 +18,7 @@ K_PLUGIN_CLASS_WITH_JSON(PlasmaKeyboardKcm, "kcm_plasmakeyboard.json")
 PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &metaData)
     : KQuickManagedConfigModule(parent, metaData)
     , m_settings(new PlasmaKeyboardSettings(this))
+    , m_enabledKeyboardLayouts(new EnabledKeyboardLayoutModel(this))
     , m_availableKeyboardLayoutGroups(new KeyboardLayoutGroupModel(this))
 {
     qmlRegisterAnonymousType<PlasmaKeyboardSettings>("org.kde.plasma.keyboard.settings", 0);
@@ -45,9 +46,11 @@ PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &met
             m_settings->setEnabledLocales({});
         }
     }
+    m_enabledKeyboardLayouts->setLayoutIds(enabledKeyboardLayoutIds);
     m_availableKeyboardLayoutGroups->setEnabledLayoutIds(enabledKeyboardLayoutIds);
 
     connect(m_settings, &PlasmaKeyboardSettings::enabledKeyboardLayoutIdsChanged, this, [this]() {
+        m_enabledKeyboardLayouts->setLayoutIds(m_settings->enabledKeyboardLayoutIds());
         m_availableKeyboardLayoutGroups->setEnabledLayoutIds(m_settings->enabledKeyboardLayoutIds());
     });
 }
@@ -55,6 +58,11 @@ PlasmaKeyboardKcm::PlasmaKeyboardKcm(QObject *parent, const KPluginMetaData &met
 PlasmaKeyboardSettings *PlasmaKeyboardKcm::plasmaKeyboardSettings() const
 {
     return m_settings;
+}
+
+QAbstractItemModel *PlasmaKeyboardKcm::enabledKeyboardLayouts() const
+{
+    return m_enabledKeyboardLayouts;
 }
 
 QAbstractItemModel *PlasmaKeyboardKcm::availableKeyboardLayouts() const
@@ -107,6 +115,15 @@ void PlasmaKeyboardKcm::disableKeyboardLayout(const QString &layoutId)
     }
 
     m_settings->setEnabledKeyboardLayoutIds(enabledKeyboardLayoutIds);
+}
+
+void PlasmaKeyboardKcm::moveKeyboardLayout(int from, int to)
+{
+    if (!m_enabledKeyboardLayouts->move(from, to)) {
+        return;
+    }
+
+    m_settings->setEnabledKeyboardLayoutIds(m_enabledKeyboardLayouts->layoutIds());
 }
 
 void PlasmaKeyboardKcm::refreshAvailableKeyboardLayoutFilter()

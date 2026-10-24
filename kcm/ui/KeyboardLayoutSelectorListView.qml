@@ -59,14 +59,6 @@ ListView {
                     checked = Qt.binding(() => !kcm.keyboardLayoutFormFactorFilterEnabled);
                 }
             }
-
-            Kirigami.InlineMessage {
-                Layout.topMargin: Kirigami.Units.smallSpacing
-                Layout.fillWidth: true
-                text: i18n("No keyboard layouts selected. The default keyboard layout for the system will be used.")
-                type: Kirigami.MessageType.Information
-                visible: kcm.plasmaKeyboardSettings.enabledKeyboardLayoutIds.length === 0
-            }
         }
     }
 

@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "keyboardlayoutmetadata.h"
+
 #include <QAbstractListModel>
 #include <QStringList>
 
@@ -45,6 +47,7 @@ public:
     int enabledVisibleLayoutCount() const;
     QString layoutForLocale(const QString &locale) const;
     void setLayouts(QList<Layout> layouts);
+    static QString displayName(const KeyboardLayoutMetadata::Layout &entry);
     static QString descriptionForLocales(const QStringList &locales);
     static bool matchesFilter(const Layout &layout, const QString &filterText);
 
