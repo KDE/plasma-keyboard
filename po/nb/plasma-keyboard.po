@@ -71,6 +71,3 @@ msgstr ""
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr ""
-
-#~ msgid "Settings"
-#~ msgstr "Innstillinger"

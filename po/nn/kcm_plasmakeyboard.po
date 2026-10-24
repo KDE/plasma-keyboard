@@ -232,10 +232,3 @@ msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 millisekund"
 msgstr[1] "%1 millisekund"
-
-#~ msgid "Languages"
-#~ msgstr "Språk"
-
-#~ msgid "Automatically capitalize the beginning of sentences and proper nouns"
-#~ msgstr ""
-#~ "Bruk automatisk stor forbokstav i starten av setningar og på særnamn"

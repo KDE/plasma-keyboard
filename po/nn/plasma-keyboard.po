@@ -71,6 +71,3 @@ msgstr "Emoji (prefikssøk)"
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "Tekstutviding"
-
-#~ msgid "Settings"
-#~ msgstr "Innstillingar"

@@ -225,6 +225,3 @@ msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] ""
 msgstr[1] ""
-
-#~ msgid "Languages"
-#~ msgstr "Språk"
