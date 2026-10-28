@@ -41,6 +41,7 @@ target_link_libraries(plasma-keyboard-virtualkeyboard
         Qt::Core
     PRIVATE
         KF6::CoreAddons
+        KF6::GuiAddons
         KF6::Package
         Qt::Gui
         Qt::GuiPrivate

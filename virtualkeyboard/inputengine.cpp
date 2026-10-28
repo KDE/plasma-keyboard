@@ -9,7 +9,10 @@
 #include "inputbackend.h"
 #include "textcomposers/abstracttextcomposer.h"
 
+#include <KSystemClipboard>
+
 #include <QLocale>
+#include <QMimeData>
 
 static bool isNonShiftModifierKey(int key)
 {
@@ -31,6 +34,11 @@ InputEngine::InputEngine(InputBackend *backend, QObject *parent)
 {
     Q_ASSERT(m_backend);
     connectBackend();
+    connect(KSystemClipboard::instance(), &KSystemClipboard::changed, this, [this](QClipboard::Mode mode) {
+        if (mode == QClipboard::Clipboard) {
+            Q_EMIT canPasteChanged();
+        }
+    });
     connect(this, &InputEngine::uppercaseChanged, this, [this] {
         if (!m_textComposer) {
             return;
@@ -252,6 +260,11 @@ bool InputEngine::wordCandidateListVisibleHint() const
     return !m_candidates.isEmpty();
 }
 
+bool InputEngine::canPaste() const
+{
+    return !clipboardText().isEmpty();
+}
+
 bool InputEngine::sendTextComposerKey(int key, const QString &text)
 {
     if (!m_textComposer) {
@@ -308,6 +321,17 @@ void InputEngine::commit(const QString &text, int replaceFrom, int replaceLength
 void InputEngine::clear()
 {
     clearCompositionState(true);
+}
+
+bool InputEngine::paste()
+{
+    const QString text = clipboardText();
+    if (text.isEmpty()) {
+        return false;
+    }
+
+    commit(m_preeditText + text);
+    return true;
 }
 
 bool InputEngine::handleKeyCommit(int key, const QString &text)
@@ -450,6 +474,12 @@ void InputEngine::clearCompositionState(bool updateBackend)
 bool InputEngine::sendDirectKeyClick(int key)
 {
     return m_backend->sendKeyClick(key);
+}
+
+QString InputEngine::clipboardText() const
+{
+    const QMimeData *mimeData = KSystemClipboard::instance()->mimeData(QClipboard::Clipboard);
+    return mimeData ? mimeData->text() : QString();
 }
 
 int InputEngine::utf16PositionFromUtf8Offset(uint32_t offset) const

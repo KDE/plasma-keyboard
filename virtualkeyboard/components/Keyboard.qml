@@ -135,6 +135,9 @@ Item {
             id: candidateStrip
             Layout.fillWidth: true
             inputEngine: root.inputEngine
+
+            // Align margins to keyboard layout
+            horizontalInset: Math.max(0, Math.round((width - layoutLoader.width) / 2))
         }
 
         Loader {
