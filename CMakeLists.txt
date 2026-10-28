@@ -63,6 +63,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Package
     Config
     Crash
+    GuiAddons
 )
 
 find_package(PlasmaQuick ${PROJECT_DEP_VERSION} REQUIRED)

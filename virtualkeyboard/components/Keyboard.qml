@@ -139,6 +139,9 @@ Item {
             Layout.fillWidth: true
             inputEngine: root.inputEngine
             suppressed: root.emojiController && root.emojiController.active && !root.emojiController.searchActive
+
+            // Align margins to keyboard layout
+            horizontalInset: Math.max(0, Math.round((width - layoutLoader.width) / 2))
         }
 
         EmojiSearchStrip {

@@ -51,6 +51,7 @@ class InputEngine : public QObject
     Q_PROPERTY(bool preeditBubbleVisibleHint READ preeditBubbleVisibleHint NOTIFY textComposerChanged)
     Q_PROPERTY(WordCandidateListModel *wordCandidateListModel READ wordCandidateListModel CONSTANT)
     Q_PROPERTY(bool wordCandidateListVisibleHint READ wordCandidateListVisibleHint NOTIFY wordCandidateListVisibleHintChanged)
+    Q_PROPERTY(bool canPaste READ canPaste NOTIFY canPasteChanged)
 
 public:
     explicit InputEngine(InputBackend *backend, QObject *parent = nullptr);
@@ -82,6 +83,7 @@ public:
     bool preeditBubbleVisibleHint() const;
     WordCandidateListModel *wordCandidateListModel() const;
     bool wordCandidateListVisibleHint() const;
+    bool canPaste() const;
 
     /** Sends a text key through the active text composer. */
     Q_INVOKABLE bool sendTextComposerKey(int key, const QString &text);
@@ -93,6 +95,8 @@ public:
     Q_INVOKABLE void commit();
     Q_INVOKABLE void commit(const QString &text, int replaceFrom = 0, int replaceLength = 0);
     Q_INVOKABLE void clear();
+
+    Q_INVOKABLE bool paste();
 
     bool handleKeyCommit(int key, const QString &text);
 
@@ -113,6 +117,7 @@ Q_SIGNALS:
     void pressedKeysChanged();
     void wordCandidateListVisibleHintChanged();
     void backendChanged();
+    void canPasteChanged();
 
 private:
     void connectBackend();
@@ -122,6 +127,7 @@ private:
     void updateAutomaticShift();
     bool sendDirectKeyClick(int key);
     int utf16PositionFromUtf8Offset(uint32_t offset) const;
+    QString clipboardText() const;
 
     InputBackend *m_backend = nullptr;
     QPointer<AbstractTextComposer> m_textComposer;
