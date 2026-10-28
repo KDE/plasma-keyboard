@@ -8,6 +8,8 @@
 
 #include "../inputengine.h"
 
+namespace PlasmaKeyboard
+{
 AbstractTextComposer::AbstractTextComposer(QObject *parent)
     : QObject(parent)
 {
@@ -95,3 +97,5 @@ void AbstractTextComposer::setInputEngine(InputEngine *inputEngine)
 {
     m_inputEngine = inputEngine;
 }
+
+} // namespace PlasmaKeyboard

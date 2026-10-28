@@ -79,7 +79,7 @@ endif()
 
 ecm_qt_declare_logging_category(plasma-keyboard
     HEADER logging.h
-    IDENTIFIER "PlasmaKeyboard"
+    IDENTIFIER "PLASMAKEYBOARD"
     CATEGORY_NAME "org.kde.plasma.keyboard"
     DESCRIPTION "Plasma Keyboard"
     DEFAULT_SEVERITY Warning

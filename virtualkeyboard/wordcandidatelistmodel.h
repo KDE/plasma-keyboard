@@ -8,6 +8,8 @@
 
 #include <QAbstractListModel>
 
+namespace PlasmaKeyboard
+{
 class InputEngine;
 
 /**
@@ -43,3 +45,5 @@ private:
     InputEngine *m_inputEngine = nullptr;
     QStringList m_candidates;
 };
+
+} // namespace PlasmaKeyboard

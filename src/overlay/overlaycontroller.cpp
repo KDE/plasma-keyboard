@@ -69,7 +69,7 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
     }
 
     const InputPlugin::ContentPurpose contentPurpose = m_inputPlugin ? m_inputPlugin->contentPurpose() : InputPlugin::content_purpose_normal;
-    // qCDebug(PlasmaKeyboard) << "Content purpose:" << contentPurpose;
+    // qCDebug(PLASMAKEYBOARD) << "Content purpose:" << contentPurpose;
     if (contentPurpose == InputPlugin::content_purpose_terminal) {
         // Don't trigger overlays in terminal input fields, since they don't usually offer
         // us surrounding_text information. This can be revisited with text-input v3.2,
@@ -85,14 +85,14 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
     // the Qt key code can change if the modifier is released before the repeat fires
     // (e.g. Shift+/ produces Key_Question on press but Key_Slash on repeat).
     if (event->isAutoRepeat() && (event->nativeScanCode() == m_pendingNativeScanCode || event->nativeScanCode() == m_repeatNativeScanCode)) {
-        // qCDebug(PlasmaKeyboard) << "Suppressing repeat press of pending overlay key" << m_pendingText;
+        // qCDebug(PLASMAKEYBOARD) << "Suppressing repeat press of pending overlay key" << m_pendingText;
         return true;
     }
 
     // If overlay is visible, handle Esc to cancel
     if (m_overlayVisible) {
         if (event->key() == Qt::Key_Escape) {
-            qCDebug(PlasmaKeyboard) << "Esc pressed while overlay open; cancelling";
+            qCDebug(PLASMAKEYBOARD) << "Esc pressed while overlay open; cancelling";
             cancelOverlay();
             return true;
         }
@@ -101,7 +101,7 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
         if (event->key() >= Qt::Key_1 && event->key() <= Qt::Key_9) {
             int index = event->key() - Qt::Key_1;
             if (index < m_candidateModel->rowCount()) {
-                qCDebug(PlasmaKeyboard) << "Number key" << (index + 1) << "pressed; committing candidate" << index;
+                qCDebug(PLASMAKEYBOARD) << "Number key" << (index + 1) << "pressed; committing candidate" << index;
                 commitCandidate(index);
                 return true;
             }
@@ -115,7 +115,7 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
         case Qt::Key_Up:
         case Qt::Key_Down:
         case Qt::Key_Return:
-            // qCDebug(PlasmaKeyboard) << "Navigation key" << event->key() << "pressed while overlay open; forwarding to overlay";
+            // qCDebug(PLASMAKEYBOARD) << "Navigation key" << event->key() << "pressed while overlay open; forwarding to overlay";
             Q_EMIT overlayNavigationKeyPressed(event->key());
             return true;
         }
@@ -162,7 +162,7 @@ bool OverlayController::processKeyPress(QKeyEvent *event)
                     break; // Not in a sequence; fall through.
                 }
             } else {
-                // qCDebug(PlasmaKeyboard) << "XKB compose feed result:" << feedResult << "(keysym" << keysym << "not part of a compose sequence)";
+                // qCDebug(PLASMAKEYBOARD) << "XKB compose feed result:" << feedResult << "(keysym" << keysym << "not part of a compose sequence)";
             }
             // XKB_COMPOSE_FEED_IGNORED or post-cancel: fall through to triggers.
         }
@@ -198,7 +198,7 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
     // stop the grace timer — the overlay stays visible waiting for selection
     // or cancellation via the normal pathways.
     if (m_overlayGraceTimer.isActive() && keyMatchesPending) {
-        // qCDebug(PlasmaKeyboard) << "Overlay grace timer stopped due to release of held key" << m_pendingNativeScanCode;
+        // qCDebug(PLASMAKEYBOARD) << "Overlay grace timer stopped due to release of held key" << m_pendingNativeScanCode;
         m_overlayGraceTimer.stop();
     }
 
@@ -209,7 +209,7 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
         //
         // Now that the physical key is released, we will simply not handle the release
         // event, so it gets forwarded and the client sees the release and stops repeating.
-        // qCDebug(PlasmaKeyboard) << "Stopping repeat for" << m_repeatNativeScanCode;
+        // qCDebug(PLASMAKEYBOARD) << "Stopping repeat for" << m_repeatNativeScanCode;
         resetState();
         return false;
     }
@@ -217,7 +217,7 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
     // Swallow release of a discarded/committed pending key.
     if (m_swallowNextRelease && event->nativeScanCode() == m_ignoreReleaseNativeScanCode) {
         if (!event->isAutoRepeat()) {
-            // qCDebug(PlasmaKeyboard) << "Swallowing release for discarded overlay key" << m_ignoreReleaseNativeScanCode;
+            // qCDebug(PLASMAKEYBOARD) << "Swallowing release for discarded overlay key" << m_ignoreReleaseNativeScanCode;
             m_swallowNextRelease = false;
             m_ignoreReleaseNativeScanCode = 0;
         }
@@ -239,7 +239,7 @@ bool OverlayController::processKeyRelease(QKeyEvent *event)
 
         // The client was already sent a synthetic key press and release, so we just need
         // to clear pending state and consume the release (which would be extra as far as the client is concerned).
-        qCDebug(PlasmaKeyboard) << "Releasing before overlay; key released";
+        qCDebug(PLASMAKEYBOARD) << "Releasing before overlay; key released";
         resetState();
         return true;
     }
@@ -337,7 +337,7 @@ void OverlayController::commitText(const QString &text)
         return;
     }
 
-    qCDebug(PlasmaKeyboard) << "Committing overlay selection:" << text;
+    qCDebug(PLASMAKEYBOARD) << "Committing overlay selection:" << text;
 
     if (m_inputPlugin) {
         // The base character (m_pendingText) is still present in the text field —
@@ -391,7 +391,7 @@ void OverlayController::handleSurroundingTextChanged()
     // If we are expecting a surrounding-text update from one of our own
     // commit/delete-surrounding-text operations, consume that credit and return.
     if (m_pendingSurroundingTextUpdates > 0) {
-        qCDebug(PlasmaKeyboard) << "Ignoring self-caused surrounding-text update (" << m_pendingSurroundingTextUpdates << " remaining)";
+        qCDebug(PLASMAKEYBOARD) << "Ignoring self-caused surrounding-text update (" << m_pendingSurroundingTextUpdates << " remaining)";
         --m_pendingSurroundingTextUpdates;
         return;
     }
@@ -404,14 +404,14 @@ void OverlayController::handleSurroundingTextChanged()
     // echoes without a cursor-position comparison (which is unreliable when
     // the client reports a shifted surrounding-text window after insertion).
     if (m_surroundingTextSettleTimer.isActive()) {
-        // qCDebug(PlasmaKeyboard) << "Ignoring extra surrounding-text echo (within settle window)";
+        // qCDebug(PLASMAKEYBOARD) << "Ignoring extra surrounding-text echo (within settle window)";
         return;
     }
 
     // An external event changed the cursor (e.g. user tapped elsewhere in the
     // text field). Cancel any pending overlay state.
     if (m_holdTimer.isActive() || m_overlayVisible) {
-        qCDebug(PlasmaKeyboard) << "External cursor move detected while overlay active; cancelling overlay";
+        qCDebug(PLASMAKEYBOARD) << "External cursor move detected while overlay active; cancelling overlay";
         cancelOverlay();
     }
 }
@@ -504,7 +504,7 @@ void OverlayController::executeAction(const OverlayTriggerResult &result, Overla
         // Flush any previous pending state to prevent character drops during
         // key rollover.
         if (!m_pendingText.isEmpty()) {
-            // qCDebug(PlasmaKeyboard) << "New pending key arrived; flushing old pending state for" << m_pendingText;
+            // qCDebug(PLASMAKEYBOARD) << "New pending key arrived; flushing old pending state for" << m_pendingText;
             if (m_holdTimer.isActive()) {
                 m_holdTimer.stop();
             }
@@ -517,7 +517,7 @@ void OverlayController::executeAction(const OverlayTriggerResult &result, Overla
         m_pendingNativeScanCode = result.pendingNativeScanCode;
         m_pendingTrigger = trigger;
         if (result.timerDurationMs > 0) {
-            // qCDebug(PlasmaKeyboard) << "Starting timer for" << m_pendingText << "duration" << result.timerDurationMs << "ms";
+            // qCDebug(PLASMAKEYBOARD) << "Starting timer for" << m_pendingText << "duration" << result.timerDurationMs << "ms";
             m_holdTimer.start(result.timerDurationMs);
         }
 
@@ -530,7 +530,7 @@ void OverlayController::executeAction(const OverlayTriggerResult &result, Overla
         // Increment the echo counter and start the settle timer to prevent this
         // echo from being misidentified as an external cursor move (which would cancel the overlay).
         if (m_inputPlugin && !m_pendingText.isEmpty()) {
-            // qCDebug(PlasmaKeyboard) << "Forwarding key press for" << m_pendingText;
+            // qCDebug(PLASMAKEYBOARD) << "Forwarding key press for" << m_pendingText;
             // The primary credit counter absorbs the first echo. The settle
             // timer absorbs any additional echoes from clients that send
             // multiple surrounding_text events per commit_string.
@@ -556,7 +556,7 @@ void OverlayController::handleOverlayGraceTimer()
         return;
     }
 
-    // qCDebug(PlasmaKeyboard) << "Overlay grace timer expired; starting repeat for" << m_pendingText;
+    // qCDebug(PLASMAKEYBOARD) << "Overlay grace timer expired; starting repeat for" << m_pendingText;
 
     setOverlayVisible(false);
 

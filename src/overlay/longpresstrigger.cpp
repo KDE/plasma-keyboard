@@ -14,6 +14,7 @@
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
+using namespace PlasmaKeyboard;
 
 LongPressTrigger::LongPressTrigger(InputEngine *inputEngine, QObject *parent)
     : OverlayTrigger(parent)
@@ -47,7 +48,7 @@ QString LongPressTrigger::displayName() const
 void LongPressTrigger::reloadMap()
 {
     m_diacriticsMap = DiacriticsDataLoader::loadMap(currentLocales());
-    qCDebug(PlasmaKeyboard) << "LongPressTrigger: Diacritics map reloaded for locales" << currentLocales();
+    qCDebug(PLASMAKEYBOARD) << "LongPressTrigger: Diacritics map reloaded for locales" << currentLocales();
 }
 
 // clang-format off
@@ -79,7 +80,7 @@ OverlayTriggerResult LongPressTrigger::processEvent(OverlayInputEvent eventType,
         result.pendingNativeScanCode = keyEvent->nativeScanCode();
         result.timerDurationMs = m_holdThresholdMs;
 
-        // qCDebug(PlasmaKeyboard) << "LongPressTrigger: Requesting timer for" << text << "duration" << m_holdThresholdMs << "ms";
+        // qCDebug(PLASMAKEYBOARD) << "LongPressTrigger: Requesting timer for" << text << "duration" << m_holdThresholdMs << "ms";
         break;
     }
 
@@ -92,7 +93,7 @@ OverlayTriggerResult LongPressTrigger::processEvent(OverlayInputEvent eventType,
         const auto candidateList = this->candidates(text);
         if (!candidateList.isEmpty()) {
             result.action = OverlayAction::OpenOverlay;
-            // qCDebug(PlasmaKeyboard) << "LongPressTrigger: Timer expired, opening overlay for" << text;
+            // qCDebug(PLASMAKEYBOARD) << "LongPressTrigger: Timer expired, opening overlay for" << text;
         }
         m_timerStarted = false;
         break;

@@ -47,7 +47,7 @@ OverlayTriggerResult PrefixQueryTrigger::processEvent(OverlayInputEvent eventTyp
             m_active = true;
             result.action = OverlayAction::OpenOverlay;
             result.query = query;
-            // qCDebug(PlasmaKeyboard) << "PrefixQueryTrigger: Detected query" << query;
+            // qCDebug(PLASMAKEYBOARD) << "PrefixQueryTrigger: Detected query" << query;
         } else if (m_active && query.isEmpty()) {
             // Prefix was removed, close overlay
             m_active = false;

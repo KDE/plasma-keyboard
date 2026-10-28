@@ -9,6 +9,8 @@
 #include <QObject>
 #include <qqmlintegration.h>
 
+namespace PlasmaKeyboard
+{
 class InputBackend;
 class InputEngine;
 class KeyboardController;
@@ -21,9 +23,9 @@ class VirtualKeyboardContext : public QObject
 {
     Q_OBJECT
     QML_ANONYMOUS
-    Q_PROPERTY(InputEngine *inputEngine READ inputEngine CONSTANT)
-    Q_PROPERTY(KeyboardController *keyboardController READ keyboardController CONSTANT)
-    Q_PROPERTY(KeyboardPackageResolver *keyboardPackageResolver READ keyboardPackageResolver CONSTANT)
+    Q_PROPERTY(PlasmaKeyboard::InputEngine *inputEngine READ inputEngine CONSTANT)
+    Q_PROPERTY(PlasmaKeyboard::KeyboardController *keyboardController READ keyboardController CONSTANT)
+    Q_PROPERTY(PlasmaKeyboard::KeyboardPackageResolver *keyboardPackageResolver READ keyboardPackageResolver CONSTANT)
 
 public:
     explicit VirtualKeyboardContext(InputBackend *inputBackend, QObject *parent = nullptr);
@@ -37,3 +39,5 @@ private:
     KeyboardPackageResolver *m_keyboardPackageResolver = nullptr;
     KeyboardController *m_keyboardController = nullptr;
 };
+
+} // namespace PlasmaKeyboard

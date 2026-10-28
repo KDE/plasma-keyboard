@@ -8,6 +8,8 @@
 
 #include "inputengine.h"
 
+namespace PlasmaKeyboard
+{
 WordCandidateListModel::WordCandidateListModel(InputEngine *inputEngine, QObject *parent)
     : QAbstractListModel(parent)
     , m_inputEngine(inputEngine)
@@ -78,3 +80,5 @@ void WordCandidateListModel::refresh()
         Q_EMIT countChanged();
     }
 }
+
+} // namespace PlasmaKeyboard

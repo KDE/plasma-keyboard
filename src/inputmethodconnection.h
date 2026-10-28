@@ -15,9 +15,13 @@
 
 #include "inputplugin.h"
 
+namespace PlasmaKeyboard
+{
+class VirtualKeyboardContext;
+}
+
 class OverlayController;
 class KWinFakeInput;
-class VirtualKeyboardContext;
 class VkbdWaylandInputBackend;
 
 /**
@@ -31,7 +35,7 @@ class InputMethodConnection : public QObject
     Q_PROPERTY(QWindow *window READ window WRITE setWindow NOTIFY windowChanged)
     Q_PROPERTY(bool keyboardNavigationAvailable READ keyboardNavigationAvailable WRITE setKeyboardNavigationAvailable NOTIFY keyboardNavigationAvailableChanged)
     Q_PROPERTY(bool keyboardNavigationActive READ keyboardNavigationActive WRITE setKeyboardNavigationActive NOTIFY keyboardNavigationActiveChanged)
-    Q_PROPERTY(VirtualKeyboardContext *virtualKeyboardContext READ virtualKeyboardContext CONSTANT)
+    Q_PROPERTY(PlasmaKeyboard::VirtualKeyboardContext *virtualKeyboardContext READ virtualKeyboardContext CONSTANT)
 
     /**
      * Controller for overlay popups (diacritics, emoji, text expansion).
@@ -51,7 +55,7 @@ public:
     void setKeyboardNavigationActive(bool active);
     Q_INVOKABLE void hide();
 
-    VirtualKeyboardContext *virtualKeyboardContext() const;
+    PlasmaKeyboard::VirtualKeyboardContext *virtualKeyboardContext() const;
 
     /**
      * Get the overlay controller.
@@ -70,7 +74,7 @@ private:
 
     InputPlugin m_input;
     VkbdWaylandInputBackend *m_vkbdInputBackend = nullptr;
-    VirtualKeyboardContext *m_virtualKeyboardContext = nullptr;
+    PlasmaKeyboard::VirtualKeyboardContext *m_virtualKeyboardContext = nullptr;
     KWinFakeInput *m_fakeInput = nullptr;
     OverlayController *m_overlayController = nullptr;
     QPointer<QWindow> m_window;

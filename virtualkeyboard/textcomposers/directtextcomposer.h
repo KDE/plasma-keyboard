@@ -10,6 +10,8 @@
 
 #include <qqmlintegration.h>
 
+namespace PlasmaKeyboard
+{
 /**
  * Text composer that passes input directly to the backend, applying the requested letter case.
  */
@@ -30,3 +32,5 @@ private:
 
     TextCase m_textCase = TextCase::Lower;
 };
+
+} // namespace PlasmaKeyboard

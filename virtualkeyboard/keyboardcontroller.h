@@ -10,6 +10,8 @@
 #include <QStringList>
 #include <qqmlintegration.h>
 
+namespace PlasmaKeyboard
+{
 class InputEngine;
 class KeyboardPackageResolver;
 
@@ -68,3 +70,5 @@ private:
     QStringList m_activeLayoutIds;
     bool m_symbolMode = false;
 };
+
+} // namespace PlasmaKeyboard

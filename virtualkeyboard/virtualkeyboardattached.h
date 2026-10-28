@@ -9,6 +9,8 @@
 #include <QObject>
 #include <qqmlintegration.h>
 
+namespace PlasmaKeyboard
+{
 class InputEngine;
 class KeyboardController;
 class KeyboardPackageResolver;
@@ -22,9 +24,9 @@ class VirtualKeyboardContext;
 class VirtualKeyboardAttached : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(InputEngine *inputEngine READ inputEngine NOTIFY contextChanged)
-    Q_PROPERTY(KeyboardController *keyboardController READ keyboardController NOTIFY contextChanged)
-    Q_PROPERTY(KeyboardPackageResolver *keyboardPackageResolver READ keyboardPackageResolver NOTIFY contextChanged)
+    Q_PROPERTY(PlasmaKeyboard::InputEngine *inputEngine READ inputEngine NOTIFY contextChanged)
+    Q_PROPERTY(PlasmaKeyboard::KeyboardController *keyboardController READ keyboardController NOTIFY contextChanged)
+    Q_PROPERTY(PlasmaKeyboard::KeyboardPackageResolver *keyboardPackageResolver READ keyboardPackageResolver NOTIFY contextChanged)
     Q_PROPERTY(QObject *alternativeKeysPopup READ alternativeKeysPopup NOTIFY contextChanged)
     Q_PROPERTY(QObject *characterPopup READ characterPopup NOTIFY contextChanged)
     Q_PROPERTY(QObject *flickPreviewPopup READ flickPreviewPopup NOTIFY contextChanged)
@@ -70,3 +72,5 @@ public:
 
     static VirtualKeyboardAttached *qmlAttachedProperties(QObject *object);
 };
+
+} // namespace PlasmaKeyboard

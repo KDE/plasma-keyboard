@@ -11,6 +11,8 @@
 
 using namespace Qt::StringLiterals;
 
+namespace PlasmaKeyboard
+{
 KeyboardPackageResolver::KeyboardPackageResolver(QObject *parent)
     : QObject(parent)
 {
@@ -73,11 +75,11 @@ QUrl KeyboardPackageResolver::layoutUrl(const QString &layoutId) const
     const QString fileName = KeyboardLayoutMetadata::keyboardLayoutFile(layout->layoutDefinition);
     const QString path = layout->packagePath + u"/contents/layouts/"_s + fileName;
     if (fileName.isEmpty() || !QFileInfo::exists(path)) {
-        qCWarning(PlasmaKeyboard) << "KeyboardPackageResolver: no keyboard layout definition found for" << layoutId << path;
+        qCWarning(PLASMAKEYBOARD) << "KeyboardPackageResolver: no keyboard layout definition found for" << layoutId << path;
         return {};
     }
 
-    qCDebug(PlasmaKeyboard) << "KeyboardPackageResolver: loading keyboard layout definition" << layoutId << path;
+    qCDebug(PLASMAKEYBOARD) << "KeyboardPackageResolver: loading keyboard layout definition" << layoutId << path;
     return QUrl::fromLocalFile(path);
 }
 
@@ -85,7 +87,7 @@ void KeyboardPackageResolver::rebuildIndex()
 {
     QList<KeyboardLayoutMetadata::Layout> layouts = KeyboardLayoutMetadata::keyboardLayouts();
     for (const auto &layout : layouts) {
-        qCDebug(PlasmaKeyboard) << "KeyboardPackageResolver: discovered keyboard layout" << layout.layoutId << layout.packageId << layout.packagePath;
+        qCDebug(PLASMAKEYBOARD) << "KeyboardPackageResolver: discovered keyboard layout" << layout.layoutId << layout.packageId << layout.packagePath;
     }
 
     QStringList ids;
@@ -100,7 +102,7 @@ void KeyboardPackageResolver::rebuildIndex()
 
     m_layouts = layouts;
     m_layoutIds = ids;
-    qCDebug(PlasmaKeyboard) << "KeyboardPackageResolver: active keyboard layouts" << m_layoutIds;
+    qCDebug(PLASMAKEYBOARD) << "KeyboardPackageResolver: active keyboard layouts" << m_layoutIds;
     Q_EMIT layoutIdsChanged();
 }
 
@@ -120,3 +122,5 @@ const KeyboardLayoutMetadata::Layout *KeyboardPackageResolver::findLayout(const 
 
     return nullptr;
 }
+
+} // namespace PlasmaKeyboard

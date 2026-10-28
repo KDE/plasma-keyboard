@@ -6,6 +6,8 @@
 
 #include "basictextcomposer.h"
 
+namespace PlasmaKeyboard
+{
 BasicTextComposer::BasicTextComposer(QObject *parent)
     : DirectTextComposer(parent)
 {
@@ -43,3 +45,5 @@ bool BasicTextComposer::shouldAutoCapitalize(QStringView textBeforeCursor) const
 
     return m_sentenceEndingCharacters.contains(textBeforeCursor.at(textBeforeCursor.size() - 2));
 }
+
+} // namespace PlasmaKeyboard

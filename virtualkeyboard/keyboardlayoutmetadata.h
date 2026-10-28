@@ -9,6 +9,8 @@
 #include <QStringList>
 #include <QVariantMap>
 
+namespace PlasmaKeyboard
+{
 /**
  * Discovers installed keyboard layouts and reads their package metadata.
  */
@@ -32,3 +34,5 @@ public:
     static QString keyboardDisplayName(const Layout &layout);
     static QList<Layout> keyboardLayouts();
 };
+
+} // namespace PlasmaKeyboard

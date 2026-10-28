@@ -27,7 +27,7 @@ InputMethod::InputMethod()
         this,
         [this]() {
             if (!isActive()) {
-                qCDebug(PlasmaKeyboard) << "Connection to the Wayland compositor has been lost; exiting plasma-keyboard.";
+                qCDebug(PLASMAKEYBOARD) << "Connection to the Wayland compositor has been lost; exiting plasma-keyboard.";
                 QCoreApplication::quit();
             }
         },

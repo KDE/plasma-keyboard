@@ -16,6 +16,8 @@
 
 using namespace Qt::StringLiterals;
 
+namespace PlasmaKeyboard
+{
 static QVariantMap keyboardSection(const KPluginMetaData &metadata)
 {
     return metadata.rawData().toVariantMap().value(u"X-Plasma-Keyboard"_s).toMap();
@@ -119,3 +121,5 @@ QList<KeyboardLayoutMetadata::Layout> KeyboardLayoutMetadata::keyboardLayouts()
 
     return layouts;
 }
+
+} // namespace PlasmaKeyboard

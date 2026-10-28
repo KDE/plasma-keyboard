@@ -8,6 +8,8 @@
 
 #include "directtextcomposer.h"
 
+namespace PlasmaKeyboard
+{
 /**
  * Text composer that passes input directly to the backend.
  *
@@ -35,3 +37,5 @@ Q_SIGNALS:
 private:
     QString m_sentenceEndingCharacters = QStringLiteral(".!?¡¿");
 };
+
+} // namespace PlasmaKeyboard

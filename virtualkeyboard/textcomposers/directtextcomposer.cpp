@@ -10,6 +10,8 @@
 
 #include <QLocale>
 
+namespace PlasmaKeyboard
+{
 DirectTextComposer::DirectTextComposer(QObject *parent)
     : AbstractTextComposer(parent)
 {
@@ -44,3 +46,5 @@ QString DirectTextComposer::transformedText(const QString &text) const
 
     return QLocale(inputEngine() ? inputEngine()->locale() : QString()).toUpper(text);
 }
+
+} // namespace PlasmaKeyboard

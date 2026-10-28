@@ -9,6 +9,8 @@
 
 #include "../inputengine.h"
 
+namespace PlasmaKeyboard
+{
 AmharicTextComposer::AmharicTextComposer(QObject *parent)
     : DirectTextComposer(parent)
 {
@@ -67,3 +69,5 @@ bool AmharicTextComposer::selectCandidate(int index)
     inputEngine()->commit(forms.at(index));
     return true;
 }
+
+} // namespace PlasmaKeyboard

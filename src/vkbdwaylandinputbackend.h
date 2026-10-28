@@ -13,7 +13,7 @@
  *
  * Emits events from the input engine through signals, see InputMethodConnection for usage.
  */
-class VkbdWaylandInputBackend : public InputBackend
+class VkbdWaylandInputBackend : public PlasmaKeyboard::InputBackend
 {
     Q_OBJECT
 

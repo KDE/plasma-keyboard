@@ -11,6 +11,8 @@
 #include <QHash>
 #include <algorithm>
 
+using namespace PlasmaKeyboard;
+
 KeyboardLayoutGroupModel::KeyboardLayoutGroupModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_flatLayouts(new KeyboardLayoutModel(this))

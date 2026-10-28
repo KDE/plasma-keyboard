@@ -89,7 +89,7 @@ int main(int argc, char **argv)
         const bool initSuccessful = initInputPanelIntegration(window, InputPanelRole::Keyboard);
 
         if (!initSuccessful) {
-            qCCritical(PlasmaKeyboard)
+            qCCritical(PLASMAKEYBOARD)
                 << "Cannot run plasma-keyboard standalone. You can enable it in Plasma's System Settings app, on the “Virtual Keyboard” page.";
             exit(1);
         }
@@ -107,13 +107,13 @@ int main(int argc, char **argv)
     KSignalHandler::self()->watchSignal(SIGTERM);
     QObject::connect(KSignalHandler::self(), &KSignalHandler::signalReceived, &application, [](int signal) {
         if (signal == SIGINT || signal == SIGTERM) {
-            qCDebug(PlasmaKeyboard) << "Received signal" << signal << ", exiting now.";
+            qCDebug(PLASMAKEYBOARD) << "Received signal" << signal << ", exiting now.";
             QCoreApplication::quit();
         }
     });
 #endif
 
-    qCDebug(PlasmaKeyboard) << "Starting Plasma Keyboard application";
+    qCDebug(PLASMAKEYBOARD) << "Starting Plasma Keyboard application";
 
     return application.exec();
 }

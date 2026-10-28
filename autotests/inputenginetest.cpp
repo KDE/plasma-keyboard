@@ -13,7 +13,9 @@
 #include <QSignalSpy>
 #include <QTest>
 
-Q_LOGGING_CATEGORY(PlasmaKeyboard, "org.kde.plasma.keyboard")
+Q_LOGGING_CATEGORY(PLASMAKEYBOARD, "org.kde.plasma.keyboard")
+
+using namespace PlasmaKeyboard;
 
 class TestInputBackend : public InputBackend
 {

@@ -16,6 +16,8 @@
 #include <QTimer>
 #include <QVariant>
 
+namespace PlasmaKeyboard
+{
 static VirtualKeyboardContext *contextFromObject(QObject *object)
 {
     if (!object) {
@@ -153,3 +155,5 @@ VirtualKeyboardAttached *VirtualKeyboard::qmlAttachedProperties(QObject *object)
 {
     return new VirtualKeyboardAttached(object);
 }
+
+} // namespace PlasmaKeyboard

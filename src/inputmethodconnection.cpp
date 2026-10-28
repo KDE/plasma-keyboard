@@ -25,6 +25,8 @@
 #include <QtWaylandClient/private/qwayland-text-input-unstable-v1.h>
 #include <xkbcommon/xkbcommon-keysyms.h>
 
+using namespace PlasmaKeyboard;
+
 Q_GLOBAL_STATIC(InputMethod, s_im)
 
 static QList<Qt::Key> initCapture()

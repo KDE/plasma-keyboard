@@ -6,6 +6,8 @@
 
 #include "vkbdwaylandinputbackend.h"
 
+using namespace PlasmaKeyboard;
+
 VkbdWaylandInputBackend::VkbdWaylandInputBackend(QObject *parent)
     : InputBackend(parent)
 {

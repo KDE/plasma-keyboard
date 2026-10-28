@@ -9,6 +9,8 @@
 
 #include "directtextcomposer.h"
 
+namespace PlasmaKeyboard
+{
 class AmharicTextComposer : public DirectTextComposer
 {
     Q_OBJECT
@@ -20,3 +22,5 @@ public:
     bool keyEvent(Qt::Key key, const QString &text) override;
     bool selectCandidate(int index) override;
 };
+
+} // namespace PlasmaKeyboard

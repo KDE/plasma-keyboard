@@ -11,6 +11,8 @@
 #include "keyboardcontroller.h"
 #include "keyboardpackageresolver.h"
 
+namespace PlasmaKeyboard
+{
 VirtualKeyboardContext::VirtualKeyboardContext(InputBackend *inputBackend, QObject *parent)
     : QObject(parent)
     , m_inputEngine(new InputEngine(inputBackend, this))
@@ -33,3 +35,5 @@ KeyboardPackageResolver *VirtualKeyboardContext::keyboardPackageResolver() const
 {
     return m_keyboardPackageResolver;
 }
+
+} // namespace PlasmaKeyboard

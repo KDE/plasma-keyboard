@@ -60,7 +60,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::loadBaseMap()
     if (!path.isEmpty()) {
         const QHash<QChar, QStringList> result = parseJsonFile(path);
         if (!result.isEmpty()) {
-            qCDebug(PlasmaKeyboard) << "DiacriticsDataLoader: Loaded base map from" << path;
+            qCDebug(PLASMAKEYBOARD) << "DiacriticsDataLoader: Loaded base map from" << path;
             return result;
         }
     }
@@ -70,12 +70,12 @@ QHash<QChar, QStringList> DiacriticsDataLoader::loadBaseMap()
     if (resourceFile.open(QIODevice::ReadOnly)) {
         const QHash<QChar, QStringList> result = parseJsonContent(resourceFile.readAll(), kResourceBasePath);
         if (!result.isEmpty()) {
-            qCDebug(PlasmaKeyboard) << "DiacriticsDataLoader: Loaded base map from Qt resource";
+            qCDebug(PLASMAKEYBOARD) << "DiacriticsDataLoader: Loaded base map from Qt resource";
             return result;
         }
     }
 
-    qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Could not load base.json from filesystem or Qt resource;"
+    qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Could not load base.json from filesystem or Qt resource;"
                                  " diacritics will be unavailable until data files are installed.";
     return {};
 }
@@ -86,16 +86,16 @@ QHash<QChar, QStringList> DiacriticsDataLoader::loadLocaleMap(const QString &loc
     const QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kDataSubPath + fileName);
 
     if (path.isEmpty()) {
-        qCInfo(PlasmaKeyboard) << "DiacriticsDataLoader: No diacritics file found for enabled locale" << locale
+        qCInfo(PLASMAKEYBOARD) << "DiacriticsDataLoader: No diacritics file found for enabled locale" << locale
                                << "(falling back to base map ordering for this locale)";
         return {};
     }
 
     const QHash<QChar, QStringList> result = parseJsonFile(path);
     if (result.isEmpty()) {
-        qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Failed to parse locale diacritics file for" << locale;
+        qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Failed to parse locale diacritics file for" << locale;
     } else {
-        qCDebug(PlasmaKeyboard) << "DiacriticsDataLoader: Loaded locale map for" << locale << "from" << path;
+        qCDebug(PLASMAKEYBOARD) << "DiacriticsDataLoader: Loaded locale map for" << locale << "from" << path;
     }
     return result;
 }
@@ -156,7 +156,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonFile(const QString &fil
 {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
-        qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Cannot open file:" << filePath;
+        qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Cannot open file:" << filePath;
         return {};
     }
     return parseJsonContent(file.readAll(), filePath);
@@ -167,7 +167,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
     QJsonParseError parseError;
     const QJsonDocument doc = QJsonDocument::fromJson(content, &parseError);
     if (doc.isNull() || parseError.error != QJsonParseError::NoError) {
-        qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: JSON parse error in" << sourceName << "at offset" << parseError.offset << ":"
+        qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: JSON parse error in" << sourceName << "at offset" << parseError.offset << ":"
                                   << parseError.errorString();
         return {};
     }
@@ -177,13 +177,13 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
     // Validate the version field.
     const int version = root.value("version"_L1).toInt();
     if (version != kExpectedVersion) {
-        qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Unsupported version" << version << "in" << sourceName << "(expected" << kExpectedVersion << ")";
+        qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Unsupported version" << version << "in" << sourceName << "(expected" << kExpectedVersion << ")";
         return {};
     }
 
     const QJsonObject mapObj = root.value("map"_L1).toObject();
     if (mapObj.isEmpty()) {
-        qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Empty or missing 'map' object in" << sourceName;
+        qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Empty or missing 'map' object in" << sourceName;
         return {};
     }
 
@@ -193,7 +193,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
     for (auto it = mapObj.constBegin(); it != mapObj.constEnd(); ++it) {
         const QString keyStr = it.key();
         if (keyStr.size() != 1) {
-            qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Map key must be a single character, got:" << keyStr << "in" << sourceName << "(skipping)";
+            qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Map key must be a single character, got:" << keyStr << "in" << sourceName << "(skipping)";
             continue;
         }
 
@@ -205,7 +205,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
         for (const QJsonValue &val : candidatesArray) {
             const QString candidate = val.toString();
             if (candidate.isEmpty()) {
-                qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Empty candidate string for key" << keyStr << "in" << sourceName << "(skipping)";
+                qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Empty candidate string for key" << keyStr << "in" << sourceName << "(skipping)";
                 continue;
             }
 
@@ -220,7 +220,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
                 }
             }
             if (hasNonPrintable) {
-                qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: Candidate" << candidate << "for key" << keyStr << "in" << sourceName
+                qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: Candidate" << candidate << "for key" << keyStr << "in" << sourceName
                                           << "contains non-printable characters (skipping)";
                 continue;
             }
@@ -231,7 +231,7 @@ QHash<QChar, QStringList> DiacriticsDataLoader::parseJsonContent(const QByteArra
         if (!candidates.isEmpty()) {
             result.insert(key, candidates);
         } else {
-            qCWarning(PlasmaKeyboard) << "DiacriticsDataLoader: No valid candidates for key" << keyStr << "in" << sourceName;
+            qCWarning(PLASMAKEYBOARD) << "DiacriticsDataLoader: No valid candidates for key" << keyStr << "in" << sourceName;
         }
     }
 

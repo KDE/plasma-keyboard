@@ -8,6 +8,8 @@
 
 #include <algorithm>
 
+namespace PlasmaKeyboard
+{
 InputBackend::InputBackend(QObject *parent)
     : QObject(parent)
 {
@@ -50,3 +52,5 @@ void InputBackend::setKeyPressed(int key, bool pressed)
 
     Q_EMIT pressedKeysChanged();
 }
+
+} // namespace PlasmaKeyboard

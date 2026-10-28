@@ -10,6 +10,8 @@
 #include <QObject>
 #include <QString>
 
+namespace PlasmaKeyboard
+{
 /**
  * Interface between the input engine <-> platform (compositor, such as KWin).
  *
@@ -51,3 +53,5 @@ protected:
 private:
     QList<int> m_pressedKeys;
 };
+
+} // namespace PlasmaKeyboard

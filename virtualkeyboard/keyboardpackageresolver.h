@@ -13,6 +13,8 @@
 
 #include "keyboardlayoutmetadata.h"
 
+namespace PlasmaKeyboard
+{
 /**
  * Utility to find and parse keyboard "layout packages".
  */
@@ -87,3 +89,5 @@ private:
     QStringList m_layoutIds;
     QList<KeyboardLayoutMetadata::Layout> m_layouts;
 };
+
+} // namespace PlasmaKeyboard

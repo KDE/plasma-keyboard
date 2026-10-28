@@ -12,6 +12,8 @@
 #include <QStringView>
 #include <qqmlintegration.h>
 
+namespace PlasmaKeyboard
+{
 class InputEngine;
 
 /**
@@ -69,3 +71,5 @@ private:
     friend class InputEngine;
     QPointer<InputEngine> m_inputEngine;
 };
+
+} // namespace PlasmaKeyboard

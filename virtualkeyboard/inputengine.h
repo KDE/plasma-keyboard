@@ -15,6 +15,8 @@
 #include "textcomposers/abstracttextcomposer.h"
 #include "wordcandidatelistmodel.h"
 
+namespace PlasmaKeyboard
+{
 class InputBackend;
 
 /**
@@ -32,7 +34,7 @@ class InputBackend;
 class InputEngine : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(AbstractTextComposer *textComposer READ textComposer WRITE setTextComposer NOTIFY textComposerChanged)
+    Q_PROPERTY(PlasmaKeyboard::AbstractTextComposer *textComposer READ textComposer WRITE setTextComposer NOTIFY textComposerChanged)
     Q_PROPERTY(bool shiftActive READ shiftActive WRITE setShiftActive NOTIFY shiftActiveChanged)
     Q_PROPERTY(bool capsLockActive READ capsLockActive WRITE setCapsLockActive NOTIFY capsLockActiveChanged)
     Q_PROPERTY(bool uppercase READ uppercase NOTIFY uppercaseChanged)
@@ -47,7 +49,7 @@ class InputEngine : public QObject
     Q_PROPERTY(QString selectedText READ selectedText NOTIFY selectedTextChanged)
     Q_PROPERTY(QList<int> pressedKeys READ pressedKeys NOTIFY pressedKeysChanged)
     Q_PROPERTY(bool preeditBubbleVisibleHint READ preeditBubbleVisibleHint NOTIFY textComposerChanged)
-    Q_PROPERTY(WordCandidateListModel *wordCandidateListModel READ wordCandidateListModel CONSTANT)
+    Q_PROPERTY(PlasmaKeyboard::WordCandidateListModel *wordCandidateListModel READ wordCandidateListModel CONSTANT)
     Q_PROPERTY(bool wordCandidateListVisibleHint READ wordCandidateListVisibleHint NOTIFY wordCandidateListVisibleHintChanged)
 
 public:
@@ -126,3 +128,5 @@ private:
     QString m_preeditPrefix;
     QStringList m_candidates;
 };
+
+} // namespace PlasmaKeyboard

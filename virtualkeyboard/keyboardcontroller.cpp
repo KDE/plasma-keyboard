@@ -14,6 +14,8 @@
 
 #include <QLocale>
 
+namespace PlasmaKeyboard
+{
 KeyboardController::KeyboardController(InputEngine *inputEngine, KeyboardPackageResolver *packageResolver, QObject *parent)
     : QObject(parent)
     , m_inputEngine(inputEngine)
@@ -216,3 +218,5 @@ void KeyboardController::refreshLocale()
         m_inputEngine->setLocale(locale);
     }
 }
+
+} // namespace PlasmaKeyboard

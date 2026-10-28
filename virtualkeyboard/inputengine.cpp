@@ -11,6 +11,8 @@
 
 #include <QLocale>
 
+namespace PlasmaKeyboard
+{
 static bool isNonShiftModifierKey(int key)
 {
     switch (key) {
@@ -456,3 +458,5 @@ int InputEngine::utf16PositionFromUtf8Offset(uint32_t offset) const
 {
     return QString::fromUtf8(surroundingText().toUtf8().first(offset)).size();
 }
+
+} // namespace PlasmaKeyboard

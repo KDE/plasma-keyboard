@@ -46,13 +46,13 @@ OverlayTriggerResult TextExpansionTrigger::processEvent(OverlayInputEvent eventT
             if (m_requiresTriggerKey) {
                 // Store pending abbreviation, wait for trigger key
                 m_pendingAbbreviation = abbrev;
-                // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Detected abbreviation, waiting for trigger key:" << abbrev;
+                // qCDebug(PLASMAKEYBOARD) << "TextExpansionTrigger: Detected abbreviation, waiting for trigger key:" << abbrev;
             } else {
                 // Expand immediately
                 result.action = OverlayAction::ReplaceText;
                 result.deleteBeforeCursor = abbrev.length();
                 result.commitText = m_expansions.value(abbrev);
-                // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Expanding" << abbrev << "to" << result.commitText;
+                // qCDebug(PLASMAKEYBOARD) << "TextExpansionTrigger: Expanding" << abbrev << "to" << result.commitText;
             }
         }
         break;
@@ -65,7 +65,7 @@ OverlayTriggerResult TextExpansionTrigger::processEvent(OverlayInputEvent eventT
             result.deleteBeforeCursor = m_pendingAbbreviation.length();
             result.commitText = m_expansions.value(m_pendingAbbreviation);
             result.consumeEvent = true;
-            // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Trigger key pressed, expanding" << m_pendingAbbreviation;
+            // qCDebug(PLASMAKEYBOARD) << "TextExpansionTrigger: Trigger key pressed, expanding" << m_pendingAbbreviation;
             m_pendingAbbreviation.clear();
         } else if (!m_pendingAbbreviation.isEmpty()) {
             // Different key pressed, cancel pending expansion
