@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:48+0000\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
 "PO-Revision-Date: 2026-09-24 20:14-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.9\n"
+
+#: ui/AddKeyboardLayoutPage.qml:10
+#, fuzzy
+#| msgid "Keyboard Languages"
+msgid "Add Layout"
+msgstr "ھەرپتاختا تىلى"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -31,24 +37,12 @@ msgctxt "@option:check"
 msgid "Show all layouts"
 msgstr ""
 
-#: ui/KeyboardLayoutSelectorListView.qml:66
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
-msgid ""
-"No keyboard layouts selected. The default keyboard layout for the system "
-"will be used."
-msgstr ""
-"ھېچقانداق تىل تاللانمىدى. سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
-"ئىشلىتىدۇ."
-
-#: ui/KeyboardLayoutSelectorListView.qml:118
+#: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
 msgstr[0] ""
 
-#: ui/KeyboardLayoutSelectorListView.qml:119
+#: ui/KeyboardLayoutSelectorListView.qml:111
 #, fuzzy
 #| msgctxt "%1 is the number of enabled locales"
 #| msgid "%1 language selected"
@@ -56,12 +50,55 @@ msgstr[0] ""
 msgid "%1 of %2 selected"
 msgstr "%1 تىل تاللاندى"
 
-#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
-#: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
+#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
+#: ui/main_mediacenter.qml:40
 #, fuzzy
 #| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
 msgstr "ھەرپتاختا تىلى"
+
+#: ui/KeyboardLayoutsPage.qml:16
+#, fuzzy
+#| msgid "On-Screen Keyboard"
+msgid "On-Screen Keyboard Layouts"
+msgstr "ئېكران ھەرپتاختىسى"
+
+#: ui/KeyboardLayoutsPage.qml:21
+msgid "Add Layout…"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:37
+#, fuzzy
+#| msgctxt "%1 is the number of enabled locales"
+#| msgid "%1 language selected"
+#| msgid_plural "%1 languages selected"
+msgid "No keyboard layouts selected"
+msgstr "%1 تىل تاللاندى"
+
+#: ui/KeyboardLayoutsPage.qml:38
+#, fuzzy
+#| msgid ""
+#| "No languages selected. The default keyboard layout for the system will be "
+#| "used."
+msgid "The default keyboard layout for the system will be used."
+msgstr ""
+"ھېچقانداق تىل تاللانمىدى. سىستېما كۆڭۈلدىكى ھەرپتاختا جايلاشتۇرۇشىنى "
+"ئىشلىتىدۇ."
+
+#: ui/KeyboardLayoutsPage.qml:65
+msgctxt "Move the layout up a row"
+msgid "Move Up"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:78
+msgctxt "Move the layout down a row"
+msgid "Move Down"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:91
+msgctxt "Remove the layout"
+msgid "Remove"
+msgstr ""
 
 #: ui/main.qml:24
 #, fuzzy
@@ -73,47 +110,47 @@ msgstr "ھەرپتاختا تىلى"
 msgid "Configure…"
 msgstr ""
 
-#: ui/main.qml:39
+#: ui/main.qml:32
 msgid "Key press feedback:"
 msgstr "كۇنۇپكا بېسىش قايتۇرما ئىنكاسى:"
 
-#: ui/main.qml:40 ui/main_handset.qml:40
+#: ui/main.qml:33 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "ئاۋاز"
 
-#: ui/main.qml:48 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
+#: ui/main.qml:41 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
 msgid "Vibration"
 msgstr "تىترەت"
 
-#: ui/main.qml:56 ui/main_handset.qml:62
+#: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
 msgstr ""
 
-#: ui/main.qml:64
+#: ui/main.qml:57
 msgid "General:"
 msgstr "ئادەتتىكى:"
 
-#: ui/main.qml:65 ui/main_handset.qml:95
+#: ui/main.qml:58 ui/main_handset.qml:88
 msgid "Keyboard navigation"
 msgstr "ھەرپتاختا يولباشچىسى"
 
-#: ui/main.qml:73 ui/main_handset.qml:106 ui/main_mediacenter.qml:95
+#: ui/main.qml:66 ui/main_handset.qml:99 ui/main_mediacenter.qml:95
 msgid "Auto-capitalization"
 msgstr "بىرىنچى ھەرپنى ئۆزلۈكىدىن چوڭغا ئالماشتۇر"
 
-#: ui/main.qml:81
+#: ui/main.qml:74
 msgid "Alternate characters:"
 msgstr "زاپاس ھەرپ:"
 
-#: ui/main.qml:82
+#: ui/main.qml:75
 msgid "Show popup when holding a key"
 msgstr "كۇنۇپكا بېسىپ تۇرۇلسا قاڭقىش كۆزنىكىنى كۆرسەت"
 
-#: ui/main.qml:90
+#: ui/main.qml:83
 msgid "Hold delay:"
 msgstr "كېچىكتۈرۈش:"
 
-#: ui/main.qml:100
+#: ui/main.qml:93
 msgid "milliseconds"
 msgstr "مىللىسېكۇنت"
 
@@ -140,16 +177,16 @@ msgstr "كۇنۇپكا باسقاندا تىترىتەمدۇ يوق"
 msgid "Show a character popup when pressing text keys"
 msgstr "كۇنۇپكا بېسىپ تۇرۇلسا قاڭقىش كۆزنىكىنى كۆرسەت"
 
-#: ui/main_handset.qml:89
+#: ui/main_handset.qml:82
 msgctxt "@title:group"
 msgid "General"
 msgstr "ئادەتتىكى"
 
-#: ui/main_handset.qml:96
+#: ui/main_handset.qml:89
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "يا ئوق كۇنۇپكىسىدا ھەرپتاختىدا يول باشلامدۇ يوق"
 
-#: ui/main_handset.qml:107 ui/main_mediacenter.qml:96
+#: ui/main_handset.qml:100 ui/main_mediacenter.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "جۈملە بېشى بىرىنچى ھەرپنى چوڭ ھەرپتە يازىدۇ"
 

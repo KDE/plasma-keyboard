@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:48+0000\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
 "PO-Revision-Date: 2026-10-15 09:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -18,6 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
+
+#: ui/AddKeyboardLayoutPage.qml:10
+#, fuzzy
+#| msgid "%1 layout"
+#| msgid_plural "%1 layouts"
+msgid "Add Layout"
+msgstr "%1 disposició"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -32,28 +39,63 @@ msgctxt "@option:check"
 msgid "Show all layouts"
 msgstr "Mostra totes les disposicions"
 
-#: ui/KeyboardLayoutSelectorListView.qml:66
-msgid ""
-"No keyboard layouts selected. The default keyboard layout for the system "
-"will be used."
-msgstr ""
-"No s'ha seleccionat cap disposició de teclat. Es farà servir la disposició "
-"del teclat predeterminada del sistema."
-
-#: ui/KeyboardLayoutSelectorListView.qml:118
+#: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
 msgstr[0] "%1 disposició"
 msgstr[1] "%1 disposicions"
 
-#: ui/KeyboardLayoutSelectorListView.qml:119
+#: ui/KeyboardLayoutSelectorListView.qml:111
 msgid "%1 of %2 selected"
 msgstr "S'ha seleccionat %1 de %2"
 
-#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main.qml:31
-#: ui/main_handset.qml:75 ui/main_handset.qml:81 ui/main_mediacenter.qml:40
+#: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
+#: ui/main_mediacenter.qml:40
 msgid "Keyboard Layouts"
 msgstr "Disposicions de teclat"
+
+#: ui/KeyboardLayoutsPage.qml:16
+#, fuzzy
+#| msgid "On-Screen Keyboard"
+msgid "On-Screen Keyboard Layouts"
+msgstr "Teclat en pantalla"
+
+#: ui/KeyboardLayoutsPage.qml:21
+msgid "Add Layout…"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:37
+#, fuzzy
+#| msgctxt "%1 is the number of enabled keyboard layouts"
+#| msgid "%1 keyboard layout selected"
+#| msgid_plural "%1 keyboard layouts selected"
+msgid "No keyboard layouts selected"
+msgstr "S'ha seleccionat %1 disposició de teclat"
+
+#: ui/KeyboardLayoutsPage.qml:38
+#, fuzzy
+#| msgid ""
+#| "No keyboard layouts selected. The default keyboard layout for the system "
+#| "will be used."
+msgid "The default keyboard layout for the system will be used."
+msgstr ""
+"No s'ha seleccionat cap disposició de teclat. Es farà servir la disposició "
+"del teclat predeterminada del sistema."
+
+#: ui/KeyboardLayoutsPage.qml:65
+msgctxt "Move the layout up a row"
+msgid "Move Up"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:78
+msgctxt "Move the layout down a row"
+msgid "Move Down"
+msgstr ""
+
+#: ui/KeyboardLayoutsPage.qml:91
+msgctxt "Remove the layout"
+msgid "Remove"
+msgstr ""
 
 #: ui/main.qml:24
 msgid "Keyboard layouts:"
@@ -63,47 +105,47 @@ msgstr "Disposicions de teclat:"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: ui/main.qml:39
+#: ui/main.qml:32
 msgid "Key press feedback:"
 msgstr "Reacció de tecla premuda:"
 
-#: ui/main.qml:40 ui/main_handset.qml:40
+#: ui/main.qml:33 ui/main_handset.qml:40
 msgid "Sound"
 msgstr "So"
 
-#: ui/main.qml:48 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
+#: ui/main.qml:41 ui/main_handset.qml:51 ui/main_mediacenter.qml:75
 msgid "Vibration"
 msgstr "Vibració"
 
-#: ui/main.qml:56 ui/main_handset.qml:62
+#: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
 msgstr "Finestra emergent de caràcter"
 
-#: ui/main.qml:64
+#: ui/main.qml:57
 msgid "General:"
 msgstr "General:"
 
-#: ui/main.qml:65 ui/main_handset.qml:95
+#: ui/main.qml:58 ui/main_handset.qml:88
 msgid "Keyboard navigation"
 msgstr "Navegació amb el teclat"
 
-#: ui/main.qml:73 ui/main_handset.qml:106 ui/main_mediacenter.qml:95
+#: ui/main.qml:66 ui/main_handset.qml:99 ui/main_mediacenter.qml:95
 msgid "Auto-capitalization"
 msgstr "Primera lletra en majúscula automàtica"
 
-#: ui/main.qml:81
+#: ui/main.qml:74
 msgid "Alternate characters:"
 msgstr "Caràcters alternatius:"
 
-#: ui/main.qml:82
+#: ui/main.qml:75
 msgid "Show popup when holding a key"
 msgstr "Mostra una finestra emergent en mantenir premuda una tecla"
 
-#: ui/main.qml:90
+#: ui/main.qml:83
 msgid "Hold delay:"
 msgstr "Retard en mantenir premuda:"
 
-#: ui/main.qml:100
+#: ui/main.qml:93
 msgid "milliseconds"
 msgstr "mil·lisegons"
 
@@ -128,16 +170,16 @@ msgstr "Si ha de vibrar en prémer les tecles"
 msgid "Show a character popup when pressing text keys"
 msgstr "Mostra una finestra emergent de caràcter en prémer tecles de text"
 
-#: ui/main_handset.qml:89
+#: ui/main_handset.qml:82
 msgctxt "@title:group"
 msgid "General"
 msgstr "General"
 
-#: ui/main_handset.qml:96
+#: ui/main_handset.qml:89
 msgid "Whether to use the arrow keys to navigate the keyboard"
 msgstr "Si s'han d'utilitzar les tecles de fletxa per navegar pel teclat"
 
-#: ui/main_handset.qml:107 ui/main_mediacenter.qml:96
+#: ui/main_handset.qml:100 ui/main_mediacenter.qml:96
 msgid "Automatically capitalize the first letter of sentences"
 msgstr "Posa en majúscula la primera lletra de les frases"
 
