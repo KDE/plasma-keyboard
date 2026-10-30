@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-10-15 12:00+0300\n"
+"PO-Revision-Date: 2026-10-29 07:44+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -19,11 +19,8 @@ msgstr ""
 "X-Generator: Lokalize 26.08.1\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "%1 layout"
-#| msgid_plural "%1 layouts"
 msgid "Add Layout"
-msgstr "%1 раскладка"
+msgstr "Добавить раскладку"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -56,47 +53,36 @@ msgid "Keyboard Layouts"
 msgstr "Раскладки клавиатуры"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "Экранная клавиатура"
+msgstr "Раскладки экранной клавиатуры"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "Добавить раскладку…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled keyboard layouts"
-#| msgid "%1 keyboard layout selected"
-#| msgid_plural "%1 keyboard layouts selected"
 msgid "No keyboard layouts selected"
-msgstr "Выбрана %1 раскладка"
+msgstr "Раскладки не выбраны"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No keyboard layouts selected. The default keyboard layout for the system "
-#| "will be used."
 msgid "The default keyboard layout for the system will be used."
 msgstr ""
-"Не выбрана ни одна раскладка. Будет использована раскладка клавиатуры, "
-"заданная в системе по умолчанию."
+"Будет использована раскладка клавиатуры, заданная в системе по умолчанию."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "Переместить вверх"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "Переместить вниз"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 #: ui/main.qml:24
 msgid "Keyboard layouts:"

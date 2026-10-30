@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-10-15 09:57-0300\n"
+"PO-Revision-Date: 2026-10-29 10:36-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,11 +20,8 @@ msgstr ""
 "X-Generator: Lokalize 26.08.2\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "%1 layout"
-#| msgid_plural "%1 layouts"
 msgid "Add Layout"
-msgstr "%1 layout"
+msgstr "Adicionar layout"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -55,47 +52,35 @@ msgid "Keyboard Layouts"
 msgstr "Layouts de teclado"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "Teclado na tela"
+msgstr "Layouts de teclado na tela"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "Adicionar layout…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled keyboard layouts"
-#| msgid "%1 keyboard layout selected"
-#| msgid_plural "%1 keyboard layouts selected"
 msgid "No keyboard layouts selected"
-msgstr "%1 layout de teclado selecionado"
+msgstr "Nenhum layout de teclado selecionado"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No keyboard layouts selected. The default keyboard layout for the system "
-#| "will be used."
 msgid "The default keyboard layout for the system will be used."
-msgstr ""
-"Nenhum layout de teclado selecionado. O layout de teclado padrão do sistema "
-"será usado."
+msgstr "Será utilizado o layout de teclado padrão do sistema."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "Mover para cima"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "Mover para baixo"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 #: ui/main.qml:24
 msgid "Keyboard layouts:"

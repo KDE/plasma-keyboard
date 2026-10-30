@@ -7,22 +7,19 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-10-15 16:33+0200\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-10-29 14:30+0100\n"
+"Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "%1 layout"
-#| msgid_plural "%1 layouts"
 msgid "Add Layout"
-msgstr "%1 indeling"
+msgstr "Indeling toevoegen"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -53,47 +50,35 @@ msgid "Keyboard Layouts"
 msgstr "Toetsenbordindelingen"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "Toetsenbord op scherm"
+msgstr "Indeling van toetsenbord op scherm"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "Indeling toevoegen…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled keyboard layouts"
-#| msgid "%1 keyboard layout selected"
-#| msgid_plural "%1 keyboard layouts selected"
 msgid "No keyboard layouts selected"
-msgstr "%1 toetsenbordindeling geselecteerd"
+msgstr "Geen toetsenbordindeling geselecteerd"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No keyboard layouts selected. The default keyboard layout for the system "
-#| "will be used."
 msgid "The default keyboard layout for the system will be used."
-msgstr ""
-"Geen toetsenbordindelingen geselecteerd. De standaard toetsenbordindeling "
-"voor het systeem zal gebruikt worden."
+msgstr "De standaard toetsenbordindeling voor het systeem zal gebruikt worden."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "Omhoog verplaatsen"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "Omlaag verplaatsen"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 #: ui/main.qml:24
 msgid "Keyboard layouts:"
