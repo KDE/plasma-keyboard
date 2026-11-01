@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-keyboard package.
-# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-09-23 19:27+0400\n"
+"PO-Revision-Date: 2026-10-31 20:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,13 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Add Layout"
-msgstr "لغات لوحة المفاتيح"
+msgstr "أضف تخطيطًا"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -35,83 +33,65 @@ msgstr "رشّح اللغات"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "أظهر كل التخطيطات"
 
 #: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يوجد أي تخطيط"
+msgstr[1] "تخطيط واحد"
+msgstr[2] "تخطيطان"
+msgstr[3] "%1 تخطيطات"
+msgstr[4] "%1 تخطيطًا"
+msgstr[5] "%1 تخطيط"
 
 #: ui/KeyboardLayoutSelectorListView.qml:111
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "%1 لغة محددة"
+msgstr "حُدد %1 من %2"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
 #: ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "لغات لوحة المفاتيح"
+msgstr "تخطيطات لوحة المفاتيح"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "لوحة مفاتيح على الشاشة"
+msgstr "تخطيطات لوحة مفاتيح على الشاشة"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "أضف تخطيطًا…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "No keyboard layouts selected"
-msgstr "%1 لغة محددة"
+msgstr "لم تُحدد أي تخطيطات لوحة مفاتيح"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid "The default keyboard layout for the system will be used."
-msgstr "لم تُحدد أي لغات. سيُستخدم تخطيط لوحة المفاتيح المبدئي للنظام."
+msgstr "سيُستخدم تخطيط لوحة المفاتيح المبدئي للنظام."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "انقل لأعلى"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "انقل لأسفل"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "أزل"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "لغات لوحة المفاتيح"
+msgstr "تخطيطات لوحة المفاتيح:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "اضبط…"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
@@ -127,7 +107,7 @@ msgstr "اهتزاز"
 
 #: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "منبثقة المحارف"
 
 #: ui/main.qml:57
 msgid "General:"
@@ -175,10 +155,8 @@ msgid "Whether to vibrate on key press"
 msgstr "ما إذا كان سيهتز عند الضغط على المفتاح"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "أظهر منبثقة عند الاستمرار في ضغط مفتاح"
+msgstr "أظهر منبثقة محارف عند ضغط مفاتيح النص"
 
 #: ui/main_handset.qml:82
 msgctxt "@title:group"
@@ -198,29 +176,22 @@ msgid "On-Screen Keyboard"
 msgstr "لوحة مفاتيح على الشاشة"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
-msgstr "لم تُحدد أي لغات. سيُستخدم تخطيط لوحة المفاتيح المبدئي للنظام."
+msgstr ""
+"لم تُحدد أي تخطيطات لوحة مفاتيح، سيُستخدم تخطيط لوحة المفاتيح المبدئي للنظام"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "%1 لغة محددة"
-msgstr[1] "لغة واحدة محددة"
-msgstr[2] "لغتان محددتان"
-msgstr[3] "%1 لغات محددة"
-msgstr[4] "%1 لغة محددة"
-msgstr[5] "%1 لغة محددة"
+msgstr[0] "لم يحدد شيء"
+msgstr[1] "حُددت لوحة مفاتيح"
+msgstr[2] "حُدد لوحتي مفاتيح"
+msgstr[3] "حُدد %1 لوحات مفاتيح"
+msgstr[4] "حُدد %1 لوحة المفاتيح"
+msgstr[5] "حُدد %1 لوحة المفاتيح"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
