@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.sv_SE",
         "Name": "Svenska",
+        "Name[ar]": "Svenska",
         "Name[bg]": "Svenska",
         "Name[ca@valencia]": "Svenska",
         "Name[ca]": "Svenska",

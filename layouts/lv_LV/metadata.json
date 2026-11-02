@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.lv_LV",
         "Name": "Latviešu",
+        "Name[ar]": "Latviešu",
         "Name[bg]": "Latviešu",
         "Name[ca@valencia]": "Latviešu",
         "Name[ca]": "Latviešu",

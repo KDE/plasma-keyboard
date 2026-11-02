@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.ro_RO",
         "Name": "Română",
+        "Name[ar]": "Română",
         "Name[bg]": "Română",
         "Name[ca@valencia]": "Română",
         "Name[ca]": "Română",

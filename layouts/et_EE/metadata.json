@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.et_EE",
         "Name": "Eesti",
+        "Name[ar]": "Eesti",
         "Name[bg]": "Eesti",
         "Name[ca@valencia]": "Eesti",
         "Name[ca]": "Eesti",

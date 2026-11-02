@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.hr_HR",
         "Name": "Hrvatski",
+        "Name[ar]": "Hrvatski",
         "Name[bg]": "Hrvatski",
         "Name[ca@valencia]": "Hrvatski",
         "Name[ca]": "Hrvatski",

@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.sl_SI",
         "Name": "Slovenščina",
+        "Name[ar]": "Slovenščina",
         "Name[bg]": " Словенски",
         "Name[ca@valencia]": "Slovenščina",
         "Name[ca]": "Slovenščina",

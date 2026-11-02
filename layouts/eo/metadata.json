@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.eo",
         "Name": "Esperanto",
+        "Name[ar]": "Esperanto",
         "Name[bg]": "Esperanto",
         "Name[ca@valencia]": "Esperanto",
         "Name[ca]": "Esperanto",

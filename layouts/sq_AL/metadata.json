@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.sq_AL",
         "Name": "Shqip",
+        "Name[ar]": "Shqip",
         "Name[bg]": "Shqip",
         "Name[ca@valencia]": "Shqip",
         "Name[ca]": "Shqip",

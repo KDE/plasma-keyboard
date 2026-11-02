@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.fa_IR",
         "Name": "فارسی",
+        "Name[ar]": "فارسی",
         "Name[bg]": "فارسی",
         "Name[ca@valencia]": "فارسی",
         "Name[ca]": "فارسی",

@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.am_ET",
         "Name": "አማርኛ",
+        "Name[ar]": "አማርኛ",
         "Name[bg]": "አማርኛ",
         "Name[ca@valencia]": "አማርኛ",
         "Name[ca]": "አማርኛ",

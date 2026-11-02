@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.tr_TR",
         "Name": "Türkçe",
+        "Name[ar]": "Türkçe",
         "Name[bg]": "Türkçe",
         "Name[ca@valencia]": "Türkçe",
         "Name[ca]": "Türkçe",

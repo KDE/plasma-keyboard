@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.he_IL",
         "Name": "עברית",
+        "Name[ar]": "עברית",
         "Name[bg]": "עברית",
         "Name[ca@valencia]": "עברית",
         "Name[ca]": "עברית",

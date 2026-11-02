@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.es_ES",
         "Name": "Español (España)",
+        "Name[ar]": "Español (España)",
         "Name[bg]": "Español (España)",
         "Name[ca@valencia]": "Español (España)",
         "Name[ca]": "Español (España)",

@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.hu_HU",
         "Name": "Magyar",
+        "Name[ar]": "Magyar",
         "Name[bg]": "Magyar",
         "Name[ca@valencia]": "Magyar",
         "Name[ca]": "Magyar",

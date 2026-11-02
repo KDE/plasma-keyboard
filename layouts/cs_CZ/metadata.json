@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.cs_CZ",
         "Name": "Čeština",
+        "Name[ar]": "Čeština",
         "Name[bg]": "Čeština",
         "Name[ca@valencia]": "Čeština",
         "Name[ca]": "Čeština",

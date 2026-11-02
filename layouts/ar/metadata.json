@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.ar",
         "Name": "العربية",
+        "Name[ar]": "العربية",
         "Name[bg]": "العربية",
         "Name[ca@valencia]": "العربية",
         "Name[ca]": "العربية",

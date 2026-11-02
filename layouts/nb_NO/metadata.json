@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.nb_NO",
         "Name": "Norsk",
+        "Name[ar]": "Norsk",
         "Name[bg]": "Norsk",
         "Name[ca@valencia]": "Norsk",
         "Name[ca]": "Norsk",

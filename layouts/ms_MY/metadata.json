@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.ms_MY",
         "Name": "Bahasa Melayu",
+        "Name[ar]": "Bahasa Melayu",
         "Name[bg]": "Bahasa Melayu",
         "Name[ca@valencia]": "Bahasa Melayu",
         "Name[ca]": "Bahasa Melayu",

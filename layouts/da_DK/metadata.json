@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.da_DK",
         "Name": "Dansk",
+        "Name[ar]": "Dansk",
         "Name[bg]": "Dansk",
         "Name[ca@valencia]": "Dansk",
         "Name[ca]": "Dansk",

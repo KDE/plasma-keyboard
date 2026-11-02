@@ -2,6 +2,7 @@
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.sr_RS",
         "Name": "Српски",
+        "Name[ar]": "Српски",
         "Name[bg]": "Српски",
         "Name[ca@valencia]": "Српски",
         "Name[ca]": "Српски",
