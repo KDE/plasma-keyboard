@@ -18,7 +18,8 @@
         "Name[sk]": "Türkçe",
         "Name[sl]": "Turško",
         "Name[tr]": "Türkçe",
-        "Name[uk]": "Türkçe"
+        "Name[uk]": "Türkçe",
+        "Name[zh_TW]": "土耳其語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

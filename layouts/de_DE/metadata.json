@@ -18,7 +18,8 @@
         "Name[sk]": "Deutsch",
         "Name[sl]": "Nemško",
         "Name[tr]": "Deutsch",
-        "Name[uk]": "Deutsch"
+        "Name[uk]": "Deutsch",
+        "Name[zh_TW]": "德語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

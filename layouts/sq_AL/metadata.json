@@ -18,7 +18,8 @@
         "Name[sk]": "Shqip",
         "Name[sl]": "Albansko",
         "Name[tr]": "Shqip",
-        "Name[uk]": "Shqip"
+        "Name[uk]": "Shqip",
+        "Name[zh_TW]": "阿爾巴尼亞語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

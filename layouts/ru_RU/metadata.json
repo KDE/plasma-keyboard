@@ -18,7 +18,8 @@
         "Name[sk]": "Русский",
         "Name[sl]": "Rusko",
         "Name[tr]": "Русский",
-        "Name[uk]": "Русский"
+        "Name[uk]": "Русский",
+        "Name[zh_TW]": "俄羅斯語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

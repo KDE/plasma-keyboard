@@ -18,7 +18,8 @@
         "Name[sk]": "Latviešu",
         "Name[sl]": "Latvijsko",
         "Name[tr]": "Latviešu",
-        "Name[uk]": "Latviešu"
+        "Name[uk]": "Latviešu",
+        "Name[zh_TW]": "拉脫維亞語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

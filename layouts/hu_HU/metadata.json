@@ -18,7 +18,8 @@
         "Name[sk]": "Magyar",
         "Name[sl]": "Madžarsko",
         "Name[tr]": "Magyar",
-        "Name[uk]": "Magyar"
+        "Name[uk]": "Magyar",
+        "Name[zh_TW]": "匈牙利語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

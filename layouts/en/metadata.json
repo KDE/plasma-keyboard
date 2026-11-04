@@ -19,7 +19,8 @@
         "Name[sk]": "English",
         "Name[sl]": "Angleška",
         "Name[tr]": "İngilizce",
-        "Name[uk]": "English"
+        "Name[uk]": "English",
+        "Name[zh_TW]": "英語"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
