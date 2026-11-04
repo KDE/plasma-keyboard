@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-09-22 00:37+0900\n"
+"PO-Revision-Date: 2026-11-03 20:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,10 +18,8 @@ msgstr ""
 "X-Generator: Lokalize 26.11.70\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Add Layout"
-msgstr "鍵盤語言"
+msgstr "新增佈局"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -34,78 +32,60 @@ msgstr "過濾語言"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "顯示所有佈局"
 
 #: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
+msgstr[0] "%1 個佈局"
 
 #: ui/KeyboardLayoutSelectorListView.qml:111
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "已選取 %1 個語言"
+msgstr "%1/%2 已選取"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
 #: ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "鍵盤語言"
+msgstr "鍵盤佈局"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "螢幕上的虛擬鍵盤"
+msgstr "螢幕鍵盤佈局"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "新增佈局…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "No keyboard layouts selected"
-msgstr "已選取 %1 個語言"
+msgstr "未選取任何鍵盤佈局"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid "The default keyboard layout for the system will be used."
-msgstr "未選擇任何語言。將使用系統的預設鍵盤佈局。"
+msgstr "將使用系統的預設鍵盤佈局。"
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "上移"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "下移"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "鍵盤語言"
+msgstr "鍵盤佈局："
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "設定…"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
@@ -121,7 +101,7 @@ msgstr "震動"
 
 #: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "字元彈出顯示"
 
 #: ui/main.qml:57
 msgid "General:"
@@ -169,10 +149,8 @@ msgid "Whether to vibrate on key press"
 msgstr "是否要在按下按鍵時震動。"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "按住按鍵時彈出顯示"
+msgstr "按下文字按鍵時彈出顯示字元"
 
 #: ui/main_handset.qml:82
 msgctxt "@title:group"
@@ -192,24 +170,16 @@ msgid "On-Screen Keyboard"
 msgstr "螢幕上的虛擬鍵盤"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
-msgstr "未選擇任何語言，將使用系統的預設鍵盤佈局"
+msgstr "未選擇任何鍵盤佈局，將使用系統的預設鍵盤佈局"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "已選取 %1 個語言"
+msgstr[0] "已選取 %1 個鍵盤佈局"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
