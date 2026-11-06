@@ -41,7 +41,7 @@ Qt::InputMethodHints mapInputMethodHints(InputPlugin::ContentHint contentHints, 
         hints |= Qt::ImhDigitsOnly;
         break;
     case InputPlugin::content_purpose_number:
-        hints |= Qt::ImhPreferNumbers;
+        hints |= Qt::ImhFormattedNumbersOnly;
         break;
     case InputPlugin::content_purpose_phone:
         hints |= Qt::ImhDialableCharactersOnly;
