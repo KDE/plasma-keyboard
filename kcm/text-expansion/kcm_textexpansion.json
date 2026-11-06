@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Kristen McWilliam",
+                "Email": "kristen@kde.org"
+            }
+        ],
+        "Description": "Configure text expansion shortcuts for Plasma Keyboard",
+        "FormFactors": [
+            "desktop",
+            "tablet",
+            "handset"
+        ],
+        "Icon": "edit-paste",
+        "License": "GPL",
+        "Name": "Text Expansion"
+    },
+    "X-KDE-Keywords": "text expansion,abbreviation,snippet,shortcut",
+    "X-KDE-ConfigModule-URI": "org.kde.kcm.textexpansion"
+}

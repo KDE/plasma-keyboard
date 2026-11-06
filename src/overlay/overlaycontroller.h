@@ -9,6 +9,7 @@
 #include "candidatemodel.h"
 #include "overlaytrigger.h"
 
+#include <QElapsedTimer>
 #include <QKeyEvent>
 #include <QObject>
 #include <QTimer>
@@ -26,7 +27,7 @@ class InputPlugin;
  *
  * Usage:
  * 1. Register triggers with registerTrigger()
- * 2. Feed input events via processKeyPress/Release/PreeditChanged/TextCommitted
+ * 2. Feed input events via processKeyPress/Release/PreeditChanged/TextBeforeCursorChanged
  * 3. Connect to overlayVisibleChanged signal in QML
  * 4. Call commitCandidate() when user selects an option
  */
@@ -95,12 +96,12 @@ public:
     bool processPreeditChanged(const QString &preedit);
 
     /**
-     * Process committed text.
+     * Process a forward-typing edit.
      *
-     * @param text The committed text.
+     * @param text The full text before the cursor after the edit.
      * @return True if an overlay action was triggered.
      */
-    bool processTextCommitted(const QString &text);
+    bool processTextBeforeCursorChanged(const QString &text);
 
     bool overlayVisible() const;
     QString activeTriggerId() const;
@@ -152,6 +153,9 @@ public Q_SLOTS:
      * the new cursor position.
      */
     void handleSurroundingTextChanged();
+
+    /** Forget the last-seen text, e.g. when focus moves to a different text field. */
+    void resetTextTracking();
 
     /**
      * Open the overlay with the given trigger and candidates.
@@ -257,6 +261,12 @@ private:
      *     the long-press threshold)
      */
     QTimer m_surroundingTextSettleTimer;
+
+    /** Last surrounding text and its before-cursor part, used to tell typing from cursor moves. */
+    QString m_lastSurroundingText;
+    QString m_lastBeforeCursor;
+    bool m_haveTextBaseline = false;
+    QElapsedTimer m_lastTextChange;
 
     /**
      * XKB compose state machine for handling client-side compose sequences (e.g.

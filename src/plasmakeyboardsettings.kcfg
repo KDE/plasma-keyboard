@@ -50,5 +50,9 @@
             <max>1500</max>
             <default>600</default>
         </entry>
+        <entry key="textExpansionRules" type="String">
+            <label>Text expansion rules stored as JSON.</label>
+            <default>[]</default>
+        </entry>
     </group>
 </kcfg>

@@ -276,14 +276,14 @@ bool OverlayController::processPreeditChanged(const QString &preedit)
     return false;
 }
 
-bool OverlayController::processTextCommitted(const QString &text)
+bool OverlayController::processTextBeforeCursorChanged(const QString &text)
 {
     for (auto *trigger : m_triggers) {
         if (!trigger->isEnabled()) {
             continue;
         }
 
-        auto result = trigger->processEvent(OverlayInputEvent::TextCommitted, nullptr, text, this);
+        auto result = trigger->processEvent(OverlayInputEvent::TextBeforeCursorChanged, nullptr, text, this);
         if (result.action != OverlayAction::None) {
             executeAction(result, trigger);
             return true;
@@ -388,6 +388,33 @@ void OverlayController::cancelOverlay()
 
 void OverlayController::handleSurroundingTextChanged()
 {
+    // Typed text reaches us only as a surrounding-text update; cursor is a UTF-8 byte offset.
+    // Only an edit that appends at the cursor counts, so moving the cursor or deleting never expands.
+    QString beforeCursor;
+    bool typedForward = false;
+    if (m_inputPlugin) {
+        const QString surrounding = m_inputPlugin->surroundingText();
+        beforeCursor = QString::fromUtf8(surrounding.toUtf8().left(m_inputPlugin->cursorPos()));
+        if (surrounding != m_lastSurroundingText) {
+            m_lastTextChange.start();
+        }
+        // Some clients send the text and the cursor in separate updates, so allow a recent text change.
+        const bool textChangedRecently = m_lastTextChange.isValid() && m_lastTextChange.elapsed() < 100;
+        qCDebug(PlasmaKeyboard) << "Surrounding text update:" << beforeCursor << "previous:" << m_lastBeforeCursor << "baseline:" << m_haveTextBaseline
+                                << "recent change:" << textChangedRecently;
+        // A single-character growth rules out the initial text load on focus change and pastes.
+        const qsizetype growth = beforeCursor.size() - m_lastBeforeCursor.size();
+        typedForward = m_haveTextBaseline && textChangedRecently && growth == 1 && beforeCursor.startsWith(m_lastBeforeCursor);
+        m_lastSurroundingText = surrounding;
+        m_lastBeforeCursor = beforeCursor;
+        m_haveTextBaseline = true;
+    }
+
+    // Typing a forwarded key also produces a credited echo, so expand before the echo-suppression below.
+    if (typedForward && processTextBeforeCursorChanged(beforeCursor)) {
+        return;
+    }
+
     // If we are expecting a surrounding-text update from one of our own
     // commit/delete-surrounding-text operations, consume that credit and return.
     if (m_pendingSurroundingTextUpdates > 0) {
@@ -413,7 +440,16 @@ void OverlayController::handleSurroundingTextChanged()
     if (m_holdTimer.isActive() || m_overlayVisible) {
         qCDebug(PlasmaKeyboard) << "External cursor move detected while overlay active; cancelling overlay";
         cancelOverlay();
+        return;
     }
+}
+
+void OverlayController::resetTextTracking()
+{
+    m_haveTextBaseline = false;
+    m_lastTextChange.invalidate();
+    m_lastSurroundingText.clear();
+    m_lastBeforeCursor.clear();
 }
 
 void OverlayController::openOverlay(const QString &triggerId, const QString &baseText, const QStringList &candidates)
