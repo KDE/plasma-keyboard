@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-08-24 19:59+0300\n"
+"PO-Revision-Date: 2026-10-05 15:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -184,7 +184,7 @@ msgstr "Kirjoita virkkeenalkuiset kirjaimet automaattisesti isolla"
 
 #: ui/main_mediacenter.qml:19
 msgid "On-Screen Keyboard"
-msgstr ""
+msgstr "Näyttönäppäimistö"
 
 #: ui/main_mediacenter.qml:44
 #, fuzzy
@@ -208,19 +208,17 @@ msgid "Key press feedback"
 msgstr "Näppäinpainalluspalaute"
 
 #: ui/main_mediacenter.qml:64
-#, fuzzy
-#| msgid "Sound"
 msgctxt "This is a noun"
 msgid "Sound"
 msgstr "Ääni"
 
 #: ui/main_mediacenter.qml:65
 msgid "A sound will play when a key is pressed"
-msgstr ""
+msgstr "Toistetaan ääni näppäintä painettaessa"
 
 #: ui/main_mediacenter.qml:76
 msgid "If supported, the device will vibrate when a key is pressed"
-msgstr ""
+msgstr "Jos tuettu, laite värisee näppäintä painettaessa"
 
 #: ui/main_mediacenter.qml:86
 msgid "General"
@@ -229,32 +227,34 @@ msgstr "Perusasetukset"
 #: ui/main_mediacenter.qml:106
 msgctxt "'Alternate' is an adjective here"
 msgid "Alternate characters"
-msgstr ""
+msgstr "Vaihtoehtoiset merkit"
 
 #: ui/main_mediacenter.qml:115
 msgid "Show overlay when holding a key"
-msgstr ""
+msgstr "Näytä ponnahdusikkuna pidettäessä näppäintä alhaalla"
 
 #: ui/main_mediacenter.qml:116
 msgid ""
 "Long-pressing a key on a physical keyboard will show an overlay with "
 "alternate versions of the selected character, if available"
 msgstr ""
+"Fyysisen näppäimen painaminen pitkään näyttää ponnahdusikkunan, jossa on "
+"valitun merkin muunnelmia, jos käytettävissä"
 
 #: ui/main_mediacenter.qml:126 ui/main_mediacenter.qml:140
 msgctxt "How long a key must be held before triggering an action"
 msgid "Hold delay"
-msgstr ""
+msgstr "Pitoviive"
 
 #: ui/main_mediacenter.qml:127
 msgid "How long a key must be held before the overlay shows"
-msgstr ""
+msgstr "Kauanko näppäintä pitää painaa ennen ponnahdusikkunan näyttämistä"
 
 #: ui/main_mediacenter.qml:131 ui/main_mediacenter.qml:171
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 millisekunti"
+msgstr[1] "%1 millisekuntia"
 
 #~ msgid "Languages"
 #~ msgstr "Kielet"

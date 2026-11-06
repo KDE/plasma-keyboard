@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-09-17 08:45+0300\n"
+"PO-Revision-Date: 2026-11-05 13:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,13 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Add Layout"
-msgstr "שפות המקלדת"
+msgstr "הוספת פריסה"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -35,81 +33,63 @@ msgstr "סינון שפות"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "הצגת כל הפריסות"
 
 #: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריסה אחת"
+msgstr[1] "שתי פריסות"
+msgstr[2] "%1 פריסות"
+msgstr[3] "%1 פריסות"
 
 #: ui/KeyboardLayoutSelectorListView.qml:111
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "נבחרה שפה"
+msgstr "נבחרו %1 מתוך %2"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
 #: ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "שפות המקלדת"
+msgstr "פריסות מקלדת"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "מקלדת על המסך"
+msgstr "פריסות מקלדת על המסך"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "הוספת פריסה…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "No keyboard layouts selected"
-msgstr "נבחרה שפה"
+msgstr "לא נבחרו פריסות מקלדת"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid "The default keyboard layout for the system will be used."
-msgstr "לא נבחרו שפות. פריסת ברירת המחדל של המקלדת תהיה בשימוש."
+msgstr "פריסת ברירת המחדל של המקלדת תהיה בשימוש."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "העלאה למעלה"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "הורדה למטה"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "הסרה"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "שפות המקלדת"
+msgstr "פריסות מקלדת:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "הגדרה…"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
@@ -125,7 +105,7 @@ msgstr "רטט"
 
 #: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "חלונית תווים צצה"
 
 #: ui/main.qml:57
 msgid "General:"
@@ -173,10 +153,8 @@ msgid "Whether to vibrate on key press"
 msgstr "האם להפעיל רטט בלחיצות על המקשים"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "הצגת חלונית צצה בעת החזקת מקש"
+msgstr "הצגת חלונית תווים צצה בעת לחיצה על מקשי טקסט"
 
 #: ui/main_handset.qml:82
 msgctxt "@title:group"
@@ -196,27 +174,19 @@ msgid "On-Screen Keyboard"
 msgstr "מקלדת על המסך"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
-msgstr "לא נבחרו שפות, פריסת ברירת המחדל של המקלדת תהיה בשימוש"
+msgstr "לא נבחרו פריסות מקלדת, פריסת ברירת המחדל של המקלדת תהיה בשימוש"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "נבחרה שפה"
-msgstr[1] "נבחרו שתי שפות"
-msgstr[2] "נבחרו %1 שפות"
-msgstr[3] "נבחרו %1 שפות"
+msgstr[0] "נבחרה פריסת מקלדת"
+msgstr[1] "נבחרו שתי פריסות מקלדת"
+msgstr[2] "נבחרו %1 פריסות מקלדת"
+msgstr[3] "נבחרו %1 פריסות מקלדת"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
