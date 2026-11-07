@@ -13,6 +13,8 @@
 
 #if PLASMA_KEYBOARD_SOUNDS_ENABLED
 #include <QSoundEffect>
+
+#include <memory>
 #endif
 
 #if PLASMA_KEYBOARD_VIBRATION_ENABLED
@@ -44,7 +46,10 @@ public:
 private:
 #if PLASMA_KEYBOARD_SOUNDS_ENABLED
     void playSound();
-    QSoundEffect m_soundEffect;
+    void updateSoundEffect();
+
+    // Only created while sound is enabled, since it loads the multimedia backend
+    std::unique_ptr<QSoundEffect> m_soundEffect;
 #endif
 
 #if PLASMA_KEYBOARD_VIBRATION_ENABLED
