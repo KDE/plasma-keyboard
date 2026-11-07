@@ -24,8 +24,8 @@ Feedback::Feedback(QObject *parent)
 #endif
 
 #if PLASMA_KEYBOARD_SOUNDS_ENABLED
-    m_soundEffect.setSource(QUrl(u"qrc:/sounds/keyboard_tick2_quiet.wav"_s));
-    m_soundEffect.setVolume(0.6F);
+    updateSoundEffect();
+    connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::soundEnabledChanged, this, &Feedback::updateSoundEffect);
 #endif
 }
 
@@ -49,8 +49,26 @@ void Feedback::play(Event event)
 #if PLASMA_KEYBOARD_SOUNDS_ENABLED
 void Feedback::playSound()
 {
-    m_soundEffect.stop();
-    m_soundEffect.play();
+    if (!m_soundEffect) {
+        return;
+    }
+    m_soundEffect->stop();
+    m_soundEffect->play();
+}
+
+void Feedback::updateSoundEffect()
+{
+    if (!PlasmaKeyboardSettings::soundEnabled()) {
+        m_soundEffect.reset();
+        return;
+    }
+    if (m_soundEffect) {
+        return;
+    }
+
+    m_soundEffect = std::make_unique<QSoundEffect>();
+    m_soundEffect->setSource(QUrl(u"qrc:/sounds/keyboard_tick2_quiet.wav"_s));
+    m_soundEffect->setVolume(0.6F);
 }
 #endif
 
