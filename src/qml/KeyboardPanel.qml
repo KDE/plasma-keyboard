@@ -42,8 +42,8 @@ Kirigami.ShadowedRectangle {
         color: Qt.rgba(0, 0, 0, 0.3)
     }
 
-    x: hostWindow ? (hostWindow.width / 2) - (width / 2) : 0
-    y: hostWindow ? (hostWindow.height - height) : 0
+    x: parent ? Math.round((parent.width - width) / 2) : 0
+    y: parent ? parent.height - height : 0
     width: inputPanel.width > 0 ? inputPanel.width : 100
     height: inputPanel.height > 0 ? inputPanel.height : 100
 
