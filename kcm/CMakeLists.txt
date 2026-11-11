@@ -33,3 +33,5 @@ target_link_libraries(kcm_plasmakeyboard PRIVATE
     KF6::ConfigCore
     KF6::ConfigGui
 )
+
+add_subdirectory(text-expansion)

@@ -8,6 +8,8 @@
 
 #include "inputmethodconnection.h"
 
+#include "logging.h"
+
 #include "inputengine.h"
 #include "inputmethod_p.h"
 #include "inputmethodhints.h"
@@ -111,6 +113,7 @@ InputMethodConnection::InputMethodConnection(QObject *parent)
 
         if (m_overlayController) {
             m_overlayController->cancelOverlay();
+            m_overlayController->resetTextTracking();
         }
 
         if (!m_input.hasContext()) {
@@ -122,6 +125,8 @@ InputMethodConnection::InputMethodConnection(QObject *parent)
     });
 
     connect(&m_input, &InputPlugin::surroundingTextChanged, this, [this, syncBackendState] {
+        qCDebug(PlasmaKeyboard) << QStringLiteral("InputMethodConnection: Surrounding text changed") << m_input.surroundingText() << m_input.cursorPos()
+                                << m_input.anchorPos();
         syncBackendState();
 
         if (m_overlayController) {
