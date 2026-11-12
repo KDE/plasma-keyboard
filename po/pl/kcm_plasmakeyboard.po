@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-10-04 14:29+0200\n"
+"PO-Revision-Date: 2026-11-11 18:01+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,13 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Add Layout"
-msgstr "Języki klawiatury"
+msgstr "Dodaj układ"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -35,82 +33,62 @@ msgstr "Odfiltruj języki"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Pokaż wszystkie układy"
 
 #: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 układ"
+msgstr[1] "%1 układy"
+msgstr[2] "%1 układów"
 
 #: ui/KeyboardLayoutSelectorListView.qml:111
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "Wybrano %1 język"
+msgstr "%1 z %2 wybranych"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
 #: ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Języki klawiatury"
+msgstr "Układy klawiatury"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "Klawiatura ekranowa"
+msgstr "Układy klawiatury ekranowej"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "Dodaj układ…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "No keyboard layouts selected"
-msgstr "Wybrano %1 język"
+msgstr "Nie wybrano żadnego układu klawiatury"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid "The default keyboard layout for the system will be used."
-msgstr ""
-"Nie wybrano żadnego języka. Zostanie użyty domyślny układ klawiatury dla "
-"systemu."
+msgstr "Zostanie użyty domyślny układ klawiatury dla systemu."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "Przesuń w górę"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "Przesuń w dół"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Języki klawiatury"
+msgstr "Układy klawiatury:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Ustawienia…"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
@@ -126,7 +104,7 @@ msgstr "Drganie"
 
 #: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Okno wysuwne znaku"
 
 #: ui/main.qml:57
 msgid "General:"
@@ -174,10 +152,8 @@ msgid "Whether to vibrate on key press"
 msgstr "Określa czy zadrżeć po naciśnięciu klawisza"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Pokaż okno wysuwne po przytrzymaniu klawisza"
+msgstr "Pokaż okno wysuwne znaku po przytrzymaniu klawisza tekstowego"
 
 #: ui/main_handset.qml:82
 msgctxt "@title:group"
@@ -197,28 +173,20 @@ msgid "On-Screen Keyboard"
 msgstr "Klawiatura ekranowa"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Nie wybrano żadnego języka. Zostanie użyty domyślny układ klawiatury dla "
-"systemu"
+"Nie wybrano żadnego układu klawiatury, więc zostanie użyty domyślny układ "
+"klawiatury dla systemu"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "Wybrano %1 język"
-msgstr[1] "Wybrano %1 języki"
-msgstr[2] "Wybrano %1 języków"
+msgstr[0] "Wybrano %1 układ klawiatury"
+msgstr[1] "Wybrano %1 układy klawiatury"
+msgstr[2] "Wybrano %1 układów klawiatury"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
