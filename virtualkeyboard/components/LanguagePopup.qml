@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Templates as T
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.keyboard.virtualkeyboard
 
@@ -220,7 +221,7 @@ QQC2.Popup {
 
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: i18n("Settings")
+                            text: KI18n.i18n("Settings")
                             color: BreezeConstants.popupTextColor
                             elide: Text.ElideRight
                             font.family: BreezeConstants.fontFamily

@@ -8,17 +8,23 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 Kirigami.ScrollablePage {
     id: root
 
-    title: i18n("On-Screen Keyboard Layouts")
+    KI18nContext {
+        id: _tr
+        translationDomain: "kcm_plasmakeyboard"
+    }
+
+    title: _tr.i18n("On-Screen Keyboard Layouts")
 
     actions: [
         Kirigami.Action {
             id: addLayoutAction
-            text: i18n("Add Layout…")
+            text: _tr.i18n("Add Layout…")
             icon.name: "list-add-symbolic"
             onTriggered: kcm.push("AddKeyboardLayoutPage.qml")
         }
@@ -34,8 +40,8 @@ Kirigami.ScrollablePage {
             width: parent.width - Kirigami.Units.gridUnit * 4
             visible: layoutList.count === 0
             icon.name: "input-keyboard-virtual"
-            text: i18n("No keyboard layouts selected")
-            explanation: i18n("The default keyboard layout for the system will be used.")
+            text: _tr.i18n("No keyboard layouts selected")
+            explanation: _tr.i18n("The default keyboard layout for the system will be used.")
             helpfulAction: addLayoutAction
         }
 
@@ -62,7 +68,7 @@ Kirigami.ScrollablePage {
 
                 QQC2.ToolButton {
                     icon.name: "arrow-up-symbolic"
-                    text: i18nc("Move the layout up a row", "Move Up")
+                    text: _tr.i18nc("Move the layout up a row", "Move Up")
                     display: QQC2.AbstractButton.IconOnly
                     visible: layoutList.count > 1
                     enabled: layoutDelegate.index > 0
@@ -75,7 +81,7 @@ Kirigami.ScrollablePage {
 
                 QQC2.ToolButton {
                     icon.name: "arrow-down-symbolic"
-                    text: i18nc("Move the layout down a row", "Move Down")
+                    text: _tr.i18nc("Move the layout down a row", "Move Down")
                     display: QQC2.AbstractButton.IconOnly
                     visible: layoutList.count > 1
                     enabled: layoutDelegate.index < layoutList.count - 1
@@ -88,7 +94,7 @@ Kirigami.ScrollablePage {
 
                 QQC2.ToolButton {
                     icon.name: "list-remove-symbolic"
-                    text: i18nc("Remove the layout", "Remove")
+                    text: _tr.i18nc("Remove the layout", "Remove")
                     display: QQC2.AbstractButton.IconOnly
                     onClicked: kcm.disableKeyboardLayout(layoutDelegate.layoutId)
 

@@ -8,12 +8,18 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 
 ListView {
     id: root
 
     model: kcm.availableKeyboardLayoutGroups
+
+    KI18nContext {
+        id: _tr
+        translationDomain: "kcm_plasmakeyboard"
+    }
 
     headerPositioning: ListView.OverlayHeader
     header: QQC2.ToolBar {
@@ -34,8 +40,8 @@ ListView {
 
             Kirigami.SearchField {
                 id: searchField
-                placeholderText: i18n("Filter languages…")
-                Accessible.name: i18n("Filter languages")
+                placeholderText: _tr.i18n("Filter languages…")
+                Accessible.name: _tr.i18n("Filter languages")
 
                 Layout.fillWidth: true
 
@@ -48,7 +54,7 @@ ListView {
             QQC2.CheckBox {
                 Layout.topMargin: Kirigami.Units.smallSpacing
 
-                text: i18nc("@option:check", "Show all layouts")
+                text: _tr.i18nc("@option:check", "Show all layouts")
                 visible: kcm.hasHiddenKeyboardLayouts
                 checked: !kcm.keyboardLayoutFormFactorFilterEnabled
 
@@ -107,8 +113,8 @@ ListView {
                         Layout.fillWidth: true
                         text: {
                             const selectionText = selectedCount === 0
-                                ? i18np("%1 layout", "%1 layouts", visibleLayoutCount)
-                                : i18n("%1 of %2 selected", selectedCount, visibleLayoutCount);
+                                  ? _tr.i18np("%1 layout", "%1 layouts", visibleLayoutCount)
+                                  : _tr.i18n("%1 of %2 selected", selectedCount, visibleLayoutCount);
                             return selectionText;
                         }
                         elide: Text.ElideRight

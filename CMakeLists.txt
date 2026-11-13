@@ -20,6 +20,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 include(KDEInstallDirs) # Should be included first so its variables are available to other modules.
 
 include(ECMDeprecationSettings)
+include(ECMFindQmlModule)
 include(ECMInstallIcons)
 include(ECMQmlModule)
 include(ECMQtDeclareLoggingCategory)
@@ -66,6 +67,8 @@ ecm_set_disabled_deprecation_versions(QT 6.11.0
 )
 
 ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX PLASMA_KEYBOARD VERSION_HEADER plasma_keyboard_version.h)
+
+ecm_find_qmlmodule(org.kde.ki18n REQUIRED)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(XKBCommon REQUIRED IMPORTED_TARGET xkbcommon)

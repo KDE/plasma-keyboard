@@ -9,11 +9,17 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
+import org.kde.ki18n
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
 KCM.SimpleKCM {
     id: root
+
+    KI18nContext {
+        id: _tr
+        translationDomain: "kcm_plasmakeyboard"
+    }
 
     Kirigami.FormLayout {
         id: formLayout
@@ -21,16 +27,16 @@ KCM.SimpleKCM {
         width: flickable.width
 
         QQC2.Button {
-            Kirigami.FormData.label: i18n("Keyboard layouts:")
-            text: i18n("Configure…")
+            Kirigami.FormData.label: _tr.i18n("Keyboard layouts:")
+            text: _tr.i18n("Configure…")
             icon.name: "languages"
             onClicked: kcm.push("KeyboardLayoutsPage.qml")
         }
 
         QQC2.CheckBox {
             id: soundsEnabled
-            Kirigami.FormData.label: i18n("Key press feedback:")
-            text: i18n("Sound")
+            Kirigami.FormData.label: _tr.i18n("Key press feedback:")
+            text: _tr.i18n("Sound")
 
             checked: kcm.plasmaKeyboardSettings.soundEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.soundEnabled = checked
@@ -38,7 +44,7 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: vibrationEnabled
-            text: i18n("Vibration")
+            text: _tr.i18n("Vibration")
 
             checked: kcm.plasmaKeyboardSettings.vibrationEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
@@ -46,7 +52,7 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: characterPopupEnabled
-            text: i18n("Character popup")
+            text: _tr.i18n("Character popup")
 
             checked: kcm.plasmaKeyboardSettings.characterPopupEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.characterPopupEnabled = checked
@@ -54,8 +60,8 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: keyboardNavigationEnabled
-            Kirigami.FormData.label: i18n("General:")
-            text: i18n("Keyboard navigation")
+            Kirigami.FormData.label: _tr.i18n("General:")
+            text: _tr.i18n("Keyboard navigation")
 
             checked: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled = checked
@@ -63,7 +69,7 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: autoCapitalizationEnabled
-            text: i18n("Auto-capitalization")
+            text: _tr.i18n("Auto-capitalization")
 
             checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled = checked
@@ -71,8 +77,8 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: diacriticsCheckbox
-            Kirigami.FormData.label: i18n("Alternate characters:")
-            text: i18n("Show popup when holding a key")
+            Kirigami.FormData.label: _tr.i18n("Alternate characters:")
+            text: _tr.i18n("Show popup when holding a key")
 
             checked: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled
             onCheckedChanged: kcm.plasmaKeyboardSettings.diacriticsPopupEnabled = checked
@@ -80,7 +86,7 @@ KCM.SimpleKCM {
 
         QQC2.SpinBox {
             id: diacriticsDelaySpinBox
-            Kirigami.FormData.label: i18n("Hold delay:")
+            Kirigami.FormData.label: _tr.i18n("Hold delay:")
             from: 100
             to: 1500
             stepSize: 50
@@ -90,7 +96,7 @@ KCM.SimpleKCM {
 
             // Include the `milliseconds` suffix in the spinbox instead of the label
             textFromValue: function (value) {
-                return value + " " + i18n("milliseconds");
+                return value + " " + _tr.i18n("milliseconds");
             }
 
             // Parse the integer value from the spinbox text, ignoring the suffix

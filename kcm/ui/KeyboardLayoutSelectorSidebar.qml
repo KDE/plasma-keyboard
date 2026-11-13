@@ -9,13 +9,19 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.bigscreen as Bigscreen
+import org.kde.ki18n
 
 Bigscreen.SidebarOverlay {
     id: root
 
+    KI18nContext {
+        id: _tr
+        translationDomain: "kcm_plasmakeyboard"
+    }
+
     openFocusItem: layoutList
     header: Bigscreen.SidebarOverlayHeader {
-        title: i18n("Keyboard Layouts")
+        title: _tr.i18n("Keyboard Layouts")
     }
 
     content: QQC2.ScrollView {

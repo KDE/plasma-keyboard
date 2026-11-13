@@ -8,12 +8,18 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
-import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
+import org.kde.ki18n
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 KCM.SimpleKCM {
     id: root
+
+    KI18nContext {
+        id: _tr
+        translationDomain: "kcm_plasmakeyboard"
+    }
 
     leftPadding: 0
     rightPadding: 0
@@ -26,19 +32,19 @@ KCM.SimpleKCM {
 
         FormCard.FormCard {
             FormCard.FormTextFieldDelegate {
-                label: i18n("Test the virtual keyboard…")
+                label: _tr.i18n("Test the virtual keyboard…")
             }
         }
 
         FormCard.FormHeader {
-            title: i18nc("@title:group", "Feedback")
+            title: _tr.i18nc("@title:group", "Feedback")
         }
 
         FormCard.FormCard {
             FormCard.FormSwitchDelegate {
                 id: soundsEnabled
-                text: i18n("Sound")
-                description: i18n("Whether to emit a sound on key press")
+                text: _tr.i18n("Sound")
+                description: _tr.i18n("Whether to emit a sound on key press")
 
                 checked: kcm.plasmaKeyboardSettings.soundEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.soundEnabled = checked
@@ -48,8 +54,8 @@ KCM.SimpleKCM {
 
             FormCard.FormSwitchDelegate {
                 id: vibrationEnabled
-                text: i18n("Vibration")
-                description: i18n("Whether to vibrate on key press")
+                text: _tr.i18n("Vibration")
+                description: _tr.i18n("Whether to vibrate on key press")
 
                 checked: kcm.plasmaKeyboardSettings.vibrationEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.vibrationEnabled = checked
@@ -59,8 +65,8 @@ KCM.SimpleKCM {
 
             FormCard.FormSwitchDelegate {
                 id: characterPopupEnabled
-                text: i18n("Character popup")
-                description: i18n("Show a character popup when pressing text keys")
+                text: _tr.i18n("Character popup")
+                description: _tr.i18n("Show a character popup when pressing text keys")
 
                 checked: kcm.plasmaKeyboardSettings.characterPopupEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.characterPopupEnabled = checked
@@ -72,21 +78,21 @@ KCM.SimpleKCM {
 
             FormCard.FormButtonDelegate {
                 id: layoutList
-                text: i18n("Keyboard Layouts")
+                text: _tr.i18n("Keyboard Layouts")
                 icon.name: 'languages'
                 onClicked: kcm.push("KeyboardLayoutsPage.qml")
             }
         }
 
         FormCard.FormHeader {
-            title: i18nc("@title:group", "General")
+            title: _tr.i18nc("@title:group", "General")
         }
 
         FormCard.FormCard {
             FormCard.FormSwitchDelegate {
                 id: keyboardNavigationEnabled
-                text: i18n("Keyboard navigation")
-                description: i18n("Whether to use the arrow keys to navigate the keyboard")
+                text: _tr.i18n("Keyboard navigation")
+                description: _tr.i18n("Whether to use the arrow keys to navigate the keyboard")
 
                 checked: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.keyboardNavigationEnabled = checked
@@ -96,8 +102,8 @@ KCM.SimpleKCM {
 
             FormCard.FormSwitchDelegate {
                 id: autoCapitalizationEnabled
-                text: i18n("Auto-capitalization")
-                description: i18n("Automatically capitalize the first letter of sentences")
+                text: _tr.i18n("Auto-capitalization")
+                description: _tr.i18n("Automatically capitalize the first letter of sentences")
 
                 checked: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled
                 onCheckedChanged: kcm.plasmaKeyboardSettings.autoCapitalizationEnabled = checked
