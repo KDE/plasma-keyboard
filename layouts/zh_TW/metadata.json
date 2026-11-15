@@ -1,7 +1,19 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.zh_TW",
-        "Name": "繁體中文（台灣）"
+        "Name": "繁體中文（台灣）",
+        "Name[ar]": "繁體中文（台灣）",
+        "Name[ca@valencia]": "繁體中文（台灣）",
+        "Name[ca]": "繁體中文（台灣）",
+        "Name[cs]": "Tradiční čínština (Tchaj-wan)",
+        "Name[pt_BR]": "Chinês tradicional (Taiwan)",
+        "Name[sl]": "繁體中文（台灣）",
+        "Name[sr@ijekavian]": "кинески традиционални (Тајван)",
+        "Name[sr@ijekavianlatin]": "kineski tradicionalni (Tajvan)",
+        "Name[sr@latin]": "kineski tradicionalni (Tajvan)",
+        "Name[sr]": "кинески традиционални (Тајван)",
+        "Name[tr]": "繁體中文（台灣）",
+        "Name[uk]": "繁體中文（台灣）"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

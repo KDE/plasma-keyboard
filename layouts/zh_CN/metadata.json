@@ -1,7 +1,19 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.zh_CN",
-        "Name": "简体中文"
+        "Name": "简体中文",
+        "Name[ar]": "简体中文",
+        "Name[ca@valencia]": "简体中文",
+        "Name[ca]": "简体中文",
+        "Name[cs]": "Zjednodušená čínština",
+        "Name[pt_BR]": "Chinês simplificado",
+        "Name[sl]": "简体中文",
+        "Name[sr@ijekavian]": "кинески поједностављени",
+        "Name[sr@ijekavianlatin]": "kineski pojednostavljeni",
+        "Name[sr@latin]": "kineski pojednostavljeni",
+        "Name[sr]": "кинески поједностављени",
+        "Name[tr]": "简体中文",
+        "Name[uk]": "简体中文"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

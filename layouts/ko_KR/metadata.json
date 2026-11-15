@@ -1,7 +1,19 @@
 {
     "KPlugin": {
         "Id": "org.kde.plasma.keyboard.ko",
-        "Name": "한국어"
+        "Name": "한국어",
+        "Name[ar]": "한국어",
+        "Name[ca@valencia]": "한국어",
+        "Name[ca]": "한국어",
+        "Name[cs]": "Korejština",
+        "Name[pt_BR]": "Coreano",
+        "Name[sl]": "한국어",
+        "Name[sr@ijekavian]": "корејски",
+        "Name[sr@ijekavianlatin]": "korejski",
+        "Name[sr@latin]": "korejski",
+        "Name[sr]": "корејски",
+        "Name[tr]": "한국어",
+        "Name[uk]": "한국어"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
