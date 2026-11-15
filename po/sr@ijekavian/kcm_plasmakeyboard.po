@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-10-06 10:30+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -18,10 +18,8 @@ msgstr ""
 "X-Environment: kde\n"
 
 #: ui/AddKeyboardLayoutPage.qml:10
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Add Layout"
-msgstr "Језици тастатуре"
+msgstr "Додавање распореда"
 
 #: ui/KeyboardLayoutSelectorListView.qml:37
 msgid "Filter languages…"
@@ -34,83 +32,63 @@ msgstr "Филтрирај језике"
 #: ui/KeyboardLayoutSelectorListView.qml:51
 msgctxt "@option:check"
 msgid "Show all layouts"
-msgstr ""
+msgstr "Прикажи све распореде"
 
 #: ui/KeyboardLayoutSelectorListView.qml:110
 msgid "%1 layout"
 msgid_plural "%1 layouts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 распоред"
+msgstr[1] "%1 распореда"
+msgstr[2] "%1 распореда"
+msgstr[3] "један распоред"
 
 #: ui/KeyboardLayoutSelectorListView.qml:111
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "%1 of %2 selected"
-msgstr "Изабран %1 језик"
+msgstr "Изабрано %1 од %2"
 
 #: ui/KeyboardLayoutSelectorSidebar.qml:18 ui/main_handset.qml:75
 #: ui/main_mediacenter.qml:40
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard Layouts"
-msgstr "Језици тастатуре"
+msgstr "Распореди тастатуре"
 
 #: ui/KeyboardLayoutsPage.qml:16
-#, fuzzy
-#| msgid "On-Screen Keyboard"
 msgid "On-Screen Keyboard Layouts"
-msgstr "Тастатура на екрану"
+msgstr "Распореди тастатуре на екрану"
 
 #: ui/KeyboardLayoutsPage.qml:21
 msgid "Add Layout…"
-msgstr ""
+msgstr "Додај распоред…"
 
 #: ui/KeyboardLayoutsPage.qml:37
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgid "No keyboard layouts selected"
-msgstr "Изабран %1 језик"
+msgstr "Није изабран ниједан распоред тастатуре"
 
 #: ui/KeyboardLayoutsPage.qml:38
-#, fuzzy
-#| msgid ""
-#| "No languages selected. The default keyboard layout for the system will be "
-#| "used."
 msgid "The default keyboard layout for the system will be used."
-msgstr ""
-"Није изабран ниједан језик. Користиће се подразумијевани распоред тастатуре "
-"система."
+msgstr "Користиће се подразумијевани распоред тастатуре система."
 
 #: ui/KeyboardLayoutsPage.qml:65
 msgctxt "Move the layout up a row"
 msgid "Move Up"
-msgstr ""
+msgstr "Помјери нагоре"
 
 #: ui/KeyboardLayoutsPage.qml:78
 msgctxt "Move the layout down a row"
 msgid "Move Down"
-msgstr ""
+msgstr "Помјери надоље"
 
 #: ui/KeyboardLayoutsPage.qml:91
 msgctxt "Remove the layout"
 msgid "Remove"
-msgstr ""
+msgstr "Уклони"
 
 #: ui/main.qml:24
-#, fuzzy
-#| msgid "Keyboard Languages"
 msgid "Keyboard layouts:"
-msgstr "Језици тастатуре"
+msgstr "Распореди тастатуре:"
 
 #: ui/main.qml:25
 msgid "Configure…"
-msgstr ""
+msgstr "Подеси…"
 
 #: ui/main.qml:32
 msgid "Key press feedback:"
@@ -126,7 +104,7 @@ msgstr "Вибрација"
 
 #: ui/main.qml:49 ui/main_handset.qml:62
 msgid "Character popup"
-msgstr ""
+msgstr "Искакач знакова"
 
 #: ui/main.qml:57
 msgid "General:"
@@ -174,10 +152,8 @@ msgid "Whether to vibrate on key press"
 msgstr "Да ли вибрирати при притиску тастера"
 
 #: ui/main_handset.qml:63
-#, fuzzy
-#| msgid "Show popup when holding a key"
 msgid "Show a character popup when pressing text keys"
-msgstr "Прикажи искакач при држању тастера"
+msgstr "Прикажи искакач знакова при притиску тастера за текст"
 
 #: ui/main_handset.qml:82
 msgctxt "@title:group"
@@ -197,29 +173,21 @@ msgid "On-Screen Keyboard"
 msgstr "Тастатура на екрану"
 
 #: ui/main_mediacenter.qml:44
-#, fuzzy
-#| msgid ""
-#| "No languages selected, the default keyboard layout for the system will be "
-#| "used"
 msgid ""
 "No keyboard layouts selected, the default keyboard layout for the system "
 "will be used"
 msgstr ""
-"Није изабран ниједан језик, користиће се подразумијевани распоред тастатуре "
-"система"
+"Није изабран ниједан распоред тастатуре, користиће се подразумијевани "
+"распоред тастатуре система"
 
 #: ui/main_mediacenter.qml:46
-#, fuzzy
-#| msgctxt "%1 is the number of enabled locales"
-#| msgid "%1 language selected"
-#| msgid_plural "%1 languages selected"
 msgctxt "%1 is the number of enabled keyboard layouts"
 msgid "%1 keyboard layout selected"
 msgid_plural "%1 keyboard layouts selected"
-msgstr[0] "Изабран %1 језик"
-msgstr[1] "Изабрана %1 језика"
-msgstr[2] "Изабрано %1 језика"
-msgstr[3] "Изабран један језик"
+msgstr[0] "Изабран %1 распоред тастатуре"
+msgstr[1] "Изабрана %1 распореда тастатуре"
+msgstr[2] "Изабрано %1 распореда тастатуре"
+msgstr[3] "Изабран један распоред тастатуре"
 
 #: ui/main_mediacenter.qml:55
 msgid "Key press feedback"
@@ -275,9 +243,3 @@ msgstr[0] "%1 милисекунда"
 msgstr[1] "%1 милисекунде"
 msgstr[2] "%1 милисекунди"
 msgstr[3] "%1 милисекунда"
-
-#~ msgid "Languages"
-#~ msgstr "Језици"
-
-#~ msgid "Automatically capitalize the beginning of sentences and proper nouns"
-#~ msgstr "Аутоматски пиши великим словом почетак реченице и властита имена"
