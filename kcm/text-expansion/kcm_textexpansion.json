@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Kristen McWilliam",
+                "Email": "kristen@kde.org"
+            }
+        ],
+        "Description": "Configure text expansion shortcuts for Plasma Keyboard",
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_textexpansion",
+        "FormFactors": [
+            "desktop",
+            "tablet",
+            "handset"
+        ],
+        "Icon": "insert-text-symbolic",
+        "License": "GPL",
+        "Name": "Text Expansion",
+        "Website": "https://kde.org"
+    },
+    "X-KDE-Keywords": "text,expansion,abbreviation,snippet,shortcut",
+    "X-KDE-System-Settings-Parent-Category": "keyboard"
+}

@@ -100,7 +100,7 @@ OverlayTriggerResult LongPressTrigger::processEvent(OverlayInputEvent eventType,
 
     case OverlayInputEvent::KeyRelease:
     case OverlayInputEvent::PreeditChanged:
-    case OverlayInputEvent::TextCommitted:
+    case OverlayInputEvent::TextBeforeCursorChanged:
         // These are handled by the controller
         break;
     }
