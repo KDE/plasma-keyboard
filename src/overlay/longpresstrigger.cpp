@@ -135,7 +135,12 @@ QStringList LongPressTrigger::candidates(const QString &baseText) const
     // Preserve case
     if (baseText.at(0).isUpper()) {
         for (auto &s : result) {
-            s = s.toUpper();
+            if (s == u"ß"_s) {
+                // Pick the right German "sharp S": https://unicode.org/faq/casemap_charprop.html#11
+                s = u"ẞ"_s;
+            } else {
+                s = s.toUpper();
+            }
         }
     }
 
