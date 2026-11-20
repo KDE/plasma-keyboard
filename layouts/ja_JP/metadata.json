@@ -3,21 +3,25 @@
         "Id": "org.kde.plasma.keyboard.ja",
         "Name": "日本語",
         "Name[ar]": "日本語",
+        "Name[bg]": "日本語",
         "Name[ca@valencia]": "日本語",
         "Name[ca]": "日本語",
         "Name[cs]": "Japonština",
         "Name[es]": "日本語",
         "Name[fr]": "日本語",
+        "Name[it]": "日本語",
         "Name[nl]": "日本語",
         "Name[pt_BR]": "Japonês",
         "Name[ru]": "Японская",
+        "Name[sk]": "日本語",
         "Name[sl]": "日本語",
         "Name[sr@ijekavian]": "јапански",
         "Name[sr@ijekavianlatin]": "japanski",
         "Name[sr@latin]": "japanski",
         "Name[sr]": "јапански",
         "Name[tr]": "日本語",
-        "Name[uk]": "日本語"
+        "Name[uk]": "日本語",
+        "Name[zh_TW]": "日文"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [

@@ -3,21 +3,25 @@
         "Id": "org.kde.plasma.keyboard.zh_CN",
         "Name": "简体中文",
         "Name[ar]": "简体中文",
+        "Name[bg]": "简体中文",
         "Name[ca@valencia]": "简体中文",
         "Name[ca]": "简体中文",
         "Name[cs]": "Zjednodušená čínština",
         "Name[es]": "简体中文",
         "Name[fr]": "简体中文",
+        "Name[it]": "简体中文",
         "Name[nl]": "简体中文",
         "Name[pt_BR]": "Chinês simplificado",
         "Name[ru]": "Китайская (упрощённая)",
+        "Name[sk]": "简体中文",
         "Name[sl]": "简体中文",
         "Name[sr@ijekavian]": "кинески поједностављени",
         "Name[sr@ijekavianlatin]": "kineski pojednostavljeni",
         "Name[sr@latin]": "kineski pojednostavljeni",
         "Name[sr]": "кинески поједностављени",
         "Name[tr]": "简体中文",
-        "Name[uk]": "简体中文"
+        "Name[uk]": "简体中文",
+        "Name[zh_TW]": "简体中文"
     },
     "X-Plasma-Keyboard": {
         "KeyboardLayouts": [
