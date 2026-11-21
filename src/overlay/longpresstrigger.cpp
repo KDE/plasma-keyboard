@@ -7,26 +7,19 @@
 #include "longpresstrigger.h"
 
 #include "diacriticsdataloader.h"
-#include "inputengine.h"
 #include "logging.h"
 #include "plasmakeyboardsettings.h"
 
 #include <KLocalizedString>
 
+#include <QLocale>
+
 using namespace Qt::StringLiterals;
 
-LongPressTrigger::LongPressTrigger(InputEngine *inputEngine, QObject *parent)
+LongPressTrigger::LongPressTrigger(QObject *parent)
     : OverlayTrigger(parent)
-    , m_inputEngine(inputEngine)
 {
     m_diacriticsMap = DiacriticsDataLoader::loadMap(currentLocales());
-
-    if (m_inputEngine) {
-        // Reload the diacritics map whenever the user changes the enabled locales
-        // in the KCM, so the keyboard reflects the new locale ordering without
-        // requiring a restart.
-        connect(m_inputEngine, &InputEngine::localeChanged, this, &LongPressTrigger::reloadMap);
-    }
 
     m_holdThresholdMs = PlasmaKeyboardSettings::self()->diacriticsHoldThresholdMs();
     connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::diacriticsHoldThresholdMsChanged, this, [this]() {
@@ -42,6 +35,29 @@ QString LongPressTrigger::triggerId() const
 QString LongPressTrigger::displayName() const
 {
     return i18nc("@label Name of the diacritics overlay trigger", "Diacritics (Long Press)");
+}
+
+void LongPressTrigger::setKeyboardLayouts(const QStringList &layouts, uint activeLayout)
+{
+    QStringList orderedLayouts = layouts;
+    if (activeLayout < uint(orderedLayouts.size())) {
+        orderedLayouts.move(activeLayout, 0);
+    }
+
+    QStringList locales;
+    for (const QString &layout : std::as_const(orderedLayouts)) {
+        const QString locale = DiacriticsDataLoader::localeForKeyboardLayout(layout);
+        if (!locale.isEmpty() && !locales.contains(locale)) {
+            locales.append(locale);
+        }
+    }
+
+    if (locales == m_layoutLocales) {
+        return;
+    }
+
+    m_layoutLocales = locales;
+    reloadMap();
 }
 
 void LongPressTrigger::reloadMap()
@@ -175,11 +191,12 @@ bool LongPressTrigger::shouldHandleKey(const QKeyEvent *event) const
 
 QStringList LongPressTrigger::currentLocales() const
 {
-    if (!m_inputEngine || m_inputEngine->locale().isEmpty()) {
-        return {};
+    if (!m_layoutLocales.isEmpty()) {
+        return m_layoutLocales;
     }
 
-    return {m_inputEngine->locale()};
+    // Fall back to the system language
+    return {QLocale::system().name()};
 }
 
 #include "moc_longpresstrigger.cpp"

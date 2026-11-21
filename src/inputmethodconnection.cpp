@@ -92,7 +92,9 @@ InputMethodConnection::InputMethodConnection(QObject *parent)
 {
     m_input.setGrabbing(true);
 
-    m_overlayController->registerTrigger(new LongPressTrigger(m_virtualKeyboardContext->inputEngine(), m_overlayController));
+    auto longPressTrigger = new LongPressTrigger(m_overlayController);
+    connect(&m_input, &InputPlugin::keyboardLayoutsChanged, longPressTrigger, &LongPressTrigger::setKeyboardLayouts);
+    m_overlayController->registerTrigger(longPressTrigger);
     m_overlayController->registerTrigger(new PrefixQueryTrigger(m_overlayController));
     m_overlayController->registerTrigger(new TextExpansionTrigger(m_overlayController));
 

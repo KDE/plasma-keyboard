@@ -13,8 +13,6 @@
 #include <QStringList>
 #include <QTimer>
 
-class InputEngine;
-
 /**
  * Trigger that activates an overlay after a long-press on a key.
  *
@@ -26,7 +24,7 @@ class LongPressTrigger : public OverlayTrigger
     Q_OBJECT
 
 public:
-    explicit LongPressTrigger(InputEngine *inputEngine, QObject *parent = nullptr);
+    explicit LongPressTrigger(QObject *parent = nullptr);
     ~LongPressTrigger() override = default;
 
     QString triggerId() const override;
@@ -44,11 +42,13 @@ public:
     QStringList candidates(const QString &baseText) const override;
 
     /**
-     * Reload the diacritics map from data files using the currently enabled
-     * locales from PlasmaKeyboardSettings.
-     *
-     * Call this when the user changes the enabled locale list at runtime so
-     * the updated candidates take effect without restarting the keyboard.
+     * Use the locales of the given physical keyboard layouts (XKB layout names).
+     */
+    void setKeyboardLayouts(const QStringList &layouts, uint activeLayout);
+
+    /**
+     * Reload the diacritics map using the keyboard layout locales, or the
+     * system locale if none have diacritics data.
      */
     void reloadMap();
 
@@ -59,7 +59,8 @@ private:
     bool shouldHandleKey(const QKeyEvent *event) const;
     QStringList currentLocales() const;
 
-    InputEngine *m_inputEngine = nullptr;
+    /** Diacritics locales for the physical keyboard layouts, active layout first. */
+    QStringList m_layoutLocales;
 
     /** Map of base characters to their diacritic variants. */
     QHash<QChar, QStringList> m_diacriticsMap;

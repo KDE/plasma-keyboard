@@ -109,6 +109,13 @@ public:
      */
     static QHash<QChar, QStringList> mergeMaps(const QHash<QChar, QStringList> &base, const QList<QHash<QChar, QStringList>> &localeMaps);
 
+    /**
+     * Find the diacritics locale for an XKB layout name (e.g. "French (Switzerland)").
+     *
+     * @return The locale code, or an empty string if there is no matching data file.
+     */
+    static QString localeForKeyboardLayout(const QString &layoutName);
+
 private:
     /**
      * Parse a diacritics JSON file at the given path.

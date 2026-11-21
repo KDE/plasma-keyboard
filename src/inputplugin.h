@@ -9,6 +9,7 @@
 
 #include <QKeyEvent>
 #include <QObject>
+#include <QStringList>
 #include <memory>
 
 class InputMethod;
@@ -105,6 +106,8 @@ Q_SIGNALS:
      */
     void keyPressed(QKeyEvent *keyEvent);
     void keyReleased(QKeyEvent *keyEvent);
+
+    void keyboardLayoutsChanged(const QStringList &layouts, uint activeLayout);
 
 protected:
     // move to private when this facade wraps everything
