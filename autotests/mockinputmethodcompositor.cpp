@@ -9,6 +9,7 @@
 #include <QGuiApplication>
 #include <QProcess>
 #include <QProcessEnvironment>
+#include <QScopeGuard>
 #include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QTimer>
@@ -937,6 +938,26 @@ private Q_SLOTS:
         QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
         QCOMPARE(commitStringSpy.count(), 1);
         QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("½"));
+    }
+
+    /** Test that the diacritics ordering follows the locale of the physical keyboard layout. */
+    void testDiacriticsUseKeymapLocale()
+    {
+        // German layout: "a" should offer "ä" first rather than the base ordering's "á"
+        setKeymap("de");
+        auto restoreKeymap = qScopeGuard([this] {
+            setKeymap("us");
+        });
+
+        QSignalSpy overlaySpy(m_inputPanel.get(), &InputPanelV1::overlayPanelRequested);
+        sendKey(KEY_A, 2000);
+        QVERIFY(overlaySpy.count() || overlaySpy.wait());
+
+        QSignalSpy commitStringSpy(m_inputMethod->context(), &InputMethodContext::commitStringChanged);
+        sendKey(KEY_1, 10);
+        QVERIFY(commitStringSpy.count() || commitStringSpy.wait());
+        QCOMPARE(commitStringSpy.count(), 1);
+        QCOMPARE(commitStringSpy.first().first().toString(), QStringLiteral("ä"));
     }
 
     /**

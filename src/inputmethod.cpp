@@ -152,6 +152,19 @@ void Keyboard::keyboard_keymap(uint32_t format, int32_t fd, uint32_t size)
         mXkbState.reset(xkb_state_new(mXkbKeymap.get()));
     else
         mXkbState.reset(nullptr);
+
+    QStringList layouts;
+    if (mXkbKeymap) {
+        const xkb_layout_index_t count = xkb_keymap_num_layouts(mXkbKeymap.get());
+        for (xkb_layout_index_t i = 0; i < count; ++i) {
+            layouts.append(QString::fromUtf8(xkb_keymap_layout_get_name(mXkbKeymap.get(), i)));
+        }
+    }
+    if (layouts != m_layouts) {
+        m_layouts = layouts;
+        m_activeLayout = 0;
+        Q_EMIT layoutsChanged(m_layouts, m_activeLayout);
+    }
 }
 
 void Keyboard::keyboard_key(uint32_t serial, uint32_t time, uint32_t key, uint32_t state)
@@ -191,6 +204,11 @@ void Keyboard::keyboard_key(uint32_t serial, uint32_t time, uint32_t key, uint32
 void Keyboard::keyboard_modifiers(uint32_t serial, uint32_t mods_depressed, uint32_t mods_latched, uint32_t mods_locked, uint32_t group)
 {
     xkb_state_update_mask(mXkbState.get(), mods_depressed, mods_latched, mods_locked, 0, 0, group);
+
+    if (group != m_activeLayout) {
+        m_activeLayout = group;
+        Q_EMIT layoutsChanged(m_layouts, m_activeLayout);
+    }
 
     // currently not filterable
     m_parent->modifiers(serial, mods_depressed, mods_latched, mods_locked, group);

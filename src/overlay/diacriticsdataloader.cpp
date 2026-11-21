@@ -13,8 +13,13 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonParseError>
+#include <QLocale>
 #include <QSet>
 #include <QStandardPaths>
+
+#include <xkbcommon/xkbregistry.h>
+
+#include <memory>
 
 using namespace Qt::StringLiterals;
 
@@ -148,6 +153,46 @@ QHash<QChar, QStringList> DiacriticsDataLoader::mergeMaps(const QHash<QChar, QSt
     }
 
     return merged;
+}
+
+QString DiacriticsDataLoader::localeForKeyboardLayout(const QString &layoutName)
+{
+    // XKB layout name -> locale (e.g. "French (Switzerland)" -> fr_CH), read once from the XKB registry
+    static const QHash<QString, QLocale> layoutLocales = [] {
+        QHash<QString, QLocale> result;
+        std::unique_ptr<rxkb_context, decltype(&rxkb_context_unref)> context(rxkb_context_new(RXKB_CONTEXT_NO_FLAGS), &rxkb_context_unref);
+        if (!context || !rxkb_context_parse_default_ruleset(context.get())) {
+            return result;
+        }
+
+        for (rxkb_layout *layout = rxkb_layout_first(context.get()); layout; layout = rxkb_layout_next(layout)) {
+            rxkb_iso639_code *language = rxkb_layout_get_iso639_first(layout);
+            rxkb_iso3166_code *territory = rxkb_layout_get_iso3166_first(layout);
+            if (!language) {
+                continue;
+            }
+
+            QString code = QString::fromLatin1(rxkb_iso639_code_get_code(language));
+            if (territory) {
+                code += u'_' + QString::fromLatin1(rxkb_iso3166_code_get_code(territory));
+            }
+            result.insert(QString::fromUtf8(rxkb_layout_get_description(layout)), QLocale(code));
+        }
+        return result;
+    }();
+
+    const QLocale locale = layoutLocales.value(layoutName, QLocale::c());
+    if (locale.language() == QLocale::C) {
+        return {};
+    }
+
+    // Fall back to the language's default locale (e.g. fr_CH -> fr_FR) if there is no exact match
+    for (const QString &name : {locale.name(), QLocale(locale.language()).name()}) {
+        if (!QStandardPaths::locate(QStandardPaths::GenericDataLocation, kDataSubPath + name + u".json"_s).isEmpty()) {
+            return name;
+        }
+    }
+    return {};
 }
 
 // ── Private helpers ───────────────────────────────────────────────────────────

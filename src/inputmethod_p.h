@@ -8,6 +8,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QStringList>
 #include <QtGui/private/qxkbcommon_p.h>
 #include <QtWaylandClient/QWaylandClientExtensionTemplate>
 
@@ -97,6 +98,7 @@ public:
 Q_SIGNALS:
     void keyPressed(QKeyEvent *keyEvent);
     void keyReleased(QKeyEvent *keyEvent);
+    void layoutsChanged(const QStringList &layouts, uint activeLayout);
 
 protected:
     void keyboard_keymap(uint32_t format, int32_t fd, uint32_t size) override;
@@ -109,4 +111,6 @@ private:
     QXkbCommon::ScopedXKBContext mXkbContext;
     QXkbCommon::ScopedXKBKeymap mXkbKeymap;
     QXkbCommon::ScopedXKBState mXkbState;
+    QStringList m_layouts;
+    uint m_activeLayout = 0;
 };

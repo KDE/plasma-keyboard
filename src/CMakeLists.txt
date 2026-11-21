@@ -118,6 +118,7 @@ target_link_libraries(plasma-keyboard
     KF6::ConfigGui
     KF6::Crash
     PkgConfig::XKBCommon
+    PkgConfig::XKBRegistry
     Plasma::PlasmaQuick
     Qt::DBus
     Qt::Gui
