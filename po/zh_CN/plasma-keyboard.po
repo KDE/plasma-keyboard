@@ -69,6 +69,3 @@ msgstr "表情符号 (前缀搜索)"
 msgctxt "@label Name of the text expansion overlay trigger"
 msgid "Text Expansion"
 msgstr "文本扩展"
-
-#~ msgid "Settings"
-#~ msgstr "设置"
