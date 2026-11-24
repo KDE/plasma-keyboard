@@ -8,13 +8,22 @@
 
 #include "logging.h"
 #include "overlaycontroller.h"
+#include "plasmakeyboardsettings.h"
 
 #include <KLocalizedString>
+
+#include <QDateTime>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 TextExpansionTrigger::TextExpansionTrigger(QObject *parent)
     : OverlayTrigger(parent)
 {
-    // TODO: Load expansions from settings
+    // Load the text expansion rules from the settings at initialization.
+    loadExpansionRules();
+    // Connect to settings changes to reload rules dynamically if needed.
+    connect(PlasmaKeyboardSettings::self(), &PlasmaKeyboardSettings::textExpansionRulesChanged, this, &TextExpansionTrigger::loadExpansionRules);
 }
 
 QString TextExpansionTrigger::triggerId() const
@@ -34,46 +43,33 @@ OverlayTriggerResult TextExpansionTrigger::processEvent(OverlayInputEvent eventT
                                                               OverlayController *controller)
 // clang-format on
 {
+    Q_UNUSED(keyEvent)
     Q_UNUSED(controller)
 
     OverlayTriggerResult result;
 
     switch (eventType) {
-    case OverlayInputEvent::TextCommitted: {
-        // Check if committed text ends with an abbreviation
+    case OverlayInputEvent::TextBeforeCursorChanged: {
+        // `text` is the text before the cursor.
+        //
+        // Check if the text has an exact match for any known abbreviation.
         const QString abbrev = findMatchingAbbreviation(text);
         if (!abbrev.isEmpty()) {
-            if (m_requiresTriggerKey) {
-                // Store pending abbreviation, wait for trigger key
-                m_pendingAbbreviation = abbrev;
-                // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Detected abbreviation, waiting for trigger key:" << abbrev;
-            } else {
-                // Expand immediately
-                result.action = OverlayAction::ReplaceText;
-                result.deleteBeforeCursor = abbrev.length();
-                result.commitText = m_expansions.value(abbrev);
-                // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Expanding" << abbrev << "to" << result.commitText;
-            }
-        }
-        break;
-    }
-
-    case OverlayInputEvent::KeyPress: {
-        if (!m_pendingAbbreviation.isEmpty() && keyEvent && keyEvent->key() == m_triggerKey) {
-            // Trigger key pressed, expand
             result.action = OverlayAction::ReplaceText;
-            result.deleteBeforeCursor = m_pendingAbbreviation.length();
-            result.commitText = m_expansions.value(m_pendingAbbreviation);
-            result.consumeEvent = true;
-            // qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: Trigger key pressed, expanding" << m_pendingAbbreviation;
-            m_pendingAbbreviation.clear();
-        } else if (!m_pendingAbbreviation.isEmpty()) {
-            // Different key pressed, cancel pending expansion
-            m_pendingAbbreviation.clear();
+            result.deleteBeforeCursor = abbrev.length();
+            result.commitText = expandVariables(m_expansions.value(abbrev));
+            break;
+        }
+
+        // Check for partial matches and provide candidate expansions.
+        const QStringList partialMatches = candidates(text);
+        if (!partialMatches.isEmpty()) {
+            result.action = OverlayAction::OpenOverlay;
         }
         break;
     }
 
+    case OverlayInputEvent::KeyPress:
     case OverlayInputEvent::KeyRelease:
     case OverlayInputEvent::PreeditChanged:
     case OverlayInputEvent::TimerExpired:
@@ -84,54 +80,63 @@ OverlayTriggerResult TextExpansionTrigger::processEvent(OverlayInputEvent eventT
     return result;
 }
 
+QString TextExpansionTrigger::expandVariables(const QString &expansion)
+{
+    QString result = expansion;
+    if (!result.contains(QLatin1Char('{'))) {
+        return result;
+    }
+
+    const QDateTime now = QDateTime::currentDateTime();
+    const QLocale locale;
+    result.replace(QStringLiteral("{date}"), locale.toString(now.date(), QLocale::ShortFormat));
+    result.replace(QStringLiteral("{time}"), locale.toString(now.time(), QLocale::ShortFormat));
+    result.replace(QStringLiteral("{datetime}"), locale.toString(now, QLocale::ShortFormat));
+    return result;
+}
+
 void TextExpansionTrigger::reset()
 {
-    m_pendingAbbreviation.clear();
 }
 
 bool TextExpansionTrigger::isEnabled() const
 {
-    // TODO: Add setting for text expansion
-    // return PlasmaKeyboardSettings::self()->textExpansionEnabled();
-    return false; // Disabled until expansion data is implemented
+    // TODO: Check if plasma-keyboard is enabled instead of hardcoding true?
+    return true;
 }
 
 QStringList TextExpansionTrigger::candidates(const QString &baseText) const
 {
-    // Text expansion doesn't show candidates in a popup (it replaces directly)
-    // But we could show matching expansions if we wanted preview
-    Q_UNUSED(baseText)
-    return {};
+    qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: candidates for base text:" << baseText;
+
+    if (baseText.isEmpty()) {
+        return {};
+    }
+
+    // Return a list of all partial matches for the base text.
+    QStringList matches;
+    for (const QString &abbrev : m_expansions.keys()) {
+        if (abbrev.startsWith(baseText)) {
+            matches.append(m_expansions.value(abbrev));
+        }
+    }
+
+    qCDebug(PlasmaKeyboard) << "TextExpansionTrigger: partial matches:" << matches;
+    return matches;
 }
 
-void TextExpansionTrigger::addExpansion(const QString &abbreviation, const QString &expansion)
+void TextExpansionTrigger::loadExpansionRules()
 {
-    m_expansions.insert(abbreviation, expansion);
-}
-
-void TextExpansionTrigger::removeExpansion(const QString &abbreviation)
-{
-    m_expansions.remove(abbreviation);
-}
-
-void TextExpansionTrigger::setRequiresTriggerKey(bool value)
-{
-    m_requiresTriggerKey = value;
-}
-
-bool TextExpansionTrigger::requiresTriggerKey() const
-{
-    return m_requiresTriggerKey;
-}
-
-void TextExpansionTrigger::setTriggerKey(Qt::Key key)
-{
-    m_triggerKey = key;
-}
-
-Qt::Key TextExpansionTrigger::triggerKey() const
-{
-    return m_triggerKey;
+    m_expansions.clear();
+    const QJsonDocument rules = QJsonDocument::fromJson(PlasmaKeyboardSettings::self()->textExpansionRules().toUtf8());
+    for (const QJsonValue &value : rules.array()) {
+        const QJsonObject rule = value.toObject();
+        const QString abbreviation = rule.value(QStringLiteral("abbreviation")).toString();
+        const QString expansion = rule.value(QStringLiteral("expansion")).toString();
+        if (!abbreviation.isEmpty() && !expansion.isEmpty()) {
+            m_expansions.insert(abbreviation, expansion);
+        }
+    }
 }
 
 QString TextExpansionTrigger::findMatchingAbbreviation(const QString &text) const

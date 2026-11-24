@@ -25,8 +25,8 @@ enum class OverlayInputEvent {
     KeyRelease,
     /** Preedit (composing) text changed. */
     PreeditChanged,
-    /** Text was committed to the input field. */
-    TextCommitted,
+    /** Text before the cursor grew by one typed character; the event text is the full text before the cursor. */
+    TextBeforeCursorChanged,
     /** Timer expired (e.g., long-press hold). */
     TimerExpired,
 };

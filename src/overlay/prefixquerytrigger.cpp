@@ -39,7 +39,7 @@ OverlayTriggerResult PrefixQueryTrigger::processEvent(OverlayInputEvent eventTyp
 
     switch (eventType) {
     case OverlayInputEvent::PreeditChanged:
-    case OverlayInputEvent::TextCommitted: {
+    case OverlayInputEvent::TextBeforeCursorChanged: {
         // Look for prefix pattern in text
         const QString query = extractQuery(text);
         if (!query.isEmpty() && query.length() >= m_minQueryLength) {

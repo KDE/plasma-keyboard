@@ -113,6 +113,7 @@ InputMethodConnection::InputMethodConnection(QObject *parent)
 
         if (m_overlayController) {
             m_overlayController->cancelOverlay();
+            m_overlayController->resetTextTracking();
         }
 
         if (!m_input.hasContext()) {
