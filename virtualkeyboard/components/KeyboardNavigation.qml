@@ -117,31 +117,47 @@ QtObject {
         }
 
         const currentCenter = keyCenter(navigationKeyItem);
-        let closestKey = null;
-        let closestVerticalDistance = Number.MAX_VALUE;
-        let closestHorizontalDistance = Number.MAX_VALUE;
+        const currentTop = navigationKeyItem.mapToItem(layoutLoader, 0, 0).y;
+        const currentBottom = currentTop + navigationKeyItem.height;
+
+        // Find the keys in the next row
+        const candidates = [];
+        let nearestRowDistance = Number.MAX_VALUE;
         for (let i = 0; i < keys.length; ++i) {
             const key = keys[i];
             if (key === navigationKeyItem) {
                 continue;
             }
 
-            const center = keyCenter(key);
-            const verticalDistance = (center.y - currentCenter.y) * direction;
-            const sameRowThreshold = Math.min(key.height, navigationKeyItem.height) / 2;
-            if (verticalDistance <= sameRowThreshold) {
+            const topLeft = key.mapToItem(layoutLoader, 0, 0);
+            const rowDistance = direction > 0 ? topLeft.y - currentBottom : currentTop - (topLeft.y + key.height);
+            if (rowDistance < 0) {
                 continue;
             }
 
-            const horizontalDistance = Math.abs(center.x - currentCenter.x);
-            if (verticalDistance < closestVerticalDistance
-                    || (verticalDistance === closestVerticalDistance && horizontalDistance < closestHorizontalDistance)) {
-                closestKey = key;
-                closestVerticalDistance = verticalDistance;
-                closestHorizontalDistance = horizontalDistance;
+            const horizontalDistance = Math.max(0, topLeft.x - currentCenter.x, currentCenter.x - (topLeft.x + key.width));
+            candidates.push({
+                key: key,
+                rowDistance: rowDistance,
+                horizontalDistance: horizontalDistance,
+                centerDistance: Math.abs(keyCenter(key).x - currentCenter.x)
+            });
+            nearestRowDistance = Math.min(nearestRowDistance, rowDistance);
+        }
+
+        // Pick the horizontally closest key in that row, preferring the closer centre on a tie
+        let closest = null;
+        for (const candidate of candidates) {
+            if (candidate.rowDistance > nearestRowDistance) {
+                continue;
+            }
+            if (!closest
+                    || candidate.horizontalDistance < closest.horizontalDistance
+                    || (candidate.horizontalDistance === closest.horizontalDistance && candidate.centerDistance < closest.centerDistance)) {
+                closest = candidate;
             }
         }
-        return closestKey;
+        return closest ? closest.key : null;
     }
 
     function moveKeyNavigation(dx, dy) {
