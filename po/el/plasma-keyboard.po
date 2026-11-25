@@ -1,0 +1,75 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-keyboard package.
+#
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-keyboard\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-07 00:45+0000\n"
+"PO-Revision-Date: 2026-11-21 17:22+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Πέτρος Βιδάλης"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pvidalis@gmail.com"
+
+#: main.cpp:47
+#, kde-format
+msgid "Plasma Keyboard"
+msgstr "Πληκτρολόγιο του Plasma"
+
+#: main.cpp:49
+#, kde-format
+msgid "An on-screen keyboard for Plasma"
+msgstr "Εικονικό πληκτρολόγιο για το Plasma"
+
+#: main.cpp:51
+#, kde-format
+msgid "Copyright 2024, Aleix Pol Gonzalez"
+msgstr "Πνευματικά δικαιώματα 2024, Aleix Pol Gonzalez"
+
+#: main.cpp:53
+#, kde-format
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: main.cpp:53
+#, kde-format
+msgid "Author"
+msgstr "Συγγραφέας"
+
+#: overlay/longpresstrigger.cpp:40
+#, kde-format
+msgctxt "@label Name of the diacritics overlay trigger"
+msgid "Diacritics (Long Press)"
+msgstr "Διακριτικά (παρατεταμένο πάτημα)"
+
+#: overlay/prefixquerytrigger.cpp:25
+#, kde-format
+msgctxt "@label Name of the emoji overlay trigger"
+msgid "Emoji (Prefix Search)"
+msgstr "Emoji (αναζήτηση κατά πρόθεμα)"
+
+#: overlay/textexpansiontrigger.cpp:27
+#, kde-format
+msgctxt "@label Name of the text expansion overlay trigger"
+msgid "Text Expansion"
+msgstr "Επέκταση κειμένου"
+
+#: qml/LanguagePopup.qml:116
+msgid "Settings"
+msgstr ""
