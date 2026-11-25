@@ -58,8 +58,9 @@ public:
         deleteRequests.append({index, length});
     }
 
-    bool sendKeyClick(int key) override
+    bool sendKeyClick(int key, const QString &text = QString()) override
     {
+        Q_UNUSED(text);
         keyClickRequests.append(key);
         return true;
     }

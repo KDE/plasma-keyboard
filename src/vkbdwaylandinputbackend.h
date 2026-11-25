@@ -29,7 +29,7 @@ public:
     void setPreeditText(const QString &text) override;
     void commitText(const QString &text) override;
     void deleteSurroundingText(int index, int length) override;
-    bool sendKeyClick(int key) override;
+    bool sendKeyClick(int key, const QString &text = QString()) override;
     bool sendKeyPressed(int key, bool pressed) override;
 
     void setActive(bool active);
@@ -39,7 +39,7 @@ Q_SIGNALS:
     void preeditTextRequested(const QString &text);
     void commitTextRequested(const QString &text);
     void deleteSurroundingTextRequested(int index, int length);
-    void keyClickRequested(int key, bool *handled);
+    void keyClickRequested(int key, const QString &text, bool *handled);
     void keyPressedRequested(int key, bool pressed, bool *handled);
 
 private:

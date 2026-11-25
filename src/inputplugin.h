@@ -80,6 +80,8 @@ public:
     void keysym(uint timestamp, uint sym, KeyState state, uint modifiers);
     void key(KeyState state, quint32 scancode);
 
+    bool hasKeysymInActiveLayout(uint32_t keysym) const;
+
     ContentHint contentHint() const;
     ContentPurpose contentPurpose() const;
     uint32_t cursorPos() const;

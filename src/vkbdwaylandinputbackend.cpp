@@ -51,10 +51,10 @@ void VkbdWaylandInputBackend::deleteSurroundingText(int index, int length)
     Q_EMIT deleteSurroundingTextRequested(index, length);
 }
 
-bool VkbdWaylandInputBackend::sendKeyClick(int key)
+bool VkbdWaylandInputBackend::sendKeyClick(int key, const QString &text)
 {
     bool handled = false;
-    Q_EMIT keyClickRequested(key, &handled);
+    Q_EMIT keyClickRequested(key, text, &handled);
     return handled;
 }
 

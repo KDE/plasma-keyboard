@@ -95,6 +95,8 @@ public:
     Keyboard(::wl_keyboard *keyboard, InputMethodContext *parent);
     ~Keyboard();
 
+    bool hasKeysymInActiveLayout(xkb_keysym_t keysym) const;
+
 Q_SIGNALS:
     void keyPressed(QKeyEvent *keyEvent);
     void keyReleased(QKeyEvent *keyEvent);

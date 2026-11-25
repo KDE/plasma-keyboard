@@ -61,9 +61,10 @@ public:
         events.append(QStringLiteral("delete:%1:%2").arg(index).arg(length));
     }
 
-    bool sendKeyClick(int key) override
+    bool sendKeyClick(int key, const QString &text = QString()) override
     {
         keyClickRequests.append(key);
+        keyClickTexts.append(text);
         events.append(QStringLiteral("click:%1").arg(key));
         return keyClickHandled;
     }
@@ -116,6 +117,7 @@ public:
     QStringList commitRequests;
     QList<QPair<int, int>> deleteRequests;
     QList<int> keyClickRequests;
+    QStringList keyClickTexts;
     QList<QPair<int, bool>> keyPressedRequests;
     QStringList events;
     bool keyClickHandled = true;
@@ -204,6 +206,7 @@ private Q_SLOTS:
         QVERIFY(engine.sendTextComposerKey(Qt::Key_Q, QStringLiteral("q")));
 
         QCOMPARE(backend->keyClickRequests, QList<int>{Qt::Key_Q});
+        QCOMPARE(backend->keyClickTexts, QStringList{QStringLiteral("q")});
         QVERIFY(backend->commitRequests.isEmpty());
         QCOMPARE(engine.pressedKeys(), QList<int>{Qt::Key_Control});
     }

@@ -113,7 +113,7 @@ private:
     void clearCompositionState(bool updateBackend);
     void resetShiftState();
     void updateAutomaticShift();
-    bool sendDirectKeyClick(int key);
+    bool sendDirectKeyClick(int key, const QString &text = QString());
     int utf16PositionFromUtf8Offset(uint32_t offset) const;
 
     InputBackend *m_backend = nullptr;

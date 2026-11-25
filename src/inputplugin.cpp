@@ -114,6 +114,11 @@ void InputPlugin::key(KeyState state, quint32 scancode)
     m_context->key(m_context->m_lastKeyboardSerial, m_context->m_lastKeyboardTime, scancode, static_cast<uint32_t>(state));
 }
 
+bool InputPlugin::hasKeysymInActiveLayout(uint32_t keysym) const
+{
+    return m_keyboard && m_keyboard->hasKeysymInActiveLayout(keysym);
+}
+
 InputPlugin::ContentHint InputPlugin::contentHint() const
 {
     if (!m_context) {

@@ -128,6 +128,31 @@ Keyboard::~Keyboard()
     //        release();
 }
 
+bool Keyboard::hasKeysymInActiveLayout(xkb_keysym_t keysym) const
+{
+    if (!mXkbKeymap || !mXkbState) {
+        return false;
+    }
+
+    // Copied from KWin's Xkb::keycodeFromKeysym(): resolve fake input keysyms
+    xkb_keymap *keymap = mXkbKeymap.get();
+    const xkb_layout_index_t layout = xkb_state_serialize_layout(mXkbState.get(), XKB_STATE_LAYOUT_EFFECTIVE);
+    const xkb_keycode_t maxKeycode = xkb_keymap_max_keycode(keymap);
+    for (xkb_keycode_t keycode = xkb_keymap_min_keycode(keymap); keycode <= maxKeycode; ++keycode) {
+        const xkb_level_index_t levelCount = xkb_keymap_num_levels_for_key(keymap, keycode, layout);
+        for (xkb_level_index_t level = 0; level < levelCount; ++level) {
+            const xkb_keysym_t *syms = nullptr;
+            const int symCount = xkb_keymap_key_get_syms_by_level(keymap, keycode, layout, level, &syms);
+            for (int i = 0; i < symCount; ++i) {
+                if (syms[i] == keysym) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 void Keyboard::keyboard_keymap(uint32_t format, int32_t fd, uint32_t size)
 {
     mKeymapFormat = format;

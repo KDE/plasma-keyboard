@@ -259,7 +259,7 @@ bool InputEngine::sendTextComposerKey(int key, const QString &text)
     }
 
     if (!m_backend->pressedKeys().isEmpty()) {
-        return sendDirectKeyClick(key);
+        return sendDirectKeyClick(key, text);
     }
 
     return m_textComposer->keyEvent(Qt::Key(key), text);
@@ -447,9 +447,9 @@ void InputEngine::clearCompositionState(bool updateBackend)
     }
 }
 
-bool InputEngine::sendDirectKeyClick(int key)
+bool InputEngine::sendDirectKeyClick(int key, const QString &text)
 {
-    return m_backend->sendKeyClick(key);
+    return m_backend->sendKeyClick(key, text);
 }
 
 int InputEngine::utf16PositionFromUtf8Offset(uint32_t offset) const

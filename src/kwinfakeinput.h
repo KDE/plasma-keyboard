@@ -24,6 +24,8 @@ public:
 
     bool shouldUseFakeInput(int key) const;
     bool sendKeyPressed(int key, bool pressed);
+    bool sendKeysymClick(uint32_t keysym);
+    bool isModifierPressed() const;
 
 private:
     bool ensureInitialized();

@@ -72,6 +72,12 @@ static uint keysymForQtKey(int key)
     }
 }
 
+static uint keysymForText(const QString &text)
+{
+    const QList<uint> codePoints = text.toUcs4();
+    return codePoints.size() == 1 ? xkb_utf32_to_keysym(codePoints.constFirst()) : XKB_KEY_NoSymbol;
+}
+
 static uint currentTimestamp()
 {
     static QElapsedTimer timer = [] {
@@ -254,8 +260,17 @@ InputMethodConnection::InputMethodConnection(QObject *parent)
         return true;
     };
 
-    connect(m_vkbdInputBackend, &VkbdWaylandInputBackend::keyClickRequested, this, [sendKeyPressed](int key, bool *handled) {
+    connect(m_vkbdInputBackend, &VkbdWaylandInputBackend::keyClickRequested, this, [this, sendKeyPressed](int key, const QString &text, bool *handled) {
         if (!handled) {
+            return;
+        }
+
+        // Modifiers for fake-input need special attention!
+        // We need to send the text as a keysym instead so that it can be interpreted and mapped for the keymap.
+        // Example: Ctrl+A would get interpreted as Ctrl+q on AZERTY (KEY_A is "q")
+        const uint keysym = keysymForText(text);
+        if (m_window && m_window->isExposed() && m_fakeInput->isModifierPressed() && keysym != XKB_KEY_NoSymbol && m_input.hasKeysymInActiveLayout(keysym)) {
+            *handled = m_fakeInput->sendKeysymClick(keysym);
             return;
         }
 

@@ -33,7 +33,7 @@ public:
     virtual void setPreeditText(const QString &text) = 0;
     virtual void commitText(const QString &text) = 0;
     virtual void deleteSurroundingText(int index, int length) = 0;
-    virtual bool sendKeyClick(int key) = 0;
+    virtual bool sendKeyClick(int key, const QString &text = QString()) = 0;
     virtual bool sendKeyPressed(int key, bool pressed) = 0;
     void clearPressedKeys();
     void reset();

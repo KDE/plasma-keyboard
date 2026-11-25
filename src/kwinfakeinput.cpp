@@ -17,12 +17,13 @@
 #include <QWaylandClientExtensionTemplate>
 
 #include <linux/input-event-codes.h>
+#include <wayland-client-protocol.h>
 
 class FakeInput : public QWaylandClientExtensionTemplate<FakeInput>, public QtWayland::org_kde_kwin_fake_input
 {
 public:
     FakeInput()
-        : QWaylandClientExtensionTemplate<FakeInput>(ORG_KDE_KWIN_FAKE_INPUT_KEYBOARD_KEY_SINCE_VERSION)
+        : QWaylandClientExtensionTemplate<FakeInput>(ORG_KDE_KWIN_FAKE_INPUT_KEYBOARD_KEYSYM_SINCE_VERSION)
     {
         initialize();
     }
@@ -139,7 +140,12 @@ bool KWinFakeInput::shouldUseFakeInput(int key) const
     if (DIRECT_FAKE_INPUT_KEYS.contains(key)) {
         return true;
     }
-    if (!m_backend || !supportsKey(key)) {
+    return supportsKey(key) && isModifierPressed();
+}
+
+bool KWinFakeInput::isModifierPressed() const
+{
+    if (!m_backend) {
         return false;
     }
 
@@ -149,6 +155,22 @@ bool KWinFakeInput::shouldUseFakeInput(int key) const
         }
     }
     return false;
+}
+
+bool KWinFakeInput::sendKeysymClick(uint32_t keysym)
+{
+    if (!ensureInitialized()) {
+        return false;
+    }
+
+    // The compositor picks the key that types the keysym in its keymap, and keeps held modifiers
+    auto *fakeInput = static_cast<FakeInput *>(m_fakeInput);
+    fakeInput->keyboard_keysym(keysym, WL_KEYBOARD_KEY_STATE_PRESSED);
+    fakeInput->keyboard_keysym(keysym, WL_KEYBOARD_KEY_STATE_RELEASED);
+
+    // HACK: clear modifiers after a delay, otherwise it might not be registered by the app
+    QTimer::singleShot(20, this, &KWinFakeInput::clearPressedModifiers);
+    return true;
 }
 
 bool KWinFakeInput::sendKeyPressed(int key, bool pressed)
