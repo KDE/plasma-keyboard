@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-keyboard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-15 00:48+0000\n"
+"POT-Creation-Date: 2026-11-26 20:02+0000\n"
 "PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -17,6 +17,47 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: components/LanguagePopup.qml:223
+#: components/emoji/EmojiPicker.qml:103
+msgctxt "@action:button"
+msgid "Back"
+msgstr ""
+
+#: components/emoji/EmojiPicker.qml:114
+msgctxt "@action:button"
+msgid "Search emoji"
+msgstr ""
+
+#: components/emoji/EmojiPicker.qml:127
+msgctxt "@action:button"
+msgid "Backspace"
+msgstr ""
+
+#: components/emoji/EmojiSearchFieldContent.qml:48
+#: components/emoji/EmojiSearchStrip.qml:94
+msgctxt "@info:placeholder"
+msgid "Search emoji"
+msgstr ""
+
+#: components/emoji/EmojiSearchStrip.qml:84
+msgctxt "@action:button"
+msgid "Back to emoji picker"
+msgstr ""
+
+#: components/emoji/EmojiSearchStrip.qml:140
+msgctxt "@info"
+msgid "No emoji found"
+msgstr ""
+
+#: components/emoji/EmojiSearchStrip.qml:140
+msgctxt "@info"
+msgid "Type to search for emoji"
+msgstr ""
+
+#: components/KeyboardStrip.qml:41
+msgctxt "@action:button"
+msgid "Paste"
+msgstr ""
+
+#: components/LanguagePopup.qml:232
 msgid "Settings"
 msgstr "Поставке"
